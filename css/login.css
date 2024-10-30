@@ -1,0 +1,15 @@
+body{
+    color: white;
+    overflow: hidden;
+    background-image: url("../image/bg.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    height: 100%;
+}
+
+.shadow{
+    border-image-source: linear-gradient(45deg, black 0, transparent 90%);
+    border-image-slice: fill 1;
+}
+
