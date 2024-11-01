@@ -24,12 +24,11 @@ body{
 }
 
 #img_borrao{
-    position: relative;
     top: 376px;
     height: 500px;
 }
 
-#hotbar{
+#hotBar{
     height: 67px;
     position: sticky;
     font-size: 2rem;
@@ -44,19 +43,14 @@ body{
     left: 630px;
 }
 
-.grid_imagem{
+.imagem_fundo{
     height: 864px;
     display: grid;
     grid-template-rows: 1fr;
 }
 
-#img_borrao{
-    grid-area: 1 1 2 2;
-}
-
-#img_fundo{
+#imgFundo{
     height: 554px;
-    grid-area: 1 1 2 2;
 }
 
 .largura_com_scroll{
