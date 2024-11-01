@@ -20,7 +20,8 @@ body{
 }
 
 .gradiente_azul_transparente{
-    background-image: linear-gradient(to top, #519EBF, transparent);
+    background: rgb(76,155,189);
+    background: linear-gradient(0deg, rgba(76,155,189,1) 0%, rgba(255,255,255,1) 48%, rgba(255,255,255,1) 100%);
 }
 
 #img_borrao{
@@ -42,9 +43,12 @@ body{
 
 .img_fundo{
     height: 666px;
+    background-image: url("../image/img_fundo_categoria.png");
+    background-size: cover;
 }
 
 #imgFundo{
+    
     height: 554px;
 }
 
