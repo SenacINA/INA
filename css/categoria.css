@@ -24,7 +24,7 @@ body{
 }
 
 #img_borrao{
-    position: absolute;
+    position: relative;
     top: 376px;
     height: 500px;
 }
@@ -39,19 +39,24 @@ body{
 .conteudo{
     height: 2347px;
     width: 1083px;
-    position: absolute;
+    position: relative;
     top: 610px;
     left: 630px;
 }
 
-.image_fundo{
-    width: 1fr;
+.grid_imagem{
     height: 864px;
-    position: relative;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+#img_borrao{
+    grid-area: 1 1 2 2;
 }
 
 #img_fundo{
-    height: 864px;
+    height: 554px;
+    grid-area: 1 1 2 2;
 }
 
 .largura_com_scroll{
