@@ -38,15 +38,10 @@ body{
 .conteudo{
     height: 2347px;
     width: 1083px;
-    position: relative;
-    top: 610px;
-    left: 630px;
 }
 
-.imagem_fundo{
-    height: 864px;
-    display: grid;
-    grid-template-rows: 1fr;
+.img_fundo{
+    height: 666px;
 }
 
 #imgFundo{
