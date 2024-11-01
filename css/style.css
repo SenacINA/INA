@@ -1,0 +1,32 @@
+.font_titulo {
+  font-family: 'Jost';
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.font_subtitulo {
+  font-family: 'Jost';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.font_descricao {
+  font-family: 'Jost';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.font_botoes {
+  font-family: 'Jost';
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
