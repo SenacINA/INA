@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: block;
+}
+
+.footer_corpo {
+    display: grid;
+    grid-template-rows: auto 1fr; 
+    position: relative; 
+    bottom: 0;
+    left: 0; 
+    width: 100%;
+}
+
+.grid_footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    position: relative; 
+    z-index: 2; 
+    padding: 20px; 
+}
+
+.footer_item {
+    text-align: center; 
+    color: white; 
+}
+
+.svg_margin {
+    margin: 0;
+    position: relative; 
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+}
