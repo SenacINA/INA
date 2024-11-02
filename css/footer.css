@@ -6,34 +6,135 @@
 
 body {
     display: block;
+    min-height: 100vh;
 }
 
-.footer_corpo {
-    display: grid;
-    grid-template-rows: auto 1fr; 
-    position: relative; 
-    bottom: 0;
-    left: 0; 
+.container {
+    position: relative;
     width: 100%;
+    min-height: 100vh;
 }
 
-.grid_footer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    position: relative; 
-    z-index: 2; 
-    padding: 20px; 
-}
-
-.footer_item {
-    text-align: center; 
-    color: white; 
-}
-
-.svg_margin {
-    margin: 0;
-    position: relative; 
-    bottom: 0;
+.background-svg {
+    position: absolute;
+    top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.svg-margin {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+
+svg {
     width: 100%; 
+    height: auto; 
+
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 10% 150px;
+    color: white;
+    text-align: left;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.grid-item {
+    border-left-color: white;
+    border-left-width: 20px;
+    padding: 20px;
+    font-family: Jost;
+    display: grid;
+    grid-template-rows: auto;
+    border-right: 2px solid white;
+    
+}
+
+.grid-item h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+#faq {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#categorias > a {
+    text-decoration: underline;
+    text-decoration-color: #D9D9D9;
+}
+
+#categorias > a:hover{
+    text-decoration-color: #6F6F6F;
+    
+}
+
+
+.grid-item a, .grid-item p {
+    color: #D9D9D9;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    width: auto;
+    display: inline-block;
+    max-width: fit-content;
+}
+
+.grid-item a:hover {
+    color: #6F6F6F;
+}
+
+#logo {
+    text-align: center;
+    justify-items: center;
+    border: none;
+}
+
+.whats {
+    height: fit-content;
+    display: inline-block; 
+    text-align: left;
+    background-color: #E8F1F2;
+    width: 100%;
+    padding: 10px 30px;
+    border-radius: 1111px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.whats img {
+    display: inline-block;
+    vertical-align: middle; 
+    margin-right: 10px;
+}
+
+.whats > a {
+    color: #0F3B62;
+    display: inline-block; 
+    vertical-align: middle; 
+}
+
+.whats:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.whats:hover > a, a:hover {
+    color: white;
+    
 }
