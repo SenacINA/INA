@@ -66,17 +66,19 @@
     align-self: center;
     height: 66px;
     align-items: center;
+    justify-content: center;
 }
 
 /* Elementos grid 3 */
 
-.item3 button{
+.item3 a{
     border-style: none;
     background-color: transparent;
     align-self: left;
     padding-left: 10px;
     padding-right: 10px;
 }
+
 
 /* Elementos grid 1 */
 
