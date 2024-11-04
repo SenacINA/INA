@@ -32,6 +32,19 @@ input{
     border: none;
 }
 
+.checkbox-container{
+    display: grid;
+    grid-template-columns: repeat(2,auto);    
+    width: fit-content;
+}
+
+.input-checkbox{
+    width: 23.97px;
+    height: 24px;
+    border-radius: 3px;
+    padding: 10px;
+}
+
 p{margin: 0;}
 
 a{
