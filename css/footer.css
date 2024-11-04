@@ -9,6 +9,9 @@ body {
     min-height: 100vh;
 }
 
+.s1 {
+    min-height: 100%;
+}
 
 .background-svg {
     position: absolute;
@@ -28,7 +31,6 @@ body {
     align-items: center;
     justify-content: center;
     bottom: 0;
-
 }
 
 
@@ -56,6 +58,7 @@ body {
     text-align: left;
     z-index: 1;
     justify-self: center;
+    padding-top: 5%;
 }
 
 .grid-item {
