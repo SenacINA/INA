@@ -11,22 +11,87 @@
     <title>Categoria</title>
 </head>
 <body class="gradiente_azul">
-    <header id="hotBar" class="azul_leve font_subtitulo">
+    <header id="hotBar" class="bg_celadon font_subtitulo">
         Placeholder
     </header>
-    <div class="img_fundo largura_com_scroll">
-        <div id="imgBorrao" class="gradiente_azul_transparente largura_com_scroll">
-            
-        </div>
+    <div class="img_fundo largura_com_scroll gradiente_azul_transparente">
     </div>
 
-    <main>
-        <div class="conteudo cinza">
-            ioa
+    <main class="conteudo grid_conteudo">
+        <div class="filtros bg_branco">
+            <div id="card_desconto_template" class="card_desconto font_descricao font_bold font_14px">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 21" fill="none" style="position: absolute;">
+                    <path d="M0 0.5H80V20.5H0L17.3359 10.5L0 0.5Z" fill="#006494"/>
+                </svg>
+                <p class="valor_desconto">30</p>
+                <p class="texto_esquerda">% OFF</p>
+            </div>
+        </div>
+        <div class="produtos_container bg_cinza">
+            <h2>Destaques</h2>
+            <div class="linha_card_produto grid_produtos">
+
+            </div>
+            <h2>Produtos</h2>
+            <div class="produtos">
+                <div class="linha1 linha_card_produto grid_produtos">
+
+                </div>
+                <div class="linha2 linha_card_produto grid_produtos">
+
+                </div>
+                <div class="linha3 linha_card_produto grid_produtos">
+
+                </div>
+                <div class="linha4 linha_card_produto grid_produtos">
+
+                </div>
+                <div class="linha5 linha_card_produto grid_produtos">
+
+                </div>
+            </div>
         </div>
     </main>
     <footer>
         <img class="largura_com_scroll" src="../image/img_footer_placeholder.png" alt="Footer">
     </footer>
+    <template id="produto_card_template">
+        <div class="produto_card bg_branco">
+            <a target="_blank" href="about:blank">
+                <img src="https://placehold.co/200x225.webp?text=Placeholder\n200w\nx\n225h"  alt="Placeholder">
+            </a>
+            <p class="produto_nome font_descricao font_bold font_14px">Nome produto placeholder Nome produto placeholder</p>
+            <div class="produto_preco_estrela font_descricao font_bold font_14px">
+                <p>23</p>
+                <p>32</p>
+            </div>
+            <div class="produto_botoes">
+                <button type="button" onclick="window.open('about:blank', '_blank');" class="botao_estilo font_14px">
+                    <svg class="icone_carrinho" xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
+                        <path d="M5.78305 3.94444H23.75L21.3056 12.5H7.09931M22.5278 17.3889H7.86111L5.41667 1.5H1.75M9.08333 22.2778C9.08333 22.9528 8.53612 23.5 7.86111 23.5C7.1861 23.5 6.63889 22.9528 6.63889 22.2778C6.63889 21.6027 7.1861 21.0556 7.86111 21.0556C8.53612 21.0556 9.08333 21.6027 9.08333 22.2778ZM22.5278 22.2778C22.5278 22.9528 21.9806 23.5 21.3056 23.5C20.6305 23.5 20.0833 22.9528 20.0833 22.2778C20.0833 21.6027 20.6305 21.0556 21.3056 21.0556C21.9806 21.0556 22.5278 21.6027 22.5278 22.2778Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button type="button" onclick="window.open('about:blank', '_blank');" class="botao_estilo font_14px">
+                    Comprar
+                </button>
+            </div>
+        </div>
+    </template>
+    
+    <div id="container" class="grid_destaque">
+
+    </div>
+    
+    <script>
+        const template = document.getElementById('produto_card_template');
+        const container = document.getElementsByClassName('linha_card_produto');
+        
+        for(conteudo of container){
+            for (let i = 0; i < 5; i++) {
+                const clone = document.importNode(template.content, true);
+                conteudo.appendChild(clone);
+            }
+        }
+    </script>
 </body>
 </html>
