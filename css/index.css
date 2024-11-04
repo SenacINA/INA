@@ -89,6 +89,7 @@
     padding: 0px 5px;
     border-radius: 10px;
     border-style: none;
+    outline: 0;
 }
 
 .item1 input::after{
