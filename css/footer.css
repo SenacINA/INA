@@ -9,11 +9,6 @@ body {
     min-height: 100vh;
 }
 
-.container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-}
 
 .background-svg {
     position: absolute;
@@ -28,29 +23,39 @@ body {
     width: 100%;
     height: auto;
     margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+
 }
 
 
-svg {
+.svg-margin svg {
     width: 100%; 
     height: auto; 
+    position: absolute;
+}
 
+.svg-margin path {
+    box-sizing: content-box;
+    height: fit-content;
 }
 
 .grid-overlay {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    width: 100%;
-    height: 100%;
-    padding: 10% 150px;
+    width: 80%;
+    height: auto;
     color: white;
     text-align: left;
     z-index: 1;
-    overflow: hidden;
+    justify-self: center;
 }
 
 .grid-item {
