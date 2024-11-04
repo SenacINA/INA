@@ -130,6 +130,7 @@ body{
 
 .icone_carrinho{
     stroke: #fff;
+    padding: 4px;
 }
 
 .icone_carrinho:hover{

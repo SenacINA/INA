@@ -23,24 +23,24 @@
         </div>
         <div class="produtos_container bg_cinza">
             <h2>Destaques</h2>
-            <div class="linha_card_produto grid_produtos">
+            <div id="destaque_produtos" class="linha_card_produto grid_produtos">
 
             </div>
             <h2>Produtos</h2>
             <div class="produtos">
-                <div class="linha1 linha_card_produto grid_produtos">
+                <div id="linha1" class="linha_card_produto grid_produtos">
 
                 </div>
-                <div class="linha2 linha_card_produto grid_produtos">
+                <div id="linha2" class="linha_card_produto grid_produtos">
 
                 </div>
-                <div class="linha3 linha_card_produto grid_produtos">
+                <div id="linha3" class="linha_card_produto grid_produtos">
 
                 </div>
-                <div class="linha4 linha_card_produto grid_produtos">
+                <div id="linha4" class="linha_card_produto grid_produtos">
 
                 </div>
-                <div class="linha5 linha_card_produto grid_produtos">
+                <div id="linha5" class="linha_card_produto grid_produtos">
 
                 </div>
             </div>
@@ -79,17 +79,20 @@
         </div>
     </template>
     
-    <div id="container" class="grid_destaque">
-
-    </div>
-    
     <script>
-        const template = document.getElementById('produto_card_template');
+        let template = document.getElementById('produto_card_template');
         const container = document.getElementsByClassName('linha_card_produto');
         
         for(conteudo of container){
             for (let i = 0; i < 5; i++) {
                 const clone = document.importNode(template.content, true);
+                
+                if(conteudo.id != "destaque_produtos"){
+                    const cardDesconto = clone.querySelector('#card_desconto_template');
+                    if (cardDesconto) {
+                        cardDesconto.remove();//remove o elemento
+                    }
+                }
                 conteudo.appendChild(clone);
             }
         }
