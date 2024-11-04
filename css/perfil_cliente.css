@@ -5,6 +5,7 @@
     margin: 0%;
     padding: 0%;
     border: 0%;
+    font-family: Jost;
 }
 
 /* Base do Header */
@@ -27,16 +28,17 @@
     width: 100%;
 
     text-align: center;
+    margin-bottom: 20px;
 
     /*Banner Cliente Img*/
     .item_img_foto_cliente{
         position: relative;
         justify-self: center;
     
-        background-color: black;
+        background-color: transparent;
         height: 220px;
         width: 220px;
-        bottom: -65%;
+        bottom: -70%;
         border-radius: 100%;
 
         color: white;
@@ -45,27 +47,33 @@
     }
 }
 
+.item_img_foto_cliente img{
+    border-radius: 100%;
+}
+
 /*Container geral da Página*/
 
 /* Botões */
 .container_pagina_grid_geral_cliente{
     display: grid;
-    grid-template-columns: 60% 15% 15%;
+    grid-template-columns: 70% 15% 15%;
 
     box-sizing: content-box;
-    background-color:rgb(187, 221, 223)   ;
+    background-color:#E8F1F2;
     height: auto;
-    width: 100%;
+    width: 86%;
 
-    padding-right: 5%;
-    padding-left: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
     padding-top: 1.5%;
     padding-bottom: .5%;
+    padding-left: 2%;
+    padding-right: 2%;
 
     /* Itens do Container */
     .item_teste{
         position: relative;
-        justify-self: center;
+        justify-self: right;
         grid-area: 1 / 2;
     
         color: white;
@@ -76,7 +84,7 @@
     
     .item_teste2{
         position: relative;
-        justify-self: center;
+        justify-self: right;
         grid-area: 1 / 3;
     
         color: white;
@@ -88,22 +96,24 @@
 
 .container_pagina_grid_geral_cliente_2{
     display: grid;
-    grid-template-columns: 60% 15% 15%;
+    grid-template-columns: 70% 15% 15%;
 
     box-sizing: content-box;
-    background-color:rgb(145, 183, 185)   ;
+    background-color:#E8F1F2;
     height: auto;
-    width: 100%;
+    width: 86%;
 
-    padding-right: 5%;
-    padding-left: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
     padding-top: .5%;
     padding-bottom: .5%;
+    padding-left: 2%;
+    padding-right: 2%;
 
     /* Itens do Container */
     .item_teste3{
         position: relative;
-        justify-self: center;
+        justify-self: right;
         grid-area: 1 / 3;
     
         color: white;
@@ -122,13 +132,168 @@
     grid-template-columns: 100%;
 
     box-sizing: content-box;
-    background-color:rgb(145, 183, 185)   ;
+    background-color:#E8F1F2;
     height: auto;
-    width: 100%;
+    width: 86%;
     text-align: center;
 
-    padding-right: 5%;
-    padding-left: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
     padding-top: .5%;
     padding-bottom: .5%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.container_pagina_grid_geral_status{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+    text-align: center;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    .caixa_pagina_grid_geral_status_cliente{
+        position: relative;
+        justify-self: end;
+        grid-area: 1 / 1;
+        text-align: end;
+        padding-right: 15px;
+    
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+        width: 30%;
+        height: 30px;
+
+    }
+
+    .caixa_pagina_grid_geral_status_tempo_cadastro{
+        position: relative;
+        justify-self: left;
+        grid-area: 1 / 2;
+        text-align: start;
+        padding-left: 15px;
+    
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+        width: 30%;
+        height: 30px;
+    }
+}
+
+.container_pagina_grid_geral_local{
+    display: grid;
+    grid-template-columns: 100%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+    text-align: center;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.container_pagina_grid_geral_redesociais{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 30% 30%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+    text-align: center;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    .caixa_pagina_grid_geral_redesociais_contato{
+        position: relative;
+        justify-self: left;
+        grid-area: 1 / 1;
+        text-align: start;
+    
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+        width: 30%;
+        height: 30px;
+    }
+
+    .caixa_pagina_grid_geral_redesociais_teste{
+        position: relative;
+        justify-self: left;
+        grid-area: 2 / 1;
+        text-align: start;
+        padding-left: 30px;
+        margin-top: 5px;
+    
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+        width: 30%;
+        height: 30px;
+    }
+
+    .caixa_pagina_grid_geral_redesociais_teste2{
+        position: relative;
+        justify-self: left;
+        grid-area: 3 / 1;
+        text-align: start;
+        padding-left: 30px;
+        margin-top: 5px;
+    
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+        width: 30%;
+        height: 30px;
+    }
+}
+
+.container_pagina_grid_geral_historico{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 70%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+    text-align: center;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    .caixa_pagina_grid_geral_historico{
+        position: relative;
+        justify-self: left;
+        grid-area: 1 / 1;
+        text-align: start;
+    
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+        width: 30%;
+        height: 30px;
+    }
 }
