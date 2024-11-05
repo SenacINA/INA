@@ -13,13 +13,6 @@ body {
     min-height: 100%;
 }
 
-.background-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
 
 .svg-margin {
     position: relative;
@@ -40,11 +33,6 @@ body {
     position: absolute;
 }
 
-.svg-margin path {
-    box-sizing: content-box;
-    height: fit-content;
-}
-
 .grid-overlay {
     position: relative;
     top: 0;
@@ -53,12 +41,12 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 80%;
-    height: auto;
+    height: 608px;
     color: white;
     text-align: left;
     z-index: 1;
     justify-self: center;
-    padding-top: 5%;
+    padding: 10% 5% 5%;
 }
 
 .grid-item {
