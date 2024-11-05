@@ -14,22 +14,22 @@
   <nav>nav</nav>
   <main>
     <div class="view">
-      <img src="../image/mini_banner_perfil_cliente.png" class="banner">
-      <img src="../image/usuario.svg" class="pfp">
+      <img src="../image/mini_banner_perfil_cliente.png" class="banner" alt="Banner de perfil do cliente">
+      <img src="../image/usuario.svg" class="pfp" alt="Foto de perfil do cliente">
       <p class="nome_cliente">Cliente10</p>
       <div class="detalhes">
-        <img src="../image/ativo.svg" class="ico_ativo">
+        <img src="../image/ativo.svg" class="ico_ativo" alt="Ícone de status ativo">
         <p class="cliente_ativo">Ativo há: Agora</p>
-        <img src="../image/tempo.svg" class="ico_tempo">
+        <img src="../image/tempo.svg" class="ico_tempo" alt="Ícone de tempo">
         <p class="cliente_tempo">Cliente há: 4 meses</p>
-        <img src="../image/localizacao.svg" class="ico_localizacao">
-        <p class="cliente_localizacao">São paulo, São paulo</p>
+        <img src="../image/localizacao.svg" class="ico_localizacao" alt="Ícone de localização">
+        <p class="cliente_localizacao">São Paulo, São Paulo</p>
       </div>
       <div class="redes_sociais_mini">
         <p class="redes_sociais_mini_text">Redes Sociais:</p>
         <div class="redes2">
-          <img src="../image/instagram.svg" class="ico"><span class="text">soul_cliente10</span>
-          <img src="../image/facebook.svg" class="ico2"><span class="text2">cliente10</span>
+          <img src="../image/instagram.svg" class="ico" alt="Ícone do Instagram"><span class="text">soul_cliente10</span>
+          <img src="../image/facebook.svg" class="ico2" alt="Ícone do Facebook"><span class="text2">cliente10</span>
         </div>
       </div>
     </div>
@@ -38,11 +38,11 @@
         <label for="nome">Nome:</label><br>
         <input type="text" id="nome" class="font_descricao"><br>
         <label for="localizacao">Localização:</label><br>
-        <input type="text" id="localizacao"class="font_descricao"><br>
+        <input type="text" id="localizacao" class="font_descricao"><br>
         <label for="email">Email:</label><br>
-        <input type="text" id="email"class="font_descricao"><br>
+        <input type="text" id="email" class="font_descricao"><br>
         <label for="telefone">Telefone:</label><br>
-        <input type="tel" id="telefone"class="font_descricao"><br>
+        <input type="tel" id="telefone" class="font_descricao"><br>
       </form>
       <div class="botoes">
         <button class="redefinir_senha">Redefinir senha</button>
@@ -52,22 +52,33 @@
       <div class="redes_sociais">
         <p class="title_redes">Redes Sociais:</p>
         <div class="redes">
-          <img src="../image/instagram.svg" class="ico"><span class="text">soul_cliente10</span>
-          <img src="../image/facebook.svg" class="ico2"><span class="text2">cliente10</span>
+          <img src="../image/instagram.svg" class="ico" alt="Instagram"><span class="text">soul_cliente10</span>
+          <img src="../image/facebook.svg" class="ico2" alt="Facebook"><span class="text2">cliente10</span>
+        </div>
         <div class="editar_redes">
           <button class="edit">
-            <img src="../image/edit.svg">
+            <img src="../image/edit.svg" alt="Ícone de editar redes sociais">
           </button>
           <span class="text_button">Editar</span>
         </div> 
       </div>
     </div>
     <div class="upload">
-      <label for="foto_perfil">Imagem de perfil:</label><br>
-      <input type="file" name="foto_perfil" id="foto_perfil"><br>
-      <label for="banner_perfil">Imagem de perfil:</label><br>
-      <input type="file" name="banner_perfil" id="banner_perfil" ><br>
+      <form action="">
+        <div>
+          <label for="foto_perfil">Imagem de perfil:</label><br>
+          <input type="file" name="foto_perfil" id="foto_perfil"><br>
+          <p>As dimensões recomendadas são: 400 x 400 pixels.</p>
+        </div>
+        <div>
+          <label for="banner_perfil">Imagem de banner:</label><br>
+          <input type="file" name="banner_perfil" id="banner_perfil" ><br>
+          <p>As dimensões recomendadas são: 1500 x 500 pixels.</p>
+        </div>
+      </form>
     </div>
   </main>
+  
+  <footer><p>© 2024 Senac Hub Academy MS CG e E ao Quadrado.com. Todos os direitos reservados.</p></footer>
 </body>
 </html>
