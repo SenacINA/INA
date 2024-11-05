@@ -9,11 +9,6 @@ body {
     min-height: 100vh;
 }
 
-.s1 {
-    min-height: 100%;
-}
-
-
 .svg-margin {
     position: relative;
     width: 100%;
@@ -21,7 +16,7 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: 1fr;
-    align-items: center;
+    align-items: end;
     justify-content: center;
     bottom: 0;
 }
@@ -29,7 +24,7 @@ body {
 
 .svg-margin svg {
     width: 100%; 
-    height: auto; 
+    height: 100%; 
     position: absolute;
 }
 
@@ -39,9 +34,9 @@ body {
     left: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    width: 80%;
-    height: 608px;
+    gap: 50px;
+    width: fit-content;
+    height: 595px;
     color: white;
     text-align: left;
     z-index: 1;
@@ -52,11 +47,11 @@ body {
 .grid-item {
     border-left-color: white;
     border-left-width: 20px;
-    padding: 20px;
+    padding-right: 60px;
     font-family: Jost;
     display: grid;
     grid-template-rows: auto;
-    border-right: 2px solid white;
+    border-right: 1px solid white;
     
 }
 
@@ -100,6 +95,7 @@ body {
     text-align: center;
     justify-items: center;
     border: none;
+    padding: 0%;
 }
 
 .whats {
