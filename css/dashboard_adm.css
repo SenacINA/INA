@@ -1,0 +1,15 @@
+html,body{
+    background-color: #F9F9FC;
+    margin: 0;
+    height: 100%;
+    display: grid;
+}
+
+
+.grid-menu{
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(2,auto);    
+    width: fit-content;
+}
