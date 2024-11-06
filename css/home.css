@@ -1,0 +1,114 @@
+/* Ana :D */
+
+/* Padronização */
+*{
+    margin: 0%;
+    padding: 0%;
+    border: 0%;
+    font-family: Jost;
+    background-color: #E8F1F2;
+}
+
+/* Base do Header */
+.header{
+    height: 65px;
+    width: 100%;
+    background-color: rgb(51, 119, 146);
+
+    text-align: center;
+}
+
+/* Parte 1 - Carrossel */
+.container_grid_carrossel{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    .item_grid_carrossel{
+        position: relative;
+        justify-self: center;
+
+        grid-area: 1 / 1;
+        background-color: rgb(154, 179, 179);
+        width: 1440px;
+        height: 450px;
+    }
+}
+
+/*1.1- Scroll Carrossel */
+
+.container_grid_scrool_carrossel{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 100%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 4%;
+    padding-right: 2%;
+
+    .item_grid_scroll_carrossel{
+        grid-area: 1 / 1;
+        position: relative;
+        justify-self: end;
+        border-radius: 20px;
+
+        grid-area: 1 / 2;
+        background-color: rgb(108, 133, 133);
+        width: 180px;
+        height: 15px;
+        gap: 15px;
+    }
+
+    .item_grid_scroll_carrossel2{
+        grid-area: 1 / 1;
+        position: relative;
+        justify-self: stretch;
+        border-radius: 20px;
+
+        grid-area: 1 / 2;
+        background-color: rgb(108, 133, 133);
+        width: 180px;
+        height: 15px;
+        gap: 15px;
+    }
+
+    .item_grid_scroll_carrossel3{
+        grid-area: 1 / 1;
+        position: relative;
+        justify-self: stretch;
+        border-radius: 20px;
+
+        grid-area: 1 / 2;
+        background-color: rgb(108, 133, 133);
+        width: 180px;
+        height: 15px;
+        gap: 15px;
+    }
+}
+
