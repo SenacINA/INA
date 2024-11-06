@@ -31,7 +31,7 @@ main {
 .quadrado {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 200px 350px 20px;
+  grid-template-rows: 170px 200px 150px 170px;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
@@ -51,29 +51,33 @@ main {
   text-transform: uppercase;
 }
 
-.main_content {
+.main_form {
   display: grid;
   row-gap: 20px;
   justify-content: center;
   grid-row: 2 ;
 }
 
-.esqueceu {
-  color: #000;
-  text-align: center;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
+.main_content {
+  justify-self: center;
+  grid: 3;
 }
 
-.info {
-  color: #0F3B62;
+.main_content h1{
   text-align: center;
+  color: #2075C2;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  width: 422px;
-  justify-self: center;
+  text-decoration-line: underline;
+}
+
+.main_content li {
+  color: rgba(0, 0, 0, 0.50);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 form label {
@@ -92,6 +96,13 @@ form {
   justify-content: center;
 }
 
+form p {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+}
+
 form input {
   width: 380px;
   height: 30px;
@@ -100,20 +111,10 @@ form input {
   align-items: center;
 }
 
-.link {
-  color: rgba(0, 0, 0, 0.30);
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  text-decoration-line: underline;
-  cursor: pointer;
-  grid-row: 4;
-}
-
 .botoes {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-row: 3;
+  grid-row: 4;
   justify-items: center;
 }
 
