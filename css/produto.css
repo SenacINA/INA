@@ -2,12 +2,10 @@
     margin: 0%;
 }
 
-html, body {
+body {
     margin: 0%;
     background-color: #E8F1F2;
     font-family: 'Jost';
-    overflow-y: scroll; 
-    scrollbar-width: none; 
 }
 
 /* start header */
@@ -797,6 +795,8 @@ html, body {
     margin-right: 50%;
 }
 
+
+/* footer temporario */
 .footer {
     position: relative;
     top: 300px;
