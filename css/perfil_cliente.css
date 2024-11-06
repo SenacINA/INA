@@ -100,6 +100,15 @@
     }
 }
 
+.container_pagina_grid_geral_cliente img{
+    position: relative;
+    justify-self: end;
+    height: 25px;
+    width: auto;
+
+    bottom: -3px;
+}
+
 .container_pagina_grid_geral_cliente_2{
     display: grid;
     grid-template-columns: 70% 15% 15%;
@@ -196,6 +205,15 @@
     }
 }
 
+.container_pagina_grid_geral_status img{
+    position: relative;
+    justify-self: end;
+    height: 25px;
+    width: 25px;
+
+    bottom: -3px;
+}
+
 .container_pagina_grid_geral_local{
     display: grid;
     grid-template-columns: 100%;
@@ -212,6 +230,27 @@
     padding-bottom: .5%;
     padding-left: 2%;
     padding-right: 2%;
+}
+
+.container_pagina_grid_geral_local img{
+    position: relative;
+    justify-self: end;
+    height: 25px;
+    width: 25px;
+
+    bottom: -3px;
+}
+
+.linha{
+    display: grid;
+    grid-template-columns: 100%;
+
+    background-color: #D7E8EA;
+    height: 6px;
+    width: 100%;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .container_pagina_grid_geral_redesociais{
@@ -250,12 +289,12 @@
         grid-area: 2 / 1;
         text-align: start;
         padding-left: 30px;
-        margin-top: 5px;
+        padding-top: 8px;
     
         color: rgb(0, 0, 0);
         background-color: transparent;
         width: 30%;
-        height: 30px;
+        height: 40px;
     }
 
     .caixa_pagina_grid_geral_redesociais_teste2{
@@ -264,13 +303,22 @@
         grid-area: 3 / 1;
         text-align: start;
         padding-left: 30px;
-        margin-top: 5px;
+        padding-top: 10px;
     
         color: rgb(0, 0, 0);
         background-color: transparent;
         width: 30%;
-        height: 30px;
+        height: 40px;
     }
+}
+
+.container_pagina_grid_geral_redesociais img{
+    position: relative;
+    justify-self: end;
+    height: 25px;
+    width: 25px;
+
+    bottom: -3px;
 }
 
 .container_pagina_grid_geral_historico{
@@ -302,4 +350,25 @@
         width: 30%;
         height: 30px;
     }
+
+    .caixa_pagina_grid_geral_historico2{
+        position: relative;
+        justify-self: left;
+        grid-area: 1 / 2;
+        text-align: start;
+    
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+        width: 30%;
+        height: 200px;
+    }
+}
+
+.container_pagina_grid_geral_historico img{
+    position: relative;
+    justify-self: end;
+    height: 25px;
+    width: 25px;
+
+    bottom: -3px;
 }
