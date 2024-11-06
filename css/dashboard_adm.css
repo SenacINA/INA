@@ -1,8 +1,12 @@
 html,body{
     background-color: #F9F9FC;
+    font-family: Jost;
+    color: #255E7E;
     margin: 0;
     height: 100%;
     display: grid;
+    overflow: hidden;
+    align-content: start;
 }
 
 
@@ -12,4 +16,50 @@ html,body{
     display: grid;
     grid-template-columns: repeat(2,auto);    
     width: fit-content;
+    gap: 20px;
+}
+
+.divisoria{
+    justify-self: center;
+}
+
+h1{
+    height: fit-content;
+    margin: 0;
+    justify-self: center;
+}
+/* Default color */
+a {
+    color: #255E7E;
+}
+
+/* Color on hover */
+a:hover {
+    color: #255E7E;
+}
+
+/* Color on active (when clicked) */
+a:active {
+    color: #255E7E;
+}
+
+/* Color for visited links */
+a:visited {
+    color: #255E7E;
+}
+
+
+.layout-botao{
+    display: grid;
+    width: 230px;
+    padding: 10px;
+    grid-template-columns: repeat(2,auto);
+    gap:10px;
+    border-radius: 10px;
+    background: rgba(177, 203, 221, 0.70);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    align-items: self-end;
+    justify-content: start;
 }
