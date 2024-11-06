@@ -1,20 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html{
-    min-height: 100%;
-}
-
-body{
-    min-height: 100%;
-    background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    
-}
-
 .gradiente_azul{
     background-image: linear-gradient(to bottom, #2888B1, #DCE5EB);
 }
@@ -42,7 +25,6 @@ body{
 }
 
 #imgFundo{
-    
     height: 554px;
 }
 
@@ -124,6 +106,10 @@ body{
 
 .filtros{
     width: 300px;
+    height: fit-content;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
 }
 
 .botao_estilo:hover{
@@ -170,102 +156,78 @@ body{
     padding-right: 5px;
 }
 
+.card_preco{
+    color: #FF7A00;
+}
+.card_estrelas{
+    color: yellow;
+}
+
+
 .display_none{
     display: none;
+}
+
+.container_filtro{
+    padding: 10px;
+    height: fit-content;
 }
 
 .grid_filtro{
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    padding: 10px;
+    padding-top: 10px;
 }
 
+.filtro_item{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: fit-content;
+    gap: 5px;
+}
 .css_checkbox {
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-}
-.css_checkbox + label { 
-    position: relative;
-    font-size: 14px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    height: 20px;
-    color: rgb(0, 0, 0);
-}
-.css_checkbox + label::before {
-    content: " ";
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 3px;
-    width: 16px;
     height: 16px;
-    background-color: white;
-    border-width: 2px;
-    border-style: solid;
-    border-color: rgb(204, 204, 204);
-    border-radius: 2px;
-    box-shadow: none;
-}
-.css_checkbox:checked + label::after {
-    content: " ";
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjMDA2YmVkIiBkPSJNMCA5NkMwIDYwLjY1IDI4LjY1IDMyIDY0IDMySDM4NEM0MTkuMyAzMiA0NDggNjAuNjUgNDQ4IDk2VjQxNkM0NDggNDUxLjMgNDE5LjMgNDgwIDM4NCA0ODBINjRDMjguNjUgNDgwIDAgNDUxLjMgMCA0MTZWOTZ6Ii8+PC9zdmc+"); background-repeat: no-repeat; 
-    background-size: 14px 14px;
-    background-position: center center;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0px;
-    left: 0px;
-    top: 0px;
-    text-align: center;
-    background-color: transparent;
-    font-size: 10px;
-    height: 20px;
-    width: 20px;
+    width: 16px;
 }
 
-.font_bold{
-    font-weight: 600;
+.filtro_item label, input{
+    align-self: center;
 }
+
+.titulo_filtro{
+    display: flex;
+    justify-content: space-between;
+}
+/* clip-path: polygon(18% 18%, 82% 18%, 82% 82%, 18% 82%); */
+/* https://sentry.io/answers/how-to-style-a-checkbox-using-css/ */
+.titulo_filtro img{
+    width: 25px;
+    height: 25px;
+    padding: 6.5px 5.5px 6.5px 5.5px;
+}
+
+.container_voltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao_voltar{
+    color: red;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid red;
+}
+
+
+.font_cinza{
+    color: #4A4A4A;
+}
+
 .font_14px{
     font-size: 0.875rem;
 }
 
 .font_10px{
     font-size: 0.625rem;
-}
-
-.bg_azul_leve{
-    background-color: #DCE5EB;
-}
-.bg_sappire{
-    background-color: #006494;
-}
-
-.bg_carolina{
-    background-color: #1B98E0;
-}
-
-.bg_celadon{
-    background-color: #247BA0;
-}
-
-.bg_branco_gelo{
-    background-color: #F9F9FC;
-}
-
-.bg_cinza{
-    background-color: #6F6F6F;
-}
-
-.bg_branco{
-    background-color: #fff;
 }
