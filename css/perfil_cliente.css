@@ -6,6 +6,7 @@
     padding: 0%;
     border: 0%;
     font-family: Jost;
+    background-color: #E8F1F2;
 }
 
 /* Base do Header */
@@ -21,6 +22,7 @@
 .container_banner_cliente{
     display: grid;
     grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
 
     box-sizing: content-box;
     background-color:#67b6ca;
@@ -30,20 +32,24 @@
     text-align: center;
     margin-bottom: 20px;
 
+    /* object-fit: cover;
+    overflow: hidden; */
+
     /*Banner Cliente Img*/
     .item_img_foto_cliente{
         position: relative;
         justify-self: center;
+        grid-area: 2 / 1;
     
         background-color: transparent;
         height: 220px;
         width: 220px;
-        bottom: -70%;
+        bottom: -55%;
         border-radius: 100%;
 
         color: white;
         text-align: center;
-        z-index: 100;
+        z-index: 101;
     }
 }
 
