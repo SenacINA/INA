@@ -13,100 +13,135 @@
 <body>
     <div class="nav_bar"></div>
     <div class="grid_bg">
-        <div class="titulo"><h1>CADASTRO DE VENDEDOR</h1></div>
+        <div class="titulo"><h1>INFORMAÇÕES DA EMPRESA</h1></div>
         <img src="../image/divisoria_geral.png" alt="">
         <div class="grid_conteudo">
             <div class="grid_conteudo_1">
-    <div class="lista_preencher_collum1">
-        <!-- Local da Empresa -->
-        <label for="local_da_empresa">Local da Empresa</label> <br>
-        <select name="local_da_empresa" id="local_da_empresa">
-            <!-- Options for location of the company -->
-        </select>
+                <!-- Local da Empresa -->
+                <label for="local_da_empresa">Local da Empresa</label> <br>
+                <select name="local_da_empresa" id="local_da_empresa">
+                    <option value="AC">Acre (AC)</option>
+                    <option value="AL">Alagoas (AL)</option>
+                    <option value="AP">Amapá (AP)</option>
+                    <option value="AM">Amazonas (AM)</option>
+                    <option value="BA">Bahia (BA)</option>
+                    <option value="CE">Ceará (CE)</option>
+                    <option value="DF">Distrito Federal (DF)</option>
+                    <option value="ES">Espírito Santo (ES)</option>
+                    <option value="GO">Goiás (GO)</option>
+                    <option value="MA">Maranhão (MA)</option>
+                    <option value="MT">Mato Grosso (MT)</option>
+                    <option value="MS">Mato Grosso do Sul (MS)</option>
+                    <option value="MG">Minas Gerais (MG)</option>
+                    <option value="PA">Pará (PA)</option>
+                    <option value="PB">Paraíba (PB)</option>
+                    <option value="PR">Paraná (PR)</option>
+                    <option value="PE">Pernambuco (PE)</option>
+                    <option value="PI">Piauí (PI)</option>
+                    <option value="RJ">Rio de Janeiro (RJ)</option>
+                    <option value="RN">Rio Grande do Norte (RN)</option>
+                    <option value="RS">Rio Grande do Sul (RS)</option>
+                    <option value="RO">Rondônia (RO)</option>
+                    <option value="RR">Roraima (RR)</option>
+                    <option value="SC">Santa Catarina (SC)</option>
+                    <option value="SP">São Paulo (SP)</option>
+                    <option value="SE">Sergipe (SE)</option>
+                    <option value="TO">Tocantins (TO)</option>
+                </select>
+                <h1>Se você não tiver uma empresa, informe o estado de sua residência.</h1>
+                <br>
+                
+                <!-- CEP -->
+                <label for="cep">CEP</label> <br>
+                <input type="text" name="cep" id="cep" placeholder="Digite o CEP" required>
+                <br>
 
-        <!-- CEP -->
-        <label for="cep">CEP</label> <br>
-        <input type="text" name="cep" id="cep" placeholder="Digite o CEP" required>
-        <br>
+                <div class="conteudo_endereco1">
+                    <!-- Logradouro -->
+                    <div class="logradouro">
+                        <label for="logradouro">Logradouro</label> <br> 
+                        <input type="text" name="logradouro" id="logradouro" placeholder="Rua, Avenida, etc." required>
+                    </div>
 
-        <div class="conteudo_endereco1">
-            <!-- Logradouro -->
-            <div class="logradouro">
-                <label for="logradouro">Logradouro</label> <br> 
-                <input type="text" name="logradouro" id="logradouro" placeholder="Rua, Avenida, etc." required>
+                    <!-- Número -->
+                    <div class="numero">
+                        <label for="numero">Número</label> <br>
+                        <input type="number" name="numero" id="numero" placeholder="Número do imóvel" required>
+                    </div>
+                </div>
+
+                <!-- Nome / Razão Social -->
+                <label for="nome_razao_social">Nome / Razão Social</label> <br>
+                <input type="text" name="nome_razao_social" id="nome_razao_social" placeholder="Nome completo ou Razão Social" required>
+                <br>
+
+                <div class="conteudo_endereco2">
+                    <!-- CPF / CNPJ -->
+                    <div class="cpf_cnpj">
+                        <label for="cpf_cnpj">CPF / CNPJ</label> <br>
+                        <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="Digite o CPF ou CNPJ" required>
+                    </div>
+
+                    <!-- RG -->
+                    <div class="rg">
+                        <label for="rg">RG</label> <br>
+                        <input type="text" name="rg" id="rg" placeholder="Número do RG" required>
+                    </div>
+                </div>
             </div>
+            
 
-            <!-- Número -->
-            <div class="numero">
-                <label for="numero">Número</label> <br>
-                <input type="number" name="numero" id="numero" placeholder="Número do imóvel" required>
-            </div>
+            <div class="grid_conteudo_2">
+                <!-- E-mail -->
+                <label for="email">E-mail</label> <br>
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+                <h1>O código de confirmação será enviado para esse E-mail. </h1>
+                <br>
+
+                <!-- Senha -->
+                <label for="senha">Senha</label> <br>
+                <input type="password" name="senha" id="senha" placeholder="Crie uma senha" required>
+                <br>
+
+                <!-- Confirmar Senha -->
+                <label for="confirmar_senha">Confirmar Senha</label> <br>
+                <input type="password" name="confirmar_senha" id="confirmar_senha" placeholder="Confirme a senha" required>
+                <br>
+
+                <!-- Categoria de Produtos -->
+                <label for="categoria_produtos">Categoria de Produtos</label> <br>
+                <select name="categoria_produtos" id="categoria_produtos" required>
+                    <option value="eletronicos">Eletrônicos</option>
+                    <option value="moveis">Móveis</option>
+                    <option value="vestuario">Vestuário</option>
+                    <option value="alimentos">Alimentos</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="esportes">Esportes</option>
+                    <option value="beleza">Beleza e Cuidados Pessoais</option>
+                    <option value="livros">Livros</option>
+                    <option value="automotivo">Automotivo</option>
+                    <option value="brinquedos">Brinquedos</option>
+                </select>
+                <br>
+
+                <div class="conteudo_telefone">
+                    <!-- Telefone 1 -->
+                    <div class="telefone1">
+                        <label for="telefone1">Telefone 1</label> <br>
+                        <input type="tel" name="telefone1" id="telefone1" placeholder="DDD + Número" required>
+                        <br>
+                    </div>
+
+                    <!-- Telefone 2 -->
+                    <div class="telefone2">
+                        <label for="telefone2">Telefone 2</label> <br>
+                        <input type="tel" name="telefone2" id="telefone2" placeholder="DDD + Número">
+                        <br>
+                    </div>
+                </div>
+            </div> 
         </div>
-
-        <!-- Nome / Razão Social -->
-        <label for="nome_razao_social">Nome / Razão Social</label> <br>
-        <input type="text" name="nome_razao_social" id="nome_razao_social" placeholder="Nome completo ou Razão Social" required>
-        <br>
-
-        <div class="conteudo_endereco2">
-            <!-- CPF / CNPJ -->
-            <div class="cpf_cnpj">
-                <label for="cpf_cnpj">CPF / CNPJ</label> <br>
-                <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="Digite o CPF ou CNPJ" required>
-            </div>
-
-            <!-- RG -->
-            <div class="rg">
-                <label for="rg">RG</label> <br>
-                <input type="text" name="rg" id="rg" placeholder="Número do RG" required>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="grid_conteudo_2">
-    <!-- E-mail -->
-    <label for="email">E-mail</label> <br>
-    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
-    <br>
-
-    <!-- Senha -->
-    <label for="senha">Senha</label> <br>
-    <input type="password" name="senha" id="senha" placeholder="Crie uma senha" required>
-    <br>
-
-    <!-- Confirmar Senha -->
-    <label for="confirmar_senha">Confirmar Senha</label> <br>
-    <input type="password" name="confirmar_senha" id="confirmar_senha" placeholder="Confirme a senha" required>
-    <br>
-
-    <!-- Categoria de Produtos -->
-    <label for="categoria_produtos">Categoria de Produtos</label> <br>
-    <select name="categoria_produtos" id="categoria_produtos" required>
-        <!-- Options for product categories -->
-    </select>
-    <br>
-
-    <div class="conteudo_telefone">
-        <!-- Telefone 1 -->
-        <div class="telefone1">
-            <label for="telefone1">Telefone 1</label> <br>
-            <input type="tel" name="telefone1" id="telefone1" placeholder="DDD + Número" required>
-            <br>
-        </div>
-
-        <!-- Telefone 2 -->
-        <div class="telefone2">
-            <label for="telefone2">Telefone 2</label> <br>
-            <input type="tel" name="telefone2" id="telefone2" placeholder="DDD + Número">
-            <br>
-        </div>
-    </div>
-</div>
-
-        </div>
-        
-        <div class="botao"><h1>Iniciar Cadastro</h1></div>
+        <div class="botao"><h1>Finalizar Cadastro</h1></div>
     </div>
 </body>
 </html>

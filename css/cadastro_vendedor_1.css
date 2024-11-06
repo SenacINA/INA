@@ -42,6 +42,8 @@ body {
 
 .botao {
     margin: auto;
+    cursor: pointer;
+    transition: transform 0.1s ease;
 }
 
 .botao h1 {
@@ -51,12 +53,16 @@ body {
     color: white;
     height: 40px;
     padding: 5px;
-
     background-color: #2075C2;
     font-size: 32px;
     font-weight: normal;
     border-radius: 10px;
 }
+
+.botao:active {
+    transform: scale(0.95);
+}
+
 
 .lista_ordenada {
     display: grid;
