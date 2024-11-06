@@ -8,13 +8,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+  <link rel="icon" type="image/x-icon" href="../image/logo-icone.ico">
 </head>
 <body>
   <nav>nav</nav>
   <main>
     <div class="quadrado">
       <div class="main_txt">
+        <p>Redefinição de Senha</p>
+        <img src="../image/divisoria_geral.png" alt="">
+      </div>
+      <div class="main_form">
+        <form action="">
+          <label for="novaSenha">Nova senha:</label>
+          <input type="password" required id="novaSenha">
+          <label for="confirmarSenha">Confirmar nova senha:</label>
+          <input type="password" required id="confirmarSenha">
+          <p>Insira sua senha duas vezes</p>
+        </form>
+      </div>
      <div class="main_content">
+      <h1>Regras da senha</h1>
+      <ul>
+        <li>Deve conter ao menos 6 caracteres</li>
+        <li>Deve conte ao menos uma letra minúscula</li>
+        <li>Deve conter ao menos um número</li>
+        <li>Não pode ser uma de suas senhas antigas</li>
+      </ul>
      </div>
      <div class="botoes">
       <button class="voltar">Voltar</button>
