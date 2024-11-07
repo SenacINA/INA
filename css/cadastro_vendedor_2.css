@@ -1,0 +1,129 @@
+*{
+    margin: 0%;
+}
+
+body {
+    margin: 0%;
+    background-color: #E8F1F2;
+    font-family: 'Jost';
+}
+
+/* start header */
+.nav_bar {
+    width: 100%;
+    height: 67px;
+    color: rgb(0, 0, 0);
+    background-color: #0F3B62;
+    display: grid;
+}
+/* end header */
+
+.grid_bg {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: var(--Cores-Azul-Leve, #DCE5EB);;
+    margin: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1780px;
+    height: 780px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.grid_bg img {
+    width: 1700px;
+    height: 5px;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+.botao {
+    margin: auto;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.botao h1 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    height: 40px;
+    padding: 5px;
+    background-color: #2075C2;
+    font-size: 32px;
+    font-weight: normal;
+    border-radius: 10px;
+}
+
+.botao:active {
+    transform: scale(0.95);
+}
+
+/* start grid_conteudo */
+.grid_conteudo {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 5%;
+    text-align: justify;
+    margin-left: 10%;
+}
+
+.grid_conteudo input, .grid_conteudo select {
+    height: 34px;
+    font-size: 18px;
+    border: none;
+    margin-bottom: 5%;
+}
+
+.grid_conteudo select {
+    border-radius: 10px;
+    background-color: #E8F1F2;
+}
+
+.grid_conteudo label {
+    color: #000;
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.grid_conteudo h1 {
+    color: rgba(0, 0, 0, 0.50);
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    top: 370px;
+}
+
+.conteudo_telefone, .conteudo_endereco1, .conteudo_endereco2 {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    max-height: 581px;
+    margin: 0%;
+}
+
+
+#localdaempresa, #cep, #nome_razao_social, #email, #senha, #confirmar_senha, #local_da_empresa, #categoria_produtos {
+    width: 581px;
+}
+
+#logradouro, #cpf_cnpj {
+    width: 340px;
+    margin-right: 19px;
+}
+
+#numero, #rg {
+    width: 218px;
+}
+
+.conteudo_telefone {
+    column-gap: 135px;
+}
+
+
+/* end grid_conteudo */
