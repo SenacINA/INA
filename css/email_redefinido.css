@@ -25,7 +25,7 @@
   .quadrado {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 200px 350px 20px;
+    grid-template-rows: 200px 350px 200px;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
@@ -49,6 +49,7 @@
     display: grid;
     row-gap: 20px;
     justify-content: center;
+    justify-items: center;
     grid-row: 2 ;
   }
   
@@ -82,17 +83,17 @@
   }
   
   .botoes {
+    align-items: center;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-row: 3;
+    grid-template-columns: auto;
+    align-items: center;
     justify-items: center;
   }
 
   .voltar {
     display: grid;
     align-self: center;
-    grid-area: 1/2/2/3;
-    grid-column: 3;
+    grid-column: 1;
     width: 170px;
     height: 40px;
     border: none;
