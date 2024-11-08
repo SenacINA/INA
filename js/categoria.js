@@ -2,7 +2,7 @@ function categoria(){
     let template = document.getElementById('produto_card_template');
     const container = document.getElementsByClassName('linha_card_produto');
 
-    for(/** @type {HTMLElement} */ conteudo of container){
+    for(conteudo of container){
         for (let i = 0; i < 5; i++) {
             const clone = document.importNode(template.content, true);
             

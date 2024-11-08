@@ -2,11 +2,6 @@
     background-image: linear-gradient(to bottom, #2888B1, #DCE5EB);
 }
 
-.gradiente_azul_transparente{
-    border-image-source: linear-gradient(0deg, rgba(76,155,189,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
-    border-image-slice: fill 1;
-}
-
 #img_borrao{
     top: 376px;
     height: 500px;
@@ -246,7 +241,27 @@
 .css_checkbox {
     height: 16px;
     width: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #4A4A4A;
 }
+/* https://sentry.io/answers/how-to-style-a-checkbox-using-css/ */
+.css_checkbox::before{
+        content: "";
+        width: 14px;
+        height: 14px;
+        clip-path: polygon(18% 18%, 82% 18%, 82% 82%, 18% 82%);
+        transform: scale(0);
+        background-color: #1B98E0;
+}
+
+.css_checkbox:checked::before {
+    transform: scale(1);
+}  
 
 .filtro_item label, input{
     align-self: center;
@@ -256,8 +271,7 @@
     display: flex;
     justify-content: space-between;
 }
-/* clip-path: polygon(18% 18%, 82% 18%, 82% 82%, 18% 82%); */
-/* https://sentry.io/answers/how-to-style-a-checkbox-using-css/ */
+
 .titulo_filtro img{
     width: 25px;
     height: 25px;
