@@ -54,7 +54,7 @@
 
 .container_grid_scrool_carrossel{
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 20% 15% 15% 15% 15% 20%;
     grid-template-rows: 100%;
 
     box-sizing: content-box;
@@ -69,46 +69,86 @@
 
     padding-top: 1.5%;
     padding-bottom: 1.5%;
-    padding-left: 4%;
+    padding-left: 2%;
     padding-right: 2%;
 
-    .item_grid_scroll_carrossel{
-        grid-area: 1 / 1;
+    .item_grid_scroll_carrossel1{
+        grid-area: 1 / 2;
         position: relative;
-        justify-self: end;
+        justify-self: center;
         border-radius: 20px;
 
-        grid-area: 1 / 2;
         background-color: rgb(108, 133, 133);
         width: 180px;
         height: 15px;
-        gap: 15px;
     }
 
     .item_grid_scroll_carrossel2{
-        grid-area: 1 / 1;
+        grid-area: 1 / 3;
         position: relative;
-        justify-self: stretch;
+        justify-self: center;
         border-radius: 20px;
 
-        grid-area: 1 / 2;
         background-color: rgb(108, 133, 133);
         width: 180px;
         height: 15px;
-        gap: 15px;
     }
 
     .item_grid_scroll_carrossel3{
-        grid-area: 1 / 1;
+        grid-area: 1 / 4;
         position: relative;
-        justify-self: stretch;
+        justify-self: center;
         border-radius: 20px;
 
-        grid-area: 1 / 2;
         background-color: rgb(108, 133, 133);
         width: 180px;
         height: 15px;
-        gap: 15px;
+    }
+
+    .item_grid_scroll_carrossel4{
+        grid-area: 1 / 5;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: rgb(108, 133, 133);
+        width: 180px;
+        height: 15px;
+    }
+}
+
+/* Parte 2 - Categorias */
+
+.container_grid_categorias{
+    display: grid;
+    grid-template-columns: 20% 15% 15% 15% 15% 20%;
+    grid-template-rows: 100%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    .container_grid_categorias{
+        grid-area: 1 / 5;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: rgb(108, 133, 133);
+        width: 180px;
+        height: 15px;
+
     }
 }
 
