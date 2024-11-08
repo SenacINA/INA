@@ -182,8 +182,14 @@
             </a>
             <p class="produto_nome font_descricao font_bold font_14px">Nome produto placeholder Nome produto placeholder</p>
             <div class="produto_preco_estrela font_descricao font_bold font_14px">
-                <p class="card_estrelas">*****</p>
-                <p class="card_preco">R$ 32</p>
+                <div class="container_card_estrela">
+                    <p class="card_estrela_texto font_14px">★★★★★</p>
+                    <p class="card_estrela_quantidade font_10px">(1342)</p>
+                </div>
+                <div class="container_card_preco">
+                    <p class="card_preco_desconto font_10px">R$24.532,90</p>
+                    <p class="card_preco">R$24.532,90</p>
+                </div>
             </div>
             <div class="produto_botoes">
                 <button type="button" onclick="window.open('about:blank', '_blank');" class="botao_estilo font_14px">
@@ -197,24 +203,6 @@
             </div>
         </div>
     </template>
-    
-    <script>
-        let template = document.getElementById('produto_card_template');
-        const container = document.getElementsByClassName('linha_card_produto');
-        
-        for(conteudo of container){
-            for (let i = 0; i < 5; i++) {
-                const clone = document.importNode(template.content, true);
-                
-                if(conteudo.id != "destaque_produtos"){
-                    const cardDesconto = clone.querySelector('#card_desconto_template');
-                    if (cardDesconto) {
-                        cardDesconto.remove();//remove o elemento
-                    }
-                }
-                conteudo.appendChild(clone);
-            }
-        }
-    </script>
+    <script type="text/javascript" src="../js/categoria.js"></script>
 </body>
 </html>

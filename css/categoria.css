@@ -159,14 +159,72 @@
 .card_preco{
     color: #FF7A00;
 }
-.card_estrelas{
-    color: yellow;
+.estrela_0{
+    background: linear-gradient(90deg, #FFD600 0%, #989898 100%);
+}
+.estrela_5{
+    background: linear-gradient(90deg, #FFD600 10%, #989898 90%);
+}
+.estrela_10{
+    background: linear-gradient(90deg, #FFD600 20%, #989898 80%);
+}
+.estrela_15{
+    background: linear-gradient(90deg, #FFD600 30%, #989898 70%);
+}
+.estrela_20{
+    background: linear-gradient(90deg, #FFD600 40%, #989898 60%);
+}
+.estrela_25{
+    background: linear-gradient(90deg, #FFD600 50%, #989898 50%);
+}
+.estrela_30{
+    background: linear-gradient(90deg, #FFD600 60%, #989898 40%);
+}
+.estrela_35{
+    background: linear-gradient(90deg, #FFD600 70%, #989898 30%);
+}
+.estrela_40{
+    background: linear-gradient(90deg, #FFD600 80%, #989898 20%);
+}
+.estrela_45{
+    background: linear-gradient(90deg, #FFD600 90%, #989898 10%);
+}
+.estrela_50{
+    background: linear-gradient(90deg, #FFD600 100%, #989898 0%);
+}
+.card_estrela_texto{
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+.card_estrela_texto, .card_estrela_quantidade{
+    width: fit-content;
+}
+.container_card_estrela{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+.card_estrela_quantidade{
+    color: #4A4A4A;
+}
+.container_card_preco{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.card_preco_desconto{
+    color: #808080;
+    text-decoration: line-through;
+}
 
 .display_none{
     display: none;
 }
+
 
 .container_filtro{
     padding: 10px;
@@ -218,7 +276,9 @@
     padding: 10px;
     border: 2px solid red;
 }
-
+.botao_voltar:hover{
+    background-color: #d1d1d1;
+}
 
 .font_cinza{
     color: #4A4A4A;
