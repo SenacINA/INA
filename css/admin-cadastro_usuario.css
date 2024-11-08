@@ -40,8 +40,6 @@ body {
     margin-bottom: 3%;
 }
 
-
-
 /* start grid_conteudo */
 
 .texto1 h1, .texto2 h1 {
@@ -69,7 +67,7 @@ body {
     column-gap: 25%;
     text-align: justify;
     margin-left: 10%;
-    height: 570px;
+    height: 590px;
 }
 
 .grid_conteudo input, .grid_conteudo select {

@@ -57,6 +57,7 @@ body {
     font-size: 32px;
     font-weight: normal;
     border-radius: 10px;
+    margin-bottom: 10%;
 }
 
 .botao:active {
