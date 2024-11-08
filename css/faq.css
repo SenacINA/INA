@@ -143,6 +143,10 @@
     .cara-doido{
         display: grid;
         grid-area: 4/2/1;    
+        object-fit: contain;
+    }
+    .cara-doido img{ 
+        object-fit: contain;
     }
     
 }
