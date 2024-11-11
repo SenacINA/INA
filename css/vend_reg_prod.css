@@ -21,8 +21,16 @@ body {
 .container_registro {
     background-color: #DCE5EB; /*Azul leve*/
     margin: 60px;
-
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
 }   
+
+.container_registro_linha {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: start;
+}
 
 #dg_title {
     color: #0F3B62;
