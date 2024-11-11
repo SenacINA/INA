@@ -148,6 +148,7 @@ body{
     border-left: 8px solid #2196f3; 
     padding: 10px 15px;
     border-radius: 5px;
+    padding-right: 180px auto;
     font-size: 14px;
 }
 
@@ -211,6 +212,7 @@ body{
 }
 
 .voltar {
+    margin-top: 3%;
     justify-self: center;   
     text-align: center;
     align-self: center;
