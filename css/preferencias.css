@@ -103,3 +103,48 @@
 
 /*Main*/
 
+.box-container{
+    display: grid;
+    grid-area: 1/1/1/1;
+    grid-template-columns: 1fr;
+    width: 140vh;
+    height: 75vh;
+    border-radius: 10px;
+    background-color: rgba(215, 229, 235, 1);
+    margin: 0 auto;
+    margin-top: 4%;
+    font-family: Jost;
+    padding: 25px;
+    .title{
+        font-style: normal;
+        font-size: 180%;
+        font-size: 32px;
+
+    }
+    .title p{
+        text-align: left;
+        font-size: 16px;
+        padding-right: 230px;
+    }
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    border-left: 8px solid #2196f3; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.icon { 
+    margin-bottom: 70px;
+    row-gap: 200px;
+    font-size: 20px;
+    margin-right: 10px; 
+    color: #2196f3; 
+}
+
+.alert p {
+    margin: 0;
+}
