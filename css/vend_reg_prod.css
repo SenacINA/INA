@@ -22,16 +22,33 @@ body {
     background-color: #DCE5EB; /*Azul leve*/
     margin: 60px;
     display: grid;
-    grid-template-columns: auto;
-    justify-content: center;
-}   
-
-.container_registro_linha {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    align-items: start;
+    grid-template-columns: auto; 
+    text-align: center; 
+    width: 100%;
 }
 
 #dg_title {
     color: #0F3B62;
+    text-align: center; 
+}
+
+.container_registro_linha {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    gap: 10px;
+    align-items: center;
+    justify-items: start; 
+}
+
+.container_registro_linha h2 {
+    text-align: left;
+    margin-right: 10px; 
+}
+
+.container_registro_linha hr {
+    border: 0;
+    border-top: 2px solid #0F3B62; 
+    margin: 0;
+    width: 100%; 
+    grid-column: 2; 
 }
