@@ -140,6 +140,10 @@
     padding-right: 5px;
 }
 
+.fit_content{
+    width: fit-content;
+}
+
 .card_preco{
     color: #FF7A00;
 }
