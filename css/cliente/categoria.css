@@ -4,7 +4,7 @@
 
 .img_fundo{
     height: 666px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(76, 155, 189, 0.00) 49.5%, #4C9BBD 100%), url("../image/img_fundo_categoria.png") lightgray 0px 0px / 100% 131.532% no-repeat;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(76, 155, 189, 0.00) 49.5%, #4C9BBD 100%), url("../../image/cliente/categoria/img_fundo_categoria.png") lightgray 0px 0px / 100% 131.532% no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
