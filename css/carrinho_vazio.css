@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Jost';
+  }
+  
+  .fundo {
+    height: 100%;
+    width: 100%;
+    background-color: #DCE5EB;
+  }
+  @media (min-width: 768px){
+  .carrinho_vazio {
+    display: grid;
+    margin-top: 9.18%;
+    margin-left: 13% ;
+    width: 70%;
+    grid-template-columns: repeat(11, auto);
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    }
+  }
+
+  .divisoria{
+    width: 70%;
+    height: 4%;
+  }
+  
+  .navbar {
+    width: 100%;
+    height: 67px;
+    background-color: beige;
+  }
+  
+  
+  .text {
+    margin-left: 10%;
+    color: #0075FF;
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Jost;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 31.2px */
+  }
+
+  .text-2 {
+    color: #87BEFF;
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Jost;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 31.2px */
+  }
+  
+  .footer_carrinho {
+    position: relative;
+    margin-top: 164px;
+  }
