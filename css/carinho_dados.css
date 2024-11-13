@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Jost';
+}
+
+.fundo {
+  height: 100%;
+  width: 100%;
+  background-color: #DCE5EB;
+}
+
+.carrinho_dados {
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.carrinho_top {
+  position: relative;
+  margin-top: 98px;
+  margin-bottom: 61px;
+  grid-row: 1;
+}
+
+.navbar {
+  width: 100%;
+  height: 67px;
+  background-color: beige;
+}
+
+.forms_dados {
+  grid-row: 2;
+  width: 1600px;
+  height: 678px;
+  background-color: #fff;
+}
+
+.main_container_carrinho_dados {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.container_forms {
+  position: relative;
+  top: 28px;
+  display: grid;
+  column-gap: 10%;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: min-content;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.main_text_carrinho_dados {
+  color: #247BA0;
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1%;
+}
+
+.forms_carrinho {
+  grid-row: 2;
+  color: #0F3B62;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  display: grid;
+  row-gap: 2%;
+}
+
+.forms_carrinho input {
+  grid-column: 1;
+  width: 495px;
+  height: 36px;
+  background: #E8F1F2;
+  border: none;
+}
+
+.informacoes_cep {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 15%;
+}
+
+.cep {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#cep {
+  grid-column: 1;
+  grid-row: 2;
+  width: 210px;
+  height: 36px;
+}
+
+
+.cidade {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#cidade {
+  grid-column: 2;
+  grid-row: 2;
+  width: 210px;
+  height: 36px;
+}
+
+.dados_adicionais {
+  display: grid;
+  grid-column: 2;
+  grid-row: 2;
+  color: #0F3B62;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  row-gap: 5%;
+}
+
+.dados_adicionais input {
+  width: 495px;
+  height: 36px;
+  background: #E8F1F2;
+  border: none;
+}
+
+#opcaoEnvio {
+  width: 495px;
+  height: 36px;
+  background-color: #E8F1F2;
+  border: none;
+}
+
+.botoes_carrinho {
+  grid-column: 2;
+  grid-row: 6;
+  position: relative;
+  top: calc(80px);
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10%;
+}
+
+.voltar_carrinho {
+  cursor: pointer;
+  width: 98px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid #F00;
+  background: #FFF;
+  color: #F00;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.salvar_carrinho {
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 10px;
+  background: #2075C2;
+}
+
+.footer_carrinho {
+  position: relative;
+  margin-top: 164px;
+}
