@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-body{
-    overflow: hidden;
-    min-height: 1080px;
-}
-
 .parallax_div_animate,.parallax_div_animate:focus-within{
 animation-name: slide, final;
 animation-duration: 1.5s, 2s;
