@@ -39,7 +39,7 @@
     padding-left: 2%;
     padding-right: 2%;
 
-    .item_grid_carrossel{
+    .home_item_grid_carrossel{
         position: relative;
         justify-self: center;
 
@@ -61,6 +61,7 @@
     background-color:#E8F1F2;
     height: auto;
     width: 86%;
+    align-items: center;
 
     margin-right: 5%;
     margin-left: 5%;
@@ -163,7 +164,7 @@
 
     }
 
-    .item_grid_categorias_escritorio{
+    .home_item_grid_categorias_escritorio{
         grid-area: 1 / 4;
         position: relative;
         justify-self: center;
@@ -175,7 +176,7 @@
 
     }
 
-    .item_grid_categorias_celulares{
+    .home_item_grid_categorias_celulares{
         grid-area: 1 / 5;
         position: relative;
         justify-self: center;
@@ -187,7 +188,7 @@
 
     }
 
-    .item_grid_categorias_eletrodomesticos{
+    .home_item_grid_categorias_eletrodomesticos{
         grid-area: 1 / 6;
         position: relative;
         justify-self: center;
@@ -200,7 +201,7 @@
     }
 }
 
-.container_grid_principal{
+.home_container_grid_principal{
     display: grid;
     grid-template-columns: 15% 14% 14% 14% 14% 14% 15%;
     grid-template-rows: 100%;
