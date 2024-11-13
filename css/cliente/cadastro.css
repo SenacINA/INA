@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  background-image: url('../image/cadastro_fundo.png');
+  background-image: url('../../image/cliente/cadastro/cadastro_fundo.png');
   background-repeat: no-repeat;
 }
 
