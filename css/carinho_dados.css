@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Jost';
+}
+
+.fundo {
+  height: 100%;
+  width: 100%;
+  background-color: #DCE5EB;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 67px 150px 1800px;
+}
+
+.top_carrinho {
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  justify-content: center;
+  grid-template-columns: repeat(11, auto);
+}
+
+.text_carrinho {
+  color: rgba(0, 117, 255, 0.45);
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 31.2px */
+}
+
+.text_identificacao {
+  color: #017FF0;
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 31.2px */
+}
+
+.text_pagamento {
+  color: #87BEFF;
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 31.2px */
+}
+
+.text_confirmacao{
+  color: #87BEFF;
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 31.2px */
+}
+
+.navbar {
+  width: 100%;
+  height: 67px;
+  background-color: beige;
+}
