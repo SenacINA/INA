@@ -57,6 +57,7 @@ body {
     font-size: 32px;
     font-weight: normal;
     border-radius: 10px;
+    margin-bottom: 10%;
 }
 
 .botao:active {
@@ -66,10 +67,12 @@ body {
 /* start grid_conteudo */
 .grid_conteudo {
     display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 5%;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: max-content min-content;
+    column-gap: 12%;
     text-align: justify;
     margin-left: 10%;
+    height: 485px;
 }
 
 .grid_conteudo input, .grid_conteudo select {
@@ -103,10 +106,9 @@ body {
 .conteudo_telefone, .conteudo_endereco1, .conteudo_endereco2 {
     display: grid;
     grid-template-columns: max-content max-content;
-    max-height: 581px;
+    max-height: min-content;
     margin: 0%;
 }
-
 
 #localdaempresa, #cep, #nome_razao_social, #email, #senha, #confirmar_senha, #local_da_empresa, #categoria_produtos {
     width: 581px;
