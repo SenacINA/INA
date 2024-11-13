@@ -42,6 +42,8 @@
 }
 
 .container_whats {
+  position: relative;
+  top: 50px;
   display: grid;
   grid-template-columns: auto;
   row-gap: 5%;
@@ -77,6 +79,25 @@
   font-size: 26px;
   font-style: normal;
   font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.nao_tem {
+  color: rgba(0, 0, 0, 0.70);
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.baixar_whats {
+  color: #4CAAD6;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
   line-height: normal;
 }
 
