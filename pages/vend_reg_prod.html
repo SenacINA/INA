@@ -6,8 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="../css/vend_reg_prod.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/vend_reg_prod.css">
     <title>Vendedor - Registrar novo produto</title>
 </head>
 <body>
@@ -21,37 +21,94 @@
             <hr>
         </div>
         <h2 class="font_titulo" id="np_title">Novo Produto</h2>
-        <div class="grid_title margin">
+        <div class="grid_title">
             <h2 class="font_titulo">Informações do Produto</h2>
             <h2 class="font_titulo">Dimensões e Peso</h2>
             <h2 class="font_titulo">Pelo menos uma foto ou vídeo</h2>
         </div>
-        <form class="grid_main">
-            <div class="coluna1">
-                <div>
-                    <label class="font_subtitulo" for="prod_name">Nome do Produto</label>
-                    <input class="input_prod" type="text" id="prod_name" name="prod_name" required>
+        <form>
+            <div class="grid_main">
+                <div class="coluna1">
+                    <div>
+                        <label class="font_subtitulo" for="prod_name">Nome do Produto</label>
+                        <input class="input_prod" type="text" id="prod_name" name="prod_name" required>
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_preco">Preço R$</label>
+                        <input class="input_prod" type="text" id="prod_preco" name="prod_preco" required>
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_catg">Categoria</label>
+                        <input class="input_prod" type="text" id="prod_catg" name="prod_catg" required>
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_marca">Marca</label>
+                        <input class="input_prod" type="text" id="prod_marca" name="prod_marca" required>
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_cod">Código</label>
+                        <input class="input_prod" type="text" id="prod_cod" name="prod_cod" required>
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_orig">Origem</label>
+                        <input class="input_prod" type="text" id="prod_orig" name="prod_orig" required>
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_uni">Unidade</label>
+                        <input class="input_prod" type="text" id="prod_uni" name="prod_uni" required>
+                    </div>
                 </div>
-                <div>
-                    <label class="font_subtitulo" for="prod_preco">Preço R$</label>
-                    <input class="input_prod" type="text" id="prod_preco" name="prod_preco" required>
+                <div class="coluna2">
+                    <div>
+                        <label class="font_subtitulo" for="prod_pl">Peso Liquído</label>
+                        <input class="input_prod" type="text" id="prod_pl" name="prod_pl" required placeholder="Em kg">
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_pb">Peso Bruto</label>
+                        <input class="input_prod" type="text" id="prod_pb" name="prod_pb" required required placeholder="Em kg">
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_tipo_emb">Tipo da Embalagem</label>
+                        <select class="input_prod seletor" id="prod_tipo_emb" name="prod_tipo_emb">
+                            <option value="pac_cai">Pacote/Caixa</option>
+                            <option value="opcao2">Opção 2</option>
+                            <option value="opcao3">Opção 3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_emb">Embalagem</label>
+                        <select class="input_prod seletor" id="prod_emb" name="prod_emb">
+                            <option value="pac_cai">Embalagem customizada</option>
+                            <option value="opcao2">Opção 2</option>
+                            <option value="opcao3">Opção 3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_larg">Largura</label>
+                        <input class="input_prod" type="text" id="prod_larg" name="prod_larg" required placeholder="0,0">
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_alt">Altura</label>
+                        <input class="input_prod" type="text" id="prod_alt" name="prod_alt" required placeholder="0,0">
+                    </div>
+                    <div>
+                        <label class="font_subtitulo" for="prod_compri">Comprimento</label>
+                        <input class="input_prod" type="text" id="prod_compri" name="prod_compri" required placeholder="0,0">
+                    </div>
                 </div>
-                <div>
-                    <label class="font_subtitulo" for="prod_name">Nome do Produto</label>
-                    <input class="input_prod" type="text" id="prod_name" name="prod_name" required>
+                <div class="coluna3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="216" height="216" viewBox="0 0 216 216" fill="none">
+                        <rect x="0.496235" y="0.502458" width="212.449" height="213.002" transform="matrix(0.999988 0.00494369 -0.00751872 0.999972 2.08777 0.47217)" fill="#E4EAEA" stroke="#747474" stroke-dasharray="2 2"/>
+                    </svg>
+                    <div>
+                        <label for="file">Escolha um arquivo:</label>
+                        <input type="file" id="prod_img" name="prod_img" accept="image/*">
+                    </div>
                 </div>
             </div>
-            <div class="coluna2">
-                <h2>teste</h2>
-                <h2>teste</h2>
-                <h2>teste</h2>
-                <h2>teste</h2>
-            </div>
-            <div class="coluna3">
-                <h2>teste</h2>
-                <h2>teste</h2>
-                <h2>teste</h2>
-                <h2>teste</h2>
+            <div class="desc">
+                <h2 class="font_titulo">Descrição do produto</h2>
+                <textarea class="input_prod" id="prod_desc" name="prod_desc" required></textarea>
             </div>
         </form>
     </div>

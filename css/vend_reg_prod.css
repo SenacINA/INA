@@ -22,11 +22,12 @@ body {
 
 .container_registro {
     background-color: #DCE5EB; /*Azul leve*/
-    margin: 60px;
+    margin: 50px 60px;
     display: grid;
     grid-template-columns: auto; 
     text-align: center; 
     border-radius: 10px;
+    padding-bottom: 65px;
 }
 
 #dg_title {
@@ -76,12 +77,21 @@ body {
 .grid_title {
     display: grid;
     grid-template-columns: repeat(3, auto);
+    text-align: start;
+    padding: 0 130px;
+    column-gap: 5%;
+}
+
+.grid_title > .font_titulo {
+    width: 456px;
+    font-weight: 500;
+    margin-top: 20px;
 }
 
 .grid_main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 2%;
+    margin-top: 1.5%;
     gap: 20px; 
     padding: 0 135px;
     column-gap: 5%;
@@ -112,10 +122,48 @@ body {
     width: 100%;
     height: 33px;
     font-family: Jost;
-    font-size: 20px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0px 12px;;
 }
 
+.input_prod::placeholder {
+    color: rgba(0, 0, 0, 0.30);
+    font-family: Jost;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
 
-.margin {
-    margin-top: 2%;
+.coluna2 select {
+    color: black;
+    font-family: Jost;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.coluna3 {
+    justify-items: center;
+    row-gap: 35px;
+    height: fit-content;
+}
+
+.desc {
+    text-align: start;
+}
+
+.desc .font_titulo {
+    font-weight: 500;
+    margin: 0 135px;
+    margin-top: 42px;
+}
+
+.desc > .input_prod {
+    margin: 0 135px;
+    height: 132px;
+    width: 655px;   
+    font-size: 16px;
+    padding: 10px;
 }
