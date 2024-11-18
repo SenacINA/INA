@@ -97,10 +97,11 @@ body {
 .grid_conteudo h1 {
     color: rgba(0, 0, 0, 0.50);
     font-family: Jost;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
-    position: absolute;
-    top: 370px;
+    position: relative;
+    margin-top: -15px;
+    
 }
 
 .conteudo_telefone, .conteudo_endereco1, .conteudo_endereco2 {
