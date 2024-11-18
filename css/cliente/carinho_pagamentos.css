@@ -41,6 +41,13 @@
   justify-items: center;
 }
 
+.separador_carrinho {
+  width: 1545px;
+  height: 3px;
+  background: rgba(0, 100, 148, 0.33);
+  border: 0;
+}
+
 .container_whats {
   position: relative;
   top: 50px;
