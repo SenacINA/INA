@@ -13,7 +13,7 @@ animation-iteration-count: 1;
 animation-fill-mode: forwards;
 background-position: left;
 
-background-image: url(../image/img_parallax_background.png);
+background-image: url(../../image/geral/parallax/img_parallax_background.png);
 background-position:  right;
 height: 100vh;
 }
