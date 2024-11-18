@@ -44,13 +44,14 @@
   align-items: center;
   justify-content: center;
   justify-items: center;
-  grid-template-rows: 295px 193px 4px auto auto;
+  grid-template-rows: 295px 193px 4px 200px auto;
 }
 
 .separador_mini_perfil {
   width: 826px;
   height: 4px;
   background: #D7E8EA;
+  border: 0;
 }
 
 .banner_vendedor {
@@ -70,10 +71,14 @@
 
 .infos_container {
   position: relative;
-  top: 15%;
+  top: calc(15%);
+  left: calc(4%);
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto 176px auto;
   grid-template-rows: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
   row-gap: 16px;
   column-gap: 20px;
 }
@@ -101,35 +106,136 @@
   line-height: 90%; /* 11.7px */
 }
 
-.produtos_vendedor_container {
+.tempo_vendedor_container, .produtos_vendedor_container, .avaliacao_vendedor_container, .localizacao_vendedor_container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: max-content max-content;
+  column-gap: 5px;
+}
+
+.produtos_vendedor_container {
   grid-column: 1;
   grid-row: 2;
 }
 
 .avaliacao_vendedor_container {
-  display: grid;
-  grid-template-columns: auto auto;
   grid-column: 2;
   grid-row: 2;
 }
 
 .tempo_vendedor_container {
-  display: grid;
-  grid-template-columns: auto auto;
   grid-column: 3;
   grid-row: 2;
 }
 
 .localizacao_vendedor_container {
-  display: grid;
-  grid-template-columns: auto auto;
   grid-column: 2;
   grid-row: 3;
 }
 
-.icon_produtos_vendedor {
+.sobre_nos_vendedor {
   grid-column: 1;
   grid-row: 1;
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 15.3px */
+  position: relative;
+  left: 4%;
+  align-self: center;
+}
+
+.about_container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  position: relative;;
+  top: -5%;
+  row-gap: 10%;
+}
+
+.icon_about_us {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 1;
+}
+
+.text_about {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%; /* 11.7px */
+  grid-row: 2;
+  width: 760px;
+}
+
+.contatos_container {
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: min-content min-content;
+  row-gap: 15%;
+  position: relative;
+  left: -38%;
+}
+
+.main_text_contatos {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.icon_contatos_vendedor {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+}
+
+.contatos_vendedor {
+  display: grid;
+  grid-template-columns: auto auto;
+  position: relative;
+  left: 10%;
+  row-gap: 10%;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.contatos_vendedor a{
+  position: relative;
+  left: 10%;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
 }
