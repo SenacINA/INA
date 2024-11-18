@@ -1,0 +1,285 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Jost';
+}
+
+.fundo_vendedor {
+  width: 100%;
+  height: 100%;
+  background-color: #F9F9FC;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  grid-template-rows: 67px auto auto;
+  grid-template-columns: 100%;
+  row-gap: 103px;
+}
+
+.nav_bar {
+  height: 67px;
+  width: 100%;
+  background-color: #DCE5EB;
+}
+
+.quadrado_vendedor {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 1821px;
+  height: 1550px;
+  border-radius: 10px;
+  background: #DCE5EB;
+}
+
+.mini_perfil_vendedor {
+  position: relative;
+  left: 10%;
+  top: 8%;
+  width: 826px;
+  height: 966px;
+  border: 1px solid #000;
+  background: #EFF1F8;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  grid-template-rows: 295px 193px 4px 200px auto;
+}
+
+.separador_mini_perfil {
+  width: 826px;
+  height: 4px;
+  background: #D7E8EA;
+  border: 0;
+}
+
+.banner_vendedor {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 0;
+}
+
+.pfp_vendedor {
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 2;
+  position: relative;
+  left: calc(50% - (826px/2));
+  top: calc(100% - (300px/2));
+}
+
+.infos_container {
+  position: relative;
+  top: calc(15%);
+  left: calc(4%);
+  display: grid;
+  grid-template-columns: auto 176px auto;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  row-gap: 16px;
+  column-gap: 20px;
+}
+
+.nome_vendedor {
+  grid-row: 1;
+  grid-column: 2;
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 90%; /* 18px */
+  justify-content: center;
+}
+
+.produtos_vendedor, .avaliacao_vendedor, .tempo_vendedor, .localizacao_vendedor {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%; /* 11.7px */
+}
+
+.tempo_vendedor_container, .produtos_vendedor_container, .avaliacao_vendedor_container, .localizacao_vendedor_container {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 5px;
+}
+
+.produtos_vendedor_container {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.avaliacao_vendedor_container {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.tempo_vendedor_container {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.localizacao_vendedor_container {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.sobre_nos_vendedor {
+  grid-column: 1;
+  grid-row: 1;
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 15.3px */
+  position: relative;
+  left: 4%;
+  align-self: center;
+}
+
+.about_container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  position: relative;;
+  top: -5%;
+  row-gap: 10%;
+}
+
+.icon_about_us {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 1;
+}
+
+.text_about {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%; /* 11.7px */
+  grid-row: 2;
+  width: 760px;
+}
+
+.contatos_container {
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: min-content min-content;
+  row-gap: 15%;
+  position: relative;
+  left: -38%;
+}
+
+.main_text_contatos {
+  color: #000;
+  font-family: Jost;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  grid-row: 1;
+  grid-column: 1;
+  position: relative;
+  left: 45%;
+}
+
+.icon_contatos_vendedor {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  left: 35%;
+}
+
+.contatos_vendedor {
+  display: grid;
+  grid-template-columns: repeat(6, max-content);
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  left: 50%;
+  row-gap: 10%;
+  column-gap: 5%;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.icon_instagram_vendedor, .icon_facebook_vendedor {
+  grid-column: 1;
+}
+
+.instagram_vendedor, .facebook_vendedor {
+  grid-column: 2;
+}
+
+.icon_x_vendedor {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.x_vendedor {
+  grid-row: 1;
+  grid-column: 4;
+}
+
+.linkedin_vendedor {
+  grid-row: 2;
+  grid-column: 4;
+}
+
+.icon_linkedin_vendedor {
+  grid-row: 2;
+  grid-column: 3;
+}
+
+.icon_youtube_vendedor {
+  grid-row: 1;
+  grid-column: 5;
+}
+
+.youtube_vendedor {
+  grid-row: 1;
+  grid-column: 6;
+}
+
+.contatos_vendedor a{
+  position: relative;
+  left: 10%;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
