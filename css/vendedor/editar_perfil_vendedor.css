@@ -185,7 +185,6 @@
 
 .main_text_contatos {
   color: #000;
-  text-align: center;
   font-family: Jost;
   font-size: 17px;
   font-style: normal;
@@ -193,20 +192,27 @@
   line-height: normal;
   grid-row: 1;
   grid-column: 1;
+  position: relative;
+  left: 45%;
 }
 
 .icon_contatos_vendedor {
   grid-column: 1;
   grid-row: 1;
   position: relative;
+  left: 35%;
 }
 
 .contatos_vendedor {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(6, max-content);
   position: relative;
-  left: 10%;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  left: 50%;
   row-gap: 10%;
+  column-gap: 5%;
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -220,6 +226,44 @@
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: from-font;
+}
+
+.icon_instagram_vendedor, .icon_facebook_vendedor {
+  grid-column: 1;
+}
+
+.instagram_vendedor, .facebook_vendedor {
+  grid-column: 2;
+}
+
+.icon_x_vendedor {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.x_vendedor {
+  grid-row: 1;
+  grid-column: 4;
+}
+
+.linkedin_vendedor {
+  grid-row: 2;
+  grid-column: 4;
+}
+
+.icon_linkedin_vendedor {
+  grid-row: 2;
+  grid-column: 3;
+}
+
+.icon_youtube_vendedor {
+  grid-row: 1;
+  grid-column: 5;
+}
+
+.youtube_vendedor {
+  grid-row: 1;
+  grid-column: 6;
 }
 
 .contatos_vendedor a{
