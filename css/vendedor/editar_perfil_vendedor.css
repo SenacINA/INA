@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.fundo_vendedor {
+  width: 100%;
+  height: 100%;
+  background-color: #F9F9FC;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  grid-template-rows: 67px auto auto;
+  grid-template-columns: 100%;
+  row-gap: 103px;
+}
+
+.nav_bar {
+  height: 67px;
+  width: 100%;
+  background-color: #DCE5EB;
+}
+
+.quadrado_vendedor {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 1821px;
+  height: 1550px;
+  border-radius: 10px;
+  background: #DCE5EB;
+}
