@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Jost';
 }
 
 .fundo_vendedor {
@@ -40,6 +41,9 @@
   border: 1px solid #000;
   background: #EFF1F8;
   display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
   grid-template-rows: 295px 193px 4px auto auto;
 }
 
@@ -47,4 +51,85 @@
   width: 826px;
   height: 4px;
   background: #D7E8EA;
+}
+
+.banner_vendedor {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 0;
+}
+
+.pfp_vendedor {
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 2;
+  position: relative;
+  left: calc(50% - (826px/2));
+  top: calc(100% - (300px/2));
+}
+
+.infos_container {
+  position: relative;
+  top: 15%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  row-gap: 16px;
+  column-gap: 20px;
+}
+
+.nome_vendedor {
+  grid-row: 1;
+  grid-column: 2;
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 90%; /* 18px */
+  justify-content: center;
+}
+
+.produtos_vendedor, .avaliacao_vendedor, .tempo_vendedor, .localizacao_vendedor {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%; /* 11.7px */
+}
+
+.produtos_vendedor_container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.avaliacao_vendedor_container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.tempo_vendedor_container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.localizacao_vendedor_container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.icon_produtos_vendedor {
+  grid-column: 1;
+  grid-row: 1;
 }
