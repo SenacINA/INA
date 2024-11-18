@@ -30,3 +30,13 @@
   border-radius: 10px;
   background: #DCE5EB;
 }
+
+.mini_perfil_vendedor {
+  position: relative;
+  left: 10%;
+  top: 8%;
+  width: 826px;
+  height: 966px;
+  border: 1px solid #000;
+  background: #EFF1F8;
+}
