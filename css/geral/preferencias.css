@@ -1,0 +1,169 @@
+/*Main*/
+
+.pref_main_conteudo{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.pref_div_box_container1{
+    display: grid;
+    grid-area: 1/1/1/1;
+    grid-template-columns: 1fr;
+    align-self: center;
+    justify-self: center;
+    width: 70%;
+    height: 100%;
+    margin-top: 8%;
+    height: 100% auto;
+    border-radius: 10px;
+    background-color: rgba(215, 229, 235, 1);
+    font-family: Jost;
+    padding: 25px;
+    .pref_div_box1{
+        font-style: normal;
+        font-size: 180%;
+        font-size: 32px;
+    }
+}
+
+.pref_p_alert {
+    display: flex;
+    align-items: center;
+    border-left: 8px solid #2196f3; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    padding-right: 180px auto;
+    font-size: 14px;
+}
+
+.pref_p_alert p {
+    margin: 0;
+}
+
+.pref_span_icon { 
+    margin-bottom: 60px;
+    row-gap: 200px;
+    font-size: 20px;
+    margin-right: 10px; 
+    color: #2196f3; 
+}
+
+
+/* Box 2*/
+.pref_div_box2{
+   display: grid;
+   grid-template-rows: repeat(3, auto);
+}
+
+.pref_div_box_container2{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.pref_div_box1 h4{
+    margin-left: 15px;
+    font-family: 'Jost';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.pref_div_box2 h4{
+    margin-left: 15px;
+    font-family: 'Jost';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.pref_p_sub{
+    font-size: 16px;
+    padding-top: 20px;
+    margin: 20px;
+    opacity: 40%;
+}
+
+.pref_div_show{
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    font-size: 20px;
+    font-family: 'Jost';
+    margin: 20px;
+    margin-top: 50px;
+}
+
+.faq_button_voltar {
+    margin-top: 3%;
+    justify-self: center;   
+    text-align: center;
+    align-self: center;
+    height: 50px;
+    width: 98px;
+    border: 2px;
+    font-size: 25px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: red;
+    background-color: white;
+    color: red;
+    transition: transform 0.3s ease;
+}
+
+/* Botão de ativação*/
+
+.pref_label_toggle{
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.pref_label_toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.pref_sapn_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.pref_sapn_slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .pref_sapn_slider {
+    background-color: #2196F3;
+}
+
+input:checked + .pref_sapn_slider:before {
+    transform: translateX(20px);
+}
+
+/* Estilo para alinhar os toggles */
+.pref_div_toggle_option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
