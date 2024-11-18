@@ -1,0 +1,82 @@
+/*Main*/
+
+.faq_div_container_faq{
+    width: 95%;
+    margin: 70px auto;
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    padding: 30px;
+    background-color: rgba(220, 229, 235, 1)
+}
+
+.faq_div_itens1{
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(1, 2fr);
+    .faq_div_titulo_itens1{
+        display: grid;
+        grid-area: 1/1; 
+        font-size:43px;
+        text-align: center;
+        align-items: start;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .faq_div_paragrafo_itens1{
+        display: grid;
+        grid-area: 2/1;
+        font-size: 32px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .faq_div_opc_itens1{
+        display: grid;
+        grid-area: 3/1;  
+        display: flex;
+        column-gap: 10px;
+        font-size: 20px;
+        align-items: center;
+    }
+
+}
+
+.faq_div_caradoido_itens1{
+    display: grid;
+    grid-area: 4/2/1;    
+    object-fit: contain;
+}
+.faq_div_caradoido img{ 
+    object-fit: contain;
+}
+
+.faq_div_box_priv {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-area: 5/1/auto/4; 
+    justify-items: center;
+
+    .faq_div_item {
+        background-color: #ddd;
+        padding: 50px;
+        text-align: center;
+        border-radius: 30px;
+        border: 1px solid #ccc;
+        width: 318px;
+        height: 320px;
+      } 
+  }
+
+  .faq_button_voltar {
+    grid-column: 1 / -1; 
+    justify-self: center; 
+    margin-top: 50px;
+    height: 55%;
+    width: 7%;
+    border: 2px;
+    font-size: 25px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: red;
+    background-color: white;
+    color: red;
+    transition: transform 0.3s ease;
+}
