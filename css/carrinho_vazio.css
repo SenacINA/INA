@@ -4,21 +4,41 @@
     font-family: 'Jost';
   }
   
-  .fundo {
+  body {
     height: 100%;
     width: 100%;
     background-color: #DCE5EB;
   }
+
+  main{
+    height: 100%;
+    width: 100%;
+    margin-top: 5%;
+    margin-left: 2.5%;
+  }
+
   @media (min-width: 768px){
   .carrinho_vazio {
     display: grid;
-    margin-top: 9.18%;
-    margin-left: 13% ;
-    width: 70%;
+    margin-top: 5%;
+    margin-left: 25%;
+    width: 50%;
     grid-template-columns: repeat(11, auto);
     align-items: center;
     justify-content: center;
     justify-items: center;
+    }
+  .quadrado {
+      display: grid;
+      grid-template-columns: 35% 20% 20% 25%;
+      grid-template-rows: 10% 1%; 
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      width: 90%;
+      height: 1000px;
+      background-color: #FFFFFF;
+      margin-left: 2.5%;
     }
   }
 
@@ -26,15 +46,23 @@
     width: 70%;
     height: 4%;
   }
+
+  .divisoria_quadrado{
+    width: 1650px;
+    height: 3px;
+    grid-row: 2;
+    grid-column: 1;
+    margin-left: 5%;
+  }
   
   .navbar {
     width: 100%;
     height: 67px;
     background-color: beige;
   }
-  
-  
+
   .text {
+    display: inline;
     margin-left: 10%;
     color: #0075FF;
     text-align: center;
@@ -44,6 +72,20 @@
     font-style: normal;
     font-weight: 600;
     line-height: 130%; /* 31.2px */
+  }
+
+  .text_ {
+    display: inline;
+    grid-row: 1;
+    color: #247BA0;
+    text-align: left;
+    font-family: Jost;
+    font-size: 35px;
+    font-style:bold;
+    font-weight: 600;
+    line-height: 130%; /* 31.2px */
+    text-transform: uppercase;
+    margin-inline-start: 100px;
   }
 
   .text-2 {
@@ -61,3 +103,4 @@
     position: relative;
     margin-top: 164px;
   }
+
