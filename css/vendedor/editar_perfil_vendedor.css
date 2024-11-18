@@ -40,5 +40,5 @@
   border: 1px solid #000;
   background: #EFF1F8;
   display: grid;
-  grid-template-rows: 295px 193px auto auto;
+  grid-template-rows: 295px 193px auto aut;
 }
