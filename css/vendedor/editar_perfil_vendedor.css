@@ -30,3 +30,21 @@
   border-radius: 10px;
   background: #DCE5EB;
 }
+
+.mini_perfil_vendedor {
+  position: relative;
+  left: 10%;
+  top: 8%;
+  width: 826px;
+  height: 966px;
+  border: 1px solid #000;
+  background: #EFF1F8;
+  display: grid;
+  grid-template-rows: 295px 193px 4px auto auto;
+}
+
+.separador_mini_perfil {
+  width: 826px;
+  height: 4px;
+  background: #D7E8EA;
+}
