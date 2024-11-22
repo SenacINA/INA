@@ -283,3 +283,29 @@
   text-underline-offset: auto;
   text-underline-position: from-font;
 }
+
+.forms_container{
+  display: grid;
+  grid-template-rows: repeat(8, auto);
+  justify-content: center;
+  align-items: center;
+}
+
+.forms_container label {
+  color: #000;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.forms_container input{
+  border: none;
+  width: 747px;
+  height: 39px;
+}
+
+.forms_container textarea {
+  border: none;
+}
