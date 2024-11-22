@@ -1,0 +1,1 @@
+deletar quando tiver outro arquivo dentro da pasta. Gambiarra para git adicionar a pasta no repositorio sem arquivos
