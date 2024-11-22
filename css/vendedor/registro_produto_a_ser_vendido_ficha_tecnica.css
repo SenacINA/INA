@@ -2,7 +2,7 @@
     margin: 0%;
 }
 
-.body_registro_produto_a_ser_vendido {
+.body_registro_produto_a_ser_vendido_ficha_tecnica {
     margin: 0%;
     background-color: #E8F1F2;
     font-family: 'Jost';
@@ -28,7 +28,7 @@
     margin-right: auto;
     margin-left: auto;
     width: 1800px;
-    height: 973px;
+    height: 726px;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
@@ -43,6 +43,7 @@
 
 .grid_titulo h1{
     grid-area: 2 / 1 / 1 / 3;
+    margin-top: 0.3%;
     color: #0F3B62;
     font-size: 32px;
     font-style: normal;
@@ -88,6 +89,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-left: 6%;
+    row-gap: 3%;
     width: 1600px;
     text-align: justify;
 }
@@ -115,6 +117,7 @@
     background: #FFF;
     border: 0px;
     font-size: 16px;
+    margin-bottom: 5%;
 }
 
 .grid_conteudo ::placeholder {
@@ -135,6 +138,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
+    margin-bottom: 5%;
 }
 
 .grid_conteudo select option:enabled {
@@ -152,6 +156,14 @@
     font-weight: 400;
     line-height: 130%;
 } 
+
+.grid_conteudo textarea {
+    width: 454px;
+    height: 90px;
+    font-size: 16px;
+    border: none;
+    resize: none;
+}
 /* end grid_conteudo 1 e 2 */
 
 /* start grid_conteudo_3 */
@@ -230,36 +242,37 @@
     width: 28px;
     height: 28px;
 }
+
+.conteudo_3_quadrado {
+    display: grid;
+    width: 215px;
+    height: 215px;
+    border: 1px black dashed;
+    background-color: #DCE5EB;
+    margin: 0%;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo_3_quadrado img {
+    display: flex;
+    width: 172px;
+    height: 187px;
+}
 /* end grid_conteudo_3 */
 
 /* start grid_conteudo_4 */
 .grid_conteudo_4 {
-   grid-area: 2 / 1 / 2 / 3 ; 
-}
-
-textarea {
-    width: 655px;
-    height: 132px;
-    border: 0px black solid;
-    background-color: #FFF;
-    resize: none;
-    font-size: 16px;
-}
-/* end grid_conteudo_4 */
-
-/* start grid_conteudo_5 */
-.grid_conteudo_5 {
+    grid-area: 2 / 3 / 2 / 3;
     display: grid;
-    justify-content: end;
-    align-items: end;
+    justify-content: center;
+    align-items: center;
 }
 
 .botoes {
     display: grid;
     grid-template-columns: max-content max-content;
     align-items: center;
-    justify-content: center;
-    justify-self: end;
     column-gap: 10%;
 }
 
@@ -279,10 +292,10 @@ textarea {
     background-color: transparent;
 }
 
-.adicionar h1 {
+.salvar h1 {
     display: grid;
     height: 50px;
-    width: auto;
+    width: 150px;
     color: #FFF;
     font-size: 24px;
     text-align: center;
@@ -295,7 +308,11 @@ textarea {
     background-color: #2075C2;
     cursor: pointer;
 }
-/* end grid_conteudo_5 */
+/* end grid_conteudo_4 */
 /* end grid_conteudo */
 /* end grid_bg */
 
+/*  */
+.footer_carrinho {
+    bottom: -2%;
+}
