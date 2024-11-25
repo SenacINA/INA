@@ -31,14 +31,38 @@
   .quadrado {
       display: grid;
       grid-template-columns: 35% 20% 20% 25%;
-      grid-template-rows: 10% 1%; 
+      grid-template-rows: 99% 1%; 
       align-items: center;
       justify-content: center;
-      border-radius: 5px;
+      border-start-start-radius: 5px;
       width: 90%;
-      height: 1000px;
+      height: 100px;
       background-color: #FFFFFF;
       margin-left: 2.5%;
+    }
+  .quadrado_serv1 {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%; 
+    align-items: center;
+    justify-content: center;
+    border-end-end-radius: 5px;
+    width: 60%;
+    height: 400px;
+    background-color: #FFFFFF;
+    margin-left: 2.5%;
+    }
+  .quadrado_serv2 {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%; 
+    align-items: center;
+    justify-content: center;
+    border-end-end-radius: 5px;
+    width: 60%;
+    height: 400px;
+    background-color: #FFFFFF;
+    margin-left: 2.5%;
     }
   }
 
@@ -97,6 +121,28 @@
     font-style: normal;
     font-weight: 600;
     line-height: 130%; /* 31.2px */
+  }
+
+  #text-3 {
+
+    color: #D9D9D9;
+    grid-row: 1;
+    grid-column: 1;
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Jost;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 52px */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: auto;
+    text-transform: uppercase;
+    
   }
   
   .footer_carrinho {
