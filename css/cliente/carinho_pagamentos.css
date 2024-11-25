@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Jost';
+}
+
+.fundo {
+  height: 100%;
+  width: 100%;
+  background-color: #DCE5EB;
+}
+
+.carrinho_pagamentos {
+  justify-items: center;
+}
+
+.carrinho_top {
+  position: relative;
+  margin-top: 98px;
+  margin-bottom: 61px;
+  grid-row: 1;
+}
+
+.navbar {
+  width: 100%;
+  height: 67px;
+  background-color: beige;
+}
+
+.main_pagamentos {
+  grid-row: 2;
+  width: 1600px;
+  height: 678px;
+  background-color: #fff;
+}
+
+.main_container_carrinho_pagamentos {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.separador_carrinho {
+  width: 1545px;
+  height: 3px;
+  background: rgba(0, 100, 148, 0.33);
+  border: 0;
+}
+
+.container_whats {
+  position: relative;
+  top: 50px;
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 5%;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal
+}
+
+.conversar_vendedor {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.botao_whats{
+  width: 200px;
+  height: 46px;
+  border-radius: 30px;
+  background: #128C7F;
+  border: none;
+  color: #FFF;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.nao_tem {
+  color: rgba(0, 0, 0, 0.70);
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.baixar_whats {
+  color: #4CAAD6;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.separador_whats {
+  width: 510px;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.main_text_carrinho_pagamentos   {
+  color: #247BA0;
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1%;
+}
+
+.footer_carrinho {
+  position: relative;
+  margin-top: 164px;
+}
