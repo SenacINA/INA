@@ -155,12 +155,11 @@ body {
     text-align: start;
     height: fit-content;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto 1fr;
 }
 
 .desc .font_titulo {
     font-weight: 500;
-    margin: 0 135px;
     margin-top: 42px;
 }
 
@@ -227,6 +226,25 @@ body {
 }
 
 #prodDesc {
-    width: 655px;
-    height: 132px;
+    max-width: 655px;
+    min-width: 655px;
+    max-height: 132px;
+    min-height: 132px;
+}
+
+.grid_desc {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    margin-left: 135px;
+}
+
+.grid_but {
+    display: grid;
+    grid-template-columns: auto auto;
+    bottom: 0%;
+    align-items: end;
+    justify-content: end;
+    gap: 60px;
+    margin-right: 50px;
 }
