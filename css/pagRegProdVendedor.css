@@ -154,6 +154,8 @@ body {
 .desc {
     text-align: start;
     height: fit-content;
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
 .desc .font_titulo {
@@ -176,11 +178,6 @@ body {
     position: relative;
 }
 
-.desc > label {
-    height: fit-content;
-    width: fit-content;
-}
-
 .coluna2 > div {
     position: relative;
 }
@@ -195,6 +192,7 @@ body {
 }
 
 .but_cancel {
+    columns: 1;
     border-radius: 10px;
     border: 2px solid #F00;
     color: #F00;
@@ -203,9 +201,12 @@ body {
     transition: background-color 0.3s ease; 
     right: 0%;
     height: 50px;
+    width: fit-content;
 }
 
 .but_submit {
+    columns: 2;
+    width: fit-content;
     background-color: #2075C2;
     border-radius: 10px;
     color: white;
@@ -223,4 +224,9 @@ body {
 .but_submit:hover {
     border-radius: 10px;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #2075C2;    cursor: pointer;
+}
+
+#prodDesc {
+    width: 655px;
+    height: 132px;
 }
