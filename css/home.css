@@ -1,0 +1,225 @@
+/* Ana :D */
+
+/* Padronização */
+*{
+    margin: 0%;
+    padding: 0%;
+    border: 0%;
+    font-family: Jost;
+    background-color: #E8F1F2;
+}
+
+/* Base do Header */
+.header{
+    height: 65px;
+    width: 100%;
+    background-color: #337792;
+
+    text-align: center;
+}
+
+/* Parte 1 - Carrossel */
+.home_container_grid_carrossel{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    .home_item_grid_carrossel{
+        position: relative;
+        justify-self: center;
+
+        grid-area: 1 / 1;
+        background-color: #9ab3b3;
+        width: 1440px;
+        height: 450px;
+    }
+}
+
+/*1.1- Scroll Carrossel */
+
+.home_container_grid_scrool_carrossel{
+    display: grid;
+    grid-template-columns: 20% 15% 15% 15% 15% 20%;
+    grid-template-rows: 100%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+    align-items: center;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    .home_item_grid_scroll_carrossel1{
+        grid-area: 1 / 2;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: #6c8585;
+        width: 180px;
+        height: 15px;
+    }
+
+    .home_item_grid_scroll_carrossel2{
+        grid-area: 1 / 3;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: #6c8585;
+        width: 180px;
+        height: 15px;
+    }
+
+    .home_item_grid_scroll_carrossel3{
+        grid-area: 1 / 4;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: #6c8585;
+        width: 180px;
+        height: 15px;
+    }
+
+    .home_item_grid_scroll_carrossel4{
+        grid-area: 1 / 5;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: #6c8585;
+        width: 180px;
+        height: 15px;
+    }
+}
+
+/* Parte 2 - Categorias */
+
+.home_container_grid_categorias{
+    display: grid;
+    grid-template-columns: 15% 14% 14% 14% 14% 14% 15%;
+    grid-template-rows: 100%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    .home_item_grid_categorias_hardware{
+        grid-area: 1 / 2;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: #97b3b3;
+        width: 175px;
+        height: 200px;
+
+    }
+
+    .home_item_grid_categorias_perifericos{
+        grid-area: 1 / 3;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: #97b3b3;
+        width: 175px;
+        height: 200px;
+
+    }
+
+    .home_item_grid_categorias_escritorio{
+        grid-area: 1 / 4;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: #97b3b3;
+        width: 175px;
+        height: 200px;
+
+    }
+
+    .home_item_grid_categorias_celulares{
+        grid-area: 1 / 5;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: #97b3b3;
+        width: 175px;
+        height: 200px;
+
+    }
+
+    .home_item_grid_categorias_eletrodomesticos{
+        grid-area: 1 / 6;
+        position: relative;
+        justify-self: center;
+        border-radius: 20px;
+
+        background-color: #97b3b3;
+        width: 175px;
+        height: 200px;
+
+    }
+}
+
+.home_container_grid_principal{
+    display: grid;
+    grid-template-columns: 15% 14% 14% 14% 14% 14% 15%;
+    grid-template-rows: 100%;
+
+    box-sizing: content-box;
+    background-color:#E8F1F2;
+    height: auto;
+    width: 86%;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+
+}
+
