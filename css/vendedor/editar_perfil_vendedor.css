@@ -74,7 +74,7 @@
   top: calc(15%);
   left: calc(4%);
   display: grid;
-  grid-template-columns: auto 176px auto;
+  grid-template-columns: auto 190px auto;
   grid-template-rows: auto auto auto;
   align-items: center;
   justify-content: center;
@@ -284,11 +284,21 @@
   text-underline-position: from-font;
 }
 
+.forms {
+  display: grid;
+  justify-content: center;
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  top: 10%;
+}
+
 .forms_container{
   display: grid;
-  grid-template-rows: repeat(8, auto);
+  grid-template-rows: repeat(4, min-content);
   justify-content: center;
   align-items: center;
+  row-gap: 52px;
 }
 
 .forms_container label {
@@ -309,4 +319,23 @@
 .forms_container textarea {
   border: none;
   resize: none;
+}
+
+.nome_vendedor {
+  grid-column: 1;
+  grid-row: 2;
+  text-indent: 10px;
+}
+
+.forms_inner_container {
+  display: grid;
+}
+
+.inner {
+  grid-row: 1;
+}
+
+.botoes_redefinir {
+  grid-column: 1;
+  grid-row: 2;
 }

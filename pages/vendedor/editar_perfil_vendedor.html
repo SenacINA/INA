@@ -63,23 +63,27 @@
     </div>
     <div class="forms">
       <form action="" class="forms_container">
-        <div>
-          <label for="nomeVendedor">Nome:</label>
-          <input type="text" name="nomeVendedor" id="nomeVendedor">
+        <div class="forms_inner_container">
+          <label for="nomeVendedor" class="inner">Nome:</label>
+          <input type="text" name="nomeVendedor" id="nomeVendedor" class="nome_vendedor" placeholder="THUNDER GAMES">
         </div>
-        <div>
+        <div class="forms_inner_container">
           <label for="descricao">Descrição:</label>
           <textarea name="descricao" id="descricao" cols="90" rows="10"></textarea>
         </div>
-        <div>
+        <div class="forms_inner_container">
           <label for="localizacaoVendedor">Localização:</label>
           <input type="text" name="localizacaoVendedor" id="localizacaoVendedor">
         </div>
-        <div>
+        <div class="forms_inner_container">
           <label for="email_vendedor">Email:</label>
           <input type="text" name="email_vendedor" id="email_vendedor">
         </div>
       </form>
+      <div class="botoes_redefinir">
+        <button type="button">Redefinir senha</button>
+        <button type="button">Redefinir email</button>
+      </div>
     </div>
   </main>
   <footer>
