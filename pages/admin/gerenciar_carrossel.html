@@ -14,7 +14,7 @@
 <body>
   <nav class="navbar"></nav>
   <header>
-    <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header">
+    <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header" width="100%">
   </header>
   <main class="main_container">
     <div class="main_content">
@@ -24,7 +24,7 @@
             <p class="main_text_pesquisa">Pesquisar Clientes</p>
             <hr class="linha">
           </div>
-          <div class="forms_pesquisa">
+          <form class="forms_pesquisa">
             <label for="ip_email">IP / E-Mail</label>
             <input type="text" name="ip_email" id="ip_email">
             <div class="selects">
@@ -71,13 +71,74 @@
               <button type="reset" class="cancelar_submit">Cancelar</button>
               <button type="submit" class="confirmar_submit">Confirmar</button>
             </div>
+          </form>
+        </div>
+        <div class="informacoes_cliente">
+          <div class="main_text_info_container">
+            <p class="main_text_info">Informações do Usuário</p>
+            <hr class="linha">
+          </div>
+          <div class="usuario_info">
+            <img src="../../image/cliente/editar_perfil/perfil_usuario.svg" alt="pfp" class="pfp_info">
+            <p class="nome_info">info@nvidia.com</p>
+          </div>
+          <div class="data_inicio">
+            <p class="data_inicio_text">Data De Início</p>
+            <p class="data_inicio_date">25/07/2024</p>
+          </div>
+          <div class="data_expiracao">
+            <p class="data_expiracao_text">Data De Expiração</p>
+            <p class="data_expiracao_date">25/08/2024</p>
+          </div>
+          <div class="cargo">
+            <p class="cargo_text">Cargo</p>
+            <p class="cargo_info">Vendedor</p>
           </div>
         </div>
-        <div class="informacoes_cliente"></div>
       </div>
     </div>
-    <div class="botoes"></div>
-    <div class="table"></div>
+    <div class="botoes">
+      <select name="filtro" id="filtro" class="filtro">
+        <option value="">Organizar por:</option>
+        <option value="nome">Nome</option>
+        <option value="categoria">Categoria</option>
+        <option value="cargo">Cargo</option>
+        <option value="plano">Plano</option>
+        <option value="data_inicio">Data de início</option>
+        <option value="data_expiracao">Data de expiração</option>
+      </select>
+      <button class="add_anuncio">Adicionar anúncio</button>
+    </div>
+    <div class="table">
+      <p>IP</p>
+      <p>Nome</p>
+      <p>Categoria</p>
+      <p>Cargo</p>
+      <p>Plano</p>
+      <p>Data de inicio</p>
+      <p>Data de expiração</p>
+      <span>192.168.0.1</span>
+      <span>info@nvidia.com</span>
+      <span>Hardware</span>
+      <span>Vendedor</span>
+      <span>Mensal</span>
+      <span>25/07/2024</span>
+      <span>25/08/2024</span>
+      <span>192.138.0.2</span>
+      <span>suporte@periféricos.com</span>
+      <span>Periféricos</span>
+      <span>Vendedor</span>
+      <span>Semestral</span>
+      <span>25/01/2024</span>
+      <span>25/07/2024</span>
+      <span>192.231.0.3</span>
+      <span>admin@admin.com</span>
+      <span>Celulares</span>
+      <span>Admin</span>
+      <span>Anual</span>
+      <span>25/07/2024</span>
+      <span>25/07/2025</span>
+    </div>
   </main>
 </body>
 </html>
