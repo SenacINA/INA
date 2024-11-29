@@ -180,6 +180,7 @@
 .estrela_50{
     background: linear-gradient(90deg, #FFD600 100%, #989898 0%);
 }
+
 .card_estrela_texto{
     background-clip: text;
     -webkit-background-clip: text;
