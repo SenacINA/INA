@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E ao Quadrado</title>
+    <link rel="stylesheet" href="../../css/admin/admin_carrosel.css">
+    <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar"></nav>
+  <header>
+    <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header">
+  </header>
+  <main class="main_container">
+    <div class="main_content">
+      <div class="pesquisa">
+        <div class="pesquisa_cliente">
+          <div class="main_text_pesquisa_container">
+            <p class="main_text_pesquisa">Pesquisar Clientes</p>
+            <hr class="linha">
+          </div>
+          <div class="forms_pesquisa">
+            <label for="ip_email">IP / E-Mail</label>
+            <input type="text" name="ip_email" id="ip_email">
+            <div class="selects">
+              <label for="plano" class="plano">Plano</label>
+              <select name="plano" id="plano" class="plano_select">
+                <option value="">Selecione um plano</option>
+                <option value="mensal">Mensal</option>
+                <option value="semestral">Semestral</option>
+                <option value="anual">Anual</option>
+              </select>
+              <label for="mes" class="mes">Mês</label>
+              <select name="mes" id="mes" class="mes_select">
+                <option value="">Selecione um mês</option>
+                <option value="janeiro">Janeiro</option>
+                <option value="fevereiro">Fevereiro</option>
+                <option value="marco">Março</option>
+                <option value="abril">Abril</option>
+                <option value="maio">Maio</option>
+                <option value="junho">Junho</option>
+                <option value="julho">Julho</option>
+                <option value="agosto">Agosto</option>
+                <option value="setembro">Setembro</option>
+                <option value="outubro">Outubro</option>
+                <option value="novembro">Novembro</option>
+                <option value="dezembro">Dezembro</option>
+              </select>
+              <label for="ano" class="ano">Ano</label>
+              <select name="ano" id="ano" class="ano_select">
+                <option value="">Selecione um ano</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+              </select>                 
+            </div>
+            <div class="botoes_submit">
+              <button type="reset" class="cancelar_submit">Cancelar</button>
+              <button type="submit" class="confirmar_submit">Confirmar</button>
+            </div>
+          </div>
+        </div>
+        <div class="informacoes_cliente"></div>
+      </div>
+    </div>
+    <div class="botoes"></div>
+    <div class="table"></div>
+  </main>
+</body>
+</html>
