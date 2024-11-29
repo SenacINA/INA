@@ -1,0 +1,55 @@
+html,body{
+    display: grid;
+    color: white;
+    overflow: hidden;
+    background-image: url("../../image/index/cadastro_fundo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    height: 100%;
+}
+
+
+.container-login{
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-content: start;
+    color: black;
+    text-align: center;
+    background-color: #DCE5EB;
+    padding: 40px 0px 0px 0px;;
+    height: 640px;
+    width: 715px;
+    border-radius: 10px;
+}
+
+input{
+    width: 590px;
+    height: 30px;
+    padding: 10px;
+    border: none;
+}
+
+.checkbox-container{
+    display: grid;
+    grid-template-columns: repeat(2,auto);    
+    width: fit-content;
+}
+
+.input-checkbox{
+    width: 23.97px;
+    height: 24px;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+p{margin: 0;}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
