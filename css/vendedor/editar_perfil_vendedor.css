@@ -291,6 +291,7 @@
   grid-row: 1;
   position: relative;
   top: 10%;
+  height: 900px;
 }
 
 .forms_container{
@@ -311,20 +312,21 @@
 }
 
 .forms_container input{
+  text-indent: 14px;
   border: none;
   width: 747px;
   height: 39px;
 }
 
-.forms_container textarea {
+.forms_container textarea { 
   border: none;
   resize: none;
 }
 
-.nome_vendedor {
+.nome_vendedor_forms {
+  text-indent: 14px;
   grid-column: 1;
   grid-row: 2;
-  text-indent: 10px;
 }
 
 .forms_inner_container {
@@ -336,6 +338,192 @@
 }
 
 .botoes_redefinir {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  column-gap: 25px;
+  width: 411px;
+  height: 64px;
   grid-column: 1;
   grid-row: 2;
+}
+
+.redefinir_senha_vendedor {
+  width: 191px;
+  height: 64px;
+  padding: 10px;
+  color: #006494;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%; /* 18px */
+  border-radius: 10px;
+  border: 3px solid #006494;
+  background-color: transparent;
+}
+
+.redefinir_email_vendedor {
+  width: 191px;
+  height: 64px;
+  padding: 10px;
+  color: #006494;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%; /* 18px */
+  border-radius: 10px;
+  border: 3px solid #006494;
+  background-color: transparent;
+}
+
+.main_text_redes {
+  color: #000;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.redes_edit {
+  position: relative;
+  top: 15%;
+  left: 5%;
+  display: grid;
+  column-gap: 4px;
+  row-gap: 18px;
+  grid-template-columns: min-content min-content;
+  grid-template-rows: min-content min-content;
+  align-items: center;
+}
+
+.link_instagram {
+  color: #000;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.link_facebook {
+  color: #000;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.botao_edit {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  column-gap: 5px;
+  align-items: center;
+  position: relative;
+  top: 30%;
+  cursor: pointer;
+  width: 50px;
+}
+
+.text_editar {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.edit_foto {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-template-rows: min-content;
+  align-items: center;
+  justify-content: center;
+  column-gap: 100px;
+}
+
+.text_pfp {
+  grid-column: 1;
+  grid-row: 1;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.btn_foto{
+  grid-column: 1;
+  grid-row: 2 ;
+}
+
+.btn_foto::file-selector-button, .btn_banner::file-selector-button {
+  width: 200px;
+  height: 43px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #13293D;
+  cursor: pointer;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text_banner {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.warn {
+  color: rgba(0, 0, 0, 0.40);
+  text-align: center;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.foto_container, .banner_container {
+  row-gap: 25px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.banner_vendedor_forms {
+  width: 350px;
+  height: 150px;
 }
