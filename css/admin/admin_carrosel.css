@@ -90,6 +90,7 @@ body, html{
 
 #ip_email {
   grid-column: 1;
+  text-indent: 5px;
 }
 
 .forms_pesquisa label {
