@@ -45,6 +45,8 @@ body, html{
   display: grid;
   grid-template-columns: repeat(2, min-content);
   grid-template-rows: repeat(3, min-content );
+  align-items: center;
+  justify-items: center;
 }
 
 .main_content {
@@ -135,7 +137,7 @@ body, html{
   cursor: pointer;
   position: relative;
   top: 50%;
-  left: 230%;
+  left: 190%;
   padding-left: 10px;
   padding-right: 10px;
   display: grid;
@@ -158,7 +160,7 @@ body, html{
   cursor: pointer;
   position: relative;
   top: 50%;
-  left: 220%;
+  left: 200%;
   display: grid;
   padding-left: 10px;
   padding-right: 10px;
@@ -240,7 +242,7 @@ body, html{
 
 .botoes {
   position: relative;
-  top: 40%;
+  top: 35%;
   height: 40px;
 }
 
