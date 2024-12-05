@@ -1,0 +1,25 @@
+.display_grid{
+    display: grid;
+}
+
+.vendedor_selecionar_destaque_conteudo{
+    grid-template-rows: repeat(auto);
+    margin: 50px;
+}
+/* .vendedor_selecionar_destaque_opcoes{
+    padding: 0 50px;
+} */
+
+.prod{
+    width: 210px;
+    height: 317px;
+    background-color: chocolate;
+    justify-self: center;
+}
+
+.vendedor_selecionar_destaque_grid_produtos{
+    width: fit-content;
+    grid-template-columns: repeat(3, auto);
+    gap: 5%;
+    margin: 100px;
+}
