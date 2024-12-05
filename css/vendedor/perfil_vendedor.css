@@ -36,6 +36,27 @@ hr {
   width: 100%;
   object-fit: cover;
 }
+/* start botao_menu */
+.botao_menu {
+  display: flex;             
+  justify-content: center;    
+  align-items: center;       
+  background-color: #6F6F6F; 
+  color: white;              
+  border: none;              
+  border-radius: 5px;       
+  padding: 10px 20px;        
+  font-size: 16px;          
+  cursor: pointer;         
+  width: 300px;
+  height: 46px;
+  position: absolute;
+  top: 520px;
+  right: 60px;
+}
+
+/* end botao_menu */
+
 
 
 /* start grid_principal */
@@ -146,12 +167,12 @@ hr {
   height: 205px;
 }
 
-.about_container img {
+.about_container img, .about_container_2 img {
   width: 34px;
-  height: 43px;
+  height: auto;
 }
 
-.about_container h1 {
+.about_container h1, .about_container_2 h1  {
   color: #000;
   font-family: Jost;
   font-size: 32px;
@@ -159,7 +180,7 @@ hr {
   font-weight: 500;
 }
 
-.about_container p {
+.about_container p, .about_container_2 p {
   grid-area: 2 / 2 / 3 / 2;
   color: #000;
   font-family: Jost;
@@ -168,6 +189,19 @@ hr {
   font-weight: 600;
   line-height: 90%;
 }
+
+.about_container_2 {
+  display: grid;
+  grid-template-columns: min-content auto;
+  position: relative;
+  column-gap: 1%;
+  row-gap: 10%;
+  justify-content: start;
+  align-items: center;
+  width: 1512px;
+  height: 105px;
+}
+
 /* end about_container */
 
 /* start contatos_vendedor */
@@ -196,7 +230,9 @@ hr {
 }
 /* end contatos_vendedor */
 
-/* start grid_carrossel_1  */
+/* start grid_carrossel  */
+
+/* start cards */
 .produto_card{
   width: 210px;
   height: 352px;
@@ -342,12 +378,12 @@ hr {
 }
 
 .css_checkbox::before{
-      content: "";
-      width: 14px;
-      height: 14px;
-      clip-path: polygon(18% 18%, 82% 18%, 82% 82%, 18% 82%);
-      transform: scale(0);
-      background-color: #1B98E0;
+  content: "";
+  width: 14px;
+  height: 14px;
+  clip-path: polygon(18% 18%, 82% 18%, 82% 82%, 18% 82%);
+  transform: scale(0);
+  background-color: #1B98E0;
 }
 
 .css_checkbox:checked::before {
@@ -363,7 +399,7 @@ hr {
   justify-content: space-between;
 }
 
-.titulo_filtro img{
+.titulo_filtro img {
   width: 25px;
   height: 25px;
   padding: 6.5px 5.5px 6.5px 5.5px;
@@ -397,13 +433,87 @@ hr {
 .font_10px{
   font-size: 0.625rem;
 }
+.estrela_0{
+  background: linear-gradient(90deg, #FFD600 0%, #989898 100%);
+}
+.estrela_5{
+  background: linear-gradient(90deg, #FFD600 10%, #989898 90%);
+}
+.estrela_10{
+  background: linear-gradient(90deg, #FFD600 20%, #989898 80%);
+}
+.estrela_15{
+  background: linear-gradient(90deg, #FFD600 30%, #989898 70%);
+}
+.estrela_20{
+  background: linear-gradient(90deg, #FFD600 40%, #989898 60%);
+}
+.estrela_25{
+  background: linear-gradient(90deg, #FFD600 50%, #989898 50%);
+}
+.estrela_30{
+  background: linear-gradient(90deg, #FFD600 60%, #989898 40%);
+}
+.estrela_35{
+  background: linear-gradient(90deg, #FFD600 70%, #989898 30%);
+}
+.estrela_40{
+  background: linear-gradient(90deg, #FFD600 80%, #989898 20%);
+}
+.estrela_45{
+  background: linear-gradient(90deg, #FFD600 90%, #989898 10%);
+}
+.estrela_50{
+  background: linear-gradient(90deg, #FFD600 100%, #989898 0%);
+}
 
-/* end grid_carrossel_1  */
+.card_estrela_texto{
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-/* start grid_carrossel_2 */
+.card_estrela_texto, .card_estrela_quantidade{
+    width: fit-content;
+}
+
+.produtos_container{
+  height: min-content;
+  justify-self: stretch;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.produtos_categoria{
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  gap: 30px;
+}
 
 
+.grid_produtos {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  justify-content: center;
+  column-gap: 3%;
+}
 
+.produto_card a {
+  display: flex;                   
+  justify-content: center;          
+  align-items: center;              
+  text-decoration: none;                       
+}
 
-/* start grid_carrossel_2  */
+.produto_card img {
+  max-width: 100%;                 
+  height: auto;                           
+}
+/* end cards */
+
+/* end grid_carrossel  */
+
 /* end grid_principal */
+
