@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../../css/admin/cadastro_usuario.css">
 </head>
 <body>
-  <nav class="navbar"></nav>
-  <main class="container">
+  <nav class="navbar_principal"></nav>
+  <main class="container_main">
     <div class="main_quadrado">
       <div class="head">
         <h1 class="main_txt_cadastro">Cadastro</h1>
@@ -29,19 +29,19 @@
       <div class="cadastrocliente">
         <form action="" method="post" class="forms_cadastro_cliente">
           <label for="nome">Nome</label>
-          <input type="text" required class="inputs">
+          <input type="text" required class="inputs_geral">
           <label for="sobrenome">Sobrenome</label>
-          <input type="text" required class="inputs">
+          <input type="text" required class="inputs_geral">
           <label for="genero">Gênero</label>
-          <select name="genero" id="genero" required class="genero">
+          <select name="genero" id="genero" required class="genero_input">
             <option value="Masculino">Masculino</option>
             <option value="Feminino">Feminino</option>
             <option value="Outro">Outro</option>
           </select>
-          <label for="cpf" class="cpf">CPF</label>
+          <label for="cpf" class="cpf_label">CPF</label>
           <input type="text" name="cpf" id="cpf" required class="cpf_input">
           <label for="email">E-mail</label>
-          <input type="text" name="email" required class="inputs">
+          <input type="text" name="email" required class="inputs_geral">
         </form>
       </div>
       <div class="permissoes">

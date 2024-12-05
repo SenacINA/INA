@@ -9,13 +9,13 @@ html, body {
   height: 100%;
 }
 
-.navbar {
+.navbar_principal {
   width: 100%;
   height: 67px;
   background-color: turquoise;
 }
 
-.container {
+.container_main {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -124,7 +124,7 @@ html, body {
 }
 
 
-.forms_cadastro_cliente .inputs, select{
+.forms_cadastro_cliente .inputs_geral, select{
   grid-column: 1/3;
   border: 0;
   height: 38px;
@@ -141,19 +141,19 @@ html, body {
   line-height: normal;
 }
 
-.genero {
+.genero_input {
   width: 280px;
   grid-column: 1;
 }
 
-.cpf, .cpf_input {
+.cpf_label, .cpf_input {
   text-indent: 2%;
   font-size: 15px;
   border: 0;
   grid-column: 2;
 }
 
-.cpf {
+.cpf_label {
   text-indent: 0;
   grid-row: 5;
 }
