@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Jost';
+  }
+  
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: #F9F9FC;
+  }
+
+  @media(min-width: 768px) {
+    
+    .main{
+        display: grid;
+        grid-template-columns: ;
+        width: 1821px;
+        height: 1410px;
+        margin-top: 3%;
+        margin-left: 2%;
+        background-color: #DCE5EB;
+        border-radius: 10px;
+
+        }
+    }
