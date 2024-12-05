@@ -18,6 +18,49 @@
         <h1 class="main_txt_cadastro">Cadastro</h1>
         <hr class="separador_cadastro">
       </div>
+      <div class="cadastrocliente_container">
+        <div class="linha_vertical"></div>
+        <h1 class="cadastrocliente_main_txt">Cadastro Cliente</h1>
+      </div>
+      <div class="permissoes_container">
+        <div class="linha_vertical"></div>
+        <h1 class="cadastrocliente_main_txt">Permissões</h1>
+      </div>
+      <div class="cadastrocliente">
+        <form action="" method="post" class="forms_cadastro_cliente">
+          <label for="nome">Nome</label>
+          <input type="text" required class="inputs">
+          <label for="sobrenome">Sobrenome</label>
+          <input type="text" required class="inputs">
+          <label for="genero">Gênero</label>
+          <select name="genero" id="genero" required class="genero">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+          </select>
+          <label for="cpf" class="cpf">CPF</label>
+          <input type="text" name="cpf" id="cpf" required class="cpf_input">
+          <label for="email">E-mail</label>
+          <input type="text" name="email" required class="inputs">
+        </form>
+      </div>
+      <div class="permissoes">
+        <form action="" method="post" class="forms_permissoes">
+          <label>
+            <input type="radio" name="permissoes" id="" value="Gerenciar Carrossel">Gerenciar Carrossel
+          </label>
+          <label>
+            <input type="radio" name="permissoes" id="" value="Gerenciar Usuários">Gerenciar Usuários
+          </label>
+          <label>
+            <input type="radio" name="permissoes" id="" value="Gerenciar Produtos">Gerenciar Produtos
+          </label>
+        </form>
+      </div>
+      <div class="botoes">
+        <button type="reset">Cancelar</button>
+        <button type="submit">Salvar</button>
+      </div>
     </div>
   </main>
 </body>
