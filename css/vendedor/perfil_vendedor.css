@@ -37,15 +37,11 @@ hr {
   object-fit: cover;
 }
 /* start botao_menu */
-.botao_menu {
-  display: flex;             
-  justify-content: center;    
-  align-items: center;       
+.botao_menu select {
   background-color: #6F6F6F; 
   color: white;              
   border: none;              
-  border-radius: 5px;       
-  padding: 10px 20px;        
+  border-radius: 5px;             
   font-size: 16px;          
   cursor: pointer;         
   width: 300px;
@@ -53,6 +49,16 @@ hr {
   position: absolute;
   top: 520px;
   right: 60px;
+  text-align: center;       
+  line-height: 26px;        
+}
+
+.botao_menu select option[value="sair"] {
+  color: red;
+}
+
+.botao_menu select option {
+  background-color: #1B98E0;
 }
 
 /* end botao_menu */
