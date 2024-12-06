@@ -6,8 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/pagRegProdVendedor.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/vendedor/registrar_produto_vendedor.css">
     <title>Vendedor - Registrar novo produto</title>
 </head>
 <body>
@@ -128,10 +128,19 @@
                     <textarea class="input_prod" id="prodDesc" name="prodDesc" required></textarea>
                 </div>
                 <div class="grid_but">
-                    <button class="font_botoes but_cancel" type="reset">Cancelar</button>
-                    <button class="font_botoes but_submit" type="submit">Adicionar Produto</button>
+                    <button class="font_botoes but_cancel" type="reset">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48"><defs><mask id="ipSCloseOne0"><g fill="none" stroke-linejoin="round" stroke-width="4"><path fill="#fff" stroke="#fff" d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4S4 12.954 4 24s8.954 20 20 20Z"/><path stroke="#000" stroke-linecap="round" d="M29.657 18.343L18.343 29.657m0-11.314l11.314 11.314"/></g></mask></defs><path fill="#fff" d="M0 0h48v48H0z" mask="url(#ipSCloseOne0)"/></svg>
+                        </div>CANCELAR
+                    </button>
+                    <button class="font_botoes but_submit" type="submit">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1024 1024">
+                                <path fill="#fff" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896m-38.4 409.6H326.4a38.4 38.4 0 1 0 0 76.8h147.2v147.2a38.4 38.4 0 0 0 76.8 0V550.4h147.2a38.4 38.4 0 0 0 0-76.8H550.4V326.4a38.4 38.4 0 1 0-76.8 0z" />
+                            </svg>
+                        </div>ADICIONAR
+                    </button>
                 </div>
-                
             </div>
         </form>
     </div>
