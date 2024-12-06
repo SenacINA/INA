@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Jost';
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar_principal {
+  width: 100%;
+  height: 67px;
+  background-color: turquoise;
+}
+
+.container_main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+}
+
+.main_quadrado {
+  position: relative;
+  top: 10%;
+  grid-column: 2;
+  width: 100%;
+  height: 80%;
+  background-color: #DCE5EB;
+  border-radius: 10px;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 15% 15% 55%;
+}
+
+.head {
+  width: 100%;
+  grid-column: 1/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main_txt_cadastro {
+  text-align: center;
+  color: #000;
+  font-family: Jost;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.separador_cadastro {
+  width: 95%;
+  height: 5px;
+  border-radius: 20px;
+  background: #2888B1;
+  border: none;
+}
+
+.cadastrocliente_container {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 3% 95%;
+  align-items: center;
+  justify-content: start;
+}
+
+.permissoes_container {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 3% 95%;
+  align-items: center;
+  justify-content: start;
+}
+
+.linha_vertical {
+  grid-column: 1;
+  grid-row: 1;
+  background: #247BA0;
+  height: 46px;
+  width: 10px;
+  border-radius: 10px;
+}
+
+.cadastrocliente_main_txt {
+  grid-column: 2;
+  grid-row: 1;
+  width: 80%;
+  text-align: left;
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  white-space: nowrap;
+  font-family: Jost;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
+.cadastrocliente {
+  position: relative;
+  left: 5%;
+  grid-column: 1;
+  grid-row: 3;
+  width: 80%;
+  height: 100%;
+}
+
+.forms_cadastro_cliente {
+  display: grid;
+  grid-template-columns: 48% 30%;
+  grid-template-rows: repeat(7, min-content);
+  column-gap: 5%;
+}
+
+
+.forms_cadastro_cliente .inputs_geral, select{
+  grid-column: 1/3;
+  border: 0;
+  height: 38px;
+  text-indent: 2%;
+  font-size: 15px;
+}
+
+.forms_cadastro_cliente label {
+  color: #0F3B62;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.genero_input {
+  width: 280px;
+  grid-column: 1;
+}
+
+.cpf_label, .cpf_input {
+  text-indent: 2%;
+  font-size: 15px;
+  border: 0;
+  grid-column: 2;
+}
+
+.cpf_label {
+  text-indent: 0;
+  grid-row: 5;
+}
+
+.permissoes {
+  width: 70%;
+  height: 87%;
+}
+
+.forms_permissoes {
+  display: grid;
+  grid-template-rows: 50% 50% 50%;
+  row-gap: 50%;
+}
+
+.forms_permissoes label {
+  height: 94%;
+  display: grid;
+  grid-template-columns: 5% 90%;
+  align-items: center;
+  background-color: white;
+  color: #6F6F6F;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.botoes {
+  grid-column: 2;
+}
