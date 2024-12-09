@@ -1,6 +1,19 @@
+.nav_bar{
+    height: 65px;
+    background-color: darkcyan;
+    text-align: center;
+}
+
+/* Barra azul */
+.vendedor_selecionar_destaque_barra_azul{
+    height: 190px;
+    background-color: red;
+}
+
 .display_grid{
     display: grid;
 }
+
 
 .vendedor_selecionar_destaque_conteudo{
     grid-template-rows: repeat(auto);
