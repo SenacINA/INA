@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
     <link rel="stylesheet" href="./css/index.css">
-    <title>Document</title>
+    <title>E ao Quadrado</title>
 </head>
 <body>
 <header class="nav style_nav shadow_nav">
@@ -17,7 +17,7 @@
         <div class="item2">
             <button id="buttonLogo">
                 <a href="#">
-                <img href="#" id="imgLogo" src="./image/index/logo.svg">
+                <img href="#" id="imgLogo" src="./image/index/Logo.svg">
                 </a>
             </button>
         </div>
