@@ -12,11 +12,93 @@
 </head>
 <body>
   <nav></nav>
-  <img src="../../image/vendedor/relatorio_vendas/header.png" alt="">
+  <img src="../../image/vendedor/relatorio_vendas/header.png">
   <main class="main_content">
     <div class="quadrado">
-      <div class="pesquisar_pedidos"></div>
-      <div class="estatisticas"></div>
+      <div class="pesquisar_pedidos">
+        <div class="header_pedidos">
+          <img src="../../image/vendedor/relatorio_vendas/pesquisar_pedidos.png" alt="">
+        </div>
+        <form action="" method="post">
+          <label class='label_cod'>Código Do Produto / Nome Cliente</label>
+          <input type="text" class='input_cod'>
+          <label for="select_cod" class="label_status">Status</label>
+          <select name="select_cod" class="select_status">
+            <option value="Entregue">Entregue</option>
+            <option value="Em transporte">Em transporte</option>
+          </select>
+          <label for="mes" class="mes">Mês</label>
+              <select name="mes" id="mes" class="mes_select">
+                <option value="">Selecione um mês</option>
+                <option value="janeiro">Janeiro</option>
+                <option value="fevereiro">Fevereiro</option>
+                <option value="marco">Março</option>
+                <option value="abril">Abril</option>
+                <option value="maio">Maio</option>
+                <option value="junho">Junho</option>
+                <option value="julho">Julho</option>
+                <option value="agosto">Agosto</option>
+                <option value="setembro">Setembro</option>
+                <option value="outubro">Outubro</option>
+                <option value="novembro">Novembro</option>
+                <option value="dezembro">Dezembro</option>
+              </select>
+              <label for="ano" class="ano">Ano</label>
+              <select name="ano" id="ano" class="ano_select">
+                <option value="">Selecione um ano</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+              </select>
+          <button type="reset" class="cancelar">Cancelar</button>
+          <button type='submit' class="confirmar">Confirmar</button>
+        </form>
+      </div>
+      <div class="estatisticas">
+        <div class="header_estatisticas">
+          <img src="../../image/vendedor/relatorio_vendas/estatisticas.png">
+        </div>
+        <span class='titulo_geral'>geral</span>
+        <div class="valor_total">
+          <span class='titulo'>Valor Total</span>
+          <span class='num'>R$14.145,35</span>
+        </div>
+        <div class="total_vendas">
+          <span class='titulo'>Total De Vendas</span>
+          <span class='num'>14 UNI</span>
+        </div>
+        <div class="pedidos_recebidos">
+          <span class='titulo'>Pedidos Recebidos</span>
+          <span class='num'>4 - 100%</span>
+        </div>
+        <div class="horario_medio">
+          <span class='titulo'>Horário Médio Da Entrega</span>
+          <span class='num'>Manhã</span>
+        </div>
+        <div class="total_pedidos">
+          <span class='titulo'>Total De Pedidos</span>
+          <span class='num'>4</span>
+        </div>
+        <div class="reembolso">
+          <span class='titulo'>Pedidos Reembolsados</span>
+          <span class='num'>0 - 0%</span>
+        </div>
+        <div class="medio_entrega">
+          <span class='titulo'>Tempo Medio De Entrega</span>
+          <span class='num'>9 Dias</span>
+        </div>
+        <div class="placeholder">
+          <span class='titulo'>-</span>
+        </div>
+      </div>
     </div>
     <div class="filtro"></div>
     <div class="table"></div>

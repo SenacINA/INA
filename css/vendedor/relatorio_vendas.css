@@ -37,15 +37,153 @@ nav {
 }
 
 .pesquisar_pedidos {
+  position: relative;
+  top: 10%;
+  left: 10%;
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: min-content auto auto auto;
+  grid-template-columns: min-content min-content min-content;
+  grid-template-rows: min-content min-content;
+  justify-items: center;
+}
+
+.header_pedidos {
+  grid-column: 1/4;
+}
+
+form {
+  position: relative;
+  top: 10%;
+  left: -5%;
+  display: grid;
+  grid-template-columns: 280px min-content min-content;
+  column-gap: 5%;
+  grid-column: 1/4;
+}
+
+.confirmar, .cancelar {
+  position: relative;
+  top: 100%;
+}
+
+.confirmar {
+  grid-column: 3;
+}
+
+.cancelar {
+  grid-column: 2;
+}
+
+form input, select{
+  height: 34px;
+  border: none;
+}
+
+form label {
+  color: #000;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input_cod {
+  grid-column: 1/4;
+}
+
+.label_status {
+  grid-column: 1;
+  grid-row: 3;  
+}
+
+.select_status {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.mes {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.label_cod {
+  grid-column: 1/3;
+}
+
+.mes_select {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.ano_select {
+  grid-column: 3;
+  grid-row: 4;
 }
 
 .estatisticas {
+  position: relative;
+  top: 8.5%;
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: repeat(5, auto);
+  grid-template-columns: 30% 25% 30%;
+  grid-template-rows: repeat(5, min-content);
+}
+
+.header_estatisticas {
+  display: grid;
+  align-items: center;
+  justify-self: center;
+  grid-column: 1/4;
+}
+
+.titulo_geral {
+  grid-column: 2;
+  text-align: center;
+}
+
+.valor_total, .total_vendas, .pedidos_recebidos {
+  grid-row: 3;
+}
+
+.horario_medio, .total_pedidos, .reembolso {
+  grid-row: 4;
+}
+
+.valor_total, .horario_medio, .medio_entrega {
+  grid-column: 1;
+}
+
+.total_vendas, .total_pedidos {
+  grid-column: 2;
+}
+.valor_total, .total_vendas, .pedidos_recebidos, .horario_medio, .total_pedidos, .reembolso, .medio_entrega, .placeholder {
+  background: #DCE5EB;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid rgba(0, 0, 0, 0.30);
+}
+
+.pedidos_recebidos , .reembolso{
+  grid-column: 3;
+  border-right: none;
+}
+
+.titulo {
+  color: #000;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.num {
+  color: #000;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
 }
 
 .table {
