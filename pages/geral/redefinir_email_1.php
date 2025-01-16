@@ -7,7 +7,7 @@
     <title>E ao Quadrado</title>
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/geral/redefinir_email_2.css">
+    <link rel="stylesheet" href="../../css/geral/redefinir_email_1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
@@ -23,7 +23,7 @@
         <div class="item2">
             <button id="buttonLogo">
                 <a href="#">
-                <img href="#" id="imgLogo" src="../../image/index/logo.svg">
+                <img href="#" id="imgLogo" src="../../image/index/Logo.svg">
                 </a>
             </button>
         </div>
@@ -48,14 +48,17 @@
         <img src="../../image/divisoria_geral.png" alt="">
       </div>
      <div class="main_content">
+        <p class="esqueceu">DESEJA ALTERAR SEU E-MAIL?</p>
+        <p class="info">É necessário inserir sua senha para realizar a mudança:</p>
         <form action="">
-            <label for="email">Novo endereço de E-mail:</label><br>
-            <input type="text" id="email"><br>
-          </form>
+          <label for="senha">Senha:</label><br>
+          <input type="text" id="senha"><br>
+          <a class="link">Esqueceu sua senha?</a>
+        </form>
      </div>
      <div class="botoes">
       <button id="botao_voltar" type="button" class="voltar">Voltar</button>
-      <button id="botao_redefinir" type="button" class="redefinir">Redefinir</button>
+      <button id="botao_continuar" type="button" class="continuar">Continuar</button>
      </div>
     </div>
   </main>
