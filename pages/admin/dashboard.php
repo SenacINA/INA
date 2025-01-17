@@ -56,7 +56,7 @@
                       </clipPath>
                     </defs>
                   </svg>Gerenciar Cupons</a>
-            <a href="https://www.w3schools.com" class="layout-botao">
+            <a href="./gerenciar_carrossel.php" class="layout-botao">
                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
                     <path d="M20.0003 6.99967V18.9163H24.3337V6.99967M2.66699 18.9163H7.00033V6.99967H2.66699M8.08366 21.083H18.917V4.83301H8.08366V21.083Z" fill="#0F3B62"/>
                   </svg>Gerenciar Carrossel</a>
