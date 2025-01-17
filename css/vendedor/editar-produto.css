@@ -12,7 +12,7 @@
 
   @media(min-width: 768px) {
     
-    .main{
+    .editar_prod_body_grid_container{
         display: grid;
         grid-template-columns:40% 20% 40%;
         grid-template-rows: 95% 5%;
@@ -25,7 +25,7 @@
         border-top-right-radius: 10px;
         }
 
-    .divisoria{
+    .editar_prod_body_divisoria{
       display: grid;
       grid-row: 2;
       width: 1768px;
@@ -33,7 +33,7 @@
       background-color: #00649454;
       margin-left: 4.4%;
     }
-    .main_2{
+    .editar_prod_grid_container{
       display: grid;
       grid-template-columns:25% 40% 35%;
       /* grid-template-rows: 95% 5%; */
@@ -43,16 +43,16 @@
       background-color: #DCE5EB;
       }  
 
-    .inf_prod{
+    .editar_prod_grid_inputs{
       display: grid;
       grid-column: 1;
-      grid-template-rows:repeat(30,5%);
+      grid-template-rows:repeat(3,5%),(60,2.25%);
       width: 450px;
       height: 1410px;
       background-color: #DCE5EB;
       }
 
-    .desc_prod{
+    .editar_prod_descricao_prod_grid_container{
       display: grid;
       grid-column: 2;
       grid-template-rows:60% 40%;
@@ -60,7 +60,7 @@
       height: 100%;
       background-color: #DCE5EB;
       }
-    .imagens_videos{
+    .editar_prod_imagens_videos_grid_container{
       display: grid;
       grid-column: 3;
       width: 100%;
@@ -70,7 +70,7 @@
 
     }
 
-  #seta_1{
+  #editar-prod-seta{
     
     display: grid;
     margin-left: 5%;
@@ -80,7 +80,7 @@
 
   }
 
-  #editar_prod{
+  #editar-prod-editar-prod-text{
     overflow: hidden;
     color: #000;
     font-feature-settings: 'liga' off, 'clig' off;
@@ -96,8 +96,8 @@
     margin-top: 8%;
   }
 
-  /* #inf_produtos{
-    margin-top: 8%;
+  #editar-prod-inf-do-prod-text{
+    margin-top: 98px;
     margin-left: 8%;
     color: #000;
     font-feature-settings: 'liga' off, 'clig' off;
@@ -105,22 +105,11 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 500;
-    line-height: 130%;}
-  */
-
-  /* #prod_text{
-    color: #000;
-    font-family: Jost;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-left: 8%;
-    margin-top: 7%;
-
+    line-height: 130%; /* 41.6px */
+    grid-row: 1;
   }
-
-  #valor{
+  
+  #editar-prod-nome-do-prod-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -128,11 +117,20 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
+    margin-top: 6%;
+    
+  }
+  
+  .editar_prod_input{
+    width: 415px;
+    height: 33.442px;
     grid-column: 1;
-    padding-top: 13%;
+    background: #FFF;
+    margin-left: 8%;
+  
   }
-
-  #categoria{
+   
+  #editar-prod-valor-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -140,10 +138,13 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
+    margin-top: 4%;
+    grid-column: 1;
+    grid-row: 4;
+
   }
 
-  #marca{
+  #editar-prod-categoria-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -151,11 +152,10 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
-
+    margin-top: 4%;
   }
 
-  #codigo{
+  #editar-prod-marca-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -163,11 +163,23 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
+    margin-top: 4%;
+
+  }
+
+  #editar-prod-codigo-text{
+    color: #000;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 8%;
+    margin-top: 4%;
   
   }
 
-  #origem{
+  #editar-prod-origem-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -175,11 +187,11 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
+    margin-top: 4%;
 
   }
 
-  #unidade{
+  #editar-prod-unidade-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -187,11 +199,11 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
+    margin-top: 4%;
 
   }
 
-  #dp{
+  #editar-prod-dimensao-e-peso-text{
   
     margin-top: 8%;
     margin-left: 8%;
@@ -202,9 +214,9 @@
     font-style: normal;
     font-weight: 500;
     line-height: 130%; /* 41.6px */
-  /* } 
+  } 
 
-  #peso_liquido{
+  #editar-prod-peso-liquido-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -212,11 +224,11 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
+    margin-top: 4%;
     
   }
 
-  #peso_bruto{
+  #editar-prod-peso-bruto-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -224,11 +236,11 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
+    margin-top: 4%;
     
   }
 
-  #tipo_embalagem{
+  #editar-prod-tipo-embalagem-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -236,11 +248,11 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
+    margin-top: 4%;
     
   }
 
-  #largura{
+  #editar-prod-largura-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -248,11 +260,11 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
+    margin-top: 4%;
     
   }
 
-  #altura{
+  #editar-prod-altura-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -260,11 +272,11 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
+    margin-top: 4%;
     
   }
 
-  #comprimento{
+  #editar-prod-comprimento-text{
     color: #000;
     font-family: Jost;
     font-size: 20px;
@@ -272,14 +284,7 @@
     font-weight: 400;
     line-height: normal;
     margin-left: 8%;
-    margin-top: 7%;
+    margin-top: 4%;
     
   }
-
-  .quad{
-    width: 415px;
-    height: 33.442px;
-    grid-column: 1;
-    background: #FFF;
-    margin-left: 8%;
-  } */ 
+  
