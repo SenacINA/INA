@@ -20,7 +20,7 @@ header {
   font-weight: normal;
 }
 
-header .title{
+header .gerenciar_usuario_header_title{
   color: white;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@ header .title{
   top: 75%;
 }
 
-header .linha{
+header .gerenciar_usuario_header_linha{
     display: flex;
     align-items: center;
     justify-content: center;

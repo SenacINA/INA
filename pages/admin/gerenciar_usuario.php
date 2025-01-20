@@ -14,10 +14,10 @@
 <body>
   <nav class="navbar_principal"></nav>
   <header>
-    <div class = "title">
+    <div class = "gerenciar_usuario_header_title">
       <h1>GERENCIAR USUARIO</h1> 
     </div>
-    <div class = "linha"></div>
+    <div class = "gerenciar_usuario_header_linha"></div>
   </header>
   
   <main class="main_container">
