@@ -6,13 +6,15 @@
     <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
     <title>E ao Quadrado</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/admin/dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <h1>Gestão</h1>
+    <header class="nav shadow_nav style_nav">a</header>
+    <h1 class="h1teste">Gestão</h1>
     <div class="divisoria"><img src="../../image/geral/linha-divisoria-azul.png" alt="" width="1518px;" height="5px"></div>
     <div class="grid-menu">
         <div>
