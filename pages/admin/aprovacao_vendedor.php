@@ -14,8 +14,12 @@
 <body>
   <nav class="navbar_principal"></nav>
   <header>
-    <img src="../../image/admin/aprovacao_vendedor/header_aprovacao_vendedor.svg" alt="header" width="100%">
+    <div class = "title">
+      <h1>APROVAÇÃO DO VENDEDOR</h1> 
+    </div>
+    <div class = "linha"></div>
   </header>
+  
   <main class="main_container">
     <div class="botoes">
       <select name="filtro" id="filtro" class="filtro">

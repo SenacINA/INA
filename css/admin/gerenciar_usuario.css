@@ -9,6 +9,37 @@ body, html{
   width: 100%;
 }
 
+header {
+  width: 100%;
+  height: 192px; 
+  background-color: #0F3B62;
+  background-size: cover; 
+  align-items: center;
+  justify-items: center;
+  font-family: 'Jost', sans-serif;
+  font-weight: normal;
+}
+
+header .title{
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 75%;
+}
+
+header .linha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 75%;
+    width: 60%;
+    height: 13px;
+    background-color: #2888B1; 
+    border-radius: 20px;
+}
+
 .navbar_principal {
   width: 100%;
   height: 67px;

@@ -14,8 +14,12 @@
 <body>
   <nav class="navbar_principal"></nav>
   <header>
-    <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header" width="100%">
+    <div class = "title">
+      <h1>GERENCIAR USUARIO</h1> 
+    </div>
+    <div class = "linha"></div>
   </header>
+  
   <main class="main_container">
     <div class="main_content">
       <div class="pesquisa_cliente_container">
