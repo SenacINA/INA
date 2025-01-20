@@ -9,7 +9,7 @@ body, html{
   width: 100%;
 }
 
-header {
+.aprovacao_vendedor_header {
   width: 100%;
   height: 192px; 
   background-color: #0F3B62;
@@ -20,7 +20,7 @@ header {
   font-weight: normal;
 }
 
-header .gerenciar_usuario_header_title{
+.gerenciar_usuario_header_title{
   color: white;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@ header .gerenciar_usuario_header_title{
   top: 75%;
 }
 
-header .gerenciar_usuario_header_linha{
+.gerenciar_usuario_header_linha{
     display: flex;
     align-items: center;
     justify-content: center;

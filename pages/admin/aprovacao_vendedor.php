@@ -13,7 +13,7 @@
 </head>
 <body>
   <nav class="navbar_principal"></nav>
-  <header>
+  <header class = "aprovacao_vendedor_header">
     <div class = "aprovacao_vendedor_header_title">
       <h1>APROVAÇÃO DO VENDEDOR</h1> 
     </div>
