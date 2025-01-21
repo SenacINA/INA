@@ -31,12 +31,15 @@
         <input type="text">
         <label>E-mail</label>
         <input type="text">
+
+        <p class="redefinir_senha_admin">Redefinir senha</p>
       </form>
       <div class="foto">
         <img src="../../image/admin/perfil/perfil_admin.png" alt="" class="pfp">
         <form action="" method="post" class="forms_pfp">
           <input type="file" name="pfp" id="foto_admin">
           <p class="tamanho_arquivo">O tamanho do arquivo não deve ultrapassar 2MB</p>
+          <p class="link">adicionar link url</p>
         </form>
       </div>
     </div>
@@ -45,6 +48,25 @@
         <hr class="vertical">
         <h1 class="perfil_text">PERMISSÕES</h1>
       </div>
+      <form action="" method="post" class="forms_permissoes">
+        <div>
+          <input type="radio" name="gerenciar_carrossel" id="">
+          <label for="gerenciar_carrossel">Gerenciar carrossel</label>
+        </div>
+        <div>
+          <input type="radio" name="gerenciar_carrossel" id="">
+          <label for="gerenciar_usuarios">Gerenciar usuários</label>
+        </div>
+        <div>
+          <input type="radio" name="gerenciar_usuarios" id="">
+          <label for="gerenciar_produtos">Gerenciar produtos</label>
+        </div>
+        <div>
+        <input type="radio" name="historico_acessos" id="">
+        <label for="historico_acessos">Acessar histórico de acessos</label>
+        </div>
+      </form>
+      <button class="sair"></button>
     </div>
   </main>
 </body>

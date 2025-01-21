@@ -48,6 +48,7 @@ body {
 }
 
 .title {
+  font-weight: 500;
   color: #255e7e;
   text-align: center;
 }
@@ -63,6 +64,7 @@ hr {
 .perfil_admin {
   position: relative;
   top: 9%;
+  height: min-content;
   grid-column: 1;
   display: grid;
   grid-template-columns: 40% 40%;
@@ -152,4 +154,48 @@ hr {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.link {
+  text-decoration: underline;
+  color: #2075c2;
+  font-weight: 600;
+}
+
+.redefinir_senha_admin {
+  font-size: 20px;
+  color: #6f6f6f;
+  font-weight: 600;
+}
+
+.forms_permissoes {
+  position: relative;
+  top: 16%;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  font-size: 20px;
+  font-weight: 600;
+  row-gap: 40px;
+}
+
+.forms_permissoes div {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 5%;
+  width: 80%;
+  height: 36px;
+  background-color: white;
+  text-indent: 20px;
+}
+
+.sair {
+  position: relative;
+  top: 30%;
+  left: 50%;
+  border: 0;
+  cursor: pointer;
+  background-image: url(../../image/admin/perfil/Sair.png);
+  width: 190px;
+  height: 45px;
 }
