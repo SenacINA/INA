@@ -16,12 +16,44 @@ nav {
   height: 67px;
 }
 
+.header_relatorio {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 188px;
+  background-color: #0f3b62;
+}
+
+.inner_header {
+  position: relative;
+  top: 38%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text_header {
+  color: #ffff;
+}
+
+.linha_header {
+  width: 95%;
+  height: 9px;
+  background-color: #2888b1;
+  border-radius: 20px;
+  border: 0;
+}
+
 .quadrado {
   grid-row: 1;
   width: 113rem;
   height: 36rem;
-  border: 2px solid rgba(0, 0, 0, 0.30);
-  background: #F1F1F1;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: #f1f1f1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -60,7 +92,8 @@ form {
   grid-column: 1/4;
 }
 
-.confirmar, .cancelar {
+.confirmar,
+.cancelar {
   position: relative;
   top: 100%;
 }
@@ -73,7 +106,8 @@ form {
   grid-column: 2;
 }
 
-form input, select{
+form input,
+select {
   height: 34px;
   border: none;
 }
@@ -93,7 +127,7 @@ form label {
 
 .label_status {
   grid-column: 1;
-  grid-row: 3;  
+  grid-row: 3;
 }
 
 .select_status {
@@ -140,32 +174,47 @@ form label {
   text-align: center;
 }
 
-.valor_total, .total_vendas, .pedidos_recebidos {
+.valor_total,
+.total_vendas,
+.pedidos_recebidos {
   grid-row: 3;
 }
 
-.horario_medio, .total_pedidos, .reembolso {
+.horario_medio,
+.total_pedidos,
+.reembolso {
   grid-row: 4;
 }
 
-.valor_total, .horario_medio, .medio_entrega {
+.valor_total,
+.horario_medio,
+.medio_entrega {
   grid-column: 1;
 }
 
-.total_vendas, .total_pedidos {
+.total_vendas,
+.total_pedidos {
   grid-column: 2;
 }
-.valor_total, .total_vendas, .pedidos_recebidos, .horario_medio, .total_pedidos, .reembolso, .medio_entrega, .placeholder {
-  background: #DCE5EB;
+.valor_total,
+.total_vendas,
+.pedidos_recebidos,
+.horario_medio,
+.total_pedidos,
+.reembolso,
+.medio_entrega,
+.placeholder {
+  background: #dce5eb;
   padding: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-right: 2px solid rgba(0, 0, 0, 0.30);
+  border-right: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-.pedidos_recebidos , .reembolso{
+.pedidos_recebidos,
+.reembolso {
   grid-column: 3;
   border-right: none;
 }
@@ -189,8 +238,8 @@ form label {
 .table {
   width: 113rem;
   height: 752px;
-  border: 1px solid rgba(0, 0, 0, 0.30);
-  background: #F1F1F1;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: #f1f1f1;
   grid-row: 3;
   display: grid;
   grid-template-columns: 168px 374px 133px 186px 364px 124px 473px;

@@ -12,7 +12,12 @@
 </head>
 <body>
   <nav></nav>
-  <img src="../../image/vendedor/relatorio_vendas/header.png">
+  <header class="header_relatorio">
+    <div class="inner_header">
+      <h1 class="text_header">Gerenciar produtos</h1>
+      <hr class="linha_header">
+    </div>
+  </header>
   <main class="main_content">
     <div class="quadrado">
       <div class="pesquisar_pedidos">
