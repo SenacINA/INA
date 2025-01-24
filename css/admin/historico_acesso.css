@@ -1,0 +1,224 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* Grid pai */
+.grid-container{
+  width: 85%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
+  grid-area: 1/1/1/1;
+  grid-column-start: 1;
+  grid-row-start: 1 ;
+}
+
+/* Grid input e os carai */
+.item1{
+  align-items: center;
+  display: flex;
+  grid-area: 1/1/1/1;
+}
+
+/* Grid Logo */
+.item2{
+  display: grid;
+  align-self: center;
+  grid-area: 1/2/2/3;
+}
+/* Grid botões */
+.item3 {
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-self: center;
+  justify-self: right;
+}
+
+/* Elementos grid 2 */
+/* Logo */
+.item2 button {
+  border-style: none;
+  background-color: transparent;
+}
+#buttonLogo{
+  align-self: center;
+  height: 66px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Elementos grid 3 */
+
+.item3 a{
+  border-style: none;
+  background-color: transparent;
+  align-self: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+/* Elementos grid 1 */
+
+.item1 input{
+  display: flex;
+  width: 330px;
+  height: 30px;
+  padding: 0px 5px;
+  border-radius: 10px;
+  border-style: none;
+  outline: 0;
+}
+
+.item1 input::after{
+  border-style: none;
+}
+/*Footer*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+.header {
+  background-color: #1a3e5c;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header img {
+  height: 40px;
+}
+.header .search-bar {
+  flex-grow: 1;
+  margin: 0 20px;
+}
+.header .search-bar input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.header .icons {
+  display: flex;
+  align-items: center;
+}
+.header .icons i {
+  margin-left: 15px;
+  color: white;
+  font-size: 20px;
+}
+.title {
+  background-color: #1a3e5c;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+.container {
+  padding: 20px;
+}
+.report-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.report-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.report-section .search-user,
+.report-section .user-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.report-section .search-user div,
+.report-section .user-info div {
+  flex: 1;
+  margin: 0 10px;
+}
+.report-section .search-user div input,
+.report-section .search-user div select,
+.report-section .user-info div input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.report-section .buttons {
+  text-align: center;
+}
+.report-section .buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.report-section .buttons .cancel {
+  background-color: #ff4d4d;
+  color: white;
+}
+.report-section .buttons .confirm {
+  background-color: #007bff;
+  color: white;
+}
+.table-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-section table th,
+.table-section table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.table-section table th {
+  background-color: #f0f2f5;
+}
+.table-section table tr:hover {
+  background-color: #f1f1f1;
+}
+.table-section table tr td:last-child {
+  text-align: center;
+}
+.table-section table tr td:last-child i {
+  color: #ff4d4d;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .header .search-bar {
+      display: none;
+  }
+  .report-section .search-user,
+  .report-section .user-info {
+      flex-direction: column;
+  }
+  .report-section .search-user div,
+  .report-section .user-info div {
+      margin: 10px 0;
+  }
+}
