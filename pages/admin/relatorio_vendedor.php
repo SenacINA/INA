@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório de Vendedores</title>
-    <link rel="stylesheet" href="../../css/admin/relatorio_vendedor.css?v=<?php echo time(); ?>">
-    <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
+    <title>Relatório do Vendedor</title>
+    <link rel="stylesheet" href="../../css/admin/relatorio_vendedor.css">
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -16,70 +16,72 @@
   <header>
     <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header" width="100%">
   </header>
-  <main class="main_container">
-    <div class="main_content">
-      <div class="pesquisa">
-        <div class="pesquisa_cliente">
-          <div class="main_text_pesquisa_container">
-            <p class="main_text_pesquisa">Informações do vendedor</p>
-            <hr class="linha">
-            <form class="forms_pesquisa">
+  <main class="relatorio_vendedor_main_container">
+    <div class="relatorio_vendedor_main_content">
+      <div class="relatorio_vendedor_grid_parent">
+        <div class="relatorio_vendedor_grid_info_main">
+          <div class="relatorio_vendedor_grid_main">
+            <p class="font_titulo relatorio_vendedor_align_text_center">Informações do vendedor</p>
+            <hr class="admin_linha">
+            <form class="relatorio_vendedor_grid_info">
               <div>
-                <p class="info_vendedor_p">Nome</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="nome">THUNDER GAMES</p></div>
+                <p class="relatorio_vendedor_texto_info">Nome</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorNome">THUNDER GAMES</p></div>
 
-                <p class="info_vendedor_p">E-mail</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="email">thundergames@gmail.com</p></div>
+                <p class="relatorio_vendedor_texto_info">E-mail</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorEmail">thundergames@gmail.com</p></div>
 
-                <p class="info_vendedor_p">Produtos À Venda</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="quantia_produtos">8</p></div>
+                <p class="relatorio_vendedor_texto_info">Produtos À Venda</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorQuantiaProdutos">8</p></div>
 
-                <p class="info_vendedor_p">Avaliação Geral</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="avaliacao">4.5</p></div>
+                <p class="relatorio_vendedor_texto_info">Avaliação Geral</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorAvaliacao">4.5</p></div>
 
-                <p class="info_vendedor_p">Tempo Como Vendedor</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="tempo_vendendo">4 Meses</p></div>
+                <p class="relatorio_vendedor_texto_info">Tempo Como Vendedor</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorTempoVendendo">4 Meses</p></div>
 
-                <p class="info_vendedor_p">Código de Vendedor</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="codigo">222</p></div>
+                <p class="relatorio_vendedor_texto_info">Código de Vendedor</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorCodigo">222</p></div>
               </div>
               
               <div>
-                <p class="info_vendedor_p">Telefone</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="telefone">67997051882</p></div>
+                <p class="relatorio_vendedor_texto_info">Telefone</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorTelefone">67997051882</p></div>
 
-                <p class="info_vendedor_p">Endereço</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="endereco">Rua Lago do Amor</p></div>
+                <p class="relatorio_vendedor_texto_info">Endereço</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorEndereco">Rua Lago do Amor</p></div>
 
-                <p class="info_vendedor_p">Bairro</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="bairro">Vila Monumento</p></div>
+                <p class="relatorio_vendedor_texto_info">Bairro</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorBairro">Vila Monumento</p></div>
 
-                <p class="info_vendedor_p">CEP</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="cep">25310-238</p></div>
+                <p class="relatorio_vendedor_texto_info">CEP</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorCep">25310-238</p></div>
 
-                <p class="info_vendedor_p">Cidade</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="cidade">Campo Grande</p></div>
+                <p class="relatorio_vendedor_texto_info">Cidade</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorCidade">Campo Grande</p></div>
                 
-                <p class="info_vendedor_p">Estado</p>
-                <div class="info_vendedor_box"><p class="info_vendedor_box_p" id="estado">Mato Grosso do Sul</p></div>
+                <p class="relatorio_vendedor_texto_info">Estado</p>
+                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorEstado">Mato Grosso do Sul</p></div>
               </div>
             </form>
           </div>          
         </div>
-        <div class="informacoes_cliente">
+        <div class="relatorio_vendedor_grid_perfil">
           <div class="main_text_info_container">
-            <p class="main_text_info">Perfil do Vendedor</p>
-            <hr class="linha">
+            <p class="font_titulo relatorio_vendedor_align_text_center">Perfil do Vendedor</p>
+            <hr class="admin_linha">
           </div>
-          <div class="vendedor_perfil">
-            <p>a</p>
+          <div class="relatorio_vendedor_perfil">
+            <img src="../../image/admin/relatorio_vendedor/imagem_perfil_vendedor.png" class="relatorio_vendedor_imagem_perfil">
+            <p class="relatorio_vendedor_align_text_center font_bold">THUNDER GAMES</p>
+            <p class="relatorio_vendedor_texto_descricao_perfil">Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</p>
           </div>
           </div>
         </div>
       </div>
     </div>
     <div class="botoes">
-      <select name="filtro" id="filtro" class="filtro">
+      <select name="filtro" id="relatorioVendedorFiltro" class="relatorio_vendedor_filtro">
         <option value="">Organizar por:</option>
         <option value="codigo">CÓDIGO</option>
         <option value="produto">PRODUTO</option>
