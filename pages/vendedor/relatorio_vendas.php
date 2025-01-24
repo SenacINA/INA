@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
-  <nav></nav>
+<body class="main_container">
+  <nav class="navbar_principal"></nav>
   <header class="header_relatorio">
     <div class="inner_header">
       <h1 class="text_header">Gerenciar produtos</h1>
@@ -19,13 +19,13 @@
     </div>
   </header>
   <main class="main_content">
-    <div class="quadrado">
+    <div class="quadrado_container">
       <div class="pesquisar_pedidos">
         <div class="header_pedidos">
           <p class="text_pedidos">Pesquisar Pedidos</p>
           <hr class="linha_pedidos">
         </div>
-        <form action="" method="post">
+        <form action="" method="post" class="forms_pesquisa_pedidos">
           <label class='label_cod'>Código Do Produto / Nome Cliente</label>
           <input type="text" class='input_cod'>
           <label for="select_cod" class="label_status">Status</label>

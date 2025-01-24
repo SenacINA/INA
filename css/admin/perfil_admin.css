@@ -5,7 +5,7 @@
   font-family: "Jost";
 }
 
-body {
+.main_container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,7 @@ body {
   background-color: black;
 }
 
-.quadrado {
+.quadrado_body {
   position: relative;
   top: 5%;
   background-color: #dce5eb;
@@ -53,7 +53,7 @@ body {
   text-align: center;
 }
 
-hr {
+.linha_title {
   height: 5px;
   width: 95%;
   border-radius: 20px;
@@ -61,7 +61,7 @@ hr {
   background-color: #2888b1;
 }
 
-.perfil_admin {
+.perfil_admin_grid {
   position: relative;
   top: 9%;
   height: min-content;
@@ -105,13 +105,13 @@ hr {
   grid-column: 2;
 }
 
-.forms_admin input {
+.input_forms_admin {
   width: 471px;
   height: 36px;
   border: 0;
 }
 
-.forms_admin label {
+.label_forms_admin {
   font-size: 20px;
   color: #0f3b62;
   font-weight: 600;

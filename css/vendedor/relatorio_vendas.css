@@ -4,13 +4,13 @@
   font-family: Jost;
 }
 
-body {
+.main_container {
   overflow-x: clip;
   width: 100vw;
   height: 100vh;
 }
 
-nav {
+.navbar_principal {
   background-color: #fff;
   width: 100vw;
   height: 67px;
@@ -48,7 +48,7 @@ nav {
   border: 0;
 }
 
-.quadrado {
+.quadrado_container {
   grid-row: 1;
   width: 113rem;
   height: 36rem;
@@ -95,7 +95,7 @@ nav {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-form {
+.forms_pesquisa_pedidos {
   position: relative;
   top: 10%;
   left: -5%;
@@ -119,13 +119,13 @@ form {
   grid-column: 2;
 }
 
-form input,
+.forms_pesquisa_pedidos input,
 select {
   height: 34px;
   border: none;
 }
 
-form label {
+.forms_pesquisa_pedidos label {
   color: #000;
   font-family: Jost;
   font-size: 20px;
