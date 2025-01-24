@@ -92,9 +92,9 @@
         <option value="nome_cliente">NOME DO CLIENTE</option>
       </select>
     </div>
-    <div class="table-wrapper">
+    <div class="relatorio_vendedor_table_wrapper">
     
-    <table class="table">
+    <table class="relatorio_vendedor_table">
         <thead>
             <tr>
                 <th>CÓDIGO</th>

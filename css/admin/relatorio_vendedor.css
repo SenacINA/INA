@@ -142,26 +142,26 @@ body, html{
   padding-left: 10px;
 }  
   
-.table-wrapper {
+.relatorio_vendedor_table_wrapper {
   width: 100%;
   max-height: 750px;
   overflow-y: auto;
   border: 1px solid rgba(0, 0, 0, 0.30);
 }
 
-.table {
+.relatorio_vendedor_table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 10px;
   transform: translateY(-10px);
 }
 
-.table tr{
+.relatorio_vendedor_table tr{
   margin-top: 10px;
 }
 
 
-.table th {
+.relatorio_vendedor_table th {
   height: 64px; /* Fixed height for the header row */
   text-align: center;
   vertical-align: middle;
@@ -173,7 +173,7 @@ body, html{
   line-height: normal;
 }
 
-.table td {
+.relatorio_vendedor_table td {
   height: 45px; /* Fixed height for table rows */
   text-align: center;
   vertical-align: middle;
@@ -186,7 +186,7 @@ body, html{
   box-sizing: border-box;
 }
 
-.table th, .table td {
+.relatorio_vendedor_table th, .relatorio_vendedor_table td {
   border: 1px solid rgba(0, 0, 0, 0.30);
 }
 
