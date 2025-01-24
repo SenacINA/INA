@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="nav style_nav shadow_nav">
-      <div class="grid-container style_nav">
+<header class="nav style_nav shadow_nav">
+      <div class="grid-container">
           <div class="item1">
               <img id="imgLupa" src="../../image/index/lupa.png" alt="">
               <input type="text">
@@ -37,13 +37,14 @@
               </a>
           </div>
       </div>
-  </header>
+</header>
         <div class="title">
             HISTÓRICO DE ACESSO
         </div>
         <div class="container">
             <div class="report-section">
-                <h2>RELATÓRIO GERAL</h2>
+                <h2>RELATÓRIO GERAL</h2> 
+                <hr/>
                 <div class="search-user">
                     <div>
                         <label for="ip">IP</label>
@@ -68,10 +69,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="buttons">
-                    <button class="cancel">Cancelar</button>
-                    <button class="confirm">Confirmar</button>
-                </div>
+                
                 <div class="user-info">
                     <div>
                         <label for="user-ip">IP</label>
@@ -89,6 +87,10 @@
                         <label for="horario-user">Horário</label>
                         <input type="text" id="horario-user" value="00:00" readonly>
                     </div>
+                </div>
+                <div class="buttons">
+                    <button class="cancel">Cancelar</button>
+                    <button class="confirm">Confirmar</button>
                 </div>
             </div>
             <div class="table-section">
