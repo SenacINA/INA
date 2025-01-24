@@ -111,12 +111,12 @@
     </div>
     <div class="table">
       <p>IP</p>
-      <p>Nome</p>
-      <p>Categoria</p>
-      <p>Cargo</p>
-      <p>Plano</p>
-      <p>Data de inicio</p>
-      <p>Data de expiração</p>
+      <p>NOME</p>
+      <p>CATEGORIA</p>
+      <p>CARGO</p>
+      <p>PLANO</p>
+      <p>DATA DE INICIO</p>
+      <p>DATA DE EXPIRAÇÃO</p>
       <span>192.168.0.1</span>
       <span>info@nvidia.com</span>
       <span>Hardware</span>
