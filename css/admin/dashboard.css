@@ -9,11 +9,11 @@ html,body{
     align-content: start;
 }
 
-.h1teste{
+.dashboard_h1_titulo{
     margin-top: 162px;
 }
 
-.grid-menu{
+.dashboard_grid_menu{
     justify-self: center;
     align-self: center;
     display: grid;
@@ -52,7 +52,7 @@ a:visited {
 }
 
 
-.layout-botao{
+.dashboard_botton_base{
     display: grid;
     width: 230px;
     padding: 10px;
