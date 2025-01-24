@@ -22,7 +22,8 @@
     <div class="quadrado">
       <div class="pesquisar_pedidos">
         <div class="header_pedidos">
-          <img src="../../image/vendedor/relatorio_vendas/pesquisar_pedidos.png" alt="">
+          <p class="text_pedidos">Pesquisar Pedidos</p>
+          <hr class="linha_pedidos">
         </div>
         <form action="" method="post">
           <label class='label_cod'>Código Do Produto / Nome Cliente</label>
@@ -69,7 +70,8 @@
       </div>
       <div class="estatisticas">
         <div class="header_estatisticas">
-          <img src="../../image/vendedor/relatorio_vendas/estatisticas.png">
+          <p class="text_estatisticas">Estatísticas</p>
+          <hr class="linha_estatisticas">
         </div>
         <span class='titulo_geral'>geral</span>
         <div class="valor_total">

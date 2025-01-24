@@ -35,7 +35,7 @@
         <p class="redefinir_senha_admin">Redefinir senha</p>
       </form>
       <div class="foto">
-        <img src="../../image/admin/perfil/perfil_admin.png" alt="" class="pfp">
+        <img src="../../image/admin/perfil/perfil_admin.svg" alt="" class="pfp">
         <form action="" method="post" class="forms_pfp">
           <input type="file" name="pfp" id="foto_admin">
           <p class="tamanho_arquivo">O tamanho do arquivo não deve ultrapassar 2MB</p>

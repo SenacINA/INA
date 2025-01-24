@@ -80,6 +80,19 @@ nav {
 
 .header_pedidos {
   grid-column: 1/4;
+  width: 100%;
+}
+
+.text_pedidos {
+  font-size: 32px;
+  text-align: center;
+}
+
+.linha_pedidos {
+  width: 100%;
+  height: 2px;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 form {
@@ -163,10 +176,19 @@ form label {
 }
 
 .header_estatisticas {
-  display: grid;
-  align-items: center;
-  justify-self: center;
+  width: 100%;
   grid-column: 1/4;
+}
+
+.text_estatisticas {
+  font-size: 32px;
+  text-align: center;
+}
+
+.linha_estatisticas {
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 0;
 }
 
 .titulo_geral {
