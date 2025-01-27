@@ -19,7 +19,7 @@ hr {
     margin-bottom: 3%;
 }
 
-.hr_2 {
+.perfil_cliente_hr_2 {
     display: flex;
     position: relative;
     width: 744px;
@@ -32,30 +32,30 @@ hr {
     left: -12%;
 }
 
-.vr {
+.perfil_cliente_vr {
     width: 2px;        
     height: 100%;     
     background-color: #000; 
     grid-area: 1 / 3 / 4 / 4;
 }
 
-.nav_bar {
+.perfil_cliente_nav_bar {
     height: 67px;
     width: 100%;
     background-color: #DCE5EB;
 }
 
-.banner_cliente {
+.perfil_cliente_banner_cliente {
     width: 100%;
     height: 399px;
 }
 
-.banner_cliente {
+.perfil_cliente_banner_cliente {
     width: 100%;
     object-fit: cover;
 }
 /* start botao_menu */
-.botao_menu select {
+.perfil_cliente_botao_menu select {
     background-color: #6F6F6F; 
     color: white;              
     border: none;              
@@ -71,11 +71,11 @@ hr {
     line-height: 26px;        
 }
 
-.botao_menu select option[value="sair"] {
+.perfil_cliente_botao_menu select option[value="sair"] {
 color: red; 
 }
 
-.botao_menu select option {
+.perfil_cliente_botao_menu select option {
 background-color: #1B98E0;  
 }
 
@@ -83,7 +83,7 @@ background-color: #1B98E0;
 
 
 /* start grid_principal */
-.grid_principal {
+.perfil_cliente_grid_principal {
     display: grid;
     position: relative;
     grid-template-columns: auto;
@@ -93,7 +93,7 @@ background-color: #1B98E0;
 }
 
 /* start pfp_cliente */
-.pfp_cliente {
+.perfil_cliente_pfp_cliente {
     display: grid;
     position: relative;
     grid-template-columns: auto;
@@ -103,13 +103,13 @@ background-color: #1B98E0;
     row-gap: 5%;
 }
 
-.pfp_cliente img {
+.perfil_cliente_pfp_cliente img {
     justify-self: center;
     width: 295px;
     height: 295px;
 }
 
-.pfp_cliente h1 {
+.perfil_cliente_pfp_cliente h1 {
     color: #000;
     font-size: 32px;
     text-align: center;
@@ -119,7 +119,7 @@ background-color: #1B98E0;
 /* end pfp_cliente */
 
 /* start infos_container */
-.infos_container {
+.perfil_cliente_infos_container {
     position: relative;
     display: grid;
     grid-template-columns: auto;
@@ -131,37 +131,37 @@ background-color: #1B98E0;
     column-gap: 45px;
 }
 
-.infos_container img {
+.perfil_cliente_infos_container img {
     width: 32px;
     height: 32px;
 }
 
-.infos_container p {
+.perfil_cliente_infos_container p {
     color: #000;
     font-size: 20px;
     font-weight: 600;
     line-height: 90%; 
 }
 
-.infos_item1, .infos_item2, .infos_item3 {
+.perfil_cliente_infos_item1, .perfil_cliente_infos_item2, .perfil_cliente_infos_item3 {
     display: grid;
     grid-template-columns: auto auto auto;
     align-items: center;
     column-gap: 5px;
 }
 
-.infos_item1 {
+.perfil_cliente_infos_item1 {
     grid-column: 2;
     grid-area: 3 / 1 / 3 / 3;
     justify-self: center;
 }
 
-.infos_item2 {
+.perfil_cliente_infos_item2 {
     grid-column: 1;
     grid-row: 2;
 }
 
-.infos_item3 {
+.perfil_cliente_infos_item3 {
     grid-column: 2;
     grid-row: 2;
 }
@@ -169,7 +169,7 @@ background-color: #1B98E0;
 /* end infos_container */
 
 /* start about_container */
-.about_container, .about_container_2 {
+.perfil_cliente_about_container, .perfil_cliente_about_container_2 {
     display: grid;
     grid-template-columns: min-content auto;
     position: relative;
@@ -182,18 +182,18 @@ background-color: #1B98E0;
     justify-self: start;
 }
 
-.about_container img, .about_container_2 img {
+.perfil_cliente_about_container img, .perfil_cliente_about_container_2 img {
     width: 34px;
     height: auto;
 }
 
-.about_container h1, .about_container_2 h1  {
+.perfil_cliente_about_container h1, .perfil_cliente_about_container_2 h1  {
     color: #000;
     font-size: 32px;
     font-weight: 500;
 }
 
-.about_container p, .about_container_2 p {
+.perfil_cliente_about_container p, .perfil_cliente_about_container_2 p {
     grid-area: 2 / 2 / 3 / 2;
     color: #000;
     font-size: 20px;
@@ -203,7 +203,7 @@ background-color: #1B98E0;
 /* end about_container */
 
 /* start contatos_cliente */
-.contatos_cliente {
+.perfil_cliente_contatos_cliente {
     display: grid;
     grid-template-columns: auto auto;
     height: 200px;
@@ -216,12 +216,12 @@ background-color: #1B98E0;
     padding-left: 50px;
 }
 
-.contatos_cliente img {
+.perfil_cliente_contatos_cliente img {
     width: 40px;
     height: 40px;
 }
 
-.contatos_cliente a {
+.perfil_cliente_contatos_cliente a {
     justify-self: left;
     color: #000;
     text-align: center;
@@ -232,18 +232,18 @@ background-color: #1B98E0;
 
 /* start grid_hitorico */
 
-.grid_hitorico {
+.perfil_cliente_grid_hitorico {
     display: grid;
     grid-template-columns: auto;
 }
 
 /* start grid_item */
-.grid_item {
+.perfil_cliente_grid_item {
     display: grid;
     grid-template-columns: min-content 500px auto;
 }
 
-.frame_img {
+.perfil_cliente_frame_img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -254,48 +254,48 @@ background-color: #1B98E0;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.frame_img img {
+.perfil_cliente_frame_img img {
     width: 163px;
     height: 163px; 
 }
 
-.produto_item {
+.perfil_cliente_produto_item {
     display: grid;
     padding-left: 10px;
 }
 
-.produto_item h1 {
+.perfil_cliente_produto_item h1 {
     color: #000;
     font-size: 20px;
     font-weight: 600;
     line-height: normal;
 }
 
-.produto_item h2 {
+.perfil_cliente_produto_item h2 {
     font-size: 19px;
     font-weight: 600;
     line-height: normal;
     color:#1B98E0;;
 }
 
-.produto_status {
+.perfil_cliente_produto_status {
     display: grid;
     grid-template-columns: 40% 23% max-content;
     align-items: center;
 
 }
 
-.produto_status h4 {
+.perfil_cliente_produto_status h4 {
     color: #000;
     font-size: 12px;
 }
 
-.produto_status h3 {
+.perfil_cliente_produto_status h3 {
     color: #000;
     font-size: 15px;
 }
 
-.produto_total, .produto_preco {
+.perfil_cliente_produto_total, .perfil_cliente_produto_preco {
     display: flex;
     width: 314px;
     height: 48px;   
@@ -305,34 +305,34 @@ background-color: #1B98E0;
     align-items: center;
 }
 
-.produto_preco h3 {
+.perfil_cliente_produto_preco h3 {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.50);
 }
 
-.produto_preco h4 {
+.perfil_cliente_produto_preco h4 {
     color: rgba(255, 0, 0, 0.70);
     font-size: 20px;
     padding-left: 5px;
 }
 
-.produto_total h1, .produto_preco h3 {
+.perfil_cliente_produto_total h1, .perfil_cliente_produto_preco h3 {
     margin-left: 15px;
 }
 
 /* start grid_botoes */
-.grid_botoes {
+.perfil_cliente_grid_botoes {
     display: grid;
     grid-template-columns: auto;
     align-items: center;
 }
 
-.grid_botoes h1 {
+.perfil_cliente_grid_botoes h1 {
     color: #FFF;
     font-size: 20px;
 }
 
-.btn_1 {
+.perfil_cliente_btn_1 {
     display: flex;
     width: 218px;
     height: 50px;
@@ -345,7 +345,7 @@ background-color: #1B98E0;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.btn_1:hover {
+.perfil_cliente_btn_1:hover {
     background: #186fa1;
     border-color: rgba(15, 59, 98, 1);
 }
