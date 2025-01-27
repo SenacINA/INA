@@ -101,6 +101,16 @@ body, html{
   line-height: normal;
 }
 
+.sub_text_info{
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .linha {
   width: 613px;
   height: 2px;

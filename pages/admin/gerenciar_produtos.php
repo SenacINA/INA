@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E ao Quadrado</title>
+    <link rel="stylesheet" href="../../css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../../css/admin/gerenciar_produtos.css">
     <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-    <link rel="stylesheet" href="../../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -26,19 +26,15 @@
       <div class="pesquisa">
         <div class="pesquisa_cliente">
           <div class="main_text_pesquisa_container">
-            <p class="main_text_pesquisa">Pesquisar Clientes</p>
+            <p class="main_text_pesquisa">Pesquisar Produtos</p>
             <hr class="linha">
           </div>
           <form class="forms_pesquisa">
-            <label for="ip_email">IP / E-Mail</label>
+            <label for="ip_email">Código do produto / Nome vendedor</label>
             <input type="text" name="ip_email" id="ip_email">
             <div class="selects">
-              <label for="plano" class="plano">Plano</label>
+              <label for="plano" class="plano">Status</label>
               <select name="plano" id="plano" class="plano_select">
-                <option value="">Selecione um plano</option>
-                <option value="mensal">Mensal</option>
-                <option value="semestral">Semestral</option>
-                <option value="anual">Anual</option>
               </select>
               <label for="mes" class="mes">Mês</label>
               <select name="mes" id="mes" class="mes_select">
@@ -80,8 +76,9 @@
         </div>
         <div class="informacoes_cliente">
           <div class="main_text_info_container">
-            <p class="main_text_info">Informações do Usuário</p>
+            <p class="main_text_info">Estatísticas</p>
             <hr class="linha">
+            <p class="sub_text_info font_subtitulo">Geral</p>
           </div>
           <div class="usuario_info">
             <img src="../../image/cliente/editar_perfil/perfil_usuario.svg" alt="pfp" class="pfp_info">
