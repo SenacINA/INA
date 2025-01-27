@@ -12,37 +12,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="nav style_nav shadow_nav">
-      <div class="grid-container">
-          <div class="item1">
-              <img id="imgLupa" src="../../image/index/lupa.png" alt="">
-              <input type="text">
-          </div>
-          <div class="item2">
-              <button id="buttonLogo">
-                  <a href="#">
-                  <img href="#" id="imgLogo" src="../../image/index/Logo.svg">
+    <header>
+          <div class="historico_adm_header_header">
+              <div class="historico_adm_header_lupa">
+                  <img id="imgLupa" src="../../image/index/lupa.png" alt="">
+                  <input type="text">
+              </div>
+              <div class="historico_adm_header_logo">
+                  <button id="buttonLogo">
+                      <a href="#">
+                      <img href="#" id="imgLogo" src="../../image/index/Logo.svg">
+                      </a>
+                  </button>
+              </div>
+              <div class="historico_adm_header_header_botoes">
+                  <a class="button" href="#">
+                      <img src="../../image/index/user.png" alt="Usuário">
                   </a>
-              </button>
+                  <a class="button" href="#">
+                      <img src="../../image/index/carrinho.png" alt="Carrinho">
+                  </a>
+                  <a class="button" href="#">
+                      <img src="../../image/index/config.png" alt="Configurações">
+                  </a>
+              </div>
           </div>
-          <div class="item3">
-              <a class="button" href="#">
-                  <img src="../../image/index/user.png" alt="Usuário">
-              </a>
-              <a class="button" href="#">
-                  <img src="../../image/index/carrinho.png" alt="Carrinho">
-              </a>
-              <a class="button" href="#">
-                  <img src="../../image/index/config.png" alt="Configurações">
-              </a>
-          </div>
-      </div>
-</header>
-        <div class="title">
+    </header>
+        <div class="historico_adm_section_titulo">
             HISTÓRICO DE ACESSO
         </div>
-        <div class="container">
-            <div class="report-section">
+        <div class="historico_adm_relatorio_usuario">
+            <div class="historico_adm_relatorio_geral">
                 <h2>RELATÓRIO GERAL</h2> 
                 <hr/>
                 <div class="search-user">
@@ -71,7 +71,7 @@
                 </div>
                 
                 <div class="user-info">
-                    <div class="grid_info_usuario">
+                    <div class="historico_adm_info_usuario">
                         <h2>Informações do Usuário</h2>
                         <div class="grid">
                         <div class="item">
@@ -99,6 +99,17 @@
                     <button class="confirm">Confirmar</button>
                 </div>
             </div>
+            <div class="botoes">
+                <select name="filtro" id="filtro" class="filtro">
+                  <option value="">Organizar por:</option>
+                  <option value="nome">Nome</option>
+                  <option value="categoria">Data de Cadastro</option>
+                  <option value="cargo">Cargo</option>
+                  <option value="plano">E-mail</option>
+                  <option value="data_inicio">Contato</option>
+                  <option value="email">Status</option>
+                </select>
+              </div>
             <div class="table-section">
                 <table>
                     <thead>
@@ -120,7 +131,7 @@
                             <td>22/03/2024</td>
                             <td>08:32:34</td>
                             <td>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36</td>
-                            <td><i class="fas fa-trash-alt"></i> Excluir</td>
+                            <td>Excluir</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
@@ -129,7 +140,7 @@
                             <td>23/03/2024</td>
                             <td>09:27:12</td>
                             <td>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36</td>
-                            <td><i class="fas fa-trash-alt"></i> Excluir</td>
+                            <td>Excluir</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
@@ -138,11 +149,11 @@
                             <td>24/03/2024</td>
                             <td>11:32:45</td>
                             <td>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36</td>
-                            <td><i class="fas fa-trash-alt"></i> Excluir</td>
+                            <td>Excluir</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-    </body>
-    </html>
+</body>
+</html>

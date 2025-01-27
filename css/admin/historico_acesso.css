@@ -7,7 +7,7 @@
 }
 
 /* Grid pai */
-.grid-container{
+.historico_adm_header_header{
   width: 85%;
   margin: auto;
   display: grid;
@@ -21,20 +21,20 @@
 }
 
 /* Grid input e os carai */
-.item1{
+.historico_adm_header_lupa{
   align-items: center;
   display: flex;
   grid-area: 1/1/1/1;
 }
 
 /* Grid Logo */
-.item2{
+.historico_adm_header_logo{
   display: grid;
   align-self: center;
   grid-area: 1/2/2/3;
 }
 /* Grid botões */
-.item3 {
+.historico_adm_header_header_botoes {
   width: auto;
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -44,7 +44,7 @@
 
 /* Elementos grid 2 */
 /* Logo */
-.item2 button {
+.historico_adm_header_logo button {
   border-style: none;
   background-color: transparent;
 }
@@ -57,7 +57,7 @@
 
 /* Elementos grid 3 */
 
-.item3 a{
+.historico_adm_header_header_botoes a{
   border-style: none;
   background-color: transparent;
   align-self: left;
@@ -68,7 +68,7 @@
 
 /* Elementos grid 1 */
 
-.item1 input{
+.historico_adm_header_lupa input{
   display: flex;
   width: 330px;
   height: 30px;
@@ -78,7 +78,7 @@
   outline: 0;
 }
 
-.item1 input::after{
+.historico_adm_header_lupa input::after{
   border-style: none;
 }
 /*Footer*/
@@ -98,7 +98,7 @@ body {
   justify-content: space-between;
 }
 
-.title {
+.historico_adm_section_titulo {
   background-color: #1a3e5c;
   color: white;
   text-align: center;
@@ -113,42 +113,42 @@ body {
 .container {
   padding: 20px;
 }
-.report-section {
+.historico_adm_relatorio_geral {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
-.report-section h2 {
+.historico_adm_relatorio_geral h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: 500;
 }
-.report-section .search-user,
-.report-section .user-info {
+.historico_adm_relatorio_geral .search-user,
+.historico_adm_relatorio_geral .historico_adm_info_usuario {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.report-section .search-user div,
-.report-section .user-info div {
+.historico_adm_relatorio_geral .search-user div,
+.historico_adm_relatorio_geral .historico_adm_info_usuario div {
   flex: 1;
   margin: 0 10px;
 }
-.report-section .search-user div input,
-.report-section .search-user div select,
-.report-section .user-info div input {
+.historico_adm_relatorio_geral .search-user div input,
+.historico_adm_relatorio_geral .search-user div select,
+.historico_adm_relatorio_geral .historico_adm_info_usuario div input {
   width: 100%;
   padding: 8px;
   border-radius: 4px;
   border: 1px solid #007bff;
 }
-.report-section .buttons {
+.historico_adm_relatorio_geral .buttons {
   text-align: center;
 }
-.report-section .buttons button {
+.buttons button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -156,11 +156,11 @@ body {
   cursor: pointer;
   margin: 0 10px;
 }
-.report-section .buttons .cancel {
+.cancel {
   background-color: #ff4d4d;
   color: white;
 }
-.report-section .buttons .confirm {
+.confirm {
   background-color: #007bff;
   color: white;
 }
@@ -193,21 +193,8 @@ body {
   color: #ff4d4d;
   cursor: pointer;
 }
-@media (max-width: 768px) {
-  .header .search-bar {
-      display: none;
-  }
-  .report-section .search-user,
-  .report-section .user-info {
-      flex-direction: column;
-  }
-  .report-section .search-user div,
-  .report-section .user-info div {
-      margin: 10px 0;
-  }
-}
 
-.container {
+.historico_adm_info_usuario {
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -216,8 +203,6 @@ body {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .grid {
   display: grid;
