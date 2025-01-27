@@ -15,6 +15,21 @@
     <div class="grid_bg">
         <div class="titulo"><h1>CONFIRMAR PEDIDO</h1></div>
         <img src="../../image/geral/linha-divisoria-azul.png" alt="">
+        <div class="grid_id_pedido">
+            <div class="id_pedido">
+                <h1>#1001</h1>
+                <h2>05 de julho 2024, 17:37</h2>
+            </div>
+            <div class="botoes_status">
+                    <div class="botao_1">
+                        <h2>Pagamento Pendente </h2>
+                    </div>
+                    <div class="botao_2">
+                        <h2>Não processado</h2>
+                    </div>
+            </div>
+        </div>
+        
         <div class="grid_principal">
             <div class="container_1">
                 a
