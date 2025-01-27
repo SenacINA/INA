@@ -89,7 +89,7 @@
 
             <div class="grid_carrossel">
                 <div class="about_container_2">
-                    <img src="../../image/vendedor/perfil_vendedor/contato_user.png" alt="">
+                    <img src="../../image/vendedor/perfil_vendedor/icon_contato_user.png" alt="">
                     <h1>Destaques:</h1>
                 </div>
                     <div class="produtos_container bg_branco">
