@@ -84,7 +84,7 @@
 /*Footer*/
 
 body {
-  font-family: 'Jost';
+  font-family: Jost;
   margin: 0;
   padding: 0;
   background-color: #f0f2f5;
@@ -123,7 +123,7 @@ body {
 .historico_adm_relatorio_geral h2 {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
 }
 .historico_adm_relatorio_geral .search-user,
@@ -215,4 +215,63 @@ body {
   padding: 15px;
   border-radius: 5px;
   text-align: center;
+}
+
+.historico_adm_filtro {
+  width: 543px;
+  height: 43px;
+  border: 1px solid rgba(0, 0, 0, 0.50);
+  background: #F1F1F1;
+  color: #000;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.main_container {
+  width: 100%;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto;
+  grid-template-rows: 590px 81px 800px;
+  top: 1%;
+}
+
+.historico_adm_table {
+  width: 1822px;
+  height: 752px;
+  border: 1px solid rgba(0, 0, 0, 0.30);
+  background: #F1F1F1;
+  display: grid;
+  grid-template-columns: 9.22% 22.34% 13.39% 8.51% 21.13% 14.66% 10.76%;
+  grid-template-rows: 64px repeat(13, 45px);
+  row-gap: 8px;
+  text-align: center;
+}
+
+.historico_adm_table p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.30);
+  position: relative;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.historico_adm_table span {
+  border: 1px solid rgba(0, 0, 0, 0.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DCE5EB;;
 }
