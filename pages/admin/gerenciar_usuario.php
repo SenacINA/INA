@@ -13,33 +13,33 @@
 </head>
 <body>
   <nav class="navbar_principal"></nav>
-  <header class = "aprovacao_vendedor_header">
+  <header class = "gerenciar_usuario_header">
     <div class = "gerenciar_usuario_header_title">
       <h1>GERENCIAR USUARIO</h1> 
     </div>
     <div class = "gerenciar_usuario_header_linha"></div>
   </header>
   
-  <main class="main_container">
-    <div class="main_content">
-      <div class="pesquisa_cliente_container">
-        <div class="pesquisa_cliente">
-          <div class="main_text_pesquisa_container">
-            <p class="main_text_pesquisa">Pesquisar Clientes</p>
-            <hr class="linha_seperador">
+  <main class="gerenciar_usuario_main_container">
+    <div class="gerenciar_usuario_main_content">
+      <div class="gerenciar_usuario_pesquisa_cliente_container">
+        <div class="gerenciar_usuario_gerenciar_usuario_pesquisa_cliente">
+          <div class="gerenciar_usuario_main_text_pesquisa_container">
+            <p class="gerenciar_usuario_main_text_pesquisa">Pesquisar Clientes</p>
+            <hr class="gerenciar_usuario_linha_separador">
           </div>
-          <form class="forms_pesquisa">
+          <form class="gerenciar_usuario_forms_pesquisa">
             <label for="ip_email">IP / E-Mail</label>
-            <input type="text" name="ip_email" id="ip_email">
-            <div class="selects_container">
-              <label for="status" class="status">Status</label>
-              <select name="status" id="status" class="status_select">
+            <input type="text" name="ip_email" id="gerenciar_usuario_ip_email">
+            <div class="gerenciar_usuario_selects_container">
+              <label for="status" class="gerenciar_usuario_status">Status</label>
+              <select name="status" id="gerenciar_usuario_status" class="gerenciar_usuario_status_select">
                 <option value="" disabled selected>Selecione um Status</option>
                 <option value="mensal">Ativo</option>
                 <option value="semestral">Inativo</option>
               </select>
               <label for="mes" class="mes">Mês</label>
-              <select name="mes" id="mes" class="mes_select">
+              <select name="mes" id="gerenciar_usuario_mes" class="gerenciar_usuario_mes_select">
                 <option value="" disabled selected>Selecione um mês</option>
                 <option value="janeiro">Janeiro</option>
                 <option value="fevereiro">Fevereiro</option>
@@ -69,7 +69,7 @@
         <div class="informacoes_cliente">
           <div class="main_text_info_container">
             <p class="main_text_info">Perfil do Usuário</p>
-            <hr class="linha_separador">
+            <hr class="gerenciar_usuario_linha_separador">
           </div>
           <div class="usuario_info">
             <img src="../../image/cliente/editar_perfil/perfil_usuario.svg" alt="pfp" class="pfp_info">

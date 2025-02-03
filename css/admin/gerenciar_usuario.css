@@ -9,7 +9,14 @@ body, html{
   width: 100%;
 }
 
-.aprovacao_vendedor_header {
+
+.navbar_principal {
+  width: 100%;
+  height: 67px;
+  background-color: #DCE5EB;
+}
+
+.gerenciar_usuario_header {
   width: 100%;
   height: 192px; 
   background-color: #0F3B62;
@@ -40,13 +47,7 @@ body, html{
     border-radius: 20px;
 }
 
-.navbar_principal {
-  width: 100%;
-  height: 67px;
-  background-color: #DCE5EB;
-}
-
-.main_container {
+.gerenciar_usuario_main_container {
   width: 100%;
   position: relative;
   display: grid;
@@ -56,7 +57,14 @@ body, html{
   top: 1%;
 }
 
-.pesquisa_cliente_container {
+.gerenciar_usuario_main_content {
+  width: 1822px;
+  height: 590px;
+  border: 2px solid rgba(0, 0, 0, 0.30);
+  background: #F1F1F1;
+}
+
+.gerenciar_usuario_pesquisa_cliente_container {
   display: grid;
   grid-template-columns: min-content min-content;
   position: relative;
@@ -66,7 +74,7 @@ body, html{
   width: 1000px;
 }
 
-.pesquisa_cliente {
+.gerenciar_usuario_pesquisa_cliente {
   display: grid;
   grid-template-rows: repeat(6, auto);
   grid-template-columns: repeat(3, auto);
@@ -80,14 +88,8 @@ body, html{
   justify-items: center;
 }
 
-.main_content {
-  width: 1822px;
-  height: 590px;
-  border: 2px solid rgba(0, 0, 0, 0.30);
-  background: #F1F1F1;
-}
 
-.main_text_pesquisa_container {
+.gerenciar_usuario_main_text_pesquisa_container {
   grid-column: 1;
 }
 
@@ -101,30 +103,30 @@ body, html{
   line-height: normal;
 }
 
-.linha_separador {
+.gerenciar_usuario_linha_separador {
   width: 613px;
   height: 2px;
   background: rgba(0, 0, 0, 0.30);
 }
 
-.forms_pesquisa {
+.gerenciar_usuario_forms_pesquisa {
   margin-top: 24px;
   grid-column: 1;
   grid-row: 2;
   display: grid;
 }
 
-.forms_pesquisa input {
+.gerenciar_usuario_forms_pesquisa input {
   width: 614px;
   height: 34px;
 }
 
-#ip_email {
+#gerenciar_usuario_ip_email {
   grid-column: 1;
   text-indent: 5px;
 }
 
-.forms_pesquisa label {
+.gerenciar_usuario_forms_pesquisa label {
   color: #000;
   font-family: Jost;
   font-size: 20px;
@@ -133,7 +135,7 @@ body, html{
   line-height: normal;
 }
 
-.selects_container {
+.gerenciar_usuario_selects_container {
   grid-column: 1;
   grid-row: 3;
   display: grid;
@@ -153,7 +155,7 @@ body, html{
   height: 34px;
 }
 
-.status_select {
+.gerenciar_usuario_status_select {
   grid-column: 1;
   grid-row: 2;  
 }
