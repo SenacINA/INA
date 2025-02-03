@@ -42,63 +42,74 @@
             HISTÓRICO DE ACESSO
         </div>
         <main class="main_container">
-        <div class="historico_adm_relatorio_usuario">
-            <div class="historico_adm_relatorio_geral">
-                <h2>RELATÓRIO GERAL</h2> 
-                <hr/>
-                <div class="search-user">
-                    <div>
-                        <label for="ip">IP</label>
-                        <input type="text" id="ip">
-                    </div>
-                    <div>
-                        <label for="horario">Horário</label>
-                        <select id="horario">
-                            <option value="">Horário</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="dia">Dia</label>
-                        <select id="dia">
-                            <option value="">Dia</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="ano">Ano</label>
-                        <select id="ano">
-                            <option value="">Ano</option>
-                        </select>
-                    </div>
-                </div>
-                
+            <div class="historico_adm_relatorio_usuario">
+                <div class="historico_adm_relatorio_geral">
+                    <h2>RELATÓRIO GERAL</h2> 
+                    <hr/>
+                    <div class="pesquisa_cliente_container">
+                    
+                        <div class="historico_adm_label">
+                    <h2>Pesquisar Usuário</h2>
+
+                            <div>
+                            <label for="ip">IP</label>
+                            <input type="text" id="ip">
+                            </div>
+
+                            <div>
+                            <label for="horario">Horário</label>
+                                <select id="horario">
+                                    <option value="">Horário</option>
+                                </select>
+                            </div>
+
+                            <div>
+                            <label for="dia">Dia</label>
+                                <select id="dia">
+                                    <option value="">Dia</option>
+                                </select>
+                            </div>
+
+                            <div>
+                            <label for="ano">Ano</label>
+                                <select id="ano">
+                                    <option value="">Ano</option>
+                                </select>
+                            </div>
+                        </div>
                 <div class="user-info">
                     <div class="historico_adm_info_usuario">
                         <h2>Informações do Usuário</h2>
-                        <div class="grid">
-                        <div class="item">
-                            <h3>IP</h3>
-                            <p>231.122.0.2</p>
-                        </div>
-                        <div class="item">
-                            <h3>Data De Acessos</h3>
-                            <p>22/03/2024</p>
-                        </div>
-                        <div class="item">
-                            <h3>Cargo</h3>
-                            <p>Admin</p>
-                        </div>
-                        <div class="item">
-                            <h3>Horário</h3>
-                            <p>00:00</p>
-                        </div>
-                        </div>
-                    </div>
+                            <div class="grid">        
+                                <div class="item">
+                                    <h3>IP</h3>
+                                    <p>231.122.0.2</p>
+                                </div>
 
+                                <div class="item">
+                                    <h3>Data De Acessos</h3>
+                                    <p>22/03/2024</p>
+                                </div>
+
+                                <div class="item">
+                                    <h3>Cargo</h3>
+                                    <p>Admin</p>
+                                </div>
+
+                                <div class="item">
+                                    <h3>Horário</h3>
+                                    <p>00:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                        <div class="buttons">
+                            <button class="cancel">Cancelar</button>
+                            <button class="confirm">Confirmar</button> 
+                        </div>
                 </div>
-                <div class="buttons">
-                    <button class="cancel">Cancelar</button>
-                    <button class="confirm">Confirmar</button>
-                </div>
+             
+                
             </div>
             <div class="botoes">
                 <select name="filtro" id="filtro" class="historico_adm_filtro">
@@ -118,30 +129,31 @@
                 <p>DATA DE ACESSOS</p>
                 <p>HORÁRIO</p>
                 <p>NAVEGADOR</p>
+                <p><img src="../../image/admin/histórico_acesso/lata-de-lixo 4.png" alt="lata_lixo"></p>
             
-                <td><input type="checkbox"></td>
-                <span>192.168.0.1</span>
+                <span><input type="checkbox"></span>
+                <span >192.168.0.1</span>
                 <span>Cliente</span>
                 <span>22/03/2024</span>
                 <span>08:32:34</span>
                 <span>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36</span>
-                <span>Excluir</span>
+                <span><img src="../../image/admin/histórico_acesso/lata-de-lixo 6.png" alt="excluir lixeira">Excluir</span>
             
                 <span><input type="checkbox"></span>
-                <span>221.121.2.2</span>
+                <span >221.121.2.2</span>
                 <span>Cliente</span>
                 <span>23/03/2024</span>
                 <span>09:27:12</span>
                 <span>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36</span>
-                <span>Excluir</span>
+                <span><img src="../../image/admin/histórico_acesso/lata-de-lixo 6.png" alt="excluir lixeira">Excluir</span>
             
                 <span><input type="checkbox"></span>
-                <span>112.212.02.14</span>
+                <span >112.212.02.14</span>
                 <span>Vendedor</span>
                 <span>24/03/2024</span>
                 <span>11:32:45</span>
                 <span>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36</span>
-                <span>Excluir</span>
+                <span><img src="../../image/admin/histórico_acesso/lata-de-lixo 6.png" alt="excluir lixeira">Excluir</span>
 
             </div>
 
