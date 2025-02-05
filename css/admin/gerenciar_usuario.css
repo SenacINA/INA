@@ -10,7 +10,7 @@ body, html{
 }
 
 
-.navbar_principal {
+.gerenciar_usuario_navbar_principal {
   width: 100%;
   height: 67px;
   background-color: #DCE5EB;
@@ -80,7 +80,7 @@ body, html{
   grid-template-columns: repeat(3, auto);
 }
 
-.informacoes_cliente {
+.gerenciar_usuario_informacoes_cliente {
   display: grid;
   grid-template-columns: repeat(2, min-content);
   grid-template-rows: repeat(3, min-content );
@@ -93,7 +93,7 @@ body, html{
   grid-column: 1;
 }
 
-.main_text_pesquisa, .main_text_info {
+.gerenciar_usuario_main_text_pesquisa, .gerenciar_usuario_main_text_info {
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -144,12 +144,12 @@ body, html{
   margin-top: 3%;
 }
 
-.ano {
+.gerenciar_usuario_ano {
   grid-column: 3;
   grid-row: 1;
 }
 
-.ano_select {
+.gerenciar_usuario_ano_select {
   grid-column: 3;
   grid-row: 2;
   height: 34px;
@@ -160,14 +160,14 @@ body, html{
   grid-row: 2;  
 }
 
-.botoes_submit {
+.gerenciar_usuario_botoes_submit {
   display: grid;
   grid-template-columns: min-content min-content;
   grid-column: 1;
   grid-row: 4;
 }
 
-.cancelar_submit {
+.gerenciar_usuario_cancelar_submit {
   cursor: pointer;
   position: relative;
   top: 50%;
@@ -190,7 +190,7 @@ body, html{
   line-height: normal;
 }
 
-.confirmar_submit {
+.gerenciar_usuario_confirmar_submit {
   cursor: pointer;
   position: relative;
   top: 50%;
@@ -213,7 +213,7 @@ body, html{
   line-height: normal;
 }
 
-.usuario_info {
+.gerenciar_usuario_usuario_info {
   grid-row: span 3;
   grid-column: 1;
   width: 295px;
@@ -221,17 +221,17 @@ body, html{
   background: #DCE5EB;
 }
 
-.informacoes_cliente {
+.gerenciar_usuario_informacoes_cliente {
   row-gap: 5%;;
 }
 
-.usuario_info {
+.gerenciar_usuario_usuario_info {
   display: grid;
   align-items: center;
   justify-items: center;
 }
 
-.desativar_usuario {
+.gerenciar_usuario_desativar_usuario {
   border: 0;
   border-radius: 10px;
   background: #F00;
@@ -245,7 +245,7 @@ body, html{
   cursor: pointer;
 }
 
-.nome_info {
+.gerenciar_usuario_nome_info {
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -255,11 +255,11 @@ body, html{
   line-height: normal;
 }
 
-.main_text_info_container {
+.gerenciar_usuario_main_text_info_container {
   grid-column: span 2;
 }
 
-.data_cadastro, .email, .cargo {
+.gerenciar_usuario_data_cadastro, .gerenciar_usuario_email, .gerenciar_usuario_cargo {
   display: grid;
   align-items: center;
   justify-content: center;
@@ -268,7 +268,7 @@ body, html{
   background: #DCE5EB;
 }
 
-.data_cadastro_text, .email_text, .cargo_text {
+.gerenciar_usuario_data_cadastro_text, .gerenciar_usuario_email_text, .gerenciar_usuario_cargo_text {
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -278,7 +278,7 @@ body, html{
   line-height: normal;
 }
 
-.data_cadastro_date, .email_date, .cargo_info {
+.gerenciar_usuario_data_cadastro_date, .gerenciar_usuario_email_date, .gerenciar_usuario_cargo_info {
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -288,13 +288,13 @@ body, html{
   line-height: 90%;
 }
 
-.botoes {
+.gerenciar_usuario_botoes {
   position: relative;
   top: 35%;
   height: 40px;
 }
 
-.filtro {
+.gerenciar_usuario_filtro {
   width: 543px;
   height: 43px;
   border: 1px solid rgba(0, 0, 0, 0.50);
@@ -307,7 +307,7 @@ body, html{
   line-height: normal;
 }
 
-.table {
+.gerenciar_usuario_table {
   width: 1822px;
   height: 752px;
   border: 1px solid rgba(0, 0, 0, 0.30);
@@ -319,7 +319,7 @@ body, html{
   text-align: center;
 }
 
-.table p {
+.gerenciar_usuario_table p {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -335,7 +335,7 @@ body, html{
   line-height: normal;
 }
 
-.table span {
+.gerenciar_usuario_table span {
   border: 1px solid rgba(0, 0, 0, 0.30);
   display: flex;
   align-items: center;
