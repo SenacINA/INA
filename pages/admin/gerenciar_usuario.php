@@ -12,30 +12,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar_principal"></nav>
-  <header>
-    <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header" width="100%">
+  <nav class="gerenciar_usuario_navbar_principal"></nav>
+  <header class = "gerenciar_usuario_header">
+    <div class = "gerenciar_usuario_header_title">
+      <h1>GERENCIAR USUARIO</h1> 
+    </div>
+    <div class = "gerenciar_usuario_header_linha"></div>
   </header>
-  <main class="main_container">
-    <div class="main_content">
-      <div class="pesquisa_cliente_container">
-        <div class="pesquisa_cliente">
-          <div class="main_text_pesquisa_container">
-            <p class="main_text_pesquisa">Pesquisar Clientes</p>
-            <hr class="linha_seperador">
+  
+  <main class="gerenciar_usuario_main_container">
+    <div class="gerenciar_usuario_main_content">
+      <div class="gerenciar_usuario_pesquisa_cliente_container">
+        <div class="gerenciar_usuario_pesquisa_cliente">
+          <div class="gerenciar_usuario_main_text_pesquisa_container">
+            <p class="gerenciar_usuario_main_text_pesquisa">Pesquisar Clientes</p>
+            <hr class="gerenciar_usuario_linha_separador">
           </div>
-          <form class="forms_pesquisa">
+          <form class="gerenciar_usuario_forms_pesquisa">
             <label for="ip_email">IP / E-Mail</label>
-            <input type="text" name="ip_email" id="ip_email">
-            <div class="selects_container">
-              <label for="status" class="status">Status</label>
-              <select name="status" id="status" class="status_select">
+            <input type="text" name="ip_email" id="gerenciar_usuario_ip_email">
+            <div class="gerenciar_usuario_selects_container">
+              <label for="status" class="gerenciar_usuario_status">Status</label>
+              <select name="status" id="gerenciar_usuario_status" class="gerenciar_usuario_status_select">
                 <option value="" disabled selected>Selecione um Status</option>
                 <option value="mensal">Ativo</option>
                 <option value="semestral">Inativo</option>
               </select>
-              <label for="mes" class="mes">Mês</label>
-              <select name="mes" id="mes" class="mes_select">
+              <label for="mes" class="gerenciar_usuario_mes">Mês</label>
+              <select name="mes" id="gerenciar_usuario_mes" class="gerenciar_usuario_mes_select">
                 <option value="" disabled selected>Selecione um mês</option>
                 <option value="janeiro">Janeiro</option>
                 <option value="fevereiro">Fevereiro</option>
@@ -50,45 +54,45 @@
                 <option value="novembro">Novembro</option>
                 <option value="dezembro">Dezembro</option>
               </select>
-              <label for="ano" class="ano">Ano</label>
-              <select name="ano" id="ano" class="ano_select">
+              <label for="ano" class="gerenciar_usuario_ano">Ano</label>
+              <select name="ano" id="gerenciar_usuario_ano" class="gerenciar_usuario_ano_select">
                 <option value="" disabled selected>Selecione um ano</option>
                 <option value="2025">2025</option>
               </select>                 
             </div>
-            <div class="botoes_submit">
-              <button type="reset" class="cancelar_submit">Cancelar</button>
-              <button type="submit" class="confirmar_submit">Confirmar</button>
+            <div class="gerenciar_usuario_botoes_submit">
+              <button type="reset" class="gerenciar_usuario_cancelar_submit">Cancelar</button>
+              <button type="submit" class="gerenciar_usuario_confirmar_submit">Confirmar</button>
             </div>
           </form>
         </div>
-        <div class="informacoes_cliente">
-          <div class="main_text_info_container">
-            <p class="main_text_info">Perfil do Usuário</p>
-            <hr class="linha_separador">
+        <div class="gerenciar_usuario_informacoes_cliente">
+          <div class="gerenciar_usuario_main_text_info_container">
+            <p class="gerenciar_usuario_main_text_info">Perfil do Usuário</p>
+            <hr class="gerenciar_usuario_linha_separador">
           </div>
-          <div class="usuario_info">
-            <img src="../../image/cliente/editar_perfil/perfil_usuario.svg" alt="pfp" class="pfp_info">
-            <p class="nome_info">Luís Fernando</p>
-            <button class="desativar_usuario">Desativar Usuário</button>
+          <div class="gerenciar_usuario_usuario_info">
+            <img src="../../image/cliente/editar_perfil/perfil_usuario.svg" alt="pfp" class="gerenciar_usuario_pfp_info">
+            <p class="gerenciar_usuario_nome_info">Luís Fernando</p>
+            <button class="gerenciar_usuario_desativar_usuario">Desativar Usuário</button>
           </div>
-          <div class="data_cadastro">
-            <p class="data_cadastro_text">Data De Cadastro</p>
-            <p class="data_cadastro_date">22/03/2024 08:32:43</p>
+          <div class="gerenciar_usuario_data_cadastro">
+            <p class="gerenciar_usuario_data_cadastro_text">Data De Cadastro</p>
+            <p class="gerenciar_usuario_data_cadastro_date">22/03/2024 08:32:43</p>
           </div>
-          <div class="email">
-            <p class="email_text">E-Mail</p>
-            <p class="email_date">adm1_EaoQuadrado@gmail.com</p>
+          <div class="gerenciar_usuario_email">
+            <p class="gerenciar_usuario_email_text">E-Mail</p>
+            <p class="gerenciar_usuario_email_date">adm1_EaoQuadrado@gmail.com</p>
           </div>
-          <div class="cargo">
-            <p class="cargo_text">Cargo</p>
-            <p class="cargo_info">Admin</p>
+          <div class="gerenciar_usuario_cargo">
+            <p class="gerenciar_usuario_cargo_text">Cargo</p>
+            <p class="gerenciar_usuario_cargo_info">Admin</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="botoes">
-      <select name="filtro" id="filtro" class="filtro">
+    <div class="gerenciar_usuario_botoes">
+      <select name="filtro" id="gerenciar_usuario_filtro" class="gerenciar_usuario_filtro">
         <option value="">Organizar por:</option>
         <option value="nome">Nome</option>
         <option value="categoria">Data de Cadastro</option>
@@ -98,7 +102,7 @@
         <option value="email">Status</option>
       </select>
     </div>
-    <div class="table">
+    <div class="gerenciar_usuario_table">
       <p>IP</p>
       <p>NOME</p>
       <p>DATA DE CADASTRO</p>
