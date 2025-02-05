@@ -104,9 +104,9 @@
     </div>
     <div class="gerenciar_usuario_table">
       <p>IP</p>
-      <p>Nome</p>
+      <p>NOME</p>
       <p>DATA DE CADASTRO</p>
-      <p>Cargo</p>
+      <p>CARGO</p>
       <p>E-MAIL</p>
       <p>CONTATO</p>
       <p>STATUS</p>
