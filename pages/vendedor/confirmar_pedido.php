@@ -66,6 +66,7 @@
                 </div>
                 
                 <div class="botao_confirmar_envio">
+                    <img src="../../image/vendedor/confirmar_pedido/botao_confirmar.png" alt="">
                     <h1>Confirmar Envio</h1>
                 </div>
 
@@ -140,21 +141,70 @@
                             <h2>18:45.</h2>
                         </div>
                     </div>
-
                 </div>
-
             </div>
 
             <div class="container_4">
-                a
-            </div>
-            <div class="container_5">
-                a
-            </div>
+                <div class=itens_container_4>
+                    <div class="container_4_item">
+                        <h2>Subtotal</h2>
+                        <h2>3 itens</h2>
+                        <h2>R$1.2225,57</h2>
+                    </div>
 
+                    <div class="container_4_item">
+                        <h2>Tributos</h2>
+                        <h2>VAT 17%</h2>
+                        <h2>R$213,44</h2>
+                    </div>
+                    
+                    <h1>Total</h1>
+                    <hr>
+                    
+                    <div class="container_4_total">
+                        <h2>Pago pelo Cliente</h2>
+                        <h2>R$0</h2>
+                    </div>
+                </div>
 
-        </div>
+                <div class="botao_receber_pagamento">
+                    <img src="../../image/vendedor/confirmar_pedido/seta_cima.png" alt="">
+                    <h1>Receber Pagamento</h1>
+                </div>
+            </div>
             
+            <div class="container_5">
+                <div class="container_5_item">
+                    <h1>Cliente</h1>
+                    <h2>Guilherme Xavier</h2>
+                    <h2>3 pedidos</h2>
+                </div>
+
+                <div class="container_5_item">
+                    <div class="linha">
+                        <h1>Informações de Contado</h1>
+                        <img src="../../image/vendedor/confirmar_pedido/copiar.png" alt="">
+                    </div>
+                    <h2>(67) 9 9999-9999</h2>
+                </div>
+
+                <div class="container_5_item">
+                    <div class="linha">
+                        <h1>Endereço de Entrega</h1>
+                        <img src="../../image/vendedor/confirmar_pedido/copiar.png" alt="">
+                    </div>
+                    <div class="linha_2">
+                        <h3>CEP:</h3>
+                        <h2>69910-890</h2>
+                    </div>
+                    <h2>Rua Vinte e Três, Tancredo Neves - Rio Branco, AC</h2>
+                </div>
+                <div class="botao_denunciar_usuario">
+                    <img src="../../image/vendedor/confirmar_pedido/cancelar.png" alt="">
+                    <h1>Denunciar Usuário</h1>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
