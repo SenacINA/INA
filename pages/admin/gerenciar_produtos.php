@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar"></nav>
+  <nav class="gerenciar_produtos_navbar"></nav>
   
   <header class = "gerenciar_produtos_header">
     <div class = "gerenciar_produtos_header_title">
@@ -21,23 +21,23 @@
     <div class = "gerenciar_produtos_header_linha"></div>
   </header>
 
-  <main class="main_container">
-    <div class="main_content">
-      <div class="pesquisa">
-        <div class="pesquisa_cliente">
-          <div class="main_text_pesquisa_container">
-            <p class="main_text_pesquisa">Pesquisar Produtos</p>
-            <hr class="linha">
+  <main class="gerenciar_produtos_main_container">
+    <div class="gerenciar_produtos_main_content">
+      <div class="gerenciar_produtos_pesquisa">
+        <div class="gerenciar_produtos_pesquisa_cliente">
+          <div class="gerenciar_produtos_main_text_pesquisa_container">
+            <p class="gerenciar_produtos_main_text_pesquisa">Pesquisar Produtos</p>
+            <hr class="gerenciar_produtos_linha">
           </div>
-          <form class="forms_pesquisa">
+          <form class="gerenciar_produtos_forms_pesquisa">
             <label for="ip_email">Código do produto / Nome vendedor</label>
             <input type="text" name="ip_email" id="ip_email">
-            <div class="selects">
-              <label for="plano" class="plano">Status</label>
-              <select name="plano" id="plano" class="plano_select">
+            <div class="gerenciar_produtos_selects">
+              <label for="plano" class="gerenciar_produtos_plano">Status</label>
+              <select name="plano" id="gerenciar_produtos_plano" class="gerenciar_produtos_plano_select">
               </select>
-              <label for="mes" class="mes">Mês</label>
-              <select name="mes" id="mes" class="mes_select">
+              <label for="mes" class="gerenciar_produtos_mes">Mês</label>
+              <select name="mes" id="gerenciar_produtos_mes" class="gerenciar_produtos_mes_select">
                 <option value="">Selecione um mês</option>
                 <option value="janeiro">Janeiro</option>
                 <option value="fevereiro">Fevereiro</option>
@@ -52,8 +52,8 @@
                 <option value="novembro">Novembro</option>
                 <option value="dezembro">Dezembro</option>
               </select>
-              <label for="ano" class="ano">Ano</label>
-              <select name="ano" id="ano" class="ano_select">
+              <label for="ano" class="gerenciar_produtos_ano">Ano</label>
+              <select name="ano" id="gerenciar_produtos_ano" class="gerenciar_produtos_ano_select">
                 <option value="">Selecione um ano</option>
                 <option value="2020">2020</option>
                 <option value="2021">2021</option>
@@ -68,78 +68,81 @@
                 <option value="2030">2030</option>
               </select>                 
             </div>
-            <div class="botoes_submit">
-              <button type="reset" class="cancelar_submit">Cancelar</button>
-              <button type="submit" class="confirmar_submit">Confirmar</button>
+            <div class="gerenciar_produtos_botoes_submit">
+              <button type="reset" class="gerenciar_produtos_cancelar_submit">Cancelar</button>
+              <button type="submit" class="gerenciar_produtos_confirmar_submit">Confirmar</button>
             </div>
           </form>
         </div>
-        <div class="informacoes_cliente">
-          <div class="main_text_info_container">
-            <p class="main_text_info">Estatísticas</p>
-            <hr class="linha">
-            <p class="sub_text_info font_subtitulo">Geral</p>
-          </div>
-          <div class="usuario_info">
-            <img src="../../image/cliente/editar_perfil/perfil_usuario.svg" alt="pfp" class="pfp_info">
-            <p class="nome_info">info@nvidia.com</p>
-          </div>
-          <div class="data_inicio">
-            <p class="data_inicio_text">Data De Início</p>
-            <p class="data_inicio_date">25/07/2024</p>
-          </div>
-          <div class="data_expiracao">
-            <p class="data_expiracao_text">Data De Expiração</p>
-            <p class="data_expiracao_date">25/08/2024</p>
-          </div>
-          <div class="cargo">
-            <p class="cargo_text">Cargo</p>
-            <p class="cargo_info">Vendedor</p>
+        <div class="gerenciar_produtos_estatisticas">
+          <div class="gerenciar_produtos_main_text_info_container">
+            <p class="gerenciar_produtos_main_text_info">Estatísticas</p>
+            <hr class="gerenciar_produtos_linha">
+            <p class="gerenciar_produtos_sub_text_info gerenciar_produtos_font_subtitulo">Geral</p>
+
+            <div class="gerenciar_produtos_grid_item">1</div>
+          <div class="gerenciar_produtos_grid_item">2</div>
+          <div class="gerenciar_produtos_grid_item">3</div>
+          <div class="gerenciar_produtos_grid_item">4</div>
+          <div class="gerenciar_produtos_grid_item">5</div>
+          <div class="gerenciar_produtos_grid_item">6</div>
+          <div class="gerenciar_produtos_grid_item">7</div>
+          <div class="gerenciar_produtos_grid_item">8</div>
+          <div class="gerenciar_produtos_grid_item">9</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="botoes">
-      <select name="filtro" id="filtro" class="filtro">
+
+
+    
+    <div class="gerenciar_produtos_botoes">
+
+
+    <main class="gerenciar_produtos_main_container">
+    <div class="gerenciar_produtos_botoes">
+      <select name="filtro" id="gerenciar_produtos_filtro" class="gerenciar_produtos_filtro">
         <option value="">Organizar por:</option>
+        <option value="cod">Código</option>
         <option value="nome">Nome</option>
-        <option value="categoria">Categoria</option>
-        <option value="cargo">Cargo</option>
-        <option value="plano">Plano</option>
-        <option value="data_inicio">Data de início</option>
-        <option value="data_expiracao">Data de expiração</option>
+        <option value="requisitos">Requisitos</option>
+        <option value="declaracao">Declaração</option>
+        <option value="aprovar">Aprovar</option>
+        <option value="status">Status</option>
       </select>
-      <button class="add_anuncio">Adicionar anúncio</button>
     </div>
-    <div class="table">
-      <p>IP</p>
-      <p>NOME</p>
-      <p>CATEGORIA</p>
-      <p>CARGO</p>
-      <p>PLANO</p>
-      <p>DATA DE INICIO</p>
-      <p>DATA DE EXPIRAÇÃO</p>
-      <span>192.168.0.1</span>
-      <span>info@nvidia.com</span>
-      <span>Hardware</span>
-      <span>Vendedor</span>
-      <span>Mensal</span>
-      <span>25/07/2024</span>
-      <span>25/08/2024</span>
-      <span>192.138.0.2</span>
-      <span>suporte@periféricos.com</span>
-      <span>Periféricos</span>
-      <span>Vendedor</span>
-      <span>Semestral</span>
-      <span>25/01/2024</span>
-      <span>25/07/2024</span>
-      <span>192.231.0.3</span>
-      <span>admin@admin.com</span>
-      <span>Celulares</span>
-      <span>Admin</span>
-      <span>Anual</span>
-      <span>25/07/2024</span>
-      <span>25/07/2025</span>
+    <div class="gerenciar_produtos_table">
+      <p>CÓDIGO</p>
+      <p>PRODUTO</p>
+      <p>PREÇO</p>
+      <p>QUANTIDADE</p>
+      <p>PREVIEW DA ENTREGA</p>
+      <p>VENDEDOR</p>
+      <span># 1001</span>
+      <span>Cadeira Gamer Throne - RGB </span>
+      <span>R$ 1.400,00</span>
+      <span>01</span>
+      <span>25/03/2024 20:23:31 - 06/04/2024 06:07:53</span>
+      <span>THUNDER GAMES</span>
+      <span># 1002</span>
+      <span>Carregador Portátil</span>
+      <span>R$ 199,90</span>
+      <span>02</span>
+      <span>25/03/2024 21:43:20 - 06/04/2024 07:32:54</span>
+      <span>Revendedor Tec</span>
+      <span># 1003</span>
+      <span>Xiaomi Redmi PocoPhone X6</span>
+      <span>R$ 12.043,90</span>
+      <span>10</span>
+      <span>25/03/2024 22:13:51 - 06/04/2024 07:37:51</span>
+      <span>Revendedor Tec</span>
+      <span># 1004</span>
+      <span>Mesa de Escritório Luna</span>
+      <span>R$ 899,90</span>
+      <span>01</span>
+      <span>25/03/2024 23:55:32 - 06/04/2024 07:48:38</span>
+      <span>Móveis e Decorações</span>
     </div>
   </main>
 </body>

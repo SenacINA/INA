@@ -46,7 +46,7 @@ body, html{
     border-radius: 20px;
 }
 
-.main_container {
+.gerenciar_produtos_main_container {
   width: 100%;
   position: relative;
   display: grid;
@@ -56,7 +56,7 @@ body, html{
   top: 1%;
 }
 
-.pesquisa {
+.gerenciar_produtos_pesquisa {
   display: grid;
   grid-template-columns: min-content min-content;
   position: relative;
@@ -66,13 +66,13 @@ body, html{
   width: 1000px;
 }
 
-.pesquisa_cliente {
+.gerenciar_produtos_pesquisa_cliente {
   display: grid;
   grid-template-rows: repeat(6, auto);
   grid-template-columns: repeat(3, auto);
 }
 
-.informacoes_cliente {
+.gerenciar_produtos_informacoes_cliente {
   display: grid;
   grid-template-columns: repeat(2, min-content);
   grid-template-rows: repeat(3, min-content );
@@ -80,18 +80,19 @@ body, html{
   justify-items: center;
 }
 
-.main_content {
+.gerenciar_produtos_main_content {
   width: 1822px;
   height: 590px;
   border: 2px solid rgba(0, 0, 0, 0.30);
   background: #F1F1F1;
 }
 
-.main_text_pesquisa_container {
+.gerenciar_produtos_main_text_pesquisa_container {
   grid-column: 1;
+
 }
 
-.main_text_pesquisa, .main_text_info {
+.gerenciar_produtos_main_text_pesquisa, .main_text_info {
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -101,7 +102,7 @@ body, html{
   line-height: normal;
 }
 
-.sub_text_info{
+.gerenciar_produtos_sub_text_info{
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -111,30 +112,30 @@ body, html{
   line-height: normal;
 }
 
-.linha {
+.gerenciar_produtos_linha {
   width: 613px;
   height: 2px;
   background: rgba(0, 0, 0, 0.30);
 }
 
-.forms_pesquisa {
+.gerenciar_produtos_forms_pesquisa {
   margin-top: 24px;
   grid-column: 1;
   grid-row: 2;
   display: grid;
 }
 
-.forms_pesquisa input {
+.gerenciar_produtos_forms_pesquisa input {
   width: 614px;
   height: 34px;
 }
 
-#ip_email {
+#gerenciar_produtos_ip_email {
   grid-column: 1;
   text-indent: 5px;
 }
 
-.forms_pesquisa label {
+.gerenciar_produtos_forms_pesquisa label {
   color: #000;
   font-family: Jost;
   font-size: 20px;
@@ -143,7 +144,7 @@ body, html{
   line-height: normal;
 }
 
-.selects {
+.gerenciar_produtos_selects {
   grid-column: 1;
   grid-row: 3;
   display: grid;
@@ -152,30 +153,30 @@ body, html{
   margin-top: 3%;
 }
 
-.ano {
+.gerenciar_produtos_ano {
   grid-column: 3;
   grid-row: 1;
 }
 
-.ano_select {
+.gerenciar_produtos_ano_select {
   grid-column: 3;
   grid-row: 2;
   height: 34px;
 }
 
-.plano_select {
+.gerenciar_produtos_plano_select {
   grid-column: 1;
   grid-row: 2;  
 }
 
-.botoes_submit {
+.gerenciar_produtos_botoes_submit {
   display: grid;
   grid-template-columns: min-content min-content;
   grid-column: 1;
   grid-row: 4;
 }
 
-.cancelar_submit {
+.gerenciar_produtos_cancelar_submit {
   cursor: pointer;
   position: relative;
   top: 50%;
@@ -198,7 +199,7 @@ body, html{
   line-height: normal;
 }
 
-.confirmar_submit {
+.gerenciar_produtos_confirmar_submit {
   cursor: pointer;
   position: relative;
   top: 50%;
@@ -221,74 +222,47 @@ body, html{
   line-height: normal;
 }
 
-.usuario_info {
-  grid-row: span 3;
-  grid-column: 1;
-  width: 295px;
-  height: 258px;
-  background: #DCE5EB;
-}
 
-.informacoes_cliente {
-  row-gap: 5%;;
-}
-
-.usuario_info {
+.gerenciar_produtos_estatisticas {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 710px;
+  height: 266px;
+  gap: 5px;
+  background-color: #ddd;
+  padding: 5px;
+}
+.gerenciar_produtos_grid_item {
+  display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.nome_info {
-  color: #000;
-  text-align: center;
-  font-family: Jost;
+  background-color: #4a90e2;
+  color: white;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: bold;
 }
 
-.main_text_info_container {
-  grid-column: span 2;
-}
 
-.data_inicio, .data_expiracao, .cargo {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  width: 295px;
-  height: 75px;
-  background: #DCE5EB;
-}
 
-.data_inicio_text, .data_expiracao_text, .cargo_text {
-  color: #000;
-  text-align: center;
-  font-family: Jost;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.data_inicio_date, .data_expiracao_date, .cargo_info {
-  color: #000;
-  text-align: center;
-  font-family: Jost;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 90%;
-}
-
-.botoes {
+.gerenciar_produtos_main_container {
+  width: 100%;
   position: relative;
-  top: 35%;
+  display: grid;
+  margin-top: 20px;
+  justify-content: center;
+  grid-template-columns: auto;
+  grid-template-rows: 81px 800px; 
+  top: 1%;
+}
+
+.gerenciar_produtos_botoes {
+  position: relative;
+  top: 60%;
   height: 40px;
 }
 
-.filtro {
+.gerenciar_produtos_filtro {
   width: 543px;
   height: 43px;
   border: 1px solid rgba(0, 0, 0, 0.50);
@@ -301,36 +275,20 @@ body, html{
   line-height: normal;
 }
 
-.add_anuncio {
-  position: relative;
-  left: 59%;
-  width: 200px;
-  height: 50px;
-  border-radius: 10px;
-  background: #2075C2;
-  color: #FFF;
-  text-align: center;
-  font-family: Jost;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  cursor: pointer;
-}
-
-.table {
-  width: 1822px;
+.gerenciar_produtos_table {
+  width: 190VH;
+  margin-top: 20px;
   height: 752px;
   border: 1px solid rgba(0, 0, 0, 0.30);
   background: #F1F1F1;
   display: grid;
-  grid-template-columns: 9.22% 23.27% 13.39% 8.51% 12.40% 15.86% 17.35%;
+  grid-template-columns: 10.8% 26.17% 15.69% 9.97% 24.76% 12.61%;
   grid-template-rows: 64px repeat(13, 45px);
   row-gap: 8px;
   text-align: center;
 }
 
-.table p {
+.gerenciar_produtos_table p {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -346,7 +304,7 @@ body, html{
   line-height: normal;
 }
 
-.table span {
+.gerenciar_produtos_table span {
   border: 1px solid rgba(0, 0, 0, 0.30);
   display: flex;
   align-items: center;
