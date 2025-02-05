@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar_principal"></nav>
+  <nav class="aprovacao_vendedor_navbar_principal"></nav>
   <header class = "aprovacao_vendedor_header">
     <div class = "aprovacao_vendedor_header_title">
       <h1>APROVAÇÃO DO VENDEDOR</h1> 
@@ -20,9 +20,9 @@
     <div class = "aprovacao_vendedor_header_linha"></div>
   </header>
 
-  <main class="main_container">
-    <div class="botoes">
-      <select name="filtro" id="filtro" class="filtro">
+  <main class="aprovacao_vendedor_main_container">
+    <div class="aprovacao_vendedor_botoes">
+      <select name="filtro" id="aprovacao_vendedor_filtro" class="aprovacao_vendedor_filtro">
         <option value="">Organizar por:</option>
         <option value="cod">Código</option>
         <option value="nome">Nome</option>
@@ -32,7 +32,7 @@
         <option value="status">Status</option>
       </select>
     </div>
-    <div class="table">
+    <div class="aprovacao_vendedor_table">
       <p>CÓDIGO</p>
       <p>NOME</p>
       <p>REQUISITOS</p>
