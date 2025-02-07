@@ -10,31 +10,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body class="main_container">
-  <nav class="navbar_principal"></nav>
-  <header class="header_relatorio">
-    <div class="inner_header">
-      <h1 class="text_header">Gerenciar Pedidos</h1>
-      <hr class="linha_header">
+<body class="gerenciar_pedidos_main_container">
+  <nav class="gerenciar_pedidos_navbar_principal"></nav>
+  <header class="gerenciar_pedidos_header_relatorio">
+    <div class="gerenciar_pedidos_inner_header">
+      <h1 class="gerenciar_pedidos_text_header">Gerenciar Pedidos</h1>
+      <hr class="gerenciar_pedidos_linha_header">
     </div>
   </header>
-  <main class="main_content">
-    <div class="quadrado_container">
-      <div class="pesquisar_pedidos">
-        <div class="header_pedidos">
-          <p class="text_pedidos">Pesquisar Pedidos</p>
-          <hr class="linha_pedidos">
+  <main class="gerenciar_pedidos_main_content">
+    <div class="gerenciar_pedidos_quadrado_container">
+      <div class="gerenciar_pedidos_pesquisar_pedidos">
+        <div class="gerenciar_pedidos_header_pedidos">
+          <p class="gerenciar_pedidos_text_pedidos">Pesquisar Pedidos</p>
+          <hr class="gerenciar_pedidos_linha_pedidos">
         </div>
-        <form action="" method="post" class="forms_pesquisa_pedidos">
-          <label class='label_cod'>Código Do Produto / Nome Cliente</label>
-          <input type="text" class='input_cod'>
-          <label for="select_cod" class="label_status">Status</label>
-          <select name="select_cod" class="select_status">
+        <form action="" method="post" class="gerenciar_pedidos_forms_pesquisa_pedidos">
+          <label class="gerenciar_pedidos_label_cod">Código Do Produto / Nome Cliente</label>
+          <input type="text" class="gerenciar_pedidos_input_cod">
+          <label for="select_cod" class="gerenciar_pedidos_label_status">Status</label>
+          <select name="select_cod" class="gerenciar_pedidos_select_status">
             <option value="Entregue">Entregue</option>
             <option value="Em transporte">Em transporte</option>
           </select>
-          <label for="mes" class="mes">Mês</label>
-              <select name="mes" id="mes" class="mes_select">
+          <label for="mes" class="gerenciar_pedidos_mes">Mês</label>
+              <select name="mes" id="mes" class="gerenciar_pedidos_mes_select">
                 <option value="">Selecione um mês</option>
                 <option value="janeiro">Janeiro</option>
                 <option value="fevereiro">Fevereiro</option>
@@ -49,8 +49,8 @@
                 <option value="novembro">Novembro</option>
                 <option value="dezembro">Dezembro</option>
               </select>
-              <label for="ano" class="ano">Ano</label>
-              <select name="ano" id="ano" class="ano_select">
+              <label for="ano" class="gerenciar_pedidos_ano">Ano</label>
+              <select name="ano" id="ano" class="gerenciar_pedidos_ano_select">
                 <option value="">Selecione um ano</option>
                 <option value="2020">2020</option>
                 <option value="2021">2021</option>
@@ -64,51 +64,51 @@
                 <option value="2029">2029</option>
                 <option value="2030">2030</option>
               </select>
-          <button type="reset" class="cancelar">Cancelar</button>
-          <button type='submit' class="confirmar">Confirmar</button>
+          <button type="reset" class="gerenciar_pedidos_cancelar">Cancelar</button>
+          <button type="submit" class="gerenciar_pedidos_confirmar">Confirmar</button>
         </form>
       </div>
-      <div class="estatisticas">
-        <div class="header_estatisticas">
-          <p class="text_estatisticas">Estatísticas</p>
-          <hr class="linha_estatisticas">
+      <div class="gerenciar_pedidos_estatisticas">
+        <div class="gerenciar_pedidos_header_estatisticas">
+          <p class="gerenciar_pedidos_text_estatisticas">Estatísticas</p>
+          <hr class="gerenciar_pedidos_linha_estatisticas">
         </div>
-        <span class='titulo_geral'>geral</span>
-        <div class="valor_total">
-          <span class='titulo'>Valor Total</span>
-          <span class='num'>R$14.145,35</span>
+        <span class="gerenciar_pedidos_titulo_geral">geral</span>
+        <div class="gerenciar_pedidos_valor_total">
+          <span class="gerenciar_pedidos_titulo">Valor Total</span>
+          <span class="gerenciar_pedidos_num">R$14.145,35</span>
         </div>
-        <div class="total_vendas">
-          <span class='titulo'>Total De Vendas</span>
-          <span class='num'>14 UNI</span>
+        <div class="gerenciar_pedidos_total_vendas">
+          <span class="gerenciar_pedidos_titulo">Total De Vendas</span>
+          <span class="gerenciar_pedidos_num">14 UNI</span>
         </div>
-        <div class="pedidos_recebidos">
-          <span class='titulo'>Pedidos Recebidos</span>
-          <span class='num'>4 - 100%</span>
+        <div class="gerenciar_pedidos_pedidos_recebidos">
+          <span class="gerenciar_pedidos_titulo">Pedidos Recebidos</span>
+          <span class="gerenciar_pedidos_num">4 - 100%</span>
         </div>
-        <div class="horario_medio">
-          <span class='titulo'>Horário Médio Da Entrega</span>
-          <span class='num'>Manhã</span>
+        <div class="gerenciar_pedidos_horario_medio">
+          <span class="gerenciar_pedidos_titulo">Horário Médio Da Entrega</span>
+          <span class="gerenciar_pedidos_num">Manhã</span>
         </div>
-        <div class="total_pedidos">
-          <span class='titulo'>Total De Pedidos</span>
-          <span class='num'>4</span>
+        <div class="gerenciar_pedidos_total_pedidos">
+          <span class="gerenciar_pedidos_titulo">Total De Pedidos</span>
+          <span class="gerenciar_pedidos_num">4</span>
         </div>
-        <div class="reembolso">
-          <span class='titulo'>Pedidos Reembolsados</span>
-          <span class='num'>0 - 0%</span>
+        <div class="gerenciar_pedidos_reembolso">
+          <span class="gerenciar_pedidos_titulo">Pedidos Reembolsados</span>
+          <span class="gerenciar_pedidos_num">0 - 0%</span>
         </div>
-        <div class="medio_entrega">
-          <span class='titulo'>Tempo Medio De Entrega</span>
-          <span class='num'>9 Dias</span>
+        <div class="gerenciar_pedidos_medio_entrega">
+          <span class="gerenciar_pedidos_titulo">Tempo Medio De Entrega</span>
+          <span class="gerenciar_pedidos_num">9 Dias</span>
         </div>
-        <div class="placeholder">
-          <span class='titulo'>-</span>
+        <div class="gerenciar_pedidos_placeholder">
+          <span class="gerenciar_pedidos_titulo">-</span>
         </div>
       </div>
     </div>
-    <div class="filtro"></div>
-    <div class="table"></div>
+    <div class="gerenciar_pedidos_filtro"></div>
+    <div class="gerenciar_pedidos_table"></div>
   </main>
 </body>
 </html>
