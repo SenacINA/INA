@@ -230,20 +230,20 @@ id_avaliacao int,
 foreign key (id_avaliacao) references avaliacao(id_avaliacao)
 );
 
-create table tag(
+create table tag( --26
 id_tag int primary key,
 nome_tag varchar(200) not null
 );
 
 create table tag_produto ( -- 25
-    id_tag_produto integer primary key, 
-    id_produto int,  
-    id_tag int,
-    foreign key (id_produto) references produto(id_produto),  
-    foreign key (id_tag) references tag(id_tag)  
+id_tag_produto integer primary key, 
+id_produto int,  
+id_tag int,
+foreign key (id_produto) references produto(id_produto),  
+foreign key (id_tag) references tag(id_tag)  
 );
 
-create table tag_vinculo(
+create table tag_vinculo( -- 27
 id_tag_vinculo int primary key,
 id_tag int,
 id_categoria int,
