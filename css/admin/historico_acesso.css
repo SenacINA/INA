@@ -1,12 +1,3 @@
-*{
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-decoration: none;
-  box-sizing: border-box;
-}
-
-/* Grid pai */
 .historico_adm_header_header{
   width: 85%;
   margin: auto;
@@ -20,20 +11,17 @@
   grid-row-start: 1 ;
 }
 
-/* Grid input e os carai */
 .historico_adm_header_lupa{
   align-items: center;
   display: flex;
   grid-area: 1/1/1/1;
 }
 
-/* Grid Logo */
 .historico_adm_header_logo{
   display: grid;
   align-self: center;
   grid-area: 1/2/2/3;
 }
-/* Grid botões */
 .historico_adm_header_header_botoes {
   width: auto;
   display: grid;
@@ -42,14 +30,10 @@
   justify-self: right;
 }
 
-/* Elementos grid 2 */
-/* Logo */
 .historico_adm_header_logo button {
   border-style: none;
   background-color: transparent;
 }
-
-/* Elementos grid 3 */
 
 .historico_adm_header_header_botoes a{
   border-style: none;
@@ -59,9 +43,6 @@
   padding-right: 10px;
 }
 
-
-/* Elementos grid 1 */
-
 .historico_adm_header_lupa input{
   display: flex;
   width: 330px;
@@ -70,13 +51,6 @@
   border-radius: 10px;
   border-style: none;
   outline: 0;
-}
-
-body {
-  font-family: Jost;
-  margin: 0;
-  padding: 0;
-  background-color: #F1F1F1;
 }
 
 .historico_adm_section_titulo {
@@ -109,12 +83,11 @@ body {
   font-size: 24px;
   font-weight: 500;
 }
-.pesquisa_cliente_container h2 {
+.historico_adm_pesquisa_cliente_container h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: 500;
-
 }
 
 .historico_adm_label {
@@ -135,11 +108,11 @@ body {
   border-radius: 5px;
 }
 
-.historico_adm_relatorio_geral .buttons {
+.historico_adm_relatorio_geral .historico_adm_botoes {
   text-align: center;
 }
 
-.buttons button {
+.historico_adm_botoes button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -147,28 +120,27 @@ body {
   cursor: pointer;
 }
 
-#container-ip {
+.historico_adm_label #ip {
   width: 100%;
-  margin-bottom: 15px;
 }
 
-#container-horario-dia-ano {
-  display: flex;
+.historico_adm_label .historico_adm_horario_dia_ano{
+  display:flex ;
   gap: 15px;
   justify-content: space-between;
 }
 
-#container-horario-dia-ano div {
+.historico_adm_label .historico_adm_horario_dia_ano div {
   flex: 1;
   min-width: 120px;
 }
 
-.cancel {
+.historico_adm_cancel {
   background-color: #ff4d4d;
   color: white;
 }
 
-.confirm {
+.historico_adm_confirm {
   background-color: #007bff;
   color: white;
 }
@@ -185,13 +157,13 @@ body {
   justify-items: center; 
 }
 
-.grid {
+.historico_adm_grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.item {
+.historico_adm_item {
   background-color: #DCE5EB;
   padding: 15px;
   border-radius: 5px;
@@ -206,14 +178,13 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.50);
   background: #F1F1F1;
   color: #000;
-  font-family: Jost;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-.main_container {
+.historico_adm_main_container {
   width: 100%;
   position: relative;
   display: grid;
@@ -259,7 +230,7 @@ body {
   background-color: #DCE5EB;;
 }
 
-.pesquisa_cliente_container {
+.historico_adm_pesquisa_cliente_container {
   display: grid;
   grid-template-columns: min-content min-content;
   position: relative;
