@@ -20,6 +20,16 @@ body {
 }
 /* end header */
 
+.confirmar_pedido_linha_azul {
+    width: 1702px;
+    height: 9px;
+    margin: auto;
+    border: none;
+    background-color: #2888B1;
+    border-radius: 10px;
+}
+
+
 .confirmar_pedido_grid_bg {
     display: grid;
     grid-template-columns: auto;
@@ -192,6 +202,7 @@ body {
     cursor: pointer;
     margin-left: 30px;
     padding-right: 10px;
+    user-select: none;
 }
 
 .confirmar_pedido_botao_confirmar_envio img, .confirmar_pedido_botao_receber_pagamento img {
@@ -217,7 +228,7 @@ body {
     padding: 10px;
 }
 
-.confirmar_pedido_produtos {
+.confirmar_pedido_produtos img {
     margin-bottom: 60px; 
 }
 
@@ -486,6 +497,7 @@ body {
     cursor: pointer;
     margin-left: 30px;
     padding-right: 10px;
+    user-select: none;
 }
 
 .confirmar_pedido_botao_denunciar_usuario img {
