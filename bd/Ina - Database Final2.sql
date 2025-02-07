@@ -96,6 +96,7 @@ valor_minimo_cupom float default 0,
 desconto_cupom float not null,
 data_criacao_cupom date not null,
 data_final_cupom date not null,
+tipo_sobre_frete_cupom BOOLEAN DEFAULT false, -- aplica ao frete 
 foreign key (id_vendedor) references vendedor(id_vendedor)
 );
 
