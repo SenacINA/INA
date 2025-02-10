@@ -1,0 +1,244 @@
+.historico_adm_header_header{
+  width: 85%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
+  grid-area: 1/1/1/1;
+  grid-column-start: 1;
+  grid-row-start: 1 ;
+}
+
+.historico_adm_header_lupa{
+  align-items: center;
+  display: flex;
+  grid-area: 1/1/1/1;
+}
+
+.historico_adm_header_logo{
+  display: grid;
+  align-self: center;
+  grid-area: 1/2/2/3;
+}
+
+.historico_adm_header_header_botoes {
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-self: center;
+  justify-self: right;
+}
+
+.historico_adm_header_logo button {
+  border-style: none;
+  background-color: transparent;
+}
+
+.historico_adm_header_header_botoes a{
+  border-style: none;
+  background-color: transparent;
+  align-self: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.historico_adm_header_lupa input{
+  display: flex;
+  width: 330px;
+  height: 30px;
+  padding: 0px 5px;
+  border-radius: 10px;
+  border-style: none;
+  outline: 0;
+}
+
+.historico_adm_section_titulo {
+  background-color: #1a3e5c;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 500;
+  height: 80px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.historico_adm_relatorio_geral {
+  background-color: #F1F1F1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 1822px;
+  height: 590px;
+  border: 2px solid rgba(0, 0, 0, 0.30);
+}
+
+.historico_adm_relatorio_geral h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.historico_adm_pesquisa_cliente_container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.historico_adm_label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.historico_adm_label div {
+  flex: 1;
+  min-width: 250px;
+}
+
+.historico_adm_label input, .historico_adm_label select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+}
+
+.historico_adm_relatorio_geral .historico_adm_buttons {
+  text-align: center;
+}
+
+.historico_adm_buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#historicoAdmContainerIp {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#historicoAdmContainerHorarioDiaAno {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+#historicoAdmContainerHorarioDiaAno div {
+  flex: 1;
+  min-width: 120px;
+}
+
+.historico_adm_cancel{
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.historico_adm_confirm {
+  background-color: #007bff;
+  color: white;
+}
+
+.historico_adm_info_usuario {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  grid-template-columns: repeat(2, min-content);
+  grid-template-rows: repeat(3, min-content );
+  align-items: center;
+  justify-items: center; 
+}
+
+.historico_adm_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.historico_adm_item {
+  background-color: #DCE5EB;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  width: 280px;
+  height: 80px;
+}
+
+.historico_adm_filtro {
+  width: 543px;
+  height: 43px;
+  border: 1px solid rgba(0, 0, 0, 0.50);
+  background: #F1F1F1;
+  color: #000;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.historico_adm_main_container {
+  width: 100%;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto;
+  grid-template-rows: 590px 81px 800px;
+  top: 1%;
+}
+
+.historico_adm_table {
+  width: 1822px;
+  height: 752px;
+  border: 1px solid rgba(0, 0, 0, 0.30);
+  background: #F1F1F1;
+  display: grid;
+  grid-template-columns: 10.22% 11.34% 11.39% 9.51% 11.13% 34.66% 11.76%;
+  grid-template-rows: 64px repeat(13, 45px);
+  row-gap: 8px;
+  text-align: center;
+}
+
+.historico_adm_table p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.30);
+  position: relative;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.historico_adm_table span {
+  border: 1px solid rgba(0, 0, 0, 0.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DCE5EB;;
+}
+
+.historico_adm_pesquisa_cliente_container {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  position: relative;
+  top: 97px;
+  left: 92px;
+  column-gap: 80%;
+  width: 1000px;
+}
