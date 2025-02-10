@@ -22,6 +22,7 @@
   align-self: center;
   grid-area: 1/2/2/3;
 }
+
 .historico_adm_header_header_botoes {
   width: auto;
   display: grid;
@@ -108,11 +109,11 @@
   border-radius: 5px;
 }
 
-.historico_adm_relatorio_geral .historico_adm_botoes {
+.historico_adm_relatorio_geral .historico_adm_buttons {
   text-align: center;
 }
 
-.historico_adm_botoes button {
+.historico_adm_buttons button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -120,22 +121,23 @@
   cursor: pointer;
 }
 
-.historico_adm_label #ip {
+#historicoAdmContainerIp {
   width: 100%;
+  margin-bottom: 15px;
 }
 
-.historico_adm_label .historico_adm_horario_dia_ano{
-  display:flex ;
+#historicoAdmContainerHorarioDiaAno {
+  display: flex;
   gap: 15px;
   justify-content: space-between;
 }
 
-.historico_adm_label .historico_adm_horario_dia_ano div {
+#historicoAdmContainerHorarioDiaAno div {
   flex: 1;
   min-width: 120px;
 }
 
-.historico_adm_cancel {
+.historico_adm_cancel{
   background-color: #ff4d4d;
   color: white;
 }
@@ -178,6 +180,7 @@
   border: 1px solid rgba(0, 0, 0, 0.50);
   background: #F1F1F1;
   color: #000;
+  font-family: Jost;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;

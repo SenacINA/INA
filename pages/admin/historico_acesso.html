@@ -6,9 +6,8 @@
     <title>E ao Quadrado</title>
     <link rel="stylesheet" href="../../css/admin/historico_acesso.css">
     <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-    <link rel="stylesheet" href="../../css/admin/historico_acesso.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -48,36 +47,37 @@
                     <h2>RELATÓRIO GERAL</h2> 
                     <hr/>
                     <div class="historico_adm_pesquisa_cliente_container">
+                    
                         <div class="historico_adm_label">
                     <h2>Pesquisar Usuário</h2>
-
-                            <div>
+                            <div id="historicoAdmContainerIp">
                             <label for="ip">IP</label>
-                                <input type="text" id="ip">
+                            <input type="text" id="ip">
                             </div>
-
-                            <div class="historico_adm_horario_dia_ano">
+                        <div id="historicoAdmContainerHorarioDiaAno">
+                            <div>
                             <label for="horario">Horário</label>
-                                <select id="horarioDiaAno">
+                                <select id="horario">
                                     <option value="">Horário</option>
                                 </select>
                             </div>
 
-                            <div class="historico_adm_horario_dia_ano">
+                            <div>
                             <label for="dia">Dia</label>
-                                <select id="horarioDiaAno">
+                                <select id="dia">
                                     <option value="">Dia</option>
                                 </select>
                             </div>
 
-                            <div class="historico_adm_horario_dia_ano">
+                            <div>
                             <label for="ano">Ano</label>
-                                <select id="horarioDiaAno">
+                                <select id="ano">
                                     <option value="">Ano</option>
                                 </select>
                             </div>
                         </div>
-                <div class="user-info">
+                    </div>
+                <div class="historico_adm_info_usuario">
                     <div class="historico_adm_info_usuario">
                         <h2>Informações do Usuário</h2>
                             <div class="historico_adm_grid">        
@@ -103,7 +103,7 @@
                             </div>
                         </div>
                     </div> 
-                        <div class="historico_adm_botoes">
+                        <div class="historico_adm_buttons">
                             <button class="historico_adm_cancel">Cancelar</button>
                             <button class="historico_adm_confirm">Confirmar</button> 
                         </div>
@@ -111,7 +111,7 @@
              
                 
             </div>
-            <div class="historico_adm_botoes">
+            <div class="historico_adm_buttons">
                 <select name="filtro" id="filtro" class="historico_adm_filtro">
                   <option value="">Organizar por:</option>
                   <option value="nome">Nome</option>
