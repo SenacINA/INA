@@ -12,78 +12,126 @@
 </head>
 <body>
   <main>
-    <nav class="perfil_admin_nav_bar"></nav>
+    <!-- Falta Nav-bar -->
+    <nav class="perfil_admin_nav_bar"></nav>  
 
     <div class="perfil_admin_body">
       <div class="perfil_admin_header">
-        <h1 class="perfil_admin_text_header">SEU PERFIL</h1>
+        <div class="perfil_admin_text_header">
+          <img src="../../image/admin/perfil_admin/perfil_icon.svg" alt="">
+          <h1>PERFIL ADMIN</h1>
+        </div>
+        
         <hr class="perfil_admin_linha_header">
       </div>
 
       <div class="perfil_admin_grid_conteudo">
         <div class="perfil_admin_text_1">
           <hr class="perfil_admin_vertical">
-          <h1 class="perfil_admin_text">PERFIL ADMIN</h1>
+          <img src="../../image/admin/perfil_admin/texto_icon.svg" alt="">
+          <h1 class="perfil_admin_text">Seu Perfil</h1>
         </div>
         <div class="perfil_admin_text_2">
           <hr class="perfil_admin_vertical">
-          <h1 class="perfil_admin_text">PERMISSÕES</h1>
+          <img src="../../image/admin/perfil_admin/engrenagem_icon.svg" alt="">
+          <h1 class="perfil_admin_text">Permissões</h1>
         </div>
         
         <div class="perfil_admin_foto">
-          <img src="../../image/admin/perfil_admin/perfil_admin.svg" alt="">
+          <img src="../../image/admin/perfil_admin/perfil_admin.svg" alt="" id="img_admin_perfil">
 
           <form action="" method="post" class="perfil_admin_foto_pfp">
             <label for="perfil_admin_foto" class="perfil_admin_foto_label">
               <img src="../../image/admin/perfil_admin/enviar_arquivo.png" alt="Enviar Arquivo" class="perfil_admin_foto">
             </label>
             <input type="file" name="pfp" id="perfil_admin_foto">
-            <p class="perfil_admin_foto_tamanho_arquivo">O tamanho do arquivo não deve ultrapassar 2MB</p>
-            
-            <p class="perfil_admin_foto_link">Adicionar link URL</p>
-            <input type="url" name="url" id="perfil_admin_foto_url">
           </form>
         </div>
 
         <form action="" method="post" class="perfil_admin_forms">
-          <label class="perfil_admin_label">Nome</label>
-          <input type="text" class="perfil_admin_input">
-          <label class="perfil_admin_label">CPF</label>
-          <input type="text" class="perfil_admin_input">
-          <label class="perfil_admin_label">Telefone Celular</label>
-          <input type="text" class="perfil_admin_input">
-          <label class="perfil_admin_label">E-mail</label>
-          <input type="text" class="perfil_admin_input">
-          <p class="perfil_admin_redefinir_senha">Redefinir senha</p>
+          <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_1" >
+            <label>Nome</label>
+            <input type="text" placeholder="Digite seu nome">
+          </div>
+          <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_2">
+            <label>E-mail</label>
+            <input type="text" placeholder="exemplo@email.com">
+          </div>
+          <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_3">
+            <label>CPF</label>
+            <input type="text" placeholder="000.000.000-00">
+          </div>
+          <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_4">
+            <label>Telefone</label>
+            <input type="text" placeholder="+00 (00) 00000-0000">
+          </div>
         </form>
-          
+
         <form action="" method="post" class="perfil_admin_forms_permissoes">
           <div class="perfil_admin_forms_item_permissoes">
-            <input type="checkbox" id="perfil_admin_gerenciar_carrossel">
-            <label for="perfil_admin_gerenciar_carrossel">Gerenciar carrossel</label>
+            <div class="toggle-container">
+              <label class="toggle">
+                <input type="checkbox" id="perfil_admin_gerenciar_carrossel">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="label-container">
+              <label for="perfil_admin_gerenciar_carrossel">Gerenciar carrossel</label>
+            </div>
           </div>
+
           <div class="perfil_admin_forms_item_permissoes">
-            <input type="checkbox" id="perfil_admin_gerenciar_usuarios">
-            <label for="perfil_admin_gerenciar_usuarios">Gerenciar usuários</label>
+            <div class="toggle-container">
+              <label class="toggle">
+                <input type="checkbox" id="perfil_admin_gerenciar_usuarios">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="label-container">
+              <label for="perfil_admin_gerenciar_usuarios">Gerenciar usuários</label>
+            </div>
           </div>
+
           <div class="perfil_admin_forms_item_permissoes">
-            <input type="checkbox" id="perfil_admin_gerenciar_produtos">
-            <label for="perfil_admin_gerenciar_produtos">Gerenciar produtos</label>
+            <div class="toggle-container">
+              <label class="toggle">
+                <input type="checkbox" id="perfil_admin_gerenciar_produtos">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="label-container">
+              <label for="perfil_admin_gerenciar_produtos">Gerenciar produtos</label>
+            </div>
           </div>
+
           <div class="perfil_admin_forms_item_permissoes">
-            <input type="checkbox" id="perfil_admin_historico_acessos">
-            <label for="perfil_admin_historico_acessos">Acessar histórico de acessos</label>
+            <div class="toggle-container">
+              <label class="toggle">
+                <input type="checkbox" id="perfil_admin_historico_acessos">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="label-container">
+              <label for="perfil_admin_historico_acessos">Acessar histórico de acessos</label>
+            </div>
           </div>
         </form>
+
+
         
-        <div class="perfil_admin_botao_cancelar">
-          <button class="perfil_admin_cancelar" onclick="window.location.href='#'"> <!-- local de redirecionamento -->
-            <img src="../../image/admin/perfil_admin/botao_salvar_187x50.svg" alt="">
+        <div class="perfil_admin_botao_salvar">
+          <button class="perfil_admin_salvar">
+            <img src="../../image/admin/perfil_admin/positivo_botao_salvar.svg" alt="">
+            <label>SALVAR</label>
           </button>
         </div>
       </div>
     </div>
-
+    
+    <!-- Falta footer -->
+    <footer class="footer_temporario_perfil_admin">
+      <img src="../../image/admin/perfil_admin/footer_mobile.svg" alt="">
+    </footer>
   </main>
 </body>
 </html>
