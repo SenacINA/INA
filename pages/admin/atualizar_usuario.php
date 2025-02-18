@@ -21,13 +21,15 @@
           <img src="../../image/admin/atualizar_usuario/header_icon.svg" alt="">
           <h1>ATUALIZAR USUARIO</h1>
         </div>
-        
         <hr class="atualizar_usuario_linha_header">
       </div>
 
+      <div class="bg_mobile_1"></div>
+      <div class="bg_mobile_2"></div>
+     
       <div class="atualizar_usuario_grid_conteudo">
-  
-        <div class="atualizar_usuario_text" id="atualizar_usuario_text_1">
+       
+        <div class="atualizar_usuario_text" id="atualizar_usuario_text_1"> 
           <hr class="atualizar_usuario_vertical">
           <img src="../../image/admin/atualizar_usuario/texto_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Alternar Permissões</h1>
@@ -47,15 +49,17 @@
             </div>
           </form>
         </div>
-
+        
+        
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_2">
+        
           <hr class="atualizar_usuario_vertical">
           <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Dados Pessoais</h1>
         </div>
         
         <form action="" method="post" class="atualizar_usuario_dados_pessoais">
-          <!-- row 1 -->
+  
           <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_1" >
             <label>Nome</label>
             <input type="text" placeholder="THUNDER GAMES">
@@ -197,22 +201,20 @@
           <h1>ALTERAR DADOS</h1>
         </div>  
 
-
-        <!-- column 2 row 5 -->
         <div class="atualizar_usuario_botao_salvar">
           <button class="atualizar_usuario_salvar">
             <img src="../../image/admin/atualizar_usuario/v_icon.svg" alt="">
             <label>COMFIRMAR</label>
           </button>
         </div>
-
       </div>
-      
-      <!-- Falta footer -->
-      <footer class="footer_temporario_atualizar_usuario">
-        <img src="../../image/admin/atualizar_usuario/footer_mobile.svg" alt="">
-      </footer>
+    
     </div>
+    
+    <!-- Falta footer -->
+    <footer class="footer_temporario_atualizar_usuario">
+      <img src="../../image/admin/atualizar_usuario/footer_mobile.svg" alt="">
+    </footer>
   </main>
 </body>
 </html>

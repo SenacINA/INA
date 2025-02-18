@@ -351,7 +351,7 @@ input:checked + .toggle_slider::before {
 .footer_temporario_atualizar_usuario {
   display: none;
 }
-/* Inicialmente, o elemento está oculto */
+
 #atualizar_usuario_text_header_mobile {
   display: none;
 }
@@ -372,12 +372,12 @@ input:checked + .toggle_slider::before {
     flex-direction: column;
     justify-self: center;
     align-self: center;
-  
-    background-color: #EFF3F5;
+    
+    background-color: transparent;
     width: 95%;
     height: 1479px;
     border-radius: 10px;
-    margin: 1.5%;
+    margin: 1.5% 2%;
     margin-top: 86px;
   }
   
@@ -402,10 +402,9 @@ input:checked + .toggle_slider::before {
     justify-content: start; 
     align-items: center; 
 
-    background-color: white;
     width: 100%;
     height: 86px;
-    margin-top: 315px;
+    margin-top: 336px;
   }
 
   .atualizar_usuario_text_header {
@@ -440,6 +439,27 @@ input:checked + .toggle_slider::before {
     row-gap: 4%;
   }
 
+  .bg_mobile_1 {
+    position: absolute;
+    background-color: #EFF3F5;
+    height: 336px;
+    width: 100%;
+
+    z-index: -1;
+    border-radius: 10px;
+  }
+
+  .bg_mobile_2 {
+    position: absolute;
+    background-color: #EFF3F5;
+    height: 1065px;
+    width: 100%;
+
+    z-index: -1;
+    border-radius: 10px;
+    margin-top: 422px;
+  }
+
   #atualizar_usuario_text_1 {
     grid-row: 1;
   }
@@ -451,7 +471,7 @@ input:checked + .toggle_slider::before {
   #atualizar_usuario_text_2 {
     grid-row: 3;
     grid-column: 1;
-    margin-top: 86px;
+    margin-top: 112px;
   }
 
   .atualizar_usuario_dados_pessoais {
@@ -478,4 +498,61 @@ input:checked + .toggle_slider::before {
   .atualizar_usuario_botao_salvar {
     grid-row: 9;
   }
+
+  /* inputs */
+  .atualizar_usuario_pesquisar_usuario_item input {
+    max-width: 100%;
+  }
+
+  .atualizar_usuario_dados_pessoais_item input {
+    max-width: 100%;
+  }
+
+  .atualizar_usuario_dados_pessoais_conjunto {
+    max-width: 100%;
+  }
+
+  .atualizar_usuario_localizacao_conjunto {
+    max-width: 100%;
+  }
+
+  .atualizar_usuario_permissoes_conjunto {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .atualizar_usuario_forms_item_permissoes {
+    margin-bottom: 4%;
+  }
+
+  /* botão */
+  .atualizar_usuario_botao_salvar {
+    margin: 0%;
+    margin-top: 325px;
+  }
+  
+  .atualizar_usuario_salvar {
+    width: 100%;
+  }
+
+  .footer_temporario_atualizar_usuario {
+    position: relative; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+
+    width: 100%;
+    height: auto; 
+    margin-top: 150px;
+
+    overflow: hidden; 
+  }
+
+  .footer_temporario_atualizar_usuario img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+  }
+
+
 }
