@@ -69,63 +69,64 @@
 
         <form action="" method="post" class="perfil_admin_forms_permissoes">
           <div class="perfil_admin_forms_item_permissoes">
-            <div class="toggle-container">
+            <div class="toggle_container">
               <label class="toggle">
                 <input type="checkbox" id="perfil_admin_gerenciar_carrossel">
-                <span class="toggle-slider"></span>
+                <span class="toggle_slider"></span>
               </label>
             </div>
-            <div class="label-container">
+            <div class="label_container">
               <label for="perfil_admin_gerenciar_carrossel">Gerenciar carrossel</label>
             </div>
           </div>
 
           <div class="perfil_admin_forms_item_permissoes">
-            <div class="toggle-container">
+            <div class="toggle_container">
               <label class="toggle">
                 <input type="checkbox" id="perfil_admin_gerenciar_usuarios">
-                <span class="toggle-slider"></span>
+                <span class="toggle_slider"></span>
               </label>
             </div>
-            <div class="label-container">
+            <div class="label_container">
               <label for="perfil_admin_gerenciar_usuarios">Gerenciar usuários</label>
             </div>
           </div>
 
           <div class="perfil_admin_forms_item_permissoes">
-            <div class="toggle-container">
+            <div class="toggle_container">
               <label class="toggle">
                 <input type="checkbox" id="perfil_admin_gerenciar_produtos">
-                <span class="toggle-slider"></span>
+                <span class="toggle_slider"></span>
               </label>
             </div>
-            <div class="label-container">
+            <div class="label_container">
               <label for="perfil_admin_gerenciar_produtos">Gerenciar produtos</label>
             </div>
           </div>
 
           <div class="perfil_admin_forms_item_permissoes">
-            <div class="toggle-container">
+            <div class="toggle_container">
               <label class="toggle">
                 <input type="checkbox" id="perfil_admin_historico_acessos">
-                <span class="toggle-slider"></span>
+                <span class="toggle_slider"></span>
               </label>
             </div>
-            <div class="label-container">
+            <div class="label_container">
               <label for="perfil_admin_historico_acessos">Acessar histórico de acessos</label>
             </div>
           </div>
         </form>
-
-
         
+      </div>
+
         <div class="perfil_admin_botao_salvar">
           <button class="perfil_admin_salvar">
-            <img src="../../image/admin/perfil_admin/positivo_botao_salvar.svg" alt="">
+            <img src="../../image/admin/perfil_admin/v_icon.svg" alt="">
             <label>SALVAR</label>
           </button>
         </div>
       </div>
+
     </div>
     
     <!-- Falta footer -->

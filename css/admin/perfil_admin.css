@@ -23,8 +23,10 @@
   background-color: #EFF3F5;
   width:90%;
   height: 779px;
+  
   border-radius: 10px;
   margin: 1.5%;
+  
 }
 
 /* header */
@@ -37,7 +39,7 @@
   justify-items: center;
   
   width: 100%;
-  height: 150px;
+  height: 86px;
 }
 
 .perfil_admin_text_header {
@@ -72,9 +74,9 @@
 .perfil_admin_grid_conteudo {
   display: grid;
   grid-template-columns: minmax(0px, 320px) minmax(0px, 581px) minmax(0px, 570px);
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
   gap: 5% 3%;
-  margin: 0px 2%;
+  margin: 0px 5%;
 }
 
 .perfil_admin_info {
@@ -99,7 +101,6 @@
 
 /* info */
 .perfil_admin_text_1 {
-  margin-left: 10%;
   grid-column: 1;
   grid-row: 1;
 }
@@ -139,6 +140,7 @@
 .perfil_admin_foto {
   display: grid;
   align-items: center;
+  align-self: center;
   justify-items: center;
   flex-direction: column;
   row-gap: 10%;
@@ -233,9 +235,7 @@
   margin-top: 29px;
 }
 
-
-
-.label-container {
+.label_container {
   justify-content: start;
   align-content: center;
   align-self: center;
@@ -276,7 +276,7 @@
   height: 0;
 }
 
-.toggle-slider {
+.toggle_slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -288,7 +288,7 @@
   border-radius: 25px;
 }
 
-.toggle-slider::before {
+.toggle_slider::before {
   position: absolute;
   content: "";
   height: 18px;
@@ -300,46 +300,49 @@
   border-radius: 50%;
 }
 
-input:checked + .toggle-slider {
+input:checked + .toggle_slider {
   background-color: #2196F3;
 }
 
-input:checked + .toggle-slider::before {
+input:checked + .toggle_slider::before {
   transform: translateX(24px);
 }
 
 /* botão salvar */
 .perfil_admin_botao_salvar {
-  display: flex;
-  align-content: center;
-  justify-self: end;
-
-  margin-right: 20%;
-  margin-top: 20%;
-  grid-column: 3;
-  grid-row: 3;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  
+    margin-right: 122px;
+    margin-bottom: 90px;
+    margin-top: 223px;
 }
 
 .perfil_admin_salvar {
   display: flex;
   justify-content: center;
-  align-items: center ;
-  align-content: center;
-  cursor: pointer;
-  background-color: #1B98E0;
-  border: none;
+  align-items: center;
+
   border-radius: 5px;
+  background-color: #1B98E0;
   width: 192px;
-  height: 50px;
+  height: 48px;
 }
 
-.perfil_admin_salvar label{
+.perfil_admin_salvar label {
   color: white;
   font-size: 24px;
   cursor: pointer;
 }
 
-.perfil_admin_salvar img {
+.perfil_admin_botao_salvar button {
+  border: none;
+  cursor: pointer;
+}
+
+.perfil_admin_salvar img{
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -362,6 +365,7 @@ input:checked + .toggle-slider::before {
   
   /* CORPO PRINCIPAL */
   .perfil_admin_body {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -386,7 +390,7 @@ input:checked + .toggle-slider::before {
     
     width: 100%;
     height: 86px;
-    top: 70px;
+    top: -85px;
   }
   
   .perfil_admin_text_header {
@@ -527,7 +531,7 @@ input:checked + .toggle-slider::before {
     justify-self: center;
     width: 100%;
     margin: 0%;
-    margin-top: 40px;
+    margin-top: 170px;
   }
   
   .perfil_admin_salvar {
