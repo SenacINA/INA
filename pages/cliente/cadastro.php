@@ -43,7 +43,7 @@
       </div>
       <div class="botoes">
         <button class="voltar">Voltar</button>
-        <button class="salvar">Salvar</button>
+        <button class="salvar"><a href="../home.php"class="conexao_home">Salvar</a></button>
       </div>
     </div>
   </main>
