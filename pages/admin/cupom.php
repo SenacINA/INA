@@ -1,90 +1,145 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cupom</title>
-    <link rel="stylesheet" href="../../css/admin/admin_cupom.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="../../css/style.css?v=<?php echo time(); ?>">
-    <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="../../js/admin/cupom.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cupom</title>
+  <link rel="stylesheet" href="../../css/admin/admin_cupom.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="../../css/style.css?v=<?php echo time(); ?>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar"></nav>
-  <header>
-    <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header" width="100%">
-  </header>
-  <main class="relatorio_vendedor_main_container">
-    <div class="relatorio_vendedor_main_content">
-      <div class="relatorio_vendedor_grid_parent">
-        <div class="relatorio_vendedor_grid_info_main">
-          <div class="relatorio_vendedor_grid_main">
-          <div class="admin_linha_vertical"></div>
-            <p class="font_titulo relatorio_vendedor_align_text_center" style="font-weight: 600;">              
-              <img src="../../image/admin/Engrenagem.png" alt="" style="transform: translateY(1px);"> Gerenciar Cupom</p>
-            <p class="cupom_p">Código do Cupom:</p>
-            <div class="relatorio_vendedor_filtro">Código</div>
-            <p class="cupom_p">Vendedor:</p>
-            <div class="relatorio_vendedor_filtro">Vendedor</div>
-            <div class="cupom_container">
-            <div class="cupom_section">
-              <h2>Uso por Usuário:</h2>
-              <input type="text" name="cupom_valor_minimo" class="cupom_input" placeholder="0">
-              <h2>Valor Mínimo:</h2>
-              <input type="text" name="cupom_desconto" class="cupom_input" placeholder="0,00" oninput="formatarMoeda(this)">
-              <div class="cupom_input_symbol">R$</div>
+  <main>
+    <nav class="cupom_nav_bar"></nav>  
+
+    <div class="cupom_body">
+      <div class="cupom_header">
+        <div class="cupom_text_header">
+          <img src="../../image/admin/cupom/cupom.svg" alt="">
+          <h1>Gerar Cupom</h1>
+        </div>
+        <hr class="cupom_linha_header">
+      </div>
+
+      <div class="bg_mobile_1"></div>
+      <div class="bg_mobile_2"></div>
+     
+      <div class="cupom_grid_conteudo">
+       
+        <div class="cupom_text" id="cupom_text_1"> 
+          <hr class="cupom_vertical">
+          <img src="../../image/admin/cupom/texto_icon.svg" alt="">
+          <h1 class="cupom_text">Seu Perfil</h1>
+        </div>
+
+        <div class="cupom_pesquisar_usuario">
+          <form action="" method="post" class="cupom_forms">
+            <div class="cupom_pesquisar_usuario_item" id="cupom_pesquisar_usuario_item_1" >
+              <label>Código do cupom</label>
+              <input type="text" placeholder="00001">
             </div>
-            <div class="cupom_section">
-              <h2>Usos Máximos:</h2>
-              <input type="text" name="cupom_valor_minimo" class="cupom_input" placeholder="0">
-              <h2>Desconto do cupom:</h2>
-              <input type="text" name="cupom_desconto" class="cupom_input" placeholder="0" oninput="formatarPorcentagem(this)">
-              <div class="cupom_input_symbol">%</div>
+            <div class="cupom_pesquisar_usuario_item" id="cupom_pesquisar_usuario_item_2">
+              <label>Vendedor</label>
+              <input type="text" placeholder="Vendedor">
+            </div>
+            <div class="cupom_configuracao_grid" id="cupom_pesquisar_usuario_item_2">
+              <div class="cupom_configuracao_item">
+                <label>Uso por Pessoa</label>
+                <input type="number" placeholder="0">
+              </div>
+              <div class="cupom_configuracao_item">
+                <label>Uso Máximo</label>
+                <input type="number" placeholder="0">
+              </div>
+              <div class="cupom_configuracao_item">
+                <label>Valor Mínimo</label>
+                <input type="number" placeholder="0">
+              </div>
+              <div class="cupom_configuracao_item">
+                <label>Desconto do Cupom</label>
+                <input type="number" placeholder="0">
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        
+        <div class="cupom_text" id="cupom_text_2">
+        
+          <hr class="cupom_vertical">
+          <img src="../../image/admin/cupom/perfil_icon.svg" alt="">
+          <h1 class="cupom_text">Buscar Produtos</h1>
+        </div>
+        
+        <form action="" method="post" class="cupom_dados_pessoais">
+  
+          <div class="cupom_dados_pessoais_item" id="cupom_dados_pessoais_item_1" >
+            <label>Nome do Produto</label>
+            <input type="text" placeholder="Produto">
+          </div>
+        </form>
+
+        <div class="cupom_text" id="cupom_text_3">
+          <hr class="cupom_vertical">
+          <img src="../../image/admin/cupom/localizacao_icon.svg" alt="">
+          <h1 class="cupom_text">Localização</h1>
+        </div>
+
+        <form action="" method="post" class="cupom_localizacao">
+          <div class="cupom_localizacao_conjunto">
+            <!-- row 1 -->
+            <div class="cupom_localizacao_item" id="cupom_localizacao_item_1">
+              <label>CEP</label>
+              <input type="text" placeholder="04261-080">
+            </div>
+            <div class="cupom_localizacao_item" id="cupom_localizacao_item_2">
+              <label>Estado</label>
+              <input type="text" placeholder="São Paulo">
+            </div>
+          </div>
+          
+          <div class="cupom_localizacao_conjunto">
+            <div class="cupom_localizacao_item" id="cupom_localizacao_item_3">
+              <label>Cidade</label>
+              <input type="text" placeholder="São Paulo">
+            </div>
+            <div class="cupom_localizacao_item" id="cupom_localizacao_item_4">
+              <label>Bairro</label>
+              <input type="text" placeholder="Vila Monumento">
             </div>
           </div>
 
-          </div>          
-        </div>
-        <div class="relatorio_vendedor_grid_perfil">
-          <div class="main_text_info_container">
-            
-          <div class="admin_linha_vertical"></div>
-            <p class="font_titulo relatorio_vendedor_align_text_center" style="font-weight: bold;"> <img src="../../image/admin/Engrenagem.png" alt="" style="transform: translateY(1px);"> Tipo de Cupom</p>
-            <hr class="admin_linha">            
-            <div class="cupom_section">
-              <h2>Tipo de cupom:</h2>
-              <div class="radio-group">
-                <label class="radio-toggle">
-                  <input type="radio" name="option" value="total" checked>
-                  <span class="toggle"></span>
-                  <div class="cupom_radio_text">Reais Sobre o Total</div>
-                </label>
-                <label class="radio-toggle">
-                  <input type="radio" name="option" value="frete">
-                  <span class="toggle"></span>
-                  <div class="cupom_radio_text">Reais Sobre o Frete</div>
-                </label>
-                <label class="radio-toggle">
-                  <input type="radio" name="option" value="percentage">
-                  <span class="toggle"></span>
-                  <div class="cupom_radio_text">Porcentagem Sobre o Total</div>
-                </label>
-                <label class="radio-toggle">
-                  <input type="radio" name="option" value="promo">
-                  <span class="toggle"></span>
-                  <div class="cupom_radio_text">Porcentagem Sobre o Frete</div>
-                </label>
-              </div>
+          <div class="cupom_localizacao_conjunto">
+            <div class="cupom_localizacao_item" id="cupom_localizacao_item_5">
+              <label>Endereço</label>
+              <input type="text" placeholder="R. Eng. Sampaio Coelho">
             </div>
-          <div class="admin_linha_vertical"></div> <p class="font_titulo relatorio_vendedor_align_text_center" style="font-weight: bold;"> <img src="../../image/admin/Produto.png" alt="" style="transform: translateY(1px);"> Buscar Produto</p>
-          </div>          
+            <div class="cupom_localizacao_item" id="cupom_localizacao_item_6">
+              <label>Número</label>
+              <input type="text" placeholder="122">
+            </div>
           </div>
+        </form>
+
+        <div class="cupom_text" id="cupom_text_4">
+        </div>
+
+        <div class="cupom_botao_salvar">
+          <button class="cupom_salvar">
+            <img src="../../image/admin/cupom/v_icon.svg" alt="">
+            <label>COMFIRMAR</label>
+          </button>
         </div>
       </div>
-    </div>    
+    
+    </div>
+    
+    <!-- Falta footer -->
+    <footer class="footer_temporario_cupom">
+      <img src="../../image/admin/cupom/footer_mobile.svg" alt="">
+    </footer>
   </main>
 </body>
 </html>
