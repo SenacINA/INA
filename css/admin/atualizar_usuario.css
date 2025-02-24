@@ -500,18 +500,9 @@ input:checked + .toggle_slider::before {
   }
 
   /* inputs */
-  .atualizar_usuario_pesquisar_usuario_item input {
-    max-width: 100%;
-  }
-
-  .atualizar_usuario_dados_pessoais_item input {
-    max-width: 100%;
-  }
-
-  .atualizar_usuario_dados_pessoais_conjunto {
-    max-width: 100%;
-  }
-
+  .atualizar_usuario_pesquisar_usuario_item input,
+  .atualizar_usuario_dados_pessoais_item input,
+  .atualizar_usuario_dados_pessoais_conjunto,
   .atualizar_usuario_localizacao_conjunto {
     max-width: 100%;
   }
