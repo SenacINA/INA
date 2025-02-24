@@ -16,12 +16,11 @@
   grid-template-rows: repeat(9, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  margin: 5%;
+  margin: 3%;
   background-color: #EFF3F5;
   align-items: center;
   justify-content: center;
-  max-height: 780px;
-  height: 780px;
+  height: 50%;
   border-radius: 10px;
 }
 
@@ -36,7 +35,7 @@ font-weight: 700;
 
 .cadastro_row{
   display: flex;
-  height: 10px;
+  height:7px;
   width: 1500px;
   background-color: #2888B1;
   border-radius: 20px;
@@ -54,10 +53,12 @@ font-weight: 700;
   grid-area: 8 / 5 / 9 / 6; 
   max-width: 192px;
   width: 192px;
+  margin: 0 auto;
   height: 48px;
   background-color: #1B98E0;
   border-radius: 5px;
   color: white;
+  cursor: pointer;
 }
 
 /* Imagens*/
@@ -130,3 +131,66 @@ font-weight: 700;
   color: #006494;
 }
 
+/* Subtitulo*/
+.info1_cadastro_v p{
+  color: rgba(111, 111, 111, 1);
+}
+
+.info2_cadastro_v p{
+  color: rgba(111, 111, 111, 1);
+}
+
+.info3_cadastro_v p{
+  color: rgba(111, 111, 111, 1);
+}
+
+.dados_cadastro_v p{
+  color: rgba(111, 111, 111, 1);
+}
+
+
+@media (max-width: 768px) {
+  .cadastro_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 5%;
+  }
+
+  .cadastro_title {
+    grid-area: unset;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .cadastro_row {
+    width: 90%;
+    height: 8px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .cadastro_button_salvar {
+    width: 100%;
+    max-width: 200px;
+    height: 48px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info1_cadastro_v, 
+  .info2_cadastro_v, 
+  .info3_cadastro_v, 
+  .dados_cadastro_v {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}

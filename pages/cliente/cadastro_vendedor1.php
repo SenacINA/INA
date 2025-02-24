@@ -28,7 +28,6 @@
                 <p>Informações pessoais e comerciais relevantes para cumprir as medidas de identificação
                     e verificação. </p>
                 </div>
-                <button class="cadastro_button_salvar font_botoes" >Continuar</button>
                 <div class="info2_cadastro_v">
                     <img src="../../image/cliente/cadastro_vendedor1/2.png" alt="">
                     <h1>Aprovação das credênciais</h1>
@@ -40,20 +39,21 @@
                         <h1>Cadastro de produtos </h1>
                         <p>Após a verificação das informações e documentos (5 dias úteis). Faça o registro dos seus 
                             produtos. </p>
+                        </div>
+                        <div class="dados_cadastro_v">
+                            <h1>Dados necessários:</h1>
+                            <p>• Documento de identidade (RG) ou passaporte válido emitido pelo governo</p>
+                            <br>
+                            <p>• Declaração do banco ou cartão de crédito recente </p>
+                            <br>
+                            <p>• Cartão de crédito ou débito para cobrança</p>
+                            <br>
+                            <p>• Celular ou E-mail </p>
+                        </div>
+                        <button class="cadastro_button_salvar font_botoes" >Continuar</button>
                     </div>
-                    <div class="dados_cadastro_v">
-                        <h1>Dados necessários:</h1>
-                        <p>• Documento de identidade (RG) ou passaporte válido emitido pelo governo</p>
-                        <br>
-                        <p>• Declaração do banco ou cartão de crédito recente </p>
-                        <br>
-                        <p>• Cartão de crédito ou débito para cobrança</p>
-                        <br>
-                        <p>• Celular ou E-mail </p>
-                    </div>
-                </div>
-        
-    </main>
+                    
+                </main>
   <footer class="footer_cadastro_vendedor">
     <img src="../../image/cliente/footer/img_footer_placeholder.png" width="100%" height="100%">
   </footer>
