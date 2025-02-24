@@ -54,7 +54,7 @@
         </form>
         <div class="botoes_carrinho">
           <button class="voltar_carrinho">Voltar</button>
-          <button class="salvar_carrinho"><a href="carrinho_pagamento.php">Salvar</a></button>
+          <button class="salvar_carrinho"><a href="carrinho_pagamentos.php" class="conexao_carrinho">Salvar</a></button>
         </div>
       </div>
     </div>
