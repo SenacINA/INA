@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Jost';
+}
+
+.fundo {
+  height: 100%;
+  width: 100%;
+  background-color: #DCE5EB;
+}
+
+.cadastro_main{
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 5%;
+  background-color: #EFF3F5;
+  align-items: center;
+  justify-content: center;
+  max-height: 780px;
+  height: 780px;
+  border-radius: 10px;
+}
+
+.cadastro_title{
+display: flex;
+justify-content: center;
+align-items: center;
+grid-area: 3 / 8 / 1 / 3;
+color: #006494;
+font-weight: 700;
+}
+
+.cadastro_row{
+  display: flex;
+  height: 10px;
+  width: 1500px;
+  background-color: #2888B1;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  grid-area: 3 / 8 / 2 / 3;
+}
+
+/* Não sei fazer esse botão, faz um no style q eu coloco ele aq */
+
+.cadastro_button_salvar{
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Não centralizado*/
+  grid-area: 8 / 5 / 9 / 6; 
+  max-width: 192px;
+  width: 192px;
+  height: 48px;
+  background-color: #1B98E0;
+  border-radius: 5px;
+  color: white;
+}
+
+/* Imagens*/
+
+.info1_cadastro_v img{
+  display: flex;
+  width: 48px;
+  height: 53px;
+}
+
+
+.info2_cadastro_v img{
+  display: flex;
+  width: 48px;
+  height: 53px;
+}
+
+.info3_cadastro_v img{
+  display: flex;
+  width: 48px;
+  height: 53px;
+}
+
+/* Informações da página*/
+
+.info1_cadastro_v{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  grid-area: 4 / 3 / 5 / 6;
+}
+
+.info2_cadastro_v{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  grid-area: 5 / 3 / 6 / 6;
+}
+
+.info3_cadastro_v{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  grid-area: 6 / 3 / 7 / 6; 
+}
+
+.dados_cadastro_v{
+  grid-area: 4 / 7 / 7 / 8;   
+}
+
+
+/* Fontes */
+
+.info1_cadastro_v h1{
+  color: #006494;
+}
+
+.info2_cadastro_v h1{
+  color: #006494;
+}
+
+.info3_cadastro_v h1{
+  color: #006494;
+}
+
+.dados_cadastro_v h1{
+  color: #006494;
+}
+
