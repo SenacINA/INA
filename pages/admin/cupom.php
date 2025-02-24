@@ -79,59 +79,62 @@
             <label>Nome do Produto</label>
             <input type="text" placeholder="Produto">
           </div>
+
+          <div class="cupom_achar_produto_organizar">
+            <p>Organizar por :</p>
+            <img src="../../image/admin/arrowwhitedown.svg" alt="">
+          </div>
+          <div class="cupom_metodo_procura_body">
+            <p id="cupom_metodo_procura" class="cupom_metodo_procura_body_head">Cód.</p>
+            <div></div>
+          </div>
+          <div class="cupom_caixa_procura">‎ </div>
         </form>
 
         <div class="cupom_text" id="cupom_text_3">
           <hr class="cupom_vertical">
-          <img src="../../image/admin/cupom/localizacao_icon.svg" alt="">
-          <h1 class="cupom_text">Localização</h1>
+          <img src="../../image/admin/engrenagem.png" alt="">
+          <h1 class="cupom_text">Tipo de Cupom</h1>
         </div>
 
         <form action="" method="post" class="cupom_localizacao">
-          <div class="cupom_localizacao_conjunto">
-            <!-- row 1 -->
-            <div class="cupom_localizacao_item" id="cupom_localizacao_item_1">
-              <label>CEP</label>
-              <input type="text" placeholder="04261-080">
-            </div>
-            <div class="cupom_localizacao_item" id="cupom_localizacao_item_2">
-              <label>Estado</label>
-              <input type="text" placeholder="São Paulo">
-            </div>
-          </div>
-          
-          <div class="cupom_localizacao_conjunto">
-            <div class="cupom_localizacao_item" id="cupom_localizacao_item_3">
-              <label>Cidade</label>
-              <input type="text" placeholder="São Paulo">
-            </div>
-            <div class="cupom_localizacao_item" id="cupom_localizacao_item_4">
-              <label>Bairro</label>
-              <input type="text" placeholder="Vila Monumento">
-            </div>
-          </div>
+        <div class="toggle-group">
+        <label class="toggle">
+            <input type="radio" name="toggle-group" checked>
+            <span class="slider"></span>
+            <label>Reais sobre o Total</label>
+        </label>
 
-          <div class="cupom_localizacao_conjunto">
-            <div class="cupom_localizacao_item" id="cupom_localizacao_item_5">
-              <label>Endereço</label>
-              <input type="text" placeholder="R. Eng. Sampaio Coelho">
-            </div>
-            <div class="cupom_localizacao_item" id="cupom_localizacao_item_6">
-              <label>Número</label>
-              <input type="text" placeholder="122">
-            </div>
-          </div>
+        <label class="toggle">
+            <input type="radio" name="toggle-group">
+            <span class="slider"></span>
+            <label>Porcentagem sobre o Total</label>
+        </label>
+        <label class="toggle">
+            <input type="radio" name="toggle-group">
+            <span class="slider"></span>
+            <label>Reais sobre Frete</label>
+        </label>
+    </div>
+                
         </form>
 
         <div class="cupom_text" id="cupom_text_4">
         </div>
 
         <div class="cupom_botao_salvar">
+          <button class="cupom_cancelar">
+            <img src="../../image/admin/cancel.svg" alt="">
+            <label>CANCELAR</label>
+          </button>
+
           <button class="cupom_salvar">
             <img src="../../image/admin/cupom/v_icon.svg" alt="">
-            <label>COMFIRMAR</label>
+            <label>SALVAR</label>
           </button>
         </div>
+
+        
       </div>
     
     </div>

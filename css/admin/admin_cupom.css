@@ -211,6 +211,52 @@ flex-direction: column;
 max-width: 590px;
 }
 
+.cupom_achar_produto_organizar{
+  color: white;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+
+  /* Paddings */
+  padding-left: 15px;
+  padding-right: 15px;
+
+  margin-top: 10px;
+
+  /* Border Radius */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  
+  justify-content: space-between;
+  width: 300px;
+  background-color: #1B98E0;
+}
+
+.cupom_metodo_procura_body{
+  display: flex;
+  background-color: #ffffff;
+  border: #1B98E0 solid 2px;
+  border-top-right-radius: 5px;
+  width: 590px;
+}
+
+.cupom_metodo_procura_body_head{
+  width: 100px;
+  color: grey;
+  /* Paddings */
+  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  
+  border-right: #1B98E0 solid 2px;
+}
+
+.cupom_caixa_procura{
+  background: #DCE5EB;
+  width: 590px;
+  height: 200px;
+}
+
 .cupom_dados_pessoais_conjunto {
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -272,7 +318,7 @@ border-color: #1B98E0;
 .cupom_forms_item_permissoes label {
 font-size: 20px; 
 font-weight: 500; 
-}
+}radio-group
 
 .toggle {
 position: relative;
@@ -342,6 +388,24 @@ width: 192px;
 height: 48px;
 }
 
+.cupom_cancelar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  border: red solid 2px;
+  border-radius: 5px;
+  background-color: #1b98e000;
+  width: 192px;
+  height: 48px;
+}
+
+.cupom_cancelar label {
+  color: rgb(255, 0, 0);
+  font-size: 24px;
+  cursor: pointer;
+}
+
 .cupom_salvar label {
 color: white;
 font-size: 24px;
@@ -349,7 +413,6 @@ cursor: pointer;
 }
 
 .cupom_botao_salvar button {
-border: none;
 cursor: pointer;
 }
 
@@ -367,7 +430,57 @@ display: none;
 #cupom_text_header_mobile {
 display: none;
 }
+.toggle-group {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px 40px;
+  align-items: center;
+  width: 300px;
+}
 
+.toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle .slider {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.toggle .slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.toggle input:checked + .slider {
+  background-color: #007bff;
+}
+
+.toggle input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+.toggle label {
+  margin-left: 10px;
+}
 /* <<< MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 @media (max-width: 1024px) {
 /* NAVBAR */
