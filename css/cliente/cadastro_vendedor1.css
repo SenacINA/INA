@@ -26,11 +26,15 @@
 
 .cadastro_title{
 display: flex;
+font-family: 'Jost';
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 44px;
 justify-content: center;
 align-items: center;
 grid-area: 3 / 8 / 1 / 3;
 color: #006494;
-font-weight: 700;
 }
 
 .cadastro_row{

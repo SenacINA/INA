@@ -20,7 +20,7 @@
 
         
         <div class="cadastro_main">
-            <div class="cadastro_title font_titulo">CADASTRO DE VENDEDOR</div>
+            <div class="cadastro_title">CADASTRO DE VENDEDOR</div>
             <img class="cadastro_row"></img>
             <div class="info1_cadastro_v">
                 <img src="../../image/cliente/cadastro_vendedor1/1.png" alt="">
