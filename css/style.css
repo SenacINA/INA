@@ -1,7 +1,17 @@
+:root{
+  --carolina: #1B98E0;
+  --celadon: #247BA0;
+  --sappire: #006494;
+  --branco_gelo: #F9F9FC;
+  --azul_leve:#DCE5EB;
+  --branco: #fff;
+  --cinza: #6F6F6F;
+  --vermelho: #D73232;
+}
+
 *{
   margin: 0;
   padding: 0;
-  border:0;
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
@@ -14,64 +24,80 @@ body, html{
 }
 
 .font_titulo {
-  font-family: 'Jost';
-  font-size: 32px;
+  font-size: 2rem; /* 32px */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
 .font_subtitulo {
-  font-family: 'Jost';
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
 .font_descricao {
-  font-family: 'Jost';
-  font-size: 16px;
+  font-size: 1rem; /* 16px */
   font-style: normal;
   font-weight: 300;
   line-height: normal;
 }
 
-.font_botoes {
-  font-family: 'Jost';
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
 
 .font_bold{
   font-weight: 650;
 }
 
 .bg_azul_leve{
-  background-color: #DCE5EB;
+  background-color: var(--azul_leve);
 }
 .bg_sappire{
-  background-color: #006494;
+  background-color: var(--sappire);
 }
 
 .bg_carolina{
-  background-color: #1B98E0;
+  background-color: var(--carolina);
 }
 
 .bg_celadon{
-  background-color: #247BA0;
+  background-color: var(--celadon);
 }
 
 .bg_branco_gelo{
-  background-color: #F9F9FC;
+  background-color: var(--branco_gelo);
 }
 
 .bg_cinza{
-  background-color: #6F6F6F;
+  background-color: var(--cinza);
 }
 
 .bg_branco{
-  background-color: #fff;
+  background-color: var(--branco);
+}
+
+
+.base_input{
+  height: 40px;
+  border: var(--carolina) solid 2px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.base_botao{
+  height: 40px;
+  min-width: 192px;
+  font-size: 1.25rem; /* 20px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media (min-width:768px) {
+  .base_input{
+    height: 48px;
+  }
+  .base_botao{
+    height: 48px;
+  }
 }
