@@ -14,7 +14,7 @@
 </head>
 
 <body class="gerenciar_pedidos_main_container">
-  <nav class="gerenciar_pedidos_navbar_principal"></nav>
+  <nav class="gerenciar_pedidos_navbar_principal" style="background-color: purple;"></nav>
   <div class="gerenciar_pedidos_body_container">
     <div class="gerenciar_pedidos_body_holder bg_azul_leve">
       <header class="gerenciar_pedidos_header_relatorio">
@@ -28,55 +28,56 @@
         <div class="gerenciar_pedidos_quadrado_container">
           <div class="gerenciar_pedidos_pesquisar_pedidos">
             <div class="gerenciar_pedidos_header_pedidos">
-              <p class="gerenciar_pedidos_text_pedidos">Pesquisar Pedidos</p>
-              <hr class="gerenciar_pedidos_linha_sublinhado">
+              <p class="gerenciar_pedidos_text_pedidos font_subtitulo font_celadon">Pesquisar Pedidos</p>
             </div>
             <form action="" method="post" class="gerenciar_pedidos_forms_pesquisa_pedidos">
               <div class="gerenciar_pedidos_form_cliente">
-                <label class="gerenciar_pedidos_label_cod font_subtitulo">Código Do Produto / Nome Cliente</label>
+                <label class="gerenciar_pedidos_label_cod font_subtitulo font_celadon">Código Do Produto / Nome Cliente</label>
                 <input type="text" class="gerenciar_pedidos_input_cod base_input">
               </div>
-              <div class="gerenciar_pedidos_input_status">
-                <label for="select_cod" class="gerenciar_pedidos_label_status font_subtitulo">Status</label>
-                <select name="select_cod" class="gerenciar_pedidos_select_status base_input">
-                  <option value="Entregue">Entregue</option>
-                  <option value="Em transporte">Em transporte</option>
-                </select>
-              </div>
-              <div class="gerenciar_pedidos_input_mes">
-                <label for="mes" class="gerenciar_pedidos_mes font_subtitulo">Mês</label>
-                <select name="mes" id="mes" class="gerenciar_pedidos_mes_select base_input">
-                  <option value="">Selecione um mês</option>
-                  <option value="janeiro">Janeiro</option>
-                  <option value="fevereiro">Fevereiro</option>
-                  <option value="marco">Março</option>
-                  <option value="abril">Abril</option>
-                  <option value="maio">Maio</option>
-                  <option value="junho">Junho</option>
-                  <option value="julho">Julho</option>
-                  <option value="agosto">Agosto</option>
-                  <option value="setembro">Setembro</option>
-                  <option value="outubro">Outubro</option>
-                  <option value="novembro">Novembro</option>
-                  <option value="dezembro">Dezembro</option>
-                </select>
-              </div>
-              <div class="gerenciar_pedidos_input_ano">
-                <label for="ano" class="gerenciar_pedidos_ano font_subtitulo">Ano</label>
-                <select name="ano" id="ano" class="gerenciar_pedidos_ano_select base_input">
-                  <option value="">Selecione um ano</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-                  <option value="2026">2026</option>
-                  <option value="2027">2027</option>
-                  <option value="2028">2028</option>
-                  <option value="2029">2029</option>
-                  <option value="2030">2030</option>
-                </select>
+              <div class="gerenciar_pedidos_inputs_esquerda">
+                <div class="gerenciar_pedidos_input_status">
+                  <label for="select_cod" class="gerenciar_pedidos_label_status font_subtitulo font_celadon">Status</label>
+                  <select name="select_cod" class="gerenciar_pedidos_select_status base_input">
+                    <option value="Entregue">Entregue</option>
+                    <option value="Em transporte">Em transporte</option>
+                  </select>
+                </div>
+                <div class="gerenciar_pedidos_input_mes">
+                  <label for="mes" class="gerenciar_pedidos_mes font_subtitulo font_celadon">Mês</label>
+                  <select name="mes" id="mes" class="gerenciar_pedidos_mes_select base_input">
+                    <option value="" selected disabled style="display: none;">Selecione</option>
+                    <option value="janeiro">Janeiro</option>
+                    <option value="fevereiro">Fevereiro</option>
+                    <option value="marco">Março</option>
+                    <option value="abril">Abril</option>
+                    <option value="maio">Maio</option>
+                    <option value="junho">Junho</option>
+                    <option value="julho">Julho</option>
+                    <option value="agosto">Agosto</option>
+                    <option value="setembro">Setembro</option>
+                    <option value="outubro">Outubro</option>
+                    <option value="novembro">Novembro</option>
+                    <option value="dezembro">Dezembro</option>
+                  </select>
+                </div>
+                <div class="gerenciar_pedidos_input_ano">
+                  <label for="ano" class="gerenciar_pedidos_ano font_subtitulo font_celadon">Ano</label>
+                  <select name="ano" id="ano" class="gerenciar_pedidos_ano_select base_input">
+                    <option value="" selected disabled style="display: none;">Selecione</option>
+                    <option value=" 2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                  </select>
+                </div>
               </div>
               <div class="gerenciar_pedidos_holder_botao">
                 <button type="reset" class="gerenciar_pedidos_cancelar base_botao">Cancelar</button>
@@ -86,40 +87,33 @@
           </div>
           <div class="gerenciar_pedidos_estatisticas">
             <div class="gerenciar_pedidos_header_estatisticas">
-              <p class="gerenciar_pedidos_text_estatisticas">Estatísticas</p>
-              <hr class="gerenciar_pedidos_linha_sublinhado">
+              <p class="gerenciar_pedidos_text_estatisticas font_celadon">Estatísticas</p>
             </div>
-            <span class="gerenciar_pedidos_titulo_geral">geral</span>
-            <div class="gerenciar_pedidos_valor_total">
-              <span class="gerenciar_pedidos_titulo">Valor Total</span>
-              <span class="gerenciar_pedidos_num">R$14.145,35</span>
-            </div>
-            <div class="gerenciar_pedidos_total_vendas">
-              <span class="gerenciar_pedidos_titulo">Total De Vendas</span>
-              <span class="gerenciar_pedidos_num">14 UNI</span>
-            </div>
-            <div class="gerenciar_pedidos_pedidos_recebidos">
-              <span class="gerenciar_pedidos_titulo">Pedidos Recebidos</span>
-              <span class="gerenciar_pedidos_num">4 - 100%</span>
-            </div>
-            <div class="gerenciar_pedidos_horario_medio">
-              <span class="gerenciar_pedidos_titulo">Horário Médio Da Entrega</span>
-              <span class="gerenciar_pedidos_num">Manhã</span>
-            </div>
-            <div class="gerenciar_pedidos_total_pedidos">
-              <span class="gerenciar_pedidos_titulo">Total De Pedidos</span>
-              <span class="gerenciar_pedidos_num">4</span>
-            </div>
-            <div class="gerenciar_pedidos_reembolso">
-              <span class="gerenciar_pedidos_titulo">Pedidos Reembolsados</span>
-              <span class="gerenciar_pedidos_num">0 - 0%</span>
-            </div>
-            <div class="gerenciar_pedidos_medio_entrega">
-              <span class="gerenciar_pedidos_titulo">Tempo Medio De Entrega</span>
-              <span class="gerenciar_pedidos_num">9 Dias</span>
-            </div>
-            <div class="gerenciar_pedidos_placeholder">
-              <span class="gerenciar_pedidos_titulo">-</span>
+            <div class="gerenciar_pedidos_estatistica_holder">
+              <div class="gerenciar_pedidos_card">
+                <span class="gerenciar_pedidos_titulo">Valor Total</span>
+                <span class="gerenciar_pedidos_estatistica_descricao">R$14.145,35</span>
+              </div>
+              <div class="gerenciar_pedidos_card">
+                <span class="gerenciar_pedidos_titulo">Total De Vendas</span>
+                <span class="gerenciar_pedidos_estatistica_descricao">14 UNI</span>
+              </div>
+              <div class="gerenciar_pedidos_card">
+                <span class="gerenciar_pedidos_titulo">Tempo Medio De Entrega</span>
+                <span class="gerenciar_pedidos_estatistica_descricao">9 Dias</span>
+              </div>
+              <div class="gerenciar_pedidos_card">
+                <span class="gerenciar_pedidos_titulo">Pedidos Recebidos</span>
+                <span class="gerenciar_pedidos_estatistica_descricao">4 - 100%</span>
+              </div>
+              <div class="gerenciar_pedidos_card">
+                <span class="gerenciar_pedidos_titulo">Total De Pedidos</span>
+                <span class="gerenciar_pedidos_estatistica_descricao">4</span>
+              </div>
+              <div class="gerenciar_pedidos_card">
+                <span class="gerenciar_pedidos_titulo">Pedidos Reembolsados</span>
+                <span class="gerenciar_pedidos_estatistica_descricao">0 - 0%</span>
+              </div>
             </div>
           </div>
         </div>

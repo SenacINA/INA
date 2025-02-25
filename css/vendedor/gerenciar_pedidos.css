@@ -4,12 +4,13 @@
   font-family: Jost;
 }
 
-.gerenciar_pedidos_body_container{
-  padding: 24px 40px 16px;
+.gerenciar_pedidos_body_container {
+  padding: 56px 182px 16px;
 }
 
-.gerenciar_pedidos_body_holder{
+.gerenciar_pedidos_body_holder {
   border-radius: 10px;
+  padding: 32px;
 }
 
 .gerenciar_pedidos_navbar_principal {
@@ -23,11 +24,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 24px 0;
   width: 100%;
 }
 
-.gerenciar_pedidos_header_holder{
+.gerenciar_pedidos_header_holder {
   display: flex;
   justify-content: center;
   gap: 4px;
@@ -37,59 +37,48 @@
   color: var(--sappire);
 }
 
-.gerenciar_pedidos_linha_header {
-  width: 95%;
-  height: 9px;
-  background-color: var(--carolina);
-  border-radius: 20px;
-  border: 0;
-}
-
 .gerenciar_pedidos_quadrado_container {
-  grid-row: 1;
-  width: 113rem;
-  height: 36rem;
-  border: 2px solid rgba(0, 0, 0, 0.3);
-  background: #f1f1f1;
+  width: 100%;
+  height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
+  gap: 16px;
 }
 
 .gerenciar_pedidos_main_content {
   display: grid;
-  align-items: center;
-  justify-items: center;
-  grid-template-rows: 590px 96px 752px;
+  padding: 32px;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .gerenciar_pedidos_pesquisar_pedidos {
   display: flex;
   flex-direction: column;
-  padding: 24px;
   align-items: center;
   justify-items: center;
 }
 
 .gerenciar_pedidos_header_pedidos {
-  grid-column: 1/4;
   width: 100%;
 }
 
-.gerenciar_pedidos_form_cliente{
+.gerenciar_pedidos_form_cliente {
   display: flex;
   flex-direction: column;
   grid-area: 1 / 1 / 2 / 4;
 }
 
-.gerenciar_pedidos_input_ano{
+.gerenciar_pedidos_input_ano {
   display: flex;
   flex-direction: column;
 }
 
-.gerenciar_pedidos_input_status{
+.gerenciar_pedidos_input_status {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .gerenciar_pedidos_text_pedidos {
@@ -105,41 +94,53 @@
 }
 
 .gerenciar_pedidos_forms_pesquisa_pedidos {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  grid-template-columns: 60% 1fr 1fr;
-  column-gap: 16px;
-  row-gap: 16px;
+  gap: 16px;
   margin: 16px 0 0;
 }
 
-.gerenciar_pedidos_holder_botao{
-  grid-area: 4 / 1 / 5 / 4;
+.gerenciar_pedidos_holder_botao {
   display: flex;
   justify-content: flex-end;
   gap: 16px;
 }
 
+.gerenciar_pedidos_inputs_esquerda {
+  display: flex;
+  gap: 8px;
+}
 
-
-.gerenciar_pedidos_select_status{
+.gerenciar_pedidos_select_status {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 .gerenciar_pedidos_mes_select {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
 }
 
 .gerenciar_pedidos_ano_select {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.gerenciar_pedidos_estatistica_holder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
 }
 
 .gerenciar_pedidos_estatisticas {
-  position: relative;
-  top: 8.5%;
-  display: grid;
-  grid-template-columns: 30% 25% 30%;
-  grid-template-rows: repeat(5, min-content);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .gerenciar_pedidos_header_estatisticas {
@@ -158,54 +159,13 @@
   border: 0;
 }
 
-.gerenciar_pedidos_titulo_geral {
-  grid-column: 2;
-  text-align: center;
-}
-
-.gerenciar_pedidos_valor_total,
-.gerenciar_pedidos_total_vendas,
-.gerenciar_pedidos_pedidos_recebidos {
-  grid-row: 3;
-}
-
-.gerenciar_pedidos_horario_medio,
-.gerenciar_pedidos_total_pedidos,
-.gerenciar_pedidos_reembolso {
-  grid-row: 4;
-}
-
-.gerenciar_pedidos_valor_total,
-.gerenciar_pedidos_horario_medio,
-.gerenciar_pedidos_medio_entrega {
-  grid-column: 1;
-}
-
-.gerenciar_pedidos_total_vendas,
-.gerenciar_pedidos_total_pedidos {
-  grid-column: 2;
-}
-.gerenciar_pedidos_valor_total,
-.gerenciar_pedidos_total_vendas,
-.gerenciar_pedidos_pedidos_recebidos,
-.gerenciar_pedidos_horario_medio,
-.gerenciar_pedidos_total_pedidos,
-.gerenciar_pedidos_reembolso,
-.gerenciar_pedidos_medio_entrega,
-.gerenciar_pedidos_placeholder {
+.gerenciar_pedidos_card {
   background: #dce5eb;
-  padding: 5%;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-right: 2px solid rgba(0, 0, 0, 0.3);
-}
-
-.gerenciar_pedidos_pedidos_recebidos,
-.gerenciar_pedidos_reembolso {
-  grid-column: 3;
-  border-right: none;
 }
 
 .gerenciar_pedidos_titulo {
@@ -214,9 +174,10 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
+  text-align: center;
 }
 
-.gerenciar_pedidos_num {
+.gerenciar_pedidos_estatistica_descricao {
   color: #000;
   font-family: Jost;
   font-size: 16px;
@@ -225,13 +186,19 @@
 }
 
 .gerenciar_pedidos_table {
-  width: 113rem;
+  width: 600px;
   height: 752px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   background: #f1f1f1;
   grid-row: 3;
   display: grid;
-  grid-template-columns: 168px 374px 133px 186px 364px 124px 473px;
-  grid-template-rows: 64px repeat(13, 45px);
   row-gap: 8px;
+}
+
+
+@media (max-width:1440px) {
+  .gerenciar_pedidos_quadrado_container {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
 }
