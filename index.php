@@ -32,9 +32,14 @@
                 <img src="./image/index/config.png" alt="Configurações">
             </a>
         </div>
-        
     </div>
 </header>
+<div class='container_main'>
+    <div class='bg_index_img'>
+        <img src="./image/index/fundoCarrossel.jpg" alt="">
+    </div>
+</div>
+
 
 </body>
 </html>
