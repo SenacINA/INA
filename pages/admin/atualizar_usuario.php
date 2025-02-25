@@ -204,7 +204,7 @@
         <div class="atualizar_usuario_botao_salvar">
           <button class="atualizar_usuario_salvar">
             <img src="../../image/admin/atualizar_usuario/v_icon.svg" alt="">
-            <label>COMFIRMAR</label>
+            <label>CONFIRMAR</label>
           </button>
         </div>
       </div>
