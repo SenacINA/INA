@@ -16,23 +16,26 @@
 <body>
     <nav class="nav_bar"></nav>
     <main>
-        
+
         <div class="pfp_vendedor">
             <img src="../../image/vendedor/perfil_vendedor/banner_vendedor_mini_perfil.png" alt="banner" class="banner_vendedor">
-            <img src="../../image/vendedor/perfil_vendedor/pfp_vendedor.png" alt="pfp_vendedor" class="pfp_vendedor_ico">
-            <h1>THUNDER GAMES</h1>
-            <div class="botao_menu">
-                <form action="">
-                    <select name="menu" id="menu">
-                        <option value="">Menu</option>
-                        <option value="editar-perfil">Editar Perfil</option>
-                        <option value="pedidos">Pedidos</option>
-                        <option value="relatorio">Relatório</option>
-                        <option value="criar-cupom">Criar Cupom</option>
-                        <option value="editar-produtos">Editar Produtos</option>
-                        <option value="sair">Sair</option>
-                    </select>
-                </form>
+            <div class="pfp_container">
+                <img src="../../image/vendedor/perfil_vendedor/pfp_vendedor.png" alt="pfp_vendedor" class="pfp_vendedor_ico">
+                <h1 class="nome_vendedor">THUNDER GAMES</h1>
+                <div class="botao_menu">
+                    <img src="../../image/vendedor/perfil_vendedor/edit.svg" class="menu_2">
+                    <form action="" class="menu_1">
+                        <select name="menu" id="menu">
+                            <option value="">Menu</option>
+                            <option value="editar-perfil">Editar Perfil</option>
+                            <option value="pedidos">Pedidos</option>
+                            <option value="relatorio">Relatório</option>
+                            <option value="criar-cupom">Criar Cupom</option>
+                            <option value="editar-produtos">Editar Produtos</option>
+                            <option value="sair">Sair</option>
+                        </select>
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -58,34 +61,37 @@
             </div>
 
             <hr class="hr_1">
+            <div class="info_container">
+                <div class="about_container">
+                    <div class="about_text">
+                        <img src="../../image/vendedor/perfil_vendedor/icon_about_us.svg">
+                        <h1>Sobre nós:</h1>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</p>
+                </div>
+                <div class="contatos_vendedor">
+                    <img src="../../image/vendedor/perfil_vendedor/icon_instagram_vendedor.svg" class="icon_instagram_vendedor">
+                    <a href="#" class="instagram_vendedor">my.thudergames</a>
 
-            <div class="about_container">
-                <img src="../../image/vendedor/perfil_vendedor/icon_about_us.svg">
-                <h1>Sobre nós:</h1>
-                <p>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</p>
+                    <img src="../../image/vendedor/perfil_vendedor/icon_facebook_vendedor.svg" class="icon_facebook_vendedor">
+                    <a href="#" class="facebook_vendedor">thundergames</a>
+
+                    <img src="../../image/vendedor/perfil_vendedor/icon_x_vendedor.svg" class="icon_x_vendedor">
+                    <a href="#" class="x_vendedor">thundergames_</a>
+
+                    <hr class="vr">
+
+                    <img src="../../image/vendedor/perfil_vendedor/icon_linkedin_vendedor.svg" class="icon_linkedin_vendedor">
+                    <a href="#" class="linkedin_vendedor">thundergames</a>
+
+                    <img src="../../image/vendedor/perfil_vendedor/icon_youtube_vendedor.svg" class="icon_youtube_vendedor">
+                    <a href="#" class="youtube_vendedor">Thunder Games</a>
+
+                    <img src="../../image/vendedor/perfil_vendedor/icon_tiktok_vendedor.svg" class="icon_tiktok_vendedor">
+                    <a href="#" class="tiktok_vendedor">thunder.games</a>
+                </div>
             </div>
 
-            <div class="contatos_vendedor">
-                <img src="../../image/vendedor/perfil_vendedor/icon_instagram_vendedor.svg" class="icon_instagram_vendedor">
-                <a href="#" class="instagram_vendedor">my.thudergames</a>
-
-                <img src="../../image/vendedor/perfil_vendedor/icon_facebook_vendedor.svg" class="icon_facebook_vendedor">
-                <a href="#" class="facebook_vendedor">thundergames</a>
-
-                <img src="../../image/vendedor/perfil_vendedor/icon_x_vendedor.svg" class="icon_x_vendedor">
-                <a href="#" class="x_vendedor">thundergames_</a>
-
-                <hr class="vr">
-
-                <img src="../../image/vendedor/perfil_vendedor/icon_linkedin_vendedor.svg" class="icon_linkedin_vendedor">
-                <a href="#" class="linkedin_vendedor">thundergames</a>
-
-                <img src="../../image/vendedor/perfil_vendedor/icon_youtube_vendedor.svg" class="icon_youtube_vendedor">
-                <a href="#" class="youtube_vendedor">Thunder Games</a>
-
-                <img src="../../image/vendedor/perfil_vendedor/icon_tiktok_vendedor.svg" class="icon_tiktok_vendedor">
-                <a href="#" class="tiktok_vendedor">thunder.games</a>
-            </div>
 
             <hr class="hr_2">
 
@@ -115,7 +121,7 @@
 
     <template id="produto_card_template">
         <div class="produto_card bg_branco">
-            <img src="https://placehold.co/200x225.webp?text=Placeholder\n200w\nx\n225h" alt="Placeholder" class="img_card">    
+            <img src="https://placehold.co/200x225.webp?text=Placeholder\n200w\nx\n225h" alt="Placeholder" class="img_card">
             <p class="produto_nome font_descricao font_bold font_14px">Nome produto placeholder Nome produto placeholder</p>
             <div class="produto_preco_estrela font_descricao font_bold font_14px">
                 <div class="container_card_estrela">
