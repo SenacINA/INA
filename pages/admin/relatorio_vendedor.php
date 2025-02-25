@@ -136,13 +136,13 @@
           <img src="../../image/admin/relatorio_vendedor/engrenagem_icon.svg" alt="">
           <h1 class="relatorio_vendedor_text">Perfil Do Vendedor</h1>
         </div>        
-      </div>
-
-      <div class="relatorio_vendedor_perfil_usuario">
-        <img src="" alt="">
-        <h1>THUNDER GAMES</h1>
-        <h2>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius  
-        et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</h2>
+    
+        <div class="relatorio_vendedor_perfil_usuario">
+          <img src="" alt="">
+          <h1>THUNDER GAMES</h1>
+          <h2>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius  
+          et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</h2>
+        </div>
       </div>
     </div>
     
