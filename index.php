@@ -85,6 +85,15 @@
     </div>
     <div class='bg_container'>
         <div class='content_container'>
+            <div class='ad_grid'>
+                <div class='big_ad'>
+                    <img src="./image/index/BannerCupom25.jpg" alt="">
+                </div>
+                <div class='mid_ad'>
+                    <img src="./image/index/BannerCupom10.jpg" alt="">
+                    <img src="./image/index/BannerGarantia.jpg" alt="">
+                </div>
+            </div>
             <h1>oi</h1>
             <h1>oi</h1>
             <h1>oi</h1>
