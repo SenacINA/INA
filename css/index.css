@@ -1,15 +1,16 @@
+@import url('./style.css');
+
 *{
     margin: 0;
     padding: 0;
     list-style-type: none;
     text-decoration: none;
     box-sizing: border-box;
+    font-family: 'Jost';
 }
 
 body {
     min-height: 100vh;
-    background: linear-gradient(0deg, #DCE5EB -0.69%, #2888B1 99.31%);
-    background-repeat: no-repeat;
 }
 
 .nav{
@@ -111,13 +112,180 @@ body {
 
 /* Body */
 
-.bg_index_img {
-    width: 100vw;
-    height: auto;
+.container_main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
 
-    & img {
+.carrossel {
+    width: 100%;
+    height: 100%;
+    background: url(../image/index/fundoCarrossel.jpg) center / cover no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        height: auto;
+        height: 30%;
+        background: linear-gradient(to top, #2888B1, transparent);
+        z-index: 1;
+    
     }
 }
 
+.carrossel_content {
+    margin-top: 4%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0px 8%;
+    align-items: center;
+    z-index: 2;
+    &:hover .carrossel_but {
+        opacity: 1;
+    }
+}
+
+.text_content {
+    color: #F9F9FC;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    z-index: 2;
+
+    > h2 {
+        line-height: 90%;
+        font-size: 96px;
+    }
+
+    > h3 {
+        font-size: 24px;
+        width: 70%;
+    }
+}
+
+.carrossel_but {
+    cursor: pointer;
+    display: block;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out; 
+    padding: 0;
+    border: none;
+    background: transparent;
+    width: 48px;
+    height: 48px;
+    z-index: 2;
+    svg {
+        width: 48px; 
+        height: 48px;
+        color: #F9F9FC;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    &:hover {
+        svg {
+            color: #C8C8DB;
+            transform: scale(1.1)
+        }
+    }
+}
+
+.back {
+    transform: rotate(-90deg);
+    margin-right: auto;
+}
+
+.forward {
+    transform: rotate(90deg);
+    margin-left: auto;
+}
+
+.carrossel_nav {
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    padding: 0px 26%;
+    justify-content: center;
+    gap: 32px;
+    margin: 4% 0;
+    button {
+        width: 100%; 
+        height: 20px; 
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.63);
+        border: none;
+        cursor: pointer; 
+        transition: background 0.3s ease-in-out;
+        &:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        &.active {
+            background: rgba(0, 0, 0, 0.25);
+            &:hover {
+                background: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}
+
+.categorias_nav {
+    z-index: 2;
+    margin-bottom: 5%;
+    display: flex;
+    gap: 40px;
+    &:hover .block_categorias:not(:hover) {
+        filter: brightness(0.8);
+        transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+}
+
+.block_categorias { 
+    z-index: 2;
+    padding-bottom: 16px;
+    display: flex; 
+    border-radius: 5px; 
+    background: rgba(255, 255, 255, 0.70); 
+    flex-direction: column; 
+    align-items: center; 
+    row-gap: 16px; 
+    height: 200px; 
+    width: 160px; 
+    justify-content: flex-end;
+    font-weight: 500; 
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    & img{
+        height: auto;
+        width: 90%;
+    }
+    &:hover {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.8); 
+        transform: scale(1.1);
+    }
+}
+
+.bg_container {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #2888B1, #DCE5EB);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-2%);
+}
+
+.content_container {
+    width: 80%;
+    background-color: #DCE5EB; 
+}
