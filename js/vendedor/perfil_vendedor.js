@@ -9,14 +9,14 @@ menu.addEventListener("change", () => {
     case "pedidos":
       menu.selectedIndex = 0;
     // tela faltante
-    
+
     case "relatorio":
       menu.selectedIndex = 0;
       window.location.href = "../../pages/vendedor/relatorio_vendas.php";
 
     case "criar-cupom":
       menu.selectedIndex = 0;
-    // tela faltante
+      window.location.href = "../../pages/admin/cupom.php";
 
     case "editar-produtos":
       menu.selectedIndex = 0;
