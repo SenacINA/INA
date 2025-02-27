@@ -502,7 +502,7 @@ display: none;
   
   background-color: transparent;
   width: 95%;
-  height: 1479px;
+  height: 1332px;
   border-radius: 10px;
   margin: 1.5% 2%;
   margin-top: 86px;
@@ -654,8 +654,9 @@ display: none;
 
 /* botão */
 .cupom_botao_salvar {
-  margin: 0%;
-  margin-top: 325px;
+  margin: 0%;    
+  width: 325px;
+  transform: translateX(180px);
 }
 
 .cupom_salvar {
@@ -670,7 +671,6 @@ display: none;
 
   width: 100%;
   height: auto; 
-  margin-top: 150px;
 
   overflow: hidden; 
 }
