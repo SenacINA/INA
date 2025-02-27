@@ -1,0 +1,521 @@
+*{
+    margin: 0%;
+    font-family: 'Jost', sans-serif;
+}
+
+body {
+    margin: 0%;
+    background-color: #E8F1F2;
+    font-family: 'Jost';
+    width: 100%;
+}
+
+/* start header */
+.confirmar_pedido_nav_bar {
+    width: 100%;
+    height: 67px;
+    color: rgb(0, 0, 0);
+    background-color: #0F3B62;
+    display: grid;
+}
+/* end header */
+
+.confirmar_pedido_linha_azul {
+    width: 1702px;
+    height: 9px;
+    margin: auto;
+    border: none;
+    background-color: #2888B1;
+    border-radius: 10px;
+}
+
+
+.confirmar_pedido_grid_bg {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: var(--Cores-Azul-Leve, #DCE5EB);
+    margin: 1%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1854px;
+    height: 920px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.confirmar_pedido_grid_bg img {
+    width: 1700px;
+    height: 5px;
+    margin: auto; 
+}
+
+.confirmar_pedido_grid_id_pedido {
+    display: grid;
+    grid-template-columns: 20% 50%;
+}
+
+.confirmar_pedido_id_pedido h1 {
+    font-size: 30px;
+    text-align: start;
+}
+
+.confirmar_pedido_id_pedido h2 {
+    font-size: 16px;
+    text-align: start;
+}
+
+.confirmar_pedido_botoes_status {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-area: 2 / 3 / 2 / 3;
+    column-gap: 5%;
+}
+
+.confirmar_pedido_botoes_status h2 {
+    font-size: 20px;
+    font-style: normal;
+}
+
+.confirmar_pedido_botao_1, .confirmar_pedido_botao_2 {
+    border-radius: 10px;
+    text-align: start;
+    padding-left: 7%;
+}
+
+.confirmar_pedido_botao_1 {
+    background: #FFBA5A;
+}
+
+.confirmar_pedido_botao_2 {
+    background: #FFE500;
+}
+
+/* start grid_principal */
+
+.confirmar_pedido_grid_principal {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 335px 335px;
+    gap: 1%;
+    justify-content: center;
+    align-self: self-start;
+}
+
+.confirmar_pedido_container_1, .confirmar_pedido_container_2, .confirmar_pedido_container_3,
+.confirmar_pedido_container_4, .confirmar_pedido_container_5 {
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 0.1px #1B98E0 solid;
+    border-radius: 5px;
+}
+
+.confirmar_pedido_container_1 {
+    width: 910px;
+    height: 350px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.confirmar_pedido_container_2 {
+    width: 370px;
+    height: 110px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.confirmar_pedido_container_3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 460px;
+    grid-area: 1 / 3 / 3 / 3;
+}
+
+.confirmar_pedido_container_4 {
+    width: 910px;
+    height: 310px;
+    align-content: center;
+    justify-items: center;
+    align-self: flex-end;
+}
+
+.confirmar_pedido_container_5 {
+    width: 370px;
+    height: 545px;
+    align-self: flex-end;
+}
+
+/* end grid_principal */
+
+/* start container_1 */
+.confirmar_pedido_container_1 {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.confirmar_pedido_container_1 h1 {
+    color: #22759E;
+    font-size: 20px;
+}
+
+.confirmar_pedido_container_1 h2 {
+    color: rgba(20, 20, 20, 0.40);
+    font-size: 16px;
+    text-align: end;
+}
+
+.confirmar_pedido_container_1 img {
+    width: 78px;
+    height: 78px;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.3);
+    margin: 0%;
+    margin-right: 20px;
+}
+
+.confirmar_pedido_produtos {
+    display: grid;
+    grid-template-columns: min-content 460px 150px 150px;
+    text-align: start;
+    margin: 2%;
+}
+
+.confirmar_pedido_botao_confirmar_envio, .confirmar_pedido_botao_receber_pagamento {
+    display: flex;
+    justify-content: start; 
+    align-items: center;
+    height: 48px;
+    background-color: #1B98E0;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+    justify-self: end;
+    margin: 1%;
+}
+
+.confirmar_pedido_botao_confirmar_envio h1, .confirmar_pedido_botao_receber_pagamento h1 {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 30px;
+    padding-right: 10px;
+    user-select: none;
+}
+
+.confirmar_pedido_botao_confirmar_envio img, .confirmar_pedido_botao_receber_pagamento img {
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    margin-left: 5px;
+    box-shadow: none;
+}
+
+.confirmar_pedido_botao_confirmar_envio:hover, .confirmar_pedido_botao_receber_pagamento:hover {
+    transform: scale(1.02); 
+    background-color: #1785C5; 
+}
+
+.confirmar_pedido_botao_confirmar_envio:active, .confirmar_pedido_botao_receber_pagamento:active {
+    transform: scale(1); 
+    background-color: #1B98E0; 
+}
+
+.confirmar_pedido_itens {
+    overflow-y: auto; 
+    padding: 10px;
+}
+
+.confirmar_pedido_produtos img {
+    margin-bottom: 60px; 
+}
+
+.confirmar_pedido_itens::-webkit-scrollbar {
+    display: none;
+}
+
+/* end container_1 */
+
+/* start container_2 */
+.confirmar_pedido_container_2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    align-items: center;
+    text-align: start;
+    padding-left: 15px;
+}
+
+.confirmar_pedido_container_2 h1 {
+    color: #141414;
+    font-size: 20px;
+}
+
+.confirmar_pedido_container_2 img {
+    width: 20px;
+    height: 20px;
+}
+
+.confirmar_pedido_container_2 textarea {
+    font-size: 16px;
+    color: rgb(121, 120, 120);
+    width: 320px;
+    height: 50px;
+    border: none;
+    resize: none;
+}
+
+/* end container_2 */
+
+/* start container_3 */
+.confirmar_pedido_container_3 hr {
+    border: 1px rgb(121, 120, 120) solid;
+}
+
+.confirmar_pedido_titulo_cronograma {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0;
+}
+
+.confirmar_pedido_titulo_cronograma img {
+    position: absolute;
+    left: 20px;
+    top: 25%; 
+    width: 25px;
+    height: 25px;
+}
+
+.confirmar_pedido_itens_container_3 {
+    display: grid;
+    position: relative;
+    grid-template-columns: 100%;
+    grid-auto-rows: min-content; 
+    width: 95%;
+    height: 90%;
+    overflow-y: scroll; 
+    padding: 2%;
+    align-items: start;
+    text-align: start;
+    row-gap: 50px;
+}
+
+
+.confirmar_pedido_itens_container_3::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.confirmar_pedido_itens_container_3 h1 {
+    color: #22759E;
+    font-size: 16px;
+}
+
+.confirmar_pedido_itens_container_3 h2 {
+    color: rgba(20, 20, 20, 0.70);
+    font-size: 16px;
+}
+
+.confirmar_pedido_itens_container_3 h3 {
+    color: rgb(163, 163, 163);
+    font-size: 16px;
+}
+
+.confirmar_pedido_container_3_item {
+    display: grid;
+    grid-template-columns: 20px auto;
+}
+
+.confirmar_pedido_container_3_item div {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    flex-wrap: wrap; 
+    max-width: 100%; 
+    word-wrap: break-word; 
+}
+
+.confirmar_pedido_container_3_item img {
+    width: 15px;
+    height: 15px;
+    margin: 0%;
+    margin-top: 4px;
+}
+
+.confirmar_pedido_container_3_item hr {
+    position: absolute;
+    border: 0;
+    width: 3px;
+    height: 100vh;  
+    background-color: rgba(0, 0, 0, 0.30);
+    margin-left: 6px; 
+    margin-top: 10px;    
+}
+
+/* end container_3 */
+
+/* start container_4 */
+.confirmar_pedido_itens_container_4 {
+    border: 1px #141414 solid;
+    width: 830px;
+    height: 200px;
+    padding: 10px;
+    margin: 1%; 
+}
+
+.confirmar_pedido_itens_container_4 h1 {
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    justify-self: start;
+    padding-left: 10px;
+    padding-top: 25px;
+}
+
+.confirmar_pedido_itens_container_4 hr {
+    width: 98%;              
+    height: 1.5px;              
+    border: none;             
+    background-color: rgba(0, 0, 0, 0.2);  
+    align-self: center;  
+    justify-self: center;
+    margin-bottom: 20px;  
+}
+
+.confirmar_pedido_container_4_item {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+.confirmar_pedido_container_4_item h2:first-child {
+    justify-self: flex-start; 
+}
+
+.confirmar_pedido_container_4_item h2:nth-child(2) {
+    justify-self: center; 
+}
+
+.confirmar_pedido_container_4_item h2:last-child {
+    justify-self: flex-end; 
+}
+
+.confirmar_pedido_container_4_item h2, .confirmar_pedido_container_4_total H2 {
+    font-size: 16px;
+    font-style:normal;
+    color: rgb(121, 120, 120);
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirmar_pedido_container_4_total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.confirmar_pedido_container_4_total h2:first-child {
+    justify-self: start;
+}
+
+.confirmar_pedido_container_4_total h2:last-child {
+    justify-content: end;
+}
+/* end container_4 */
+
+/* start container_5 */
+.confirmar_pedido_container_5_item {
+    padding-bottom: 25px;
+}
+
+.confirmar_pedido_container_5_item h1 {
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    justify-self: start;
+    padding-left: 10px;
+}
+
+.confirmar_pedido_container_5_item h2, .confirmar_pedido_container_5 h3 {
+    display: flex;
+    position: relative;
+    font-size: 15px;
+    justify-self: start;
+    padding-left: 10px;
+    color: #22759E;
+}
+
+.confirmar_pedido_container_5_item h3 {
+    display: flex;
+    position: relative;
+    font-size: 15px;
+    justify-self: start;
+    padding-left: 10px;
+    color: rgb(121, 120, 120);
+}
+
+.confirmar_pedido_container_5_item img {
+    width: 20px;
+    height: 20px;
+    padding-right: 10px;
+    margin: 0%;
+}
+
+.confirmar_pedido_linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.confirmar_pedido_linha_2 {
+    display: flex;
+}
+
+.confirmar_pedido_botao_denunciar_usuario {
+    display: flex;
+    position: relative;
+    justify-content: start; 
+    align-items: center;
+    height: 48px;
+    background-color: #D32F2F; 
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+    justify-self: end;
+    top: 38%;
+    margin: 2%;
+}
+
+.confirmar_pedido_botao_denunciar_usuario h1 {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 30px;
+    padding-right: 10px;
+    user-select: none;
+}
+
+.confirmar_pedido_botao_denunciar_usuario img {
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    margin-left: 5px;
+    box-shadow: none;
+}
+
+.confirmar_pedido_botao_denunciar_usuario:hover {
+    transform: scale(1.02); 
+    background-color: #C2185B;
+}
+
+.confirmar_pedido_botao_denunciar_usuario:active {
+    transform: scale(1); 
+    background-color: #D32F2F; 
+}
+
+/* end container_5 */
