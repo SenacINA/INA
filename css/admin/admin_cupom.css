@@ -500,9 +500,9 @@ display: none;
   justify-self: center;
   align-self: center;
   
-  background-color: transparent;
+  background-color: #EFF3F5;
   width: 95%;
-  height: 1479px;
+  height: 1332px;
   border-radius: 10px;
   margin: 1.5% 2%;
   margin-top: 86px;
@@ -568,7 +568,6 @@ display: none;
 
 .bg_mobile_1 {
   position: absolute;
-  background-color: #EFF3F5;
   height: 336px;
   width: 100%;
 
@@ -578,7 +577,6 @@ display: none;
 
 .bg_mobile_2 {
   position: absolute;
-  background-color: #EFF3F5;
   height: 1065px;
   width: 100%;
 
@@ -654,8 +652,9 @@ display: none;
 
 /* botão */
 .cupom_botao_salvar {
-  margin: 0%;
-  margin-top: 325px;
+  margin: 0%;    
+  width: 325px;
+  transform: translateX(180px);
 }
 
 .cupom_salvar {
@@ -670,7 +669,6 @@ display: none;
 
   width: 100%;
   height: auto; 
-  margin-top: 150px;
 
   overflow: hidden; 
 }
@@ -681,5 +679,30 @@ display: none;
     object-fit: cover; 
 }
 
+.cupom_configuracao_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  width: 100%;
+}
+
+.cupom_configuracao_item {
+  display: grid;
+  grid-template-columns: 1fr; /* Two equal columns */
+  width: 99%;
+}
+
+.cupom_caixa_procura{
+  background: #DCE5EB;
+  width: 100%;
+  height: 200px;
+}
+
+.cupom_metodo_procura_body{
+  display: flex;
+  background-color: #ffffff;
+  border: #1B98E0 solid 2px;
+  border-top-right-radius: 5px;
+  width: 100%;
+}
 
 }
