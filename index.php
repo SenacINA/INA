@@ -122,7 +122,7 @@ function gerarProdutoCards($quantidade) {
     </div>
     <div class='bg_container'>
         <div class='content_container'>
-            <div class='ad_grid'>
+            <div class='ad_box'>
                 <div class='big_ad'>
                     <img src="./image/index/BannerCupom25.jpg" alt="">
                 </div>
@@ -170,7 +170,7 @@ function gerarProdutoCards($quantidade) {
                     </button>
                 </div>
             </div>
-            <img src="./image/index/BannerRedragon.jpg" alt="">
+            <img class='large_ad' src="./image/index/BannerRedragon.jpg" alt="">
             <div class='produto_container'>
                 <div class='container_title'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
