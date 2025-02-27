@@ -9,8 +9,9 @@
     font-family: 'Jost';
 }
 
-body {
+body, html {
     min-height: 100vh;
+    min-width: 100vw;
 }
 
 .nav{
@@ -286,7 +287,12 @@ body {
 }
 
 .content_container {
+    padding: 64px 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #DCE5EB; 
+    row-gap: 64px;
 }
 
 .ad_grid {
@@ -294,7 +300,6 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    margin: 64px 88px;
 }
     
 .big_ad {
@@ -313,3 +318,192 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.produto_container {
+    display: flex;
+    row-gap: 16px;
+    flex-direction: column;
+    width: 100%;
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.container_title {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.produtos_content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    position: relative;
+}
+
+.produtos_box {
+    height: 352px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.produto_card {
+    position: relative;
+    padding: 4px;
+    height: 352px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F9F9FC;
+    font-weight: 600;
+    border-radius: 5px;
+    justify-content: space-between;
+
+    p {
+        color: #4A4A4A;
+    }
+
+    img {
+        width: 100%;
+    }
+
+}
+
+.imagem_produto {
+    row-gap: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.desconto {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 80px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="20" viewBox="0 0 80 20" fill="none"><path d="M0 0H80V20H0L17.3359 10L0 0Z" fill="%23006494"/></svg>') no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    padding-right: 4px;
+}
+
+.estrela_valor {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.estrela_produto {
+    display: flex;
+    align-items: center;
+
+    p {
+        background: linear-gradient(90deg, #FFD600 80%, #989898 81%);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    h4 {
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
+.valor_produto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    p {
+        font-weight: 700;
+    }
+}
+
+.botoes_produto {
+    display: flex;
+    gap: 8px;
+
+    button {
+        width: 100%;
+        height: 48px;
+        border-radius: 5px;
+        background-color:#1B98E0;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s, filter 0.3s;        
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+    }   
+}
+
+#valor_antigo {
+    color: #00000080;
+    filter: opacity(50%);
+    font-size: 12px;
+    text-decoration-line: line-through;
+}
+
+#valor_produto {
+    color: #FF7A00;
+    font-size: 16px;
+}
+
+.ver_mais {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    transition: transform 0.3s, filter 0.3s;
+    gap: 4px;
+    justify-content: flex-end;
+
+    &:hover {
+        transform: translateX(16px);
+        filter: brightness(1.1);
+        cursor: pointer;
+    }
+
+    p {
+        color: black;
+        filter: opacity(30%);
+    }
+
+    button {
+        color: white;
+        border-radius: 5px;
+        background-color: #1B98E0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        svg {
+            transform: rotate(90deg);
+            cursor: pointer;
+        }
+    }
+}
+
+
