@@ -22,7 +22,6 @@
           <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
           <h1 class="gerenciar_pedidos_text_header font_titulo">Gerenciar Pedidos</h1>
         </div>
-        <hr class="gerenciar_pedidos_linha_header">
       </header>
       <main class="gerenciar_pedidos_main_content">
         <div class="gerenciar_pedidos_quadrado_container">
@@ -33,7 +32,7 @@
             <form action="" method="post" class="gerenciar_pedidos_forms_pesquisa_pedidos">
               <div class="gerenciar_pedidos_form_cliente">
                 <label class="gerenciar_pedidos_label_cod font_subtitulo font_celadon">Código Do Produto / Nome Cliente</label>
-                <input type="text" class="gerenciar_pedidos_input_cod base_input">
+                <input type="text" spellcheck="false" class="gerenciar_pedidos_input_cod base_input">
               </div>
               <div class="gerenciar_pedidos_inputs_esquerda">
                 <div class="gerenciar_pedidos_input_status">
@@ -80,8 +79,8 @@
                 </div>
               </div>
               <div class="gerenciar_pedidos_holder_botao">
-                <button type="reset" class="gerenciar_pedidos_cancelar base_botao">Cancelar</button>
-                <button type="submit" class="gerenciar_pedidos_confirmar base_botao">Confirmar</button>
+                <button type="reset" class="gerenciar_pedidos_cancelar base_botao btn_outline_red">CANCELAR</button>
+                <button type="submit" class="gerenciar_pedidos_confirmar base_botao btn_outline_blue">CONFIRMAR</button>
               </div>
             </form>
           </div>
