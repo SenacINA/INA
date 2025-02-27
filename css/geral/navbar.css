@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #979797;
+}
+
+.nav {
+    width: 100%;
+    height: 72px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    gap: 8px;
+}
+
+.logo-container {
+    width: 264px;
+    min-width: 264px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes-container {
+    width: 264px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+#header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 8px 182px;
+    background: white;
+}
+
+#search-input {
+    width: 600px;
+    height: fit-content;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.button-container {
+    gap: 16px;
+    height: 100%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square-button {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    width: fit-content;
+    min-width: 40px;
+    min-height: 40px;
+
+    border-radius: 4px;
+    color: #1B98E0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.square-button:hover {
+    fill: #0056b3;
+    transform: scale(1.1);
+}
+
+.square-button svg {
+    fill: #1B98E0;
+    width: 100%;
+    height: 100%;
+}
+
+.square-button-search {
+    background-color: #1B98E0;
+    border: none;
+    height: 100%;
+    padding: 6px;
+    width: fit-content;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.square-button-search:hover {
+    fill: #0056b3;
+    transform: scale(1.1);
+}
+
+.square-button-search svg {
+    fill: #1B98E0;
+    width: 100%;
+    height: 100%;
+}
+
+
