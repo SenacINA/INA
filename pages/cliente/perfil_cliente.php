@@ -139,5 +139,7 @@
     <footer>
       <img class="perfil_cliente_footer_img" src="../../image/cliente/footer/img_footer_placeholder.png">
     </footer>
+
+    <script src="../../js/cliente/perfil_cliente.js"></script>
 </body>
 </html>
