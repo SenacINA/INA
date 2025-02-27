@@ -500,7 +500,7 @@ display: none;
   justify-self: center;
   align-self: center;
   
-  background-color: transparent;
+  background-color: #EFF3F5;
   width: 95%;
   height: 1332px;
   border-radius: 10px;
@@ -568,7 +568,6 @@ display: none;
 
 .bg_mobile_1 {
   position: absolute;
-  background-color: #EFF3F5;
   height: 336px;
   width: 100%;
 
@@ -578,7 +577,6 @@ display: none;
 
 .bg_mobile_2 {
   position: absolute;
-  background-color: #EFF3F5;
   height: 1065px;
   width: 100%;
 
