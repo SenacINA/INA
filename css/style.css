@@ -149,6 +149,7 @@ select.base_input {
 
 .base_input:disabled{
   border: var(--cinza) solid 2px;
+  cursor: default;
 }
 
 .base_input:invalid{
@@ -173,7 +174,14 @@ select.base_input {
   border: var(--vermelho) solid 2px;
 }
 
-.btn_red:hover{
+.btn_blue:disabled, .btn_red:disabled{
+  background-color:var(--cinza);
+  color: var(--branco);
+  border: var(--cinza) solid 2px;
+  cursor: default;
+}
+
+.btn_red:hover:not(:disabled){
   background-color: #B12525;
   border: #B12525 solid 2px;
 }
@@ -184,7 +192,7 @@ select.base_input {
   border: var(--carolina) solid 2px;
 }
 
-.btn_blue:hover{
+.btn_blue:hover:not(:disabled){
   background-color: #2182BA;
   border: #2182BA solid 2px;
 }
