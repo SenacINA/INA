@@ -174,7 +174,7 @@ hr {
 .infos_item3,
 .infos_item4 {
   display: grid;
-  grid-template-columns: min-content 100%;
+  grid-template-columns: min-content 110%;
   align-items: center;
 }
 
