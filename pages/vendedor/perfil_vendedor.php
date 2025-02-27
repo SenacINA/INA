@@ -26,7 +26,7 @@
                     <img src="../../image/vendedor/perfil_vendedor/edit.svg" class="menu_2">
                     <form action="" class="menu_1">
                         <select name="menu" id="menu">
-                            <option value="">Menu</option>
+                            <option selected disabled value="">Menu</option>
                             <option value="editar-perfil">Editar Perfil</option>
                             <option value="pedidos">Pedidos</option>
                             <option value="relatorio">Relatório</option>
@@ -148,6 +148,7 @@
 
     </template>
     <script type="text/javascript" src="../../js/cliente/categoria.js"></script>
+    <script src="../../js/vendedor/perfil_vendedor.js"></script>
 </body>
 
 </html>
