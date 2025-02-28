@@ -79,8 +79,8 @@
                 </div>
               </div>
               <div class="gerenciar_pedidos_holder_botao">
-                <button type="reset" class="gerenciar_pedidos_cancelar base_botao btn_outline_red">CANCELAR</button>
-                <button type="submit" class="gerenciar_pedidos_confirmar base_botao btn_outline_blue">CONFIRMAR</button>
+                <button type="reset" class="gerenciar_pedidos_cancelar base_botao btn_red">CANCELAR</button>
+                <button type="submit" class="gerenciar_pedidos_confirmar base_botao btn_blue">CONFIRMAR</button>
               </div>
             </form>
           </div>
