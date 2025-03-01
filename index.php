@@ -75,7 +75,7 @@ function gerarProdutoCards($quantidade) {
 <div class="index_body_main_container">
     <div class="index_body_carrossel">
         <div class="index_body_carrossel_content">
-            <button class="index_body_carrossel_but index_body_carrossel_but_back">
+            <button class="index_body_carrossel_but back">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19"/>
                 </svg>
@@ -85,7 +85,7 @@ function gerarProdutoCards($quantidade) {
                 <h3>Experimente a próxima geração de entretenimento com nossos consoles de última tecnologia!</h3>
             </div>
             <img id="fg_image" src="./image/index/fgCarrosselEx.png" alt="">
-            <button class="index_body_carrossel_but index_body_carrossel_but_forward">
+            <button class="index_body_carrossel_but forward">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19"/>
                 </svg> 
