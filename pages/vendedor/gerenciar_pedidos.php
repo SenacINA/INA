@@ -15,19 +15,26 @@
 
 <body class="gerenciar_pedidos_main_container">
   <nav class="gerenciar_pedidos_navbar_principal" style="background-color: purple;"></nav>
-  <div class="gerenciar_pedidos_body_container">
+  <main class="gerenciar_pedidos_body_container">
     <div class="gerenciar_pedidos_body_holder bg_azul_leve">
-      <header class="gerenciar_pedidos_header_relatorio">
+      <div class="gerenciar_pedidos_header_relatorio">
         <div class="gerenciar_pedidos_header_holder">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
-          <h1 class="gerenciar_pedidos_text_header font_titulo">Gerenciar Pedidos</h1>
+          <div class="gerenciar_pedidos_header_title">
+            <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+            <h1 class="gerenciar_pedidos_text_header font_titulo">GERENCIAR PEDIDOS</h1>
+          </div>
+          <div class="gerenciar_pedidos_linha_sublinhado"></div>
         </div>
-      </header>
-      <main class="gerenciar_pedidos_main_content">
+      </div>
+      <div class="gerenciar_pedidos_main_content">
         <div class="gerenciar_pedidos_quadrado_container">
           <div class="gerenciar_pedidos_pesquisar_pedidos">
-            <div class="gerenciar_pedidos_header_pedidos">
-              <p class="gerenciar_pedidos_text_pedidos font_subtitulo font_celadon">Pesquisar Pedidos</p>
+            <div class="gerenciar_pedidos_subtitulo_generico">
+              <div class="gerenciar_pedidos_linha_vertical"></div>
+              <div class="gerenciar_pedidos_subtitle_holder">
+                <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                <h2 class="font_subtitulo font_celadon">Pesquisar Pedidos</p>
+              </div>
             </div>
             <form action="" method="post" class="gerenciar_pedidos_forms_pesquisa_pedidos">
               <div class="gerenciar_pedidos_form_cliente">
@@ -85,8 +92,12 @@
             </form>
           </div>
           <div class="gerenciar_pedidos_estatisticas">
-            <div class="gerenciar_pedidos_header_estatisticas">
-              <p class="gerenciar_pedidos_text_estatisticas font_celadon">Estatísticas</p>
+            <div class="gerenciar_pedidos_subtitulo_generico">
+              <div class="gerenciar_pedidos_linha_vertical"></div>
+              <div class="gerenciar_pedidos_subtitle_holder">
+                <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                <h2 class="font_subtitulo font_celadon">Estatísticas</p>
+              </div>
             </div>
             <div class="gerenciar_pedidos_estatistica_holder">
               <div class="gerenciar_pedidos_card">
@@ -116,11 +127,67 @@
             </div>
           </div>
         </div>
-        <div class="gerenciar_pedidos_filtro"></div>
-        <div class="gerenciar_pedidos_table"></div>
-      </main>
+      </div>
     </div>
-  </div>
+    <div class="gerenciar_pedidos_table">
+      <div class="gerenciar_pedidos_table_filtro bg_carolina">
+        <p class="gerenciar_pedidos_filtro_titulo font_subtitulo">Organizar por:</p>
+        <select>
+          <option value="" selected disable style="display: none;"></option>
+          <option value="">Opa1</option>
+          <option value="">Opa2</option>
+          <option value="">Opa3</option>
+          <option value="">Opa4</option>
+        </select>
+      </div>
+      <div class="gerenciar_pedidos_table_holder">
+        <table>
+          <thead>
+            <tr>
+              <th>Cód.</th>
+              <th>Produto</th>
+              <th>Preço</th>
+              <th>Qtn.</th>
+              <th>Previsão de Entrega</th>
+              <th>Status</th>
+              <th>Cliente</th>
+            </tr>
+            <tbody>
+              <tr>
+                <td># 1001</td>
+                <td>Cadeira Gamer Throne - RGB </td>
+                <td>R$ 1.400,00</td>
+                <td>01</td>
+                <td>25/03/2024 - 06/04/2024</td>
+                <td>Entregue</td>
+                <td>Roberto Carlos</td>
+              </tr>
+              <tr>
+                <td># 1001</td>
+                <td>Cadeira Gamer Throne - RGB </td>
+                <td>R$ 1.400,00</td>
+                <td>01</td>
+                <td>25/03/2024 - 06/04/2024</td>
+                <td>Entregue</td>
+                <td>Roberto Carlos</td>
+              </tr>
+              <tr>
+                <td># 1001</td>
+                <td>Cadeira Gamer Throne - RGB </td>
+                <td>R$ 1.400,00</td>
+                <td>01</td>
+                <td>25/03/2024 - 06/04/2024</td>
+                <td>Entregue</td>
+                <td>Roberto Carlos</td>
+              </tr>
+              <tr>
+              </tr>
+            </tbody>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </main>
 </body>
 
 </html>

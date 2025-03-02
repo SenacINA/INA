@@ -1,11 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Jost;
-}
-
 .gerenciar_pedidos_body_container {
-  padding: 56px 182px 16px;
+  padding: 56px 48px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .gerenciar_pedidos_body_holder {
@@ -27,7 +24,34 @@
   width: 100%;
 }
 
-.gerenciar_pedidos_header_holder {
+.gerenciar_pedidos_subtitulo_generico{
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+
+.base_icon{
+  height: 32px;
+}
+
+.gerenciar_pedidos_linha_vertical{
+  width: 8px;
+  height: 48px;
+  background-color: var(--carolina);
+  border-radius: 10px;
+}
+
+.gerenciar_pedidos_subtitle_holder{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.gerenciar_pedidos_header_holder{
+  width: 100%;
+}
+
+.gerenciar_pedidos_header_title {
   display: flex;
   justify-content: center;
   gap: 4px;
@@ -43,14 +67,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  gap: 16px;
+  gap: 10%;
 }
 
 .gerenciar_pedidos_main_content {
-  display: grid;
   padding: 32px;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 32px;
 }
 
 .gerenciar_pedidos_pesquisar_pedidos {
@@ -87,8 +108,9 @@
 }
 
 .gerenciar_pedidos_linha_sublinhado {
+  margin-top: 16px;
   width: 100%;
-  height: 2px;
+  height: 4px;
   border: 0;
   background-color: var(--carolina);
 }
@@ -186,14 +208,51 @@
   font-weight: 300;
 }
 
-.gerenciar_pedidos_table {
-  width: 600px;
-  height: 752px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  background: #f1f1f1;
-  grid-row: 3;
-  display: grid;
-  row-gap: 8px;
+.gerenciar_pedidos_table{
+  display: flex;
+  flex-direction: column;
+}
+
+.gerenciar_pedidos_table_filtro{
+  display: flex;
+  width: fit-content;
+  padding: 0 8px;
+}
+.gerenciar_pedidos_table_filtro > select{
+  background-color: var(--carolina);
+  border: 0;
+}
+
+.gerenciar_pedidos_filtro_titulo{
+  color: #fff;
+}
+
+.gerenciar_pedidos_table_holder > table,thead,tbody,th,td{
+  border: solid 1px var(--carolina);
+  border-collapse: collapse;
+  padding: 8px;
+  text-align: left;
+}
+
+.gerenciar_pedidos_table_holder > table{
+  width: 100%;
+}
+
+.gerenciar_pedidos_table_holder > thead, th {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--cinza);
+}
+
+.gerenciar_pedidos_table_holder > tr, td {
+  color: var(--sappire);
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--branco_gelo);
+}
+
+.gerenciar_pedidos_table_holder > tr:nth-child(even) {
+  background-color: aqua;
 }
 
 
