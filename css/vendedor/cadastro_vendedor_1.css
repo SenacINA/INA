@@ -9,7 +9,7 @@ body {
 }
 
 /* start header */
-.nav_bar {
+.cadastro_vendedor1_nav_bar {
     width: 100%;
     height: 67px;
     color: rgb(0, 0, 0);
@@ -18,11 +18,11 @@ body {
 }
 /* end header */
 
-.titulo{
+.cadastro_vendedor1_titulo{
     margin-top: 20px;
 }
 
-.cadastro_row{
+.cadastro_vendedor1_row{
     display: flex;
     height:5px;
     width: 1500px;
@@ -35,7 +35,7 @@ body {
   }
 
 
-.grid_bg {
+.cadastro_vendedor1_grid_bg {
     display: grid;
     grid-template-columns: auto;
     color: #247BA0;
@@ -51,7 +51,7 @@ body {
     text-align: center;
 }
 
-.cadastro_vendedor_1_salvar {
+.cadastro_vendedor1_salvar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,13 +62,13 @@ body {
     height: 48px;
   }
   
-  .cadastro_vendedor_1_salvar label {
+  .cadastro_vendedor1_salvar label {
     color: white;
     font-size: 24px;
     cursor: pointer;
   }
   
-  .cadastro_vendedor_1_botao_salvar {
+  .cadastro_vendedor1_botao_salvar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,13 +76,13 @@ body {
     border: none;
     cursor: pointer;
   }
-  .cadastro_vendedor_1_botao_salvar button {
+  .cadastro_vendedor1_botao_salvar button {
     gap: 10px;
     border: none;
     cursor: pointer;
   }
   
-.lista_ordenada {
+.cadastro_vendedor1_lista_ordenada {
     display: grid;
     grid-template-columns: 880px 500px;
     column-gap: 12%;
@@ -112,17 +112,98 @@ ol li::before {
     grid-area: 1 / 1/ 3 / 2 ;
 }
 
-.lista_ordenada li h1, .lista_ordenada L li {
+.cadastro_vendedor1_lista_ordenada li h1, .cadastro_vendedor1_lista_ordenada L li {
     color: #247BA0;
     font-size: 32px;
 }
 
-.lista_ordenada li h2, .lista_ordenada L li {
+.cadastro_vendedor1_lista_ordenada li h2, .cadastro_vendedor1_lista_ordenada L li {
     color: rgba(0, 0, 0, 0.61);
     font-size: 20px;
     font-weight: normal;
 }
 
-.lista_ordenada L {
+.cadastro_vendedor1_lista_ordenada L {
     margin-top: 45px;
+}
+
+
+/* Responsividade aprimorada para mobile */
+@media (max-width: 768px) {
+    .cadastro_vendedor1_nav_bar {
+        height: 60px;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .cadastro_vendedor1_titulo {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .cadastro_vendedor1_row {
+        width: 90%;
+        height: 4px;
+        margin-top: 10px;
+    }
+
+    .cadastro_vendedor1_grid_bg {
+        width: 90%;
+        padding: 15px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .cadastro_vendedor1_lista_ordenada {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 25px;
+    }
+
+    ol {
+        padding-left: 0;
+    }
+
+    ol li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    ol li::before {
+        width: 40px;
+        height: 40px;
+        font-size: 26px;
+        margin: 0 auto;
+    }
+
+    .cadastro_vendedor1_lista_ordenada li h1 {
+        font-size: 22px;
+    }
+
+    .cadastro_vendedor1_lista_ordenada li h2 {
+        font-size: 18px;
+    }
+
+    .cadastro_vendedor1_salvar {
+        width: 100%;
+        max-width: 220px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+    }
 }
