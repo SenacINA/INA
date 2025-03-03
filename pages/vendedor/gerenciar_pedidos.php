@@ -164,12 +164,24 @@
             <tbody>
               <tr>
                 <td># 1001</td>
-                <td>Cadeira Gamer Throne - RGB </td>
+                <td>
+                  <span>
+                    Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB
+                  </span>
+                </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
+                <td>
+                  <span>
+                    25/03/2024 - 06/04/2024
+                  </span>
+                </td>
                 <td>Entregue</td>
-                <td>Roberto Carlos</td>
+                <td>
+                  <span>
+                    Roberto Carlos
+                  </span>
+                </td>
               </tr>
               <tr>
                 <td># 1001</td>

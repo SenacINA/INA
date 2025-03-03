@@ -265,6 +265,30 @@
     font-weight: 500;
   }
 
+  span{
+    padding: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  span:hover{
+    overflow-y: scroll;
+  }
+  span::-webkit-scrollbar {
+    width: 6px;
+  }
+  span::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  span::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  span::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
   tr{
     background-color: var(--branco_gelo);
     min-height: 48px;
@@ -346,9 +370,6 @@
 
     td{
       height: 100%;
-      -webkit-line-clamp: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
       font-size: 0.625rem;
     }
   }
