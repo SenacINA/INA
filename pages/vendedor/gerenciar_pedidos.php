@@ -142,6 +142,15 @@
       </div>
       <div class="gerenciar_pedidos_table_holder">
         <table>
+          <colgroup>
+            <col class="gerenciar_pedidos_table_col-1">
+            <col class="gerenciar_pedidos_table_col-2">
+            <col class="gerenciar_pedidos_table_col-3">
+            <col class="gerenciar_pedidos_table_col-4">
+            <col class="gerenciar_pedidos_table_col-5">
+            <col class="gerenciar_pedidos_table_col-6">
+            <col class="gerenciar_pedidos_table_col-7">
+          </colgroup>
           <thead>
             <tr>
               <th>Cód.</th>
@@ -181,6 +190,13 @@
                 <td>Roberto Carlos</td>
               </tr>
               <tr>
+                <td># 1001</td>
+                <td>Cadeira Gamer Throne - RGB </td>
+                <td>R$ 1.400,00</td>
+                <td>01</td>
+                <td>25/03/2024 - 06/04/2024</td>
+                <td>Entregue</td>
+                <td>Roberto Carlos</td>
               </tr>
             </tbody>
           </thead>
