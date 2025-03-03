@@ -4,7 +4,7 @@
 
 body {
     margin: 0%;
-    background-color: #E8F1F2;
+    background-color: #F9F9FC;
     font-family: 'Jost';
 }
 
@@ -18,10 +18,28 @@ body {
 }
 /* end header */
 
+.titulo{
+    margin-top: 20px;
+}
+
+.cadastro_row{
+    display: flex;
+    height:5px;
+    width: 1500px;
+    margin-top: -60px;
+    background-color: #2888B1;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    grid-area: 2 / 1 / 2 / 2;
+  }
+
+
 .grid_bg {
     display: grid;
     grid-template-columns: auto;
-    background-color: var(--Cores-Azul-Leve, #DCE5EB);;
+    color: #247BA0;
+    background-color: var(--Cores-Azul-Leve, #EFF3F5);;
     margin: 2%;
     margin-right: auto;
     margin-left: auto;
@@ -33,38 +51,37 @@ body {
     text-align: center;
 }
 
-.grid_bg img {
-    width: 1700px;
-    height: 5px;
-    margin: auto;
-    margin-bottom: 3%;
-}
-
-.botao {
-    margin: auto;
-    cursor: pointer;
-    transition: transform 0.1s ease;
-}
-
-.botao h1 {
+.cadastro_vendedor_1_salvar {
     display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    border-radius: 5px;
+    background-color: #1B98E0;
+    width: 192px;
+    margin: 0;
+    height: 48px;
+  }
+  
+  .cadastro_vendedor_1_salvar label {
     color: white;
-    height: 40px;
-    padding: 5px;
-    background-color: #2075C2;
-    font-size: 32px;
-    font-weight: normal;
-    border-radius: 10px;
-    margin-bottom: 10%;
-}
-
-.botao:active {
-    transform: scale(0.95);
-}
-
-
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .cadastro_vendedor_1_botao_salvar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+  }
+  .cadastro_vendedor_1_botao_salvar button {
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
 .lista_ordenada {
     display: grid;
     grid-template-columns: 880px 500px;
@@ -96,7 +113,7 @@ ol li::before {
 }
 
 .lista_ordenada li h1, .lista_ordenada L li {
-    color: #000;
+    color: #247BA0;
     font-size: 32px;
 }
 
