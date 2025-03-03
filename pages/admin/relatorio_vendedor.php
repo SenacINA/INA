@@ -16,22 +16,21 @@
     <nav class="relatorio_vendedor_nav_bar"></nav>  
 
     <div class="relatorio_vendedor_body">
-      <div class="relatorio_vendedor_header">
-        <div class="relatorio_vendedor_text_header">
+      <div class="relatorio_vendedor_titulo" id="relatorio_vendedor_titulo_1">
+        <div class="relatorio_vendedor_text_titulo">
           <img src="../../image/admin/relatorio_vendedor/icon_relatorio.svg" alt="">
           <h1>RELATÓRIO DO VENDEDOR</h1>
         </div>
-        <hr class="relatorio_vendedor_linha_header">
+        <hr class="relatorio_vendedor_linha_titulo">
       </div>
 
       <div class="bg_mobile_1"></div>
-      <div class="bg_mobile_2"></div>
      
       <div class="relatorio_vendedor_grid_conteudo">
        
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_1"> 
           <hr class="relatorio_vendedor_vertical">
-          <img src="../../image/admin/relatorio_vendedor/texto_icon.svg" alt="">
+          <img src="../../image/admin/relatorio_vendedor/icon_perfil.svg" alt="">
           <h1 class="relatorio_vendedor_text">Dados Pessoais</h1>
         </div>
 
@@ -61,7 +60,7 @@
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_2">
         
           <hr class="relatorio_vendedor_vertical">
-          <img src="../../image/admin/relatorio_vendedor/perfil_icon.svg" alt="">
+          <img src="../../image/admin/relatorio_vendedor/icon_loja.svg" alt="">
           <h1 class="relatorio_vendedor_text">Loja</h1>
         </div>
         
@@ -91,7 +90,7 @@
 
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_3">
           <hr class="relatorio_vendedor_vertical">
-          <img src="../../image/admin/relatorio_vendedor/localizacao_icon.svg" alt="">
+          <img src="../../image/admin/relatorio_vendedor/icon_localizacao.svg" alt="">
           <h1 class="relatorio_vendedor_text">Localização</h1>
         </div>
 
@@ -133,22 +132,34 @@
 
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_4">
           <hr class="relatorio_vendedor_vertical">
-          <img src="../../image/admin/relatorio_vendedor/engrenagem_icon.svg" alt="">
+          <img src="../../image/admin/relatorio_vendedor/icon_texto.svg" alt="">
           <h1 class="relatorio_vendedor_text">Perfil Do Vendedor</h1>
         </div>        
     
         <div class="relatorio_vendedor_perfil_usuario">
-          <img src="" alt="">
+          <img src="../../image/admin/relatorio_vendedor/imagem_perfil_vendedor.png" alt="">
           <h1>THUNDER GAMES</h1>
           <h2>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius  
           et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</h2>
         </div>
       </div>
+
     </div>
+
+    <div class="relatorio_vendedor_titulo" id="relatorio_vendedor_titulo_2">
+      <div class="relatorio_vendedor_text_titulo" id="relatorio_vendedor_text_titulo_2">
+        <img src="../../image/admin/relatorio_vendedor/icon_maleta.svg" alt="">
+        <h1>HISTÓRICO DE PEDIDOS</h1>
+      </div>
+    </div>
+
     
+    
+    <!-- Falta a Tabela -->
+
     <!-- Falta footer -->
     <footer class="footer_temporario_relatorio_vendedor">
-      <img src="../../image/admin/relatorio_vendedor/footer_mobile.svg" alt="">
+      <img src="../../image/admin/perfil_admin/footer_mobile.svg" alt="">
     </footer>
   </main>
 </body>

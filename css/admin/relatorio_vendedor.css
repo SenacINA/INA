@@ -8,54 +8,53 @@
 
 /* NAVBAR */
 .relatorio_vendedor_nav_bar { 
-width: 100%;
-height: 67px;
-background-color: black;
+  width: 100%;
+  height: 67px;
+  background-color: black;
 }
 
 /* CORPO PRINCIPAL */
 .relatorio_vendedor_body {
-display: flex;
-flex-direction: column;
-justify-self: center;
-align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
 
-background-color: #EFF3F5;
-max-width: 1556px;
-width: 100%;
-height: 780px;
+  background-color: #EFF3F5;
+  max-width: 90%;
+  width: 100%;
+  height: 780px;
 
-border-radius: 10px;
-margin-top: 32px;
+  border-radius: 10px;
+  margin-top: 32px;
 }
 
 /* header */
-.relatorio_vendedor_header {
-position: relative;
+.relatorio_vendedor_titulo {
+  position: relative;
 
-display: grid;
-grid-template-columns: auto;
-align-content: center;
-justify-items: center;
+  display: grid;
+  grid-template-columns: auto;
+  align-content: center;
+  justify-items: center;
 
-width: 100%;
-height: 86px;
-margin-top: 16px;
+  width: 100%;
+  height: 86px;
 }
 
-.relatorio_vendedor_text_header {
-display: flex;
-justify-self: center;
+.relatorio_vendedor_text_titulo {
+  display: flex;
+  justify-self: center;
 }
 
-.relatorio_vendedor_text_header img {
+.relatorio_vendedor_text_titulo img {
 align-self: center;
 width: 28px;
 height: auto;
 margin-right: 8px;
 }
 
-.relatorio_vendedor_text_header h1 {
+.relatorio_vendedor_text_titulo h1 {
 justify-self: center;
 font-weight: 500;
 color: #255e7e;
@@ -63,7 +62,7 @@ text-align: center;
 font-size: 32px;
 }
 
-.relatorio_vendedor_linha_header {
+.relatorio_vendedor_linha_titulo {
   width: 95%;
   height: 5px;
   border-radius: 20px;
@@ -76,8 +75,8 @@ font-size: 32px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4, auto);
-  gap: 16px 0px;
-  margin: 32px 64px;
+  gap: 16px 8px;
+  margin: 0px 64px;
   height: 100%;
 }
 
@@ -166,14 +165,14 @@ color: #2888b1;
 
 /* inputs */
 .relatorio_vendedor_grid_conteudo input {
-height: 34px;
+  height: 34px;
 
-border: 2px #1B98E0 solid;
-outline: none;
-border-radius: 5px;
-text-indent: 5px;
-font-size: 20px;
-background-color: transparent;
+  border: 2px #1B98E0 solid;
+  outline: none;
+  border-radius: 5px;
+  text-indent: 5px;
+  font-size: 20px;
+  background-color: transparent;
 }
 
 .relatorio_vendedor_grid_conteudo label {
@@ -212,21 +211,21 @@ max-width: 590px;
 }
 
 .relatorio_vendedor_dados_pessoais_item input, .relatorio_vendedor_pesquisar_usuario_item input  {
-max-width: 590px;
+  max-width: 590px;
 }
 
 .relatorio_vendedor_dados_pessoais_conjunto {
-display: grid;
-grid-template-columns: 1fr 1fr;
-justify-content: start;
-align-items: center;
-column-gap: 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: start;
+  align-items: center;
+  column-gap: 2%;
 
-max-width: 590px;
+  max-width: 590px;
 }
 
-.footer_temporario_relatorio_vendedor, #relatorio_vendedor_text_header_mobile  {
-display: none;
+.footer_temporario_relatorio_vendedor, #relatorio_vendedor_text_titulo_mobile  {
+  display: none;
 }
 
 /* <<< MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
@@ -246,16 +245,16 @@ display: none;
     justify-self: center;
     align-self: center;
     
-    background-color: transparent;
     width: 95%;
-    height: 1479px;
+    max-width: none;
+    height: 1300px;
     border-radius: 10px;
-    margin: 1.5% 2%;
+    margin: 1.5%;
     margin-top: 86px;
   }
 
   /* header */
-  .relatorio_vendedor_header {
+  .relatorio_vendedor_titulo, #relatorio_vendedor_titulo_2 {
     position: absolute;
 
     display: grid;
@@ -264,140 +263,86 @@ display: none;
     justify-items: center;
     
     width: 100%;
-    height: 86px;
+    margin: 0%;
+  }
+
+  #relatorio_vendedor_titulo_1 {
     top: -85px;
   }
 
-  #relatorio_vendedor_text_header_mobile {
-    position: absolute;
-    display: block;
-    display: flex;
-    justify-content: start; 
-    align-items: center; 
-
-    width: 100%;
+  #relatorio_vendedor_titulo_2 {
     height: 86px;
-    margin-top: 336px;
+    margin-left: 5%;
   }
 
-  .relatorio_vendedor_text_header {
+  .relatorio_vendedor_text_titulo {
     display: flex;
     justify-self: start;
   }
 
-  .relatorio_vendedor_text_header img {
-    align-self: center;
-    width: 28px;
-    height: auto;
-    margin-right: 8px;
-  }
-
-  .relatorio_vendedor_text_header h1 {
-    justify-self: center;
-    font-weight: 500;
-    color: #255e7e;
-    text-align: center;
-    font-size: 32px;
-  }
-
-  .relatorio_vendedor_linha_header {
+  .relatorio_vendedor_linha_titulo, .relatorio_vendedor_pesquisar_usuario h2 {
     display: none;
   }
 
   /* grid principal */
   .relatorio_vendedor_grid_conteudo {
     display: grid;
-    grid-template-columns: 1fr;  
-    margin: 32px;
-    row-gap: 4%;
+    grid-template-columns: auto;  
+    grid-template-rows: repeat(8, min-content);
+    margin: 3% 2%;
+    row-gap: 24px;
   }
 
-  .bg_mobile_1 {
-    position: absolute;
-    background-color: #EFF3F5;
-    height: 336px;
-    width: 100%;
-
-    z-index: -1;
-    border-radius: 10px;
-  }
-
-  .bg_mobile_2 {
-    position: absolute;
-    background-color: #EFF3F5;
-    height: 1065px;
-    width: 100%;
-
-    z-index: -1;
-    border-radius: 10px;
-    margin-top: 422px;
-  }
-
+  /* info */
   #relatorio_vendedor_text_1 {
+    grid-column: 1;
     grid-row: 1;
   }
-
+  
+  #relatorio_vendedor_text_2 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  #relatorio_vendedor_text_3 {
+    grid-column: 1;
+    grid-row: 5;
+  }
+  
+  #relatorio_vendedor_text_4 {
+    grid-column: 1;
+    grid-row: 7;
+    align-self: flex-end;
+  }
+  
   .relatorio_vendedor_pesquisar_usuario {
+    grid-column: 1;
     grid-row: 2;
   }
 
-  #relatorio_vendedor_text_2 {
-    grid-row: 3;
-    grid-column: 1;
-    margin-top: 112px;
-  }
-
   .relatorio_vendedor_dados_pessoais {
-    grid-row: 4;
-  }
-
-  #relatorio_vendedor_text_3 {
-    grid-row: 5;
-  }
-
-  .relatorio_vendedor_localizacao {
+    grid-column: 1;
     grid-row: 6;
   }
 
-  #relatorio_vendedor_text_4 {
-    grid-row: 7;
+  .relatorio_vendedor_localizacao {
     grid-column: 1;
+    grid-row: 4;
   }
-
-  .relatorio_vendedor_forms_permissoes {
+ 
+  .relatorio_vendedor_perfil_usuario {
+    grid-column: 1;
     grid-row: 8;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
-  .relatorio_vendedor_botao_salvar {
-    grid-row: 9;
+  .relatorio_vendedor_dados_pessoais_conjunto, .relatorio_vendedor_localizacao_conjunto, .relatorio_vendedor_forms input {
+    max-width: none;
   }
 
-  /* inputs */
-  .relatorio_vendedor_pesquisar_usuario_item input,
-  .relatorio_vendedor_dados_pessoais_item input,
-  .relatorio_vendedor_dados_pessoais_conjunto,
-  .relatorio_vendedor_localizacao_conjunto {
-    max-width: 100%;
-  }
 
-  .relatorio_vendedor_permissoes_conjunto {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .relatorio_vendedor_forms_item_permissoes {
-    margin-bottom: 4%;
-  }
-
-  /* botão */
-  .relatorio_vendedor_botao_salvar {
-    margin: 0%;
-    margin-top: 325px;
-  }
-
-  .relatorio_vendedor_salvar {
-    width: 100%;
-  }
 
   .footer_temporario_relatorio_vendedor {
     position: relative; 
