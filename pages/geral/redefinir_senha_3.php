@@ -11,18 +11,18 @@
   <link rel="stylesheet" href="../../css/geral/redefinir_senha_3.css">
 </head>
 <body>
-  <nav>nav</nav>
+  <nav></nav>
   <main>
-    <div class="quadrado">
-      <div class="main_txt">
-        <p>Redefinição de Senha</p>
-        <img src="../../image/geral/linha-divisoria-azul.png">
-      </div>
-      <div class="main_content">
+    <div class="redefinir_senha_3_container">
+      <div class="redefinir_senha_3_content">
         <img src="../../image/geral/confirmacao.svg">
-        <p class="confirmacao">Alteração de senha realizada com sucesso!!</p>
-        <button class="home">Home</button>
+        <h2>Redefinição de senha realizada!</h2>
       </div>
+      
+      <button class="redefinir_senha_3_home">
+        <img src="" alt="">
+        <h3>TELA INICIAL</h3>
+      </button>
     </div>
   </main>
 </body>
