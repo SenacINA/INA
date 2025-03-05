@@ -13,6 +13,7 @@
 .faq_main_title {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 16px;
     
@@ -160,7 +161,6 @@
     width: fit-content;
     padding: 0 16px;
     align-self: center;
-    font-family: Inter;
     
     & > svg {
         height: 24px;
@@ -208,11 +208,11 @@
         gap: 8px;
         
         & > h2 {
-            font-size: 32px;
+            font-size: 24px;
         }
         
         & > svg {
-            height: 32px;
+            height: 24px;
         }
     }
 
@@ -261,6 +261,7 @@
     
 
     .faq_block {
+        gap: 16px;
         width: 100%;
         margin: 0;
         min-width: 100%;
@@ -289,11 +290,15 @@
         gap: 8px;
         
         & > h2 {
-            font-size: 30px;
+            font-size: 20px;
         }
         
         & > svg {
-            height: 30px;
+            height: 20px;
         }
+    }
+
+    .faq_block {
+        gap: 8px;
     }
 }
