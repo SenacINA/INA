@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
   <main>
@@ -143,7 +145,6 @@
           et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</h2>
         </div>
       </div>
-
     </div>
 
     <div class="relatorio_vendedor_titulo" id="relatorio_vendedor_titulo_2">
@@ -153,9 +154,81 @@
       </div>
     </div>
 
-    
-    
-    <!-- Falta a Tabela -->
+    <!-- Tabela -->
+    <div class="gerenciar_pedidos_table">
+      <div class="gerenciar_pedidos_table_filtro bg_carolina">
+        <p class="gerenciar_pedidos_filtro_titulo font_subtitulo">Organizar por:</p>
+        <select>
+          <option value="" selected disable style="display: none;"></option>
+          <option value="">Opa1</option>
+          <option value="">Opa2</option>
+          <option value="">Opa3</option>
+          <option value="">Opa4</option>
+        </select>
+      </div>
+      <div class="gerenciar_pedidos_table_holder">
+        <table>
+          <colgroup>
+            <col class="gerenciar_pedidos_table_col-1">
+            <col class="gerenciar_pedidos_table_col-2">
+            <col class="gerenciar_pedidos_table_col-3">
+            <col class="gerenciar_pedidos_table_col-4">
+            <col class="gerenciar_pedidos_table_col-5">
+            <col class="gerenciar_pedidos_table_col-6">
+            <col class="gerenciar_pedidos_table_col-7">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Cód.</th>
+              <th>Produto</th>
+              <th>Preço</th>
+              <th>Qtn.</th>
+              <th>Previsão de Entrega</th>
+              <th>Status</th>
+              <th>Cliente</th>
+            </tr>
+            <tbody>
+              <tr>
+                <td># 1001</td>
+                <td>Cadeira Gamer Throne - RGB </td>
+                <td>R$ 1.400,00</td>
+                <td>01</td>
+                <td>25/03/2024 - 06/04/2024</td>
+                <td>Entregue</td>
+                <td>Roberto Carlos</td>
+              </tr>
+              <tr>
+                <td># 1001</td>
+                <td>Cadeira Gamer Throne - RGB </td>
+                <td>R$ 1.400,00</td>
+                <td>01</td>
+                <td>25/03/2024 - 06/04/2024</td>
+                <td>Entregue</td>
+                <td>Roberto Carlos</td>
+              </tr>
+              <tr>
+                <td># 1001</td>
+                <td>Cadeira Gamer Throne - RGB </td>
+                <td>R$ 1.400,00</td>
+                <td>01</td>
+                <td>25/03/2024 - 06/04/2024</td>
+                <td>Entregue</td>
+                <td>Roberto Carlos</td>
+              </tr>
+              <tr>
+                <td># 1001</td>
+                <td>Cadeira Gamer Throne - RGB </td>
+                <td>R$ 1.400,00</td>
+                <td>01</td>
+                <td>25/03/2024 - 06/04/2024</td>
+                <td>Entregue</td>
+                <td>Roberto Carlos</td>
+              </tr>
+            </tbody>
+          </thead>
+        </table>
+      </div>
+    </div>
 
     <!-- Falta footer -->
     <footer class="footer_temporario_relatorio_vendedor">
