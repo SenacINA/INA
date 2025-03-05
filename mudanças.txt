@@ -1,0 +1,7 @@
+Pegar Exemplo da tela /admin/atualizar_usuario.html
+
+Arrumar Gerenciar Carrossel para fazer responsividade
+
+Arrumar task anterior minha para sentido com outras telas do site
+
+Fazer resposnsividade da tela
