@@ -10,11 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
   <main>
-    <nav class="cupom_nav_bar"></nav>  
-
+    <?php
+    include('../../pages/geral/navbar.php');
+    ?>
     <div class="cupom_body">
       <div class="cupom_header">
         <div class="cupom_text_header">

@@ -10,10 +10,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/index.css">
 </head>
 <body>
-  <nav class="gerenciar_produtos_navbar"></nav>
-  
+  <?php
+    include('../../pages/geral/navbar.php');
+  ?>
   <header class = "gerenciar_produtos_header">
     <div class = "gerenciar_produtos_header_title">
       <h1>GERENCIAR PRODUTOS</h1> 
