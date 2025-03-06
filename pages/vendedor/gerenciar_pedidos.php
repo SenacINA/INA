@@ -140,7 +140,7 @@
           <option value="">Opa4</option>
         </select>
       </div>
-      <div class="gerenciar_pedidos_table_holder">
+      <div class="base_tabela">
         <table>
           <colgroup>
             <col class="gerenciar_pedidos_table_col-1">

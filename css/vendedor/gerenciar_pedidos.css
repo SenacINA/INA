@@ -12,7 +12,7 @@
 
 .gerenciar_pedidos_navbar_principal {
   background-color: #fff;
-  width: 100vw;
+  width: 100%;
   height: 67px;
 }
 
@@ -235,84 +235,20 @@
   color: #fff;
 }
 
-.gerenciar_pedidos_table_holder{
-  *{
-    border-collapse: collapse;
-    padding: 8px;
-    text-align: left;
-  }
+/**Individual para cada tabela */
+.gerenciar_pedidos_table_col-1,
+.gerenciar_pedidos_table_col-4{
+  width: 4%;
+}
+.gerenciar_pedidos_table_col-3,
+.gerenciar_pedidos_table_col-6{
+  width: 8%;
+}
 
-  table, & thead{
-    border: solid 1px var(--carolina);
-    width: 100%;
-  }
-
-  col{
-    border-left: solid 1px var(--carolina);
-    border-right: solid 1px var(--carolina);
-  }
-
-  th{
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--cinza);
-  }
-
-  td {
-    height: 100%;
-    color: var(--sappire);
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  span{
-    padding: 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  span:hover{
-    overflow-y: scroll;
-  }
-  span::-webkit-scrollbar {
-    width: 6px;
-  }
-  span::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-  span::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  span::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
-
-  tr{
-    background-color: var(--branco_gelo);
-    min-height: 48px;
-  }
-
-  tbody > tr:nth-child(odd){
-    background-color: var(--azul_leve);
-  }
-
-  /**Individual para cada tabela */
-  .gerenciar_pedidos_table_col-1,
-  .gerenciar_pedidos_table_col-4{
-    width: 4%;
-  }
-  .gerenciar_pedidos_table_col-3,
-  .gerenciar_pedidos_table_col-6{
-    width: 8%;
-  }
-
-  .gerenciar_pedidos_table_col-2,
-  .gerenciar_pedidos_table_col-5,
-  .gerenciar_pedidos_table_col-7{
-    width: 20%;
-  }
+.gerenciar_pedidos_table_col-2,
+.gerenciar_pedidos_table_col-5,
+.gerenciar_pedidos_table_col-7{
+  width: 20%;
 }
 
 @media (max-width:1024px) {
