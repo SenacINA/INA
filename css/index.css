@@ -359,8 +359,8 @@ body, html {
     }
 
     .index_body_produtos_content {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
         gap: 0;
         justify-content: space-around;
         width: 100%;
@@ -540,7 +540,28 @@ body, html {
         justify-content: space-evenly;
     }
 
+    @media (max-width: 1664px) {
+        .index_body_produtos_content {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 1fr;
+            justify-items: center;
+            gap: 64px;
+        
+        }
+
+        .index_body_produto_card {
+            max-width: none;
+            width: 100%;
+            max-height: none;
+        }
+
+        .index_body_botoes_produto button {
+            font-size: 16px;
+        }
+    }
+
     @media (max-width: 1024px) {
+    
         .index_body_ad_box {
             gap: 0;
             row-gap: 16px;
@@ -594,7 +615,11 @@ body, html {
 
         .index_body_produto_card {
             width: 100%;
+            min-width: auto;
+            max-width: calc(1/2 * 1fr);
             margin: 0;
+            min-height: fit-content;
+            max-height: auto;
         }
 
         .index_body_content_container {
@@ -609,6 +634,9 @@ body, html {
             gap: 50px;
             justify-content: space-around;
             width: 100%;
+            p {
+                font-size: 14px;
+            }
         }
     }
 
@@ -655,12 +683,6 @@ body, html {
             }
         }
 
-        .index_body_produto_card {
-            min-height: auto;
-            min-width: 45vw;
-            max-width: 45vw;
-        }
-
         .index_body_large_ad {
             content: url('../image/index/bannerJBL.png');
             box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
@@ -686,7 +708,7 @@ body, html {
         }
 
         .index_body_produtos_content {
-            gap: 4px;
+            gap: 16px;
             row-gap: 24px;
             padding: 0;
         }
@@ -707,4 +729,24 @@ body, html {
             padding: 4px;
         }
     }
+
+    @media (max-width: 638px) {
+        .index_body_produtos_content {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            p {
+                font-size: 12px;
+            }
+        }
+
+        .index_body_botoes_produto button {
+            font-size: 16px; 
+        }
+    }
+
+    @media (max-width:411px) {
+        .index_body_produtos_content {
+            gap: 4px;
+    }
+}
 }
