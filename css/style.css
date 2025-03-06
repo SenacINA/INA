@@ -285,3 +285,49 @@ select.base_input {
     background-color: var(--azul_leve);
   }
 }
+
+@media (max-width:768px) {
+  .base_tabela{
+    *{
+      padding: 4px;
+    }
+
+    th{
+      font-size: 0.75rem;
+    }
+
+    td{
+      height: 100%;
+      font-size: 0.625rem;
+    }
+  }
+
+  select.base_input,
+  option.base_input{
+    padding-top: 0.5rem !important;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+  .base_tabela{
+    *{
+      padding: 8px;
+    }
+
+    th{
+      font-size: 1rem;
+    }
+
+    td{
+      height: 100%;
+      font-size: 1rem;
+    }
+  }
+
+  select.base_input,
+  option.base_input{
+    padding-top: 0.625rem !important;
+    font-size: 1.125rem;
+  }
+}

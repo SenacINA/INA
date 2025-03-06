@@ -7,6 +7,13 @@
 
 .gerenciar_pedidos_body_holder {
   border-radius: 10px;
+}
+
+.gerenciar_pedidor_firula_holder{
+  border-radius: 10px;
+  background-color: var(--azul_leve);
+  display: flex;
+  flex-direction: column;
   padding: 32px;
 }
 
@@ -112,6 +119,7 @@
   height: 4px;
   border: 0;
   background-color: var(--carolina);
+  border-radius: 4px;
 }
 
 .gerenciar_pedidos_forms_pesquisa_pedidos {
@@ -282,6 +290,16 @@
     display: none;
   }
 
+  .gerenciar_pedidor_firula_holder{
+    background-color: transparent;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .gerenciar_pedidos_header_title{
+    justify-content: flex-start;
+  }
+
   .gerenciar_pedidos_input_ano,
   .gerenciar_pedidos_input_mes{
     width: 100%;
@@ -293,20 +311,7 @@
     width: 100%;
   }
 
-
-
-  .base_tabela{
-    *{
-      padding: 4px;
-    }
-
-    th{
-      font-size: 0.75rem;
-    }
-
-    td{
-      height: 100%;
-      font-size: 0.625rem;
-    }
+  .gerenciar_pedidos_holder_botao{
+    justify-content: center;
   }
 }
