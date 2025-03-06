@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E ao Quadrado</title>
+  <link rel="stylesheet" href="../../css/admin/historico_acesso1.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <nav class="historico_acesso_nav_bar"></nav>  
+
+    <div class="historico_acesso_body">
+        <div class="historico_adm_relatorio_geral">
+          <div class="historico_acesso_header">
+            <div class="historico_acesso_text_header">
+                <img src="../../image/admin/histórico_acesso/icone_tempo.svg">
+                <h1>HISTÓRICO DE ACESSO</h1>
+            </div>
+            <hr class="historico_adm_linha_header">
+          </div>
+
+          <div class="bg_mobile_1"></div>
+          <div class="bg_mobile_2"></div>
+      
+          <div class="historico_acesso_grid_conteudo">
+        
+            <div class="historico_acesso_text" id="historico_acesso_text_1"> 
+              <hr class="historico_acesso_vertical">
+              <img src="../../image/admin/histórico_acesso/user_historico.svg" alt="">
+              <h1 class="historico_acesso_text">Relátório Geral</h1>
+            </div>
+
+            <div class="historico_acesso_pesquisar_usuario">
+
+              <form action="" method="post" class="historico_acesso_forms">
+                <div class="historico_acesso_pesquisar_usuario_item" id="historico_acesso_pesquisar_usuario_item_1" >
+                  <label>IP Do Usuário</label>
+                  <input type="text" placeholder="...">
+                </div>
+                <div class="historico_acesso_pesquisar_usuario_item" id="historico_acesso_pesquisar_usuario_item_2">
+                  <label>Horário</label>
+                  <input type="datetime-local" placeholder="00:00">
+                </div>
+                <div class="historico_adm_buttons">
+                    <button class="historico_adm_cancel">Cancelar</button>
+                    <button class="historico_adm_confirm">Confirmar</button> 
+                </div>
+              </form>
+            </div>
+
+
+            <div class="historico_acesso_text" id="historico_acesso_text_2">
+            
+              <hr class="historico_acesso_vertical">
+              <img src="../../image/admin/histórico_acesso/info_user.svg" alt="">
+              <h1 class="historico_acesso_text">Informações Do Usuário</h1>
+            </div>
+
+            <form action="" method="post" class="historico_acesso_dados_pessoais">
+            
+              <div class="historico_acesso_dados_pessoais_item" id="historico_acesso_dados_pessoais_item_1" >
+                <label>IP</label>
+                <input type="text" placeholder="192.168.0.1" readonly>
+              </div>
+
+              <div class="historico_acesso_dados_pessoais_item" id="historico_acesso_dados_pessoais_item_2">
+                <label>Cargo</label>
+                <input type="text" placeholder="Admin" readonly>
+              </div>
+
+              <div class="historico_acesso_dados_pessoais_conjunto">
+                <div class="historico_acesso_dados_pessoais_item" id="historico_acesso_dados_pessoais_item_3">
+                  <label>Data De Acesso</label>
+                  <input type="date" placeholder="00/00/00" readonly>
+                </div>
+                <div class="historico_acesso_dados_pessoais_item" id="historico_acesso_dados_pessoais_item_4">
+                  <label>Horário</label>
+                  <input type="time" placeholder="00:00" readonly>
+                </div>
+              </div>
+            </form>
+        
+        
+        <div class="historico_acesso_text" id="historico_acesso_text_3">
+          <hr class="historico_acesso_vertical">
+          <img src="../../image/admin/histórico_acesso/historico.svg" alt="">
+          <h1 class="historico_acesso_text">Histórico De Acesso</h1>
+        
+          <div class="historico_adm_buttons">
+            <select name="filtro" id="filtro" class="historico_adm_filtro">
+              <option value="">Organizar por:</option>
+              <option value="nome">Nome</option>
+              <option value="categoria">Data de Cadastro</option>
+              <option value="cargo">Cargo</option>
+              <option value="plano">E-mail</option>
+              <option value="data_inicio">Contato</option>
+              <option value="email">Status</option>
+            </select>
+          </div>
+          <div class="historico_adm_table">
+            <p><input type="checkbox"></p>
+            <p>IP</p>
+            <p>CARGO</p>
+            <p>DATA DE ACESSOS</p>
+            <p>HORÁRIO</p>
+            <p>NAVEGADOR</p>
+        
+            <span><input type="checkbox"></span>
+            <span >192.168.0.1</span>
+            <span>Cliente</span>
+            <span>22/03/2024</span>
+            <span>08:32:34</span>
+            <span>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36</span>
+        
+            <span><input type="checkbox"></span>
+            <span >221.121.2.2</span>
+            <span>Cliente</span>
+            <span>23/03/2024</span>
+            <span>09:27:12</span>
+            <span>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36</span>
+        
+            <span><input type="checkbox"></span>
+            <span >112.212.02.14</span>
+            <span>Vendedor</span>
+            <span>24/03/2024</span>
+            <span>11:32:45</span>
+            <span>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36</span>
+        
+        
+        
+
+
+        
+        
+        </div>
+    </div>
+  </main>
+</body>
+</html>

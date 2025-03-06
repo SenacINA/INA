@@ -1,57 +1,16 @@
-.historico_adm_header_header{
-  width: 85%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  align-items: center;
-  column-gap: 50px;
-  grid-area: 1/1/1/1;
-  grid-column-start: 1;
-  grid-row-start: 1 ;
+/* NAVBAR */
+.historico_acesso_nav_bar { 
+  width: 100%;
+  height: 67px;
+  background-color: black;
 }
 
-.historico_adm_header_lupa{
-  align-items: center;
-  display: flex;
-  grid-area: 1/1/1/1;
-}
-
-.historico_adm_header_logo{
-  display: grid;
-  align-self: center;
-  grid-area: 1/2/2/3;
-}
-
-.historico_adm_header_header_botoes {
-  width: auto;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  align-self: center;
-  justify-self: right;
-}
-
-.historico_adm_header_logo button {
-  border-style: none;
-  background-color: transparent;
-}
-
-.historico_adm_header_header_botoes a{
-  border-style: none;
-  background-color: transparent;
-  align-self: left;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.historico_adm_header_lupa input{
-  display: flex;
-  width: 330px;
-  height: 30px;
-  padding: 0px 5px;
-  border-radius: 10px;
-  border-style: none;
-  outline: 0;
+.historico_acesso_linha_header {
+  width: 95%;
+  height: 5px;
+  border-radius: 20px;
+  background-color: #2888b1;
+  border: 0;
 }
 
 .historico_adm_section_titulo {
@@ -81,8 +40,9 @@
 .historico_adm_relatorio_geral h2 {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 500;
+  color: #255e7e;
 }
 .historico_adm_pesquisa_cliente_container h2 {
   text-align: center;
@@ -239,6 +199,6 @@
   position: relative;
   top: 97px;
   left: 92px;
-  column-gap: 80%;
+  column-gap: 65%;
   width: 1000px;
 }
