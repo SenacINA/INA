@@ -61,8 +61,8 @@
               </select>                 
             </div>
             <div class="gerenciar_usuario_botoes_submit">
-              <button type="reset" class="gerenciar_usuario_cancelar_submit">Cancelar</button>
-              <button type="submit" class="gerenciar_usuario_confirmar_submit">Confirmar</button>
+              <button type="reset" class="gerenciar_usuario_cancelar_submit"><img src="../../image/geral/x_botao_vermelho.svg">Cancelar</button>
+              <button type="submit" class="gerenciar_usuario_confirmar_submit"><img src="../../image/geral/confirm_botao.svg">Confirmar</button>
             </div>
           </form>
         </div>
@@ -74,7 +74,7 @@
           <div class="gerenciar_usuario_usuario_info">
             <img src="../../image/cliente/editar_perfil/perfil_usuario.svg" alt="pfp" class="gerenciar_usuario_pfp_info">
             <p class="gerenciar_usuario_nome_info">Luís Fernando</p>
-            <button class="gerenciar_usuario_desativar_usuario">Desativar Usuário</button>
+            <button class="gerenciar_usuario_desativar_usuario"><img src="../../image/geral/x_botao.svg" alt="">Desativar Usuário</button>
           </div>
           <div class="gerenciar_usuario_data_cadastro">
             <p class="gerenciar_usuario_data_cadastro_text">Data De Cadastro</p>
