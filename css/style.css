@@ -1,77 +1,215 @@
-*{
+:root {
+  --carolina: #1B98E0;
+  --celadon: #247BA0;
+  --sappire: #006494;
+  --branco_gelo: #F9F9FC;
+  --azul_leve: #DCE5EB;
+  --branco: #fff;
+  --cinza: #6F6F6F;
+  --vermelho: #D73232;
+}
+* {
   margin: 0;
   padding: 0;
-  border:0;
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
   font-family: Jost;
 }
 
-body, html{
+body,
+html {
   min-height: 100%;
   background-repeat: no-repeat;
 }
 
 .font_titulo {
-  font-family: 'Jost';
-  font-size: 32px;
+  font-size: 2rem;
+  /* 32px */
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
 }
 
 .font_subtitulo {
-  font-family: 'Jost';
-  font-size: 20px;
+  font-size: 1.5rem;
+  /* 24px */
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.font_base {
+  font-size: 1.25rem;
+  /* 20px */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
 .font_descricao {
-  font-family: 'Jost';
-  font-size: 16px;
+  font-size: 1rem;
+  /* 16px */
   font-style: normal;
   font-weight: 300;
   line-height: normal;
 }
 
-.font_botoes {
-  font-family: 'Jost';
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
 
-.font_bold{
+.font_bold {
   font-weight: 650;
 }
 
-.bg_azul_leve{
-  background-color: #DCE5EB;
-}
-.bg_sappire{
-  background-color: #006494;
+.font_sappire {
+  color: var(--sappire);
 }
 
-.bg_carolina{
-  background-color: #1B98E0;
+.font_carolina {
+  color: var(--carolina);
 }
 
-.bg_celadon{
-  background-color: #247BA0;
+.font_celadon {
+  color: var(--celadon);
 }
 
-.bg_branco_gelo{
-  background-color: #F9F9FC;
+.font_cinza {
+  color: var(--cinza);
 }
 
-.bg_cinza{
-  background-color: #6F6F6F;
+.font_branca {
+  color: var(--branco);
 }
 
-.bg_branco{
-  background-color: #fff;
+.bg_azul_leve {
+  background-color: var(--azul_leve);
+}
+
+.bg_sappire {
+  background-color: var(--sappire);
+}
+
+.bg_carolina {
+  background-color: var(--carolina);
+}
+
+.bg_celadon {
+  background-color: var(--celadon);
+}
+
+.bg_branco_gelo {
+  background-color: var(--branco_gelo);
+}
+
+.bg_cinza {
+  background-color: var(--cinza);
+}
+
+.bg_branco {
+  background-color: var(--branco);
+}
+
+
+.base_input {
+  height: 48px;
+  border: #4eace2 solid 2px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--cinza);
+}
+
+select.base_input {
+  padding-top: 0.25rem !important;
+  cursor: pointer;
+}
+
+.base_input > option{
+  cursor: pointer;
+}
+
+.base_input:focus {
+  border: var(--carolina) solid 2px;
+}
+
+.base_input:focus-visible {
+  outline: var(--carolina) solid 1px;
+}
+
+.base_input, option.base_input {
+  height: 48px;
+  border: #4eace2 solid 2px;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--cinza);
+}
+
+.base_input:disabled{
+  border: var(--cinza) solid 2px;
+}
+
+.base_input:invalid{
+  border: #B12525 solid 2px;
+}
+
+.base_botao {
+  height: 48px;
+  min-width: 192px;
+  font-size: 1.25rem;
+  /* 20px */
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn_red{
+  background-color:var(--vermelho);
+  color: var(--branco);
+  border: var(--vermelho) solid 2px;
+}
+
+.btn_red:hover{
+  background-color: #B12525;
+  border: #B12525 solid 2px;
+}
+
+.btn_blue{
+  background-color: var(--carolina);
+  color: var(--branco);
+  border: var(--carolina) solid 2px;
+}
+
+.btn_blue:hover{
+  background-color: #2182BA;
+  border: #2182BA solid 2px;
+}
+
+.btn_outline_red{
+  background-color:var(--branco_gelo);
+  color: var(--vermelho);
+  border: var(--vermelho) solid 2px;
+}
+
+.btn_outline_red:hover:not(:disabled){
+  background-color: #d3202021;
+}
+
+.btn_outline_blue{
+  background-color:var(--branco_gelo);
+  color: var(--carolina);
+  border: var(--carolina) solid 2px;
+}
+
+.btn_outline_blue:hover:not(:disabled){
+  background-color: #1b98e00e;
+}
+
+.btn_outline_red:disabled,.btn_outline_blue:disabled{
+  color: var(--cinza);
+  border: var(--cinza) solid 2px;
 }
