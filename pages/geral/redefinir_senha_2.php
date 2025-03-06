@@ -11,36 +11,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>nav</nav>
+  <nav></nav>
   <main>
-    <div class="quadrado">
-      <div class="main_txt">
-        <p>Redefinição de Senha</p>
-        <img src="../../image/geral/linha-divisoria-azul.png" alt="">
-      </div>
-      <div class="main_form">
-        <form action="">
-          <label for="novaSenha">Nova senha:</label>
-          <input type="password" required id="novaSenha">
-          <label for="confirmarSenha">Confirmar nova senha:</label>
-          <input type="password" required id="confirmarSenha">
-          <p>Insira sua senha duas vezes</p>
+    <div class="redefinir_senha_2_container">
+      <h1>REDEFINIÇÃO DE SENHA</h1>
+      <hr>
+      <div class="redefinir_senha_2_main_content">
+        <form class="redefinir_senha_2_form" action="">
+          <label for="senha">Nova Senha</label>
+          <div class="redefinir_senha_2">
+              <input type="password" name="senha" id="senha">
+              <a href="javascript:void(0);" id="eye-icon-senha">
+                  <img id="eye-img-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
+              </a>
+          </div>
+        
+          <label for="nova_senha">Confirmar Nova Senha</label>
+          <div class="redefinir_senha_2">
+              <input type="password" name="nova_senha" id="nova_senha">
+              <a href="javascript:void(0);" id="eye-icon-nova-senha">
+                  <img id="eye-img-nova-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
+              </a>
+          </div>
         </form>
+        
+        <!-- colocar botões novos -->
+        <button class="redefinir_senha_2_salvar">
+          <img src="" alt="">
+          <h3>SALVAR</h3>
+        </button>
+
+        <button class="redefinir_senha_2_voltar">
+          <img src="" alt="">
+          <h3>VOLTAR</h3>
+        </button>
       </div>
-     <div class="main_content">
-      <h1>Regras da senha</h1>
-      <ul>
-        <li>Deve conter ao menos 6 caracteres</li>
-        <li>Deve conte ao menos uma letra minúscula</li>
-        <li>Deve conter ao menos um número</li>
-        <li>Não pode ser uma de suas senhas antigas</li>
-      </ul>
-     </div>
-     <div class="botoes">
-      <button class="voltar">Voltar</button>
-      <button class="salvar">Salvar</button>
-     </div>
     </div>
   </main>
+
+  <script type="module" src="../../js/admin/toggle_redefinir.js"></script>
+  <!-- footer -->
+  <!-- coloca display:none no desktop -->
 </body>
 </html>
