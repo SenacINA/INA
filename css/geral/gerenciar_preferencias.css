@@ -32,6 +32,11 @@
     }
 }
 
+.faq_button {
+    justify-self: center;
+    margin: 0 16px;
+}
+
 @media (max-width: 1024px) {
     .geren_pref_main_container {
         padding: 12px;
