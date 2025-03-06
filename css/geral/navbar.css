@@ -110,6 +110,11 @@ body {
     height: 100%;
 }
 
+#logo_header {
+    content: url('../../image/index/logo-escrita.svg');
+
+}
+
 .square-button-search {
     background-color: #1B98E0;
     border: none;
@@ -180,7 +185,7 @@ body {
     }
 
     #logo_header {
-        content: url('../../image/index/Logo.svg');
+        content: url('../../image/index/logo.svg');
 
     }
 }
