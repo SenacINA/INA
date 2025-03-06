@@ -60,10 +60,10 @@
 
         <div class="quadrado">
             <div class="text_info">
-                <h1 class="text_"><b>Produto</b></h1>
+                <h1 class="text_ produto"><b>Produto</b></h1>
                 <h1 class="text_"><b>Quantidade</b></h1>
-                <h1 class="text_"><b>Valor</b></h1>
-                <h1 class="text_"><b>Resumo</b></h1>
+                <h1 class="text_ valor"><b>Valor</b></h1>
+                <h1 class="text_ resumo_text"><b>Resumo</b></h1>
             </div>
             <hr class="divisoria_quadrado">
             <div class="main_content">
@@ -82,7 +82,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="resumo"></div>
+                <div class="resumo">
+                    <hr class="quadrado_resumo">
+                    <hr class="quadrado_resumo_maior">
+                    <hr class="quadrado_resumo_maior">
+                    <hr class="quadrado_resumo_maior">
+                </div>
+            </div>
+            <div class="botoes">
+                <button class="voltar_botao"><img src="../../image/geral/seta_botao.svg">VOLTAR</button>
+                <button class="remover_botao"><img src="../../image/geral/x_botao.svg">REMOVER PRODUTO(S)</button>
+                <button class="salvar_botao"><img src="../../image/geral/confirm_botao.svg">SALVAR</button>
             </div>
     </main>
 </body>
