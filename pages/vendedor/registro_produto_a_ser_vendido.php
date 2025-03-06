@@ -115,10 +115,10 @@
                 <div class="grid_conteudo_5">
                     <div class="botoes">
                         <div class="cancelar">
-                            <h1>Cancelar</h1>
+                            <h1><img src="../../image/geral/x_botao_vermelho.svg" alt="">Cancelar</h1>
                         </div>
                         <div class="adicionar">
-                            <h1>Adicionar Produto</h1>
+                            <h1><img src="../../image/geral/confirm_botao.svg" alt="">Adicionar Produto</h1>
                         </div>
                     </div>
                 </div>

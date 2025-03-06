@@ -1,13 +1,13 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Jost';
+  font-family: "Jost";
 }
 
 .fundo {
   height: 100%;
   width: 100%;
-  background-color: #DCE5EB;
+  background-color: #dce5eb;
 }
 
 .carrinho_dados {
@@ -56,9 +56,9 @@
 }
 
 .main_text_carrinho_dados {
-  color: #247BA0;
+  color: #247ba0;
   text-align: center;
-  font-feature-settings: 'liga' off, 'clig' off;
+  font-feature-settings: "liga" off, "clig" off;
   font-family: Jost;
   font-size: 35px;
   font-style: normal;
@@ -69,8 +69,8 @@
 
 .forms_carrinho {
   grid-row: 2;
-  color: #0F3B62;
-  font-feature-settings: 'liga' off, 'clig' off;
+  color: #0f3b62;
+  font-feature-settings: "liga" off, "clig" off;
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
@@ -84,8 +84,9 @@
   grid-column: 1;
   width: 495px;
   height: 36px;
-  background: #E8F1F2;
-  border: none;
+  background: transparent;
+  border-radius: 5px;
+  border: 2px solid #1b98e0;
 }
 
 .informacoes_cep {
@@ -107,7 +108,6 @@
   height: 36px;
 }
 
-
 .cidade {
   grid-column: 2;
   grid-row: 1;
@@ -124,8 +124,8 @@
   display: grid;
   grid-column: 2;
   grid-row: 2;
-  color: #0F3B62;
-  font-feature-settings: 'liga' off, 'clig' off;
+  color: #0f3b62;
+  font-feature-settings: "liga" off, "clig" off;
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
@@ -137,15 +137,17 @@
 .dados_adicionais input {
   width: 495px;
   height: 36px;
-  background: #E8F1F2;
-  border: none;
+  background: transparent;
+  border-radius: 5px;
+  border: 2px solid #1b98e0;
 }
 
 #opcaoEnvio {
   width: 495px;
   height: 36px;
-  background-color: #E8F1F2;
-  border: none;
+  background: transparent;
+  border-radius: 5px;
+  border: 2px solid #1b98e0;
 }
 
 .botoes_carrinho {
@@ -158,36 +160,25 @@
   column-gap: 10%;
 }
 
-.voltar_carrinho {
-  cursor: pointer;
-  width: 98px;
-  height: 50px;
-  border-radius: 10px;
-  border: 2px solid #F00;
-  background: #FFF;
-  color: #F00;
-  font-size: 32px;
-  font-weight: 400;
-}
-
 .salvar_carrinho {
   cursor: pointer;
   width: 150px;
-  height: 50px;
-  padding: 2px;
+  height: 48px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  column-gap: 5%;
   border: none;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: Jost;
-  font-size: 32px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
-  border-radius: 10px;
-  background: #2075C2;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background: #1B98E0;
 }
 
 .footer_carrinho {
