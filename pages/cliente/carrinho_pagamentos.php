@@ -26,7 +26,7 @@
         <button class="botao_whats">Iniciar conversa</button>
         <div class="separador_whats"></div>
         <p class="nao_tem">Ainda não tem o WhatsApp?</p>
-        <a href="#" class="baixar_whats">Baixar</a>
+        <a href="https://www.whatsapp.com/?lang=pt_BR" target="_blank" class="baixar_whats">Baixar</a>
       </div>
     </div>
   </div>

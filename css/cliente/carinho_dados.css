@@ -156,6 +156,9 @@
   display: grid;
   grid-template-columns: auto auto;
   column-gap: 10%;
+  text-decoration: none;
+  background-color: none;
+  color: #ffffff;
 }
 
 .voltar_carrinho {
@@ -168,6 +171,11 @@
   color: #F00;
   font-size: 32px;
   font-weight: 400;
+}
+.conexao_carrinho {
+  text-decoration: none;
+  background-color: none;
+  color: #ffffff;
 }
 
 .salvar_carrinho {
@@ -188,6 +196,12 @@
   line-height: normal;
   border-radius: 10px;
   background: #2075C2;
+}
+
+a .salvar_carrinho{
+  text-decoration: none;
+  background-color: none;
+  color: #ffffff;
 }
 
 .footer_carrinho {

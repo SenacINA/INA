@@ -70,7 +70,7 @@
         <div class="item">Bloco 3</div>
         <div class="item">Bloco 4</div>
         <button class="voltar">
-            Voltar
+            <a href="../home.php">Voltar</a>
         </button>
     </div>
 

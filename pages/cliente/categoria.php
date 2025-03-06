@@ -190,7 +190,7 @@
     <br>
     <div class="container_voltar">
         <button class="botao_voltar font_subtitulo bg_branco">
-            Voltar
+            <a href="../home.php">Voltar</a>
         </button>
     </div>
     <br>
