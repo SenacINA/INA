@@ -136,6 +136,28 @@ font-size: 20px;
 background-color: transparent;
 }
 
+.cupom_grid_conteudo select {  
+  font-family: "Jost";
+  height: 34px;
+  color: grey;
+  border: 2px #1B98E0 solid;
+  outline: none;
+  border-radius: 5px;
+  text-indent: 5px;
+  font-size: 20px;
+  background-color: transparent;
+  -webkit-appearance: none; /* Remove default arrow in Safari */
+  -moz-appearance: none;    /* Remove default arrow in Firefox */
+  appearance: none;         /* Remove default arrow in modern browsers */
+  background-image: none;   /* Remove default arrow in some older browsers */
+  }
+
+.cupom_grid_conteudo option{
+  font-family: "Jost";
+
+
+  }
+
 .cupom_grid_conteudo label {
 font-size: 20px;
 color: #0f3b62;
@@ -161,13 +183,13 @@ max-width: 590px;
 .cupom_configuracao_grid {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two equal columns */
-  width: 653px;
+  width: 605px;
 }
 
 .cupom_configuracao_item {
   display: grid;
   grid-template-columns: 1fr; /* Two equal columns */
-  width: 50px;
+  width: 95%;
 }
 
 /* Localização */

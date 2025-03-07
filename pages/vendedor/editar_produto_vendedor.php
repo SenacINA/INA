@@ -18,7 +18,7 @@
     <div class="cupom_body">
       <div class="cupom_header">
         <div class="cupom_text_header">
-          <img src="../../image/admin/cupom/cupom.svg" alt="">
+          <img src="../../image/vendedor/editar_produto/lapis.svg" alt="">
           <h1>Editar Produto</h1>
         </div>
         <hr class="cupom_linha_header">
@@ -32,35 +32,48 @@
         <div class="cupom_text" id="cupom_text_1"> 
           <hr class="cupom_vertical">
           <img src="../../image/admin/cupom/texto_icon.svg" alt="">
-          <h1 class="cupom_text">Seu Perfil</h1>
+          <h1 class="cupom_text">Informações do Produto</h1>
         </div>
 
         <div class="cupom_pesquisar_usuario">
           <form action="" method="post" class="cupom_forms">
             <div class="cupom_pesquisar_usuario_item" id="cupom_pesquisar_usuario_item_1" >
-              <label>Código do cupom</label>
-              <input type="text" placeholder="00001">
+              <label>Nome do Produto</label>
+              <input type="text" placeholder="Nome">
+            </div>
+            <div class="cupom_configuracao_grid" id="cupom_pesquisar_usuario_item_2">
+              <div class="cupom_configuracao_item">
+                <label>Valor</label>
+                <input type="number" placeholder="0">
+              </div>
+              <div class="cupom_configuracao_item">     
+                <label>Categoria</label>           
+                <select name="categoria" id="categoria">
+                  <option value="">Selecione uma Categoria</option>
+                  <option value="Hardware">Hardware</option>
+                  <option value="Perifericos">Periféricos</option>
+                  <option value="Escritorio">Escritório</option>
+                  <option value="Celulares">Celulares</option>
+                  <option value="Eletrodomesticos">Eletrodomésticos</option>
+                </select>
+              </div>
             </div>
             <div class="cupom_pesquisar_usuario_item" id="cupom_pesquisar_usuario_item_2">
-              <label>Vendedor</label>
+              <label>Marca</label>
               <input type="text" placeholder="Vendedor">
             </div>
             <div class="cupom_configuracao_grid" id="cupom_pesquisar_usuario_item_2">
               <div class="cupom_configuracao_item">
-                <label>Uso por Pessoa</label>
+                <label>Código</label>
                 <input type="number" placeholder="0">
               </div>
               <div class="cupom_configuracao_item">
-                <label>Uso Máximo</label>
+                <label>Em Estoque</label>
                 <input type="number" placeholder="0">
               </div>
               <div class="cupom_configuracao_item">
-                <label>Valor Mínimo</label>
-                <input type="number" placeholder="0">
-              </div>
-              <div class="cupom_configuracao_item">
-                <label>Desconto do Cupom</label>
-                <input type="number" placeholder="0">
+                <label>Origem</label>
+                <input type="text" placeholder="MS">
               </div>
             </div>
           </form>
@@ -70,16 +83,39 @@
         <div class="cupom_text" id="cupom_text_2">
         
           <hr class="cupom_vertical">
-          <img src="../../image/admin/cupom/perfil_icon.svg" alt="">
-          <h1 class="cupom_text">Buscar Produtos</h1>
+          <img src="../../image/vendedor/editar_produto/regua.svg" alt="">
+          <h1 class="cupom_text">Dimensões e Pesos</h1>
         </div>
         
         <form action="" method="post" class="cupom_dados_pessoais">
   
-          <div class="cupom_dados_pessoais_item" id="cupom_dados_pessoais_item_1" >
-            <label>Nome do Produto</label>
-            <input type="text" placeholder="Produto">
-          </div>
+          
+        <div class="cupom_configuracao_grid" id="cupom_pesquisar_usuario_item_2">
+              <div class="cupom_configuracao_item">
+                <label>Peso Líquido</label>
+                <input type="number" placeholder="0">
+              </div>
+              <div class="cupom_configuracao_item">
+                <label>Peso Bruto</label>
+                <input type="number" placeholder="0">
+              </div>
+              <div class="cupom_configuracao_item">
+                <label>Tipo de Embalagem</label>
+                <input type="text" placeholder="MS">
+              </div>
+              <div class="cupom_configuracao_item">
+                <label>Largura</label>
+                <input type="text" placeholder="MS">
+              </div>
+              <div class="cupom_configuracao_item">
+                <label>Altura</label>
+                <input type="text" placeholder="MS">
+              </div>
+              <div class="cupom_configuracao_item">
+                <label>Comprimento</label>
+                <input type="text" placeholder="MS">
+              </div>
+            </div>
 
           <div class="cupom_achar_produto_organizar">
             <p>Organizar por :</p>
