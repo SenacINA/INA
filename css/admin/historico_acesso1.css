@@ -208,26 +208,35 @@
 
 /* Historico Acesso Tabelas*/
 .historico_acesso_filtro {
-  width: 543px;
+  width: 343px;
   height: 43px;
-  border: 1px solid rgba(0, 0, 0, 0.50);
-  background: #F1F1F1;
-  color: #000;
+  background: #1B98E0;
+  color: #F9F9FC;
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  border-radius: 10px 10px 0 0;
+}
+
+.historico_acesso_titulo{
+  display: flex;
+  margin-top: 30px;
+  color: #006494;
+}
+
+.historico_acesso_titulo img{
+  margin-right: 10px;
 }
 
 .historico_acesso_table {
   width: 1100px;
-  height: 550px;
-  border: 1px solid rgba(0, 0, 0, 0.30);
+  height: 192px;
   background: #ffffff;
   display: grid;
-  grid-template-columns: 13.34% 12.39% 11.48% 13.13% 49.66%;
-  grid-template-rows: 64px repeat(13, 45px);
+  grid-template-columns: 13.34% 12.39% 11.48% 13.13% 29.66%;
+  grid-template-rows: 48px repeat(3, 48px);
   text-align: center;
   color: #006494;
 }
@@ -235,12 +244,10 @@
 .historico_acesso_table p {
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.30);
+  border: 1px solid rgba(27, 152, 224, 1);
   position: relative;
   color: #6F6F6F;
-  text-align: center;
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
@@ -249,7 +256,9 @@
 }
   
 .historico_acesso_table span {
-  border: 1px solid rgba(0, 0, 0, 0.30);
+  border: 1px solid rgba(27, 152, 224, 1);
+  border-top: none;
+  border-bottom: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -279,7 +288,7 @@
     
     background-color: transparent;
     width: 95%;
-    height: 1479px;
+    height: 1000px;
     border-radius: 10px;
     margin: 1.5% 2%;
     margin-top: 86px;
@@ -371,26 +380,33 @@
   }
 
   #historico_acesso_text_3 {
-    grid-row: 5;
-    margin-top: 20px;
-
-  }
-
-  .historico_acesso_localizacao {
-    grid-row: 6;
-  }
-
-  #historico_acesso_text_4 {
-    grid-row: 7;
     grid-column: 1;
-  }
+    grid-row: 3;
+    margin-top: 65px;
+}
 
   /* inputs */
   .historico_acesso_relatorio_geral_item input,
   .historico_acesso_info_user_item input,
-  .historico_acesso_info_user_conjunto,
-  .historico_acesso_localizacao_conjunto {
+  .historico_acesso_info_user_conjunto{
     max-width: 100%;
+    
   }
 
+  .historico_acesso_titulo{
+    display: flex;
+    margin-top: 30px;
+    color: #006494;
+  }
+
+  .historico_acesso_table {
+    width: 715px;
+    height: 192px;
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: 18.34% 17.39% 16.48% 18.13% 29.66%;
+    grid-template-rows: 48px repeat(3, 48px);
+    text-align: center;
+    color: #006494;
+  }
 }

@@ -37,7 +37,7 @@
 
             <div class="historico_acesso_relatorio_geral">
 
-              <form action="" method="post" class="historico_acesso_forms">
+              
                 <div class="historico_acesso_relatorio_geral_item" id="historico_acesso_relatorio_geral_item_1" >
                   <label>IP Do Usuário</label>
                   <input type="text" placeholder="...">
@@ -50,7 +50,6 @@
                     <button class="historico_acesso_cancel">Cancelar</button>
                     <button class="historico_acesso_confirm">Confirmar</button> 
                 </div>
-              </form>
             </div>
 
 
@@ -86,51 +85,48 @@
             </form>
           </div>
     </div>
-  </main>
-
-  <div class="historico_acesso_text" id="historico_acesso_text_3">
-    <img src="../../image/admin/histórico_acesso/historico.svg" alt="">
-    <h1 class="historico_acesso_text">Histórico De Acesso</h1>
-
-    <div class="historico_acesso_buttons">
-      <select name="filtro" id="filtro" class="historico_acesso_filtro">
-        <option value="">Organizar por:</option>
-        <option value="ip">IP</option>
-        <option value="cargo">Cargo</option>
-        <option value="data">Data De Acesso</option>
-        <option value="data_inicio">Contato</option>
-        <option value="navegador">Navegador</option>
-      </select>
-    </div>
-    <div class="historico_acesso_table">
-      <p>IP</p>
-      <p>CARGO</p>
-      <p>DATA DE ACESSOS</p>
-      <p>HORÁRIO</p>
-      <p>NAVEGADOR</p>
-    
-      <span >192.168.0.1</span>
-      <span>Cliente</span>
-      <span>22/03/2024</span>
-      <span>08:32:34</span>
-      <span>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36</span>
-    
-      <span >221.121.2.2</span>
-      <span>Cliente</span>
-      <span>23/03/2024</span>
-      <span>09:27:12</span>
-      <span>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36</span>
-    
-      <span >112.212.02.14</span>
-      <span>Vendedor</span>
-      <span>24/03/2024</span>
-      <span>11:32:45</span>
-      <span>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36</span>
-    
-  </div>
-    
   
 
-  
+      <div id="historico_acesso_text_3">
+        <div class="historico_acesso_titulo">
+          <img src="../../image/admin/histórico_acesso/historico.svg" alt="">
+          <h1 class="historico_acesso_text">Histórico De Acesso</h1>
+        </div>
+        <div class="historico_acesso_buttons">
+          <select name="filtro" id="filtro" class="historico_acesso_filtro">
+            <option value="">Organizar por:</option>
+            <option value="ip">IP</option>
+            <option value="cargo">Cargo</option>
+            <option value="data">Data De Acesso</option>
+            <option value="navegador">Navegador</option>
+          </select>
+        </div>
+        <div class="historico_acesso_table">
+          <p>IP</p>
+          <p>CARGO</p>
+          <p>DATA DE ACESSOS</p>
+          <p>HORÁRIO</p>
+          <p>NAVEGADOR</p>
+        
+          <span >192.168.0.1</span>
+          <span>Cliente</span>
+          <span>22/03/2024</span>
+          <span>08:32:34</span>
+          <span>...</span>
+        
+          <span >221.121.2.2</span>
+          <span>Cliente</span>
+          <span>23/03/2024</span>
+          <span>09:27:12</span>
+          <span>...</span>
+        
+          <span >112.212.02.14</span>
+          <span>Vendedor</span>
+          <span>24/03/2024</span>
+          <span>11:32:45</span>
+          <span>...</span>
+        
+      </div>
+</main>
 </body>
 </html>
