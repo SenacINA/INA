@@ -52,6 +52,7 @@ main {
   height: 3px;
   background-color: rgba(0, 100, 148, 0.33);
   grid-column: 1/5;
+  border: 0;
   justify-self: center;
 }
 
@@ -189,12 +190,14 @@ main {
   width: 170px;
   height: 26px;
   background: rgba(36, 123, 160, 0.35);
+  border: 0;
 }
 
 .quadrado_resumo_maior {
   width: 292px;
   height: 15px;
   background: #a3c8d5;
+  border: 0;
 }
 
 .seta {
@@ -232,6 +235,7 @@ main {
   background-color: #d73232;
   color: #fff;
   font-size: 20px;
+  border: 0;
 }
 
 .salvar_botao {
@@ -241,6 +245,7 @@ main {
   background-color: #1b98e0;
   color: #fff;
   font-size: 20px;
+  border: 0;
 }
 
 .botoes {
