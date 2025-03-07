@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <nav class="nav_bar"></nav>
     <div class="grid_produto">
         <div class="grid_nome_vendedor">
             <div class="imagem_nome_vendedor">
-                    <img src="../../image/cliente/produto/user_thunder_gamers.png" alt="">
+                <img src="../../image/cliente/produto/user_thunder_gamers.png" alt="">
             </div>
             <div class="nome_vendedor">
                 <h1>THUNDER GAMERS</h1>
@@ -29,8 +31,8 @@
                 <h3>(156mil+)</h3>
             </div>
         </div>
-        
-        <div class="grid_scroll"> 
+
+        <div class="grid_scroll">
             <div class="icon1_scroll">
                 <img src="../../image/cliente/produto/icon_seta.png" alt="">
             </div>
@@ -71,12 +73,20 @@
                     <img src="../../image/cliente/produto/ultra_blue_2l.png" alt="">
                     <h1>TERMINA EM:</h1>
                     <div class="grid_produto_time">
-                        <h1>12</h1> <h1>:</h1> <h1>39</h1> <h1>:</h1> <h1>59</h1>
-                        
-                        <h3>HORAS</h3> <h3></h3> <h3>MINUTOS</h3> <h3></h3> <h3>SEGUNDOS</h3>
+                        <h1>12</h1>
+                        <h1>:</h1>
+                        <h1>39</h1>
+                        <h1>:</h1>
+                        <h1>59</h1>
+
+                        <h3>HORAS</h3>
+                        <h3></h3>
+                        <h3>MINUTOS</h3>
+                        <h3></h3>
+                        <h3>SEGUNDOS</h3>
                     </div>
                 </div>
-            
+
                 <div class="produto_info_text">
                     <h2>Vendido e entregue por: <a href="">THUNDER GAMES</a> </h2>
                     <h3> <a href="">Em estoque</a></h3>
@@ -91,12 +101,12 @@
                 <div class="produto_info_text2">
                     <h1>À vista no PIX com até 10% OFF </h1>
                     <h2>R$ 1400,00 Em até 10x de R$ 140,00 sem juros no cartão Ou em 1x no cartão com até 5% OFF</h2>
-                    <a> Ver mais opções de pagamento </a>                
+                    <a> Ver mais opções de pagamento </a>
                 </div>
 
                 <div class="grid_produto_info_botton">
-                    <h1>COMPRAR</h1>
-                    <img src="../../image/cliente/produto/icon_carrinho.png" alt="">
+                    <button class="comprar"><img src="../../image//geral/cesta_botao.svg" alt="">COMPRAR</button>
+                    <button class="comprar_2"><img src="../../image/geral/add_botao_azul.svg" alt="">COMPRAR</button>
                 </div>
             </div>
         </div>
@@ -141,13 +151,13 @@
     </div>
 
     <div class="retangle2"></div>
-    
+
     <div class="grid_avaliacao_produto">
         <div class="descricao_produto_item3">
             <img src="../../image/cliente/produto/icon_tiket.png" alt="">
             <h1>AVALIAÇÕES DO PRODUTO</h1>
         </div>
-        
+
         <div class="avaliacao_produto_bg">
             <div class="grid_estrelas_avaliacao_produto">
                 <div class="estrelas_avaliacao_produto">
@@ -161,7 +171,7 @@
                     <img src="../../image/cliente/produto/icon_estrela_metade.png" alt="">
                 </div>
             </div>
-            
+
             <div class="grid_retangulos_avaliacao_produto ">
                 <div class="retangulos_avaliacao_produto">
                     <p>5 Estrelas (1,3 mil)</p>
@@ -180,7 +190,7 @@
             <div class="grid_user_1">
                 <img src="/image/produto/icon_homem.png" alt="">
                 <h1>Carlos</h1>
-    
+
                 <div class="estrelas_user_1">
                     <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
                     <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
@@ -189,7 +199,7 @@
                     <img src="../../image/cliente/produto/icon_estrela_metade.png" alt="">
                 </div>
             </div>
-    
+
             <div class="grid_comentario_user_1">
                 <div class="avaliacao_user_1_item1">
                     <h2>Qualidade:</h2>
@@ -201,7 +211,7 @@
                 </div>
                 <h2>Uma cadeira gamer envolvente e seduzente é muito mais do que um simples móvel. Ela combina conforto ergonômico com um design atraente que promove uma imersão total na experiência de jogo. Com seu encosto alto e ajustes personalizáveis, não só proporciona suporte para longas sessões de jogo, mas também se torna um elemento marcante no ambiente, convidando você a se entregar ao mundo virtual com estilo e conforto.</h2>
             </div>
-    
+
             <div class="grid_images_user_1">
                 <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                 <div class="bar_image_user_1">
@@ -308,4 +318,5 @@
         <h1>© 2024 Senac Hub Academy MS CG e E ao Quadrado.com. Todos os direitos reservados.</h1>
     </div>
 </body>
+
 </html>

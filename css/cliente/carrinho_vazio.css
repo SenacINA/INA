@@ -51,6 +51,7 @@ main {
   width: 95%;
   height: 3px;
   background-color: rgba(0, 100, 148, 0.33);
+  grid-column: 1/5;
   border: 0;
   justify-self: center;
 }
