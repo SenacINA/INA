@@ -4,30 +4,30 @@
   font-family: Jost;
 }
 
-body, html{
+body,
+html {
   height: 100%;
   width: 100%;
 }
 
-
 .gerenciar_usuario_navbar_principal {
   width: 100%;
   height: 67px;
-  background-color: #DCE5EB;
+  background-color: #dce5eb;
 }
 
 .gerenciar_usuario_header {
   width: 100%;
-  height: 192px; 
-  background-color: #0F3B62;
-  background-size: cover; 
+  height: 192px;
+  background-color: #0f3b62;
+  background-size: cover;
   align-items: center;
   justify-items: center;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-weight: normal;
 }
 
-.gerenciar_usuario_header_title{
+.gerenciar_usuario_header_title {
   color: white;
   display: flex;
   justify-content: center;
@@ -35,16 +35,16 @@ body, html{
   top: 75%;
 }
 
-.gerenciar_usuario_header_linha{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 75%;
-    width: 60%;
-    height: 13px;
-    background-color: #2888B1; 
-    border-radius: 20px;
+.gerenciar_usuario_header_linha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 75%;
+  width: 60%;
+  height: 13px;
+  background-color: #2888b1;
+  border-radius: 20px;
 }
 
 .gerenciar_usuario_main_container {
@@ -60,8 +60,8 @@ body, html{
 .gerenciar_usuario_main_content {
   width: 1822px;
   height: 590px;
-  border: 2px solid rgba(0, 0, 0, 0.30);
-  background: #F1F1F1;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: #f1f1f1;
 }
 
 .gerenciar_usuario_pesquisa_cliente_container {
@@ -83,17 +83,17 @@ body, html{
 .gerenciar_usuario_informacoes_cliente {
   display: grid;
   grid-template-columns: repeat(2, min-content);
-  grid-template-rows: repeat(3, min-content );
+  grid-template-rows: repeat(3, min-content);
   align-items: center;
   justify-items: center;
 }
-
 
 .gerenciar_usuario_main_text_pesquisa_container {
   grid-column: 1;
 }
 
-.gerenciar_usuario_main_text_pesquisa, .gerenciar_usuario_main_text_info {
+.gerenciar_usuario_main_text_pesquisa,
+.gerenciar_usuario_main_text_info {
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -106,7 +106,7 @@ body, html{
 .gerenciar_usuario_linha_separador {
   width: 613px;
   height: 2px;
-  background: rgba(0, 0, 0, 0.30);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .gerenciar_usuario_forms_pesquisa {
@@ -124,6 +124,9 @@ body, html{
 #gerenciar_usuario_ip_email {
   grid-column: 1;
   text-indent: 5px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #1b98e0;
 }
 
 .gerenciar_usuario_forms_pesquisa label {
@@ -150,14 +153,26 @@ body, html{
 }
 
 .gerenciar_usuario_ano_select {
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+  border-radius: 5px;
   grid-column: 3;
   grid-row: 2;
   height: 34px;
 }
 
+.gerenciar_usuario_mes_select {
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+  border-radius: 5px;
+}
+
 .gerenciar_usuario_status_select {
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+  border-radius: 5px;
   grid-column: 1;
-  grid-row: 2;  
+  grid-row: 2;
 }
 
 .gerenciar_usuario_botoes_submit {
@@ -171,22 +186,24 @@ body, html{
   cursor: pointer;
   position: relative;
   top: 50%;
-  left: 190%;
+  left: 110%;
   padding-left: 10px;
   padding-right: 10px;
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
   justify-items: center;
+  column-gap: 5%;
+  width: 200px;
   height: 50px;
   background-color: transparent;
   border: red solid 2px;
-  border-radius: 10px;
-  color: #F00;
+  border-radius: 5px;
+  color: #f00;
   font-family: Jost;
-  font-size: 32px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
 }
 
@@ -194,22 +211,25 @@ body, html{
   cursor: pointer;
   position: relative;
   top: 50%;
-  left: 200%;
-  display: grid;
+  left: 135%;
+  display: flex;
+  column-gap: 5%;
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
   justify-content: center;
   justify-items: center;
+  width: 200px;
   height: 50px;
-  border-radius: 10px;
-  background: #2075C2;
-  color: #FFF;
+  border: 0;
+  border-radius: 5px;
+  background: #1b98e0;
+  color: #fff;
   text-align: center;
   font-family: Jost;
-  font-size: 32px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
 }
 
@@ -218,11 +238,11 @@ body, html{
   grid-column: 1;
   width: 295px;
   height: 258px;
-  background: #DCE5EB;
+  background: #dce5eb;
 }
 
 .gerenciar_usuario_informacoes_cliente {
-  row-gap: 5%;;
+  row-gap: 5%;
 }
 
 .gerenciar_usuario_usuario_info {
@@ -232,17 +252,27 @@ body, html{
 }
 
 .gerenciar_usuario_desativar_usuario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5%;
   border: 0;
-  border-radius: 10px;
-  background: #F00;
-  color: #FFF;
+  width: 240px;
+  height: 50px;
+  border-radius: 5px;
+  background: #f00;
+  color: #fff;
   text-align: center;
   font-family: Jost;
-  font-size: 32px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
   cursor: pointer;
+}
+
+.gerenciar_usuario_desativar_usuario > img {
+  width: 20px;
 }
 
 .gerenciar_usuario_nome_info {
@@ -259,16 +289,20 @@ body, html{
   grid-column: span 2;
 }
 
-.gerenciar_usuario_data_cadastro, .gerenciar_usuario_email, .gerenciar_usuario_cargo {
+.gerenciar_usuario_data_cadastro,
+.gerenciar_usuario_email,
+.gerenciar_usuario_cargo {
   display: grid;
   align-items: center;
   justify-content: center;
   width: 295px;
   height: 75px;
-  background: #DCE5EB;
+  background: #dce5eb;
 }
 
-.gerenciar_usuario_data_cadastro_text, .gerenciar_usuario_email_text, .gerenciar_usuario_cargo_text {
+.gerenciar_usuario_data_cadastro_text,
+.gerenciar_usuario_email_text,
+.gerenciar_usuario_cargo_text {
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -278,7 +312,9 @@ body, html{
   line-height: normal;
 }
 
-.gerenciar_usuario_data_cadastro_date, .gerenciar_usuario_email_date, .gerenciar_usuario_cargo_info {
+.gerenciar_usuario_data_cadastro_date,
+.gerenciar_usuario_email_date,
+.gerenciar_usuario_cargo_info {
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -297,8 +333,8 @@ body, html{
 .gerenciar_usuario_filtro {
   width: 543px;
   height: 43px;
-  border: 1px solid rgba(0, 0, 0, 0.50);
-  background: #F1F1F1;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: #f1f1f1;
   color: #000;
   font-family: Jost;
   font-size: 20px;
@@ -310,8 +346,8 @@ body, html{
 .gerenciar_usuario_table {
   width: 1822px;
   height: 752px;
-  border: 1px solid rgba(0, 0, 0, 0.30);
-  background: #F1F1F1;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: #f1f1f1;
   display: grid;
   grid-template-columns: 9.22% 22.34% 13.39% 8.51% 21.13% 14.66% 10.76%;
   grid-template-rows: 64px repeat(13, 45px);
@@ -324,7 +360,7 @@ body, html{
   align-items: center;
   justify-content: center;
   justify-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.30);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   position: relative;
   color: #000;
   text-align: center;
@@ -336,9 +372,9 @@ body, html{
 }
 
 .gerenciar_usuario_table span {
-  border: 1px solid rgba(0, 0, 0, 0.30);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #DCE5EB;;
+  background-color: #dce5eb;
 }

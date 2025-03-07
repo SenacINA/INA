@@ -11,27 +11,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>nav</nav>
+  <nav></nav>
   <main>
-    <div class="quadrado">
-      <div class="main_txt">
-        <p>Redefinição de Senha</p>
-        <img src="../../image/geral/linha-divisoria-azul.png" alt="">
-      </div>
-     <div class="main_content">
-        <p class="esqueceu">ESQUECEU A SENHA?</p>
-        <p class="info">Não se preocupe! Insira seu email de cadastro e enviaremos instruções para você</p>
-        <form action="">
-          <label for="email">Email:</label><br>
-          <input type="text" id="email"><br>
-          <a class="link">Esqueceu seu E-mail?</a>
+    <div class="redefinir_senha_1_container">
+      <h1>REDEFINIÇÃO DE SENHA</h1>
+      <hr>
+      <div class="redefinir_senha_1_main_content">
+        <h2>ESQUECEU A SENHA?</h2>
+        <h3>Não se preocupe! Insira seu e-mail de cadastro e enviaremos instruções para você</h3>
+
+        <form class="redefinir_senha_1_form" action="">
+          <label for="email">E-mail</label>
+          <input type="text" name="email" id="email">  
+          <a href="">Esqueceu seu E-mail?</a>
         </form>
-     </div>
-     <div class="botoes">
-      <button class="voltar">Voltar</button>
-      <button class="enviar">Enviar</button>
-     </div>
+
+        <!-- colocar botões novos -->
+        <button class="redefinir_senha_1_enviar">
+          <img src="" alt="">
+          <h3>ENVIAR</h3>
+        </button>
+
+        <button class="redefinir_senha_1_voltar"> 
+          <img src="" alt="">
+          <h3>VOLTAR</h3>
+        </button>
+      </div>
     </div>
   </main>
+
+  <!-- footer -->
+  <!-- coloca display:none no desktop -->
 </body>
 </html>

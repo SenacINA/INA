@@ -1,13 +1,13 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Jost';
+  font-family: "Jost";
 }
 
 .fundo_vendedor {
   width: 100%;
   height: 100%;
-  background-color: #F9F9FC;
+  background-color: #f9f9fc;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -20,7 +20,7 @@
 .nav_bar {
   height: 67px;
   width: 100%;
-  background-color: #DCE5EB;
+  background-color: #dce5eb;
 }
 
 .quadrado_vendedor {
@@ -29,7 +29,7 @@
   width: 1821px;
   height: 1550px;
   border-radius: 10px;
-  background: #DCE5EB;
+  background: #dce5eb;
 }
 
 .mini_perfil_vendedor {
@@ -39,7 +39,7 @@
   width: 826px;
   height: 966px;
   border: 1px solid #000;
-  background: #EFF1F8;
+  background: #eff1f8;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -50,7 +50,7 @@
 .separador_mini_perfil {
   width: 826px;
   height: 4px;
-  background: #D7E8EA;
+  background: #d7e8ea;
   border: 0;
 }
 
@@ -65,8 +65,8 @@
   grid-column: 1;
   z-index: 2;
   position: relative;
-  left: calc(50% - (826px/2));
-  top: calc(100% - (300px/2));
+  left: calc(50% - (826px / 2));
+  top: calc(100% - (300px / 2));
 }
 
 .infos_container {
@@ -87,7 +87,6 @@
   grid-row: 1;
   grid-column: 2;
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
@@ -96,9 +95,11 @@
   justify-content: center;
 }
 
-.produtos_vendedor, .avaliacao_vendedor, .tempo_vendedor, .localizacao_vendedor {
+.produtos_vendedor,
+.avaliacao_vendedor,
+.tempo_vendedor,
+.localizacao_vendedor {
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
   font-family: Jost;
   font-size: 13px;
   font-style: normal;
@@ -106,7 +107,10 @@
   line-height: 90%; /* 11.7px */
 }
 
-.tempo_vendedor_container, .produtos_vendedor_container, .avaliacao_vendedor_container, .localizacao_vendedor_container {
+.tempo_vendedor_container,
+.produtos_vendedor_container,
+.avaliacao_vendedor_container,
+.localizacao_vendedor_container {
   display: grid;
   grid-template-columns: max-content max-content;
   column-gap: 5px;
@@ -136,7 +140,6 @@
   grid-column: 1;
   grid-row: 1;
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
@@ -151,7 +154,7 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto;
-  position: relative;;
+  position: relative;
   top: -5%;
   row-gap: 10%;
 }
@@ -164,7 +167,6 @@
 
 .text_about {
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
   font-family: Jost;
   font-size: 13px;
   font-style: normal;
@@ -228,11 +230,13 @@
   text-underline-position: from-font;
 }
 
-.icon_instagram_vendedor, .icon_facebook_vendedor {
+.icon_instagram_vendedor,
+.icon_facebook_vendedor {
   grid-column: 1;
 }
 
-.instagram_vendedor, .facebook_vendedor {
+.instagram_vendedor,
+.facebook_vendedor {
   grid-column: 2;
 }
 
@@ -266,7 +270,7 @@
   grid-column: 6;
 }
 
-.contatos_vendedor a{
+.contatos_vendedor a {
   position: relative;
   left: 10%;
   color: #000;
@@ -294,7 +298,7 @@
   height: 900px;
 }
 
-.forms_container{
+.forms_container {
   display: grid;
   grid-template-rows: repeat(4, min-content);
   justify-content: center;
@@ -311,16 +315,20 @@
   line-height: normal;
 }
 
-.forms_container input{
+.forms_container input {
   text-indent: 14px;
-  border: none;
+  border-radius: 5px;
+  border: 2px solid #1b98e0;
   width: 747px;
   height: 39px;
+  background-color: transparent;
 }
 
-.forms_container textarea { 
-  border: none;
+.forms_container textarea {
   resize: none;
+  border-radius: 5px;
+  border: 2px solid #1b98e0;
+  background-color: transparent;
 }
 
 .nome_vendedor_forms {
@@ -348,35 +356,35 @@
 }
 
 .redefinir_senha_vendedor {
-  width: 191px;
-  height: 64px;
+  width: 200px;
+  height: 48px;
   padding: 10px;
-  color: #006494;
-  font-feature-settings: 'liga' off, 'clig' off;
+  color: #fff;
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 90%; /* 18px */
-  border-radius: 10px;
-  border: 3px solid #006494;
-  background-color: transparent;
+  border-radius: 5px;
+  border: 0;
+  background-color: #1B98E0;
+  text-transform: uppercase;
 }
 
 .redefinir_email_vendedor {
-  width: 191px;
-  height: 64px;
+  width: 200px;
+  height: 48px;
   padding: 10px;
-  color: #006494;
-  font-feature-settings: 'liga' off, 'clig' off;
+  color: #fff;
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 90%; /* 18px */
-  border-radius: 10px;
-  border: 3px solid #006494;
-  background-color: transparent;
+  border-radius: 5px;
+  border: 0;
+  background-color: #006494;
+  text-transform: uppercase;
 }
 
 .main_text_redes {
@@ -431,14 +439,22 @@
 }
 
 .botao_edit {
-  display: grid;
-  grid-template-columns: min-content min-content;
-  column-gap: 5px;
+  display: flex;
+  column-gap: 5%;
   align-items: center;
+  justify-content: center;
+  color: #fff;
   position: relative;
   top: 30%;
   cursor: pointer;
-  width: 50px;
+  height: 48px;
+  width: 200px;
+  border-radius: 5px;
+  border: 0;
+  background: #1b98e0;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .text_editar {
@@ -474,17 +490,18 @@
   line-height: normal;
 }
 
-.btn_foto{
+.btn_foto {
   grid-column: 1;
-  grid-row: 2 ;
+  grid-row: 2;
 }
 
-.btn_foto::file-selector-button, .btn_banner::file-selector-button {
+.btn_foto::file-selector-button,
+.btn_banner::file-selector-button {
   width: 200px;
   height: 43px;
   background-color: white;
   border-radius: 10px;
-  border: 1px solid #13293D;
+  border: 1px solid #13293d;
   cursor: pointer;
   color: #000;
   text-align: center;
@@ -506,7 +523,7 @@
 }
 
 .warn {
-  color: rgba(0, 0, 0, 0.40);
+  color: rgba(0, 0, 0, 0.4);
   text-align: center;
   font-family: Jost;
   font-size: 16px;
@@ -515,7 +532,8 @@
   line-height: normal;
 }
 
-.foto_container, .banner_container {
+.foto_container,
+.banner_container {
   row-gap: 25px;
   display: grid;
   align-items: center;

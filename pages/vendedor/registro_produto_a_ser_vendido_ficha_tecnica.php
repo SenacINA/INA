@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="body_registro_produto_a_ser_vendido_ficha_tecnica">
         <div class="nav_bar"></div>
@@ -20,21 +22,21 @@
                 <hr>
                 <h3>Novo Produto</h3>
             </div>
-            
+
             <div class="grid_conteudo">
                 <div class="grid_conteudo_1">
                     <h1>Informações do Produto</h1>
 
                     <!-- Lote do Produto -->
                     <label for="nomedoproduto">Nome do Produto</label> <br>
-                    <input type="text" name="nomedoproduto" id="nomedoproduto" required> <br>    
+                    <input type="text" name="nomedoproduto" id="nomedoproduto" required> <br>
 
                     <!-- Preço -->
                     <label for="preco">Preço (R$)</label> <br>
                     <input type="number" name="preco" id="preco" step="0.01" min="0" required> <br>
 
                     <!-- Categoria -->
-                    <label for="categoria">Categoria</label> <br> 
+                    <label for="categoria">Categoria</label> <br>
                     <select name="categoria" id="categoria" required>
                         <option value="categoria1">Categoria 1</option>
                         <option value="categoria2">Categoria 2</option>
@@ -51,10 +53,10 @@
 
                     <!-- Peso Líquido -->
                     <label for="pesoliquido">Peso Líquido</label> <br>
-                    <input type="text" name="pesoliquido" id="pesoliquido" placeholder="Kg" required> <br>    
+                    <input type="text" name="pesoliquido" id="pesoliquido" placeholder="Kg" required> <br>
 
                     <!-- Peso Bruto -->
-                    <label for="pesobruto">Peso Bruto</label> <br> 
+                    <label for="pesobruto">Peso Bruto</label> <br>
                     <input type="text" name="pesobruto" id="pesobruto" placeholder="Kg" required> <br>
 
                     <!-- Material -->
@@ -88,10 +90,10 @@
                 <div class="grid_conteudo_4">
                     <div class="botoes">
                         <div class="cancelar">
-                            <h1>Cancelar</h1>
+                            <h1><img src="../../image/geral/x_botao_vermelho.svg" alt="">Cancelar</h1>
                         </div>
                         <div class="salvar">
-                            <h1>Salvar</h1>
+                            <h1><img src="../../image/geral/confirm_botao.svg" alt="">Adicionar produto</h1>
                         </div>
                     </div>
                 </div>
@@ -102,4 +104,5 @@
         </footer>
     </div>
 </body>
+
 </html>
