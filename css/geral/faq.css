@@ -27,11 +27,11 @@
     
     & > h2 {
         color: #006494;
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     & > svg {
-        height: 4rem;
+        height: 3rem;
         width: auto;
     }
 }
