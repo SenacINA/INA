@@ -6,9 +6,11 @@
     <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/vendedor/editar_produto.css">
+    <link rel="stylesheet" href="../../css/admin/admin_cupom.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
     <title>E ao Quadrado</title>
     <link rel="icon" type="image/x-icon" href="./image/geral/icone_eaoquadrado.ico">
+    
 </head>
 <body>
     <div class='editar_produto_main'>
@@ -68,14 +70,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class='editar_produto_form_title'>
-                        <div class='editar_produto_line'></div>
-                            <h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                    <path d="M31.4182 8.87278L23.1273 0.581871C22.5455 5.32717e-05 21.6728 5.32717e-05 21.091 0.581871L0.581871 21.091C5.32866e-05 21.6728 5.32866e-05 22.5455 0.581871 23.1273L8.87278 31.4182C9.4546 32.0001 10.3273 32.0001 10.9091 31.4182L13.9637 28.3637L8.87278 23.2728C8.29096 22.691 8.29096 21.8182 8.87278 21.2364C9.4546 20.6546 10.3273 20.6546 10.9091 21.2364L16.0001 26.3273L18.0364 24.291L14.9819 21.2364C14.4001 20.6546 14.4001 19.7819 14.9819 19.2001C15.5637 18.6182 16.4364 18.6182 17.0182 19.2001L20.0728 22.2546L22.1091 20.2182L17.0182 15.1273C16.4364 14.5455 16.4364 13.6728 17.0182 13.091C17.6001 12.5091 18.4728 12.5091 19.0546 13.091L24.1455 18.1819L26.1819 16.1455L23.1273 13.091C22.5455 12.5091 22.5455 11.6364 23.1273 11.0546C23.7091 10.4728 24.5819 10.4728 25.1637 11.0546L28.2182 14.1091L31.2728 11.0546C32.0001 10.3273 32.0001 9.30914 31.4182 8.87278Z" fill="#247BA0"/>
-                                </svg>
-                                Dimensões E Peso
-                            </h3>
+                    <div class='editar_produto_form'>
+                        <div class='editar_produto_form_title'>
+                            <div class='editar_produto_line'></div>
+                                <h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <path d="M31.4182 8.87278L23.1273 0.581871C22.5455 5.32717e-05 21.6728 5.32717e-05 21.091 0.581871L0.581871 21.091C5.32866e-05 21.6728 5.32866e-05 22.5455 0.581871 23.1273L8.87278 31.4182C9.4546 32.0001 10.3273 32.0001 10.9091 31.4182L13.9637 28.3637L8.87278 23.2728C8.29096 22.691 8.29096 21.8182 8.87278 21.2364C9.4546 20.6546 10.3273 20.6546 10.9091 21.2364L16.0001 26.3273L18.0364 24.291L14.9819 21.2364C14.4001 20.6546 14.4001 19.7819 14.9819 19.2001C15.5637 18.6182 16.4364 18.6182 17.0182 19.2001L20.0728 22.2546L22.1091 20.2182L17.0182 15.1273C16.4364 14.5455 16.4364 13.6728 17.0182 13.091C17.6001 12.5091 18.4728 12.5091 19.0546 13.091L24.1455 18.1819L26.1819 16.1455L23.1273 13.091C22.5455 12.5091 22.5455 11.6364 23.1273 11.0546C23.7091 10.4728 24.5819 10.4728 25.1637 11.0546L28.2182 14.1091L31.2728 11.0546C32.0001 10.3273 32.0001 9.30914 31.4182 8.87278Z" fill="#247BA0"/>
+                                    </svg>
+                                    Dimensões E Peso
+                                </h3>
+                            </div>
                         </div>
                         <div class='editar_produto_form_input'>
                             <div class='editar_produto_small_input'>
@@ -111,10 +115,32 @@
                             </div>
                         </div>
                     </div>
+                    <div class='editar_produto_form'>
+                        <div class='editar_produto_form_title'>
+                            <h3>
+                                Descrição Do Produto
+                            </h3>
+                        </div>
+                        <div class='editar_produto_form'>
+                            <div class='editar_produto_form_title'>
+                                <div class='editar_produto_line'></div>
+                                    <h3>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M6.82824 6.82824C8.3901 5.26637 8.3901 2.73326 6.82824 1.1714C5.26637 -0.390466 2.73326 -0.390466 1.1714 1.1714C-0.390466 2.73326 -0.390466 5.26637 1.1714 6.82824C2.73389 8.39073 5.26637 8.39073 6.82824 6.82824ZM22.8281 17.1713C21.2663 15.6094 18.7332 15.6094 17.1713 17.1713C15.6094 18.7332 15.6094 21.2663 17.1713 22.8281C18.7332 24.39 21.2663 24.39 22.8281 22.8281C24.3906 21.2663 24.3906 18.7338 22.8281 17.1713ZM22.7069 2.70701L21.2931 1.29327C20.5119 0.512028 19.2457 0.512028 18.465 1.29327L1.29327 18.465C0.512028 19.2463 0.512028 20.5125 1.29327 21.2931L2.70701 22.7069C3.48826 23.4881 4.7545 23.4881 5.53512 22.7069L22.7069 5.53512C23.4881 4.7545 23.4881 3.48826 22.7069 2.70701Z" fill="#247BA0"/>
+                                        </svg>
+                                        Promoção
+                                    </h3>
+                                </div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" name="toggle-group">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
-
     </div>
 </body>
 </html>
