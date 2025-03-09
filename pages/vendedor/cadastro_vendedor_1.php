@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,8 +13,11 @@
 </head>
 <body>
     <div class="cadastro_vendedor1_nav_bar"></div>
-    <div class="cadastro_vendedor1_grid_bg" >
-        <div class="cadastro_vendedor1_titulo"><h1>CADASTRO DE VENDEDOR</h1></div>
+    <div class="cadastro_vendedor1_background">
+    <div class="cadastro_vendedor1_grid" >   
+        <div class="cadastro_vendedor1_titulo">
+            <img class="cadastro_vendedor1_titulo_img" src="../../image/vendedor/cadastro_vendedor_1/cadastro_icon.png" alt="">
+            <h1>CADASTRO DE VENDEDOR</h1></div>
         <div class="cadastro_vendedor1_row"></div>
         <div class="cadastro_vendedor1_lista_ordenada" >
             <ol>
@@ -41,12 +45,13 @@
         </div>
         <div class="cadastro_vendedor1_botao_salvar">
           <button class="cadastro_vendedor1_salvar">
-            <img src="../../image/admin/perfil_admin/v_icon.svg" alt="">
+            <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg" alt="">
             <label>CONTINUAR</label>
           </button>
         </div>
       </div>
-
+      </div>
     </div>
+
 </body>
 </html>
