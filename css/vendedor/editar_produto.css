@@ -154,10 +154,224 @@
     gap: 16px;
 }
 
+.editar_produto_text_editor {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.text_editor_div {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Estilos Gerais do Editor */
+.editor-content {
+    all: initial;
+    min-height: 300px;
+    max-height: 300px;
+    padding: 8px;
+    border: 2px solid var(--carolina);
+    border-radius: 0 0 5px 5px;
+    background: transparent;
+    color: #333;
+    font-family: 'Jost', sans-serif;
+    overflow-y: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    height: 300px; 
+    max-width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: var(--carolina) var(--azul_leve);
+    
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: var(--azul_leve);
+        border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--carolina);
+        border-radius: 4px;
+        border: 2px solid var(--azul_leve);
+    }
+}
+
+/* Reset de elementos internos */
+.editor-content * {
+    all: unset;
+    display: revert;
+    box-sizing: border-box;
+}
+
+/* Estilos de Tipografia */
+.editor-content {
+    p {
+        margin: 0.75rem 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--sappire);
+        margin: 1.5rem 0 1rem;
+        font-weight: 600;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    u {
+        text-decoration: underline;
+    }
+
+    s {
+        text-decoration: line-through;
+    }
+}
+
+/* Listas */
+.editor-content {
+    ul.bullet-list {
+        list-style: disc outside;
+        padding-left: 2rem;
+        margin: 1rem 0;
+        
+        li {
+            display: list-item;
+            margin-left: 1rem;
+            padding-left: 0.5rem;
+        }
+    }
+    
+    ol.ordered-list {
+        list-style: decimal outside;
+        padding-left: 2rem;
+        margin: 1rem 0;
+        
+        li {
+            display: list-item;
+            margin-left: 1rem;
+            padding-left: 0.5rem;
+        }
+    }
+
+    ul ul, ol ol {
+        margin-left: 1.5rem !important;
+    }
+}
+
+/* Alinhamento de Texto */
+[data-text-align="left"] { text-align: left; }
+[data-text-align="center"] { text-align: center; }
+[data-text-align="right"] { text-align: right; }
+[data-text-align="justify"] { text-align: justify; }
+
+/* Toolbar */
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    padding: 4px;
+    background: var(--carolina);
+    border: 2px solid var(--carolina);
+    border-radius: 5px 5px 0 0;
+    margin-top: 1rem;
+    height: 56px;
+    width: 100%;
+
+    button {
+        color: var(--branco_gelo);
+        position: relative;
+        background: var(--sappire);
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+
+        .arrow_drop {
+            position: absolute;
+            right: 4px;
+            bottom: 4px;
+            width: 12px;
+            height: 8px;
+        }
+
+        &:hover {
+            background: var(--celadon);
+        }
+    }
+
+    u {
+        text-decoration: underline;
+    }
+
+    s {
+        text-decoration: line-through;
+    }
+}
+
+/* Dropdowns */
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    button {
+        min-width: 80px;
+    }
+
+    &:hover .dropdown-content {
+        display: flex;
+    }
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+    flex-direction: column;
+    width: fit-content;
+    padding: 4px;
+    background: var(--sappire);
+
+    button {
+        font-size: 16px;
+        height: fit-content;
+        justify-content: flex-start;
+        border: none;
+        background: var(--sappire);
+        padding: 4px;
+        
+        &:hover {
+            background: var(--celadon);
+        }
+    }
+}
 
 @media (max-width: 768px) {
     .editar_produto_form_grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
     }
     .editar_produto_small_input {
         display: grid;
@@ -175,5 +389,6 @@
             font-size: 16px;
         }
     }
+
 }
 
