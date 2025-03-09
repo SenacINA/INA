@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,11 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="nav_bar"></div>
-    <div class="grid_bg" >
-        <div class="titulo"><h1>CADASTRO DE VENDEDOR</h1></div>
-        <img src="../../image/geral/linha-divisoria-azul.png" alt="">
-        <div class="lista_ordenada" >
+    <div class="cadastro_vendedor1_nav_bar"></div>
+    <div class="cadastro_vendedor1_background">
+    <div class="cadastro_vendedor1_grid" >   
+        <div class="cadastro_vendedor1_titulo">
+            <img class="cadastro_vendedor1_titulo_img" src="../../image/vendedor/cadastro_vendedor_1/cadastro_icon.png" alt="">
+            <h1>CADASTRO DE VENDEDOR</h1></div>
+        <div class="cadastro_vendedor1_row"></div>
+        <div class="cadastro_vendedor1_lista_ordenada" >
             <ol>
                 <h1>Bem-Vindo!</h1>
                 <li>
@@ -39,7 +43,15 @@
                 <li>Celular ou E-mail. </li>
             </L>
         </div>
-        <div class="botao"><h1>Iniciar Cadastro</h1></div>
+        <div class="cadastro_vendedor1_botao_salvar">
+          <button class="cadastro_vendedor1_salvar">
+            <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg" alt="">
+            <label>CONTINUAR</label>
+          </button>
+        </div>
+      </div>
+      </div>
     </div>
+
 </body>
 </html>
