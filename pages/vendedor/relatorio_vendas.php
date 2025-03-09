@@ -14,7 +14,7 @@
   <nav class="navbar_principal"></nav>
   <header class="header_relatorio">
     <div class="inner_header">
-      <h1 class="text_header">Gerenciar produtos</h1>
+      <h1 class="text_header">Relatório de Vendas</h1>
       <hr class="linha_header">
     </div>
   </header>
