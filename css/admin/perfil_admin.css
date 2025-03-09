@@ -21,7 +21,7 @@
   align-self: center;
 
   background-color: #EFF3F5;
-  width:90%;
+  width: 90%;
   height: 779px;
   
   border-radius: 10px;
@@ -30,7 +30,7 @@
 }
 
 /* header */
-.perfil_admin_header {
+.perfil_admin_titulo {
   position: relative;
 
   display: grid;
@@ -42,19 +42,19 @@
   height: 86px;
 }
 
-.perfil_admin_text_header {
+.perfil_admin_text_titulo {
   display: flex;
   justify-self: center;
 }
 
-.perfil_admin_text_header img {
+.perfil_admin_text_titulo img {
   align-self: center;
   width: 28px;
   height: auto;
   margin-right: 8px;
 }
 
-.perfil_admin_text_header h1 {
+.perfil_admin_text_titulo h1 {
   justify-self: center;
   font-weight: 500;
   color: #255e7e;
@@ -62,7 +62,7 @@
   font-size: 32px;
 }
 
-.perfil_admin_linha_header {
+.perfil_admin_linha_titulo {
   width: 95%;
   height: 5px;
   border-radius: 20px;
@@ -380,7 +380,7 @@ input:checked + .toggle_slider::before {
   }
   
   /* header */
-  .perfil_admin_header {
+  .perfil_admin_titulo {
     position: absolute;
   
     display: grid;
@@ -389,23 +389,23 @@ input:checked + .toggle_slider::before {
     justify-items: center;
     
     width: 100%;
-    height: 86px;
     top: -85px;
+    margin: 0%;
   }
   
-  .perfil_admin_text_header {
+  .perfil_admin_text_titulo {
     display: flex;
     justify-self: start;
   }
   
-  .perfil_admin_text_header img {
+  .perfil_admin_text_titulo img {
     align-self: center;
     width: 28px;
     height: auto;
     margin-right: 8px;
   }
   
-  .perfil_admin_text_header h1 {
+  .perfil_admin_text_titulo h1 {
     justify-self: center;
     font-weight: 500;
     color: #255e7e;
@@ -413,7 +413,7 @@ input:checked + .toggle_slider::before {
     font-size: 32px;
   }
   
-  .perfil_admin_linha_header {
+  .perfil_admin_linha_titulo {
     display: none;
   }
   
@@ -463,20 +463,19 @@ input:checked + .toggle_slider::before {
   
   /* foto perfil adm */
   .perfil_admin_foto {
-    display: grid;
-    grid-template-columns: 35% 30% 35%;
+    display: flex;
     align-items: center;
     justify-items: center;
     justify-self: center;
     width: 100%;
   }
   
-  #img_admin_perfil {
-    grid-column: 2;
+  .perfil_admin_foto_pfp {
+    display: none;
   }
 
-  .perfil_admin_foto_pfp{
-    grid-column: 3;
+  #img_admin_perfil {
+    cursor: pointer;
   }
 
   /* foms perfil adm */
@@ -504,12 +503,9 @@ input:checked + .toggle_slider::before {
     grid-row: 3;
   }
 
-  .perfil_admin_forms_item input {
-    width: 100%;
-    background-color: transparent;
-  }
-
-  #perfil_admin_forms_item_3 input, #perfil_admin_forms_item_4 input {
+  #perfil_admin_forms_item_3 input,
+   #perfil_admin_forms_item_4 input,
+    .perfil_admin_forms_item {
     width: 100%;
     background-color: transparent;
   }

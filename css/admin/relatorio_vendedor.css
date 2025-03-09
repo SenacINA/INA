@@ -1,181 +1,515 @@
-.navbar {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost";
+  user-select: none;
+}
+
+/* NAVBAR */
+.relatorio_vendedor_nav_bar { 
   width: 100%;
   height: 67px;
-  background-color: #DCE5EB;
+  background-color: black;
 }
-  
-.relatorio_vendedor_main_container {
+
+/* CORPO PRINCIPAL */
+.relatorio_vendedor_body {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+
+  background-color: #EFF3F5;
+  max-width: 90%;
   width: 100%;
+  height: 780px;
+
+  border-radius: 10px;
+  margin-top: 32px;
+}
+
+/* header */
+.relatorio_vendedor_titulo {
   position: relative;
+
   display: grid;
-  justify-content: center;
   grid-template-columns: auto;
-  grid-template-rows: 590px 81px 800px;
-  top: 1%;
-}
-  
-.relatorio_vendedor_grid_parent {
-  display: grid;
-  grid-template-columns: min-content min-content;
-  position: relative;
-  top: 97px;
-  left: 92px;
-  column-gap: 20%;
-  width: 1000px;
-}
-  
-.relatorio_vendedor_grid_info_main {
-  display: grid;
-  grid-template-rows: repeat(6, auto);
-  grid-template-columns: repeat(3, auto);
-}
-  
-.relatorio_vendedor_grid_perfil {
-  row-gap: 5%;
-  display: grid;
-  grid-template-columns: repeat(2, min-content);
-  grid-template-rows: repeat(3, min-content );
-  align-items: center;
+  align-content: center;
   justify-items: center;
-}
-  
-.relatorio_vendedor_main_content {
-  width: 1822px;
-  height: 590px;
-  border: 2px solid rgba(0, 0, 0, 0.30);
-  background: #F1F1F1;
-}
-  
-.relatorio_vendedor_grid_main {
-  grid-column: 1;
-}
-  
-.relatorio_vendedor_align_text_center{
-  text-align: center;
-}
-  
-.admin_linha {
-  width: 613px;
-  height: 2px;
-  background: rgba(0, 0, 0, 0.30);
-}
-  
-.relatorio_vendedor_grid_info {
-  margin-top: 24px;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 10px;
-  display: grid;
-  height: 100px;
-  padding-left: 40px;
-}
-  
 
-.relatorio_vendedor_texto_info{
-  font-weight: bold;
-  padding-left: 10px;
+  width: 100%;
+  height: 86px;
 }
 
-.relatorio_vendedor_body_info{
-  border-radius: 5px;
-  border: #1B98E0 solid 2px;
-  width: 250px;
-  height: 30px;
-  padding-left: 10px;
-  padding-top: 3px;
-  margin-bottom: 10px;
-}
-
-.relatorio_vendedor_texto_body_info{
-  color: grey;
-}  
-
-.relatorio_vendedor_perfil{  
-  width: 450px;
-  height: 325px;
-  background: #ffffff;
-  transform: translateX(90px);
-  display: grid;
-  align-items: center;
-  justify-content: center;
-}
-
-.relatorio_vendedor_imagem_perfil{
+.relatorio_vendedor_text_titulo {
+  display: flex;
   justify-self: center;
 }
 
-.relatorio_vendedor_texto_nome_perfil{
-  text-align: center;
+.relatorio_vendedor_text_titulo img {
+align-self: center;
+width: 28px;
+height: auto;
+margin-right: 8px;
 }
 
-.relatorio_vendedor_texto_descricao_perfil{
+.relatorio_vendedor_text_titulo h1 {
+justify-self: center;
+font-weight: 500;
+color: #255e7e;
+text-align: center;
+font-size: 32px;
+}
+
+.relatorio_vendedor_linha_titulo {
+  width: 95%;
+  height: 5px;
+  border-radius: 20px;
+  background-color: #2888b1;
+  border: 0;
+}
+
+/* grid principal */
+.relatorio_vendedor_grid_conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  gap: 16px 8px;
+  margin: 0px 64px;
+  height: 100%;
+}
+
+.relatorio_vendedor_perfil_usuario h1 {
+  color: #1B98E0;
+  font-size: 24px;
+}
+
+.relatorio_vendedor_perfil_usuario h2 {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 16px;
+}
+
+/* info */
+#relatorio_vendedor_text_1 {
+grid-column: 1;
+grid-row: 1;
+}
+
+#relatorio_vendedor_text_2 {
+grid-column: 2;
+grid-row: 1;
+}
+
+#relatorio_vendedor_text_3 {
+grid-column: 1;
+grid-row: 3;
+}
+
+#relatorio_vendedor_text_4 {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: flex-end;
+}
+
+.relatorio_vendedor_localizacao {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.relatorio_vendedor_dados_pessoais {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.relatorio_vendedor_perfil_usuario {
+  grid-column: 2;
+  grid-row: 3 / 5;
   text-align: center;
-  font-size: smaller;
+  justify-content: center;
+  align-items: center;
 }
-  
-.main_text_info_container {
-  grid-column: span 2;
+
+.relatorio_vendedor_perfil_usuario img {
+  width: 146px;
+  height: 146px;
 }
-  
-.relatorio_vendedor_filtro {
-  width: 543px;
-  height: 43px;
-  border: 1px solid rgba(0, 0, 0, 0.50);
-  background: #F1F1F1;
-  color: #000;
-  font-family: Jost;
+
+.relatorio_vendedor_text{
+  display: flex;
+  align-items: center;
+  height: min-content;
+}
+
+.relatorio_vendedor_text img{
+  margin: 0px 8px;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+  justify-self: center;
+}
+
+.relatorio_vendedor_vertical {
+border: none;
+background-color: #1B98E0;
+border-radius: 10px;
+width: 10px;
+height: 46px;
+}
+
+.relatorio_vendedor_text h1 {
+position: relative;
+font-size: 32px;
+color: #2888b1;
+}
+
+/* inputs */
+.relatorio_vendedor_grid_conteudo input {
+  height: 34px;
+
+  border: 2px #1B98E0 solid;
+  outline: none;
+  border-radius: 5px;
+  text-indent: 5px;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  padding-left: 10px;
-}  
+  background-color: transparent;
+}
+
+.relatorio_vendedor_grid_conteudo label {
+font-size: 20px;
+color: #0f3b62;
+font-weight: 600;
+}
+
+/* Pesquisar Usuário */
+.relatorio_vendedor_pesquisar_usuario h2 {
+color: rgba(87, 149, 206, 0.60);
+font-size: 20px;
+max-width: 590px;
+}
+
+/* Localização */
+.relatorio_vendedor_localizacao_conjunto {
+display: grid;
+grid-template-columns: 1fr 1fr;
+justify-content: start;
+align-items: center;
+column-gap: 2%;
+
+max-width: 590px;
+}
+
+/* Dados Pessoais */
+.relatorio_vendedor_dados_pessoais,
+ .relatorio_vendedor_dados_pessoais_item,
+ .relatorio_vendedor_localizacao_item input,
+ .relatorio_vendedor_localizacao_item,
+ .relatorio_vendedor_localizacao,
+ .relatorio_vendedor_pesquisar_usuario_item  {
+  display: flex;
+  flex-direction: column;
+}
+
+.relatorio_vendedor_dados_pessoais_item input, .relatorio_vendedor_pesquisar_usuario_item input  {
+  max-width: 590px;
+}
+
+.relatorio_vendedor_dados_pessoais_conjunto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: start;
+  align-items: center;
+  column-gap: 2%;
+
+  max-width: 590px;
+}
+
+.footer_temporario_relatorio_vendedor, #relatorio_vendedor_text_titulo_mobile  {
+  display: none;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.gerenciar_pedidos_table {
+  margin: 0px 5% 2% 5%;
+}
+
+.gerenciar_pedidos_table_filtro{
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  padding: 0 8px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+  & select{
+    background-color: var(--carolina);
+    border: 0;
+    height: 32px;
+  }
+
+  & select:focus-visible{
+    outline: solid 1px #e0e0e0;
+  }
+}
+
+.gerenciar_pedidos_filtro_titulo{
+  color: #fff;
+}
+
+.gerenciar_pedidos_table_holder{
+  *{
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: left;
+  }
+
+  table, & thead{
+    border: solid 1px var(--carolina);
+    width: 100%;
+  }
+
+  col{
+    border-left: solid 1px var(--carolina);
+    border-right: solid 1px var(--carolina);
+  }
+
+  th{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--cinza);
+  }
+
+  td {
+    height: 100%;
+    color: var(--sappire);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  tr{
+    background-color: var(--branco_gelo);
+    min-height: 48px;
+    border-radius: 10px;
+  }
+
+
+  tbody > tr:nth-child(odd){
+    background-color: var(--azul_leve);
+  }
+
+  /*Individual para cada tabela */
+  .gerenciar_pedidos_table_col-1,
+  .gerenciar_pedidos_table_col-4{
+    width: 4%;
+  }
+  .gerenciar_pedidos_table_col-3,
+  .gerenciar_pedidos_table_col-6{
+    width: 8%;
+  }
+
+  .gerenciar_pedidos_table_col-2,
+  .gerenciar_pedidos_table_col-5,
+  .gerenciar_pedidos_table_col-7{
+    width: 20%;
+  }
+}
+
+
+/* <<< MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+@media (max-width: 1024px) {
+  /* NAVBAR */
+  .relatorio_vendedor_nav_bar { 
+    width: 100%;
+    height: 67px;
+    background-color: black;
+  }
+
+  /* CORPO PRINCIPAL */
+  .relatorio_vendedor_body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    
+    width: 95%;
+    max-width: none;
+    height: 1300px;
+    border-radius: 10px;
+    margin: 1.5%;
+    margin-top: 86px;
+  }
+
+  /* header */
+  .relatorio_vendedor_titulo, #relatorio_vendedor_titulo_2 {
+    position: absolute;
+
+    display: grid;
+    grid-template-columns: auto;
+    align-content: center;
+    justify-items: center;
+    
+    width: 100%;
+    margin: 0%;
+  }
+
+  #relatorio_vendedor_titulo_1 {
+    top: -85px;
+  }
+
+  #relatorio_vendedor_titulo_2 {
+    height: 86px;
+    margin-left: 5%;
+  }
+
+  .relatorio_vendedor_text_titulo {
+    display: flex;
+    justify-self: start;
+  }
+
+  .relatorio_vendedor_linha_titulo, .relatorio_vendedor_pesquisar_usuario h2 {
+    display: none;
+  }
+
+  /* grid principal */
+  .relatorio_vendedor_grid_conteudo {
+    display: grid;
+    grid-template-columns: auto;  
+    grid-template-rows: repeat(8, min-content);
+    margin: 3% 2%;
+    row-gap: 24px;
+  }
+
+  /* info */
+  #relatorio_vendedor_text_1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
   
-.relatorio_vendedor_table_wrapper {
-  width: 100%;
-  max-height: 750px;
-  overflow-y: auto;
-  border: 1px solid rgba(0, 0, 0, 0.30);
+  #relatorio_vendedor_text_2 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  #relatorio_vendedor_text_3 {
+    grid-column: 1;
+    grid-row: 5;
+  }
+  
+  #relatorio_vendedor_text_4 {
+    grid-column: 1;
+    grid-row: 7;
+    align-self: flex-end;
+  }
+  
+  .relatorio_vendedor_pesquisar_usuario {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .relatorio_vendedor_dados_pessoais {
+    grid-column: 1;
+    grid-row: 6;
+  }
+
+  .relatorio_vendedor_localizacao {
+    grid-column: 1;
+    grid-row: 4;
+  }
+ 
+  .relatorio_vendedor_perfil_usuario {
+    grid-column: 1;
+    grid-row: 8;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .relatorio_vendedor_dados_pessoais_conjunto, .relatorio_vendedor_localizacao_conjunto, .relatorio_vendedor_forms input {
+    max-width: none;
+  }
+
+  .footer_temporario_relatorio_vendedor {
+    position: relative; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+
+    width: 100%;
+    height: auto; 
+    margin-top: 100px;
+
+    overflow: hidden; 
+  }
+
+  .footer_temporario_relatorio_vendedor img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+  }
+
+  /* tabela */
+  .gerenciar_pedidos_table {
+    margin: 100px 3% 0px 3%;
+  }
+
+  .font_titulo{
+    font-size: 1.5rem;
+  }
+  
+  .gerenciar_pedidos_quadrado_container {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .gerenciar_pedidos_body_container {
+    padding: 24px 16px 16px;
+    gap: 8px;
+  }
+
+  .gerenciar_pedidos_body_holder {
+    padding: 8px;
+  }
+
+  .gerenciar_pedidos_main_content {
+    padding: 8px;
+  }
+
+  .base_botao{
+    min-width: 128px;
+  }
+
+  .gerenciar_pedidos_linha_sublinhado{
+    display: none;
+  }
+
+  .gerenciar_pedidos_input_ano,
+  .gerenciar_pedidos_input_mes{
+    width: 100%;
+  }
+
+  .gerenciar_pedidos_mes_select,
+  .gerenciar_pedidos_select_status,
+  .gerenciar_pedidos_ano_select{
+    width: 100%;
+  }
+
+  .gerenciar_pedidos_table_holder{
+    *{
+      padding: 4px;
+    }
+
+    th{
+      font-size: 0.75rem;
+    }
+
+    td{
+      height: 100%;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.625rem;
+    }
+  }
 }
-
-.relatorio_vendedor_table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-  transform: translateY(-10px);
-}
-
-.relatorio_vendedor_table tr{
-  margin-top: 10px;
-}
-
-
-.relatorio_vendedor_table th {
-  height: 64px; /* Fixed height for the header row */
-  text-align: center;
-  vertical-align: middle;
-  background-color: #f1f1f1;
-  font-family: Jost;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.relatorio_vendedor_table td {
-  height: 45px; /* Fixed height for table rows */
-  text-align: center;
-  vertical-align: middle;
-  background-color: #dce5eb;
-  overflow: hidden;
-  padding-left: 50px;
-  padding-right: 50px;
-  max-width: 175px;
-  text-overflow: ellipsis;
-  box-sizing: border-box;
-}
-
-.relatorio_vendedor_table th, .relatorio_vendedor_table td {
-  border: 1px solid rgba(0, 0, 0, 0.30);
-}
-
