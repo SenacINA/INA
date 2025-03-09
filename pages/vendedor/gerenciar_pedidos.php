@@ -104,8 +104,8 @@
                   <span class="gerenciar_pedidos_estatistica_descricao">R$14.145,35</span>
                 </div>
                 <div class="gerenciar_pedidos_card">
-                  <span class="gerenciar_pedidos_titulo">Total De Vendas</span>
-                  <span class="gerenciar_pedidos_estatistica_descricao">14 UNI</span>
+                  <span class="gerenciar_pedidos_titulo font_subtitulo">Total De Vendas</span>
+                  <span class="gerenciar_pedidos_estatistica_descricao font_descricao">14 UNI</span>
                 </div>
                 <div class="gerenciar_pedidos_card">
                   <span class="gerenciar_pedidos_titulo">Tempo Medio De Entrega</span>
@@ -128,6 +128,10 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="gerenciar_pedidos_header_title">
+      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg" />
+      <h1 class="gerenciar_pedidos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_pedidos_table">
       <div class="gerenciar_pedidos_table_filtro bg_carolina">

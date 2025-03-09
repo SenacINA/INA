@@ -2,7 +2,7 @@
   padding: 56px 48px 16px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
 }
 
 .gerenciar_pedidos_body_holder {
@@ -136,9 +136,18 @@
   gap: 16px;
 }
 
+.gerenciar_pedidos_input_ano,
+.gerenciar_pedidos_input_mes{
+  width: 100%;
+}
+
 .gerenciar_pedidos_inputs_esquerda {
   display: flex;
   gap: 8px;
+
+  select{
+    width: 100%;
+  }
 }
 
 .gerenciar_pedidos_select_status {
@@ -199,19 +208,13 @@
 }
 
 .gerenciar_pedidos_titulo {
-  color: #000;
-  font-family: Jost;
-  font-size: 16px;
-  font-style: normal;
+  font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
 }
 
 .gerenciar_pedidos_estatistica_descricao {
-  color: #000;
-  font-family: Jost;
-  font-size: 16px;
-  font-style: normal;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -262,6 +265,19 @@
 @media (max-width:1024px) {
   .font_titulo{
     font-size: 1.5rem;
+  }
+
+  .gerenciar_pedidos_estatistica_holder{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .gerenciar_pedidos_titulo {
+    font-size: 1rem;
+  }
+  
+  .gerenciar_pedidos_estatistica_descricao {
+    font-size: 0.75rem;
   }
   .gerenciar_pedidos_quadrado_container {
     grid-template-rows: 1fr 1fr;
