@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
-<body class="gerenciar_pedidos_main_container">
+<body>
   <nav class="gerenciar_pedidos_navbar_principal" style="background-color: purple;"></nav>
   <main class="gerenciar_pedidos_body_container">
     <div class="gerenciar_pedidor_firula_holder">
@@ -37,19 +37,19 @@
               </div>
               <form action="" method="post" class="gerenciar_pedidos_forms_pesquisa_pedidos">
                 <div class="gerenciar_pedidos_form_cliente">
-                  <label class="gerenciar_pedidos_label_cod font_subtitulo font_celadon">Código Do Produto / Nome Cliente</label>
-                  <input type="text" spellcheck="false" class="gerenciar_pedidos_input_cod base_input">
+                  <label class="font_subtitulo font_celadon">Código Do Produto / Nome Cliente</label>
+                  <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="gerenciar_pedidos_inputs_esquerda">
                   <div class="gerenciar_pedidos_input_status">
-                    <label for="select_cod" class="gerenciar_pedidos_label_status font_subtitulo font_celadon">Status</label>
+                    <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
                     <select name="select_cod" class="gerenciar_pedidos_select_status base_input">
                       <option value="Entregue">Entregue</option>
                       <option value="Em transporte">Em transporte</option>
                     </select>
                   </div>
                   <div class="gerenciar_pedidos_input_mes">
-                    <label for="mes" class="gerenciar_pedidos_mes font_subtitulo font_celadon">Mês</label>
+                    <label for="mes" class="font_subtitulo font_celadon">Mês</label>
                     <select name="mes" id="mes" class="gerenciar_pedidos_mes_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
                       <option value="janeiro">Janeiro</option>
@@ -67,7 +67,7 @@
                     </select>
                   </div>
                   <div class="gerenciar_pedidos_input_ano">
-                    <label for="ano" class="gerenciar_pedidos_ano font_subtitulo font_celadon">Ano</label>
+                    <label for="ano" class="font_subtitulo font_celadon">Ano</label>
                     <select name="ano" id="ano" class="gerenciar_pedidos_ano_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
                       <option value=" 2020">2020</option>
@@ -85,8 +85,8 @@
                   </div>
                 </div>
                 <div class="gerenciar_pedidos_holder_botao">
-                  <button type="reset" class="gerenciar_pedidos_cancelar base_botao btn_red">CANCELAR</button>
-                  <button type="submit" class="gerenciar_pedidos_confirmar base_botao btn_blue">CONFIRMAR</button>
+                  <button type="reset" class="base_botao btn_red">CANCELAR</button>
+                  <button type="submit" class="base_botao btn_blue">CONFIRMAR</button>
                 </div>
               </form>
             </div>

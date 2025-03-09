@@ -23,14 +23,6 @@
   height: 67px;
 }
 
-.gerenciar_pedidos_header_relatorio {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-}
-
 .gerenciar_pedidos_subtitulo_generico{
   width: 100%;
   display: flex;
@@ -88,10 +80,6 @@
   justify-items: center;
 }
 
-.gerenciar_pedidos_header_pedidos {
-  width: 100%;
-}
-
 .gerenciar_pedidos_form_cliente {
   display: flex;
   flex-direction: column;
@@ -107,12 +95,6 @@
   flex-direction: column;
   width: 100%;
 }
-
-.gerenciar_pedidos_text_pedidos {
-  font-size: 32px;
-  text-align: center;
-}
-
 .gerenciar_pedidos_linha_sublinhado {
   margin-top: 16px;
   width: 100%;
@@ -179,22 +161,6 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.gerenciar_pedidos_header_estatisticas {
-  width: 100%;
-  grid-column: 1/4;
-}
-
-.gerenciar_pedidos_text_estatisticas {
-  font-size: 32px;
-  text-align: center;
-}
-
-.gerenciar_pedidos_linha_estatisticas {
-  height: 2px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border: 0;
 }
 
 .gerenciar_pedidos_card {
