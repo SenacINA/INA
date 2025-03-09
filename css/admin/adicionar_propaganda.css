@@ -93,9 +93,12 @@
 }
 
 .admin_carrossel_input_text_forms {
+  text-indent: 5px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #1b98e0;
   width: 80%;
   height: 30px;
-  border: 0;
 }
 
 .admin_carrossel_forms_informacoes_anuncio label {
@@ -200,36 +203,51 @@
 }
 
 .admin_carrossel_cancelar_button {
+  text-transform: uppercase;
   width: 190px;
-  height: 44px;
-  border-radius: 10px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5%;
+  border-radius: 5px;
   background-color: transparent;
-  border: solid #006494;
-  font-size: 24px;
-  font-weight: 700;
-  color: #006494;
+  border: 2px solid #d73232;
+  font-size: 20px;
+  font-weight: 600;
+  color: #d73232;
 }
 
 .admin_carrossel_excluir_button {
+  text-transform: uppercase;
   width: 190px;
-  height: 44px;
-  border-radius: 10px;
-  background-color: transparent;
-  border: solid #3bb0e9;
-  font-size: 24px;
-  font-weight: 700;
-  color: #3bb0e9;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5%;
+  background-color: #d73232;
+  border-radius: 5px;
+  border: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
 }
 
 .admin_carrossel_salvar_button {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5%;
   width: 190px;
-  height: 44px;
-  border-radius: 10px;
-  background-color: transparent;
-  border: solid #006494;
-  font-size: 24px;
-  font-weight: 700;
-  color: #006494;
+  height: 48px;
+  border-radius: 5px;
+  background-color: #1b98e0;
+  border: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
 }
 
 .admin_carrossel_buttons_container {
