@@ -155,6 +155,7 @@
 }
 
 .editar_produto_text_editor {
+    max-width: 568px;
     display: flex;
     flex-direction: column;
     gap: 40px;
