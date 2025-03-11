@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="../../css/index.css">
+      <link rel="stylesheet" href="../../css/style.css">
       <link rel="stylesheet" href="../../css/vendedor/editar_produto.css">
       <link rel="stylesheet" href="../../css/admin/admin_cupom.css">
       <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -39,36 +40,36 @@
                   <div class='editar_produto_form_input'>
                      <div class='editar_produto_input'>
                         <label for="nomeProduto">Nome do Produto</label>
-                        <input type="text" id='nomeProduto' name='nomeProduto'>
+                        <input class='base_input' type="text" id='nomeProduto' name='nomeProduto'>
                      </div>
                      <div class='editar_produto_small_input'>
                         <div class='editar_produto_input'>
                            <label for="valorProduto">Valor</label>
-                           <input type="number" id='valorProduto' name='valorProduto'>
+                           <input class='base_input' type="number" id='valorProduto' name='valorProduto'>
                         </div>
                         <div class='editar_produto_input'>
                            <label for="categoriaProduto">Categoria</label>
-                           <input type="text" id='categoriaProduto' name='categoriaProduto'>
+                           <input class='base_input' type="text" id='categoriaProduto' name='categoriaProduto'>
                         </div>
                      </div>
                      <div class='editar_produto_input'>
                         <label for="marcaProduto">Marca</label>
-                        <input type="text" id='marcaProduto' name='marcaProduto'>
+                        <input class='base_input' type="text" id='marcaProduto' name='marcaProduto'>
                      </div>
                      <div class='editar_produto_small_input'>
                         <div class='editar_produto_input'>
                            <label for="codigoProduto">Código</label>
-                           <input type="number" id='codigoProduto' name='codigoProduto'>
+                           <input class='base_input' type="number" id='codigoProduto' name='codigoProduto'>
                         </div>
                         <div class='editar_produto_input'>
                            <label for="estoqueProduto">Estoque</label>
-                           <input type="number" id='estoqueProduto' name='estoqueProduto'>
+                           <input class='base_input' type="number" id='estoqueProduto' name='estoqueProduto'>
                         </div>
                      </div>
                      <div class='editar_produto_small_input'>
                         <div class='editar_produto_input'>
                            <label for="origemProduto">Origem</label>
-                           <input type="text" id='origemProduto' name='origemProduto'>
+                           <input class='base_input' type="text" id='origemProduto' name='origemProduto'>
                         </div>
                      </div>
                   </div>
@@ -89,15 +90,15 @@
                      <div class='editar_produto_small_input'>
                         <div class='editar_produto_input'>
                            <label for="pesoLiquidoProduto">Peso Líquido</label>
-                           <input type="number" id='pesoLiquidoProduto' name='pesoProduto'>
+                           <input class='base_input' type="number" id='pesoLiquidoProduto' name='pesoProduto'>
                         </div>
                         <div class='editar_produto_input'>
                            <label for="pesoBrutoProduto">Peso Bruto</label>
-                           <input type="text" id='pesoBrutoProduto' name='pesoBrutoProduto'>
+                           <input class='base_input' type="text" id='pesoBrutoProduto' name='pesoBrutoProduto'>
                         </div>
                         <div class='editar_produto_input'>
                            <label for="tipoEmbalagem">Tipo De Embalagem</label>
-                           <select id='tipoEmbalagem' name='tipoEmbalagem'>
+                           <select class='base_input' id='tipoEmbalagem' name='tipoEmbalagem'>
                               <option value="caixa">Caixa</option>
                               <option value="saco">Saco</option>
                               <option value="embalagemPlastica">Embalagem Plástica</option>
@@ -106,27 +107,26 @@
                         </div>
                         <div class='editar_produto_input'>
                            <label for="larguraProduto">Largura</label>
-                           <input type="text" id='larguraProduto' name='larguraProduto'>
+                           <input class='base_input' type="text" id='larguraProduto' name='larguraProduto'>
                         </div>
                         <div class='editar_produto_input'>
                            <label for="alturaProduto">Altura</label>
-                           <input type="text" id='alturaProduto' name='alturaProduto'>
+                           <input class='base_input' type="text" id='alturaProduto' name='alturaProduto'>
                         </div>
                         <div class='editar_produto_input'>
                            <label for="comprimentoProduto">Comprimento</label>
-                           <input type="text" id='comprimentoProduto' name='comprimentoProduto'>
+                           <input class='base_input' type="text" id='comprimentoProduto' name='comprimentoProduto'>
                         </div>
                      </div>
                   </div>
                </div>
                <div class='editar_produto_form'>
                   <div class='editar_produto_text_editor'>
-                     <div class='editar_produto_form_title'>
+                     <div class='editar_produto_form_title' id='desc-produto-title'>
                         <div class='editar_produto_line'></div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="2 2 20 20">
                            <path fill="#247BA0" d="M14 17H7v-2h7m3-2H7v-2h10m0-2H7V7h10m2-4H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/>
                         </svg>
-
                         <h3>
                            Descrição Do Produto
                         </h3>
@@ -197,7 +197,7 @@
                      </div>
                   </div>
                   <div class='editar_produto_form'>
-                     <div class='editar_produto_form_title'>
+                     <div class='editar_produto_form_title' id='promocao_title'>
                         <div class='editar_produto_line'></div>
                         <h3>
                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -212,6 +212,46 @@
                         <input type="checkbox" name="toggle-group">
                         <span class="slider"></span>
                      </label>
+                     <div class='editar_produto_promocao'>
+                        <h4>Tipos de Promoção</h4>
+                        <div class='radio_inputs'>
+                           <label for="reaisSobreTotal">Reais sobre o Total</label>
+                           <input name='tipoPromocaoProduto' id='reaisSobreTotal' type="radio">
+                        </div>
+                        <div class='radio_inputs'>
+                           <label for="reaisSobreFrete">Reais sobre o Frete</label>
+                           <input name='tipoPromocaoProduto' id='reaisSobreFrete' type="radio">
+                        </div>
+                        <div class='radio_inputs'>
+                           <label for="porcenSobreProduto">Porcentagem sobre o Total</label>
+                           <input name='tipoPromocaoProduto' id='porcenSobreProduto' type="radio">
+                        </div>
+                     </div>
+                     <div class='editar_produto_small_input'>
+                        <div class='editar_produto_input'>
+                           <label for="produtoDescontPromo">Desconto da Promoção</label>
+                           <div class="input_icon_container">
+                              <input class='base_input' type="text" id='produtoDescontPromo' name='produtoDescontPromo'>
+                              <div class='input_icon'>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                       d="M6.82824 6.82824C8.3901 5.26637 8.3901 2.73326 6.82824 1.1714C5.26637 -0.390466 2.73326 -0.390466 1.1714 1.1714C-0.390466 2.73326 -0.390466 5.26637 1.1714 6.82824C2.73389 8.39073 5.26637 8.39073 6.82824 6.82824ZM22.8281 17.1713C21.2663 15.6094 18.7332 15.6094 17.1713 17.1713C15.6094 18.7332 15.6094 21.2663 17.1713 22.8281C18.7332 24.39 21.2663 24.39 22.8281 22.8281C24.3906 21.2663 24.3906 18.7338 22.8281 17.1713ZM22.7069 2.70701L21.2931 1.29327C20.5119 0.512028 19.2457 0.512028 18.465 1.29327L1.29327 18.465C0.512028 19.2463 0.512028 20.5125 1.29327 21.2931L2.70701 22.7069C3.48826 23.4881 4.7545 23.4881 5.53512 22.7069L22.7069 5.53512C23.4881 4.7545 23.4881 3.48826 22.7069 2.70701Z"
+                                       fill="#247BA0" />
+                                 </svg>
+                              </div>
+                           </div>  
+                        </div>             
+                     </div>
+                     <div class='editar_produto_duas_colunas'v>
+                        <div class='editar_produto_input'>
+                           <label for="origemProduto">Origem</label>
+                           <input class='base_input' type="text" id='origemProduto' name='origemProduto'>
+                        </div>
+                        <div class='editar_produto_input'>
+                           <label for="origemProduto">Origem</label>
+                           <input class='base_input' type="text" id='origemProduto' name='origemProduto'>
+                        </div>
+                     </div> 
                   </div>
                </div>
             </form>

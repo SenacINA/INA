@@ -17,6 +17,12 @@
         flex-direction: row;
         align-items: center;
     }
+
+    h4 {
+        font-size: 24px;
+        color: var(--cinza);
+        font-weight: 600;
+    }
 }
 
 .editar_produto_container {
@@ -93,51 +99,19 @@
 .editar_produto_input {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    input {
-        background-color: transparent;
-        border-radius: 5px;
-        padding: 0 8px;
-        height: 32px;
-        border: 2px solid var(--carolina);
-    }
-
-    input:hover, select:hover, input:focus, select:focus {
-        cursor: pointer;
-        outline: none;
-        border-color: var(--sappire);
-    }
+    flex-grow: 1;
 
     label {
         color: var(--cinza);
         font-size: 24px;
     }
 
-    input[type="number"] {
-        -moz-appearance: textfield; /* Remove as setas padrão no Firefox */
-        -webkit-appearance: none; /* Remove as setas padrão no Chrome, Safari, Edge */
-        appearance: none; /* Remove as setas padrão no Chrome, Safari, Edge */
-    }
-    
-    input[type="number"]::-webkit-outer-spin-button,
-    input[type="number"]::-webkit-inner-spin-button {
-        -webkit-appearance: none; /* Remove as setas padrão no Chrome, Safari, Edge */
-    }
-    
-
     select {
-        background-color: transparent;
-        border-radius: 5px;
-        padding-left: 8px;
-        height: 32px;
-        border: 2px solid var(--carolina);
-        color: var(--cinza);
-        font-size: 16px;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIj4KICA8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHRyYW5zZm9ybT0ibWF0cml4KC0xIDAgMCAxIDQ4IDApIiBmaWxsPSIjMUI5OEUwIi8+CiAgPHBhdGggZD0iTTM0LjM0MTQgMTUuMjcyOUgxNC43OThDMTQuNjAwMSAxNS4yNzM2IDE0LjQwNjEgMTUuMzMyMiAxNC4yMzcgMTUuNDQyNEMxNC4wNjc4IDE1LjU1MjYgMTMuOTI5OSAxNS43MTAyIDEzLjgzNzkgMTUuODk4M0MxMy43NDYgMTYuMDg2NSAxMy43MDM2IDE2LjI5NzkgMTMuNzE1NCAxNi41MTAxQzEzLjcyNzEgMTYuNzIyMSAxMy43OTI0IDE2Ljk2NjcgMTMuOTA0NCAxNy4xMDE4TDIzLjY3NjEgMzIuMjU1M0MyNC4wODExIDMyLjg4MzYgMjUuMDU2MSAzMi44ODM2IDI1LjQ2MjEgMzIuMjU1M0wzNS4yMzM4IDE3LjEwMThDMzUuMzQ3IDE2LjkyNzAgMzUuNDEzMyAxNi43MjIzIDM1LjQyNTYgMTYuNTA5OUMzNS40MzggMTYuMjk3NSAzNS4zOTU5IDE2LjA4NTUgMzUuMzAzOSAxNS44OTcwQzM1LjIxMTkgMTUuNzA4NSAzNS4wNzM1IDE1LjU1MDYgMzQuOTAzOCAxNS40NDA2QzM0LjczNDEgMTUuMzMwNiAzNC41Mzk2IDE1LjI3MjYgMzQuMzQxNCAxNS4yNzI5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+');
-        background-size: 32px 32px;
+        background-size: 48px 48px;
         background-repeat: no-repeat;
         background-position: right 0 center;
         line-height: 1;
@@ -152,6 +126,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
 }
 
 .editar_produto_text_editor {
@@ -170,18 +145,18 @@
 /* Estilos Gerais do Editor */
 .editor-content {
     all: initial;
-    min-height: 300px;
-    max-height: 300px;
+    min-height: 272px;
+    max-height: 272px;
+    height: 272px; 
     padding: 8px;
     border: 2px solid var(--carolina);
     border-radius: 0 0 5px 5px;
-    background: transparent;
+    background: var(--branco_gelo);
     color: #333;
     font-family: 'Jost', sans-serif;
     overflow-y: auto;
     word-wrap: break-word;
     white-space: pre-wrap;
-    height: 300px; 
     max-width: 100%;
     scrollbar-width: thin;
     scrollbar-color: var(--carolina) var(--azul_leve);
@@ -277,6 +252,10 @@
 [data-text-align="right"] { text-align: right; }
 [data-text-align="justify"] { text-align: justify; }
 
+#desc-produto-title {
+    margin-bottom: 16px;
+}
+
 /* Toolbar */
 .toolbar {
     display: flex;
@@ -286,7 +265,6 @@
     background: var(--carolina);
     border: 2px solid var(--carolina);
     border-radius: 5px 5px 0 0;
-    margin-top: 1rem;
     height: 56px;
     width: 100%;
 
@@ -368,6 +346,129 @@
             background: var(--celadon);
         }
     }
+}
+
+/* Promoção */
+
+#promocao_title {
+    margin-top: 1px;
+}
+
+.editar_produto_promocao {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.radio_inputs {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 8px;
+    align-items: center;
+    background-color: var(--cinza);
+    transition: filter 0.2s ease, background-color 0.2s ease;
+    border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+        filter: brightness(1.4);
+    }
+    
+    &:active {
+        filter: brightness(0.9);
+    }
+
+    label {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        color: var(--branco_gelo);
+        flex-grow: 1;
+        height: 100%;
+        padding: 8px 0;
+        transition: color 0.2s ease;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &:has(input[type="radio"]:checked) {
+        background-color: var(--sappire);
+        filter: brightness(1);
+    }
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 32px;
+        height: 32px;
+        border: 2px solid var(--branco_gelo);
+        border-radius: 50%;
+        background-color: transparent;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: border-color 0.2s ease;
+        cursor: pointer;
+
+        &:checked::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background-color: var(--branco_gelo);
+            border-radius: 50%;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--branco_gelo);
+            outline-offset: 2px;
+        }
+    }
+}
+
+.input_icon_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    & > input {
+        width: 100%;
+        border-radius: 5px 0px 0px 5px ;
+        border-right: none;
+    }
+}
+
+.input_icon {
+    height: 100%;
+    aspect-ratio: 1 / 1 ;
+    background-color: var(--carolina); 
+    border-radius: 0px 5px 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > svg { 
+        width: 24px;
+        height: 24px;
+        path {
+            fill: var(--branco_gelo);
+        }
+    }
+}
+
+input:focus + .input_icon {
+    outline: 1px solid var(--carolina);
+}
+
+.editar_produto_duas_colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 16px;
 }
 
 @media (max-width: 768px) {
