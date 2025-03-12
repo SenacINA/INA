@@ -16,13 +16,13 @@
     <nav class="perfil_admin_nav_bar"></nav>  
 
     <div class="perfil_admin_body">
-      <div class="perfil_admin_header">
-        <div class="perfil_admin_text_header">
+      <div class="perfil_admin_titulo">
+        <div class="perfil_admin_text_titulo">
           <img src="../../image/admin/perfil_admin/perfil_icon.svg" alt="">
           <h1>PERFIL ADMIN</h1>
         </div>
         
-        <hr class="perfil_admin_linha_header">
+        <hr class="perfil_admin_linha_titulo">
       </div>
 
       <div class="perfil_admin_grid_conteudo">
@@ -38,13 +38,15 @@
         </div>
         
         <div class="perfil_admin_foto">
-          <img src="../../image/admin/perfil_admin/perfil_admin.svg" alt="" id="img_admin_perfil">
+          <label for="perfil_admin_foto">
+            <img src="../../image/admin/perfil_admin/perfil_admin.svg" alt="" id="img_admin_perfil">
+          </label>
 
           <form action="" method="post" class="perfil_admin_foto_pfp">
             <label for="perfil_admin_foto" class="perfil_admin_foto_label">
               <img src="../../image/admin/perfil_admin/enviar_arquivo.png" alt="Enviar Arquivo" class="perfil_admin_foto">
             </label>
-            <input type="file" name="pfp" id="perfil_admin_foto">
+            <input type="file" name="pfp" id="perfil_admin_foto" style="display: none;">
           </form>
         </div>
 

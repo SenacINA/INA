@@ -1,13 +1,13 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Jost';
+  font-family: "Jost";
 }
 
 .fundo {
   height: 100%;
   width: 100%;
-  background-color: #DCE5EB;
+  background-color: #dce5eb;
 }
 
 .carrinho_pagamentos {
@@ -30,7 +30,7 @@
 .main_pagamentos {
   grid-row: 2;
   width: 1600px;
-  height: 678px;
+  height: 740px;
   background-color: #fff;
 }
 
@@ -63,7 +63,7 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal
+  line-height: normal;
 }
 
 .conversar_vendedor {
@@ -76,14 +76,14 @@
   line-height: normal;
 }
 
-.botao_whats{
+.botao_whats {
   width: 200px;
-  height: 46px;
-  border-radius: 30px;
-  background: #128C7F;
+  height: 48px;
+  border-radius: 5px;
+  background: #128c7f;
   border: none;
-  color: #FFF;
-  font-size: 26px;
+  color: #fff;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -91,7 +91,7 @@
 }
 
 .nao_tem {
-  color: rgba(0, 0, 0, 0.70);
+  color: rgba(0, 0, 0, 0.7);
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
@@ -100,7 +100,7 @@
 }
 
 .baixar_whats {
-  color: #4CAAD6;
+  color: #4caad6;
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
@@ -114,10 +114,10 @@
   background: rgba(0, 0, 0, 0.05);
 }
 
-.main_text_carrinho_pagamentos   {
-  color: #247BA0;
+.main_text_carrinho_pagamentos {
+  color: #247ba0;
   text-align: center;
-  font-feature-settings: 'liga' off, 'clig' off;
+  font-feature-settings: "liga" off, "clig" off;
   font-family: Jost;
   font-size: 35px;
   font-style: normal;
@@ -129,4 +129,41 @@
 .footer_carrinho {
   position: relative;
   margin-top: 164px;
+}
+
+.botoes {
+  display: flex;
+  column-gap: 5%;
+}
+
+.finalizar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5%;
+  border: 0;
+  border-radius: 5px;
+  background-color: #1b98e0;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  height: 48px;
+  width: 200px;
+}
+
+.voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5%;
+  border: 2px solid #d73232;
+  border-radius: 5px;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  color: #d73232;
+  height: 48px;
+  width: 200px;
 }

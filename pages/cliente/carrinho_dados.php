@@ -53,8 +53,7 @@
           </select>
         </form>
         <div class="botoes_carrinho">
-          <button class="voltar_carrinho">Voltar</button>
-          <button class="salvar_carrinho"><a href="carrinho_pagamentos.php" class="conexao_carrinho">Salvar</a></button>
+          <button class="salvar_carrinho"><img src="../../image/geral/confirm_botao.svg">Salvar</button>
         </div>
       </div>
     </div>

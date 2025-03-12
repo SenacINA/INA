@@ -18,7 +18,6 @@
         <img src="../../image/geral/logo-eaoquadrado.png">
         <p class="cadastro_bem_vindo">Bem-vindo!</p>
         <p class="cadastro_text">Cadastre suas credenciais</p>
-        <img src="../../image/geral/linha-divisoria-azul.png" class="divisoria_cadastro">
       </div>
 
       <form class="formulario_cadastro">
@@ -42,8 +41,8 @@
         </ul>
       </div>
       <div class="botoes">
-        <button class="voltar">Voltar</button>
-        <button class="salvar"><a href="../home.php"class="conexao_home">Salvar</a></button>
+        <button class="voltar"><img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar</button>
+        <button class="salvar"><img src="../../image/geral/confirm_botao.svg" alt="">Cadastrar</button>
       </div>
     </div>
   </main>

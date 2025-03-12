@@ -4,7 +4,8 @@
   font-family: Jost;
 }
 
-body, html{
+body,
+html {
   height: 100%;
   width: 100%;
 }
@@ -12,21 +13,21 @@ body, html{
 .navbar {
   width: 100%;
   height: 67px;
-  background-color: #DCE5EB;
+  background-color: #dce5eb;
 }
 
 .gerenciar_produtos_header {
   width: 100%;
-  height: 192px; 
-  background-color: #0F3B62;
-  background-size: cover; 
+  height: 192px;
+  background-color: #0f3b62;
+  background-size: cover;
   align-items: center;
   justify-items: center;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-weight: normal;
 }
 
-.gerenciar_produtos_header_title{
+.gerenciar_produtos_header_title {
   color: white;
   display: flex;
   justify-content: center;
@@ -34,16 +35,16 @@ body, html{
   top: 75%;
 }
 
-.gerenciar_produtos_header_linha{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 75%;
-    width: 60%;
-    height: 13px;
-    background-color: #2888B1; 
-    border-radius: 20px;
+.gerenciar_produtos_header_linha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 75%;
+  width: 60%;
+  height: 13px;
+  background-color: #2888b1;
+  border-radius: 20px;
 }
 
 .gerenciar_produtos_main_container {
@@ -75,7 +76,7 @@ body, html{
 .gerenciar_produtos_informacoes_cliente {
   display: grid;
   grid-template-columns: repeat(2, min-content);
-  grid-template-rows: repeat(3, min-content );
+  grid-template-rows: repeat(3, min-content);
   align-items: center;
   justify-items: center;
 }
@@ -83,16 +84,16 @@ body, html{
 .gerenciar_produtos_main_content {
   width: 1822px;
   height: 590px;
-  border: 2px solid rgba(0, 0, 0, 0.30);
-  background: #F1F1F1;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: #f1f1f1;
 }
 
 .gerenciar_produtos_main_text_pesquisa_container {
   grid-column: 1;
-
 }
 
-.gerenciar_produtos_main_text_pesquisa, .main_text_info {
+.gerenciar_produtos_main_text_pesquisa,
+.main_text_info {
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -102,7 +103,7 @@ body, html{
   line-height: normal;
 }
 
-.gerenciar_produtos_sub_text_info{
+.gerenciar_produtos_sub_text_info {
   color: #000;
   text-align: center;
   font-family: Jost;
@@ -115,7 +116,7 @@ body, html{
 .gerenciar_produtos_linha {
   width: 613px;
   height: 2px;
-  background: rgba(0, 0, 0, 0.30);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .gerenciar_produtos_forms_pesquisa {
@@ -133,6 +134,9 @@ body, html{
 #gerenciar_produtos_ip_email {
   grid-column: 1;
   text-indent: 5px;
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+  border-radius: 5px;
 }
 
 .gerenciar_produtos_forms_pesquisa label {
@@ -153,6 +157,12 @@ body, html{
   margin-top: 3%;
 }
 
+.gerenciar_produtos_mes_select {
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+}
+
 .gerenciar_produtos_ano {
   grid-column: 3;
   grid-row: 1;
@@ -162,11 +172,17 @@ body, html{
   grid-column: 3;
   grid-row: 2;
   height: 34px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #1b98e0;
 }
 
 .gerenciar_produtos_plano_select {
   grid-column: 1;
-  grid-row: 2;  
+  grid-row: 2;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #1b98e0;
 }
 
 .gerenciar_produtos_botoes_submit {
@@ -180,22 +196,23 @@ body, html{
   cursor: pointer;
   position: relative;
   top: 50%;
-  left: 190%;
+  left: 100%;
   padding-left: 10px;
   padding-right: 10px;
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
-  justify-items: center;
+  column-gap: 5%;
+  width: 200px;
   height: 50px;
   background-color: transparent;
   border: red solid 2px;
-  border-radius: 10px;
-  color: #F00;
+  border-radius: 5px;
+  color: #f00;
   font-family: Jost;
-  font-size: 32px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
 }
 
@@ -203,25 +220,31 @@ body, html{
   cursor: pointer;
   position: relative;
   top: 50%;
-  left: 200%;
-  display: grid;
+  left: 105%;
   padding-left: 10px;
   padding-right: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  justify-items: center;
+  width: 200px;
   height: 50px;
-  border-radius: 10px;
-  background: #2075C2;
-  color: #FFF;
+  column-gap: 5%;
+  border-radius: 5px;
+  background: #1b98e0;
+  border: 0;
+  color: #fff;
   text-align: center;
   font-family: Jost;
-  font-size: 32px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
 }
 
+.gerenciar_produtos_cancelar_submit > img,
+.gerenciar_produtos_confirmar_submit > img {
+  width: 20px;
+}
 
 .gerenciar_produtos_estatisticas {
   display: grid;
@@ -243,8 +266,6 @@ body, html{
   font-weight: bold;
 }
 
-
-
 .gerenciar_produtos_main_container {
   width: 100%;
   position: relative;
@@ -252,7 +273,7 @@ body, html{
   margin-top: 20px;
   justify-content: center;
   grid-template-columns: auto;
-  grid-template-rows: 81px 800px; 
+  grid-template-rows: 81px 800px;
   top: 1%;
 }
 
@@ -265,8 +286,8 @@ body, html{
 .gerenciar_produtos_filtro {
   width: 543px;
   height: 43px;
-  border: 1px solid rgba(0, 0, 0, 0.50);
-  background: #F1F1F1;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: #f1f1f1;
   color: #000;
   font-family: Jost;
   font-size: 20px;
@@ -276,11 +297,11 @@ body, html{
 }
 
 .gerenciar_produtos_table {
-  width: 190VH;
+  width: 190vh;
   margin-top: 20px;
   height: 752px;
-  border: 1px solid rgba(0, 0, 0, 0.30);
-  background: #F1F1F1;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: #f1f1f1;
   display: grid;
   grid-template-columns: 10.8% 26.17% 15.69% 9.97% 24.76% 12.61%;
   grid-template-rows: 64px repeat(13, 45px);
@@ -293,7 +314,7 @@ body, html{
   align-items: center;
   justify-content: center;
   justify-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.30);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   position: relative;
   color: #000;
   text-align: center;
@@ -305,9 +326,9 @@ body, html{
 }
 
 .gerenciar_produtos_table span {
-  border: 1px solid rgba(0, 0, 0, 0.30);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #DCE5EB;;
+  background-color: #dce5eb;
 }
