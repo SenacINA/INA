@@ -36,7 +36,7 @@
         </div>
 
         <div class="atualizar_usuario_pesquisar_usuario">
-          <h2>Digite o ID e o E-mail do usuário para encontra-lo
+          <h2>Digite o ID e o E-mail do usuário para encontra-lo,
           Deixe em branco para cadastrar um usuário.</h2>
           <form action="" method="post" class="atualizar_usuario_forms">
             <div class="atualizar_usuario_pesquisar_usuario_item" id="atualizar_usuario_pesquisar_usuario_item_1" >
@@ -204,7 +204,7 @@
         <div class="atualizar_usuario_botao_salvar">
           <button class="atualizar_usuario_salvar">
             <img src="../../image/admin/atualizar_usuario/v_icon.svg" alt="">
-            <label>COMFIRMAR</label>
+            <label>CONFIRMAR</label>
           </button>
         </div>
       </div>
