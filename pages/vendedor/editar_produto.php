@@ -276,7 +276,7 @@
                         </h3>
                      </div>
                      <div class='editar_produto_form'>
-                        <div class="editar_produto_imagems"></div>
+                        <div class="editar_produto_imagens"></div>
                         <div class="contador">
                            <span id="contador-total">0</span>
                            <span id="contador-restante"> / 1</span>

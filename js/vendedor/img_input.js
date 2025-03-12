@@ -2,7 +2,7 @@ let totalImagens = 0;
 
 document.getElementById('input-file').addEventListener('change', function(event) {
     const files = event.target.files;
-    const div = document.querySelector('.editar_produto_imagems');
+    const div = document.querySelector('.editar_produto_imagens');
     
     Array.from(files).forEach(file => {
         if (file) {
