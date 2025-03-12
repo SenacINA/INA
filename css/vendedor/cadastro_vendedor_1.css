@@ -54,11 +54,11 @@ body {
     justify-self: center;
     font-weight: 500;
     color: #255e7e;
-    text-align: center;
+    text-align: start;
     font-size: 32px;
 }
 
-.cadastro_vendedor1_titulo hr{
+.cadastro_vendedor1_titulo hr {
     display: flex;
     justify-self: center;
     align-self: center;
@@ -213,7 +213,7 @@ ol li::before {
         display: flex;
         flex-direction: column;
         width: 95%;
-        height: auto;  
+        height: 890px;  
         background-color: var(--Cores-Azul-Leve, #EFF3F5);
         border-radius: 10px;
     }
@@ -269,9 +269,7 @@ ol li::before {
     }
 
     .cadastro_vendedor1_botao_salvar {
-        
-        width: 95%; 
-        top: 1000px;
+        width: 105%; 
     }
 
     .cadastro_vendedor1_salvar {
@@ -284,3 +282,20 @@ ol li::before {
     }
 }
 
+@media (max-width: 425px) {
+    .cadastro_vendedor1_background {
+        height: 1025px;
+    }
+}
+
+@media (max-width: 375px) {
+    .cadastro_vendedor1_background {
+        height: 1080px;
+    }
+}
+
+@media (max-width: 320px) {
+    .cadastro_vendedor1_background {
+        height: 1180px;
+    }
+}
