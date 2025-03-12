@@ -16,9 +16,13 @@
     <div class="cadastro_vendedor1_background">
         <div class="cadastro_vendedor1_grid" >   
             <div class="cadastro_vendedor1_titulo">
-                <img class="cadastro_vendedor1_titulo_img" src="../../image/vendedor/cadastro_vendedor_1/cadastro_icon.png" alt="">
-                <h1>CADASTRO DE VENDEDOR</h1></div>
-            <hr>
+                <div class="cadastro_vendedor1_titulo_img">
+                    <img src="../../image/vendedor/cadastro_vendedor_1/cadastro_icon.png" alt="">
+                    <h1>CADASTRO DE VENDEDOR</h1>
+                </div>
+                <hr>
+            </div>
+            
             <div class="cadastro_vendedor1_lista_ordenada" >
                 <ol>
                     <h1>Bem-Vindo!</h1>
@@ -43,14 +47,14 @@
                     <li>Celular ou E-mail. </li>
                 </L>
             </div>
+
             <div class="cadastro_vendedor1_botao_salvar">
-            <button class="cadastro_vendedor1_salvar">
-                <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg" alt="">
-                <label>CONTINUAR</label>
-            </button>
+                <button class="cadastro_vendedor1_salvar">
+                    <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg" alt="">
+                    <label>CONTINUAR</label>
+                </button>
             </div>
         </div>
-      </div>
     </div>
 
 </body>
