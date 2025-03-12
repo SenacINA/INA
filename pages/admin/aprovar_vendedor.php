@@ -16,7 +16,7 @@
 
 <body>
   <?php
-  include('../../pages/geral/navbar.php');
+  include_once('../../pages/geral/navbar.php');
   ?>
   <div class="aprovar_vendedor_main_title">
     <h1 class="aprovar_vendedor_main_text">Aprovação do vendedor</h1>

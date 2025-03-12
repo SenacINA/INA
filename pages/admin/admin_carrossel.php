@@ -15,9 +15,11 @@
 </head>
 
 <body class="admin_carrossel_main_container">
-    <?php
-    include('../../pages/geral/navbar.php');
-    ?>
+
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
+
   <main class="admin_carrossel_quadrado_container">
     <div class="admin_carrossel_main_text_container">
       <h1 class="admin_carrossel_texto_main_text">ANÚNCIOS</h1>
