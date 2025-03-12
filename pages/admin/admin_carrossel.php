@@ -21,14 +21,18 @@
     </div>
     <div class="admin_carrossel_informacoes_anuncio">
       <hr class="admin_carrossel_linha_vertical_informacoes_anuncio">
-      <h1 class="admin_carrossel_main_text_informacoes_anuncio">INFORMAÇÕES DO ANÚNCIO</h1>
+      <h1 class="admin_carrossel_main_text_informacoes_anuncio">
+        <span class="admin_carrossel_info_icon">i</span> INFORMAÇÕES DO ANÚNCIO</h1>
+
+
     </div>
     <form action="" method="post" class="admin_carrossel_forms_informacoes_anuncio">
       <label for="anunciante">Nome do Anunciante</label>
       <input type="text" class="admin_carrossel_input_text_forms">
       <label for="email">E-mail</label>
       <input type="text" class="admin_carrossel_input_text_forms">
-      <input type="file" name="anuncio" id="foto_anuncio" class="admin_carrossel_input_file_forms">
+      
+      <input  type="file" name="anuncio" id="foto_anuncio" class="admin_carrossel_input_file_forms">
       <div class="admin_carrossel_file_text ">
         <p class="admin_carrossel_enviar_foto">Envie uma Foto</p>
         <p class="admin_carrossel_tamanho_foto">O tamanho do arquivo não deve ultrapassar 2MB</p>

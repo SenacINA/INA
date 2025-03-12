@@ -92,6 +92,24 @@
   height: 80%;
 }
 
+
+.admin_carrossel_main_text_informacoes_anuncio .admin_carrossel_info_icon {
+  font-weight: bold;
+  font-size: 28px; 
+  color: white; /* O texto "i" ficará invisível */
+  margin-right: 10px; /* Espaço entre o ícone e o texto */
+  background-color: rgba(36, 123, 160, 1); /* Cor de fundo */
+  border-radius: 50%; /* Faz com que o fundo fique redondo */
+  width: 30px; /* Definindo o tamanho da bolinha */
+  height: 30px; /* Definindo o tamanho da bolinha */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .admin_carrossel_input_text_forms {
   text-indent: 5px;
   background-color: transparent;
@@ -108,30 +126,43 @@
 }
 
 .admin_carrossel_input_file_forms {
+  display: flex;
   position: relative;
   left: 10%;
   top: 150%;
 }
 
 .admin_carrossel_input_file_forms::file-selector-button {
-  width: 220px;
-  height: 32px;
+  width: 412px;
+  height: 48px;
   cursor: pointer;
-  background-image: url(../../image/admin/adicionar_propaganda/EnviarArquivo.png);
-  background-color: transparent;
+  color: white;
+  background-color: #B3C6D3;
   border: 0;
-  color: transparent;
+  border-radius: 5px;
+  font-size: 20px;
+  background-image: url("../../image/admin/admin_carrossel/enviar_arquivo.png");
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: 100px center;
+
 }
+
+
 
 .admin_carrossel_input_file_forms[type="file"] {
   color: transparent;
 }
-
 .admin_carrossel_file_text {
   width: 50%;
   height: 30%;
   position: relative;
-  top: 20%;
+  top: 30%;
+  left: 10%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .admin_carrossel_enviar_foto {
@@ -296,3 +327,5 @@
   height: 666px;
   background-image: url(../../image/admin/adicionar_propaganda/Header.png);
 }
+
+
