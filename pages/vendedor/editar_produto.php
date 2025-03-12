@@ -150,13 +150,13 @@
                                     <path d="M11.3996 9.53674e-07H0.599332C0.489984 0.000306129 0.3828 0.0271611 0.289317 0.0776744C0.195834 0.128188 0.119594 0.200446 0.0688 0.286673C0.0180054 0.3729 -0.00541687 0.469831 0.00105381 0.567029C0.00752354 0.664228 0.0436401 0.758015 0.105517 0.838296L5.50567 7.78401C5.72948 8.072 6.26829 8.072 6.4927 7.78401L11.8929 0.838296C11.9554 0.758183 11.992 0.664349 11.9988 0.566988C12.0057 0.469627 11.9824 0.372463 11.9315 0.286054C11.8807 0.199644 11.8042 0.127292 11.7105 0.0768609C11.6167 0.0264297 11.5092 -0.000152588 11.3996 9.53674e-07Z" fill="#F9F9FC"/>
                                  </svg>
                               </button>
-                              <div class="dropdown-content">
-                                 <button data-command="bulletList" title="Lista não ordenada">• Lista</button>
-                                 <button data-command="orderedList" title="Lista ordenada">1. Lista</button>
+                              <div class="dropdown-content" id='dropdown_list'>
+                                 <button class='dropdown_button' data-command="bulletList" title="Lista não ordenada">• Lista</button>
+                                 <button class='dropdown_button' data-command="orderedList" title="Lista ordenada">1. Lista</button>
                               </div>
                            </div>
                            <div class="dropdown">
-                              <button type="button">
+                              <button class='dropdown_button' type="button">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20" fill="none">
                                     <path d="M30 0V3.33333H0V0H30ZM0 20H15V16.6667H0V20ZM0 11.6667H30V8.33333H0V11.6667Z" fill="#F9F9FC"/>
                                  </svg>
@@ -165,24 +165,24 @@
                                  </svg>
                               </button>
                               <div class="dropdown-content">
-                                 <button data-command="alignLeft" title="Esquerda">
+                                 <button class='dropdown_button' data-command="alignLeft" title="Esquerda">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h22M5 13h14M5 19h22M5 25h14"/>
                                     </svg>
                                  </button>
-                                 <button data-command="alignCenter" title="Centro" style='justify-content: center'>
+                                 <button class='dropdown_button' data-command="alignCenter" title="Centro" style='justify-content: center'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
                                        <path fill="currentColor" d="M30.88 8H5.12a1.1 1.1 0 0 0 0 2.2h25.76a1.1 1.1 0 1 0 0-2.2" class="clr-i-outline clr-i-outline-path-1"/>
                                        <path fill="currentColor" d="M25.5 16.2a1.1 1.1 0 1 0 0-2.2h-15a1.1 1.1 0 1 0 0 2.2Z" class="clr-i-outline clr-i-outline-path-2"/>
                                        <path fill="currentColor" d="M30.25 20H5.75a1.1 1.1 0 0 0 0 2.2h24.5a1.1 1.1 0 0 0 0-2.2" class="clr-i-outline clr-i-outline-path-3"/><path fill="currentColor" d="M24.88 26H11.12a1.1 1.1 0 1 0 0 2.2h13.76a1.1 1.1 0 1 0 0-2.2" class="clr-i-outline clr-i-outline-path-4"/><path fill="none" d="M0 0h36v36H0z"/>
                                     </svg>
                                  </button>
-                                 <button data-command="alignRight" title="Direita" style='transform: scaleX(-1);'>
+                                 <button class='dropdown_button' data-command="alignRight" title="Direita" style='transform: scaleX(-1);'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h22M5 13h14M5 19h22M5 25h14"/>
                                     </svg>
                                  </button>
-                                 <button data-command="alignJustify" title="Justificado" style='justify-content: center'>
+                                 <button class='dropdown_button' data-command="alignJustify" title="Justificado" style='justify-content: center'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="feather feather-align-justify">
                                        <line x1="21" y1="10" x2="3" y2="10"></line>
                                        <line x1="21" y1="6" x2="3" y2="6"></line>
