@@ -155,52 +155,75 @@
 }
 
 .admin_carrossel_forms_planos {
-  grid-column: 2;
-  grid-row: 2;
+  grid-area: 2/2/2/2;
   display: grid;
-  width: 90%;
+  width: 75%;
   grid-template-rows: min-content min-content min-content;
-  row-gap: 8%;
+  row-gap: 2%;
   position: relative;
-  top: 30%;
-  left: 30%;
+  top: 20%;
   height: 70%;
 }
 
 .admin_carrossel_forms_planos div {
-  width: 50%;
-  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  width: 100%;
   font-size: 20px;
   font-weight: 600;
-  padding-left: 5px;
+  padding: 10px;
+  color: white;
+  background-color: #B3C6D3; 
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
 }
 
-.admin_carrossel_calendario {
-  align-self: center;
-  width: 33px;
-  height: 28px;
+.admin_carrossel_forms_planos div:hover {
+  background-color: rgba(0, 100, 148, 1);
+}
+
+.admin_carrossel_forms_planos input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
   position: relative;
-  left: 2%;
 }
 
-.admin_carrossel_proxima_cobranca {
-  display: flex;
-  width: 80%;
-  height: 25%;
+.admin_carrossel_forms_planos input[type="checkbox"]:checked {
+  border-color: rgb(255, 255, 255);
 }
 
-.admin_carrossel_proxima_cobranca_text {
-  font-size: 20px;
-  position: relative;
-  left: 10%;
+.admin_carrossel_forms_planos input[type="checkbox"]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.3s ease-in-out;
 }
 
-.admin_carrossel_proxima_cobranca_date {
-  font-size: 16px;
-  font-weight: 400;
-  position: relative;
-  left: 10%;
+.admin_carrossel_forms_planos input[type="checkbox"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
 }
+
+.admin_carrossel_forms_planos label {
+  flex: 1; 
+  padding: 10px;
+  cursor: pointer;
+}
+
+
 
 .admin_carrossel_cancelar_button {
   text-transform: uppercase;

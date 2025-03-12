@@ -29,33 +29,27 @@
       <label for="email">E-mail</label>
       <input type="text" class="admin_carrossel_input_text_forms">
       <input type="file" name="anuncio" id="foto_anuncio" class="admin_carrossel_input_file_forms">
-      <div class="file_text">
+      <div class="admin_carrossel_file_text ">
         <p class="admin_carrossel_enviar_foto">Envie uma Foto</p>
         <p class="admin_carrossel_tamanho_foto">O tamanho do arquivo não deve ultrapassar 2MB</p>
         <p class="admin_carrossel_add_link">adicionar link url</p>
       </div>
     </form>
     <form action="" method="post" class="admin_carrossel_forms_planos">
-      <div>
-        <input type="radio" name="plano_anual" id="plano">
-        <label for="plano">Plano Anual</label>
-      </div>
-      <div>
-        <input type="radio" name="plano_anual" id="plano">
-        <label for="plano">Plano Semestral</label>
-      </div>
-      <div>
-        <input type="radio" name="plano_anual" id="plano">
-        <label for="plano">Plano Mensal</label>
-      </div>
-      <div class="admin_carrossel_proxima_cobranca">
-        <img src="../../image/admin/adicionar_propaganda/calendario.svg" class="calendario">
-        <div>
-          <p class="admin_carrossel_proxima_cobranca_text">Próxima Cobrança</p>
-          <p class="admin_carrossel_proxima_cobranca_date">18/08/2024</p>
-        </div>
-      </div>
-    </form>
+  <div class="admin_carrossel_plano1">
+    <input type="checkbox" name="plano" id="plano_anual">
+    <label for="plano_anual">Plano Anual</label>
+  </div>
+  <div class="admin_carrossel_plano2">
+    <input type="checkbox" name="plano" id="plano_semestral">
+    <label for="plano_semestral">Plano Semestral</label>
+  </div>
+  <div class="admin_carrossel_plano3">
+    <input type="checkbox" name="plano" id="plano_mensal">
+    <label for="plano_mensal">Plano Mensal</label>
+  </div>
+</form>
+
     <div class="admin_carrossel_buttons_container">
       <button class="admin_carrossel_cancelar_button"><img src="../../image/geral/x_botao_vermelho.svg">Cancelar</button>
       <button class="admin_carrossel_excluir_button"><img src="../../image/geral/lixo.svg">Excluir</button>
