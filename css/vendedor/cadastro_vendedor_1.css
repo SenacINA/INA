@@ -19,7 +19,6 @@ body {
 /* end header */
 
 .cadastro_vendedor1_titulo{
-    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,10 +30,11 @@ body {
     height: auto;
 }
 
-.cadastro_vendedor1_row{
+hr{
     display: flex;
+    border: none;
     height:5px;
-    width: 1500px;
+    width: 1700px;
     margin-top: -40px;
     background-color: #2888B1;
     border-radius: 20px;
@@ -58,13 +58,12 @@ body {
 .cadastro_vendedor1_grid {
     display: grid;
     grid-template-columns: auto;
+    grid-template-rows: auto;
     color: #247BA0;
-    margin: 2%;
-    margin-right: auto;
-    margin-left: auto;
-    width: 1780px;
-    height: 780px;
+    margin: 0px 2%;
+    height: 90%;
     border-radius: 10px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -181,10 +180,7 @@ ol li::before {
         font-size: 32px;
     }
     
-    .cadastro_vendedor1_row {
-        width: 90%;
-        height: 4px;
-        margin-top: -15px;
+    hr {
         display: none;
     }
 
