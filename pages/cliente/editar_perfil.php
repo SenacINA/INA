@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
   <nav>nav</nav>
@@ -45,8 +46,8 @@
         <input type="tel" id="telefone" class="font_descricao"><br>
       </form>
       <div class="botoes">
-        <button class="redefinir_senha">Redefinir senha</button>
-        <button class="redefinir_email">Redefinir email</button>
+        <button class="redefinir_senha" onclick="pag('geral/redefinir_email_1')">Redefinir senha</button>
+        <button class="redefinir_email" onclick="pag('geral/redefinir_senha_1')">Redefinir email</button>
       </div>
       <div class="redes_sociais">
         <p class="title_redes">Redes Sociais:</p>

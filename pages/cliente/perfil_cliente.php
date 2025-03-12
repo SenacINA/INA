@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="../../js/geral/base.js"></script>
 
 </head>
 <body>
@@ -26,9 +27,9 @@
             <form action="">
                 <select name="menu" id="menu"> 
                     <option value="">Menu</option>
-                    <option value="editar-perfil">Editar Perfil</option>
-                    <option value="pedidos">Cadastro como vendedor</option>
-                    <option value="sair">Sair</option>
+                    <option value="editar-perfil" onclick="pag('cliente/editar_perfil')">Editar Perfil</option>
+                    <option value="pedidos" onclick="pag('vendedor/cadastro_vendedor_1')">Cadastro como vendedor</option>
+                    <option value="sair" onclick="pag('cliente/login')">Sair</option>
                 </select>
             </form>  
         </div>
@@ -98,7 +99,7 @@
                     </div>
             
                     <div class="perfil_cliente_grid_botoes">
-                        <div class="perfil_cliente_btn_1"><h1>Compra Novamente</h1></div>
+                        <div class="perfil_cliente_btn_1" onclick="pag('cliente/carrinho_vazio')"><h1>Compra Novamente</h1></div>
                     </div>
                 </div>
                 <hr class="perfil_cliente_hr_2">
@@ -128,7 +129,7 @@
                     </div>
             
                     <div class="perfil_cliente_grid_botoes">
-                        <div class="perfil_cliente_btn_1"><h1>Compra Novamente</h1></div>
+                        <div class="perfil_cliente_btn_1" onclick="pag('cliente/carrinho_vazio)"><h1>Compra Novamente</h1></div>
                     </div>
                 </div>
             </div>

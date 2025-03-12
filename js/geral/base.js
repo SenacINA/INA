@@ -1,21 +1,21 @@
-function pag(url, loc = 1) {
+function pag(url, loc = 1, params = "") {
     if (loc === 0) {
-        window.location.href = "./pages/" + url + ".php";
+        window.location.href = "./pages/" + url + ".php" + params;
     } else {
-        window.location.href = "../" + url + ".php";
+        window.location.href = "../".repeat(loc ?? 1) + url + ".php" + params;
     }
 }
 
 function login(){
     switch (document.getElementById("email").value) {
         case "admin":
-            window.location.href = "../admin/dashboard.php";
+            pag("admin/dashboard");
             break;
         case "vendedor":
-            window.location.href = "../vendedor/perfil_vendedor.php";
+            pag("vendedor/perfil_vendedor");
             break;
         case "cliente":
-            window.location.href = "../cliente/perfil_cliente.php";
+            pag("cliente/perfil_cliente");
             break;
         default:
             alert("Login Incorreto");
