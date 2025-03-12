@@ -47,7 +47,6 @@
       <div class="botoes">
         <button class="redefinir_senha">Redefinir senha</button>
         <button class="redefinir_email">Redefinir email</button>
-        <button class="sair_perfil">Sair do perfil</button>
       </div>
       <div class="redes_sociais">
         <p class="title_redes">Redes Sociais:</p>
@@ -57,9 +56,8 @@
         </div>
         <div class="editar_redes">
           <button class="edit">
-            <img src="../../image/geral/icone_caneta_editar.svg" alt="Ícone de editar redes sociais">
+            editar
           </button>
-          <span class="text_button">Editar</span>
         </div> 
       </div>
     </div>

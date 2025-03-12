@@ -151,6 +151,7 @@ select.base_input {
 
 .base_input:disabled{
   border: var(--cinza) solid 2px;
+  cursor: default;
 }
 
 .base_input:invalid{
@@ -175,7 +176,14 @@ select.base_input {
   border: var(--vermelho) solid 2px;
 }
 
-.btn_red:hover{
+.btn_blue:disabled, .btn_red:disabled{
+  background-color:var(--cinza);
+  color: var(--branco);
+  border: var(--cinza) solid 2px;
+  cursor: default;
+}
+
+.btn_red:hover:not(:disabled){
   background-color: #B12525;
   border: #B12525 solid 2px;
 }
@@ -186,7 +194,7 @@ select.base_input {
   border: var(--carolina) solid 2px;
 }
 
-.btn_blue:hover{
+.btn_blue:hover:not(:disabled){
   background-color: #2182BA;
   border: #2182BA solid 2px;
 }
@@ -214,4 +222,114 @@ select.base_input {
 .btn_outline_red:disabled,.btn_outline_blue:disabled{
   color: var(--cinza);
   border: var(--cinza) solid 2px;
+}
+
+.base_tabela{
+  *{
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: left;
+  }
+
+  table, & thead{
+    border: solid 1px var(--carolina);
+    width: 100%;
+  }
+
+  col{
+    border-left: solid 1px var(--carolina);
+    border-right: solid 1px var(--carolina);
+  }
+
+  th{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--cinza);
+  }
+
+  td {
+    height: 100%;
+    color: var(--sappire);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  span{
+    padding: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  span:hover{
+    overflow-y: scroll;
+  }
+  span::-webkit-scrollbar {
+    width: 6px;
+  }
+  span::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  span::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  span::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  tr{
+    background-color: var(--branco_gelo);
+    min-height: 48px;
+  }
+
+  tbody > tr:nth-child(odd){
+    background-color: var(--azul_leve);
+  }
+}
+
+@media (max-width:768px) {
+  .base_tabela{
+    *{
+      padding: 4px;
+    }
+
+    th{
+      font-size: 0.75rem;
+    }
+
+    td{
+      height: 100%;
+      font-size: 0.625rem;
+    }
+  }
+
+  select.base_input,
+  option.base_input{
+    padding-top: 0.5rem !important;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+  .base_tabela{
+    *{
+      padding: 8px;
+    }
+
+    th{
+      font-size: 1rem;
+    }
+
+    td{
+      height: 100%;
+      font-size: 1rem;
+    }
+  }
+
+  select.base_input,
+  option.base_input{
+    padding-top: 0.625rem !important;
+    font-size: 1.125rem;
+  }
 }

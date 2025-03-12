@@ -14,16 +14,17 @@
 </head>
 <body>
   <?php
-    include('../../pages/geral/navbar.php');
+    include_once('../../pages/geral/navbar.php');
   ?>
+
   <main>
     <div class="atualizar_usuario_body">
-      <div class="atualizar_usuario_header">
-        <div class="atualizar_usuario_text_header">
+      <div class="atualizar_usuario_titulo">
+        <div class="atualizar_usuario_text_titulo">
           <img src="../../image/admin/atualizar_usuario/header_icon.svg" alt="">
           <h1>ATUALIZAR USUARIO</h1>
         </div>
-        <hr class="atualizar_usuario_linha_header">
+        <hr class="atualizar_usuario_linha_titulo">
       </div>
 
       <div class="bg_mobile_1"></div>
@@ -198,7 +199,7 @@
           </div>
         </form>
 
-        <div class="atualizar_usuario_text_header" id="atualizar_usuario_text_header_mobile">
+        <div class="atualizar_usuario_text_titulo" id="atualizar_usuario_text_titulo_mobile">
           <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
           <h1>ALTERAR DADOS</h1>
         </div>  

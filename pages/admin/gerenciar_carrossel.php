@@ -70,10 +70,6 @@
                 <option value="2030">2030</option>
               </select>                 
             </div>
-            <div class="botoes_submit">
-              <button type="reset" class="cancelar_submit">Cancelar</button>
-              <button type="submit" class="confirmar_submit">Confirmar</button>
-            </div>
           </form>
         </div>
         <div class="informacoes_cliente">
@@ -110,7 +106,7 @@
         <option value="data_inicio">Data de início</option>
         <option value="data_expiracao">Data de expiração</option>
       </select>
-      <button class="add_anuncio">Adicionar anúncio</button>
+      <button class="add_anuncio"><img src="../../image/geral/add_botao.svg">Adicionar anúncio</button>
     </div>
     <div class="table">
       <p>IP</p>
