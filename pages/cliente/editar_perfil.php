@@ -46,8 +46,8 @@
         <input type="tel" id="telefone" class="font_descricao"><br>
       </form>
       <div class="botoes">
-        <button class="redefinir_senha" onclick="pag('geral/redefinir_email_1')">Redefinir senha</button>
-        <button class="redefinir_email" onclick="pag('geral/redefinir_senha_1')">Redefinir email</button>
+        <button class="redefinir_senha" onclick="pag('geral/redefinir_senha_1')">Redefinir senha</button>
+        <button class="redefinir_email" onclick="pag('geral/redefinir_email_1')">Redefinir email</button>
       </div>
       <div class="redes_sociais">
         <p class="title_redes">Redes Sociais:</p>
