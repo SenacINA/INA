@@ -21,12 +21,12 @@ function gerarProdutoCards($quantidade) {
                 </div>
             </div>
             <div class='index_body_botoes_produto'>
-                <button onclick=\"pag('cliente/carrinho_vazio')\">
+                <button onclick=\"pag('cliente/carrinho_vazio',0)\">
                     <svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none'>
                         <path d='M5.78305 4.44444H23.75L21.3056 13H7.09931M22.5278 17.8889H7.86111L5.41667 2H1.75M9.08333 22.7778C9.08333 23.4528 8.53612 24 7.86111 24C7.1861 24 6.63889 23.4528 6.63889 22.7778C6.63889 22.1027 7.1861 21.5556 7.86111 21.5556C8.53612 21.5556 9.08333 22.1027 9.08333 22.7778ZM22.5278 22.7778C22.5278 23.4528 21.9806 24 21.3056 24C20.6305 24 20.0833 23.4528 20.0833 22.7778C20.0833 22.1027 20.6305 21.5556 21.3056 21.5556C21.9806 21.5556 22.5278 22.1027 22.5278 22.7778Z' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>
                     </svg>
                 </button>
-                <button onclick=\"pag('cliente/produto')\">
+                <button onclick=\"pag('cliente/produto',0)\">
                     Comprar
                 </button>
             </div>
@@ -99,23 +99,23 @@ function gerarProdutoCards($quantidade) {
             <button></button>
         </div>
         <div class="index_body_categorias_nav">
-            <div class="index_body_categorias_block" onclick="pag('cliente/categoria')">
+            <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
                 <img src="./image/index/carrosselHardware.png" alt="">
                 <p>Hardware</p>
             </div>
-            <div class="index_body_categorias_block" onclick="pag('cliente/categoria')">
+            <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
                 <img src="./image/index/carrosselPerifericos.png" alt="">
                 <p>Periféricos</p>
             </div>
-            <div class="index_body_categorias_block" onclick="pag('cliente/categoria')">
+            <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
                 <img src="./image/index/carrosselEscritorio.png" alt="">
                 <p>Escritório</p>
             </div>
-            <div class="index_body_categorias_block" onclick="pag('cliente/categoria')">
+            <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
                 <img src="./image/index/carrosselCelulares.png" alt="">
                 <p>Celulares</p>
             </div>
-            <div class="index_body_categorias_block" onclick="pag('cliente/categoria')">
+            <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
                 <img src="./image/index/carrosselEletro.png" alt="">
                 <p>Eletrodomésticos</p>
             </div>
@@ -143,7 +143,7 @@ function gerarProdutoCards($quantidade) {
                 <div class="index_body_produtos_content">
                     <?php gerarProdutoCards(6); ?>
                 </div>
-                <div class="index_body_ver_mais" onclick="pag('cliente/categoria')">
+                <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
                     <p>Ver Mais</p>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -162,7 +162,7 @@ function gerarProdutoCards($quantidade) {
                 <div class="index_body_produtos_content">
                     <?php gerarProdutoCards(6); ?>
                 </div>
-                <div class="index_body_ver_mais" onclick="pag('cliente/categoria')">
+                <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
                     <p>Ver Mais</p>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -182,7 +182,7 @@ function gerarProdutoCards($quantidade) {
                 <div class="index_body_produtos_content">
                     <?php gerarProdutoCards(6); ?>
                 </div>
-                <div class="index_body_ver_mais" onclick="pag('cliente/categoria')">
+                <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
                     <p>Ver Mais</p>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

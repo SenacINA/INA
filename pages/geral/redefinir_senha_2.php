@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
   <nav></nav>
@@ -36,12 +37,12 @@
         </form>
         
         <!-- colocar botões novos -->
-        <button class="redefinir_senha_2_salvar">
+        <button class="redefinir_senha_2_salvar" onclick="pag('geral/redefinir_senha_3')">
           <img src="" alt="">
           <h3>SALVAR</h3>
         </button>
 
-        <button class="redefinir_senha_2_voltar">
+        <button class="redefinir_senha_2_voltar" onclick="pag('geral/redefinir_senha_1')">
           <img src="" alt="">
           <h3>VOLTAR</h3>
         </button>
