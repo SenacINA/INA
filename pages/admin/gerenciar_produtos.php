@@ -16,7 +16,7 @@
 
 <body>
   <?php
-    include('../../pages/geral/navbar.php');
+    include_once('../../pages/geral/navbar.php');
   ?>
   <header class = "gerenciar_produtos_header">
     <div class = "gerenciar_produtos_header_title">

@@ -10,27 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
   <?php
     include('../../pages/geral/navbar.php');
   ?>
-  <header>
-    <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header" width="100%">
-  </header>
-  <main class="relatorio_vendedor_main_container">
-    <div class="relatorio_vendedor_main_content">
-      <div class="relatorio_vendedor_grid_parent">
-        <div class="relatorio_vendedor_grid_info_main">
-          <div class="relatorio_vendedor_grid_main">
-            <p class="font_titulo relatorio_vendedor_align_text_center">Informações do vendedor</p>
-            <hr class="admin_linha">
-            <form class="relatorio_vendedor_grid_info">
-              <div>
-                <p class="relatorio_vendedor_texto_info">Nome</p>
-                <div class="relatorio_vendedor_body_info"><p class="relatorio_vendedor_texto_body_info" id="relatorioVendedorNome">THUNDER GAMES</p></div>
-
+  <main>
     <div class="relatorio_vendedor_body">
       <div class="relatorio_vendedor_titulo" id="relatorio_vendedor_titulo_1">
         <div class="relatorio_vendedor_text_titulo">

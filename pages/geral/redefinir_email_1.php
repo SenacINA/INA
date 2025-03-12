@@ -9,9 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-  <nav></nav>
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <main>
     <div class="redefinir_email_1_container">
       <h1>REDEFINIÇÃO DE E-MAIL</h1>

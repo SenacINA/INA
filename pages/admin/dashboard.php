@@ -9,12 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <?php
-    include('../../pages/geral/navbar.php');
+  <?php
+      include_once('../../pages/geral/navbar.php');
     ?>
     <main>
       <h1 class="dashboard_h1_titulo">Gestão</h1>
