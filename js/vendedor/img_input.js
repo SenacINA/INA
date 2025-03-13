@@ -24,7 +24,7 @@ function adicionarImagemPorURL() {
     if (url) {
         const img = document.createElement('img');
         img.src = url;
-        const div = document.querySelector('.editar_produto_imagems');
+        const div = document.querySelector('.editar_produto_imagens');
         div.appendChild(img);
         totalImagens++;
         atualizarContadores();
