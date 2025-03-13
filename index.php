@@ -49,6 +49,7 @@ function gerarProdutoCards($quantidade) {
 </head>
 <body>
     <?php
+    $isIndex = true;
     include_once('./pages/geral/navbar.php');
     ?>
 <div class="index_body_main_container">
