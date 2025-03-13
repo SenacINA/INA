@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
   <main>
@@ -122,7 +123,7 @@
       </div>
 
         <div class="perfil_admin_botao_salvar">
-          <button class="perfil_admin_salvar">
+          <button class="perfil_admin_salvar" onclick="pag('admin/dashboard')">
             <img src="../../image/admin/perfil_admin/v_icon.svg" alt="">
             <label>SALVAR</label>
           </button>
