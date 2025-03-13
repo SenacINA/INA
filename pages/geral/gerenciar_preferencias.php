@@ -8,38 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
     <link rel="icon" type="image/x-icon" href="./image/logo-icone.ico">
     <link rel="stylesheet" href="../../css/style.css"> 
-    <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/geral/faq.css">
     <link rel="stylesheet" href="../../css/geral/gerenciar_preferencias.css">
     <link rel="stylesheet" href="../../css/admin/admin_cupom.css">
     </head>
 <body>
-<!-- <header class="nav style_nav shadow_nav">
-    <div class="grid-container style_nav">
-        <div class="item1">
-            <img id="imgLupa" src="../../image/index/lupa.png" alt="">
-            <input type="text">
-        </div>
-        <div class="item2">
-            <button id="buttonLogo">
-                <a href="#">
-                <img href="#" id="imgLogo" src="../../image/index/logo.svg">
-                </a>
-            </button>
-        </div>
-        <div class="item3">
-            <a class="button" href="#">
-                <img src="../../image/index/user.png" alt="Usuário">
-            </a>
-            <a class="button" href="#">
-                <img src="../../image/index/carrinho.png" alt="Carrinho">
-            </a>
-            <a class="button" href="#">
-                <img src="../../image/index/config.png" alt="Configurações">
-            </a>
-        </div>     
-    </div>
-</header> -->
+    <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
     <div class="geren_pref_main_container">
         <div class='geren_pref_content'>
             <div class='faq_title_content'>

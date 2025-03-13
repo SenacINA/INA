@@ -16,17 +16,17 @@ function gerarProdutoCards($quantidade) {
                     <h4>(12)</h4>
                 </div>
                 <div class='index_body_valor_produto'>
-                    <p id='indexBodyValorAntigo'>R$100</p>
-                    <p id='indexBodyValorProduto'>R$1000</p>
+                    <p id='indexBodyValorAntigo'>R$1000</p>
+                    <p id='indexBodyValorProduto'>R$800</p>
                 </div>
             </div>
             <div class='index_body_botoes_produto'>
-                <button>
+                <button onclick=\"pag('cliente/carrinho_vazio',0)\">
                     <svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none'>
                         <path d='M5.78305 4.44444H23.75L21.3056 13H7.09931M22.5278 17.8889H7.86111L5.41667 2H1.75M9.08333 22.7778C9.08333 23.4528 8.53612 24 7.86111 24C7.1861 24 6.63889 23.4528 6.63889 22.7778C6.63889 22.1027 7.1861 21.5556 7.86111 21.5556C8.53612 21.5556 9.08333 22.1027 9.08333 22.7778ZM22.5278 22.7778C22.5278 23.4528 21.9806 24 21.3056 24C20.6305 24 20.0833 23.4528 20.0833 22.7778C20.0833 22.1027 20.6305 21.5556 21.3056 21.5556C21.9806 21.5556 22.5278 22.1027 22.5278 22.7778Z' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>
                     </svg>
                 </button>
-                <button>
+                <button onclick=\"pag('cliente/produto',0)\">
                     Comprar
                 </button>
             </div>
@@ -43,35 +43,14 @@ function gerarProdutoCards($quantidade) {
     <link rel="stylesheet" href="./css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
     <title>E ao Quadrado</title>
-    <link rel="icon" type="image/x-icon" href="./image/geral/icone_eaoquadrado.ico">
+    <link rel="icon" type="image/x-icon" href="./image/geral/icone_eaoquadrado.ico">    
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="js/geral/base.js"></script>
 </head>
 <body>
-<header class="nav style_nav shadow_nav">
-    <div class="grid-container style_nav">
-        <div class="item1">
-            <img id="imgLupa" src="./image/index/lupa.png" alt="">
-            <input type="text">
-        </div>
-        <div class="item2">
-            <button id="buttonLogo">
-                <a href="#">
-                    <img href="#" id="imgLogo" src="./image/index/Logo.svg">
-                </a>
-            </button>
-        </div>
-        <div class="item3">
-            <a class="button" href="#">
-                <img src="./image/index/user.png" alt="Usuário">
-            </a>
-            <a class="button" href="#">
-                <img src="./image/index/carrinho.png" alt="Carrinho">
-            </a>
-            <a class="button" href="#">
-                <img src="./image/index/config.png" alt="Configurações">
-            </a>
-        </div>
-    </div>
-</header>
+    <?php
+    include_once('./pages/geral/navbar.php');
+    ?>
 <div class="index_body_main_container">
     <div class="index_body_carrossel">
         <div class="index_body_carrossel_content">
@@ -98,23 +77,23 @@ function gerarProdutoCards($quantidade) {
             <button></button>
         </div>
         <div class="index_body_categorias_nav">
-            <div class="index_body_categorias_block">
+            <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
                 <img src="./image/index/carrosselHardware.png" alt="">
                 <p>Hardware</p>
             </div>
-            <div class="index_body_categorias_block">
+            <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
                 <img src="./image/index/carrosselPerifericos.png" alt="">
                 <p>Periféricos</p>
             </div>
-            <div class="index_body_categorias_block">
+            <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
                 <img src="./image/index/carrosselEscritorio.png" alt="">
                 <p>Escritório</p>
             </div>
-            <div class="index_body_categorias_block">
+            <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
                 <img src="./image/index/carrosselCelulares.png" alt="">
                 <p>Celulares</p>
             </div>
-            <div class="index_body_categorias_block">
+            <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
                 <img src="./image/index/carrosselEletro.png" alt="">
                 <p>Eletrodomésticos</p>
             </div>
@@ -142,7 +121,7 @@ function gerarProdutoCards($quantidade) {
                 <div class="index_body_produtos_content">
                     <?php gerarProdutoCards(6); ?>
                 </div>
-                <div class="index_body_ver_mais">
+                <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
                     <p>Ver Mais</p>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -161,7 +140,7 @@ function gerarProdutoCards($quantidade) {
                 <div class="index_body_produtos_content">
                     <?php gerarProdutoCards(6); ?>
                 </div>
-                <div class="index_body_ver_mais">
+                <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
                     <p>Ver Mais</p>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -181,7 +160,7 @@ function gerarProdutoCards($quantidade) {
                 <div class="index_body_produtos_content">
                     <?php gerarProdutoCards(6); ?>
                 </div>
-                <div class="index_body_ver_mais">
+                <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
                     <p>Ver Mais</p>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

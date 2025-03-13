@@ -10,10 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/admin/admin_carrossel.css">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
-
 <body class="admin_carrossel_main_container">
-  <nav class="admin_carrossel_main_navbar"></nav>
+
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
+
   <main class="admin_carrossel_quadrado_container">
     <div class="admin_carrossel_main_text_container">
     
@@ -65,9 +69,9 @@
 </form>
 
     <div class="admin_carrossel_buttons_container">
-      <button class="admin_carrossel_cancelar_button"><img src="../../image/geral/x_botao_vermelho.svg">Cancelar</button>
-      <button class="admin_carrossel_excluir_button"><img src="../../image/geral/lixo.svg">Excluir</button>
-      <button class="admin_carrossel_salvar_button"><img src="../../image/geral/confirm_botao.svg">Salvar</button>
+      <button class="admin_carrossel_cancelar_button" onclick="history.back()"><img src="../../image/geral/x_botao_vermelho.svg">Cancelar</button>
+      <button class="admin_carrossel_excluir_button" onclick="history.back()"><img src="../../image/geral/lixo.svg">Excluir</button>
+      <button class="admin_carrossel_salvar_button" onclick="history.back()"><img src="../../image/geral/confirm_botao.svg">Salvar</button>
     </div>
   </main>
 </body>
