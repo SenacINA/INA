@@ -13,6 +13,7 @@
     <title>Categoria</title>
 </head>
 <body class="gradiente_azul">
+    
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>

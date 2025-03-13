@@ -10,10 +10,9 @@
     <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/index.css">
 </head>
-
 <body>
   <?php
     include_once('../../pages/geral/navbar.php');

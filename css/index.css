@@ -116,7 +116,6 @@ body, html {
     min-height: 100vh;
     align-items: center;
     overflow-x: hidden;
-    margin-top: 72px;
 
     .index_body_carrossel {
         width: 100%;
