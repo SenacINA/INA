@@ -9,9 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-  <nav></nav>
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <main>
     <div class="redefinir_senha_1_container">
       <h1>REDEFINIÇÃO DE SENHA</h1>
@@ -27,12 +31,12 @@
         </form>
 
         <!-- colocar botões novos -->
-        <button class="redefinir_senha_1_enviar">
+        <button class="redefinir_senha_1_enviar" onclick="pag('geral/redefinir_senha_2')">
           <img src="" alt="">
           <h3>ENVIAR</h3>
         </button>
 
-        <button class="redefinir_senha_1_voltar"> 
+        <button class="redefinir_senha_1_voltar" onclick="history.back()"> 
           <img src="" alt="">
           <h3>VOLTAR</h3>
         </button>

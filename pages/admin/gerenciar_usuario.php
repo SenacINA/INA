@@ -12,7 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="gerenciar_usuario_navbar_principal"></nav>
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <header class = "gerenciar_usuario_header">
     <div class = "gerenciar_usuario_header_title">
       <h1>GERENCIAR USUARIO</h1> 

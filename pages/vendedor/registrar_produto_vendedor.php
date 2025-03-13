@@ -11,9 +11,9 @@
     <title>Vendedor - Registrar novo produto</title>
 </head>
 <body>
-    <div class="fake_header">
-        <h2>Header</h2>
-    </div>
+    <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
     <div class="container_registro">
         <h2 id="dgTitle" class="font_titulo">DADOS GERAIS</h2>
         <div class="container_registro_linha">
