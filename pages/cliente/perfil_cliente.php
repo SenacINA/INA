@@ -26,7 +26,7 @@
         <div class="perfil_cliente_botao_menu">
             <form action="">
                 <select name="menu" id="menu"> 
-                    <option value="">Menu</option>
+                    <option selected disabled value ="">Menu</option>
                     <option value="editar-perfil" onclick="pag('cliente/editar_perfil')">Editar Perfil</option>
                     <option value="pedidos" onclick="pag('vendedor/cadastro_vendedor_1')">Cadastro como vendedor</option>
                     <option value="sair" onclick="pag('cliente/login')">Sair</option>
@@ -129,7 +129,7 @@
                     </div>
             
                     <div class="perfil_cliente_grid_botoes">
-                        <div class="perfil_cliente_btn_1" onclick="pag('cliente/carrinho_vazio)"><h1>Compra Novamente</h1></div>
+                        <div class="perfil_cliente_btn_1" onclick="pag('cliente/carrinho_vazio')"><h1>Compra Novamente</h1></div>
                     </div>
                 </div>
             </div>

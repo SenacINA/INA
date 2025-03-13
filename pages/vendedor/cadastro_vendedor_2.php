@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="../../js/geral/base.js"></script>
 </head>
 
 <body>
@@ -25,19 +26,20 @@
         <label for="local_da_empresa">Local da Empresa</label> <br>
         <select name="local_da_empresa" id="local_da_empresa">
           <option value="" disabled selected>Selecione a cidade</option>
-          <option value="campo_grande">Campo Grande</option>
-          <option value="dourados">Dourados</option>
-          <option value="três_lagoas">Três Lagoas</option>
-          <option value="corumbá">Corumbá</option>
-          <option value="ponta_pora">Ponta Porã</option>
-          <option value="nova_andradina">Nova Andradina</option>
-          <option value="sidrolândia">Sidrolândia</option>
           <option value="aquidauana">Aquidauana</option>
-          <option value="coxim">Coxim</option>
-          <option value="paranaíba">Paranaíba</option>
+          <option value="campo_grande">Campo Grande</option>
           <option value="chapadão_do_sul">Chapadão do Sul</option>
+          <option value="corumbá">Corumbá</option>
+          <option value="coxim">Coxim</option>
+          <option value="dourados">Dourados</option>
           <option value="maracaju">Maracaju</option>
+          <option value="nova_andradina">Nova Andradina</option>
+          <option value="paranaíba">Paranaíba</option>
+          <option value="ponta_pora">Ponta Porã</option>
           <option value="porto_murtinho">Porto Murtinho</option>
+          <option value="sidrolândia">Sidrolândia</option>
+          <option value="três_lagoas">Três Lagoas</option>
+
         </select>
         <h1>Se você não tiver uma empresa, informe o estado de sua residência.</h1>
         <br>
@@ -131,7 +133,7 @@
         </div>
       </div>
     </div>
-    <div class="botao">
+    <div class="botao" onclick="pag('vendedor/perfil_vendedor')">
       <h1>Finalizar Cadastro</h1>
     </div>
   </div>

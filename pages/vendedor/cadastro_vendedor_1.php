@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../../js/geral/base.js"></script>
 </head>
 <body>
     <div class="nav_bar"></div>
@@ -39,7 +40,7 @@
                 <li>Celular ou E-mail. </li>
             </L>
         </div>
-        <div class="botao"><h1>Iniciar Cadastro</h1></div>
+        <div class="botao" onclick="pag('vendedor/cadastro_vendedor_2')"><h1>Iniciar Cadastro</h1></div>
     </div>
 </body>
 </html>
