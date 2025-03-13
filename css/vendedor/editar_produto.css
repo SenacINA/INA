@@ -331,16 +331,17 @@
     z-index: 100;
     flex-direction: column;
     width: fit-content;
-    padding: 4px;
+    padding: 2px;
     background: var(--sappire);
 
     button {
-        font-size: 16px;
+        font-size: 16px !important;
         height: fit-content;
         justify-content: flex-start;
         border: none;
         background: var(--sappire);
-        padding: 4px;
+        padding: 2px !important;
+        width: 100%;
         
         &:hover {
             background: var(--celadon);
