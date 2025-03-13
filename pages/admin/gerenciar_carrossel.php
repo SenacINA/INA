@@ -13,7 +13,9 @@
     <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-  <nav class="navbar"></nav>
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <header>
     <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header" width="100%">
   </header>

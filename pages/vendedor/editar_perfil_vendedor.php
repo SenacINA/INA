@@ -10,11 +10,14 @@
   <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
-<body class="fundo_vendedor">
-  <nav class="nav_bar"></nav>
+<body>  <!--  class="fundo_vendedor" -->
+  <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
   <main class="quadrado_vendedor">
     <div class="mini_perfil_vendedor">
       <img src="../../image/vendedor/editar_perfil/banner_vendedor_mini_perfil.png" alt="banner" class="banner_vendedor">

@@ -6,7 +6,6 @@
     <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
     <title>E ao Quadrado</title>
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/admin/dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -14,7 +13,9 @@
     <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-    <header class="nav shadow_nav style_nav">a</header>
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
     <h1 class="dashboard_h1_titulo">Gestão</h1>
     <div class="divisoria"><img src="../../image/geral/linha-divisoria-azul.png" alt="" width="1518px;" height="5px"></div>
     <div class="dashboard_grid_menu">

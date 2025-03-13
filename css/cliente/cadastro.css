@@ -1,11 +1,7 @@
 * {
   margin: 0;
+  box-sizing: border-box;
   padding: 0;
-}
-
-html {
-  height: 100%;
-  width: 100%;
 }
 
 body {

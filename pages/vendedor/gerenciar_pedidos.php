@@ -10,11 +10,14 @@
   <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="gerenciar_pedidos_navbar_principal" style="background-color: purple;"></nav>
+  <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
   <main class="gerenciar_pedidos_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_pedidos_header_holder">

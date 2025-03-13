@@ -21,7 +21,7 @@ body {
 
 .container_registro {
   background-color: #dce5eb; /* Azul leve */
-  margin: 50px 60px;
+  margin: 0px 60px;
   display: grid;
   grid-template-columns: auto;
   text-align: center;
@@ -34,6 +34,11 @@ body {
 #npTitle {
   color: #0f3b62;
   font-weight: 500;
+}
+
+#pdTitle,
+#npTitle  {
+  margin-left: 32px;
 }
 
 .container_registro > #npTitle,
