@@ -288,7 +288,7 @@
                      <input type="file" id="input-file" accept="image/*" multiple>
                   </button>
                   <h4 id='info-image'>
-                     O tamanho do arquivo não pode ultrapassar 2mb,
+                     O tamanho do arquivo não pode ultrapassar 2mb
                   </h4>
                   <div class="input-url-container">
                      <span class="dropdown" id='input_url'>
