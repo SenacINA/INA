@@ -9,7 +9,8 @@
     <title>E ao Quadrado</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../../js/geral/base.js"></script>
 </head>
 <body>    
 
@@ -25,18 +26,17 @@
         </div>
         <div style="font-size: 32px; font-family: Jost; margin-top: 32px;"><p>Bem-vindo de volta!</p></div>
         <div style=" font-size: 20px; font-family: Jost; margin-bottom: 0px; margin-top: 0px; color: rgba(0, 0, 0, 0.603);"><p>Entre suas credenciais</p></div>
-        <img src="../../image/geral/linha-divisoria-azul.png" alt="linha">
         <div style=" font-size: 32px; font-family: Jost; margin-bottom: 0px; margin-top: 0px; text-align: left;"><p>Email</p></div>
-        <input type="text">
+        <input type="text" id="email">
         <div style=" font-size: 32px; font-family: Jost; margin-bottom: 0px; margin-top: 0px; text-align: left;"><p>Senha</p></div>
         <input type="text">
         <div class="checkbox-container">
             <input type="checkbox" class="input-checkbox">
             <div style=" font-size: 20px; font-family: Jost; margin-bottom: 0px; margin-top: 0px;"><p>Manter Conectado</p></div>
         </div>
-        <div style=" font-size: 16px; font-family: Jost; margin-bottom: 0px; margin-top: 0px; text-align: left;"><p>Redefinir Senha</p></div>        
-        <div style=" font-size: 16px; font-family: Jost; margin-bottom: 0px; margin-top: 0px; text-align: left;"><a href="../cliente/cadastro.html">Não tem cadastro? Clique aqui</a></div>
-        <img src="../../image/geral/botao_entrar_azul.png" alt="linha" style="justify-self: center;">
+        <div style=" font-size: 16px; font-family: Jost; margin-bottom: 0px; margin-top: 0px; text-align: left;" onclick="pag('geral/redefinir_senha_1')"><p>Redefinir Senha</p></div>        
+        <div style=" font-size: 16px; font-family: Jost; margin-bottom: 0px; margin-top: 0px; text-align: left;" onclick="pag('cliente/cadastro')">Não tem cadastro? Clique aqui</a></div>
+        <div onclick="login()"><img src="../../image/geral/botao_entrar_azul.png" alt="linha" style="justify-self: center;" ></div>
     </div>
 </body>
 </html>
