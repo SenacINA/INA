@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../../js/geral/base.js"></script>
 </head>
 
 <body>
@@ -27,12 +28,12 @@
                     <form action="" class="menu_1">
                         <select name="menu" id="menu">
                             <option selected disabled value="">Menu</option>
-                            <option value="editar-perfil">Editar Perfil</option>
-                            <option value="pedidos">Pedidos</option>
-                            <option value="relatorio">Relatório</option>
-                            <option value="criar-cupom">Criar Cupom</option>
-                            <option value="editar-produtos">Editar Produtos</option>
-                            <option value="sair">Sair</option>
+                            <option value="editar-perfil" onclick="pag('vendedor/editar_perfil_vendedor')">Editar Perfil</option>
+                            <option value="pedidos" onclick="pag('vendedor/confirmar_pedido')">Pedidos</option>
+                            <option value="relatorio" onclick="pag('vendedor/relatorio_vendas')">Relatório</option>
+                            <option value="criar-cupom" onclick="pag('admin/cupom')">Criar Cupom</option>
+                            <option value="editar-produtos" onclick="pag('vendedor/editar_produto')">Editar Produtos</option>
+                            <option value="sair" onclick="pag('cliente/login')">Sair</option>
                         </select>
                     </form>
                 </div>
@@ -148,7 +149,7 @@
 
     </template>
     <script type="text/javascript" src="../../js/cliente/categoria.js"></script>
-    <script src="../../js/vendedor/perfil_vendedor.js"></script>
+    <!-- <script src="../../js/vendedor/perfil_vendedor.js"></script> -->
 </body>
 
 </html>

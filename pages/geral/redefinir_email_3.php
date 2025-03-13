@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/geral/redefinir_email_3.css">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
   <nav></nav>
@@ -19,7 +20,7 @@
         <h2>Redefinição de E-mail realizada!</h2>
       </div>
       
-      <button class="redefinir_email_3_home">
+      <button class="redefinir_email_3_home" onclick="pag('index',2)">
         <img src="" alt="">
         <h3>TELA INICIAL</h3>
       </button>

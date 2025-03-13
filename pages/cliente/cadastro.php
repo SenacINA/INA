@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
   <nav class="navbar"></nav>
@@ -18,7 +19,6 @@
         <img src="../../image/geral/logo-eaoquadrado.png">
         <p class="cadastro_bem_vindo">Bem-vindo!</p>
         <p class="cadastro_text">Cadastre suas credenciais</p>
-        <img src="../../image/geral/linha-divisoria-azul.png" class="divisoria_cadastro">
       </div>
 
       <form class="formulario_cadastro">
@@ -42,8 +42,8 @@
         </ul>
       </div>
       <div class="botoes">
-        <button class="voltar">Voltar</button>
-        <button class="salvar">Salvar</button>
+        <button class="voltar" onclick="pag('cliente/login')"><img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar</button>
+        <button class="salvar" onclick="pag('cliente/perfil_cliente')"><img src="../../image/geral/confirm_botao.svg" alt="">Cadastrar</button>
       </div>
     </div>
   </main>

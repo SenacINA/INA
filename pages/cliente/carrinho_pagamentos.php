@@ -27,6 +27,10 @@
         <div class="separador_whats"></div>
         <p class="nao_tem">Ainda não tem o WhatsApp?</p>
         <a href="#" class="baixar_whats">Baixar</a>
+        <div class="botoes">
+          <button class="finalizar"><img src="../../image/geral/lixo.svg" alt="">Finalizar</button>
+          <button class="voltar"><img src="../../image/geral/voltar_vermelho_botao.svg" alt="">Voltar</button>
+        </div>
       </div>
     </div>
   </div>

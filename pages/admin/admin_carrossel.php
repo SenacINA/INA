@@ -57,9 +57,9 @@
       </div>
     </form>
     <div class="admin_carrossel_buttons_container">
-      <button class="admin_carrossel_cancelar_button">Cancelar</button>
-      <button class="admin_carrossel_excluir_button">Excluir</button>
-      <button class="admin_carrossel_salvar_button">Salvar</button>
+      <button class="admin_carrossel_cancelar_button" onclick="history.back()"><img src="../../image/geral/x_botao_vermelho.svg">Cancelar</button>
+      <button class="admin_carrossel_excluir_button" onclick="history.back()"><img src="../../image/geral/lixo.svg">Excluir</button>
+      <button class="admin_carrossel_salvar_button" onclick="history.back()"><img src="../../image/geral/confirm_botao.svg">Salvar</button>
     </div>
   </main>
   <div class="admin_carrossel_carrossel">

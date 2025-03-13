@@ -1,9 +1,9 @@
-@import './style.css';
+@import "./style.css";
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Jost';
+  font-family: "Jost";
 }
 
 html {
@@ -18,7 +18,7 @@ nav {
 }
 
 body {
-  background-color: #E8F1F2;
+  background-color: #e8f1f2;
   height: 100%;
 }
 
@@ -46,8 +46,8 @@ main {
   grid-row: 1;
   z-index: 2;
   position: relative;
-  left: calc(50% - (152px/2));
-  top: calc(100% - (152px /2));
+  left: calc(50% - (152px / 2));
+  top: calc(100% - (152px / 2));
 }
 
 .banner {
@@ -105,12 +105,13 @@ main {
   grid-template-rows: auto auto;
 }
 
-.cliente_ativo , .ico_ativo{
+.cliente_ativo,
+.ico_ativo {
   grid-column: 1;
   grid-row: 1;
 }
 
-.ico_ativo{
+.ico_ativo {
   position: relative;
   left: -50%;
 }
@@ -120,17 +121,19 @@ main {
   left: -55%;
 }
 
-.ico_localizacao{
+.ico_localizacao {
   position: relative;
   left: -45%;
 }
 
-.cliente_tempo, .ico_tempo {
+.cliente_tempo,
+.ico_tempo {
   grid-column: 3;
   grid-row: 1;
 }
 
-.cliente_localizacao, .ico_localizacao {
+.cliente_localizacao,
+.ico_localizacao {
   grid-column: 2;
   grid-row: 2;
 }
@@ -153,7 +156,9 @@ main {
 .edicao form input {
   width: 650px;
   height: 35px;
-  border: none;
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+  border-radius: 5px;
   margin-bottom: 2%;
   padding-left: 5px;
 }
@@ -166,13 +171,14 @@ main {
 }
 
 .redefinir_email {
+  text-transform: uppercase;
   cursor: pointer;
-  background: transparent;
-  border-radius: 10px;
-  border: 3px solid #006494;
-  color: #006494;
-  width: 191px;
-  height: 50px;
+  background: #1B98E0;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  width: fit-content;
+  height: 48px;
   padding: 10px;
   font-size: 20px;
   font-style: normal;
@@ -181,33 +187,19 @@ main {
 }
 
 .redefinir_senha {
+  text-transform: uppercase;
   cursor: pointer;
-  background: transparent;
-  border-radius: 10px;
-  border: 3px solid #006494;
-  color: #006494;
-  width: 191px;
-  height: 50px;
+  background: #006494;
+  border-radius: 5px;
+  color: #fff;
+  border: 0;
+  width: fit-content;
+  height: 48px;
   padding: 10px;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-}
-
-.sair_perfil {
-  cursor: pointer;
-  background: transparent;
-  border-radius: 10px;
-  color: red;
-  width: 191px;
-  height: 50px;
-  padding: 10px;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  border: 3px solid red;
 }
 
 .redes_sociais {
@@ -251,11 +243,15 @@ main {
 .edit {
   grid-row: 1;
   border: 0;
-  background-color: #fff;
-  border-radius: 40px;
-  width: 39px;
-  height: 38px;
+  background-color: #1B98E0;
+  border-radius: 5px;
+  width: 200px;
+  height: 48px;
   cursor: pointer;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
 }
 
 .text_button {
@@ -306,8 +302,8 @@ footer {
   margin-top: 15%;
   width: 100%;
   height: 124px;
-  background-color: #D7E8EA;
-  color: #0F3B62;
+  background-color: #d7e8ea;
+  color: #0f3b62;
   text-align: center;
   align-items: center;
   display: grid;

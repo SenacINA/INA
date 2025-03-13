@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body class="fundo_vendedor">
   <nav class="nav_bar"></nav>
   <main class="quadrado_vendedor">
@@ -83,7 +85,7 @@
         </div>
       </form>
       <div class="botoes_redefinir">
-        <button type="button"class='redefinir_senha_vendedor'>Redefinir senha</button>
+        <button type="button" class='redefinir_senha_vendedor'>Redefinir senha</button>
         <button type="button" class="redefinir_email_vendedor">Redefinir email</button>
       </div>
       <div class="redes_sociais_vendedor">
@@ -92,22 +94,19 @@
           <img src="../../image/vendedor/editar_perfil/icon_instagram_vendedor.svg" alt="instagram"> <a href="#" class="link_instagram">my.thudergames </a>
           <img src="../../image/vendedor/editar_perfil/icon_facebook_vendedor.svg" alt="facebook"> <a href="#" class="link_facebook">thundergames</a>
         </div>
-        <div class="botao_edit">
-          <img src="../../image/vendedor/editar_perfil/button_edit.svg" alt="botao_edit">
-          <p class="text_editar">Editar</p>
-        </div>
+        <button class="botao_edit">Editar</button>
       </div>
     </div>
     <div class="edit_foto">
       <div class="foto_container">
         <p class="text_pfp">Imagem de Perfil:</p>
-        <input type="file" name="foto_vendedor" id="fotoVendedor" class="btn_foto"/>
+        <input type="file" name="foto_vendedor" id="fotoVendedor" class="btn_foto" />
         <img src="../../image/vendedor/editar_perfil/pfp_vendedor.png" alt="">
         <p class="warn">As dimensões recomendadas são: 400 x 400 pixels.</p>
       </div>
       <div class="banner_container">
         <p class="text_banner">Imagem de Banner:</p>
-        <input type="file" name="foto_vendedor" id="fotoVendedor" class="btn_banner"/>
+        <input type="file" name="foto_vendedor" id="fotoVendedor" class="btn_banner" />
         <img src="../../image/vendedor/editar_perfil/banner_vendedor_mini_perfil.png" class="banner_vendedor_forms" alt="">
         <p class="warn">As dimensões recomendadas são: 1500 x 500 pixels.</p>
       </div>
@@ -117,4 +116,5 @@
     <img src="../../image/cliente/footer/img_footer_placeholder.png">
   </footer>
 </body>
+
 </html>
