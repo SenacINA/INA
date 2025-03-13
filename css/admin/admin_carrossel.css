@@ -17,6 +17,7 @@
   background-image: url(../../image/cliente/cadastro/cadastro_fundo.png);
   background-size: cover;
   display: flex;
+  background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -25,7 +26,7 @@
 
 .admin_carrossel_quadrado_container {
   width: 1500px;
-  height: 670px;
+  height: 70vh;
   background-color: #dce5eb;
   border-radius: 10px;
   display: grid;
@@ -43,10 +44,21 @@
   height: 80px;
 }
 
+.admin_carrossel_img_anuncios{
+  width: 32;
+  display: flex;
+  height: 32px;
+  flex-direction: row;
+}
+
 .admin_carrossel_texto_main_text {
   color: #255e7e;
   font-weight: 600;
   font-size: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 .admin_carrossel_linha_main_text {
@@ -64,22 +76,39 @@
   position: relative;
   left: 10%;
   top: 10%;
+  align-content: space-between;
+  flex-wrap: wrap;
 }
 
 .admin_carrossel_linha_vertical_informacoes_anuncio {
   width: 10px;
   height: 46px;
-  background-color: #247ba0;
+  background-color: #2888b1;
   border-radius: 20px;
   border: 0;
+
 }
 
 .admin_carrossel_main_text_informacoes_anuncio {
   position: relative;
+  display: flex;
   left: 1%;
   font-size: 30px;
   font-weight: 400;
 }
+
+.admin_carrossel_main_text_informacoes_anuncio p {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #2888b1;
+}
+.admin_carrossel_main_text_informacoes_anuncio svg{
+  width: 28px;
+  height: 28px;
+  color: #2888b1;
+}
+
 
 .admin_carrossel_forms_informacoes_anuncio {
   grid-column: 1;
@@ -308,6 +337,7 @@
   display: flex;
   column-gap: 20px;
   position: relative;
+  height: 48px;
   top: 80%;
   right: 5%;
   grid-row: 2;
@@ -327,5 +357,3 @@
   height: 666px;
   background-image: url(../../image/admin/adicionar_propaganda/Header.png);
 }
-
-
