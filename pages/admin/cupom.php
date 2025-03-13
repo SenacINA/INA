@@ -101,51 +101,45 @@
         </div>
 
         <form action="" method="post" class="cupom_localizacao">
-        <div class="toggle-group">
-        <label class="toggle">
-            <input type="radio" name="toggle-group" checked>
-            <span class="slider"></span>
-            <label>Reais sobre o Total</label>
-        </label>
+          <div class="toggle-group">
+            <label class="toggle">
+                <input type="radio" name="toggle-group" checked>
+                <span class="slider"></span>
+                <label>Reais sobre o Total</label>
+            </label>
 
-        <label class="toggle">
-            <input type="radio" name="toggle-group">
-            <span class="slider"></span>
-            <label>Porcentagem sobre o Total</label>
-        </label>
-        <label class="toggle">
-            <input type="radio" name="toggle-group">
-            <span class="slider"></span>
-            <label>Reais sobre Frete</label>
-        </label>
-    </div>
-                
+            <label class="toggle">
+                <input type="radio" name="toggle-group">
+                <span class="slider"></span>
+                <label>Porcentagem sobre o Total</label>
+            </label>
+            <label class="toggle">
+                <input type="radio" name="toggle-group">
+                <span class="slider"></span>
+                <label>Reais sobre Frete</label>
+            </label>
+          </div> 
         </form>
 
-        <div class="cupom_text" id="cupom_text_4">
-        </div>
+        <div class="cupom_text" id="cupom_text_4"></div>
 
-        <div class="cupom_botao_salvar">
-          <button class="cupom_cancelar">
-            <img src="../../image/admin/cancel.svg" alt="">
-            <label>CANCELAR</label>
-          </button>
+      <div class="cupom_botao_salvar">
+        <button class="cupom_cancelar">
+          <img src="../../image/admin/cancel.svg" alt="">
+          <label>CANCELAR</label>
+        </button>
 
-          <button class="cupom_salvar">
-            <img src="../../image/admin/cupom/v_icon.svg" alt="">
-            <label>SALVAR</label>
-          </button>
-        </div>
-
-        
+        <button class="cupom_salvar">
+          <img src="../../image/admin/cupom/v_icon.svg" alt="">
+          <label>SALVAR</label>
+        </button>
       </div>
-    
+
+      </div>
     </div>
     
     <!-- Falta footer -->
-    <footer class="footer_temporario_cupom">
-      <img src="../../image/admin/cupom/footer_mobile.svg" alt="">
-    </footer>
+    
   </main>
 </body>
 </html>

@@ -231,9 +231,7 @@
     </div>
 
     <!-- Falta footer -->
-    <footer class="footer_temporario_relatorio_vendedor">
-      <img src="../../image/admin/perfil_admin/footer_mobile.svg" alt="">
-    </footer>
+  
   </main>
 </body>
 </html>

@@ -181,23 +181,11 @@ color: #2888b1;
 
 /* Pesquisar Usuário */
 .relatorio_vendedor_pesquisar_usuario h2 {
-color: rgba(87, 149, 206, 0.60);
-font-size: 20px;
-max-width: 590px;
+  color: rgba(87, 149, 206, 0.60);
+  font-size: 20px;
+  max-width: 590px;
 }
 
-/* Localização */
-.relatorio_vendedor_localizacao_conjunto {
-display: grid;
-grid-template-columns: 1fr 1fr;
-justify-content: start;
-align-items: center;
-column-gap: 2%;
-
-max-width: 590px;
-}
-
-/* Dados Pessoais */
 .relatorio_vendedor_dados_pessoais,
  .relatorio_vendedor_dados_pessoais_item,
  .relatorio_vendedor_localizacao_item input,
@@ -208,11 +196,15 @@ max-width: 590px;
   flex-direction: column;
 }
 
-.relatorio_vendedor_dados_pessoais_item input, .relatorio_vendedor_pesquisar_usuario_item input  {
+.relatorio_vendedor_dados_pessoais_item input,
+ .relatorio_vendedor_pesquisar_usuario_item input,
+ .relatorio_vendedor_localizacao_item input  {
   max-width: 590px;
+  width: 100%;
 }
 
-.relatorio_vendedor_dados_pessoais_conjunto {
+.relatorio_vendedor_dados_pessoais_conjunto,
+ .relatorio_vendedor_localizacao_conjunto {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: start;
@@ -220,9 +212,11 @@ max-width: 590px;
   column-gap: 2%;
 
   max-width: 590px;
+  width: 100%;
 }
 
-.footer_temporario_relatorio_vendedor, #relatorio_vendedor_text_titulo_mobile  {
+.footer_temporario_relatorio_vendedor,
+ #relatorio_vendedor_text_titulo_mobile  {
   display: none;
 }
 
@@ -365,7 +359,12 @@ max-width: 590px;
     justify-self: start;
   }
 
-  .relatorio_vendedor_linha_titulo, .relatorio_vendedor_pesquisar_usuario h2 {
+  .relatorio_vendedor_text_titulo h1 {
+    text-align: start;
+  }
+
+  .relatorio_vendedor_linha_titulo,
+   .relatorio_vendedor_pesquisar_usuario h2 {
     display: none;
   }
 
@@ -423,27 +422,10 @@ max-width: 590px;
     align-items: center;
   }
 
-  .relatorio_vendedor_dados_pessoais_conjunto, .relatorio_vendedor_localizacao_conjunto, .relatorio_vendedor_forms input {
-    max-width: none;
-  }
-
-  .footer_temporario_relatorio_vendedor {
-    position: relative; 
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-
-    width: 100%;
-    height: auto; 
-    margin-top: 100px;
-
-    overflow: hidden; 
-  }
-
-  .footer_temporario_relatorio_vendedor img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; 
+  .relatorio_vendedor_dados_pessoais_conjunto,
+   .relatorio_vendedor_localizacao_conjunto,
+    .relatorio_vendedor_forms input {
+    max-width: 100%;
   }
 
   /* tabela */
