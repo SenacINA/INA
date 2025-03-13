@@ -1,5 +1,6 @@
 .gradiente_azul{
     background-image: linear-gradient(to bottom, #2888B1, #DCE5EB);
+    margin-top: 0;
 }
 
 .img_fundo{

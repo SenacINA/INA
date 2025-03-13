@@ -11,11 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <header class="nav_bar">
-        <h1>Nav</h1>
-    </header>
+    <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
+
     <div class="vendedor_selecionar_destaque_conteudo_externo display_grid">
         <div class="vendedor_selecionar_destaque_barra_azul bg_sappire">
             <h2 class="font_titulo">SELECIONAR DESTAQUES</h2>

@@ -44,35 +44,13 @@ function gerarProdutoCards($quantidade) {
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
     <title>E ao Quadrado</title>
     <link rel="icon" type="image/x-icon" href="./image/geral/icone_eaoquadrado.ico">    
+    <link rel="stylesheet" href="../../css/style.css">
     <script src="js/geral/base.js"></script>
 </head>
 <body>
-<header class="nav style_nav shadow_nav">
-    <div class="grid-container style_nav">
-        <div class="item1">
-            <img id="imgLupa" src="./image/index/lupa.png" alt="">
-            <input type="text">
-        </div>
-        <div class="item2">
-            <button id="buttonLogo">
-                <a href="#">
-                    <img href="#" id="imgLogo" src="./image/index/Logo.svg">
-                </a>
-            </button>
-        </div>
-        <div class="item3">
-            <a class="button" href="#">
-                <img src="./image/index/user.png" alt="Usuário">
-            </a>
-            <a class="button" href="#">
-                <img src="./image/index/carrinho.png" alt="Carrinho">
-            </a>
-            <a class="button" href="#">
-                <img src="./image/index/config.png" alt="Configurações">
-            </a>
-        </div>
-    </div>
-</header>
+    <?php
+    include_once('./pages/geral/navbar.php');
+    ?>
 <div class="index_body_main_container">
     <div class="index_body_carrossel">
         <div class="index_body_carrossel_content">

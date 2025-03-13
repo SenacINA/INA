@@ -23,6 +23,19 @@ html {
   background-repeat: no-repeat;
 }
 
+body{
+  position: relative;
+  margin-top: 122px;
+}
+
+@media (max-width:1024px) {
+
+  body{
+    margin-top: 216px;
+  }
+  
+}
+
 .font_titulo {
   font-size: 2rem;
   /* 32px */
@@ -331,3 +344,184 @@ select.base_input {
     font-size: 1.125rem;
   }
 }
+
+/* NAVBAR */
+
+.base_nav_nav {
+  width: 100%;
+  height: 72px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.base_nav_search_container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.base_nav_logo_container {
+  max-height: 44px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+
+  & > img {
+      max-height: 44px;
+  }
+}
+
+.base_nav_botoes_container {
+  width: 264px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#baseNavHeaderMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 8px 182px;
+  background: var(--azul_leve);
+  gap: 16px;
+}
+
+#baseNavSearchInput {
+  width: 100%;
+  max-width: 600px;
+  height: fit-content;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  flex-grow: 1;
+}
+
+.base_nav_button_container {
+  gap: 16px;
+  max-height: 48px;
+  width: auto;
+  padding: 8px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.base_nav_square_button {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: fit-content;
+  min-width: 40px;
+  min-height: 40px;
+
+  border-radius: 4px;
+  color: #1B98E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.base_nav_square_button:hover {
+  fill: #0056b3;
+  transform: scale(1.1);
+}
+
+.base_nav_square_button svg {
+  fill: #1B98E0;
+  width: 100%;
+  height: 100%;
+}
+
+#baseNavLogoHeader {
+  content: url('../image/index/logoEscrita.svg');
+
+}
+
+.base_nav_square_button_search {
+  background-color: #1B98E0;
+  border: none;
+  height: 100%;
+  padding: 6px;
+  width: fit-content;
+  border-radius: 4px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.base_nav_square-button_search:hover {
+  fill: #0056b3;
+  transform: scale(1.1);
+}
+
+.base_nav_square-button_search svg {
+  fill: #1B98E0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width:1024px) {
+  #baseNavHeaderMain{
+      padding: 8px 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 124px;
+      gap: 8px;
+  }
+
+  .base_nav_search_container {
+      grid-row: 2;
+      grid-column: 1 / span 2;
+      max-width: 100%;
+      width: 100%;
+      justify-content: center;
+
+  }
+  #baseNavSearchInput{
+      max-width: 100%;
+  }
+
+  #baseNavLogoHeader {
+      content: url('../image/index/logoEscrita.svg');
+
+  }
+  
+  .base_nav_logo_container{
+      display: flex;
+      justify-content: flex-start;
+  }
+
+  .base_nav_button_container{
+      display: flex;
+      justify-content: flex-end;
+  }
+}
+
+@media (max-width:768px) {
+  #baseNavHeaderMain{
+      padding: 8px 16px;
+  }
+
+  #baseNavLogoHeader {
+      content: url('../image/index/Logo.svg');
+
+  }
+}
+
+
