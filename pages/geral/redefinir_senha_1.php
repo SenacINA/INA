@@ -33,7 +33,7 @@
           <h3>ENVIAR</h3>
         </button>
 
-        <button class="redefinir_senha_1_voltar" onclick="pag('cliente/login')"> 
+        <button class="redefinir_senha_1_voltar" onclick="history.back()"> 
           <img src="" alt="">
           <h3>VOLTAR</h3>
         </button>

@@ -42,7 +42,7 @@
           <h3>SALVAR</h3>
         </button>
 
-        <button class="redefinir_senha_2_voltar" onclick="pag('geral/redefinir_senha_1')">
+        <button class="redefinir_senha_2_voltar" onclick="history.back()">
           <img src="" alt="">
           <h3>VOLTAR</h3>
         </button>
