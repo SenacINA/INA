@@ -722,7 +722,7 @@ input:focus + .input_icon {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     #dropdown_list {
         width: 200% !important;
         button {
