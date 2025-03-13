@@ -145,7 +145,8 @@
 /* Estilos Gerais do Editor */
 .editor-content {
     all: initial;
-    height: 272px; 
+    max-height: 270px;
+    height: 270px;
     padding: 8px;
     border: 2px solid var(--carolina);
     border-radius: 0 0 5px 5px;
@@ -171,6 +172,13 @@
         background-color: var(--carolina);
         border-radius: 4px;
         border: 2px solid var(--azul_leve);
+    }
+}
+
+.tiptap_editor{
+    height: 100% !important;
+    & p{
+        margin: 0 !important;
     }
 }
 
@@ -371,16 +379,21 @@
     background-color: #B3C6D3;
     transition: filter 0.2s ease, background-color 0.2s ease;
     border-radius: 5px;
+    
+    &:has(input[type="radio"]:checked:disabled) {
+        filter: grayscale(1);
+    }
 
-    &:hover {
-        background-color: #81919b;
+
+    &:has(:disabled) {
+        background-color: var(--cinza); 
         cursor: pointer;
     }
-    
+
     &:active {
         filter: brightness(0.9);
     }
-
+    
     label {
         font-size: 16px;
         display: flex;
@@ -391,14 +404,13 @@
         padding: 8px 0;
         transition: color 0.2s ease;
         
-        &:hover {
+        &:hover:not(:has(:disabled)) {
             cursor: pointer;
         }
     }
 
     &:has(input[type="radio"]:checked) {
-        background-color: var(--sappire);
-        filter: brightness(1);
+        background-color: var(--sappire); 
     }
 
     input[type="radio"] {
@@ -429,7 +441,12 @@
             outline-offset: 2px;
         }
     }
+
+    input[type="radio"]:disabled ~ & {
+        background-color: var(--cinza); 
+    }
 }
+
 
 .input_icon_container {
     display: flex;
@@ -489,10 +506,11 @@ input:focus + .input_icon {
 
     & > img {
         max-width: 100%;
-        background: var(--branco_gelo);
+        background: transparent;
+        border: 2px dashed var(--cinza);
         aspect-ratio: 1 / 1;
         width: 100%;
-        object-fit: fill;
+        object-fit: contain;
         image-rendering: -webkit-optimize-contrast;
     }
 
@@ -565,8 +583,17 @@ input:focus + .input_icon {
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
+    
 }
 
+.input_icon_container:has(:disabled) .input_icon {
+    background: var(--cinza);
+}
+
+.base_input[type='time']:disabled::after,
+.base_input[type='date']:disabled::after{
+    filter: grayscale(1);
+}
 
 
 
@@ -887,3 +914,6 @@ input:focus + .input_icon {
         }
     }
 }
+
+/* mexer no grid 2 linhas
+adicionar undo e titulo - subtitulo */

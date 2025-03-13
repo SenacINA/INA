@@ -218,7 +218,7 @@
                         <h4>Tipos de Promoção</h4>
                         <div class='radio_inputs'>
                            <label for="reaisSobreTotal">Reais sobre o Total</label>
-                           <input name='tipoPromocaoProduto' id='reaisSobreTotal' type="radio">
+                           <input name='tipoPromocaoProduto' id='reaisSobreTotal' type="radio" checked>
                         </div>
                         <div class='radio_inputs'>
                            <label for="reaisSobreFrete">Reais sobre o Frete</label>
