@@ -9,9 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="../../css/cliente/carinho_dados.css">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body class="fundo">
-  <nav class="navbar">nav</nav>
+  <!-- fazer responsividade -->
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
+
   <div class="carrinho_dados">
     <img src="../../image/cliente/carrinho_dados/carrinho_top.png" class="carrinho_top">
     <div class="forms_dados">

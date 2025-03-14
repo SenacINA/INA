@@ -10,9 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-  <nav class="navbar"></nav>
+  <!-- fazer responsividade -->
+   
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <header>
     <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header" width="100%">
   </header>
@@ -103,7 +108,7 @@
         <option value="data_inicio">Data de início</option>
         <option value="data_expiracao">Data de expiração</option>
       </select>
-      <button class="add_anuncio"><img src="../../image/geral/add_botao.svg">Adicionar anúncio</button>
+      <button class="add_anuncio" onclick="pag('admin/admin_carrossel')"><img src="../../image/geral/add_botao.svg">Adicionar anúncio</button>
     </div>
     <div class="table">
       <p>IP</p>

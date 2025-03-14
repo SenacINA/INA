@@ -9,10 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- fazer a responsividade -->
+    <!--arrumar o nome das class  -->
+
+    <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
     <div class="body_registro_produto_a_ser_vendido">
-        <div class="nav_bar"></div>
         <div class="grid_bg" >
             <div class="grid_titulo">
                 <h1>DADOS GERAIS</h1>
@@ -118,7 +124,7 @@
                             <h1><img src="../../image/geral/x_botao_vermelho.svg" alt="">Cancelar</h1>
                         </div>
                         <div class="adicionar">
-                            <h1><img src="../../image/geral/confirm_botao.svg" alt="">Adicionar Produto</h1>
+                            <h1><img src="../../image/geral/confirm_botao.svg" alt="">Adicionar</h1>
                         </div>
                     </div>
                 </div>

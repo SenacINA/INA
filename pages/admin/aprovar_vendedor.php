@@ -11,10 +11,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
-
 <body>
-  <nav class="aprovar_vendedor_navbar"></nav>
+  <!-- fazer responsividade -->
+   
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
+
   <div class="aprovar_vendedor_main_title">
     <h1 class="aprovar_vendedor_main_text">Aprovação do vendedor</h1>
     <hr class="aprovar_vendedor_main_linha">

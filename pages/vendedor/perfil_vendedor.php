@@ -11,12 +11,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/geral/base.js"></script>
 </head>
-
 <body>
-    <nav class="nav_bar"></nav>
+    <!-- fazer a responsividade -->
+    <!-- arruamr o nome das class -->
+     
+    <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
     <main>
-
         <div class="pfp_vendedor">
             <img src="../../image/vendedor/perfil_vendedor/banner_vendedor_mini_perfil.png" alt="banner" class="banner_vendedor">
             <div class="pfp_container">
@@ -25,14 +30,14 @@
                 <div class="botao_menu">
                     <img src="../../image/vendedor/perfil_vendedor/edit.svg" class="menu_2">
                     <form action="" class="menu_1">
-                        <select name="menu" id="menu">
+                        <select name="menu" id="menu" onchange="selectPag(this.value)">
                             <option selected disabled value="">Menu</option>
-                            <option value="editar-perfil">Editar Perfil</option>
-                            <option value="pedidos">Pedidos</option>
-                            <option value="relatorio">Relatório</option>
-                            <option value="criar-cupom">Criar Cupom</option>
-                            <option value="editar-produtos">Editar Produtos</option>
-                            <option value="sair">Sair</option>
+                            <option value="vendedor/editar_perfil_vendedor">Editar Perfil</option>
+                            <option value="vendedor/confirmar_pedido">Pedidos</option>
+                            <option value="vendedor/relatorio_vendas">Relatório</option>
+                            <option value="admin/cupom">Criar Cupom</option>
+                            <option value="vendedor/editar_produto">Editar Produtos</option>
+                            <option value="cliente/login">Sair</option>
                         </select>
                     </form>
                 </div>
@@ -148,7 +153,7 @@
 
     </template>
     <script type="text/javascript" src="../../js/cliente/categoria.js"></script>
-    <script src="../../js/vendedor/perfil_vendedor.js"></script>
+    <!-- <script src="../../js/vendedor/perfil_vendedor.js"></script> -->
 </body>
 
 </html>

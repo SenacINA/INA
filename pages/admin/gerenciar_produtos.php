@@ -2,23 +2,26 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E ao Quadrado</title>
-  <link rel="stylesheet" href="../../css/style.css?v=<?php echo time(); ?>">
-  <link rel="stylesheet" href="../../css/admin/gerenciar_produtos.css">
-  <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E ao Quadrado</title>
+    <link rel="stylesheet" href="../../css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../css/admin/gerenciar_produtos.css">
+    <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <nav class="gerenciar_produtos_navbar"></nav>
-
-  <header class="gerenciar_produtos_header">
-    <div class="gerenciar_produtos_header_title">
-      <h1>GERENCIAR PRODUTOS</h1>
+  <!-- fazer responsividade -->
+   
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
+  <header class = "gerenciar_produtos_header">
+    <div class = "gerenciar_produtos_header_title">
+      <h1>GERENCIAR PRODUTOS</h1> 
     </div>
     <div class="gerenciar_produtos_header_linha"></div>
   </header>

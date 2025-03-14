@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="../../css/vendedor/confirmar_pedido.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="confirmar_pedido_nav_bar"></nav>
+    <!-- fazer responsividade -->
+     
+    <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
     <div class="confirmar_pedido_grid_bg">
         <div class="confirmar_pedido_titulo"><h1>CONFIRMAR PEDIDO</h1></div>
         <hr class="confirmar_pedido_linha_azul">

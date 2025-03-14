@@ -10,11 +10,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <main>
-    <nav class="cupom_nav_bar"></nav>  
-
     <div class="cupom_body">
       <div class="cupom_header">
         <div class="cupom_text_header">
@@ -99,51 +101,45 @@
         </div>
 
         <form action="" method="post" class="cupom_localizacao">
-        <div class="toggle-group">
-        <label class="toggle">
-            <input type="radio" name="toggle-group" checked>
-            <span class="slider"></span>
-            <label>Reais sobre o Total</label>
-        </label>
+          <div class="toggle-group">
+            <label class="toggle">
+                <input type="radio" name="toggle-group" checked>
+                <span class="slider"></span>
+                <label>Reais sobre o Total</label>
+            </label>
 
-        <label class="toggle">
-            <input type="radio" name="toggle-group">
-            <span class="slider"></span>
-            <label>Porcentagem sobre o Total</label>
-        </label>
-        <label class="toggle">
-            <input type="radio" name="toggle-group">
-            <span class="slider"></span>
-            <label>Reais sobre Frete</label>
-        </label>
-    </div>
-                
+            <label class="toggle">
+                <input type="radio" name="toggle-group">
+                <span class="slider"></span>
+                <label>Porcentagem sobre o Total</label>
+            </label>
+            <label class="toggle">
+                <input type="radio" name="toggle-group">
+                <span class="slider"></span>
+                <label>Reais sobre Frete</label>
+            </label>
+          </div> 
         </form>
 
-        <div class="cupom_text" id="cupom_text_4">
-        </div>
+        <div class="cupom_text" id="cupom_text_4"></div>
 
-        <div class="cupom_botao_salvar">
-          <button class="cupom_cancelar">
-            <img src="../../image/admin/cancel.svg" alt="">
-            <label>CANCELAR</label>
-          </button>
+      <div class="cupom_botao_salvar">
+        <button class="cupom_cancelar">
+          <img src="../../image/admin/cancel.svg" alt="">
+          <label>CANCELAR</label>
+        </button>
 
-          <button class="cupom_salvar">
-            <img src="../../image/admin/cupom/v_icon.svg" alt="">
-            <label>SALVAR</label>
-          </button>
-        </div>
-
-        
+        <button class="cupom_salvar">
+          <img src="../../image/admin/cupom/v_icon.svg" alt="">
+          <label>SALVAR</label>
+        </button>
       </div>
-    
+
+      </div>
     </div>
     
     <!-- Falta footer -->
-    <footer class="footer_temporario_cupom">
-      <img src="../../image/admin/cupom/footer_mobile.svg" alt="">
-    </footer>
+    
   </main>
 </body>
 </html>

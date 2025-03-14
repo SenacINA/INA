@@ -10,10 +10,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-    <nav class="perfil_cliente_nav_bar"></nav>
+    <!-- fazer responsividade -->
+
+    <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
     <main>
         <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner_cliente">
 
@@ -24,11 +29,11 @@
 
         <div class="perfil_cliente_botao_menu">
             <form action="">
-                <select name="menu" id="menu"> 
-                    <option value="">Menu</option>
-                    <option value="editar-perfil">Editar Perfil</option>
-                    <option value="pedidos">Cadastro como vendedor</option>
-                    <option value="sair">Sair</option>
+                <select name="menu" id="menu" onchange="selectPag(this.value)"> 
+                    <option selected disabled value ="">Menu</option>
+                    <option value="cliente/editar_perfil">Editar Perfil</option>
+                    <option value="vendedor/cadastro_vendedor_1">Cadastro como vendedor</option>
+                    <option value="cliente/login">Sair</option>
                 </select>
             </form>  
         </div>
@@ -98,7 +103,7 @@
                     </div>
             
                     <div class="perfil_cliente_grid_botoes">
-                        <div class="perfil_cliente_btn_1"><h1>Compra Novamente</h1></div>
+                        <div class="perfil_cliente_btn_1" onclick="pag('cliente/carrinho_vazio')"><h1>Compra Novamente</h1></div>
                     </div>
                 </div>
                 <hr class="perfil_cliente_hr_2">
@@ -128,7 +133,7 @@
                     </div>
             
                     <div class="perfil_cliente_grid_botoes">
-                        <div class="perfil_cliente_btn_1"><h1>Compra Novamente</h1></div>
+                        <div class="perfil_cliente_btn_1" onclick="pag('cliente/carrinho_vazio')"><h1>Compra Novamente</h1></div>
                     </div>
                 </div>
             </div>
