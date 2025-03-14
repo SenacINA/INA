@@ -6,13 +6,6 @@
   user-select: none;
 }
 
-/* NAVBAR */
-.perfil_admin_nav_bar { 
-  width: 100%;
-  height: 67px;
-  background-color: black;
-}
-
 /* CORPO PRINCIPAL */
 .perfil_admin_body {
   display: flex;
@@ -26,7 +19,6 @@
   
   border-radius: 10px;
   margin: 0px 1.5%;
-  
 }
 
 /* header */
@@ -197,7 +189,7 @@
 }
 
 .perfil_admin_forms_item input {
-  max-width: 471px;
+  max-width: 470px;
   height: 40px;
   
   border: 2px #1B98E0 solid;

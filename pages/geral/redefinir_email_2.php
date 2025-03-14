@@ -28,7 +28,7 @@
           </div>
 
           <div class="redefinir_email_2">
-            <label for="email">Cofirmar Novo E-mail</label>
+            <label for="email">Confirmar Novo E-mail</label>
             <input type="text" name="email" id="email">  
           </div>
         </form>
