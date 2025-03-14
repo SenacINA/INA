@@ -6,7 +6,6 @@
     <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
     <title>E ao Quadrado</title>
     <link rel="stylesheet" href="../../css/cliente/login.css">   
-    <title>E ao Quadrado</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -18,17 +17,17 @@
       <div class="login_container">
         <div class="login_bem_vindo">
           <img src="../../image/geral/logo-eaoquadrado.png">
-          <h1>login de usuário</h1>
+          <h1>Login de usuário</h1>
           <h2>Bem-vindo de volta!</h2>
         </div>
 
         <form class="login_formulario_login">
           <label for="email">Email:</label><br>
-          <input type="text"><br>
+          <input type="text" id="email"><br>
         </form>
 
         <form class="login_redefinir_senha_2_form" action="">
-            <label for="senha">Senha</label>
+            <label for="senha">Senha:</label>
             <div class="login_redefinir_senha_2">
               <input type="password" name="senha" id="senha">
               <a href="javascript:void(0);" id="eye-icon-senha">
@@ -39,26 +38,25 @@
             <div class="login_links_conatiner">
               <div class="login_checkbox_container">
                 <input type="checkbox">
-                <p>Manter Conectado</p></div>
+                <p>Manter Conectado</p>
               </div>
+            </div>
 
-              <div class="login_links">
+            <div class="login_links">
                 <div onclick="pag('geral/redefinir_senha_1')">
                   <p>Redefinir Senha</p>
                 </div>        
-                <div onclick="pag('cliente/login')">
+                <div onclick="pag('cliente/cadastro')">
                   <p>Não tem login? Clique aqui</p>
                 </div>
-              </div>
             </div>
         </form>
-        <div class="login_botoes">
-          <button class="login_botao_entrar" onclick="pag('geral/redefinir_senha_1')">
+      </div>
+      <div class="login_botoes">
+          <button class="login_botao_entrar" onclick="login()">
               <img src="../../image/geral/confirm_botao.svg" alt="">Entrar
           </button>
         </div>
-        
-      </div>
     </div>
 
     <script type="module" src="../../js/admin/toggle_redefinir.js"></script>

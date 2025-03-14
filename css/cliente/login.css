@@ -115,7 +115,7 @@
   .login_links_conatiner {
     display: flex;
     flex-direction: column;
-    row-gap: 4px;
+    row-gap: 8px;
     margin-top: 8px;
   }
 
@@ -125,6 +125,7 @@
   
   .login_links p {
     color: #000;
+    cursor: pointer;
 
     font-family: Jost;
     font-size: 16px;

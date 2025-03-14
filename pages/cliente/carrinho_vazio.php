@@ -14,10 +14,11 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- fazer responsividade -->
+     
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
-
     <main>
         <div class="carrinho_vazio">
             <img src="../../image/carrinho/carrinho.svg">
@@ -69,6 +70,7 @@
                 <button class="remover_botao"><img src="../../image/geral/x_botao.svg">REMOVER PRODUTO(S)</button>
                 <button class="salvar_botao"><img src="../../image/geral/confirm_botao.svg">SALVAR</button>
             </div>
+        </div>
     </main>
 </body>
 

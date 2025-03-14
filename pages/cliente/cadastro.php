@@ -25,14 +25,14 @@
         </div>
 
         <form class="cadastro_formulario_cadastro">
-          <label for="nomeDeUsuario">Nome de usuário:</label><br>
+          <label for="nomeDeUsuario">Nome:</label><br>
           <input type="text"><br>
           <label for="email">Email:</label><br>
           <input type="text"><br>
         </form>
 
         <form class="cadastro_redefinir_senha_2_form" action="">
-          <label for="senha">Senha</label>
+          <label for="senha">Senha:</label>
           <div class="cadastro_redefinir_senha_2">
               <input type="password" name="senha" id="senha">
               <a href="javascript:void(0);" id="eye-icon-senha">
@@ -40,7 +40,7 @@
               </a>
           </div>
         
-          <label for="nova_senha">Confirmar Senha</label>
+          <label for="nova_senha">Confirmar Senha:</label>
           <div class="cadastro_redefinir_senha_2">
               <input type="password" name="nova_senha" id="nova_senha">
               <a href="javascript:void(0);" id="eye-icon-nova-senha">
