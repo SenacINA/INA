@@ -18,7 +18,6 @@
 
 .carrinho_top {
   position: relative;
-  margin-top: 98px;
   margin-bottom: 61px;
   grid-row: 1;
 }
@@ -50,7 +49,7 @@
   column-gap: 10%;
   grid-template-columns: 500px 500px;
   grid-template-rows: min-content;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   justify-items: center;
 }
@@ -83,7 +82,8 @@
 .forms_carrinho input {
   grid-column: 1;
   width: 495px;
-  height: 36px;
+  height: 40px;
+  font-size: 20px;
   background: transparent;
   border-radius: 5px;
   border: 2px solid #1b98e0;
@@ -92,8 +92,13 @@
 .informacoes_cep {
   grid-column: 1;
   display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 15%;
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 2%;
+}
+
+.informacoes_cep input {
+  width: 100%;
 }
 
 .cep {
@@ -104,8 +109,6 @@
 #cep {
   grid-column: 1;
   grid-row: 2;
-  width: 210px;
-  height: 36px;
 }
 
 .cidade {
@@ -115,9 +118,7 @@
 
 #cidade {
   grid-column: 2;
-  grid-row: 2;
-  width: 210px;
-  height: 36px;
+  grid-row: 2; 
 }
 
 .dados_adicionais {
@@ -136,7 +137,7 @@
 
 .dados_adicionais input {
   width: 495px;
-  height: 36px;
+  height: 40px;
   background: transparent;
   border-radius: 5px;
   border: 2px solid #1b98e0;

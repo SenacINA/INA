@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body class="fundo">
-  
+  <!-- fazer responsividade -->
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>

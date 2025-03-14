@@ -213,9 +213,7 @@
     </div>
     
     <!-- Falta footer -->
-    <footer class="footer_temporario_atualizar_usuario">
-      <img src="../../image/admin/atualizar_usuario/footer_mobile.svg" alt="">
-    </footer>
+    
   </main>
 </body>
 </html>

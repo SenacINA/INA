@@ -13,11 +13,13 @@
   <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+<body> 
+  <!-- fazer responsividade -->
+  <!-- arruamar o nome das class -->
 
-<body>  <!--  class="fundo_vendedor" -->
   <?php
     include_once('../../pages/geral/navbar.php');
-    ?>
+  ?>
   <main class="quadrado_vendedor">
     <div class="mini_perfil_vendedor">
       <img src="../../image/vendedor/editar_perfil/banner_vendedor_mini_perfil.png" alt="banner" class="banner_vendedor">

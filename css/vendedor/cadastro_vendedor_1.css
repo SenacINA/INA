@@ -200,7 +200,7 @@ ol li::before {
         position: absolute;
         width: 100%;
         height: 86px;
-        top: 56px;
+        top: -95px;
         margin-left: 32px;
     }
 
