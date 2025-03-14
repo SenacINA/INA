@@ -16,7 +16,7 @@
 
 .gerenciar_pedidor_firula_holder{
   border-radius: 10px;
-  background-color: var(--azul_leve);
+  background-color: #EFF3F5;
   display: flex;
   flex-direction: column;
   padding: 32px;
@@ -166,6 +166,14 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.gerenciar_carrossel_perfil{
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .gerenciar_pedidos_card {
