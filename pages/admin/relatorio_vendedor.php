@@ -42,16 +42,16 @@
           <form action="" method="post" class="relatorio_vendedor_forms">
             <div class="relatorio_vendedor_pesquisar_usuario_item" id="relatorio_vendedor_pesquisar_usuario_item_1" >
               <label>Nome</label>
-              <input type="text" placeholder="00001">
+              <input type="text">
             </div>
             <div class="relatorio_vendedor_dados_pessoais_conjunto">
               <div class="relatorio_vendedor_pesquisar_usuario_item" id="relatorio_vendedor_pesquisar_usuario_item_2">
                 <label>E-mail</label>
-                <input type="text" placeholder="admin@gmail.com">
+                <input type="text">
               </div>
               <div class="relatorio_vendedor_pesquisar_usuario_item" id="relatorio_vendedor_pesquisar_usuario_item_2">
                 <label>Telefone</label>
-                <input type="text" placeholder="+55 (19) 99486-4017">
+                <input type="text">
               </div>
             </div>
             
@@ -70,22 +70,22 @@
           <div class="relatorio_vendedor_dados_pessoais_conjunto">
             <div class="relatorio_vendedor_dados_pessoais_item" id="relatorio_vendedor_dados_pessoais_item_3">
               <label>E-mail</label>
-              <input type="text" placeholder="thundergames@gmail.com">
+              <input type="text">
             </div>
             <div class="relatorio_vendedor_dados_pessoais_item" id="relatorio_vendedor_dados_pessoais_item_4">
               <label>Telefone</label>
-              <input type="text" placeholder="+55 (19) 99486-4017">
+              <input type="text">
             </div>
           </div>
 
           <div class="relatorio_vendedor_dados_pessoais_conjunto">
             <div class="relatorio_vendedor_dados_pessoais_item" id="relatorio_vendedor_dados_pessoais_item_5">
               <label>CPf</label>
-              <input type="text" placeholder="000-000-000-00">
+              <input type="text">
             </div>
             <div class="relatorio_vendedor_dados_pessoais_item" id="relatorio_vendedor_dados_pessoais_item_6">
               <label>Telefone 2</label>
-              <input type="text" placeholder="+55 (19) 99486-4017">
+              <input type="text">
             </div>
           </div>
         </form>
@@ -101,33 +101,33 @@
             <!-- row 1 -->
             <div class="relatorio_vendedor_localizacao_item" id="relatorio_vendedor_localizacao_item_1">
               <label>CEP</label>
-              <input type="text" placeholder="04261-080">
+              <input type="text">
             </div>
             <div class="relatorio_vendedor_localizacao_item" id="relatorio_vendedor_localizacao_item_2">
               <label>Estado</label>
-              <input type="text" placeholder="São Paulo">
+              <input type="text">
             </div>
           </div>
           
           <div class="relatorio_vendedor_localizacao_conjunto">
             <div class="relatorio_vendedor_localizacao_item" id="relatorio_vendedor_localizacao_item_3">
               <label>Cidade</label>
-              <input type="text" placeholder="São Paulo">
+              <input type="text">
             </div>
             <div class="relatorio_vendedor_localizacao_item" id="relatorio_vendedor_localizacao_item_4">
               <label>Bairro</label>
-              <input type="text" placeholder="Vila Monumento">
+              <input type="text">
             </div>
           </div>
 
           <div class="relatorio_vendedor_localizacao_conjunto">
             <div class="relatorio_vendedor_localizacao_item" id="relatorio_vendedor_localizacao_item_5">
               <label>Endereço</label>
-              <input type="text" placeholder="R. Eng. Sampaio Coelho">
+              <input type="text">
             </div>
             <div class="relatorio_vendedor_localizacao_item" id="relatorio_vendedor_localizacao_item_6">
               <label>Número</label>
-              <input type="text" placeholder="122">
+              <input type="text">
             </div>
           </div>
         </form>
@@ -142,7 +142,7 @@
           <img src="../../image/admin/relatorio_vendedor/imagem_perfil_vendedor.png" alt="">
           <h1>THUNDER GAMES</h1>
           <h2>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius  
-          et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</h2>
+          et nesciunt temporibus. At est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</h2>
         </div>
       </div>
     </div>

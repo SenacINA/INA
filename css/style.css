@@ -121,9 +121,9 @@ body{
   background-color: var(--branco);
 }
 
-
+/* > */
 .base_input {
-  height: 48px;
+  height: 40px;
   border: #4eace2 solid 2px;
   border-radius: 5px;
   font-size: 1.5rem;
@@ -151,7 +151,7 @@ select.base_input {
 }
 
 .base_input, option.base_input {
-  height: 48px;
+  height: 40px;
   border: #4eace2 solid 2px;
   font-size: 1.5rem;
   font-style: normal;
@@ -234,6 +234,7 @@ select.base_input {
   color: var(--cinza);
   border: var(--cinza) solid 2px;
 }
+/* < */
 
 .base_tabela{
   *{

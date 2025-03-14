@@ -162,15 +162,15 @@ color: #2888b1;
 }
 
 /* inputs */
-.relatorio_vendedor_grid_conteudo input {
+.base_input, .relatorio_vendedor_grid_conteudo input {
   height: 40px;
-
-  border: 2px #1B98E0 solid;
-  outline: none;
+  border: #4eace2 solid 2px;
   border-radius: 5px;
-  text-indent: 5px;
-  font-size: 20px;
-  background-color: transparent;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--cinza);
 }
 
 .relatorio_vendedor_grid_conteudo label {
@@ -309,13 +309,6 @@ color: #2888b1;
 
 /* <<< MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 @media (max-width: 1024px) {
-  /* NAVBAR */
-  .relatorio_vendedor_nav_bar { 
-    width: 100%;
-    height: 67px;
-    background-color: black;
-  }
-
   /* CORPO PRINCIPAL */
   .relatorio_vendedor_body {
     position: relative;
@@ -332,7 +325,6 @@ color: #2888b1;
     margin-top: 86px;
   }
 
-  /* header */
   .relatorio_vendedor_titulo, #relatorio_vendedor_titulo_2 {
     position: absolute;
 
@@ -346,7 +338,7 @@ color: #2888b1;
   }
 
   #relatorio_vendedor_titulo_1 {
-    top: -85px;
+    top: -65px;
   }
 
   #relatorio_vendedor_titulo_2 {
@@ -491,5 +483,11 @@ color: #2888b1;
       text-overflow: ellipsis;
       font-size: 0.625rem;
     }
+  }
+}
+
+@media (max-width: 425px) {
+  #relatorio_vendedor_titulo_1  {
+    top: -85px;
   }
 }

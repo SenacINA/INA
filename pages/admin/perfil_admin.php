@@ -55,19 +55,19 @@
         <form action="" method="post" class="perfil_admin_forms">
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_1" >
             <label>Nome</label>
-            <input type="text" placeholder="Digite seu nome">
+            <input type="text">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_2">
             <label>E-mail</label>
-            <input type="text" placeholder="exemplo@email.com">
+            <input type="text">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_3">
             <label>CPF</label>
-            <input type="text" placeholder="000.000.000-00">
+            <input type="text">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_4">
             <label>Telefone</label>
-            <input type="text" placeholder="+00 (00) 00000-0000">
+            <input type="text">
           </div>
         </form>
 
