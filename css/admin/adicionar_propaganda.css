@@ -4,272 +4,338 @@
   font-family: Jost;
 }
 
-.admin_carrossel_main_navbar {
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
   width: 100%;
   height: 67px;
-  top: 0;
-  background-color: black;
-}
-
-.admin_carrossel_main_container {
-  width: 100%;
-  height: 100%;
-  background-image: url(../../image/cliente/cadastro/cadastro_fundo.png);
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  row-gap: 100px;
-}
-
-.admin_carrossel_quadrado_container {
-  width: 1500px;
-  height: 670px;
   background-color: #dce5eb;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-rows: min-content auto;
 }
 
-.admin_carrossel_main_text_container {
-  grid-column: 1/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.main_container {
   width: 100%;
-  height: 80px;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto;
+  grid-template-rows: 590px 81px 800px;
+  top: 1%;
 }
 
-.admin_carrossel_texto_main_text {
-  color: #255e7e;
-  font-weight: 600;
-  font-size: 35px;
+.pesquisa {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  position: relative;
+  top: 97px;
+  left: 92px;
+  column-gap: 20%;
+  width: 1000px;
 }
 
-.admin_carrossel_linha_main_text {
-  background-color: #2888b1;
-  border: 0;
-  border-radius: 20px;
-  width: 95%;
-  height: 4px;
+.pesquisa_cliente {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: repeat(3, auto);
 }
 
-.admin_carrossel_informacoes_anuncio {
+.informacoes_cliente {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  grid-template-rows: repeat(3, min-content);
+  align-items: center;
+  justify-items: center;
+}
+
+.main_content {
+  width: 1822px;
+  height: 590px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: #f1f1f1;
+}
+
+.main_text_pesquisa_container {
   grid-column: 1;
-  grid-row: 2;
-  display: flex;
-  position: relative;
-  left: 10%;
-  top: 10%;
 }
 
-.admin_carrossel_linha_vertical_informacoes_anuncio {
-  width: 10px;
-  height: 46px;
-  background-color: #247ba0;
-  border-radius: 20px;
-  border: 0;
-}
-
-.admin_carrossel_main_text_informacoes_anuncio {
-  position: relative;
-  left: 1%;
-  font-size: 30px;
+.main_text_pesquisa,
+.main_text_info {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
   font-weight: 400;
+  line-height: normal;
 }
 
-.admin_carrossel_forms_informacoes_anuncio {
+.linha {
+  width: 613px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.forms_pesquisa {
+  margin-top: 24px;
   grid-column: 1;
   grid-row: 2;
   display: grid;
-  grid-template-rows: repeat(5, min-content);
-  position: relative;
-  top: 25%;
-  left: 10%;
-  height: 80%;
 }
 
-.admin_carrossel_input_text_forms {
-  text-indent: 5px;
+.forms_pesquisa input {
+  width: 614px;
+  height: 34px;
   background-color: transparent;
-  border-radius: 5px;
   border: 2px solid #1b98e0;
-  width: 80%;
-  height: 30px;
 }
 
-.admin_carrossel_forms_informacoes_anuncio label {
-  color: #0f3b62;
+#ip_email {
+  grid-column: 1;
+  text-indent: 5px;
+}
+
+.forms_pesquisa label {
+  color: #000;
+  font-family: Jost;
   font-size: 20px;
-  font-weight: 600;
-}
-
-.admin_carrossel_input_file_forms {
-  position: relative;
-  left: 10%;
-  top: 150%;
-}
-
-.admin_carrossel_input_file_forms::file-selector-button {
-  width: 220px;
-  height: 32px;
-  cursor: pointer;
-  background-image: url(../../image/admin/adicionar_propaganda/EnviarArquivo.png);
-  background-color: transparent;
-  border: 0;
-  color: transparent;
-}
-
-.admin_carrossel_input_file_forms[type="file"] {
-  color: transparent;
-}
-
-.admin_carrossel_file_text {
-  width: 50%;
-  height: 30%;
-  position: relative;
-  top: 20%;
-}
-
-.admin_carrossel_enviar_foto {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.admin_carrossel_tamanho_foto {
-  text-align: center;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.admin_carrossel_add_link {
-  text-align: center;
-  font-size: 14px;
-  color: #2075c2;
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-.admin_carrossel_forms_planos {
-  grid-column: 2;
-  grid-row: 2;
-  display: grid;
-  width: 90%;
-  grid-template-rows: min-content min-content min-content;
-  row-gap: 8%;
-  position: relative;
-  top: 30%;
-  left: 30%;
-  height: 70%;
-}
-
-.admin_carrossel_forms_planos div {
-  width: 50%;
-  background-color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  padding-left: 5px;
-}
-
-.admin_carrossel_calendario {
-  align-self: center;
-  width: 33px;
-  height: 28px;
-  position: relative;
-  left: 2%;
-}
-
-.admin_carrossel_proxima_cobranca {
-  display: flex;
-  width: 80%;
-  height: 25%;
-}
-
-.admin_carrossel_proxima_cobranca_text {
-  font-size: 20px;
-  position: relative;
-  left: 10%;
-}
-
-.admin_carrossel_proxima_cobranca_date {
-  font-size: 16px;
+  font-style: normal;
   font-weight: 400;
-  position: relative;
-  left: 10%;
+  line-height: normal;
 }
 
-.admin_carrossel_cancelar_button {
-  text-transform: uppercase;
-  width: 190px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 5%;
-  border-radius: 5px;
-  background-color: transparent;
-  border: 2px solid #d73232;
-  font-size: 20px;
-  font-weight: 600;
-  color: #d73232;
+.selects {
+  grid-column: 1;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 40% 22% 20%;
+  column-gap: 34px;
+  margin-top: 3%;
 }
 
-.admin_carrossel_excluir_button {
-  text-transform: uppercase;
-  width: 190px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 5%;
-  background-color: #d73232;
-  border-radius: 5px;
-  border: 0;
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
+.ano {
+  grid-column: 3;
+  grid-row: 1;
 }
 
-.admin_carrossel_salvar_button {
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 5%;
-  width: 190px;
-  height: 48px;
-  border-radius: 5px;
-  background-color: #1b98e0;
-  border: 0;
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-}
-
-.admin_carrossel_buttons_container {
-  display: flex;
-  column-gap: 20px;
-  position: relative;
-  top: 80%;
-  right: 5%;
+.ano_select {
+  grid-column: 3;
   grid-row: 2;
-  grid-column: 2;
+  height: 34px;
+  background-color: transparent;
+  border: 2px solid #1b98e0;
 }
 
-.admin_carrossel_buttons_container button {
+.mes_select {
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+}
+
+
+
+.plano_select {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+}
+
+.botoes_submit {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.cancelar_submit {
   cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 190%;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  height: 50px;
+  background-color: transparent;
+  border: red solid 2px;
+  border-radius: 10px;
+  color: #f00;
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.admin_carrossel_carrossel {
+.confirmar_submit {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 200%;
+  display: grid;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  height: 50px;
+  border-radius: 10px;
+  background: #2075c2;
+  color: #fff;
+  text-align: center;
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.usuario_info {
+  grid-row: span 3;
+  grid-column: 1;
+  width: 295px;
+  height: 258px;
+  background: #dce5eb;
+}
+
+.informacoes_cliente {
+  row-gap: 5%;
+}
+
+.usuario_info {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.nome_info {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.main_text_info_container {
+  grid-column: span 2;
+}
+
+.data_inicio,
+.data_expiracao,
+.cargo {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 295px;
+  height: 75px;
+  background: #dce5eb;
+}
+
+.data_inicio_text,
+.data_expiracao_text,
+.cargo_text {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.data_inicio_date,
+.data_expiracao_date,
+.cargo_info {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 90%;
+}
+
+.botoes {
+  position: relative;
+  top: 35%;
+  height: 40px;
+}
+
+.filtro {
+  width: 543px;
+  height: 43px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: #f1f1f1;
+  color: #000;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.add_anuncio {
+  position: relative;
+  left: 86%;
+  bottom: 100%;
+  width: 250px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 666px;
-  background-image: url(../../image/admin/adicionar_propaganda/Header.png);
+  border-radius: 5px;
+  background: #1b98e0;
+  color: #fff;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.table {
+  width: 1822px;
+  height: 752px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: #f1f1f1;
+  display: grid;
+  grid-template-columns: 9.22% 23.27% 13.39% 8.51% 12.4% 15.86% 17.35%;
+  grid-template-rows: 64px repeat(13, 45px);
+  row-gap: 8px;
+  text-align: center;
+}
+
+.table p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.table span {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dce5eb;
 }

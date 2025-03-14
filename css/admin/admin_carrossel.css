@@ -1,0 +1,359 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Jost;
+}
+
+.admin_carrossel_main_navbar {
+  width: 100%;
+  height: 67px;
+  top: 0;
+  background-color: black;
+}
+
+.admin_carrossel_main_container {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../image/cliente/cadastro/cadastro_fundo.png);
+  background-size: cover;
+  display: flex;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 100px;
+}
+
+.admin_carrossel_quadrado_container {
+  width: 1500px;
+  height: 70vh;
+  background-color: #dce5eb;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: min-content auto;
+}
+
+.admin_carrossel_main_text_container {
+  grid-column: 1/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+}
+
+.admin_carrossel_img_anuncios{
+  width: 32;
+  display: flex;
+  height: 32px;
+  flex-direction: row;
+}
+
+.admin_carrossel_texto_main_text {
+  color: #255e7e;
+  font-weight: 600;
+  font-size: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin_carrossel_linha_main_text {
+  background-color: #2888b1;
+  border: 0;
+  border-radius: 20px;
+  width: 95%;
+  height: 4px;
+}
+
+.admin_carrossel_informacoes_anuncio {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  position: relative;
+  left: 10%;
+  top: 10%;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+.admin_carrossel_linha_vertical_informacoes_anuncio {
+  width: 10px;
+  height: 46px;
+  background-color: #2888b1;
+  border-radius: 20px;
+  border: 0;
+
+}
+
+.admin_carrossel_main_text_informacoes_anuncio {
+  position: relative;
+  display: flex;
+  left: 1%;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.admin_carrossel_main_text_informacoes_anuncio p {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #2888b1;
+}
+.admin_carrossel_main_text_informacoes_anuncio svg{
+  width: 28px;
+  height: 28px;
+  color: #2888b1;
+}
+
+
+.admin_carrossel_forms_informacoes_anuncio {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: repeat(5, min-content);
+  position: relative;
+  top: 25%;
+  left: 10%;
+  height: 80%;
+}
+
+
+.admin_carrossel_main_text_informacoes_anuncio .admin_carrossel_info_icon {
+  font-weight: bold;
+  font-size: 28px; 
+  color: white; /* O texto "i" ficará invisível */
+  margin-right: 10px; /* Espaço entre o ícone e o texto */
+  background-color: rgba(36, 123, 160, 1); /* Cor de fundo */
+  border-radius: 50%; /* Faz com que o fundo fique redondo */
+  width: 30px; /* Definindo o tamanho da bolinha */
+  height: 30px; /* Definindo o tamanho da bolinha */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.admin_carrossel_input_text_forms {
+  text-indent: 5px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #1b98e0;
+  width: 80%;
+  height: 30px;
+}
+
+.admin_carrossel_forms_informacoes_anuncio label {
+  color: #0f3b62;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.admin_carrossel_input_file_forms {
+  display: flex;
+  position: relative;
+  left: 10%;
+  top: 150%;
+}
+
+.admin_carrossel_input_file_forms::file-selector-button {
+  width: 412px;
+  height: 48px;
+  cursor: pointer;
+  color: white;
+  background-color: #B3C6D3;
+  border: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  background-image: url("../../image/admin/admin_carrossel/enviar_arquivo.png");
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: 100px center;
+
+}
+
+
+
+.admin_carrossel_input_file_forms[type="file"] {
+  color: transparent;
+}
+.admin_carrossel_file_text {
+  width: 50%;
+  height: 30%;
+  position: relative;
+  top: 30%;
+  left: 10%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.admin_carrossel_enviar_foto {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.admin_carrossel_tamanho_foto {
+  text-align: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.admin_carrossel_add_link {
+  text-align: center;
+  font-size: 14px;
+  color: #2075c2;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.admin_carrossel_forms_planos {
+  grid-area: 2/2/2/2;
+  display: grid;
+  width: 75%;
+  grid-template-rows: min-content min-content min-content;
+  row-gap: 2%;
+  position: relative;
+  top: 20%;
+  height: 70%;
+}
+
+.admin_carrossel_forms_planos div {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  color: white;
+  background-color: #B3C6D3; 
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.admin_carrossel_forms_planos div:hover {
+  background-color: rgba(0, 100, 148, 1);
+}
+
+.admin_carrossel_forms_planos input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+.admin_carrossel_forms_planos input[type="checkbox"]:checked {
+  border-color: rgb(255, 255, 255);
+}
+
+.admin_carrossel_forms_planos input[type="checkbox"]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.3s ease-in-out;
+}
+
+.admin_carrossel_forms_planos input[type="checkbox"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.admin_carrossel_forms_planos label {
+  flex: 1; 
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+
+.admin_carrossel_cancelar_button {
+  text-transform: uppercase;
+  width: 190px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5%;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #d73232;
+  font-size: 20px;
+  font-weight: 600;
+  color: #d73232;
+}
+
+.admin_carrossel_excluir_button {
+  text-transform: uppercase;
+  width: 190px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5%;
+  background-color: #d73232;
+  border-radius: 5px;
+  border: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.admin_carrossel_salvar_button {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5%;
+  width: 190px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: #1b98e0;
+  border: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.admin_carrossel_buttons_container {
+  display: flex;
+  column-gap: 20px;
+  position: relative;
+  height: 48px;
+  top: 80%;
+  right: 5%;
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.admin_carrossel_buttons_container button {
+  cursor: pointer;
+}
+
+.admin_carrossel_carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 666px;
+  background-image: url(../../image/admin/adicionar_propaganda/Header.png);
+}
