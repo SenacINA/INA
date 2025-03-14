@@ -22,9 +22,9 @@
 
   background-color: #eff3f5;
   width: 90%;
-  height: 779px;
+  height: 780px;
   border-radius: 10px;
-  margin: 1.5%;
+  margin: 0px 1.5%;
 }
 
 /* header */
@@ -126,7 +126,7 @@
 
 /* inputs */
 .cupom_grid_conteudo input {
-  height: 34px;
+  height: 40px;
 
   border: 2px #1b98e0 solid;
   outline: none;
@@ -146,28 +146,27 @@
 .cupom_pesquisar_usuario h2 {
   color: rgba(87, 149, 206, 0.6);
   font-size: 20px;
-  max-width: 590px;
+  max-width: 100%;
 }
 
 .cupom_pesquisar_usuario_item {
   display: flex;
   flex-direction: column;
-}
-
-.cupom_pesquisar_usuario_item input {
   max-width: 590px;
 }
 
 .cupom_configuracao_grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  width: 653px;
+  grid-template-columns: 1fr 1fr; 
+  column-gap: 2%;
+  width: 100%;
+  max-width: 590px;
 }
 
 .cupom_configuracao_item {
   display: grid;
-  grid-template-columns: 1fr; /* Two equal columns */
-  width: 50px;
+  grid-template-columns: 1fr; 
+  width: 100%;
 }
 
 /* Localização */
@@ -365,16 +364,13 @@ input:checked + .toggle_slider::before {
 
 /* Botão Confirmar */
 .cupom_botao_salvar {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 
-  margin-right: 122px;
-  margin-bottom: 90px;
-  margin-top: 20px;
-
-  transform: translate(70px, 65px);
+  top: 660px;
+  right: 250px;
 }
 
 .cupom_salvar {
@@ -385,7 +381,7 @@ input:checked + .toggle_slider::before {
   border-radius: 5px;
   background-color: #1b98e0;
   width: 192px;
-  height: 48px;
+  height: 40px;
 }
 
 .cupom_cancelar {
@@ -396,8 +392,9 @@ input:checked + .toggle_slider::before {
   border: red solid 2px;
   border-radius: 5px;
   background-color: #1b98e000;
+  gap: 8px;
   width: 192px;
-  height: 48px;
+  height: 40px;
 }
 
 .cupom_cancelar label {
@@ -423,13 +420,10 @@ input:checked + .toggle_slider::before {
   margin-right: 8px;
 }
 
-.footer_temporario_cupom {
-  display: none;
-}
-
 #cupom_text_header_mobile {
   display: none;
 }
+
 .toggle-group {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -483,13 +477,6 @@ input:checked + .toggle_slider::before {
 }
 /* <<< MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 @media (max-width: 1024px) {
-  /* NAVBAR */
-  .cupom_nav_bar {
-    width: 100%;
-    height: 67px;
-    background-color: black;
-  }
-
   /* CORPO PRINCIPAL */
   .cupom_body {
     position: relative;
@@ -500,9 +487,9 @@ input:checked + .toggle_slider::before {
 
     background-color: #eff3f5;
     width: 95%;
-    height: 1332px;
+    height: 1100px;
     border-radius: 10px;
-    margin: 1.5% 2%;
+    margin: 0px 2%;
     margin-top: 86px;
   }
 
@@ -594,7 +581,6 @@ input:checked + .toggle_slider::before {
   #cupom_text_2 {
     grid-row: 3;
     grid-column: 1;
-    margin-top: 112px;
   }
 
   .cupom_dados_pessoais {
@@ -622,71 +608,35 @@ input:checked + .toggle_slider::before {
     grid-row: 9;
   }
 
-  /* inputs */
-  .cupom_pesquisar_usuario_item input {
-    max-width: 100%;
-  }
-
-  .cupom_dados_pessoais_item input {
-    max-width: 100%;
-  }
-
-  .cupom_dados_pessoais_conjunto {
-    max-width: 100%;
-  }
-
-  .cupom_localizacao_conjunto {
-    max-width: 100%;
-  }
-
-  .cupom_permissoes_conjunto {
-    display: flex;
-    flex-direction: column;
-  }
-
   .cupom_forms_item_permissoes {
     margin-bottom: 4%;
   }
 
-  /* botão */
-  .cupom_botao_salvar {
-    margin: 0%;
-    width: 325px;
-    transform: translateX(180px);
-  }
-
-  .cupom_salvar {
-    width: 100%;
-  }
-
-  .footer_temporario_cupom {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    height: auto;
-
-    overflow: hidden;
-  }
-
-  .footer_temporario_cupom img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .cupom_pesquisar_usuario_item {
+  display: flex;
+  flex-direction: column;
+  max-width: none;
   }
 
   .cupom_configuracao_grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 2%;
     width: 100%;
+    max-width: none;
   }
 
-  .cupom_configuracao_item {
+  .cupom_configuracao_item input {
+    width: 100%;
+    align-self: self-end;
+  }
+
+  .toggle-group {
     display: grid;
-    grid-template-columns: 1fr; /* Two equal columns */
-    width: 99%;
+    grid-template-columns: auto;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
   }
 
   .cupom_caixa_procura {
@@ -701,5 +651,34 @@ input:checked + .toggle_slider::before {
     border: #1b98e0 solid 2px;
     border-top-right-radius: 5px;
     width: 100%;
+  }
+
+  /* botão */
+  .cupom_botao_salvar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  
+    top: -90px;
+    right: 2%;
+    width: 100%;
+  }
+  
+  .cupom_salvar,
+   .cupom_cancelar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 104%;
+    height: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cupom_body {
+    height: 1130px;
   }
 }

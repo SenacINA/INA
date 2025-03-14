@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="../../css/cliente/produto.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <nav class="nav_bar"></nav>
+    <!-- fazer responsividade -->
+     
+    <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
     <div class="grid_produto">
         <div class="grid_nome_vendedor">
             <div class="imagem_nome_vendedor">

@@ -1,5 +1,5 @@
 .gerenciar_pedidos_body_container {
-  padding: 56px 48px 16px;
+  padding: 0px 48px 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -252,7 +252,7 @@
   }
 
   .gerenciar_pedidos_body_container {
-    padding: 24px 16px 16px;
+    padding: 0px 16px 16px;
     gap: 8px;
   }
 

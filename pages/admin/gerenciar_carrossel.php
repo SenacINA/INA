@@ -2,28 +2,79 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E ao Quadrado</title>
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/admin/gerenciar_carrossel.css">
-  <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E ao Quadrado</title>
+    <link rel="stylesheet" href="../../css/admin/admin_carrosel.css">
+    <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../../js/geral/base.js"></script>
 </head>
 
 <body>
+  <!-- fazer responsividade -->
+   
   <?php
     include_once('../../pages/geral/navbar.php');
-    ?>
-  <main class="gerenciar_pedidos_body_container">
-    <div class="gerenciar_pedidor_firula_holder">
-      <div class="gerenciar_pedidos_header_holder">
-        <div class="gerenciar_pedidos_header_title">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
-          <h1 class="gerenciar_pedidos_text_header font_titulo">GERENCIAR CARROSSEL</h1>
+  ?>
+  <header>
+    <img src="../../image/admin/gerenciar_carrossel/header_gerenciar_carrossel.svg" alt="header" width="100%">
+  </header>
+  <main class="main_container">
+    <div class="main_content">
+      <div class="pesquisa">
+        <div class="pesquisa_cliente">
+          <div class="main_text_pesquisa_container">
+            <p class="main_text_pesquisa">Pesquisar Clientes</p>
+            <hr class="linha">
+          </div>
+          <form class="forms_pesquisa">
+            <label for="ip_email">IP / E-Mail</label>
+            <input type="text" name="ip_email" id="ip_email">
+            <div class="selects">
+              <label for="plano" class="plano">Plano</label>
+              <select name="plano" id="plano" class="plano_select">
+                <option value="">Selecione um plano</option>
+                <option value="mensal">Mensal</option>
+                <option value="semestral">Semestral</option>
+                <option value="anual">Anual</option>
+              </select>
+              <label for="mes" class="mes">Mês</label>
+              <select name="mes" id="mes" class="mes_select">
+                <option value="">Selecione um mês</option>
+                <option value="janeiro">Janeiro</option>
+                <option value="fevereiro">Fevereiro</option>
+                <option value="marco">Março</option>
+                <option value="abril">Abril</option>
+                <option value="maio">Maio</option>
+                <option value="junho">Junho</option>
+                <option value="julho">Julho</option>
+                <option value="agosto">Agosto</option>
+                <option value="setembro">Setembro</option>
+                <option value="outubro">Outubro</option>
+                <option value="novembro">Novembro</option>
+                <option value="dezembro">Dezembro</option>
+              </select>
+              <label for="ano" class="ano">Ano</label>
+              <select name="ano" id="ano" class="ano_select">
+                <option value="">Selecione um ano</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+              </select>                 
+            </div>
+          </form>
         </div>
         <div class="gerenciar_pedidos_linha_sublinhado"></div>
       </div>
@@ -97,9 +148,17 @@
         </div>
       </div>
     </div>
-    <div class="gerenciar_pedidos_header_title">
-      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg" />
-      <h1 class="gerenciar_pedidos_text_header font_titulo">Gerenciar Anúncios</h1>
+    <div class="botoes">
+      <select name="filtro" id="filtro" class="filtro">
+        <option value="">Organizar por:</option>
+        <option value="nome">Nome</option>
+        <option value="categoria">Categoria</option>
+        <option value="cargo">Cargo</option>
+        <option value="plano">Plano</option>
+        <option value="data_inicio">Data de início</option>
+        <option value="data_expiracao">Data de expiração</option>
+      </select>
+      <button class="add_anuncio" onclick="pag('admin/admin_carrossel')"><img src="../../image/geral/add_botao.svg">Adicionar anúncio</button>
     </div>
     <div class="gerenciar_pedidos_table">
       <div class="gerenciar_pedidos_table_filtro bg_carolina">

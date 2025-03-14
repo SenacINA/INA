@@ -9,12 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body>
+<body> 
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <main>
-    <!-- Falta Nav-bar -->
-    <nav class="atualizar_usuario_nav_bar"></nav>  
-
     <div class="atualizar_usuario_body">
       <div class="atualizar_usuario_titulo">
         <div class="atualizar_usuario_text_titulo">
@@ -204,7 +205,7 @@
         <div class="atualizar_usuario_botao_salvar">
           <button class="atualizar_usuario_salvar">
             <img src="../../image/admin/atualizar_usuario/v_icon.svg" alt="">
-            <label>COMFIRMAR</label>
+            <label>CONFIRMAR</label>
           </button>
         </div>
       </div>
@@ -212,9 +213,7 @@
     </div>
     
     <!-- Falta footer -->
-    <footer class="footer_temporario_atualizar_usuario">
-      <img src="../../image/admin/atualizar_usuario/footer_mobile.svg" alt="">
-    </footer>
+    
   </main>
 </body>
 </html>

@@ -10,11 +10,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
-
 <body>
+    <!-- fazer a responsividade -->
+    <!--arrumar o nome das class  -->
+    
+    <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
     <div class="body_registro_produto_a_ser_vendido_ficha_tecnica">
-        <div class="nav_bar"></div>
         <div class="grid_bg">
             <div class="grid_titulo">
                 <h1>FICHA TÉCNICA</h1>

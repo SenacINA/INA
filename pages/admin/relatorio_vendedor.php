@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E ao Quadrado</title>
-  <link rel="stylesheet" href="../../css/admin/relatorio_vendedor.css">
-  <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="../../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório do Vendedor</title>
+    <link rel="stylesheet" href="../../css/admin/relatorio_vendedor.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+  <?php
+    include('../../pages/geral/navbar.php');
+  ?>
   <main>
-    <!-- Falta Nav-bar -->
-    <nav class="relatorio_vendedor_nav_bar"></nav>  
-
     <div class="relatorio_vendedor_body">
       <div class="relatorio_vendedor_titulo" id="relatorio_vendedor_titulo_1">
         <div class="relatorio_vendedor_text_titulo">
@@ -231,9 +231,7 @@
     </div>
 
     <!-- Falta footer -->
-    <footer class="footer_temporario_relatorio_vendedor">
-      <img src="../../image/admin/perfil_admin/footer_mobile.svg" alt="">
-    </footer>
+  
   </main>
 </body>
 </html>
