@@ -6,13 +6,6 @@
   user-select: none;
 }
 
-/* NAVBAR */
-.perfil_admin_nav_bar { 
-  width: 100%;
-  height: 67px;
-  background-color: black;
-}
-
 /* CORPO PRINCIPAL */
 .perfil_admin_body {
   display: flex;
@@ -26,7 +19,6 @@
   
   border-radius: 10px;
   margin: 0px 1.5%;
-  
 }
 
 /* header */
@@ -39,7 +31,7 @@
   justify-items: center;
   
   width: 100%;
-  height: 86px;
+  margin-top: 16px;
 }
 
 .perfil_admin_text_titulo {
@@ -76,7 +68,7 @@
   grid-template-columns: minmax(0px, 320px) minmax(0px, 581px) minmax(0px, 570px);
   grid-template-rows: repeat(2, auto);
   gap: 5% 3%;
-  margin: 0px 5%;
+  margin: 8px 5% 0px 5%;
 }
 
 .perfil_admin_info {
@@ -197,8 +189,8 @@
 }
 
 .perfil_admin_forms_item input {
-  max-width: 471px;
-  height: 36px;
+  max-width: 470px;
+  height: 40px;
   
   border: 2px #1B98E0 solid;
   outline: none;
@@ -310,17 +302,17 @@ input:checked + .toggle_slider::before {
 
 /* botão salvar */
 .perfil_admin_botao_salvar {
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: flex-end;
     gap: 10px;
   
-    margin-right: 122px;
-    margin-bottom: 90px;
-    margin-top: 223px;
+    top: 660px;
+    right: 250px;
 }
 
 .perfil_admin_salvar {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -328,7 +320,7 @@ input:checked + .toggle_slider::before {
   border-radius: 5px;
   background-color: #1B98E0;
   width: 192px;
-  height: 48px;
+  height: 40px;
 }
 
 .perfil_admin_salvar label {
@@ -349,20 +341,8 @@ input:checked + .toggle_slider::before {
   margin-right: 8px;
 }
 
-.footer_temporario_perfil_admin {
-  display: none;
-}
-
 /* <<< MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 @media (max-width: 1024px) {
-  
-  /* NAVBAR */
-  .perfil_admin_nav_bar { 
-    width: 100%;
-    height: 67px;
-    background-color: black;
-  }
-  
   /* CORPO PRINCIPAL */
   .perfil_admin_body {
     position: relative;
@@ -375,7 +355,7 @@ input:checked + .toggle_slider::before {
     width: 95%;
     height: 865px;
     border-radius: 10px;
-    margin: 1.5%;
+    margin: 0px 1.5%;
     margin-top: 86px;
   }
   
@@ -391,6 +371,7 @@ input:checked + .toggle_slider::before {
     width: 100%;
     top: -85px;
     margin: 0%;
+    height: 86px;
   }
   
   .perfil_admin_text_titulo {
@@ -481,7 +462,7 @@ input:checked + .toggle_slider::before {
   /* foms perfil adm */
   .perfil_admin_forms {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     column-gap: 16px;
   }
 
@@ -522,34 +503,30 @@ input:checked + .toggle_slider::before {
   
   /* botão salvar */
   .perfil_admin_botao_salvar {
+    position: relative;
     display: flex;
-    justify-content: center;
-    justify-self: center;
-    width: 100%;
-    margin: 0%;
-    margin-top: 170px;
+    justify-content: flex-end;
+    gap: 10px;
+  
+    top: 150px;
+    right: 0px;
   }
   
   .perfil_admin_salvar {
-    width: 100%;
-  }
-
-  .footer_temporario_perfil_admin {
-    position: relative; 
+    position: relative;
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-
+    justify-content: center;
+    align-items: center;
+  
+    border-radius: 5px;
+    background-color: #1B98E0;
     width: 100%;
-    height: auto; 
-    margin-top: 150px;
-
-    overflow: hidden; 
+    height: 40px;
   }
+}
 
-  .footer_temporario_perfil_admin img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; 
+@media (max-width: 425px) {
+  .perfil_admin_body {
+    height: 845px;
   }
 }

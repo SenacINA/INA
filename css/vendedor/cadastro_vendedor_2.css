@@ -1,27 +1,18 @@
-*{
-    margin: 0%;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0%;
+    margin: 0;
     background-color: #E8F1F2;
-    font-family: 'Jost';
+    font-family: 'Jost', sans-serif;
 }
 
-/* start header */
-.nav_bar {
-    width: 100%;
-    height: 67px;
-    color: rgb(0, 0, 0);
-    background-color: #0F3B62;
-    display: grid;
-}
-/* end header */
-
-.grid_bg {
+.cadastro_vendedor_2_grid_bg {
     display: grid;
     grid-template-columns: auto;
-    background-color: var(--Cores-Azul-Leve, #DCE5EB);;
+    background-color: var(--Cores-Azul-Leve, #DCE5EB);
     margin: 2%;
     margin-right: auto;
     margin-left: auto;
@@ -33,20 +24,20 @@ body {
     text-align: center;
 }
 
-.grid_bg img {
+.cadastro_vendedor_2_grid_bg img {
     width: 1700px;
     height: 5px;
     margin: auto;
     margin-bottom: 3%;
 }
 
-.botao {
+.cadastro_vendedor_2_botao {
     margin: auto;
     cursor: pointer;
     transition: transform 0.1s ease;
 }
 
-.botao h1 {
+.cadastro_vendedor_2_botao h1 {
     display: flex;
     align-items: center;
     text-align: center;
@@ -60,73 +51,75 @@ body {
     margin-bottom: 10%;
 }
 
-.botao:active {
-    transform: scale(0.95);
+.cadastro_vendedor_2_botao:active {
+    transform: scale(0.5);
 }
 
-/* start grid_conteudo */
-.grid_conteudo {
+/* Start grid_conteudo */
+.cadastro_vendedor_2_grid_conteudo {
     display: grid;
-    grid-template-columns: min-content min-content;
-    grid-template-rows: max-content min-content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-self: center;
+    justify-content: center;
+    
     column-gap: 12%;
     text-align: justify;
-    margin-left: 10%;
     height: 485px;
 }
 
-.grid_conteudo input, .grid_conteudo select {
-    height: 34px;
+.cadastro_vendedor_2_grid_conteudo input,
+.cadastro_vendedor_2_grid_conteudo select {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #1B98E0;
+    outline: none;
+    border-radius: 5px;
+    text-indent: 5px;
     font-size: 18px;
-    border: none;
-    margin-bottom: 5%;
+    background-color: transparent;
+    
 }
 
-.grid_conteudo select {
-    border-radius: 10px;
-    background-color: #E8F1F2;
-}
-
-.grid_conteudo label {
+.cadastro_vendedor_2_grid_conteudo label {
     color: #000;
-    font-family: Jost;
+    font-family: 'Jost', sans-serif;
     font-size: 20px;
     font-weight: bold;
 }
 
-.grid_conteudo h1 {
+.cadastro_vendedor_2_grid_conteudo h1 {
     color: rgba(0, 0, 0, 0.50);
-    font-family: Jost;
+    font-family: 'Jost', sans-serif;
     font-size: 18px;
     font-weight: 500;
     position: relative;
-    margin-top: -15px;
     
 }
 
-.conteudo_telefone, .conteudo_endereco1, .conteudo_endereco2 {
+.cadastro_vendedor_2_conteudo_telefone,
+.cadastro_vendedor_2_conteudo_endereco1,
+.cadastro_vendedor_2_conteudo_endereco2 {
     display: grid;
-    grid-template-columns: max-content max-content;
-    max-height: min-content;
-    margin: 0%;
+    grid-template-columns: 1fr 1fr;
+    max-width: 580px;
+    width: 100%;
+    column-gap: 2%;
 }
 
-#localdaempresa, #cep, #nome_razao_social, #email, #senha, #confirmar_senha, #local_da_empresa, #categoria_produtos {
-    width: 581px;
+#local_da_empresa,
+#cep,
+#nome_razao_social,
+#email,
+#senha,
+#confirmar_senha,
+#categoria_produtos {
+    width: 580px;
 }
 
-#logradouro, #cpf_cnpj {
-    width: 340px;
-    margin-right: 19px;
+#logradouro,
+#cpf_cnpj,
+#numero,
+#rg {
+    width: 100%;
 }
-
-#numero, #rg {
-    width: 218px;
-}
-
-.conteudo_telefone {
-    column-gap: 135px;
-}
-
-
-/* end grid_conteudo */

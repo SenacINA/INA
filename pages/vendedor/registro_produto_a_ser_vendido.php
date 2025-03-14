@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- fazer a responsividade -->
+    <!--arrumar o nome das class  -->
+
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
@@ -121,7 +124,7 @@
                             <h1><img src="../../image/geral/x_botao_vermelho.svg" alt="">Cancelar</h1>
                         </div>
                         <div class="adicionar">
-                            <h1><img src="../../image/geral/confirm_botao.svg" alt="">Adicionar Produto</h1>
+                            <h1><img src="../../image/geral/confirm_botao.svg" alt="">Adicionar</h1>
                         </div>
                     </div>
                 </div>

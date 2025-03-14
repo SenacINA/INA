@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body class="main_container">
+  <!-- fazer a responsividade -->
+  <!-- arrumar o nome das class -->
+   
   <?php
     include_once('../../pages/geral/navbar.php');
     ?> 

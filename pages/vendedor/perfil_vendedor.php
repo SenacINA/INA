@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="../../css/style.css">
     <script src="../../js/geral/base.js"></script>
 </head>
-
 <body>
+    <!-- fazer a responsividade -->
+    <!-- arruamr o nome das class -->
+     
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
