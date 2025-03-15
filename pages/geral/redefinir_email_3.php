@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
         <h2>Redefinição de E-mail realizada!</h2>
       </div>
       
-      <button class="redefinir_email_3_home" onclick="pag('index',2)">
+      <button class="redefinir_email_3_botao_tela_inicial" onclick="pag('index',2)">
         <img src="" alt="">
         <h3>TELA INICIAL</h3>
       </button>

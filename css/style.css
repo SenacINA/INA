@@ -121,7 +121,7 @@ body{
   background-color: var(--branco);
 }
 
-
+/* > */
 .base_input {
   padding: 0 8px;
   height: 40px;
@@ -239,6 +239,7 @@ select.base_input {
   color: var(--cinza);
   border: var(--cinza) solid 2px;
 }
+/* < */
 
 .base_tabela{
   *{

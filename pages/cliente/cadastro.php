@@ -26,15 +26,15 @@
 
         <form class="cadastro_formulario_cadastro">
           <label for="nomeDeUsuario">Nome:</label><br>
-          <input type="text"><br>
+          <input type="text" class="base_input"><br>
           <label for="email">Email:</label><br>
-          <input type="text"><br>
+          <input type="text" class="base_input"><br>
         </form>
 
         <form class="cadastro_redefinir_senha_2_form" action="">
           <label for="senha">Senha:</label>
           <div class="cadastro_redefinir_senha_2">
-              <input type="password" name="senha" id="senha">
+              <input type="password" name="senha" id="senha" class="base_input">
               <a href="javascript:void(0);" id="eye-icon-senha">
                   <img id="eye-img-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
               </a>
@@ -42,7 +42,7 @@
         
           <label for="nova_senha">Confirmar Senha:</label>
           <div class="cadastro_redefinir_senha_2">
-              <input type="password" name="nova_senha" id="nova_senha">
+              <input type="password" name="nova_senha" id="nova_senha" class="base_input">
               <a href="javascript:void(0);" id="eye-icon-nova-senha">
                   <img id="eye-img-nova-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
               </a>

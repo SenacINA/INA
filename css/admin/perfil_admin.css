@@ -189,16 +189,20 @@
 }
 
 .perfil_admin_forms_item input {
-  max-width: 470px;
-  height: 40px;
-  
-  border: 2px #1B98E0 solid;
-  outline: none;
-  border-radius: 5px;
-  text-indent: 5px;
-  font-size: 20px;
-  background-color: transparent;
+  max-width: 600px;
 }
+
+.base_input, .perfil_admin_forms_item input{
+  height: 40px;
+  border: #4eace2 solid 2px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--cinza);
+}
+
 
 .perfil_admin_forms_item label {
   font-size: 24px;
@@ -488,7 +492,7 @@ input:checked + .toggle_slider::before {
    #perfil_admin_forms_item_4 input,
     .perfil_admin_forms_item {
     width: 100%;
-    background-color: transparent;
+    
   }
   
   /* permissoes */

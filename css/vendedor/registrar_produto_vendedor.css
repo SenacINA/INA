@@ -119,24 +119,10 @@ body {
   row-gap: 20px;
 }
 
-.input_prod,
-.unidade_medida,
-.coluna2 select {
-  font-family: Jost;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-}
 
 .input_prod {
   width: 100%;
   height: 40px;
-  font-size: 20px;
-  padding: 0px 12px;
-  position: relative;
-  background-color: transparent;
-  border-radius: 5px;
-  border: 2px solid #1b98e0;
 }
 
 .input_prod::placeholder,
@@ -206,20 +192,41 @@ body {
   font-weight: 600;
 }
 
+.but_cancel,
+.but_submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+  text-align: center;
+  border: 0;
+  color: white;
+  font-family: Jost;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 200px;
+  height: 48px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.but_cancel {
+  background-color: #d73232;
+}
+
+.but_submit {
+  background-color: #1b98e0;
+}
+
 .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.but_cancel {
-  background: #d73232;
-  color: #fff;
-}
-
-.but_submit {
-  background-color: #2075c2;
-  color: white;
+  height: 20px;
+  width: 20px;
 }
 
 #prodDesc,
