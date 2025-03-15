@@ -18,43 +18,45 @@
   ?>
   <main>
     <div class="redefinir_senha_2_container">
-      <h1>REDEFINIÇÃO DE SENHA</h1>
-      <hr>
       <div class="redefinir_senha_2_main_content">
+        <div class="redefinir_senha_2_bem_vindo">
+          <img src="../../image/geral/logo-eaoquadrado.png">
+          <h1>Redefinir Senha</h1>
+        </div>
+
         <form class="redefinir_senha_2_form" action="">
-          <label for="senha">Nova Senha</label>
-          <div class="redefinir_senha_2">
-              <input type="password" name="senha" id="senha">
-              <a href="javascript:void(0);" id="eye-icon-senha">
-                  <img id="eye-img-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
-              </a>
+          <div class="redefinir_senha_2_input">
+            <label for="senha">Nova Senha:</label>
+            <div class="redefinir_senha_2">
+                <input class="base_input" type="password" name="senha" id="senha">
+                <a href="javascript:void(0);" id="eye-icon-senha">
+                    <img id="eye-img-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
+                </a>
+            </div>
           </div>
-        
-          <label for="nova_senha">Confirmar Nova Senha</label>
-          <div class="redefinir_senha_2">
-              <input type="password" name="nova_senha" id="nova_senha">
-              <a href="javascript:void(0);" id="eye-icon-nova-senha">
-                  <img id="eye-img-nova-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
-              </a>
+
+          <div class="redefinir_senha_2_input">
+            <label for="nova_senha">Confirmar Nova Senha:</label>
+            <div class="redefinir_senha_2">
+                <input class="base_input" type="password" name="nova_senha" id="nova_senha">
+                <a href="javascript:void(0);" id="eye-icon-nova-senha">
+                    <img id="eye-img-nova-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
+                </a>
+            </div>
           </div>
         </form>
-        
-        <!-- colocar botões novos -->
-        <button class="redefinir_senha_2_salvar" onclick="pag('geral/redefinir_senha_3')">
-          <img src="" alt="">
-          <h3>SALVAR</h3>
+      </div>
+      <div class="redefinir_senha_2_botoes">
+        <button class="redefinir_senha_2_botao_voltar" onclick="history.back()">
+          <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
         </button>
-
-        <button class="redefinir_senha_2_voltar" onclick="history.back()">
-          <img src="" alt="">
-          <h3>VOLTAR</h3>
+        <button class="redefinir_senha_2_botao_salvar" onclick="pag('geral/redefinir_senha_3')">
+          <img src="../../image/geral/confirm_botao.svg" alt="">Salvar
         </button>
       </div>
     </div>
   </main>
 
   <script type="module" src="../../js/admin/toggle_redefinir.js"></script>
-  <!-- footer -->
-  <!-- coloca display:none no desktop -->
 </body>
 </html>

@@ -77,18 +77,6 @@ main {
   width: 100%;
 } 
 
-.base_input, .cadastro_quadrado input,
-.cadastro_redefinir_senha_2_form input {
-  height: 40px;
-  border: #4eace2 solid 2px;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  color: var(--cinza);
-}
-
 .cadastro_formulario_cadastro label, 
 .cadastro_redefinir_senha_2_form label  {
   color:#6F6F6F;

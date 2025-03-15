@@ -146,7 +146,7 @@
 .atualizar_usuario_pesquisar_usuario h2 {
   color: rgba(87, 149, 206, 0.60);
   font-size: 20px;
-  max-width: 590px;
+  max-width: 600px;
 }
 
 .atualizar_usuario_pesquisar_usuario_item {
@@ -155,7 +155,7 @@
 }
 
 .atualizar_usuario_pesquisar_usuario_item input {
-  max-width: 590px;
+  max-width: 600px;
 }
 
 /* Localização */
@@ -171,7 +171,7 @@
   align-items: center;
   column-gap: 2%;
 
-  max-width: 590px;
+  max-width: 600px;
 }
 
 .atualizar_usuario_dados_pessoais_item,
@@ -183,7 +183,7 @@
 }
 
 .atualizar_usuario_dados_pessoais_item input {
-  max-width: 590px;
+  max-width: 600px;
 }
 
 .atualizar_usuario_dados_pessoais_conjunto {
@@ -193,7 +193,7 @@
   align-items: center;
   column-gap: 2%;
 
-  max-width: 590px;
+  max-width: 600px;
 }
 
 /* Permissões */
@@ -201,7 +201,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 590px;
+  max-width: 600px;
 }
 
 .atualizar_usuario_permissoes_conjunto {

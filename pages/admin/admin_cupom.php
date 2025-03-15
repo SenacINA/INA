@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,10 +76,21 @@
         </div>
         
         <form action="" method="post" class="admin_cupom_dados_pessoais">
+  
           <div class="admin_cupom_dados_pessoais_item" id="cupom_dados_pessoais_item_1" >
             <label>Nome do Produto</label>
-            <input type="text" class="base_input">
+            <input class="base_input" type="text">
           </div>
+
+          <div class="admin_cupom_achar_produto_organizar">
+            <p>Organizar por :</p>
+            <img src="../../image/admin/arrowwhitedown.svg" alt="">
+          </div>
+          <div class="admin_cupom_metodo_procura_body">
+            <p id="cupom_metodo_procura" class="admin_cupom_metodo_procura_body_head">Cód.</p>
+            <div></div>
+          </div>
+          <div class="admin_cupom_caixa_procura">‎ </div>
         </form>
 
         <div class="admin_cupom_text" id="cupom_text_3">

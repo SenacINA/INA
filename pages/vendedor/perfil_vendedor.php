@@ -27,23 +27,23 @@
             <div class="pfp_container">
                 <img src="../../image/vendedor/perfil_vendedor/pfp_vendedor.png" alt="pfp_vendedor" class="pfp_vendedor_ico">
                 <h1 class="nome_vendedor">THUNDER GAMES</h1>
-                <div class="botao_menu">
-                    <img src="../../image/vendedor/perfil_vendedor/edit.svg" class="menu_2">
-                    <form action="" class="menu_1">
-                        <select name="menu" id="menu">
-                            <option selected disabled value="">Menu</option>
-                            <option value="editar-perfil" onclick="pag('vendedor/editar_perfil_vendedor')">Editar Perfil</option>
-                            <option value="pedidos" onclick="pag('vendedor/confirmar_pedido')">Pedidos</option>
-                            <option value="relatorio" onclick="pag('vendedor/relatorio_vendas')">Relatório</option>
-                            <option value="criar-cupom" onclick="pag('admin/cupom')">Criar Cupom</option>
-                            <option value="editar-produtos" onclick="pag('vendedor/editar_produto')">Editar Produtos</option>
-                            <option value="sair" onclick="pag('cliente/login')">Sair</option>
-                        </select>
-                    </form>
-                </div>
+                <img src="../../image/vendedor/perfil_vendedor/edit.svg" class="menu_2">
             </div>
         </div>
 
+        <div class="botao_menu">
+          <form action="" class="menu_1">
+            <select name="menu" id="menu" class="base_input">
+              <option selected disabled value="">Menu</option>
+              <option value="editar-perfil" onclick="pag('vendedor/editar_perfil_vendedor')">Editar Perfil</option>
+              <option value="pedidos" onclick="pag('vendedor/confirmar_pedido')">Pedidos</option>
+              <option value="relatorio" onclick="pag('vendedor/relatorio_vendas')">Relatório</option>
+              <option value="criar-cupom" onclick="pag('admin/cupom')">Criar Cupom</option>
+              <option value="editar-produtos" onclick="pag('vendedor/editar_produto')">Editar Produtos</option>
+              <option value="sair" onclick="pag('cliente/login')">Sair</option>
+            </select>
+          </form>
+        </div>
 
         <div class="grid_principal">
             <div class="infos_container">

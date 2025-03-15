@@ -189,7 +189,7 @@
 }
 
 .perfil_admin_forms_item input {
-  max-width: 470px;
+  max-width: 600px;
 }
 
 .base_input, .perfil_admin_forms_item input{
@@ -492,7 +492,7 @@ input:checked + .toggle_slider::before {
    #perfil_admin_forms_item_4 input,
     .perfil_admin_forms_item {
     width: 100%;
-    background-color: transparent;
+    
   }
   
   /* permissoes */

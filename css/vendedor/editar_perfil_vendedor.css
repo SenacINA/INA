@@ -313,23 +313,15 @@ body {
   line-height: normal;
 }
 
-.forms_container input {
-  text-indent: 14px;
-  border-radius: 5px;
-  border: 2px solid #1b98e0;
-  width: 747px;
-  height: 40px;
-  text-indent: 5px;
-  font-size: 20px;
-  background-color: transparent;
+.forms_container input,
+.forms_container textarea {
+  max-width: 600px;
 }
 
 .forms_container textarea {
-  resize: none;
-  border-radius: 5px;
-  border: 2px solid #1b98e0;
-  background-color: transparent;
+  height: 200px;
 }
+
 
 .nome_vendedor_forms {
   text-indent: 14px;

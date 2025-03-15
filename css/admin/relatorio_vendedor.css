@@ -6,13 +6,6 @@
   user-select: none;
 }
 
-/* NAVBAR */
-.relatorio_vendedor_nav_bar { 
-  width: 100%;
-  height: 67px;
-  background-color: black;
-}
-
 /* CORPO PRINCIPAL */
 .relatorio_vendedor_body {
   display: flex;
@@ -46,18 +39,18 @@
 }
 
 .relatorio_vendedor_text_titulo img {
-align-self: center;
-width: 28px;
-height: auto;
-margin-right: 8px;
+  align-self: center;
+  width: 28px;
+  height: auto;
+  margin-right: 8px;
 }
 
 .relatorio_vendedor_text_titulo h1 {
-justify-self: center;
-font-weight: 500;
-color: #255e7e;
-text-align: center;
-font-size: 32px;
+  justify-self: center;
+  font-weight: 500;
+  color: #255e7e;
+  text-align: center;
+  font-size: 32px;
 }
 
 .relatorio_vendedor_linha_titulo {
@@ -148,29 +141,17 @@ grid-row: 3;
 }
 
 .relatorio_vendedor_vertical {
-border: none;
-background-color: #1B98E0;
-border-radius: 10px;
-width: 10px;
-height: 46px;
+  border: none;
+  background-color: #1B98E0;
+  border-radius: 10px;
+  width: 10px;
+  height: 46px;
 }
 
 .relatorio_vendedor_text h1 {
 position: relative;
 font-size: 32px;
 color: #2888b1;
-}
-
-/* inputs */
-.base_input, .relatorio_vendedor_grid_conteudo input {
-  height: 40px;
-  border: #4eace2 solid 2px;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  color: var(--cinza);
 }
 
 .relatorio_vendedor_grid_conteudo label {
@@ -183,7 +164,7 @@ color: #2888b1;
 .relatorio_vendedor_pesquisar_usuario h2 {
   color: rgba(87, 149, 206, 0.60);
   font-size: 20px;
-  max-width: 590px;
+  max-width: 600px;
 }
 
 .relatorio_vendedor_dados_pessoais,
@@ -199,7 +180,7 @@ color: #2888b1;
 .relatorio_vendedor_dados_pessoais_item input,
  .relatorio_vendedor_pesquisar_usuario_item input,
  .relatorio_vendedor_localizacao_item input  {
-  max-width: 590px;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -211,7 +192,7 @@ color: #2888b1;
   align-items: center;
   column-gap: 2%;
 
-  max-width: 590px;
+  max-width: 600px;
   width: 100%;
 }
 

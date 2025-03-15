@@ -20,22 +20,24 @@
     include_once('../../pages/geral/navbar.php');
     ?>
     <main>
-        <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner_cliente">
+        <div class="pfp_cliente">
+            <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="banner_cliente">
+            <div class="pfp_container">
+                <img src="../../image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente" class="pfp_cliente_ico">
+                <h1 class="nome_cliente">Cliente 10</h1>
+                <img src="../../image/cliente/perfil_cliente/edit.svg" class="menu_2">
+            </div>
+        </div>      
 
-        <div class="perfil_cliente_pfp_cliente">
-            <img src="../../image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente" >
-            <h1>Cliente 10</h1>
-        </div>
-
-        <div class="perfil_cliente_botao_menu">
-            <form action="">
-                <select name="menu" id="menu"> 
-                    <option selected disabled value ="">Menu</option>
+        <div class="botao_menu">
+            <form action="" class="menu_1">
+                <select name="menu" id="menu" class="base_input">
+                    <option selected disabled value="">Menu</option>
                     <option value="editar-perfil" onclick="pag('cliente/editar_perfil')">Editar Perfil</option>
                     <option value="pedidos" onclick="pag('vendedor/cadastro_vendedor_1')">Cadastro como vendedor</option>
                     <option value="sair" onclick="pag('cliente/login')">Sair</option>
                 </select>
-            </form>  
+            </form>
         </div>
 
         <div class="perfil_cliente_grid_principal">
@@ -141,8 +143,6 @@
         </div>
     </main>
      
-    <footer>
-      <img class="perfil_cliente_footer_img" src="../../image/cliente/footer/img_footer_placeholder.png">
-    </footer>
+    <!-- falta o footer -->
 </body>
 </html>

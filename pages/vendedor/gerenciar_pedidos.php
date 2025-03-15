@@ -20,13 +20,14 @@
   <main class="gerenciar_pedidos_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_pedidos_header_holder">
-        <div class="gerenciar_pedidos_header_title">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
-          <h1 class="gerenciar_pedidos_text_header font_titulo">GERENCIAR PEDIDOS</h1>
+        <div class="gerenciar_pedidos_text_titulo">
+          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <h1 class="gerenciar_pedidos_header_holder font_titulo">RELATÓRIO DO VENDEDOR</h1>
         </div>
-        <div class="gerenciar_pedidos_linha_sublinhado"></div>
+        <hr class="gerenciar_pedidos_linha_sublinhado">
       </div>
-      <div class="gerenciar_pedidos_body_holder bg_azul_leve">
+      
+      <div class="gerenciar_pedidos_body_holder">
         <div class="gerenciar_pedidos_main_content">
           <div class="gerenciar_pedidos_quadrado_container">
             <div class="gerenciar_pedidos_pesquisar_pedidos">

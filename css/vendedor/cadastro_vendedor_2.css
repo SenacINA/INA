@@ -71,14 +71,6 @@ body {
 .cadastro_vendedor_2_grid_conteudo input,
 .cadastro_vendedor_2_grid_conteudo select {
     width: 100%;
-    height: 40px;
-    border: 2px solid #1B98E0;
-    outline: none;
-    border-radius: 5px;
-    text-indent: 5px;
-    font-size: 18px;
-    background-color: transparent;
-    
 }
 
 .cadastro_vendedor_2_grid_conteudo label {
