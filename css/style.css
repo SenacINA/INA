@@ -123,6 +123,7 @@ body{
 
 /* > */
 .base_input {
+  padding: 0 8px;
   height: 40px;
   border: #4eace2 solid 2px;
   border-radius: 5px;
@@ -170,7 +171,11 @@ select.base_input {
 }
 
 .base_botao {
-  height: 48px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
   min-width: 192px;
   font-size: 1.25rem;
   /* 20px */
