@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E ao Quadrado</title>
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/admin/gerenciar_produtos_.css">
+  <link rel="stylesheet" href="../../css/admin/gerenciar_produtos.css">
   <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
