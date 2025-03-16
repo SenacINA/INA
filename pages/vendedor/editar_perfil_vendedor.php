@@ -10,11 +10,17 @@
   <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
-<body class="fundo_vendedor">
-  <nav class="nav_bar"></nav>
+<body>
+  <!-- fazer responsividade -->
+  <!-- arruamar o nome das class -->
+
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <main class="quadrado_vendedor">
     <div class="mini_perfil_vendedor">
       <img src="../../image/vendedor/editar_perfil/banner_vendedor_mini_perfil.png" alt="banner" class="banner_vendedor">
@@ -69,19 +75,19 @@
       <form action="" class="forms_container">
         <div class="forms_inner_container">
           <label for="nomeVendedor" class="inner">Nome:</label>
-          <input type="text" name="nomeVendedor" id="nomeVendedor" class="nome_vendedor_forms" placeholder="THUNDER GAMES">
+          <input type="text" name="nomeVendedor" id="nomeVendedor" class="base_input nome_vendedor_forms">
         </div>
         <div class="forms_inner_container">
           <label for="descricao">Descrição:</label>
-          <textarea name="descricao" id="descricao" cols="90" rows="10"></textarea>
+          <textarea name="descricao" id="descricao" cols="90" rows="10" class="base_input"></textarea>
         </div>
         <div class="forms_inner_container">
           <label for="localizacaoVendedor">Localização:</label>
-          <input type="text" name="localizacaoVendedor" id="localizacaoVendedor">
+          <input type="text" name="localizacaoVendedor" id="localizacaoVendedor" class="base_input">
         </div>
         <div class="forms_inner_container">
           <label for="email_vendedor">Email:</label>
-          <input type="text" name="email_vendedor" id="email_vendedor">
+          <input type="email" name="email_vendedor" id="email_vendedor" class="base_input">
         </div>
       </form>
       <div class="botoes_redefinir">
@@ -102,7 +108,7 @@
         <p class="text_pfp">Imagem de Perfil:</p>
         <input type="file" name="foto_vendedor" id="fotoVendedor" class="btn_foto" />
         <img src="../../image/vendedor/editar_perfil/pfp_vendedor.png" alt="">
-        <p class="warn">As dimensões recomendadas são: 400 x 400 pixels.</p>
+        <p class="warn">As dimensões recomendadas são: 400 x 400 pixels.</p>
       </div>
       <div class="banner_container">
         <p class="text_banner">Imagem de Banner:</p>
@@ -112,9 +118,7 @@
       </div>
     </div>
   </main>
-  <footer>
-    <img src="../../image/cliente/footer/img_footer_placeholder.png">
-  </footer>
+  
+  <!-- falta o footer -->
 </body>
-
 </html>

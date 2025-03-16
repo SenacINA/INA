@@ -2,11 +2,11 @@
     padding: 0;
     margin: 0;
     font-family: 'Jost';
-    
 }
 
 body {
-background-color: #E8F1F2;  
+    background-color: #EFF3F5;
+    margin-top: 0;
 }
 
 hr {
@@ -39,45 +39,42 @@ hr {
     grid-area: 1 / 3 / 4 / 4;
 }
 
-.perfil_cliente_nav_bar {
-    height: 67px;
-    width: 100%;
-    background-color: #DCE5EB;
+.pfp_cliente {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
 }
 
-.perfil_cliente_banner_cliente {
-    width: 100%;
-    height: 399px;
+.pfp_container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 154px;
 }
 
-.perfil_cliente_banner_cliente {
-    width: 100%;
-    object-fit: cover;
+.pfp_cliente_ico {
+    max-width: 100%;
+    width: 294px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
-/* start botao_menu */
-.perfil_cliente_botao_menu select {
-    background-color: #6F6F6F; 
-    color: white;              
-    border: none;              
-    border-radius: 5px;             
-    font-size: 16px;          
-    cursor: pointer;         
-    width: 300px;
-    height: 46px;
+
+.menu_1 select {
     position: absolute;
-    top: 520px;
+    width: 300px;
+    height: 40px;
+    top: 300px;
     right: 60px;
-    text-align: center;       
-    line-height: 26px;        
-}
+    text-align: center;
+  }
+  
 
-.perfil_cliente_botao_menu select option[value="sair"] {
-color: red; 
-}
-
-.perfil_cliente_botao_menu select option {
-background-color: #1B98E0;  
-}
 
 /* end botao_menu */
 

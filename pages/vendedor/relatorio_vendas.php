@@ -9,9 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body class="main_container">
-  <nav class="navbar_principal"></nav>
+  <!-- fazer a responsividade -->
+  <!-- arrumar o nome das class -->
+   
+  <?php
+    include_once('../../pages/geral/navbar.php');
+    ?> 
   <header class="header_relatorio">
     <div class="inner_header">
       <h1 class="text_header">Relatório de Vendas</h1>

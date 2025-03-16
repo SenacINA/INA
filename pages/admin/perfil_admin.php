@@ -9,12 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
+  
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <main>
-    <!-- Falta Nav-bar -->
-    <nav class="perfil_admin_nav_bar"></nav>  
-
     <div class="perfil_admin_body">
       <div class="perfil_admin_titulo">
         <div class="perfil_admin_text_titulo">
@@ -46,26 +49,26 @@
             <label for="perfil_admin_foto" class="perfil_admin_foto_label">
               <img src="../../image/admin/perfil_admin/enviar_arquivo.png" alt="Enviar Arquivo" class="perfil_admin_foto">
             </label>
-            <input type="file" name="pfp" id="perfil_admin_foto" style="display: none;">
+            <input type="file" name="pfp" id="perfil_admin_foto" class="base_input" style="display: none;">
           </form>
         </div>
 
         <form action="" method="post" class="perfil_admin_forms">
-          <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_1" >
+          <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_1">
             <label>Nome</label>
-            <input type="text" placeholder="Digite seu nome">
+            <input type="text" class="base_input">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_2">
             <label>E-mail</label>
-            <input type="text" placeholder="exemplo@email.com">
+            <input type="text" class="base_input">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_3">
             <label>CPF</label>
-            <input type="text" placeholder="000.000.000-00">
+            <input type="text" class="base_input">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_4">
             <label>Telefone</label>
-            <input type="text" placeholder="+00 (00) 00000-0000">
+            <input type="text" class="base_input">
           </div>
         </form>
 
@@ -73,7 +76,7 @@
           <div class="perfil_admin_forms_item_permissoes">
             <div class="toggle_container">
               <label class="toggle">
-                <input type="checkbox" id="perfil_admin_gerenciar_carrossel">
+                <input type="checkbox" id="perfil_admin_gerenciar_carrossel" class="base_input">
                 <span class="toggle_slider"></span>
               </label>
             </div>
@@ -85,7 +88,7 @@
           <div class="perfil_admin_forms_item_permissoes">
             <div class="toggle_container">
               <label class="toggle">
-                <input type="checkbox" id="perfil_admin_gerenciar_usuarios">
+                <input type="checkbox" id="perfil_admin_gerenciar_usuarios" class="base_input">
                 <span class="toggle_slider"></span>
               </label>
             </div>
@@ -97,7 +100,7 @@
           <div class="perfil_admin_forms_item_permissoes">
             <div class="toggle_container">
               <label class="toggle">
-                <input type="checkbox" id="perfil_admin_gerenciar_produtos">
+                <input type="checkbox" id="perfil_admin_gerenciar_produtos" class="base_input">
                 <span class="toggle_slider"></span>
               </label>
             </div>
@@ -109,7 +112,7 @@
           <div class="perfil_admin_forms_item_permissoes">
             <div class="toggle_container">
               <label class="toggle">
-                <input type="checkbox" id="perfil_admin_historico_acessos">
+                <input type="checkbox" id="perfil_admin_historico_acessos" class="base_input">
                 <span class="toggle_slider"></span>
               </label>
             </div>
@@ -122,7 +125,7 @@
       </div>
 
         <div class="perfil_admin_botao_salvar">
-          <button class="perfil_admin_salvar">
+          <button class="perfil_admin_salvar" onclick="pag('admin/dashboard')">
             <img src="../../image/admin/perfil_admin/v_icon.svg" alt="">
             <label>SALVAR</label>
           </button>
@@ -132,9 +135,6 @@
     </div>
     
     <!-- Falta footer -->
-    <footer class="footer_temporario_perfil_admin">
-      <img src="../../image/admin/perfil_admin/footer_mobile.svg" alt="">
-    </footer>
   </main>
 </body>
 </html>

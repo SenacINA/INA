@@ -11,11 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/geral/base.js"></script>
 </head>
 
 <body class="carrinho_vazio_body">
-
+    <?php
+        include_once('../../pages/geral/navbar.php');
+    ?>
     <main class="carrinho_vazio_main">
         <div class="carrinho_vazio_nav">
             <div class="carrinho_vazio_nav_item">
@@ -75,6 +78,7 @@
                 <button class="remover_botao"><img src="../../image/geral/x_botao.svg">REMOVER PRODUTO(S)</button>
                 <button class="salvar_botao"><img src="../../image/geral/confirm_botao.svg">SALVAR</button>
             </div>
+        </div>
     </main>
 </body>
 
