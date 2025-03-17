@@ -29,15 +29,30 @@
         <div class="dashboard_body_container_botoes_linha">
 
           <div class="dashboard_body_container_botoes_base_linha">
-            cu
+            <div class="dashboard_body_container_botoes_base_linha_div">
+              <img src="../../image/admin/dashboard/linha.svg" alt="">
+              <img src="../../image/admin/dashboard/seu_perfil.svg" alt="">
+              <h2>Seu Perfil</h2>
+            </div>
+            <img src="../../image/admin/dashboard/seta.svg" alt="">
           </div>
 
           <div class="dashboard_body_container_botoes_base_linha">
-            cu
+            <div class="dashboard_body_container_botoes_base_linha_div">
+              <img src="../../image/admin/dashboard/linha.svg" alt="">
+              <img src="../../image/admin/dashboard/relatorio_vendas.svg" alt="">
+              <h2>Relatório de Vendas</h2>
+            </div>
+            <img src="../../image/admin/dashboard/seta.svg" alt="">
           </div>
 
           <div class="dashboard_body_container_botoes_base_linha">
-            cu
+            <div class="dashboard_body_container_botoes_base_linha_div">
+              <img src="../../image/admin/dashboard/linha.svg" alt="">
+              <img src="../../image/admin/dashboard/gerenciar_user.svg" alt="">
+              <h2>Gerenciar Usuário</h2>
+            </div>
+            <img src="../../image/admin/dashboard/seta.svg" alt="">
           </div>
 
         </div>
@@ -46,28 +61,41 @@
         <!-- linha 1 -->
 
           <div class="dashboard_body_container_botoes_base">
-            <h1>cu</h1>
+            <img src="../../image/admin/dashboard/gerenciar_produtos.svg" alt="">
+            <h2>Gerenciar Produtos</h2>
+            <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
           </div>
 
           <div class="dashboard_body_container_botoes_base">
-            <h1>cu</h1>
+            <img src="../../image/admin/dashboard/gerenciar_cupom.svg" alt="">
+            <h2>Gerenciar Cupom</h2>
+            <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
           </div>
 
           <div class="dashboard_body_container_botoes_base">
-            <h1>cu</h1>
+            <img src="../../image/admin/dashboard/gerenciar_carrossel.svg" alt="">
+            <h2>Gerenciar Carrossel</h2>
+            <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
           </div>
+
         <!-- linha 2 -->
 
           <div class="dashboard_body_container_botoes_base">
-            <h1>cu</h1>
+            <img src="../../image/admin/dashboard/redefinir_senha.svg" alt="">
+            <h2>Redefinir Senha</h2>
+            <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
           </div>
 
           <div class="dashboard_body_container_botoes_base">
-            <h1>cu</h1>
+            <img src="../../image/admin/dashboard/aprovar_vendedor.svg" alt="">
+            <h2>Aprovar Vendedor</h2>
+            <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
           </div>
 
           <div class="dashboard_body_container_botoes_base">
-            <h1>cu</h1>
+            <img src="../../image/admin/dashboard/logout.svg" alt="">
+            <h2 class="classe_vermelho">Logout</h2>
+            <img src="../../image/admin/dashboard/seta_baixo2.svg" alt="">
           </div>
 
         </div>
