@@ -36,7 +36,7 @@
         </div>
 
         <div class="relatorio_vendedor_pesquisar_usuario">
-          <h2>Digite o ID e o E-mail do usuário para encontra-lo
+          <h2>Digite o ID e o E-mail do usuário para encontra-lo,
           Deixe em branco para cadastrar um usuário.</h2>
           <form action="" method="post" class="relatorio_vendedor_forms">
             <div class="relatorio_vendedor_pesquisar_usuario_item" id="relatorio_vendedor_pesquisar_usuario_item_1">
