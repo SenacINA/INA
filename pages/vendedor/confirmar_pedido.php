@@ -81,7 +81,7 @@
                 <h1>Observações</h1>
                 <img src="../../image/vendedor/confirmar_pedido/botao_escrever.svg" alt="">
                 <div class="confirmar_pedido_observacao">
-                    <textarea>Não há observações do cliente</textarea>
+                    <textarea>Não há observações sobre o cliente</textarea>
                 </div>
                 
             </div>
@@ -125,7 +125,7 @@
                             <img src="../../image/vendedor/confirmar_pedido/bolinha_itens.svg" alt="">
                         </div>
                         <div>
-                            <h1>João Silva</h1> 
+                            <h1>Guilherme Xavier</h1> 
                             <h3>realizou a compra em</h3>
                             <h2>10/10/2024</h2> 
                             <h3>às</h3>
@@ -138,7 +138,7 @@
                             <img src="../../image/vendedor/confirmar_pedido/bolinha_itens.svg" alt="">
                         </div>
                         <div>
-                            <h1>Ana Oliveira</h1> 
+                            <h1>Guilherme Xavier</h1> 
                             <h3>fez o pedido em</h3>
                             <h2>12/12/2024</h2> 
                             <h3>às</h3>
