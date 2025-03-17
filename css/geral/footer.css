@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: block;
+    min-height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.footer_body {
+    display: flex;
+    background-image: url("../../image/geral/footer.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.footer_info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+
+    padding: 136px 80px 16px;
+
+
+    h2 {
+        font-size: 32px;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    & > div:not(:last-child) {
+        border-right: 2px #ffff solid;
+    }
+}
+.base_link {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden; /* Garante que o efeito fique bem ajustado */
+    display: inline-block; /* Necessário para alinhar o pseudo-elemento corretamente */
+    transition: color 0.3s ease; /* Suaviza a transição da cor */
+}
+
+.base_link::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Fica na parte inferior do texto */
+    left: 0;
+    width: 100%; /* Inicialmente cobre toda a largura */
+    height: 2px; /* Espessura da linha */
+    background-color: #fff; /* Cor da linha */
+    transform: scaleX(0); /* Inicialmente "esconde" a linha */
+    transform-origin: left; /* A linha "nasce" da esquerda para a direita */
+    transition: transform 0.3s ease; /* Suaviza o surgimento da linha */
+}
+
+.base_link:hover {
+    color: #f0f0f0; /* Opcional: muda a cor do texto no hover */
+}
+
+.base_link:hover::after {
+    transform: scaleX(1); /* Faz a linha aparecer no hover */
+}
+
+
+.footer_coluna {
+    display: flex;
+    flex-direction: column;
+}
