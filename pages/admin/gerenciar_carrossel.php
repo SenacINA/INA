@@ -42,12 +42,12 @@
                 <div class="gerenciar_pedidos_form_cliente">
                   <h2>Digite o ID e o E-mail do usuário para encontrá-lo.</h2>
                   <label class="font_subtitulo font_celadon">ID do Usuário</label>
-                  <input type="text" spellcheck="false" class="base_input" placeholder="00001">
+                  <input type="text" spellcheck="false" class="base_input" >
                 </div>
                 <div class="gerenciar_pedidos_inputs_esquerda">
                   <div class="gerenciar_pedidos_input_status">
                     <label for="select_cod" class="font_subtitulo font_celadon">Email</label>
-                    <input class="gerenciar_pedidos_select_status base_input" type="text" placeholder="info@nvidia">
+                    <input class="gerenciar_pedidos_select_status base_input" type="text">
                   </div>
                 </div>
              
@@ -67,7 +67,7 @@
               <form action="" method="post" class="gerenciar_pedidos_forms_pesquisa_pedidos">
                 <div class="gerenciar_pedidos_form_cliente">
                   <label class="font_subtitulo font_celadon">Nome</label>
-                  <input type="text" spellcheck="false" class="base_input" placeholder="Info@nvidia">
+                  <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="gerenciar_pedidos_inputs_esquerda">
                   <div class="gerenciar_pedidos_input_status">
