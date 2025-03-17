@@ -6,13 +6,17 @@
     <title>E ao Quadrado</title>
     <link rel="stylesheet" href="../../css/admin/gerenciar_usuario.css">
     <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-    <link rel="stylesheet" href="../../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-  <nav class="gerenciar_usuario_navbar_principal"></nav>
+  <!-- fazer responsividade -->
+   
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <header class = "gerenciar_usuario_header">
     <div class = "gerenciar_usuario_header_title">
       <h1>GERENCIAR USUARIO</h1> 

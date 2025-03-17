@@ -8,10 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/geral/redefinir_senha_3.css">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-  <nav></nav>
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <main>
     <div class="redefinir_senha_3_container">
       <div class="redefinir_senha_3_content">
@@ -19,7 +23,7 @@
         <h2>Redefinição de senha realizada!</h2>
       </div>
       
-      <button class="redefinir_senha_3_home">
+      <button class="redefinir_senha_3_botao_tela_inicial" onclick="pag('cliente/login')">
         <img src="" alt="">
         <h3>TELA INICIAL</h3>
       </button>

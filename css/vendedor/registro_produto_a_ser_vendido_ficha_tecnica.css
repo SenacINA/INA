@@ -4,7 +4,6 @@
 
 .body_registro_produto_a_ser_vendido_ficha_tecnica {
   margin: 0%;
-  background-color: #e8f1f2;
   font-family: "Jost";
 }
 
@@ -110,14 +109,11 @@
   line-height: normal;
 }
 
-.grid_conteudo input {
-  height: 33px;
-  width: 455px;
-  align-self: stretch;
-  background: transparent;
-  border: 2px solid #1b98e0;
-  font-size: 16px;
-  margin-bottom: 5%;
+.grid_conteudo input,
+.grid_conteudo select {
+  max-width: 500px;
+  height: 40px;
+  width: 100%;
 }
 
 .grid_conteudo ::placeholder {
@@ -128,42 +124,12 @@
 }
 
 .grid_conteudo select {
-  height: 35px;
-  width: 461px;
-  align-self: stretch;
-  background: transparent;
-  border: 2px solid #1b98e0;
   color: rgba(0, 0, 0, 0.3);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-  margin-bottom: 5%;
-}
-
-.grid_conteudo select option:enabled {
-  color: #000;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-}
-
-.grid_conteudo select :enabled {
-  color: #000;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
 }
 
 .grid_conteudo textarea {
-  width: 454px;
-  height: 90px;
-  font-size: 16px;
-  border: 2px solid #1b98e0;
-  resize: none;
-  background-color: transparent;
+  width: 500px;
+  height: 100px;
 }
 /* end grid_conteudo 1 e 2 */
 

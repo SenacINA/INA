@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body>
+<body> 
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <main>
-    <!-- Falta Nav-bar -->
-    <nav class="atualizar_usuario_nav_bar"></nav>  
-
     <div class="atualizar_usuario_body">
       <div class="atualizar_usuario_titulo">
         <div class="atualizar_usuario_text_titulo">
@@ -39,20 +40,18 @@
           <h2>Digite o ID e o E-mail do usuário para encontra-lo,
           Deixe em branco para cadastrar um usuário.</h2>
           <form action="" method="post" class="atualizar_usuario_forms">
-            <div class="atualizar_usuario_pesquisar_usuario_item" id="atualizar_usuario_pesquisar_usuario_item_1" >
+            <div class="atualizar_usuario_pesquisar_usuario_item" id="atualizar_usuario_pesquisar_usuario_item_1">
               <label>ID Do Usuário</label>
-              <input type="text" placeholder="00001">
+              <input type="text" class="base_input">
             </div>
             <div class="atualizar_usuario_pesquisar_usuario_item" id="atualizar_usuario_pesquisar_usuario_item_2">
               <label>E-mail</label>
-              <input type="text" placeholder="admin@gmail.com">
+              <input type="text" class="base_input">
             </div>
           </form>
         </div>
         
-        
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_2">
-        
           <hr class="atualizar_usuario_vertical">
           <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Dados Pessoais</h1>
@@ -62,33 +61,33 @@
   
           <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_1" >
             <label>Nome</label>
-            <input type="text" placeholder="THUNDER GAMES">
+            <input type="text" class="base_input">
           </div>
 
           <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_2">
             <label>Senha</label>
-            <input type="text" placeholder="R. Eng. Sampaio Coelho">
+            <input type="text" class="base_input">
           </div>
           
           <div class="atualizar_usuario_dados_pessoais_conjunto">
             <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_3">
               <label>E-mail</label>
-              <input type="text" placeholder="thundergames@gmail.com">
+              <input type="text" class="base_input">
             </div>
             <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_4">
               <label>Telefone</label>
-              <input type="text" placeholder="+55 (19) 99486-4017">
+              <input type="text" class="base_input">
             </div>
           </div>
 
           <div class="atualizar_usuario_dados_pessoais_conjunto">
             <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_5">
               <label>CPf</label>
-              <input type="text" placeholder="000-000-000-00">
+              <input type="text" class="base_input">
             </div>
             <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_6">
               <label>Telefone 2</label>
-              <input type="text" placeholder="+55 (19) 99486-4017">
+              <input type="text" class="base_input">
             </div>
           </div>
         </form>
@@ -104,33 +103,33 @@
             <!-- row 1 -->
             <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_1">
               <label>CEP</label>
-              <input type="text" placeholder="04261-080">
+              <input type="text" class="base_input">
             </div>
             <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_2">
               <label>Estado</label>
-              <input type="text" placeholder="São Paulo">
+              <input type="text" class="base_input">
             </div>
           </div>
           
           <div class="atualizar_usuario_localizacao_conjunto">
             <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_3">
               <label>Cidade</label>
-              <input type="text" placeholder="São Paulo">
+              <input type="text" class="base_input">
             </div>
             <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_4">
               <label>Bairro</label>
-              <input type="text" placeholder="Vila Monumento">
+              <input type="text" class="base_input">
             </div>
           </div>
 
           <div class="atualizar_usuario_localizacao_conjunto">
             <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_5">
               <label>Endereço</label>
-              <input type="text" placeholder="R. Eng. Sampaio Coelho">
+              <input type="text" class="base_input">
             </div>
             <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_6">
               <label>Número</label>
-              <input type="text" placeholder="122">
+              <input type="text" class="base_input">
             </div>
           </div>
         </form>
@@ -212,9 +211,7 @@
     </div>
     
     <!-- Falta footer -->
-    <footer class="footer_temporario_atualizar_usuario">
-      <img src="../../image/admin/atualizar_usuario/footer_mobile.svg" alt="">
-    </footer>
+    
   </main>
 </body>
 </html>

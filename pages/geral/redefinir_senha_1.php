@@ -9,38 +9,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-  <nav></nav>
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
   <main>
     <div class="redefinir_senha_1_container">
-      <h1>REDEFINIÇÃO DE SENHA</h1>
-      <hr>
       <div class="redefinir_senha_1_main_content">
-        <h2>ESQUECEU A SENHA?</h2>
-        <h3>Não se preocupe! Insira seu e-mail de cadastro e enviaremos instruções para você</h3>
+        <div class="redefinir_senha_1_bem_vindo">
+          <img src="../../image/geral/logo-eaoquadrado.png">
+          <h1>Redefinir Senha</h1>
+        </div>
 
         <form class="redefinir_senha_1_form" action="">
-          <label for="email">E-mail</label>
-          <input type="text" name="email" id="email">  
-          <a href="">Esqueceu seu E-mail?</a>
+          <label for="email">E-mail:</label>
+          <input class="base_input" type="email" name="email" id="email-senha">
+
+          <a href="./redefinir_email_1.php">Redefinir E-Mail</a>
         </form>
+      </div>
 
-        <!-- colocar botões novos -->
-        <button class="redefinir_senha_1_enviar">
-          <img src="" alt="">
-          <h3>ENVIAR</h3>
+      <div class="redefinir_senha_1_botoes">
+        <button class="redefinir_senha_1_botao_voltar" onclick="history.back()">
+          <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
         </button>
-
-        <button class="redefinir_senha_1_voltar"> 
-          <img src="" alt="">
-          <h3>VOLTAR</h3>
+        <button class="redefinir_senha_1_botao_avancar" onclick="pag('geral/redefinir_senha_2')">
+          <img src="../../image/geral/confirm_botao.svg" alt="">Avançar
         </button>
       </div>
     </div>
   </main>
 
-  <!-- footer -->
-  <!-- coloca display:none no desktop -->
+  <script type="module" src="../../js/admin/toggle_redefinir.js"></script>
 </body>
 </html>

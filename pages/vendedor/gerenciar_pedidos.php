@@ -10,21 +10,24 @@
   <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <nav class="gerenciar_pedidos_navbar_principal" style="background-color: purple;"></nav>
+  <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
   <main class="gerenciar_pedidos_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_pedidos_header_holder">
-        <div class="gerenciar_pedidos_header_title">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
-          <h1 class="gerenciar_pedidos_text_header font_titulo">GERENCIAR PEDIDOS</h1>
+        <div class="gerenciar_pedidos_text_titulo">
+          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <h1 class="gerenciar_pedidos_header_holder font_titulo">RELATÓRIO DO VENDEDOR</h1>
         </div>
-        <div class="gerenciar_pedidos_linha_sublinhado"></div>
+        <hr class="gerenciar_pedidos_linha_sublinhado">
       </div>
-      <div class="gerenciar_pedidos_body_holder bg_azul_leve">
+      
+      <div class="gerenciar_pedidos_body_holder">
         <div class="gerenciar_pedidos_main_content">
           <div class="gerenciar_pedidos_quadrado_container">
             <div class="gerenciar_pedidos_pesquisar_pedidos">
@@ -104,7 +107,7 @@
                   <span class="gerenciar_pedidos_estatistica_descricao">R$14.145,35</span>
                 </div>
                 <div class="gerenciar_pedidos_card">
-                  <span class="gerenciar_pedidos_titulo font_subtitulo">Total De Vendas</span>
+                  <span class="gerenciar_pedidos_titulo">Total De Vendas</span>
                   <span class="gerenciar_pedidos_estatistica_descricao font_descricao">14 UNI</span>
                 </div>
                 <div class="gerenciar_pedidos_card">
@@ -130,7 +133,7 @@
       </div>
     </div>
     <div class="gerenciar_pedidos_header_title">
-      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg" />
+      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg"/>
       <h1 class="gerenciar_pedidos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_pedidos_table">
