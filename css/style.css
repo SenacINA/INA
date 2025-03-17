@@ -135,7 +135,6 @@ body{
 }
 
 select.base_input {
-  padding-top: 0.25rem !important;
   cursor: pointer;
 }
 
@@ -346,7 +345,6 @@ select.base_input {
 
   select.base_input,
   option.base_input{
-    padding-top: 0.625rem !important;
     font-size: 1.125rem;
   }
 }
