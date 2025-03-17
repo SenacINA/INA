@@ -63,7 +63,7 @@
 .gerenciar_pedidos_text_titulo,
 .gerenciar_pedidos_header_title {
   display: flex;
-  justify-self: center;
+  justify-content: center;
 }
 
 .gerenciar_pedidos_text_titulo img,
@@ -76,11 +76,9 @@
 
 .gerenciar_pedidos_text_titulo h1,
 .gerenciar_pedidos_header_title h1 {
-  justify-self: center;
   font-weight: 500;
-  color: #255e7e;
   text-align: center;
-  font-size: 32px;
+  color: var(--sappire);
 }
 
 .gerenciar_pedidos_linha_sublinhado {
@@ -304,6 +302,9 @@
 
   .gerenciar_pedidos_header_title{
     justify-content: flex-start;
+    h1{
+      font-size: 1.5rem;
+    }
   }
 
   .gerenciar_pedidos_input_ano,

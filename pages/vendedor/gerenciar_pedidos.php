@@ -20,7 +20,7 @@
   <main class="gerenciar_pedidos_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_pedidos_header_holder">
-        <div class="gerenciar_pedidos_text_titulo">
+        <div class="gerenciar_pedidos_header_title">
           <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
           <h1 class="gerenciar_pedidos_header_holder font_titulo">RELATÓRIO DO VENDEDOR</h1>
         </div>

@@ -239,6 +239,10 @@
   .carrinho_vazio_nav{
     column-gap: 4px;
   }
+
+  .carrinho_vazio_conteudo_holder{
+    flex-direction: column;
+  }
 }
 
 @media (max-width:768px) {
