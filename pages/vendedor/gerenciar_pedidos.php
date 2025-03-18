@@ -88,8 +88,15 @@
                   </div>
                 </div>
                 <div class="gerenciar_pedidos_holder_botao">
-                  <button type="reset" class="base_botao btn_red">CANCELAR</button>
-                  <button type="submit" class="base_botao btn_blue">CONFIRMAR</button>
+                  <button type="reset" class="base_botao btn_red">
+                    <img src="../../image/geral/botoes/x_icon_branco.svg">
+                    CANCELAR
+                  </button>
+
+                  <button type="submit" class="base_botao btn_blue">
+                    <img src="../../image/geral/botoes/v_icon_branco.svg">
+                    CONFIRMAR
+                  </button>
                 </div>
               </form>
             </div>

@@ -263,6 +263,11 @@
     font-size: 1.5rem;
   }
 
+  .gerenciar_pedidos_text_titulo {
+    position: absolute;
+    top: -65px;
+  }
+
   .gerenciar_pedidos_estatistica_holder{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -303,7 +308,6 @@
   }
 
   .gerenciar_pedidor_firula_holder{
-    background-color: transparent;
     gap: 16px;
     padding: 0;
   }
