@@ -44,6 +44,11 @@
   display: flex;
   gap: 8px;
   align-items: center;
+
+  & img{
+    width: 32px;
+    height: 100%;
+  }
 }
 
 
@@ -69,7 +74,7 @@
 .relatorio_vendas_text_titulo img,
 .relatorio_vendas_header_title img {
   align-self: center;
-  width: 28px;
+  width: 32px;
   height: auto;
   margin-right: 8px;
 }
