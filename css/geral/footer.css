@@ -101,9 +101,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    & > img:hover {
-        cursor: pointer;
+    & > img {
+        width: auto;
+        height: 100%;
+        &:hover {
+            cursor: pointer;
+        }
     }
+
 }
 
 .footer_copyright {
@@ -223,9 +228,6 @@ body {
         align-items: flex-start;
     }
 
-    .footer_logo {
-        height: 100%;
-    }
 
     .footer_coluna_logo {
         height: 100% !important;
@@ -253,6 +255,9 @@ body {
         }
     }
 
+    .footer_copyright {
+        text-align: center;
+    }
 
     .footer_whatsapp button {
         padding: 8px 16px;
