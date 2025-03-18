@@ -24,7 +24,6 @@
     <div class="cadastro_vendedor_2_titulo">
       <h1>INFORMAÇÕES DA EMPRESA</h1>
     </div>
-    <img src="../../image/geral/linha-divisoria-azul.png" alt="">
     <div class="cadastro_vendedor_2_grid_conteudo">
       <div class="cadastro_vendedor_2_grid_conteudo_1">
         <!-- Local da Empresa -->
@@ -46,7 +45,6 @@
           <option value="três_lagoas">Três Lagoas</option>
         </select>
         <h1>Se você não tiver uma empresa, informe o estado de sua residência.</h1>
-        <br>
 
         <!-- CEP -->
         <label for="cep">CEP</label> <br>
@@ -92,7 +90,6 @@
         <label for="email">E-mail</label> <br>
         <input type="email" name="email" id="email" class="base_input">
         <h1>O código de confirmação será enviado para esse E-mail. </h1>
-        <br>
 
         <!-- Senha -->
         <label for="senha">Senha</label> <br>

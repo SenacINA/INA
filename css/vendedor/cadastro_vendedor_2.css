@@ -1,102 +1,92 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin: 0;
-    background-color: #E8F1F2;
-    font-family: 'Jost', sans-serif;
+  background-color: #e8f1f2;
+  font-family: "Jost", sans-serif;
 }
 
 .cadastro_vendedor_2_grid_bg {
-    display: grid;
-    grid-template-columns: auto;
-    background-color: var(--Cores-Azul-Leve, #DCE5EB);
-    margin: 2%;
-    margin-right: auto;
-    margin-left: auto;
-    width: 1780px;
-    height: 780px;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.cadastro_vendedor_2_grid_bg img {
-    width: 1700px;
-    height: 5px;
-    margin: auto;
-    margin-bottom: 3%;
+  display: grid;
+  grid-template-columns: auto;
+  background-color: var(--Cores-Azul-Leve, #dce5eb);
+  margin: 2%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1780px;
+  height: 780px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .cadastro_vendedor_2_botao {
-    margin: auto;
-    cursor: pointer;
-    transition: transform 0.1s ease;
+  margin: auto;
+  cursor: pointer;
+  transition: transform 0.1s ease;
 }
 
 .cadastro_vendedor_2_botao h1 {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: white;
-    height: 40px;
-    padding: 5px;
-    background-color: #2075C2;
-    font-size: 32px;
-    font-weight: normal;
-    border-radius: 10px;
-    margin-bottom: 10%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  height: 40px;
+  padding: 5px;
+  background-color: #2075c2;
+  font-size: 32px;
+  font-weight: normal;
+  border-radius: 10px;
+  margin-bottom: 10%;
 }
 
 .cadastro_vendedor_2_botao:active {
-    transform: scale(0.5);
+  transform: scale(0.5);
 }
 
 /* Start grid_conteudo */
 .cadastro_vendedor_2_grid_conteudo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-self: center;
-    justify-content: center;
-    
-    column-gap: 12%;
-    text-align: justify;
-    height: 485px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-self: center;
+  justify-content: center;
+  column-gap: 12%;
+  text-align: justify;
+  height: 485px;
 }
 
 .cadastro_vendedor_2_grid_conteudo input,
 .cadastro_vendedor_2_grid_conteudo select {
-    width: 100%;
+  width: 100%;
 }
 
 .cadastro_vendedor_2_grid_conteudo label {
-    color: #000;
-    font-family: 'Jost', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
+  color: #000;
+  font-family: "Jost", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .cadastro_vendedor_2_grid_conteudo h1 {
-    color: rgba(0, 0, 0, 0.50);
-    font-family: 'Jost', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    position: relative;
-    
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
 }
 
 .cadastro_vendedor_2_conteudo_telefone,
 .cadastro_vendedor_2_conteudo_endereco1,
 .cadastro_vendedor_2_conteudo_endereco2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 580px;
-    width: 100%;
-    column-gap: 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 580px;
+  width: 100%;
+  column-gap: 2%;
 }
 
 #local_da_empresa,
@@ -106,12 +96,69 @@ body {
 #senha,
 #confirmar_senha,
 #categoria_produtos {
-    width: 580px;
+  width: 580px;
 }
 
 #logradouro,
 #cpf_cnpj,
 #numero,
 #rg {
-    width: 100%;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .cadastro_vendedor_2_grid_bg {
+    width: 95%;
+    height: auto;
+    grid-template-rows: auto 960px min-content;
+  }
+  .cadastro_vendedor_2_titulo {
+    margin-top: 10%;
+  }
+  .cadastro_vendedor_2_grid_conteudo {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 5%;
+    height: auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .cadastro_vendedor_2_titulo {
+    font-size: 20px;
+    margin-bottom: -15%;
+  }
+
+  .cadastro_vendedor_2_grid_conteudo label {
+    font-size: 18px;
+  }
+  .cadastro_vendedor_2_grid_conteudo h1 {
+    font-size: 15px;
+  }
+
+  .cadastro_vendedor_2_grid_conteudo_2 label {
+    font-size: 18px;
+  }
+
+
+  .cadastro_vendedor_2_conteudo_telefone,
+  .cadastro_vendedor_2_conteudo_endereco1,
+  .cadastro_vendedor_2_conteudo_endereco2 {
+    width: auto;
+  }
+  #local_da_empresa,
+  #cep,
+  #nome_razao_social,
+  #email,
+  #senha,
+  #confirmar_senha,
+  #categoria_produtos {
+    width: 400px;
+  }
+  .cadastro_vendedor_2_botao h1 {
+    font-size: 22px;
+  }
+  body {
+    margin-top: 150px !important;
+  }
 }
