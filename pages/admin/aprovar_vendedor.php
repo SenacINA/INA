@@ -47,8 +47,8 @@
                   <div class="aprovar_vendedor_input_status">
                     <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
                     <select name="select_cod" class="aprovar_vendedor_select_status base_input">
-                      <option value="Entregue">Entregue</option>
-                      <option value="Em transporte">Em transporte</option>
+                      <option value="Entregue">Aprovado</option>
+                      <option value="Em transporte">Pendente</option>
                     </select>
                   </div>
                   <div class="aprovar_vendedor_input_mes">
@@ -169,66 +169,70 @@
             <col class="aprovar_vendedor_table_col-4">
             <col class="aprovar_vendedor_table_col-5">
             <col class="aprovar_vendedor_table_col-6">
-            <col class="aprovar_vendedor_table_col-7">
           </colgroup>
           <thead>
             <tr>
               <th>Cód.</th>
               <th>Pedido</th>
-              <th>Preço</th>
-              <th>Qtn.</th>
-              <th>Previsão de Entrega</th>
+              <th>Requisitos</th>
+              <th>Declaração</th>
+              <th>Gerenciar</th>
               <th>Status</th>
-              <th>Cliente</th>
             </tr>
             <tbody>
               <tr>
                 <td># 1001</td>
-                <td>
-                  <span>
-                    Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB
-                  </span>
-                </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>
-                  <span>
-                    25/03/2024 - 06/04/2024
-                  </span>
-                </td>
+                <td>Thunder Games</td>
+                <td>Completo</td>
                 <td>Entregue</td>
                 <td>
-                  <span>
-                    Roberto Carlos
-                  </span>
+                  <button class="aprovar_vendedor_btn_inativar">
+                    INATIVAR
+                  </button>
                 </td>
+                <td>Aprovado</td>
               </tr>
               <tr>
                 <td># 1001</td>
-                <td>Cadeira Gamer Throne - RGB </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
+                <td>GameFlix </td>
+                <td>Completo</td>
                 <td>Entregue</td>
-                <td>Roberto Carlos</td>
+                <td>
+                  <button class="aprovar_vendedor_btn_inativar">
+                    INATIVAR
+                  </button>
+                </td>
+                <td>Aprovado</td>
               </tr>
               <tr>
                 <td># 1001</td>
-                <td>Cadeira Gamer Throne - RGB </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
+                <td>Raio Games </td>
+                <td>Completo</td>
                 <td>Entregue</td>
-                <td>Roberto Carlos</td>
+                <td class="aprovar_vendedor_coluna_botoes">
+                  <button class="aprovar_vendedor_btn_aprovar">
+                    APROVAR
+                  </button>
+                  <button class="aprovar_vendedor_btn_recusar">
+                    RECUSAR
+                  </button>
+                </td>
+                <td>Pendente</td>
               </tr>
               <tr>
                 <td># 1001</td>
-                <td>Cadeira Gamer Throne - RGB </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
+                <td>Piratex </td>
+                <td>Completo</td>
                 <td>Entregue</td>
-                <td>Roberto Carlos</td>
+                <td class="aprovar_vendedor_coluna_botoes">
+                <button class="aprovar_vendedor_btn_aprovar">
+                    APROVAR
+                  </button>
+                  <button class="aprovar_vendedor_btn_recusar">
+                    RECUSAR
+                  </button>
+                </td>
+                <td>Pendente</td>
               </tr>
             </tbody>
           </thead>

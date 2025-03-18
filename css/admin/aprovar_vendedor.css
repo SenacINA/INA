@@ -252,6 +252,56 @@
   width: 20%;
 }
 
+.aprovar_vendedor_coluna_botoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.aprovar_vendedor_btn_inativar, 
+.aprovar_vendedor_btn_aprovar, 
+.aprovar_vendedor_btn_recusar {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  max-width: 192px;
+  width: 192px;
+  height: 30px;
+}
+
+.aprovar_vendedor_btn_aprovar {
+  background-color: var(--carolina);
+  color: var(--branco);
+  border: var(--carolina) solid 2px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.aprovar_vendedor_btn_recusar {
+  background-color: var(--vermelho);
+  color: var(--branco);
+  border: var(--vermelho) solid 2px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.aprovar_vendedor_btn_inativar {
+  background-color: transparent;
+  color: var(--vermelho);
+  border: var(--vermelho) solid 2px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 @media (max-width:1024px) {
   .font_titulo{
     font-size: 1.5rem;
