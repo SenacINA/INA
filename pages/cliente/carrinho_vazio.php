@@ -1,3 +1,49 @@
+<?php 
+
+  function existeSearchParams(){
+    $params = $_SERVER['QUERY_STRING'];
+    return $params != '';
+  }
+
+  function exibirResumo(){
+
+    if(existeSearchParams()){
+      $params = $_SERVER['QUERY_STRING'];
+      $ids = explode('&', $params);
+
+      foreach( $ids as $id){
+        echo $id . '<br>';
+      }
+    }else{
+      echo '<span class="font_descricao font_celadon carrinho_vazio_sem_itens">Nenhuma informação para exibir</span>';
+    }
+  }
+
+  function exibirProdutos(){
+    if(existeSearchParams()){
+      $params = $_SERVER['QUERY_STRING'];
+      $ids = explode('&', $params);
+
+      $quant_produto = 0;
+      for ($i=0; $i < count($ids) ; $i++) { 
+        if(substr($ids[$i], 0, 3) != 'id='){
+          return;
+        }
+
+        $quant_produto += 1;
+        echo substr($ids[$i], 3);
+      }
+
+      if($quant_produto == 0){
+        echo '<h1 class="items_vazio">NENHUM ITEM NO CARRINHO</h1>';
+      }
+    }else{
+      echo '<h1 class="items_vazio">NENHUM ITEM NO CARRINHO</h1>';
+    }
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -53,7 +99,7 @@
           </div>
           <div class="carrinho_vazio_main_content">
             <div class="carrinho_vazio_conteudo_items carrinho_vazio_sem_itens">
-              <h1 class="items_vazio">NENHUM ITEM NO CARRINHO</h1>
+              
             </div>
             <div class="carrinho_vazio_conteudo_servicos">
               <div class="carrinho_vazio_servicos_text">
@@ -74,8 +120,8 @@
             </div>
             <hr class="carrinho_vazio_divisoria_quadrado">
           </div>
-          <div class="carrinho_vazio_resumo carrinho_vazio_sem_itens">
-            <span class="font_descricao font_celadon">Nenhuma informação para exibir</span>
+          <div class="carrinho_vazio_resumo <?php ?>">
+            <?php exibirResumo();?>
           </div>
         </div>
       </div>

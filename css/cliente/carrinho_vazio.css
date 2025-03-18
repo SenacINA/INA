@@ -2,7 +2,7 @@
 
 .carrinho_vazio_body{
   display: flex;
-  background-color: var(--azul_leve);
+  background-color: var(--branco);
 }
 
 .carrinho_vazio_main {
@@ -94,7 +94,7 @@
   width: 100%;
   height: 100%;
   max-height: 70vh;
-  background-color: var(--branco_gelo);
+  background-color: var(--mob_branco);
   padding: 0 32px;
   border-radius: 10px;
   display: flex;
@@ -137,10 +137,11 @@
 
 .carrinho_vazio_conteudo_servicos {
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #e8f1f2;
+  background-color: var(--azul_leve);
 }
 
 .carrinho_vazio_servicos_text {
@@ -177,13 +178,13 @@
 .carrinho_vazio_sem_itens{
   align-items: center;
   justify-content: center;
+  margin: 64px 0;
 }
 
 .carrinho_vazio_resumo {
   width: 100%;
   height: 100%;
   flex-grow: 1;
-  background-color: #e8f1f2;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -242,6 +243,34 @@
 
   .carrinho_vazio_conteudo_holder{
     flex-direction: column;
+  }
+
+  .carrinho_vazio_main_holder{
+    height: 100%;
+  }
+
+  .carrinho_vazio_resumo_holder{
+    width: 100%;
+    height: 100%;
+  }
+
+  .carrinho_vazio_conteudo_items{
+    height: 100%;
+  }
+
+  /* .carrinho_vazio_conteudo_servicos{
+    height: 25%;
+  } */
+
+  .carrinho_vazio_conteudo{
+    max-height: none;
+  }
+  .carrinho_vazio_text_info {
+    padding: 4px 0 ;
+  }
+
+  .carrinho_vazio_conteudo{
+    padding: 0 16px;
   }
 }
 
