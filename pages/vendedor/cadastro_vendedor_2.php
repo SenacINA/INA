@@ -80,7 +80,7 @@
           <!-- RG -->
           <div class="cadastro_vendedor_2_rg">
             <label for="rg">RG</label> <br>
-            <input type="text" name="rg" id="rg" class="base_input"required>
+            <input type="text" name="rg" id="rg" class="base_input">
           </div>
         </div>
       </div>
