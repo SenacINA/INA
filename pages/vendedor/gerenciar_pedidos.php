@@ -22,7 +22,7 @@
       <div class="gerenciar_pedidos_header_holder">
         <div class="gerenciar_pedidos_text_titulo">
           <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
-          <h1 class="gerenciar_pedidos_header_holder font_titulo">RELATÓRIO DO VENDEDOR</h1>
+          <h1 class="gerenciar_pedidos_header_holder font_titulo">GERENCIAR PEDIDOS</h1>
         </div>
         <hr class="gerenciar_pedidos_linha_sublinhado">
       </div>
@@ -164,7 +164,7 @@
               <th>Produto</th>
               <th>Preço</th>
               <th>Qtn.</th>
-              <th>Previsão de Entrega</th>
+              <th>Forma de Pagamento</th>
               <th>Status</th>
               <th>Cliente</th>
             </tr>
@@ -180,10 +180,10 @@
                 <td>01</td>
                 <td>
                   <span>
-                    25/03/2024 - 06/04/2024
+                    Pix
                   </span>
                 </td>
-                <td>Entregue</td>
+                <td>Pago</td>
                 <td>
                   <span>
                     Roberto Carlos
@@ -195,8 +195,8 @@
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
+                <td>Pix</td>
+                <td>Pendente</td>
                 <td>Roberto Carlos</td>
               </tr>
               <tr>
@@ -204,8 +204,8 @@
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
+                <td>Boleto - 6x</td>
+                <td>Pendente</td>
                 <td>Roberto Carlos</td>
               </tr>
               <tr>
@@ -213,8 +213,8 @@
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
+                <td>Boleto - 12x</td>
+                <td>Pago</td>
                 <td>Roberto Carlos</td>
               </tr>
             </tbody>
