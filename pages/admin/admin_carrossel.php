@@ -42,9 +42,9 @@
     </div>
     <form action="" method="post" class="admin_carrossel_forms_informacoes_anuncio">
       <label for="anunciante">Nome do Anunciante</label>
-      <input type="text" class="admin_carrossel_input_text_forms">
+      <input type="text" class="admin_carrossel_input_text_forms base_input">
       <label for="email">E-mail</label>
-      <input type="text" class="admin_carrossel_input_text_forms">
+      <input type="text" class="admin_carrossel_input_text_forms base_input">
       
       <input  type="file" name="anuncio" id="foto_anuncio" class="admin_carrossel_input_file_forms">
       <div class="admin_carrossel_file_text ">

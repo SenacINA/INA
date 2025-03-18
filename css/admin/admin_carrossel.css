@@ -140,12 +140,16 @@
 
 
 .admin_carrossel_input_text_forms {
-  text-indent: 5px;
-  background-color: transparent;
-  border-radius: 5px;
-  border: 2px solid #1b98e0;
+  
+ 
   width: 80%;
-  height: 30px;
+  
+  outline: none; 
+  transition: border-color 0.3s ease-in-out; 
+}
+
+.admin_carrossel_input_text_forms:focus {
+  border-color: #1277b0; 
 }
 
 .admin_carrossel_forms_informacoes_anuncio label {
@@ -357,3 +361,95 @@
   height: 666px;
   background-image: url(../../image/admin/adicionar_propaganda/Header.png);
 }
+
+@media screen and (max-width: 768px) {
+  .admin_carrossel_main_container {
+    row-gap: 50px; /* Reduz espaço entre elementos */
+    padding: 20px;
+    background-image: none;
+  }
+
+  .admin_carrossel_quadrado_container {
+    width: 95%; 
+    height: auto; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto; 
+    padding: 20px; 
+    /* width: 768px;
+    height: 2091px; */
+  }
+
+  /* Move o título e imagem para o canto superior esquerdo */
+  .admin_carrossel_main_text_container {
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .admin_carrossel_texto_main_text {
+    font-size: 24px; 
+    gap: 5px; 
+    margin-bottom: 30px;
+    margin: 0;
+  }
+
+  .admin_carrossel_img_anuncios {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Remove a linha */
+  .admin_carrossel_linha_main_text {
+    display: none;
+  }
+
+  /* Estiliza o bloco de informações */
+  .admin_carrossel_informacoes_anuncio {
+    position: relative;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .admin_carrossel_main_text_informacoes_anuncio {
+    font-size: 24px;
+  }
+
+  /* Ajusta os formulários para ficarem um abaixo do outro */
+  .admin_carrossel_forms_informacoes_anuncio {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  /* Ajusta os botões */
+  .admin_carrossel_buttons_container {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  .admin_carrossel_buttons_container button {
+    width: 704px;
+    height: 48px;
+  }
+
+  /* Estiliza os planos */
+  .admin_carrossel_forms_planos {
+    width: 100%;
+    top: 0;
+    height: auto;
+    gap: 10px;
+  }
+}
+
+
+
