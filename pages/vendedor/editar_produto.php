@@ -12,6 +12,9 @@
       <title>E ao Quadrado</title>
    </head>
    <body>
+   <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
       <div class='editar_produto_main'>
          <div class='editar_produto_container'>
             <div class='editar_produto_title'>
