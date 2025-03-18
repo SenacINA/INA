@@ -7,14 +7,14 @@
 }
 
 /* NAVBAR */
-.cupom_nav_bar {
+.admin_cupom_nav_bar {
   width: 100%;
   height: 67px;
   background-color: black;
 }
 
 /* CORPO PRINCIPAL */
-.cupom_body {
+.admin_cupom_body {
   display: flex;
   flex-direction: column;
   justify-self: center;
@@ -22,13 +22,13 @@
 
   background-color: #eff3f5;
   width: 90%;
-  height: 779px;
+  height: 780px;
   border-radius: 10px;
   margin: 0px 1.5%;
 }
 
 /* header */
-.cupom_header {
+.admin_cupom_header {
   position: relative;
 
   display: grid;
@@ -40,19 +40,19 @@
   height: 86px;
 }
 
-.cupom_text_header {
+.admin_cupom_text_header {
   display: flex;
   justify-self: center;
 }
 
-.cupom_text_header img {
+.admin_cupom_text_header img {
   align-self: center;
   width: 28px;
   height: auto;
   margin-right: 8px;
 }
 
-.cupom_text_header h1 {
+.admin_cupom_text_header h1 {
   justify-self: center;
   font-weight: 500;
   color: #255e7e;
@@ -60,7 +60,7 @@
   font-size: 32px;
 }
 
-.cupom_linha_header {
+.admin_cupom_linha_header {
   width: 95%;
   height: 5px;
   border-radius: 20px;
@@ -69,7 +69,7 @@
 }
 
 /* grid principal */
-.cupom_grid_conteudo {
+.admin_cupom_grid_conteudo {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4, auto);
@@ -98,11 +98,11 @@
   grid-row: 3;
 }
 
-.cupom_text {
+.admin_cupom_text {
   display: flex;
 }
 
-.cupom_text img {
+.admin_cupom_text img {
   margin: 0px 8px;
   width: 24px;
   height: 24px;
@@ -110,7 +110,7 @@
   justify-self: center;
 }
 
-.cupom_vertical {
+.admin_cupom_vertical {
   border: none;
   background-color: #1b98e0;
   border-radius: 10px;
@@ -118,100 +118,88 @@
   height: 46px;
 }
 
-.cupom_text h1 {
+.admin_cupom_text h1 {
   position: relative;
   font-size: 32px;
   color: #2888b1;
 }
 
 /* inputs */
-.cupom_grid_conteudo input {
-  height: 34px;
-
-  border: 2px #1b98e0 solid;
-  outline: none;
-  border-radius: 5px;
-  text-indent: 5px;
-  font-size: 20px;
-  background-color: transparent;
-}
-
-.cupom_grid_conteudo label {
+.admin_cupom_grid_conteudo label {
   font-size: 20px;
   color: #0f3b62;
   font-weight: 600;
 }
 
 /* Pesquisar Usuário */
-.cupom_pesquisar_usuario h2 {
+.admin_cupom_pesquisar_usuario h2 {
   color: rgba(87, 149, 206, 0.6);
   font-size: 20px;
-  max-width: 590px;
+  max-width: 100%;
 }
 
-.cupom_pesquisar_usuario_item {
+.admin_cupom_pesquisar_usuario_item {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 }
 
-.cupom_pesquisar_usuario_item input {
-  max-width: 590px;
-}
-
-.cupom_configuracao_grid {
+.admin_cupom_configuracao_grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  width: 653px;
+  grid-template-columns: 1fr 1fr; 
+  column-gap: 2%;
+  width: 100%;
+  max-width: 600px;
 }
 
-.cupom_configuracao_item {
+.admin_cupom_configuracao_item {
   display: grid;
-  grid-template-columns: 1fr; /* Two equal columns */
-  width: 50px;
+  grid-template-columns: 1fr; 
+  width: 100%;
 }
 
 /* Localização */
-.cupom_localizacao {
+.admin_cupom_localizacao {
   display: flex;
   flex-direction: column;
 }
 
-.cupom_localizacao_conjunto {
+.admin_cupom_localizacao_conjunto {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: start;
   align-items: center;
   column-gap: 2%;
 
-  max-width: 590px;
+  max-width: 600px;
 }
 
-.cupom_localizacao_item {
+.admin_cupom_localizacao_item {
   display: flex;
   flex-direction: column;
 }
 
-.cupom_localizacao_item input {
+.admin_cupom_localizacao_item input {
   display: flex;
   flex-direction: column;
 }
 
 /* Dados Pessoais */
-.cupom_dados_pessoais {
+.admin_cupom_dados_pessoais {
   display: flex;
   flex-direction: column;
 }
 
-.cupom_dados_pessoais_item {
+.admin_cupom_dados_pessoais_item {
   display: flex;
   flex-direction: column;
 }
 
-.cupom_dados_pessoais_item input {
-  max-width: 590px;
+.admin_cupom_dados_pessoais_item input {
+  max-width: 600px;
 }
 
-.cupom_achar_produto_organizar {
+.admin_cupom_achar_produto_organizar {
   color: white;
   font-size: 26px;
   display: flex;
@@ -232,15 +220,15 @@
   background-color: #1b98e0;
 }
 
-.cupom_metodo_procura_body {
+.admin_cupom_metodo_procura_body {
   display: flex;
   background-color: #ffffff;
   border: #1b98e0 solid 2px;
   border-top-right-radius: 5px;
-  width: 590px;
+  width: 600px;
 }
 
-.cupom_metodo_procura_body_head {
+.admin_cupom_metodo_procura_body_head {
   width: 100px;
   color: grey;
   /* Paddings */
@@ -251,31 +239,31 @@
   border-right: #1b98e0 solid 2px;
 }
 
-.cupom_caixa_procura {
+.admin_cupom_caixa_procura {
   background: #dce5eb;
-  width: 590px;
+  width: 600px;
   height: 200px;
 }
 
-.cupom_dados_pessoais_conjunto {
+.admin_cupom_dados_pessoais_conjunto {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: start;
   align-items: center;
   column-gap: 2%;
 
-  max-width: 590px;
+  max-width: 600px;
 }
 
 /* Permissões */
-.cupom_forms_permissoes {
+.admin_cupom_forms_permissoes {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 590px;
+  max-width: 600px;
 }
 
-.cupom_permissoes_conjunto {
+.admin_cupom_permissoes_conjunto {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -287,18 +275,18 @@
   margin-left: 20px;
 }
 
-.cupom_forms_item_permissoes {
+.admin_cupom_forms_item_permissoes {
   display: flex;
   justify-content: start;
   align-items: center;
 }
 
-.cupom_forms_permissoes label {
+.admin_cupom_forms_permissoes label {
   color: rgba(0, 0, 0, 0.6);
   font-size: 20px;
 }
 
-.cupom_forms_item_permissoes input {
+.admin_cupom_forms_item_permissoes input {
   width: 18px;
   height: 18px;
   border: 1px solid #6f6f6f;
@@ -309,12 +297,12 @@
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-.cupom_forms_item_permissoes input:checked {
+.admin_cupom_forms_item_permissoes input:checked {
   background-color: #1b98e0;
   border-color: #1b98e0;
 }
 
-.cupom_forms_item_permissoes label {
+.admin_cupom_forms_item_permissoes label {
   font-size: 20px;
   font-weight: 500;
 }
@@ -364,20 +352,17 @@ input:checked + .toggle_slider::before {
 }
 
 /* Botão Confirmar */
-.cupom_botao_salvar {
-  position: relative;
+.admin_cupom_botao_salvar {
+  position: absolute;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 
-  margin-right: 122px;
-  margin-bottom: 90px;
-  margin-top: 20px;
-
-  transform: translate(70px, 65px);
+  top: 660px;
+  right: 250px;
 }
 
-.cupom_salvar {
+.admin_cupom_salvar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -385,10 +370,10 @@ input:checked + .toggle_slider::before {
   border-radius: 5px;
   background-color: #1b98e0;
   width: 192px;
-  height: 48px;
+  height: 40px;
 }
 
-.cupom_cancelar {
+.admin_cupom_cancelar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -396,40 +381,38 @@ input:checked + .toggle_slider::before {
   border: red solid 2px;
   border-radius: 5px;
   background-color: #1b98e000;
+  gap: 8px;
   width: 192px;
-  height: 48px;
+  height: 40px;
 }
 
-.cupom_cancelar label {
+.admin_cupom_cancelar label {
   color: rgb(255, 0, 0);
   font-size: 24px;
   cursor: pointer;
 }
 
-.cupom_salvar label {
+.admin_cupom_salvar label {
   color: white;
   font-size: 24px;
   cursor: pointer;
 }
 
-.cupom_botao_salvar button {
+.admin_cupom_botao_salvar button {
   cursor: pointer;
 }
 
-.cupom_salvar img {
+.admin_cupom_salvar img {
   width: 24px;
   height: 24px;
   cursor: pointer;
   margin-right: 8px;
 }
 
-.footer_temporario_cupom {
-  display: none;
-}
-
 #cupom_text_header_mobile {
   display: none;
 }
+
 .toggle-group {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -483,15 +466,8 @@ input:checked + .toggle_slider::before {
 }
 /* <<< MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 @media (max-width: 1024px) {
-  /* NAVBAR */
-  .cupom_nav_bar {
-    width: 100%;
-    height: 67px;
-    background-color: black;
-  }
-
   /* CORPO PRINCIPAL */
-  .cupom_body {
+  .admin_cupom_body {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -500,14 +476,14 @@ input:checked + .toggle_slider::before {
 
     background-color: #eff3f5;
     width: 95%;
-    height: 1332px;
+    height: 1100px;
     border-radius: 10px;
-    margin: 1.5% 2%;
+    margin: 0px 2%;
     margin-top: 86px;
   }
 
   /* header */
-  .cupom_header {
+  .admin_cupom_header {
     position: absolute;
 
     display: grid;
@@ -532,19 +508,19 @@ input:checked + .toggle_slider::before {
     margin-top: 336px;
   }
 
-  .cupom_text_header {
+  .admin_cupom_text_header {
     display: flex;
     justify-self: start;
   }
 
-  .cupom_text_header img {
+  .admin_cupom_text_header img {
     align-self: center;
     width: 28px;
     height: auto;
     margin-right: 8px;
   }
 
-  .cupom_text_header h1 {
+  .admin_cupom_text_header h1 {
     justify-self: center;
     font-weight: 500;
     color: #255e7e;
@@ -552,12 +528,12 @@ input:checked + .toggle_slider::before {
     font-size: 32px;
   }
 
-  .cupom_linha_header {
+  .admin_cupom_linha_header {
     display: none;
   }
 
   /* grid principal */
-  .cupom_grid_conteudo {
+  .admin_cupom_grid_conteudo {
     display: grid;
     grid-template-columns: 1fr;
     margin: 3% 2%;
@@ -587,17 +563,16 @@ input:checked + .toggle_slider::before {
     grid-row: 1;
   }
 
-  .cupom_pesquisar_usuario {
+  .admin_cupom_pesquisar_usuario {
     grid-row: 2;
   }
 
   #cupom_text_2 {
     grid-row: 3;
     grid-column: 1;
-    margin-top: 112px;
   }
 
-  .cupom_dados_pessoais {
+  .admin_cupom_dados_pessoais {
     grid-row: 4;
   }
 
@@ -605,7 +580,7 @@ input:checked + .toggle_slider::before {
     grid-row: 5;
   }
 
-  .cupom_localizacao {
+  .admin_cupom_localizacao {
     grid-row: 6;
   }
 
@@ -614,92 +589,85 @@ input:checked + .toggle_slider::before {
     grid-column: 1;
   }
 
-  .cupom_forms_permissoes {
+  .admin_cupom_forms_permissoes {
     grid-row: 8;
   }
 
-  .cupom_botao_salvar {
+  .admin_cupom_botao_salvar {
     grid-row: 9;
   }
 
-  /* inputs */
-  .cupom_pesquisar_usuario_item input {
-    max-width: 100%;
-  }
-
-  .cupom_dados_pessoais_item input {
-    max-width: 100%;
-  }
-
-  .cupom_dados_pessoais_conjunto {
-    max-width: 100%;
-  }
-
-  .cupom_localizacao_conjunto {
-    max-width: 100%;
-  }
-
-  .cupom_permissoes_conjunto {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cupom_forms_item_permissoes {
+  .admin_cupom_forms_item_permissoes {
     margin-bottom: 4%;
   }
 
-  /* botão */
-  .cupom_botao_salvar {
-    margin: 0%;
-    width: 325px;
-    transform: translateX(180px);
+  .admin_cupom_pesquisar_usuario_item {
+  display: flex;
+  flex-direction: column;
+  max-width: none;
   }
 
-  .cupom_salvar {
+  .admin_cupom_configuracao_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 2%;
     width: 100%;
+    max-width: none;
   }
 
-  .footer_temporario_cupom {
-    position: relative;
-    display: flex;
+  .admin_cupom_configuracao_item input {
+    width: 100%;
+    align-self: self-end;
+  }
+
+  .toggle-group {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
     align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    height: auto;
-
-    overflow: hidden;
-  }
-
-  .footer_temporario_cupom img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .cupom_configuracao_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
     width: 100%;
   }
 
-  .cupom_configuracao_item {
-    display: grid;
-    grid-template-columns: 1fr; /* Two equal columns */
-    width: 99%;
-  }
-
-  .cupom_caixa_procura {
+  .admin_cupom_caixa_procura {
     background: #dce5eb;
     width: 100%;
     height: 200px;
   }
 
-  .cupom_metodo_procura_body {
+  .admin_cupom_metodo_procura_body {
     display: flex;
     background-color: #ffffff;
     border: #1b98e0 solid 2px;
     border-top-right-radius: 5px;
     width: 100%;
+  }
+
+  /* botão */
+  .admin_cupom_botao_salvar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  
+    top: -90px;
+    right: 2%;
+    width: 100%;
+  }
+  
+  .admin_cupom_salvar,
+   .admin_cupom_cancelar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 104%;
+    height: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .admin_cupom_body {
+    height: 1130px;
   }
 }

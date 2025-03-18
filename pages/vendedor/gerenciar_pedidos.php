@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -21,13 +20,14 @@
   <main class="gerenciar_pedidos_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_pedidos_header_holder">
-        <div class="gerenciar_pedidos_header_title">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
-          <h1 class="gerenciar_pedidos_text_header font_titulo">GERENCIAR PEDIDOS</h1>
+        <div class="gerenciar_pedidos_text_titulo">
+          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <h1 class="gerenciar_pedidos_header_holder font_titulo">GERENCIAR PEDIDOS</h1>
         </div>
-        <div class="gerenciar_pedidos_linha_sublinhado"></div>
+        <hr class="gerenciar_pedidos_linha_sublinhado">
       </div>
-      <div class="gerenciar_pedidos_body_holder bg_azul_leve">
+      
+      <div class="gerenciar_pedidos_body_holder">
         <div class="gerenciar_pedidos_main_content">
           <div class="gerenciar_pedidos_quadrado_container">
             <div class="gerenciar_pedidos_pesquisar_pedidos">
@@ -107,7 +107,7 @@
                   <span class="gerenciar_pedidos_estatistica_descricao">R$14.145,35</span>
                 </div>
                 <div class="gerenciar_pedidos_card">
-                  <span class="gerenciar_pedidos_titulo font_subtitulo">Total De Vendas</span>
+                  <span class="gerenciar_pedidos_titulo">Total De Vendas</span>
                   <span class="gerenciar_pedidos_estatistica_descricao font_descricao">14 UNI</span>
                 </div>
                 <div class="gerenciar_pedidos_card">
@@ -133,7 +133,7 @@
       </div>
     </div>
     <div class="gerenciar_pedidos_header_title">
-      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg" />
+      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg"/>
       <h1 class="gerenciar_pedidos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_pedidos_table">
@@ -164,7 +164,7 @@
               <th>Produto</th>
               <th>Preço</th>
               <th>Qtn.</th>
-              <th>Previsão de Entrega</th>
+              <th>Forma de Pagamento</th>
               <th>Status</th>
               <th>Cliente</th>
             </tr>
@@ -180,10 +180,10 @@
                 <td>01</td>
                 <td>
                   <span>
-                    25/03/2024 - 06/04/2024
+                    Pix
                   </span>
                 </td>
-                <td>Entregue</td>
+                <td>Pago</td>
                 <td>
                   <span>
                     Roberto Carlos
@@ -195,8 +195,8 @@
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
+                <td>Pix</td>
+                <td>Pendente</td>
                 <td>Roberto Carlos</td>
               </tr>
               <tr>
@@ -204,8 +204,8 @@
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
+                <td>Boleto - 6x</td>
+                <td>Pendente</td>
                 <td>Roberto Carlos</td>
               </tr>
               <tr>
@@ -213,8 +213,8 @@
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
+                <td>Boleto - 12x</td>
+                <td>Pago</td>
                 <td>Roberto Carlos</td>
               </tr>
             </tbody>

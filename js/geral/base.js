@@ -6,6 +6,10 @@ function pag(url, loc = 1, params = "") {
     }
 }
 
+function selectPag(event){
+    pag(event);
+}
+
 function login(){
     switch (document.getElementById("email").value) {
         case "admin":

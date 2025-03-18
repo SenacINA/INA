@@ -1,0 +1,339 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Jost;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  width: 100%;
+  height: 67px;
+  background-color: #dce5eb;
+}
+
+.main_container {
+  width: 100%;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto;
+  grid-template-rows: 590px 81px 800px;
+  top: 1%;
+}
+
+.pesquisa {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  position: relative;
+  top: 97px;
+  left: 92px;
+  column-gap: 20%;
+  width: 1000px;
+}
+
+.pesquisa_cliente {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: repeat(3, auto);
+}
+
+.informacoes_cliente {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  grid-template-rows: repeat(3, min-content);
+  align-items: center;
+  justify-items: center;
+}
+
+.main_content {
+  width: 1822px;
+  height: 590px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: #f1f1f1;
+}
+
+.main_text_pesquisa_container {
+  grid-column: 1;
+}
+
+.main_text_pesquisa,
+.main_text_info {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.linha {
+  width: 613px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.forms_pesquisa {
+  margin-top: 24px;
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+}
+
+.forms_pesquisa input {
+  width: 614px;
+  height: 34px;
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+}
+
+#ip_email {
+  grid-column: 1;
+  text-indent: 5px;
+}
+
+.forms_pesquisa label {
+  color: #000;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.selects {
+  grid-column: 1;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 40% 22% 20%;
+  column-gap: 34px;
+  margin-top: 3%;
+}
+
+.ano {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.ano_select {
+  grid-column: 3;
+  grid-row: 2;
+  height: 34px;
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+}
+
+.mes_select {
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+}
+
+.plano_select {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: transparent;
+  border: 2px solid #1b98e0;
+}
+
+.botoes_submit {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.cancelar_submit {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 190%;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  height: 50px;
+  background-color: transparent;
+  border: red solid 2px;
+  border-radius: 10px;
+  color: #f00;
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.confirmar_submit {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 200%;
+  display: grid;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  height: 50px;
+  border-radius: 10px;
+  background: #2075c2;
+  color: #fff;
+  text-align: center;
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.usuario_info {
+  grid-row: span 3;
+  grid-column: 1;
+  width: 295px;
+  height: 258px;
+  background: #dce5eb;
+}
+
+.informacoes_cliente {
+  row-gap: 5%;
+}
+
+.usuario_info {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.nome_info {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.main_text_info_container {
+  grid-column: span 2;
+}
+
+.data_inicio,
+.data_expiracao,
+.cargo {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 295px;
+  height: 75px;
+  background: #dce5eb;
+}
+
+.data_inicio_text,
+.data_expiracao_text,
+.cargo_text {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.data_inicio_date,
+.data_expiracao_date,
+.cargo_info {
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 90%;
+}
+
+.botoes {
+  position: relative;
+  top: 35%;
+  height: 40px;
+}
+
+.filtro {
+  width: 543px;
+  height: 43px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: #f1f1f1;
+  color: #000;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.add_anuncio {
+  position: relative;
+  left: 86%;
+  bottom: 100%;
+  width: 250px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #1b98e0;
+  color: #fff;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.table {
+  width: 1822px;
+  height: 752px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: #f1f1f1;
+  display: grid;
+  grid-template-columns: 9.22% 23.27% 13.39% 8.51% 12.4% 15.86% 17.35%;
+  grid-template-rows: 64px repeat(13, 45px);
+  row-gap: 8px;
+  text-align: center;
+}
+
+.table p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  color: #000;
+  text-align: center;
+  font-family: Jost;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.table span {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dce5eb;
+}

@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- fazer a responsividade -->
+    <!--arrumar o nome das class  -->
+
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
@@ -30,31 +33,31 @@
 
                     <!-- Nome do Produto -->
                     <label for="nomedoproduto">Nome do Produto</label> <br>
-                    <input type="text" name="nomedoproduto" id="nomedoproduto" required> <br>    
+                    <input type="text" name="nomedoproduto" id="nomedoproduto" class="base_input"> <br>    
 
                     <!-- Preço (R$) -->
                     <label for="preco">Preço (R$)</label> <br> 
-                    <input type="text" name="preco" id="preco" required> <br>
+                    <input type="text" name="preco" id="preco" class="base_input"> <br>
 
                     <!-- Categoria -->
                     <label for="categoria">Categoria</label> <br> 
-                    <input type="text" name="categoria" id="categoria" required> <br>
+                    <input type="text" name="categoria" id="categoria" class="base_input"> <br>
 
                     <!-- Marca -->
                     <label for="marca">Marca</label> <br> 
-                    <input type="text" name="marca" id="marca" required> <br>
+                    <input type="text" name="marca" id="marca" class="base_input"> <br>
 
                     <!-- Código -->
                     <label for="codigo">Código</label> <br> 
-                    <input type="text" name="codigo" id="codigo" required> <br>
+                    <input type="text" name="codigo" id="codigo" class="base_input"> <br>
 
                     <!-- Origem -->
                     <label for="origem">Origem</label> <br> 
-                    <input type="text" name="origem" id="origem" required> <br>
+                    <input type="text" name="origem" id="origem" class="base_input"> <br>
 
                     <!-- Unidade -->
                     <label for="unidade">Unidade</label> <br> 
-                    <input type="text" name="unidade" id="unidade" required> <br>
+                    <input type="text" name="unidade" id="unidade" class="base_input"> <br>
                 </div>
 
                 <div class="grid_conteudo_2">
@@ -62,15 +65,15 @@
 
                     <!-- Peso Líquido -->
                     <label for="pesoliquido">Peso Líquido</label> <br>
-                    <input type="text" name="pesoliquido" id="pesoliquido" placeholder="Kg" required> <br>    
+                    <input type="text" name="pesoliquido" id="pesoliquido" class="base_input" placeholder="Kg"> <br>    
 
                     <!-- Peso Bruto -->
                     <label for="pesobruto">Peso Bruto</label> <br> 
-                    <input type="text" name="pesobruto" id="pesobruto" placeholder="Kg" required> <br>
+                    <input type="text" name="pesobruto" id="pesobruto" class="base_input" placeholder="Kg"> <br>
 
                     <!-- Tipo da Embalagem -->
                     <label for="tipoembalagem">Tipo da Embalagem</label> <br> 
-                    <select name="tipoembalagem" id="tipoembalagem" required>
+                    <select name="tipoembalagem" id="tipoembalagem" class="base_input">
                         <option value="" disabled selected>Opção 1</option>
                         <option value="opcao2">Opção 2</option>
                         <option value="opcao3">Opção 3</option>
@@ -78,7 +81,7 @@
 
                     <!-- Embalagem -->
                     <label for="embalagem">Embalagem</label> <br> 
-                    <select name="embalagem" id="embalagem" required>
+                    <select name="embalagem" id="embalagem" class="base_input">
                         <option value="" disabled selected>Opção 1</option>
                         <option value="opcao2">Opção 2</option>
                         <option value="opcao3">Opção 3</option>
@@ -86,15 +89,15 @@
 
                     <!-- Largura -->
                     <label for="largura">Largura</label> <br> 
-                    <input type="text" name="largura" id="largura" placeholder="Cm" required> <br>
+                    <input type="text" name="largura" id="largura" class="base_input" placeholder="Cm"> <br>
 
                     <!-- Altura -->
                     <label for="altura">Altura</label> <br> 
-                    <input type="text" name="altura" id="altura" placeholder="Cm" required> <br>
+                    <input type="text" name="altura" id="altura" class="base_input" placeholder="Cm"> <br>
 
                     <!-- Comprimento -->
                     <label for="comprimento">Comprimento</label> <br> 
-                    <input type="text" name="comprimento" id="comprimento" placeholder="Cm" required> <br>
+                    <input type="text" name="comprimento" id="comprimento" class="base_input" placeholder="Cm"> <br>
                 </div>
 
                 <div class="grid_conteudo_3">
@@ -112,7 +115,7 @@
 
                 <div class="grid_conteudo_4">
                     <h1>Descrição do produto</h1>
-                    <textarea name="observacoes" id="observacoes" rows="4"></textarea>
+                    <textarea name="observacoes" id="observacoes" class="base_input" rows="4"></textarea>
                 </div>
 
                 <div class="grid_conteudo_5">
@@ -121,7 +124,7 @@
                             <h1><img src="../../image/geral/x_botao_vermelho.svg" alt="">Cancelar</h1>
                         </div>
                         <div class="adicionar">
-                            <h1><img src="../../image/geral/confirm_botao.svg" alt="">Adicionar Produto</h1>
+                            <h1><img src="../../image/geral/confirm_botao.svg" alt="">Adicionar</h1>
                         </div>
                     </div>
                 </div>

@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <!-- fazer responsividade -->
+    <!-- arrumar o nome das class -->
+     
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
@@ -92,7 +94,7 @@
 
                 <div class="produto_info_text">
                     <h2>Vendido e entregue por: <a href="">THUNDER GAMES</a> </h2>
-                    <h3> <a href="">Em estoque</a></h3>
+                    <h3>Em estoque</h3>
                 </div>
                 <div class="grid_produto_info_valor">
                     <div class="produto_info_valor">
@@ -104,7 +106,6 @@
                 <div class="produto_info_text2">
                     <h1>À vista no PIX com até 10% OFF </h1>
                     <h2>R$ 1400,00 Em até 10x de R$ 140,00 sem juros no cartão Ou em 1x no cartão com até 5% OFF</h2>
-                    <a> Ver mais opções de pagamento </a>
                 </div>
 
                 <div class="grid_produto_info_botton">
@@ -121,14 +122,19 @@
         <div class="grid_consultar_fetre_cupom">
             <div class="consultar_frete">
                 <h1>CONSULTAR FRETE</h1>
-                <input type="text">
-                <button>Ok</button>
+                <div class="consultar_buttom">
+                    <input class="base_input" type="text">
+                    <button>Ok</button>
+                </div>
             </div>
 
             <div class="consultar_cupom">
                 <h1>CUPOM</h1>
-                <input type="text">
-                <button>Ok</button>
+                <div class="consultar_buttom">
+                    <input class="base_input" type="text">
+                    <button>Ok</button>
+                </div>
+                
             </div>
         </div>
     </div>

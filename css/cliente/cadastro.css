@@ -1,25 +1,20 @@
 * {
   margin: 0;
-  box-sizing: border-box;
   padding: 0;
+  font-family: "Jost";
 }
 
 body {
-  font-family: "Jost";
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh; 
   width: 100%;
   background-image: url("../../image/cliente/cadastro/cadastro_fundo.png");
   background-repeat: no-repeat;
-}
-
-.navbar {
-  background-color: #f9f9fc;
-  width: 100%;
-  height: 67px;
+  background-size: cover; 
+  background-position: center; 
 }
 
 main {
@@ -30,68 +25,74 @@ main {
   height: 100%;
 }
 
-.quadrado {
-  width: 671px;
+.cadastro_quadrado {
+  max-width: 670px;
+  width: 100%;
   height: 740px;
-  border-radius: 10px;
   background: #dce5eb;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0px 1.5% 1.5% 1.5%;
+  border-radius: 10px;
 }
 
-.bem_vindo {
+.cadastro_container {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin: 16px 2% 0px 2%;
+  max-height: 600px;
+  height: 100%;
 }
 
 .cadastro_bem_vindo {
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 500;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
 }
 
-.divisoria_cadastro {
+.cadastro_bem_vindo h1 {
+  color: #006494;
+  font-size: 32px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cadastro_divisoria_cadastro {
   align-items: center;
   margin-top: 8px;
 }
 
-.formulario_cadastro {
-  margin-top: 8px;
+.cadastro_formulario_cadastro,
+.cadastro_redefinir_senha_2_form {
+  max-width: 500px;
+  width: 100%;
 }
 
-.formulario_cadastro input {
-  width: 418px;
-  height: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 2px solid #dce5eb;
-  background: #f9f9fc;
-}
+.cadastro_quadrado input,
+.cadastro_redefinir_senha_2_form input {
+  max-width: 500px;
+  width: 100%;
+} 
 
-.formulario_cadastro label {
-  color: #0f3b62;
-  font-size: 20px;
+.cadastro_formulario_cadastro label, 
+.cadastro_redefinir_senha_2_form label  {
+  color:#6F6F6F;
   font-style: normal;
-  font-weight: 400;
+  font-size: 24px;
+  text-transform: capitalize;
 }
 
-.regras {
-  margin-top: 10px;
+.cadastro_regras {
+  width: 100%;
+  display: grid;
+  justify-content: flex-start;
+  margin-top: 16px;
 }
 
-.regras_senha {
-  color: #0f3b62;
-  text-align: center;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-}
-
-.lista {
+.cadastro_lista {
   text-align: left;
   color: rgb(0, 0, 0);
   font-size: 16px;
@@ -99,45 +100,79 @@ main {
   font-weight: 300;
 }
 
-.botoes {
+.cadastro_botoes {
   margin-top: 25px;
   display: grid;
-  grid-template-columns: auto 200px auto;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
 }
 
-.voltar {
+.cadastro_botao_voltar,
+.cadastro_botao_cadastrar {
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 5%;
-  background-color: #d73232;
-  grid-column: 1;
-  color: #fff;
+  column-gap: 8px;
   text-align: center;
   border: 0;
+  color: white;
   font-family: Jost;
   font-size: 20px;
   font-weight: 600;
   border-radius: 5px;
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   height: 48px;
+  cursor: pointer;
   text-transform: uppercase;
+  background-color: transparent;
 }
 
-.salvar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 5%;
-  grid-column: 3;
+.cadastro_botao_voltar {
+  background-color: #d73232;
+}
+
+.cadastro_botao_cadastrar {
   background-color: #1b98e0;
-  color: #fff;
-  width: 200px;
-  height: 48px;
-  border: none;
-  border-radius: 5px;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  text-transform: uppercase;
+}
+
+.cadastro_redefinir_senha_2 {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+#eye-icon-senha, #eye-icon-nova-senha {
+  display: flex;
+  position: absolute;
+  align-self: center;
+  width: 32px;
+  height: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .cadastro_botoes {
+    grid-template-columns: 1fr;
+    width: 100%;
+    row-gap: 8px;
+  }
+
+  .cadastro_botao_voltar,
+  .cadastro_botao_cadastrar {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .cadastro_container {
+    max-height: 630px;
+    height: 100%;
+  }
+  
 }
