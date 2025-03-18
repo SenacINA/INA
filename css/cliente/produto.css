@@ -8,16 +8,6 @@ body {
   font-family: "Jost";
 }
 
-/* start header */
-.nav_bar {
-  width: 100%;
-  height: 67px;
-  color: rgb(0, 0, 0);
-  background-color: #0f3b62;
-  display: grid;
-}
-/* end header */
-
 /* start grid_produto */
 .grid_produto {
   display: grid;
