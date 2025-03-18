@@ -16,10 +16,21 @@ body {
 
 .footer_body {
     display: flex;
-    background-image: url("../../image/geral/footer.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
     flex-direction: column;
+
+    svg {
+        width: 100%;
+        height: fit-content;
+    }
+}
+
+
+.footer_coluna_logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    margin-right: 0 !important;
 }
 
 .footer_info {
@@ -27,53 +38,243 @@ body {
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
     justify-content: center;
+    background-color: #0F3B62;
+    color: #fff;
+    padding: 24px 128px;
+    gap: 16px;
 
-    padding: 136px 80px 16px;
 
 
     h2 {
         font-size: 32px;
         font-weight: 500;
+        margin-bottom: 16px;
+    }
+
+    h3 {
+        font-size: 24px;
         color: #fff;
     }
 
     & > div:not(:last-child) {
         border-right: 2px #ffff solid;
     }
+
+    & > div:nth-child(4) {
+        border-right: none;
+    }
+
 }
 .base_link {
     position: relative;
     text-decoration: none;
     color: #fff;
     font-size: 16px;
-    overflow: hidden; /* Garante que o efeito fique bem ajustado */
-    display: inline-block; /* Necessário para alinhar o pseudo-elemento corretamente */
-    transition: color 0.3s ease; /* Suaviza a transição da cor */
+    overflow: hidden;
+    display: inline-block; 
+    transition: transform .3s ease;
+    width: fit-content;
+
+    &:hover {
+        cursor: pointer;
+        transform: translateX(8px);
+    }
+
+    
 }
 
-.base_link::after {
-    content: "";
-    position: absolute;
-    bottom: 0; /* Fica na parte inferior do texto */
-    left: 0;
-    width: 100%; /* Inicialmente cobre toda a largura */
-    height: 2px; /* Espessura da linha */
-    background-color: #fff; /* Cor da linha */
-    transform: scaleX(0); /* Inicialmente "esconde" a linha */
-    transform-origin: left; /* A linha "nasce" da esquerda para a direita */
-    transition: transform 0.3s ease; /* Suaviza o surgimento da linha */
-}
-
-.base_link:hover {
-    color: #f0f0f0; /* Opcional: muda a cor do texto no hover */
-}
-
-.base_link:hover::after {
-    transform: scaleX(1); /* Faz a linha aparecer no hover */
+.underline {
+    text-decoration: underline;
 }
 
 
 .footer_coluna {
+    gap: 8px;
     display: flex;
     flex-direction: column;
+    height: 100%;
+}
+
+.footer_logo {
+    height: 192px; 
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > img:hover {
+        cursor: pointer;
+    }
+}
+
+.footer_copyright {
+    width: 100%;
+    display: flex;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    grid-column: span 4 / span 4;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+
+.footer_whatsapp {
+    width: 100%;
+    button {
+        display: flex;
+        background: transparent;
+        position: relative;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: #25D366;
+        border: 2px solid #25D366;
+        border-radius: 25px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+        height: 48px;
+        width: 100%;
+
+        span {
+            margin-left: 10px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #25D366;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease-in-out;
+            z-index: 0;
+        }
+
+        &:hover {
+            color: #fff;
+
+            &::before {
+                transform: scaleX(1);
+            }
+        }
+
+        svg {
+            z-index: 1;
+            height: 100%;
+            width: auto;
+        }
+
+        span {
+            z-index: 1;
+        }
+    }
+}
+
+
+/* Breakpoint 1024px */
+@media (max-width: 1024px) {
+    .footer_info {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        padding: 24px 64px;
+        row-gap: 16px;
+        & > div:nth-child(2) {
+            border-right: none;
+        }
+        
+        h2 {
+            font-size: 28px;
+        }
+        
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+    .footer_copyright {
+        grid-column: span 2 / span 2;
+
+    }
+}
+
+
+
+/* Breakpoint 768px */
+@media (max-width: 768px) {
+    .footer_info {
+        grid-template-columns: 1fr;
+        padding: 24px 32px;
+        
+        & > div {
+            border-right: none !important;
+            padding: 16px 0;
+        }
+    }
+
+    .footer_coluna {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .footer_logo {
+        height: 100%;
+    }
+
+    .footer_coluna_logo {
+        height: 100% !important;
+        display: flex;
+        gap: 16px;
+    }
+
+    .footer_copyright {
+        grid-column: auto;
+
+    }
+}
+
+/* Breakpoint 411px */
+@media (max-width: 411px) {
+    .footer_info {
+        padding: 24px 16px;
+        
+        h2 {
+            font-size: 24px;
+        }
+        
+        h3 {
+            font-size: 18px;
+        }
+    }
+
+
+    .footer_whatsapp button {
+        padding: 8px 16px;
+        
+        svg {
+            width: 24px;
+        }
+    }
+}
+
+/* Breakpoint 311px */
+@media (max-width: 311px) {
+    .footer_copyright {
+        font-size: 14px !important;
+        margin: 16px 0;
+    }
+
+    .footer_whatsapp button {
+        font-size: 12px;
+        
+        span {
+            margin-left: 6px;
+        }
+    }
 }
