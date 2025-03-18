@@ -242,7 +242,7 @@ body {
 /* Breakpoint 411px */
 @media (max-width: 411px) {
     .footer_info {
-        padding: 24px 16px;
+        padding: 24px 8px;
         
         h2 {
             font-size: 24px;
