@@ -22,7 +22,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="relatorio_vendas_header_holder">
         <div class="relatorio_vendas_text_titulo">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <img src="../../image/vendedor/relatorio_vendas/relatorio.svg" alt="">
           <h1 class="relatorio_vendas_header_holder font_titulo">RELATÓRIO DE VENDAS</h1>
         </div>
         <hr class="relatorio_vendas_linha_sublinhado">
@@ -35,7 +35,7 @@
               <div class="relatorio_vendas_subtitulo_generico">
                 <div class="relatorio_vendas_linha_vertical"></div>
                 <div class="relatorio_vendas_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/vendedor/relatorio_vendas/pesquisar_pedido.svg" />
                   <h2 class="font_subtitulo font_celadon">Pesquisar Pedidos</p>
                 </div>
               </div>
@@ -105,7 +105,7 @@
               <div class="relatorio_vendas_subtitulo_generico">
                 <div class="relatorio_vendas_linha_vertical"></div>
                 <div class="relatorio_vendas_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/vendedor/relatorio_vendas/estatisticas.svg" />
                   <h2 class="font_subtitulo font_celadon">Estatísticas</p>
                 </div>
               </div>
