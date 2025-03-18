@@ -58,6 +58,7 @@
                             <h1>R$170,91</h1>
                         </div>
                     </div>
+                    <hr>
                     <div class="confirmar_pedido_produtos">
                         <img src="../../image/vendedor/confirmar_pedido/mouse.svg" alt="">
                         <h1>Mouse Logitech G203</h1>
@@ -66,6 +67,7 @@
                             <h1>R$170,91</h1>
                         </div>
                     </div>
+                    <hr>
                     <div class="confirmar_pedido_produtos">
                         <img src="../../image/vendedor/confirmar_pedido/mouse.svg" alt="">
                         <h1>Mouse Logitech G203</h1>
@@ -102,7 +104,7 @@
                             <h2>17:37.</h2>
                         </div>
                     </div>
-
+                        
                     <!-- Pagamento confirmado -->
                     <div class="confirmar_pedido_container_2_item">
                         <div>
