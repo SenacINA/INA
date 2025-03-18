@@ -82,6 +82,8 @@
     color: #1B98E0;
     gap: 8px;
     text-align: center;
+
+    padding: 16px;
 }
 
 .classe_vermelho{
@@ -142,6 +144,7 @@
 @media (max-width: 768px) {
 
     .dashboard_body{
+        width: 95%;
         height: 100%;
         margin-bottom: 40px;
         padding-top: 2%;
@@ -170,8 +173,17 @@
     }
 
     .dashboard_titulo{
+        display: flex;
+        position: absolute;
+        top: -85px;
+        left: 18px;
+        justify-self: start;
         align-items: flex-start;
-        padding-left: 16px;
+        
+    }
+
+    .dashboard_linha_titulo {
+        display: none;
     }
 }
 
@@ -183,8 +195,6 @@
 .dashboard_body_container_botoes_base:hover,
 .dashboard_body_container_botoes_base_linha:hover {
     transform: scale(1.02);
-    outline: 3px solid #1B98E0; /* Adiciona a borda sem afetar o tamanho */
-    border-radius: 8px; /* Suaviza as bordas */
 }
 
 

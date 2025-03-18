@@ -28,6 +28,7 @@
         </div>
         <div class="dashboard_body_container_botoes_linha">
 
+        <a href="./perfil_admin.php">
           <div class="dashboard_body_container_botoes_base_linha">
             <div class="dashboard_body_container_botoes_base_linha_div">
               <img src="../../image/admin/dashboard/linha.svg" alt="">
@@ -36,7 +37,9 @@
             </div>
             <img src="../../image/admin/dashboard/seta.svg" alt="">
           </div>
+        </a>
 
+        <a href="./relatorio_vendedor.php">
           <div class="dashboard_body_container_botoes_base_linha">
             <div class="dashboard_body_container_botoes_base_linha_div">
               <img src="../../image/admin/dashboard/linha.svg" alt="">
@@ -45,7 +48,9 @@
             </div>
             <img src="../../image/admin/dashboard/seta.svg" alt="">
           </div>
+        </a>
 
+        <a href="./gerenciar_usuario.php">
           <div class="dashboard_body_container_botoes_base_linha">
             <div class="dashboard_body_container_botoes_base_linha_div">
               <img src="../../image/admin/dashboard/linha.svg" alt="">
@@ -54,50 +59,61 @@
             </div>
             <img src="../../image/admin/dashboard/seta.svg" alt="">
           </div>
+        </a>
 
         </div>
         <div class="dashboard_body_container_botoes">
 
         <!-- linha 1 -->
+          <a href="./gerenciar_produtos.php">
+            <div class="dashboard_body_container_botoes_base">
+              <img src="../../image/admin/dashboard/gerenciar_produtos.svg" alt="">
+              <h2>Gerenciar Produtos</h2>
+              <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
+            </div>
+          </a>
 
-          <div class="dashboard_body_container_botoes_base">
-            <img src="../../image/admin/dashboard/gerenciar_produtos.svg" alt="">
-            <h2>Gerenciar Produtos</h2>
-            <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
-          </div>
+          <a href="./admin_cupom.php">
+            <div class="dashboard_body_container_botoes_base">
+              <img src="../../image/admin/dashboard/gerenciar_cupom.svg" alt="">
+              <h2>Gerenciar Cupom</h2>
+              <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
+            </div>
+          </a>
 
-          <div class="dashboard_body_container_botoes_base">
-            <img src="../../image/admin/dashboard/gerenciar_cupom.svg" alt="">
-            <h2>Gerenciar Cupom</h2>
-            <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
-          </div>
-
-          <div class="dashboard_body_container_botoes_base">
-            <img src="../../image/admin/dashboard/gerenciar_carrossel.svg" alt="">
-            <h2>Gerenciar Carrossel</h2>
-            <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
-          </div>
+          <a href="./gerenciar_carrossel.php">
+            <div class="dashboard_body_container_botoes_base">
+              <img src="../../image/admin/dashboard/gerenciar_carrossel.svg" alt="">
+              <h2>Gerenciar Carrossel</h2>
+              <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
+            </div>
+          </a>
 
         <!-- linha 2 -->
 
-          <div class="dashboard_body_container_botoes_base">
-            <img src="../../image/admin/dashboard/redefinir_senha.svg" alt="">
-            <h2>Redefinir Senha</h2>
-            <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
-          </div>
+          <a href="../geral/redefinir_senha_1.php">
+            <div class="dashboard_body_container_botoes_base">
+              <img src="../../image/admin/dashboard/redefinir_senha.svg" alt="">
+              <h2>Redefinir Senha</h2>
+              <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
+            </div>
+          </a>
 
-          <div class="dashboard_body_container_botoes_base">
-            <img src="../../image/admin/dashboard/aprovar_vendedor.svg" alt="">
-            <h2>Aprovar Vendedor</h2>
-            <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
-          </div>
+          <a href="./aprovar_vendedor.php">
+            <div class="dashboard_body_container_botoes_base">
+              <img src="../../image/admin/dashboard/aprovar_vendedor.svg" alt="">
+              <h2>Aprovar Vendedor</h2>
+              <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
+            </div>
+          </a>
 
-          <div class="dashboard_body_container_botoes_base">
-            <img src="../../image/admin/dashboard/logout.svg" alt="">
-            <h2 class="classe_vermelho">Logout</h2>
-            <img src="../../image/admin/dashboard/seta_baixo2.svg" alt="">
-          </div>
-
+          <a href="../../index.php">
+            <div class="dashboard_body_container_botoes_base">
+              <img src="../../image/admin/dashboard/logout.svg" alt="">
+              <h2 class="classe_vermelho">Logout</h2>
+              <img src="../../image/admin/dashboard/seta_baixo2.svg" alt="">
+            </div>
+          </a>
         </div>
       </div>
   </main>
