@@ -1,13 +1,31 @@
 <?php
 function gerarProdutoCards($quantidade) {
+    // Array of image URLs
+    $imageUrls = [
+        'https://images.tcdn.com.br/img/img_prod/1258777/1696877459_logo_cor.png',
+        'https://rsv-ink-images-production.s3.sa-east-1.amazonaws.com/images/product_v2/main_image/39f778931c71ad77912a0cb046216525.webp',
+        'https://images.tcdn.com.br/img/img_prod/1258777/1696877459_logo_cor.png',
+        'https://images.tcdn.com.br/img/img_prod/1258777/1696877459_logo_cor.png',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGOoZoGgmU6LjeKQuKZhk34ILm2RiJkONX1A&s',
+    ];
+
     for ($i = 0; $i < $quantidade; $i++) {
+        // Set the first image to 'bah'
+        if ($i == 0) {
+            $imageSrc = 'https://www.banrisul.com.br/bob/download/bahnner.jpg';
+        } else {
+            // Randomly select an image from the array
+            $randomIndex = array_rand($imageUrls);
+            $imageSrc = $imageUrls[$randomIndex];
+        }
+
         echo "
         <div class='index_body_produto_card'>
             <div class='index_body_desconto'>
                 <span>20% OFF</span>
             </div>
             <div class='index_body_imagem_produto'>
-                <img src='https://placehold.co/200' alt=''>
+                <img id='produto' src='$imageSrc' alt=''>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque vel nulla quis dapibus. Donec purus purus, maximus eget sollicitudin a, maximus vitae enim. Maecenas facilisis elementum porta. Nullam sagittis, orci eu gravida consequat, turpis diam maximus lectus, in aliquam libero tortor a lorem. Donec malesuada purus at ligula consequat dignissim. Sed quis mollis sem. In laoreet metus maximus velit venenatis eleifend eu vel dui. Vivamus dignissim velit vel nisi lobortis aliquam</p>
             </div>
             <div class='index_body_estrela_valor'>
