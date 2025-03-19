@@ -1,3 +1,4 @@
+<!-- pseudo finalizado - necessário corrigir pequenos erros e padronizar -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -142,7 +143,8 @@
             
         </div>
     </main>
-     
-    <!-- falta o footer -->
+    <?php 
+      include_once('../../pages/geral/footer.php');
+    ?>     
 </body>
 </html>

@@ -175,6 +175,10 @@ function gerarProdutoCards($quantidade) {
             </div>
         </div>
     </div>
+    <?php 
+        $isIndex = 1;
+        include_once('./pages/geral/footer.php');
+    ?>
 </div>
 <script src="js/geral/index.js"></script>
 </body>

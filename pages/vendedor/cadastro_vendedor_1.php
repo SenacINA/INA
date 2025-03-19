@@ -1,4 +1,4 @@
-
+<!-- PROBLEMA NA RESPONSIVIDADE -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -62,5 +62,8 @@
       </div>
     </div>
   </main>
+  <?php 
+      include_once('../../pages/geral/footer.php');
+  ?>
 </body>
 </html>

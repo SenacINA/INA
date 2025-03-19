@@ -321,11 +321,9 @@
             </div>
         </div>
     </div>
-
-    <!-- footer temporario -->
-    <div class="footer">
-        <h1>© 2024 Senac Hub Academy MS CG e E ao Quadrado.com. Todos os direitos reservados.</h1>
-    </div>
+    <?php 
+      include_once('../../pages/geral/footer.php');
+    ?>
 </body>
 
 </html>
