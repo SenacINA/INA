@@ -11,7 +11,7 @@
 
 .gerenciar_pedidor_firula_holder{
   border-radius: 10px;
-  background-color: var(--azul_leve);
+  background-color: #EFF3F5;
   display: flex;
   flex-direction: column;
   padding: 32px;
@@ -57,7 +57,7 @@
 }
 
 .gerenciar_pedidos_text_header {
-  color: var(--sappire);
+  color: #255e7e;
 }
 
 .gerenciar_pedidos_quadrado_container {
@@ -96,12 +96,10 @@
   width: 100%;
 }
 .gerenciar_pedidos_linha_sublinhado {
-  margin-top: 16px;
-  width: 100%;
-  height: 4px;
-  border: 0;
-  background-color: var(--carolina);
-  border-radius: 4px;
+  width: 95%;
+  height: 5px;
+  background-color: #2888b1;
+  border-radius: 20px;
 }
 
 .gerenciar_pedidos_forms_pesquisa_pedidos {
@@ -253,8 +251,6 @@
   max-width: 590px;
 }
 
-
-
 @media (max-width:1024px) {
   .font_titulo{
     font-size: 1.5rem;
@@ -284,6 +280,7 @@
   }
 
   .gerenciar_pedidos_body_holder {
+    background-color: #EFF3F5;
     padding: 8px;
   }
 
@@ -292,7 +289,7 @@
   }
 
   .base_botao{
-    min-width: 128px;
+    min-width: 56px;
   }
 
   .gerenciar_pedidos_linha_sublinhado{
