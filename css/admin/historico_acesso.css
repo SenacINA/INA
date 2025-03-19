@@ -320,4 +320,14 @@
   .gerenciar_pedidos_holder_botao{
     justify-content: center;
   }
+  .historico_acesso_info_user_item label{
+    display: flex;
+    color: #EFF3F5;
+    background-color: #1B98E0;
+    width: 180px;
+    align-items: center;
+    padding: 0 8px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
 }
