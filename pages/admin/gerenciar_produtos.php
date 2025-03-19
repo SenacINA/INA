@@ -222,6 +222,12 @@
           </thead>
         </table>
       </div>
+      <a href="./dashboard.php">
+        <div class="voltar">
+          <button type="reset" class="base_botao btn_outline_blue">
+                        <img src="../../image/geral/botoes/v_icon_carolina.svg">VOLTAR</button>
+        </div>
+      </a>
     </div>
   </main>
 </body>

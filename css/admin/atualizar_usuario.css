@@ -338,6 +338,7 @@ input:checked + .toggle_slider::before {
   display: none;
 }
 
+
 /* <<< MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 @media (max-width: 1024px) {
   /* CORPO PRINCIPAL */
