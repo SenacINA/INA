@@ -1,7 +1,7 @@
 const images = [
-    './image/index/carrosselMovel.png',
-    './image/index/carrosselGamer.png',
     './image/index/carrosselConsole.png',
+    './image/index/carrosselGamer.png',
+    './image/index/carrosselMovel.png',
     './image/index/carrosselCasa.png'
 ];
 
@@ -38,6 +38,9 @@ function changeImage(direction) {
             // Fade in the new image
             carrosselImage.style.opacity = 1;
 
+            // Update the active button
+            updateActiveButton(nextIndex);
+
             // Re-enable buttons after the fade-in completes
             setTimeout(() => {
                 isTransitioning = false;
@@ -47,9 +50,34 @@ function changeImage(direction) {
     };
 }
 
+function currentSlide(index) {
+    if (isTransitioning) return;
+    const direction = index - 1 - currentIndex;
+    changeImage(direction);
+}
+
+function updateActiveButton(index) {
+    const buttons = document.querySelectorAll('.index_body_carrossel_nav button');
+    buttons.forEach((button, i) => {
+        if (i === index) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
 // Event listeners for buttons
 document.querySelector('.forward').addEventListener('click', () => changeImage(1));
 document.querySelector('.back').addEventListener('click', () => changeImage(-1));
 
+// Event listeners for navigation buttons
+document.querySelectorAll('.index_body_carrossel_nav button').forEach((button, index) => {
+    button.addEventListener('click', () => currentSlide(index + 1));
+});
+
 // Optional: Auto-rotate every 5 seconds
-setInterval(() => changeImage(1), 10000);
+setInterval(() => {
+    changeImage(1);
+    updateActiveButton((currentIndex + 1) % images.length);
+}, 10000);

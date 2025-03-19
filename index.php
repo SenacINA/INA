@@ -63,7 +63,7 @@ function gerarProdutoCards($quantidade) {
             <div class="carousel-container">
                 
                 <div class="carousel-wrapper">
-                    <img id="carrossel_image" src="./image/index/carrosselMovel.png" alt="Imagem Carrossel">
+                    <img id="carrossel_image" src="./image/index/carrosselConsole.png" alt="Imagem Carrossel">
                 </div>
 
                 
@@ -75,10 +75,10 @@ function gerarProdutoCards($quantidade) {
                 </button>
         </div>
         <div class="index_body_carrossel_nav">
-            <button class="active"></button>
-            <button></button>
-            <button></button>
-            <button></button>
+            <button class="active" onclick="currentSlide(1)"></button>
+            <button onclick="currentSlide(2)"></button>
+            <button onclick="currentSlide(3)"></button>
+            <button onclick="currentSlide(4)"></button>
         </div>
         <div class="index_body_categorias_nav">
             <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
