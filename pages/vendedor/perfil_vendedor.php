@@ -154,6 +154,9 @@
     </template>
     <script type="text/javascript" src="../../js/cliente/categoria.js"></script>
     <!-- <script src="../../js/vendedor/perfil_vendedor.js"></script> -->
+    <?php 
+      include_once('../../pages/geral/footer.php');
+    ?>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+<!-- FINALIZADO -->
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -323,6 +324,9 @@
             </form>
          </div>
       </div>
+      <?php 
+         include_once('../../pages/geral/footer.php');
+      ?>
    </body>
    <script src="../../js/vendedor/img_input.js"></script>
    <script type="module" src="../../js/vendedor/text_editor.js"></script>

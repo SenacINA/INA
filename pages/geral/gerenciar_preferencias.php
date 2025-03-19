@@ -1,3 +1,4 @@
+<!-- FINALIZADO -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -98,6 +99,9 @@
             SALVAR
         </button>
     </div>
+    <?php 
+      include_once('../../pages/geral/footer.php');
+    ?>
 </body>
 </html>
 
