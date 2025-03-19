@@ -42,7 +42,6 @@
             </div>
         </div>
 
-
         <div class="grid_principal">
             <div class="infos_container">
                 <div class="infos_item1">

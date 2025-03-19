@@ -26,7 +26,7 @@
             <h1>Cliente 10</h1>
         </div>
 
-        <div class="perfil_cliente_botao_menu">
+        <div class="menu_1">
             <form action="">
                 <select name="menu" id="menu" onchange="selectPag(this.value)"> 
                     <option selected disabled value ="">Menu</option>
