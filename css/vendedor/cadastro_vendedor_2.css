@@ -96,14 +96,11 @@
   height: 46px;
 }
 
-.cadastro_vendedor_2_text_1 h1, 
-.cadastro_vendedor_2_text_2 h1 {
+.cadastro_vendedor_2_text {
   position: relative;
   font-size: 32px;
   color: #2888b1;
 }
-
-
 
 .cadastro_vendedor_2_botao {
   display: flex;
@@ -149,18 +146,16 @@
 }
 
 .cadastro_vendedor_2_grid_conteudo label {
-  color: #000;
-  font-family: "Jost", sans-serif;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 24px;
+  color: #0f3b62;
+  font-weight: 600;
 }
 
-.cadastro_vendedor_2_grid_conteudo h1 {
+.cadastro_vendedor_2_grid_conteudo h2 {
   color: rgba(0, 0, 0, 0.5);
-  font-family: "Jost", sans-serif;
   font-size: 18px;
   font-weight: 500;
-  position: relative;
+
 }
 
 .cadastro_vendedor_2_grid_conteudo_1,
@@ -168,6 +163,7 @@
   display: flex;
   flex-direction: column;
   
+  margin-top: 8px;
   justify-self: center;
 }
 
