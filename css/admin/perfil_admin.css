@@ -102,11 +102,13 @@
   grid-row: 1;
 }
 
-.perfil_admin_text_1, .perfil_admin_text_2 {
+.perfil_admin_text_1, 
+.perfil_admin_text_2 {
   display: flex;
 }
 
-.perfil_admin_text_1 img, .perfil_admin_text_2 img{
+.perfil_admin_text_1 img, 
+.perfil_admin_text_2 img{
   margin: 0px 8px;
   width: 24px;
   height: 24px;
@@ -122,7 +124,8 @@
   height: 46px;
 }
 
-.perfil_admin_text_1 h1, .perfil_admin_text_2 h1 {
+.perfil_admin_text_1 h1,
+.perfil_admin_text_2 h1 {
   position: relative;
   font-size: 32px;
   color: #2888b1;
@@ -484,15 +487,15 @@ input:checked + .toggle_slider::before {
     grid-row: 2;
   }
 
-  #perfil_admin_forms_item_3, #perfil_admin_forms_item_4 {
+  #perfil_admin_forms_item_3, 
+  #perfil_admin_forms_item_4 {
     grid-row: 3;
   }
 
   #perfil_admin_forms_item_3 input,
-   #perfil_admin_forms_item_4 input,
-    .perfil_admin_forms_item {
+  #perfil_admin_forms_item_4 input,
+  .perfil_admin_forms_item {
     width: 100%;
-    
   }
   
   /* permissoes */
