@@ -135,7 +135,7 @@ body{
 }
 
 select.base_input {
-  padding-top: 0.25rem !important;
+  /* padding-top: 0.25rem !important; */
   cursor: pointer;
 }
 
@@ -323,7 +323,7 @@ select.base_input {
 
   select.base_input,
   option.base_input{
-    padding-top: 0.5rem !important;
+    /* padding-top: 0.5rem !important; */
     font-size: 1rem;
   }
 }
@@ -346,7 +346,7 @@ select.base_input {
 
   select.base_input,
   option.base_input{
-    padding-top: 0.625rem !important;
+    /* padding-top: 0.625rem !important; */
     font-size: 1.125rem;
   }
 }
