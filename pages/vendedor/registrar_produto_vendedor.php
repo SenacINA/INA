@@ -149,5 +149,8 @@
       </form>
     
 </main>
+  <?php 
+      include_once('../../pages/geral/footer.php');
+  ?>
 </body>
 </html>
