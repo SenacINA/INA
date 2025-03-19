@@ -26,13 +26,18 @@
     <div class="cadastro_vendedor2_content">
       <div class="cadastro_vendedor2_titulo">
         <div class="cadastro_vendedor2_titulo_img">
-          <img src="../../image/vendedor/cadastro_vendedor_1/cadastro_icon.png" alt="">
+          <img src="" alt="">
           <h1>CADASTRO DE VENDEDOR</h1>
         </div>
         <hr>
       </div>
       <div class="cadastro_vendedor_2_grid_conteudo">
         <div class="cadastro_vendedor_2_grid_conteudo_1">
+          <div class="cadastro_vendedor_2_text_1">
+            <hr class="cadastro_vendedor_2_vertical">
+            <img src="../../image/admin/cadastro_vendedor_2/texto_icon.svg" alt="">
+            <h1 class="cadastro_vendedor_2_text">Seu Perfil</h1>
+          </div>
           <!-- Local da Empresa -->
           <div>
             <label for="local_da_empresa">Local da Empresa</label> <br>
@@ -56,10 +61,12 @@
           </div>
 
           <!-- CEP -->
-          <label for="cep">CEP</label> <br>
-          <input type="text" name="cep" id="cep" class="base_input">
-          <br>
-
+          <div>
+            <label for="cep">CEP</label> <br>
+            <input type="text" name="cep" id="cep" class="base_input">
+            <br>
+          </div>
+          
           <div class="cadastro_vendedor_2_conteudo_endereco1">
             <!-- Logradouro -->
             <div class="cadastro_vendedor_2_logradouro">
@@ -75,10 +82,12 @@
           </div>
 
           <!-- Nome / Razão Social -->
-          <label for="nome_razao_social">Nome / Razão Social</label> <br>
-          <input type="text" name="nome_razao_social" id="nome_razao_social" class="base_input">
-          <br>
-
+          <div>
+            <label for="nome_razao_social">Nome / Razão Social</label> <br>
+            <input type="text" name="nome_razao_social" id="nome_razao_social" class="base_input">
+            <br>
+          </div>
+               
           <div class="cadastro_vendedor_2_conteudo_endereco2">
             <!-- CPF / CNPJ -->
             <div class="cadastro_vendedor_2_cpf_cnpj">
@@ -95,36 +104,46 @@
         </div>
 
         <div class="cadastro_vendedor_2_grid_conteudo_2">
+          <div class="cadastro_vendedor_2_text_2">
+            <hr class="cadastro_vendedor_2_vertical">
+            <img src="" alt="">
+            <h1 class="cadastro_vendedor_2_text">Seu Perfil</h1>
+          </div>
+
           <!-- E-mail -->
           <div>
             <label for="email">E-mail</label> <br>
             <input type="email" name="email" id="email" class="base_input">
             <h1>O código de confirmação será enviado para esse E-mail. </h1>
           </div>
-          
-
+        
           <!-- Senha -->
-          <label for="senha">Senha</label> <br>
-          <input type="password" name="senha" id="senha" class="base_input">
-          <br>
-
+          <div>
+            <label for="senha">Senha</label> <br>
+            <input type="password" name="senha" id="senha" class="base_input">
+            <br>
+          </div>
+          
           <!-- Confirmar Senha -->
-          <label for="confirmar_senha">Confirmar Senha</label> <br>
-          <input type="password" name="confirmar_senha" id="confirmar_senha" class="base_input">
-          <br>
-
+          <div>
+            <label for="confirmar_senha">Confirmar Senha</label> <br>
+            <input type="password" name="confirmar_senha" id="confirmar_senha" class="base_input">
+            <br>
+          </div>
+          
           <!-- Categoria de Produtos -->
-          <label for="categoria_produtos">Categoria de Produtos</label> <br>
-          <select name="categoria_produtos" id="categoria_produtos" class="base_input">
-            <option value="opc1">Opção 1</option>
-            <option value="opc2">Opção 2</option>
-            <option value="opc3">Opção 3</option>
-            <option value="opc4">Opção 4</option>
-            <option value="opc5">Opção 5</option>
-
-          </select>
-          <br>
-
+          <div>
+            <label for="categoria_produtos">Categoria de Produtos</label> <br>
+            <select name="categoria_produtos" id="categoria_produtos" class="base_input">
+              <option value="opc1">Opção 1</option>
+              <option value="opc2">Opção 2</option>
+              <option value="opc3">Opção 3</option>
+              <option value="opc4">Opção 4</option>
+              <option value="opc5">Opção 5</option>
+            </select>
+            <br>
+          </div>        
+          
           <div class="cadastro_vendedor_2_conteudo_telefone">
             <!-- Telefone 1 -->
             <div class="cadastro_vendedor_2_telefone1">

@@ -66,11 +66,44 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  
+
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+
+/* info */
+.cadastro_vendedor_2_text_1, 
+.cadastro_vendedor_2_text_2 {
+  display: flex;
+  height: 46px;
+}
+
+.cadastro_vendedor_2_text_1 img, 
+.cadastro_vendedor_2_text_2 img{
+  margin: 0px 8px;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+  justify-self: center;
+}
+
+.cadastro_vendedor_2_vertical {
+  border: none;
+  background-color: #1B98E0;
+  border-radius: 10px;
+  width: 10px;
+  height: 46px;
+}
+
+.cadastro_vendedor_2_text_1 h1, 
+.cadastro_vendedor_2_text_2 h1 {
+  position: relative;
+  font-size: 32px;
+  color: #2888b1;
+}
+
+
 
 .cadastro_vendedor_2_botao {
   display: flex;
@@ -132,7 +165,10 @@
 
 .cadastro_vendedor_2_grid_conteudo_1,
 .cadastro_vendedor_2_grid_conteudo_2 {
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  
+  justify-self: center;
 }
 
 .cadastro_vendedor_2_conteudo_telefone,
@@ -140,7 +176,7 @@
 .cadastro_vendedor_2_conteudo_endereco2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 580px;
+  max-width: 600px;
   width: 100%;
   column-gap: 2%;
 }
