@@ -99,7 +99,66 @@
           </div>
           <div class="carrinho_vazio_main_content">
             <div class="carrinho_vazio_conteudo_items carrinho_vazio_sem_itens">
-              
+            <div class="product-card">
+              <div class="product-container">
+                <!-- Seller info -->
+                <div class="seller-info">
+                  Vendido e entregue por: <span class="seller-name">E ao Quadrado</span> | <span class="stock-status">Em estoque</span>
+                </div>
+                
+                <!-- Product image -->
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8kyiyZOVxfzJeZFhLa2ik1QwyYkudV.png" alt="Cadeira gamer throne RGB" class="product-image">
+                
+                <!-- Product details -->
+                <div class="product-details">
+                  <p class="manufacturer">Fabricante: Grapol</p>
+                  <h3 class="product-name">Cadeira gamer throne - RGB</h3>
+                  <div class="payment-info">
+                    <p>À vista no PIX com até 10% OFF</p>
+                    <p class="payment-terms">
+                      R$ 1400,00 Em até 10x de R$ 140,00 sem juros no cartão Ou em 1x no cartão com até 5% OFF
+                    </p>
+                  </div>
+                </div>
+                
+                <!-- Quantity and price -->
+                <div class="quantity-price">
+                  <!-- Quantity controls -->
+                  <div class="quantity-container">
+                    <p class="quantity-label">Quantidade</p>
+                    <div class="quantity-controls">
+                      <button class="quantity-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                      </button>
+                      <span class="quantity-value">1</span>
+                      <button class="quantity-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="12" y1="5" x2="12" y2="19"></line>
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <!-- Price -->
+                  <div class="price-container">
+                    <p class="price">R$1400,00</p>
+                    <p class="unit-price">R$1400,00 unid.</p>
+                    <button class="remove-btn">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <?php //exibirProdutos()?>
             </div>
             <div class="carrinho_vazio_conteudo_servicos">
               <div class="carrinho_vazio_servicos_text">
