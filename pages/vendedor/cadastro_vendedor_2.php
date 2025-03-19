@@ -161,7 +161,7 @@
       </div>
       
       <div class="cadastro_vendedor_2_botao_finalizar">
-        <button class="cadastro_vendedor_2_finalizar" onclick="pag('')">
+        <button class="cadastro_vendedor_2_finalizar" onclick="pag('vendedor/perfil_vendedor')">
           <img src="../../image/admin/perfil_admin/v_icon.svg" alt="">
           <label>FINALIZAR</label>
         </button>
