@@ -54,7 +54,7 @@
         </div>
 
         <div class="cadastro_vendedor1_botao_salvar">
-            <button class="cadastro_vendedor1_salvar">
+            <button class="cadastro_vendedor1_salvar" onclick="pag('vendedor/cadastro_vendedor_2')">
                 <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg" alt="">
                 <label>CONTINUAR</label>
             </button>
