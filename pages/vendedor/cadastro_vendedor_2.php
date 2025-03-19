@@ -16,8 +16,6 @@
 </head>
 
 <body>
-  <!-- fazer responsividade -->
-
   <?php
   include_once('../../pages/geral/navbar.php');
   ?>
@@ -39,7 +37,7 @@
             <h1 class="cadastro_vendedor_2_text">Loja</h1>
           </div>
           <!-- Local da Empresa -->
-          <div>
+          <div class="cadastro_vendedor_2_content_local_empresa">
             <label for="local_da_empresa">Local da Empresa</label> <br>
             <select name="local_da_empresa" id="local_da_empresa" class="base_input">
               <option value="" disabled selected>Selecione a cidade</option>
@@ -111,7 +109,7 @@
           </div>
 
           <!-- E-mail -->
-          <div>
+          <div class="cadastro_vendedor_2_content_email">
             <label for="email">E-mail</label> <br>
             <input type="email" name="email" id="email" class="base_input">
             <h2>O código de confirmação será enviado para esse E-mail. </h2>
@@ -161,9 +159,12 @@
           </div>
         </div>
       </div>
-      <div class="cadastro_vendedor_2_botao botao_input" onclick="pag('vendedor/perfil_vendedor')">
-        <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg">
-        <h1>FINALIZAR</h1>
+      
+      <div class="cadastro_vendedor_2_botao_finalizar">
+        <button class="cadastro_vendedor_2_finalizar" onclick="pag('')">
+          <img src="../../image/admin/perfil_admin/v_icon.svg" alt="">
+          <label>FINALIZAR</label>
+        </button>
       </div>
     </div>
   </div>

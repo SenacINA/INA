@@ -102,30 +102,6 @@
   color: #2888b1;
 }
 
-.cadastro_vendedor_2_botao {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin: auto;
-  cursor: pointer;
-  transition: transform 0.1s ease;
-  width: 220px;
-  height: 40px;
-  background-color: #1b98e0;
-  border-radius: 5px;
-  column-gap: 2%;
-}
-
-.cadastro_vendedor_2_botao h1 {
-  color: white;
-  font-size: 24px;
-  font-weight: normal;
-}
-
-.cadastro_vendedor_2_botao:active {
-  transform: scale(0.5);
-}
 
 /* Start grid_conteudo */
 .cadastro_vendedor_2_grid_conteudo {
@@ -184,7 +160,8 @@
 #senha,
 #confirmar_senha,
 #categoria_produtos {
-  width: 580px;
+  max-width: 600px;
+  width: 100%;
 }
 
 #logradouro,
@@ -194,40 +171,109 @@
   width: 100%;
 }
 
+/* botão finalizar */
+.cadastro_vendedor_2_botao_finalizar {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  top: 660px;
+  right: 250px;
+}
+
+.cadastro_vendedor_2_finalizar {
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+
+border-radius: 5px;
+background-color: #1B98E0;
+width: 192px;
+height: 40px;
+}
+
+.cadastro_vendedor_2_finalizar label {
+color: white;
+font-size: 24px;
+cursor: pointer;
+}
+
+.cadastro_vendedor_2_botao_finalizar button {
+border: none;
+cursor: pointer;
+}
+
+.cadastro_vendedor_2_finalizar img{
+width: 24px;
+height: 24px;
+cursor: pointer;
+margin-right: 8px;
+}
+
 @media (max-width: 1024px) {
-  .cadastro_vendedor2_titulo h1 {
-    font-size: 26px;
-  }
-  .cadastro_vendedor_2_grid_bg {
+  .cadastro_vendedor2_titulo {
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    top: -65px;
+    left: 16px;
     width: 95%;
-    height: auto;
-    grid-template-rows: auto 850px min-content;
   }
-  .cadastro_vendedor_2_grid_conteudo {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 5%;
-    height: auto;
+
+  .cadastro_vendedor_2_grid_bg {
+    justify-self: center;
+    width: 95%;
+    height: 780px;
+  }
+
+  .cadastro_vendedor_2_content_local_empresa,
+  .cadastro_vendedor_2_content_email {
+    height: 130px;
+  }
+
+  .cadastro_vendedor2_titulo_img {
+    margin: 0%;
+  }
+
+  .cadastro_vendedor2_titulo hr {
+    display: none
+  }
+
+  .cadastro_vendedor_2_grid_conteudo_1,
+  .cadastro_vendedor_2_grid_conteudo_2 {
+    width: 96%;
+    margin-top: 3%;
   }
 }
 
-@media (max-width: 425px) {
-  .cadastro_vendedor_2_grid_conteudo label {
-    font-size: 18px;
-  }
-  .cadastro_vendedor_2_grid_conteudo h1 {
-    font-size: 15px;
+@media (max-width: 768px) {
+  .cadastro_vendedor_2_grid_bg {
+    justify-self: center;
+    width: 95%;
+    height: 1050px;
+    margin-bottom: 100px;
   }
 
-  .cadastro_vendedor_2_grid_conteudo_2 label {
-    font-size: 18px;
+  .cadastro_vendedor_2_grid_conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .cadastro_vendedor_2_grid_conteudo div {
+    margin-top: 8px;
   }
 
   .cadastro_vendedor_2_conteudo_telefone,
   .cadastro_vendedor_2_conteudo_endereco1,
   .cadastro_vendedor_2_conteudo_endereco2 {
-    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: none;
+    width: 100%;
+    column-gap: 2%;
   }
+
   #local_da_empresa,
   #cep,
   #nome_razao_social,
@@ -235,12 +281,57 @@
   #senha,
   #confirmar_senha,
   #categoria_produtos {
-    width: 400px;
+    max-width: none;
+    width: 100%;
   }
-  .cadastro_vendedor_2_botao h1 {
-    font-size: 22px;
+
+  .cadastro_vendedor_2_content_local_empresa,
+  .cadastro_vendedor_2_content_email {
+    height: auto;
   }
-  body {
-    margin-top: 150px !important;
+
+  /* botão finalizar */
+  .cadastro_vendedor_2_botao_finalizar {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    
+    width: 100%;
+    top: 580px;
+    right: 0px;
+  }
+  
+  .cadastro_vendedor_2_finalizar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    border-radius: 5px;
+    background-color: #1B98E0;
+    width: 100%;
+    height: 40px;
+  }
+}
+
+@media (max-width: 425px) {
+  .cadastro_vendedor2_titulo {
+    top: -90px;
+  }
+
+  .cadastro_vendedor2_titulo h1 {
+    text-align: start;
+  }
+
+  .cadastro_vendedor_2_grid_bg {
+    justify-self: center;
+    width: 95%;
+    height: 1100px;
+    margin-bottom: 100px;
+  }
+
+  .cadastro_vendedor_2_botao_finalizar {
+    top: 630px;
   }
 }

@@ -487,15 +487,15 @@ input:checked + .toggle_slider::before {
     grid-row: 2;
   }
 
-  #perfil_admin_forms_item_3, #perfil_admin_forms_item_4 {
+  #perfil_admin_forms_item_3, 
+  #perfil_admin_forms_item_4 {
     grid-row: 3;
   }
 
   #perfil_admin_forms_item_3 input,
-   #perfil_admin_forms_item_4 input,
-    .perfil_admin_forms_item {
+  #perfil_admin_forms_item_4 input,
+  .perfil_admin_forms_item {
     width: 100%;
-    
   }
   
   /* permissoes */
