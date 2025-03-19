@@ -12,7 +12,7 @@ function gerarProdutoCards($quantidade) {
     for ($i = 0; $i < $quantidade; $i++) {
         // Set the first image to 'bah'
         if ($i == 0) {
-            $imageSrc = 'https://www.banrisul.com.br/bob/download/bahnner.jpg';
+            $imageSrc = 'image/cliente/produto/cadeira_gamer_size_big.png';
         } else {
             // Randomly select an image from the array
             $randomIndex = array_rand($imageUrls);
