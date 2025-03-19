@@ -18,9 +18,54 @@
 }
 
 .carrinho_top {
-  position: relative;
-  margin-bottom: 61px;
-  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1%;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.text {
+  color: var(--carolina);
+  text-align: center;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.text-2 {
+  color: var(--cinza);
+  text-align: center;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.ico {
+  width: 40px;
+  height: 40px;
+  color: var(--carolina);
+}
+
+.ico-2 {
+  width: 40px;
+  height: 40px;
+  color: var(--cinza);
+}
+
+.check {
+  width: 30px;
+  height: 30px;
+}
+
+.divisoria {
+  width: 5%;
+  height: 2px;
+  border: 0;
+  background-color: var(--cinza);
 }
 
 .navbar {
@@ -33,7 +78,7 @@
   grid-row: 2;
   width: 1600px;
   height: 740px;
-  background-color: #EFF3F5;
+  background-color: #eff3f5;
 }
 
 .main_container_carrinho_pagamentos {
@@ -120,7 +165,6 @@
 .main_text_carrinho_pagamentos {
   color: #247ba0;
   text-align: center;
-  font-feature-settings: "liga" off, "clig" off;
   font-family: Jost;
   font-size: 35px;
   font-style: normal;
@@ -151,7 +195,7 @@
   font-size: 20px;
   font-weight: 600;
   color: #fff;
-  height: 48px;
+  height: 40px;
   width: 200px;
 }
 
@@ -167,18 +211,16 @@
   font-size: 20px;
   font-weight: 600;
   color: #d73232;
-  height: 48px;
+  height: 40px;
   width: 200px;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .fundo {
     margin-top: 160px !important;
   }
   .carrinho_top {
     width: 95%;
-    height: auto;
-    margin-bottom: 50px;
   }
   .main_pagamentos {
     width: 95%;
@@ -220,6 +262,15 @@
 }
 
 @media (max-width: 425px) {
+  .text {
+    font-size: 15px;
+  }
+  .text-2 {
+    font-size: 15px;
+  }
+  .carrinho_top {
+    margin-bottom: 25px;
+  }
   .main_text_carrinho_pagamentos {
     font-size: 28px;
   }
