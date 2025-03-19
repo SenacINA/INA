@@ -1,3 +1,4 @@
+<!-- pseudo finalizado - necessário corrigir pequenos erros e padronizar -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,32 +13,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/style.css">
   <script src="../../js/geral/base.js"></script>
+
 </head>
 <body>
-    <!-- fazer responsividade -->
-
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
     <main>
-        <div class="pfp_cliente">
-            <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="banner_cliente">
-            <div class="pfp_container">
-                <img src="../../image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente" class="pfp_cliente_ico">
-                <h1 class="nome_cliente">Cliente 10</h1>
-                <img src="../../image/cliente/perfil_cliente/edit.svg" class="menu_2">
-            </div>
-        </div>      
+        <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner_cliente">
 
-        <div class="botao_menu">
-            <form action="" class="menu_1">
-                <select name="menu" id="menu" class="base_input">
-                    <option selected disabled value="">Menu</option>
-                    <option value="editar-perfil" onclick="pag('cliente/editar_perfil')">Editar Perfil</option>
-                    <option value="pedidos" onclick="pag('vendedor/cadastro_vendedor_1')">Cadastro como vendedor</option>
-                    <option value="sair" onclick="pag('cliente/login')">Sair</option>
+        <div class="perfil_cliente_pfp_cliente">
+            <img src="../../image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente" >
+            <h1>Cliente 10</h1>
+        </div>
+
+        <div class="menu_1">
+            <form action="">
+                <select name="menu" id="menu" onchange="selectPag(this.value)"> 
+                    <option selected disabled value ="">Menu</option>
+                    <option value="cliente/editar_perfil">Editar Perfil</option>
+                    <option value="vendedor/cadastro_vendedor_1">Cadastro como vendedor</option>
+                    <option value="cliente/login">Sair</option>
                 </select>
-            </form>
+            </form>  
         </div>
 
         <div class="perfil_cliente_grid_principal">
@@ -142,7 +140,10 @@
             
         </div>
     </main>
-     
-    <!-- falta o footer -->
+  
+    <?php 
+      include_once('../../pages/geral/footer.php');
+    ?>     
+
 </body>
 </html>

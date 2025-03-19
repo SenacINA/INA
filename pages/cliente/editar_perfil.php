@@ -85,9 +85,10 @@
         </form>
       </div>
     </div>
-    
+    <?php 
+      include_once('../../pages/geral/footer.php');
+    ?>
   </main>
-
-  <footer><p>© 2024 Senac Hub Academy MS CG e E ao Quadrado.com. Todos os direitos reservados.</p></footer>
+  
 </body>
 </html>

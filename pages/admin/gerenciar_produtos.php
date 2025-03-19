@@ -21,7 +21,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_produtos_header_holder">
         <div class="gerenciar_produtos_text_titulo">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <img src="../../image/admin/gerenciar_produtos/produto.svg" alt="">
           <h1 class="gerenciar_produtos_header_holder font_titulo">GERENCIAR PRODUTOS</h1>
         </div>
         <hr class="gerenciar_produtos_linha_sublinhado">
@@ -34,23 +34,17 @@
               <div class="gerenciar_produtos_subtitulo_generico">
                 <div class="gerenciar_produtos_linha_vertical"></div>
                 <div class="gerenciar_produtos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/admin/gerenciar_produtos/pesquisar_produto.svg" />
                   <h2 class="font_subtitulo font_celadon">Pesquisar Produtos</p>
                 </div>
               </div>
               <form action="" method="post" class="gerenciar_produtos_forms_pesquisa_pedidos">
                 <div class="gerenciar_produtos_form_cliente">
-                  <label class="font_subtitulo font_celadon">Código Do Produto / Nome Cliente</label>
+                  <label class="font_subtitulo font_celadon">Código Do Produto / Nome Vendedor</label>
                   <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="gerenciar_produtos_inputs_esquerda">
-                  <div class="gerenciar_produtos_input_status">
-                    <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
-                    <select name="select_cod" class="gerenciar_produtos_select_status base_input">
-                      <option value="Entregue">Entregue</option>
-                      <option value="Em transporte">Em transporte</option>
-                    </select>
-                  </div>
+                  
                   <div class="gerenciar_produtos_input_mes">
                     <label for="mes" class="font_subtitulo font_celadon">Mês</label>
                     <select name="mes" id="mes" class="gerenciar_produtos_mes_select base_input">
@@ -104,7 +98,7 @@
               <div class="gerenciar_produtos_subtitulo_generico">
                 <div class="gerenciar_produtos_linha_vertical"></div>
                 <div class="gerenciar_produtos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/admin/gerenciar_produtos/estatisticas.svg" />
                   <h2 class="font_subtitulo font_celadon">Estatísticas</p>
                 </div>
               </div>

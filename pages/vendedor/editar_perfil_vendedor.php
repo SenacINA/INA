@@ -118,7 +118,8 @@
       </div>
     </div>
   </main>
-  
-  <!-- falta o footer -->
+  <?php 
+      include_once('../../pages/geral/footer.php');
+  ?>
 </body>
 </html>

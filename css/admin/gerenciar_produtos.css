@@ -27,6 +27,11 @@
     width: 100%;
     display: flex;
     gap: 16px;
+
+    & img{
+      width: 32px;
+      height: 100%;
+    }
   }
   
   .base_icon{
@@ -69,7 +74,7 @@
   .gerenciar_produtos_text_titulo img,
   .gerenciar_produtos_header_title img {
     align-self: center;
-    width: 28px;
+    width: 32px;
     height: auto;
     margin-right: 8px;
   }

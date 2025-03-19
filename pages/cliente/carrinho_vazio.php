@@ -30,9 +30,6 @@
             <hr class="divisoria">
             <img src="../../image/carrinho/conclusao.svg">
             <p class="text-2">Conclusão</p>
-            <hr class="divisoria">
-            <img src="../../image/carrinho/confirmacao.svg">
-            <p class="text-2">Confirmação</p>
         </div>
 
         <div class="quadrado">
@@ -67,12 +64,15 @@
                 </div>
             </div>
             <div class="botoes">
-                <button class="voltar_botao"><img src="../../image/geral/seta_botao.svg">VOLTAR</button>
-                <button class="remover_botao"><img src="../../image/geral/x_botao.svg">REMOVER PRODUTO(S)</button>
-                <button class="salvar_botao"><img src="../../image/geral/confirm_botao.svg">SALVAR</button>
+                <button class="voltar_botao"  onclick="history.back()"><img src="../../image/geral/seta_botao.svg">VOLTAR</button>
+                <button class="remover_botao"  onclick="history.back()"><img src="../../image/geral/x_botao.svg">REMOVER PRODUTO(S)</button>
+                <button class="salvar_botao" onclick="pag('cliente/carrinho_dados')"><img src="../../image/geral/confirm_botao.svg">SALVAR</button>
             </div>
         </div>
     </main>
+    <?php 
+      include_once('../../pages/geral/footer.php');
+    ?>
 </body>
 
 </html>
