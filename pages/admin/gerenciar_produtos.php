@@ -21,7 +21,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_produtos_header_holder">
         <div class="gerenciar_produtos_text_titulo">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <img src="../../image/admin/gerenciar_produtos/produto.svg" alt="">
           <h1 class="gerenciar_produtos_header_holder font_titulo">GERENCIAR PRODUTOS</h1>
         </div>
         <hr class="gerenciar_produtos_linha_sublinhado">
@@ -34,7 +34,7 @@
               <div class="gerenciar_produtos_subtitulo_generico">
                 <div class="gerenciar_produtos_linha_vertical"></div>
                 <div class="gerenciar_produtos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/admin/gerenciar_produtos/pesquisar_produto.svg" />
                   <h2 class="font_subtitulo font_celadon">Pesquisar Produtos</p>
                 </div>
               </div>
@@ -88,8 +88,15 @@
                   </div>
                 </div>
                 <div class="gerenciar_produtos_holder_botao">
-                  <button type="reset" class="base_botao btn_red">CANCELAR</button>
-                  <button type="submit" class="base_botao btn_blue">CONFIRMAR</button>
+                  <button type="reset" class="base_botao btn_red">
+                    <img src="../../image/geral/botoes/x_icon_branco.svg">
+                    CANCELAR
+                  </button>
+
+                  <button type="submit" class="base_botao btn_blue">
+                    <img src="../../image/geral/botoes/v_icon_branco.svg">
+                    CONFIRMAR
+                  </button>
                 </div>
               </form>
             </div>
@@ -97,7 +104,7 @@
               <div class="gerenciar_produtos_subtitulo_generico">
                 <div class="gerenciar_produtos_linha_vertical"></div>
                 <div class="gerenciar_produtos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/admin/gerenciar_produtos/estatisticas.svg" />
                   <h2 class="font_subtitulo font_celadon">Estatísticas</p>
                 </div>
               </div>
