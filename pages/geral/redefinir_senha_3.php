@@ -23,7 +23,7 @@
         <h2>Redefinição de senha realizada!</h2>
       </div>
       
-      <button class="redefinir_senha_3_home" onclick="pag('cliente/login')">
+      <button class="redefinir_senha_3_botao_tela_inicial" onclick="pag('cliente/login')">
         <img src="" alt="">
         <h3>TELA INICIAL</h3>
       </button>

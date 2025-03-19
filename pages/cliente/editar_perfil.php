@@ -17,7 +17,7 @@
 
   <?php
     include_once('../../pages/geral/navbar.php');
-    ?>
+  ?>
   <main>
     <div class="editar_perfil_container">
       <div class="editar_perfil_view">
@@ -43,13 +43,13 @@
       <div class="editar_perfil_edicao">
         <form action="">
           <label for="nome">Nome:</label><br>
-          <input type="text" id="nome" class="editar_perfil_font_descricao"><br>
+          <input type="text" id="nome" class="editar_perfil_font_descricao base_input"><br>
           <label for="localizacao">Localização:</label><br>
-          <input type="text" id="localizacao" class="editar_perfil_font_descricao"><br>
+          <input type="text" id="localizacao" class="editar_perfil_font_descricao base_input"><br>
           <label for="email">Email:</label><br>
-          <input type="text" id="email" class="editar_perfil_font_descricao"><br>
+          <input type="text" id="email" class="editar_perfil_font_descricao base_input"><br>
           <label for="telefone">Telefone:</label><br>
-          <input type="tel" id="telefone" class="editar_perfil_font_descricao"><br>
+          <input type="tel" id="telefone" class="editar_perfil_font_descricao base_input"><br>
         </form>
         <div class="editar_perfil_botoes">
           <button class="editar_perfil_redefinir_senha" onclick="pag('geral/redefinir_senha_1')">Redefinir senha</button>
@@ -72,13 +72,13 @@
         <form action="">
           <div>
             <label for="foto_perfil">Imagem de perfil:</label><br>
-            <input type="file" name="foto_perfil" id="foto_perfil"><br>
+            <input type="file" name="foto_perfil" id="foto_perfil" class="base_input"><br>
             <img src="../../image/cliente/editar_perfil/perfil_usuario.svg" alt=""><br>
             <p>As dimensões recomendadas são: 400 x 400 pixels.</p>
           </div>
           <div>
             <label for="banner_perfil">Imagem de banner:</label><br>
-            <input type="file" name="banner_perfil" id="banner_perfil" ><br>
+            <input type="file" name="banner_perfil" id="banner_perfil" class="base_input"><br>
             <img src="../../image/cliente/editar_perfil/mini_banner_perfil_cliente.png" width="274px" height="118px"><br>
             <p>As dimensões recomendadas são: 1500 x 500 pixels.</p>
           </div>

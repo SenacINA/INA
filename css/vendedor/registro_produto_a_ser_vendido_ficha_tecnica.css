@@ -114,13 +114,6 @@
   max-width: 500px;
   height: 40px;
   width: 100%;
-
-  border: 2px #1B98E0 solid;
-  outline: none;
-  border-radius: 5px;
-  text-indent: 5px;
-  font-size: 20px;
-  background-color: transparent;
 }
 
 .grid_conteudo ::placeholder {
@@ -134,31 +127,9 @@
   color: rgba(0, 0, 0, 0.3);
 }
 
-.grid_conteudo select option:enabled {
-  color: #000;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-}
-
-.grid_conteudo select :enabled {
-  color: #000;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-}
-
 .grid_conteudo textarea {
   width: 500px;
-  height: 90px;
-  border-radius: 5px;
-  text-indent: 5px;
-  font-size: 20px;
-  border: 2px solid #1b98e0;
-  resize: none;
-  background-color: transparent;
+  height: 100px;
 }
 /* end grid_conteudo 1 e 2 */
 
