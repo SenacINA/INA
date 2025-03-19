@@ -551,6 +551,12 @@ input:checked + .toggle_slider::before {
 
 @media (max-width: 425px) {
   #atualizar_usuario_text_2 {
+    margin-top: 140px;
+  }
+}
+
+@media (max-width: 375px){
+  #atualizar_usuario_text_2 {
     margin-top: 92px;
   }
 }
