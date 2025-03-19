@@ -18,40 +18,35 @@
   ?>
   <main>
     <div class="redefinir_email_1_container">
-      <h1>REDEFINIÇÃO DE E-MAIL</h1>
-      <hr>
       <div class="redefinir_email_1_main_content">
-        <h2>ESQUECEU O E-MAIL?</h2>
-        <h3>É necessário inserir sua senha para realizar a mudança.</h3>
+        <div class="redefinir_email_1_bem_vindo">
+          <img src="../../image/geral/logo-eaoquadrado.png">
+          <h1>Redefinir E-mail</h1>
+        </div>
 
         <form class="redefinir_email_1_form" action="">
-          <label for="senha">Senha</label>
+          <label for="senha:">Senha:</label>
           <div class="redefinir_email_1_input">
-              <input type="password" name="senha" id="senha-email">
+              <input class="base_input" type="password" name="senha" id="senha-email">
               <a href="javascript:void(0);" id="eye-icon-email">
                   <img id="eye-img-email" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
               </a>
           </div>
-          <a href="">Esqueceu sua Senha?</a>
-        </form>
-        
-        <!-- colocar botões novos -->
-        <button class="redefinir_email_1_enviar" onclick="pag('geral/redefinir_email_2')">
-          <img src="" alt="">
-          <h3>ENVIAR</h3>
-        </button>
+          <a href="./redefinir_senha_1.php">Redefinir Senha</a>
+        </form>
+      </div>
 
-        <button class="redefinir_email_1_voltar" onclick="history.back()">
-          <img src="" alt="">
-          <h3>VOLTAR</h3>
+      <div class="redefinir_email_1_botoes">
+        <button class="redefinir_email_1_botao_voltar" onclick="history.back()">
+          <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
+        </button>
+        <button class="redefinir_email_1_botao_avancar" onclick="pag('geral/redefinir_email_2')">
+          <img src="../../image/geral/confirm_botao.svg" alt="">Avançar
         </button>
       </div>
     </div>
   </main>
 
   <script type="module" src="../../js/admin/toggle_redefinir.js"></script>
-
-  <!-- footer -->
-  <!-- coloca display:none no desktop -->
 </body>
 </html>

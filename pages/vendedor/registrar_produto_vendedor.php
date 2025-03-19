@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/vendedor/registrar_produto_vendedor.css">
-    <title>Vendedor - Registrar novo produto</title>
+    <title>E ao Quadrado</title>
 </head>
 <body>
     <!-- fazer a responsividade -->
-    <!-- arruamar o nome das class -->
+    <!-- arrumar o nome das classes -->
 
     <?php
     include_once('../../pages/geral/navbar.php');
@@ -36,52 +36,51 @@
           <div class="coluna1">
             <div>
               <label class="font_subtitulo" for="prodNome">Nome do Produto</label>
-              <input class="input_prod" type="text" id="prodNome" name="prodNome" required>
+              <input class="input_prod base_input" type="text" id="prodNome" name="prodNome">
             </div>
             <div>
               <label class="font_subtitulo" for="prodPreco">Preço R$</label>
-              <input class="input_prod" type="text" id="prodPreco" name="prodPreco" required>
+              <input class="input_prod base_input" type="text" id="prodPreco" name="prodPreco">
             </div>
             <div>
               <label class="font_subtitulo" for="prodCatg">Categoria</label>
-              <input class="input_prod" type="text" id="prodCatg" name="prodCatg" required>
+              <input class="input_prod base_input" type="text" id="prodCatg" name="prodCatg">
             </div>
             <div>
               <label class="font_subtitulo" for="prodMarca">Marca</label>
-              <input class="input_prod" type="text" id="prodMarca" name="prodMarca" required>
+              <input class="input_prod base_input" type="text" id="prodMarca" name="prodMarca">
             </div>
             <div>
               <label class="font_subtitulo" for="prodCod">Código</label>
-              <input class="input_prod" type="text" id="prodCod" name="prodCod" required>
+              <input class="input_prod base_input" type="text" id="prodCod" name="prodCod">
             </div>
             <div>
               <label class="font_subtitulo" for="prodOrigem">Origem</label>
-              <input class="input_prod" type="text" id="prodOrigem" name="prodOrigem" required>
+              <input class="input_prod base_input" type="text" id="prodOrigem" name="prodOrigem">
             </div>
             <div>
               <label class="font_subtitulo" for="prodUni">Unidade</label>
-              <input class="input_prod" type="text" id="prodUni" name="prodUni" required>
+              <input class="input_prod base_input" type="text" id="prodUni" name="prodUni">
             </div>
           </div>
           <div class="coluna2">
             <div>
               <label class="font_subtitulo" for="prodPesoL">Peso Liquído</label>
               <div>
-                  <input class="input_prod" type="text" id="prodPesoL" name="prodPesoL" required placeholder="Em kg">
+                  <input class="input_prod base_input" type="text" id="prodPesoL" name="prodPesoL">
                   <h2 class="unidade_medida">Kg</h2>
               </div>
-                
             </div>
             <div>
               <label class="font_subtitulo" for="prodPesoB">Peso Bruto</label>
               <div>
-                  <input class="input_prod" type="text" id="prodPesoB" name="prodPesoB" required required placeholder="Em kg">
+                  <input class="input_prod base_input" type="text" id="prodPesoB" name="prodPesoB">
                   <h2 class="unidade_medida">Kg</h2>
               </div>
             </div>
             <div>
               <label class="font_subtitulo" for="prodTipoEmb">Tipo da Embalagem</label>
-              <select class="input_prod seletor" id="prodTipoEmb" name="prodTipoEmb">
+              <select class="input_prod base_input seletor" id="prodTipoEmb" name="prodTipoEmb">
                   <option value="PacoteCaixa">Pacote/Caixa</option>
                   <option value="opcao2">Opção 2</option>
                   <option value="opcao3">Opção 3</option>
@@ -89,7 +88,7 @@
             </div>
             <div>
               <label class="font_subtitulo" for="prodEmb">Embalagem</label>
-              <select class="input_prod seletor" id="prodEmb" name="prodEmb">
+              <select class="input_prod base_input seletor" id="prodEmb" name="prodEmb">
                   <option value="pac_cai">Embalagem customizada</option>
                   <option value="opcao2">Opção 2</option>
                   <option value="opcao3">Opção 3</option>
@@ -98,21 +97,21 @@
             <div>
               <label class="font_subtitulo" for="prodLarg">Largura</label>
               <div>
-                  <input class="input_prod" type="text" id="prodLarg" name="prodLarg" required placeholder="0,0">
+                  <input class="input_prod base_input" type="text" id="prodLarg" name="prodLarg">
                   <h2 class="unidade_medida">Cm</h2>
               </div>
             </div>
             <div>
               <label class="font_subtitulo" for="prodAlt">Altura</label>
               <div>
-                  <input class="input_prod" type="text" id="prodAlt" name="prodAlt" required placeholder="0,0">
+                  <input class="input_prod base_input" type="text" id="prodAlt" name="prodAlt">
                   <h2 class="unidade_medida">Cm</h2>
               </div>
             </div>
             <div>
               <label class="font_subtitulo" for="prodCompri">Comprimento</label>
               <div>
-                  <input class="input_prod" type="text" id="prodCompri" name="prodCompri" required placeholder="0,0">
+                  <input class="input_prod base_input" type="text" id="prodCompri" name="prodCompri">
                   <h2 class="unidade_medida">Cm</h2>
               </div>
             </div>
@@ -130,7 +129,7 @@
         <div class="desc">
           <div class="grid_desc">
             <label for="prodDesc" class="font_titulo">Descrição do produto</label>
-            <textarea class="input_prod" id="prodDesc" name="prodDesc" required></textarea>
+            <textarea class="input_prod base_input" id="prodDesc" name="prodDesc"></textarea>
           </div>
           <div class="grid_but">
             <button class="font_botoes but_cancel" type="reset">

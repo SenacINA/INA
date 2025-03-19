@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E ao Quadrado</title>
-    <link rel="stylesheet" href="../../css/admin/admin_carrosel.css">
+    <link rel="stylesheet" href="../../css/admin/gerenciar_carrossel.css">
     <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,7 +116,7 @@
       <p>CATEGORIA</p>
       <p>CARGO</p>
       <p>PLANO</p>
-      <p>DATA DE INICIO</p>
+      <p>DATA DE INÍCIO</p>
       <p>DATA DE EXPIRAÇÃO</p>
       <span>192.168.0.1</span>
       <span>info@nvidia.com</span>

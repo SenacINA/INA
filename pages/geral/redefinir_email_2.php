@@ -18,36 +18,43 @@
   ?>
   <main>
     <div class="redefinir_email_2_container">
-      <h1>REDEFINIÇÃO DE E-MAIL</h1>
-      <hr>
       <div class="redefinir_email_2_main_content">
+        <div class="redefinir_email_2_bem_vindo">
+          <img src="../../image/geral/logo-eaoquadrado.png">
+          <h1>Redefinir E-mail</h1>
+        </div>
+
         <form class="redefinir_email_2_form" action="">
-          <div class="redefinir_email_2">
-            <label for="email">Novo E-mail</label>
-            <input type="text" name="email" id="email">  
+          <div class="redefinir_email_2_input">
+            <label for="email">Novo E-mail:</label>
+            <input class="base_input" type="text" name="email" id="email">
           </div>
 
+<<<<<<< HEAD
           <div class="redefinir_email_2">
             <label for="email">Confirmar Novo E-mail</label>
             <input type="text" name="email" id="email">  
+=======
+          <div class="redefinir_email_2_input">
+            <label for="email">Confirmar E-mail:</label>
+            <input class="base_input" type="text" name="email" id="confirm-email">
+>>>>>>> 3f113019a58e9ef69a46a8dba38d5f50b3e71449
           </div>
         </form>
         
-        <!-- colocar botões novos -->
-        <button class="redefinir_email_2_salvar" onclick="pag('geral/redefinir_email_3')">
-          <img src="" alt="">
-          <h3>SALVAR</h3>
+        
+      </div>
+      <div class="redefinir_email_2_botoes">
+        <button class="redefinir_email_2_botao_voltar" onclick="history.back()">
+          <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
         </button>
-
-        <button class="redefinir_email_2_voltar" onclick="history.back()">
-          <img src="" alt="">
-          <h3>VOLTAR</h3>
+        <button class="redefinir_email_2_botao_salvar" onclick="pag('geral/redefinir_email_3')">
+          <img src="../../image/geral/confirm_botao.svg" alt="">Salvar
         </button>
       </div>
     </div>
   </main>
 
-  <!-- footer -->
-  <!-- coloca display:none no desktop -->
+  <script type="module" src="../../js/admin/toggle_redefinir.js"></script>
 </body>
 </html>

@@ -127,12 +127,13 @@
 /* inputs */
 .atualizar_usuario_grid_conteudo input {
   height: 40px;
-  border: 2px #1B98E0 solid;
-  outline: none;
+  border: #4eace2 solid 2px;
   border-radius: 5px;
-  text-indent: 5px;
-  font-size: 20px;
-  background-color: transparent;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--cinza);
 }
 
 .atualizar_usuario_grid_conteudo label {
@@ -145,7 +146,7 @@
 .atualizar_usuario_pesquisar_usuario h2 {
   color: rgba(87, 149, 206, 0.60);
   font-size: 20px;
-  max-width: 590px;
+  max-width: 600px;
 }
 
 .atualizar_usuario_pesquisar_usuario_item {
@@ -154,7 +155,7 @@
 }
 
 .atualizar_usuario_pesquisar_usuario_item input {
-  max-width: 590px;
+  max-width: 600px;
 }
 
 /* Localização */
@@ -170,7 +171,7 @@
   align-items: center;
   column-gap: 2%;
 
-  max-width: 590px;
+  max-width: 600px;
 }
 
 .atualizar_usuario_dados_pessoais_item,
@@ -182,7 +183,7 @@
 }
 
 .atualizar_usuario_dados_pessoais_item input {
-  max-width: 590px;
+  max-width: 600px;
 }
 
 .atualizar_usuario_dados_pessoais_conjunto {
@@ -192,7 +193,7 @@
   align-items: center;
   column-gap: 2%;
 
-  max-width: 590px;
+  max-width: 600px;
 }
 
 /* Permissões */
@@ -200,7 +201,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 590px;
+  max-width: 600px;
 }
 
 .atualizar_usuario_permissoes_conjunto {
@@ -449,7 +450,7 @@ input:checked + .toggle_slider::before {
   #atualizar_usuario_text_2 {
     grid-row: 3;
     grid-column: 1;
-    margin-top: 112px;
+    margin-top: 132px;
   }
 
   .atualizar_usuario_dados_pessoais {
@@ -518,7 +519,7 @@ input:checked + .toggle_slider::before {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
   .bg_mobile_1 {
     height: 360px;
   }
@@ -539,10 +540,16 @@ input:checked + .toggle_slider::before {
   }
 
   #atualizar_usuario_text_2 {
-    margin-top: 95px;
+    margin-top: 132px;
   }
 
   .atualizar_usuario_botao_salvar {
     top: 190px;
+  }
+}
+
+@media (max-width: 425px) {
+  #atualizar_usuario_text_2 {
+    margin-top: 92px;
   }
 }

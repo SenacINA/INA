@@ -105,12 +105,7 @@
   height: 40px;
   max-width: 500px;
   width: 100%;
-  background: transparent;
-  text-indent: 5px;
-  border: 2px solid #1B98E0; /* Cor da borda dos inputs */
-  font-size: 20px;
-  font-family: "Jost", sans-serif;
-  border-radius: 5px;
+
 }
 
 .grid_conteudo ::placeholder {
@@ -124,25 +119,8 @@
   height: 40px;
   max-width: 500px;
   width: 100%;
-
-  background: transparent;
-  text-indent: 5px;
-  border: 2px solid #1B98E0; 
-  color: rgba(0, 0, 0, 0.3);
-  font-size: 20px;
-  font-family: "Jost", sans-serif;
-  border-radius: 5px;
 }
 
-.grid_conteudo select option:enabled {
-  color: #000;
-  font-size: 20px;
-}
-
-.grid_conteudo select :enabled {
-  color: #000;
-  font-size: 20px;
-}
 
 /* end grid_conteudo */
 
@@ -231,16 +209,11 @@
   grid-area: 2 / 1 / 2 / 3;
 }
 
-textarea {
-  width: 655px;
-  height: 132px;
-  border: 2px solid #1B98E0; 
-  background-color: transparent;
-  resize: none;
-  font-size: 20px;
-  font-family: "Jost", sans-serif;
-  border-radius: 5px;
-  text-indent: 5px;
+.grid_conteudo_4 textarea {
+  max-width: 1033px;
+  width: 100%;
+  height: 150px;
+ 
 }
 /* end grid_conteudo_4 */
 

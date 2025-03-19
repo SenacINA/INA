@@ -82,12 +82,6 @@
   .login_redefinir_senha_2_form input {
     max-width: 500px;
     width: 100%;
-    height: 40px;
-    font-size: 20px;
-    text-indent: 10px;
-    border-radius: 5px;
-    border: 2px #1B98E0 solid;
-    background-color: transparent;
   } 
   
   .login_formulario_login label, 
