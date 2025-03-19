@@ -26,7 +26,7 @@
     <div class="cadastro_vendedor2_content">
       <div class="cadastro_vendedor2_titulo">
         <div class="cadastro_vendedor2_titulo_img">
-          <img src="" alt="">
+          <img src="../../image/vendedor/cadastro_vendedor_2/vendedor.svg" alt="">
           <h1>CADASTRO DE VENDEDOR</h1>
         </div>
         <hr>
@@ -35,8 +35,8 @@
         <div class="cadastro_vendedor_2_grid_conteudo_1">
           <div class="cadastro_vendedor_2_text_1">
             <hr class="cadastro_vendedor_2_vertical">
-            <img src="../../image/admin/cadastro_vendedor_2/texto_icon.svg" alt="">
-            <h1 class="cadastro_vendedor_2_text">Seu Perfil</h1>
+            <img src="../../image/vendedor/cadastro_vendedor_2/icon_loja.svg" alt="">
+            <h1 class="cadastro_vendedor_2_text">Loja</h1>
           </div>
           <!-- Local da Empresa -->
           <div>
@@ -106,7 +106,7 @@
         <div class="cadastro_vendedor_2_grid_conteudo_2">
           <div class="cadastro_vendedor_2_text_2">
             <hr class="cadastro_vendedor_2_vertical">
-            <img src="" alt="">
+            <img src="../../image/vendedor/cadastro_vendedor_2/user.svg" alt="">
             <h1 class="cadastro_vendedor_2_text">Seu Perfil</h1>
           </div>
 
