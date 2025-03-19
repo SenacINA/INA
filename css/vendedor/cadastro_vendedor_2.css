@@ -1,10 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  background-color: var(--branco_gelo);
+  
   font-family: "Jost", sans-serif;
 }
 
@@ -13,7 +10,7 @@ body {
   grid-template-columns: 100%;
   grid-template-rows: min-content min-content;
   width: 100%;
-  align-items: center;
+  align-items: top;
   align-self: center;
   justify-content: center;
   text-align: center;
@@ -23,6 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-self: center;
+  
   margin-top: 18px;
   gap: 8px;
 }
@@ -56,15 +54,19 @@ body {
 }
 
 .cadastro_vendedor_2_grid_bg {
-  display: grid;
-  grid-template-columns: auto;
-  background-color: #eff3f5;
-  margin: 2%;
-  margin-right: auto;
-  margin-left: auto;
-  width: 1780px;
+  justify-self: center;
+  width: 95%;
   height: 780px;
+  background-color: #eff3f5;
   border-radius: 10px;
+  margin: 0% 1.5%;
+}
+
+.cadastro_vendedor2_content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -99,11 +101,12 @@ body {
 .cadastro_vendedor_2_grid_conteudo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   justify-self: center;
   justify-content: center;
-  column-gap: 12%;
+  
   text-align: justify;
+  width: 100%;
   height: 485px;
 }
 
@@ -125,6 +128,11 @@ body {
   font-size: 18px;
   font-weight: 500;
   position: relative;
+}
+
+.cadastro_vendedor_2_grid_conteudo_1,
+.cadastro_vendedor_2_grid_conteudo_2 {
+  justify-items: center;
 }
 
 .cadastro_vendedor_2_conteudo_telefone,
