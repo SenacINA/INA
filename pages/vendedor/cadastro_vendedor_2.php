@@ -57,7 +57,7 @@
               <option value="sidrolândia">Sidrolândia</option>
               <option value="três_lagoas">Três Lagoas</option>
             </select>
-            <h1>Se você não tiver uma empresa, informe o estado de sua residência.</h1>
+            <h2>Se você não tiver uma empresa, informe o estado de sua residência.</h2>
           </div>
 
           <!-- CEP -->
@@ -114,7 +114,7 @@
           <div>
             <label for="email">E-mail</label> <br>
             <input type="email" name="email" id="email" class="base_input">
-            <h1>O código de confirmação será enviado para esse E-mail. </h1>
+            <h2>O código de confirmação será enviado para esse E-mail. </h2>
           </div>
         
           <!-- Senha -->
