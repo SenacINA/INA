@@ -354,7 +354,7 @@
 
 .admin_carrossel_buttons_container {
   display: flex;
-  column-gap: 20px;
+  column-gap: 8px;
   position: absolute;
   height: 40px;
   top: 660px;
@@ -431,8 +431,11 @@
   }
 
   .admin_carrossel_texto_main_text {
-    font-size: 24px; 
+    font-size: 32px; 
     gap: 5px; 
+    text-align: center;
+    justify-self: center;
+    font-weight: 500;
     margin-bottom: 30px;
     margin: 0;
   }
@@ -487,7 +490,7 @@
   /* Ajusta os botões */
   .admin_carrossel_buttons_container {
     width: 100%;
-    gap: 10px;
+    gap: 8px;
     position: relative;
     top: 0;
     right: 0;
@@ -498,7 +501,8 @@
 }
   .admin_carrossel_buttons_container button {
     width: 704px;
-    height: 48px;
+    height: 40px;
+    gap: 8px;
   }
 
   /* Estiliza os planos */
