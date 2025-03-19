@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="../../css/cliente/carinho_pagamentos.css">
   <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body class="fundo">
   <!-- fazer responsividade -->
@@ -18,7 +19,7 @@
     include_once('../../pages/geral/navbar.php');
   ?>
   <div class="carrinho_pagamentos">
-    <img src="../../image/cliente/carrinho_pagementos/carrinho_pagamento.png" class="carrinho_top">
+    <img src="../../image/cliente/carrinho_pagamentos/carrinho_pagamento.png" class="carrinho_top">
     <div class="main_pagamentos">
       <div class="main_container_carrinho_pagamentos">
         <p class="main_text_carrinho_pagamentos">Pagamento</p>
@@ -26,15 +27,15 @@
       </div>
       <div class="container_whats">
         <p>Conversar com Atendimento direto do vendedor</p>
-        <img src="../../image/cliente/carrinho_pagementos/whatsapp_user_carrinho_pagamentos.png" alt="">
+        <img src="../../image/cliente/carrinho_pagamentos/whatsapp_user_carrinho_pagamentos.png" alt="">
         <p class="conversar_vendedor">Conversar com Vendedor no WhatsApp</p>
         <button class="botao_whats">Iniciar conversa</button>
         <div class="separador_whats"></div>
         <p class="nao_tem">Ainda não tem o WhatsApp?</p>
         <a href="#" class="baixar_whats">Baixar</a>
         <div class="botoes">
-          <button class="finalizar"><img src="../../image/geral/lixo.svg" alt="">Finalizar</button>
-          <button class="voltar"><img src="../../image/geral/voltar_vermelho_botao.svg" alt="">Voltar</button>
+          <button class="finalizar" onclick="pag('../index')">Finalizar</button>
+          <button class="voltar" onclick="history.back()"><img src="../../image/geral/voltar_vermelho_botao.svg" alt="">Voltar</button>
         </div>
       </div>
     </div>
