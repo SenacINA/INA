@@ -506,7 +506,7 @@ select.base_input {
       content: url('../image/index/logoEscrita.svg');
 
   }
-  
+   
   .base_nav_logo_container{
       display: flex;
       justify-content: flex-start;
@@ -526,6 +526,10 @@ select.base_input {
   #baseNavLogoHeader {
       content: url('../image/index/Logo.svg');
 
+  }
+
+  .base_botao {
+    width: 100%;
   }
 }
 

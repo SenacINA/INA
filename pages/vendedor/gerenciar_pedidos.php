@@ -20,9 +20,9 @@
   <main class="gerenciar_pedidos_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_pedidos_header_holder">
-        <div class="gerenciar_pedidos_header_title">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
-          <h1 class="gerenciar_pedidos_header_holder font_titulo">RELATÓRIO DO VENDEDOR</h1>
+        <div class="gerenciar_pedidos_text_titulo">
+          <img src="../../image/vendedor/gerenciar_pedidos/gerenciar_pedido.svg" alt="">
+          <h1 class="gerenciar_pedidos_header_holder font_titulo">GERENCIAR PEDIDOS</h1>
         </div>
         <hr class="gerenciar_pedidos_linha_sublinhado">
       </div>
@@ -34,7 +34,7 @@
               <div class="gerenciar_pedidos_subtitulo_generico">
                 <div class="gerenciar_pedidos_linha_vertical"></div>
                 <div class="gerenciar_pedidos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/vendedor/gerenciar_pedidos/pesquisar_pedido.svg" />
                   <h2 class="font_subtitulo font_celadon">Pesquisar Pedidos</p>
                 </div>
               </div>
@@ -88,8 +88,15 @@
                   </div>
                 </div>
                 <div class="gerenciar_pedidos_holder_botao">
-                  <button type="reset" class="base_botao btn_red">CANCELAR</button>
-                  <button type="submit" class="base_botao btn_blue">CONFIRMAR</button>
+                  <button type="reset" class="base_botao btn_red">
+                    <img src="../../image/geral/botoes/x_icon_branco.svg">
+                    CANCELAR
+                  </button>
+
+                  <button type="submit" class="base_botao btn_blue">
+                    <img src="../../image/geral/botoes/v_icon_branco.svg">
+                    CONFIRMAR
+                  </button>
                 </div>
               </form>
             </div>
@@ -97,7 +104,7 @@
               <div class="gerenciar_pedidos_subtitulo_generico">
                 <div class="gerenciar_pedidos_linha_vertical"></div>
                 <div class="gerenciar_pedidos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/vendedor/gerenciar_pedidos/estatisticas.svg" />
                   <h2 class="font_subtitulo font_celadon">Estatísticas</p>
                 </div>
               </div>
@@ -164,7 +171,7 @@
               <th>Produto</th>
               <th>Preço</th>
               <th>Qtn.</th>
-              <th>Previsão de Entrega</th>
+              <th>Forma de Pagamento</th>
               <th>Status</th>
               <th>Cliente</th>
             </tr>
@@ -180,10 +187,10 @@
                 <td>01</td>
                 <td>
                   <span>
-                    25/03/2024 - 06/04/2024
+                    Pix
                   </span>
                 </td>
-                <td>Entregue</td>
+                <td>Pago</td>
                 <td>
                   <span>
                     Roberto Carlos
@@ -195,8 +202,8 @@
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
+                <td>Pix</td>
+                <td>Pendente</td>
                 <td>Roberto Carlos</td>
               </tr>
               <tr>
@@ -204,8 +211,8 @@
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
+                <td>Boleto - 6x</td>
+                <td>Pendente</td>
                 <td>Roberto Carlos</td>
               </tr>
               <tr>
@@ -213,8 +220,8 @@
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
+                <td>Boleto - 12x</td>
+                <td>Pago</td>
                 <td>Roberto Carlos</td>
               </tr>
             </tbody>
