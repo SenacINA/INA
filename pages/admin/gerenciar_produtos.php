@@ -40,17 +40,11 @@
               </div>
               <form action="" method="post" class="gerenciar_produtos_forms_pesquisa_pedidos">
                 <div class="gerenciar_produtos_form_cliente">
-                  <label class="font_subtitulo font_celadon">Código Do Produto / Nome Cliente</label>
+                  <label class="font_subtitulo font_celadon">Código Do Produto / Nome Vendedor</label>
                   <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="gerenciar_produtos_inputs_esquerda">
-                  <div class="gerenciar_produtos_input_status">
-                    <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
-                    <select name="select_cod" class="gerenciar_produtos_select_status base_input">
-                      <option value="Entregue">Entregue</option>
-                      <option value="Em transporte">Em transporte</option>
-                    </select>
-                  </div>
+                  
                   <div class="gerenciar_produtos_input_mes">
                     <label for="mes" class="font_subtitulo font_celadon">Mês</label>
                     <select name="mes" id="mes" class="gerenciar_produtos_mes_select base_input">
