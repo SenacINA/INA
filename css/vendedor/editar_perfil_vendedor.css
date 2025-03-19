@@ -1,5 +1,3 @@
-@import "./style.ss";
-
 * {
   margin: 0;
   padding: 0;
@@ -18,16 +16,18 @@ nav {
 }
 
 body {
-  background-color: #e8f1f2;
+  background-color: #fff;
   height: 100%;
 }
 
 .quadrado_vendedor {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 32px;
   width: 1820px;
+  height: 1500px;
   justify-self: center;
+  background-color: #eff3f5;
+  border-radius: 10px;
+  row-gap: 2%;
 }
 
 .mini_perfil_vendedor {
@@ -35,20 +35,21 @@ body {
   left: 10%;
   top: 8%;
   width: 826px;
-  height: 966px;
-  border: 1px solid #000;
-  background: #eff1f8;
+  height: 750px;
+  background: var(--azul_leve);
+  border-radius: 5px;
   display: grid;
   align-items: center;
   justify-content: center;
   justify-items: center;
-  grid-template-rows: 295px 193px 4px 200px auto;
+  grid-template-rows: 295px 193px 4px 150px min-content;
 }
 
 .separador_mini_perfil {
-  width: 826px;
+  width: 90%;
   height: 4px;
-  background: #d7e8ea;
+  border-radius: 20px;
+  background: #4a4a4a;
   border: 0;
 }
 
@@ -97,7 +98,7 @@ body {
 .avaliacao_vendedor,
 .tempo_vendedor,
 .localizacao_vendedor {
-  color: #000;
+  color: var(--sappire);
   font-family: Jost;
   font-size: 13px;
   font-style: normal;
@@ -137,7 +138,7 @@ body {
 .sobre_nos_vendedor {
   grid-column: 1;
   grid-row: 1;
-  color: #000;
+  color: var(--sappire);
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
@@ -153,7 +154,6 @@ body {
   grid-template-columns: auto;
   grid-template-rows: auto auto;
   position: relative;
-  top: -5%;
   row-gap: 10%;
 }
 
@@ -169,18 +169,12 @@ body {
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
-  line-height: 90%; /* 11.7px */
   grid-row: 2;
   width: 760px;
 }
 
 .contatos_container {
-  display: grid;
-  grid-template-columns: max-content;
-  grid-template-rows: min-content min-content;
-  row-gap: 15%;
-  position: relative;
-  left: -38%;
+  width: 100%;
 }
 
 .main_text_contatos {
@@ -205,85 +199,48 @@ body {
 
 .contatos_vendedor {
   display: grid;
-  grid-template-columns: repeat(6, max-content);
-  position: relative;
+  width: 100%;
+  grid-template-columns: auto auto min-content auto auto;
   align-items: center;
   justify-content: center;
   justify-items: center;
-  left: 50%;
   row-gap: 10%;
-  column-gap: 5%;
-  color: #000;
-  text-align: center;
-  font-family: Jost;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
+  column-gap: 1%;
 }
 
-.icon_instagram_vendedor,
-.icon_facebook_vendedor {
+.icon_instagram_vendedor {
   grid-column: 1;
 }
 
-.instagram_vendedor,
-.facebook_vendedor {
+.instagram_vendedor {
   grid-column: 2;
 }
 
-.icon_x_vendedor {
-  grid-row: 1;
-  grid-column: 3;
-}
-
-.x_vendedor {
-  grid-row: 1;
+.icon_facebook_vendedor {
   grid-column: 4;
 }
 
-.linkedin_vendedor {
-  grid-row: 2;
-  grid-column: 4;
-}
-
-.icon_linkedin_vendedor {
-  grid-row: 2;
-  grid-column: 3;
-}
-
-.icon_youtube_vendedor {
-  grid-row: 1;
+.facebook_vendedor {
   grid-column: 5;
 }
 
-.youtube_vendedor {
-  grid-row: 1;
-  grid-column: 6;
+.linha_vertical_mini {
+  width: 4px;
+  height: 53px;
+  border: 0;
+  border-radius: 20px;
+  background-color: var(--carolina);
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .contatos_vendedor a {
-  position: relative;
-  left: 10%;
-  color: #000;
+  color: var(--sappire);
   text-align: center;
   font-family: Jost;
   font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
 }
 
 .forms {
@@ -305,9 +262,9 @@ body {
 }
 
 .forms_container label {
-  color: #000;
+  color: var(--cinza);
   font-family: Jost;
-  font-size: 20px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -321,7 +278,6 @@ body {
 .forms_container textarea {
   height: 200px;
 }
-
 
 .nome_vendedor_forms {
   text-indent: 14px;
@@ -359,7 +315,7 @@ body {
   line-height: 90%; /* 18px */
   border-radius: 5px;
   border: 0;
-  background-color: #1B98E0;
+  background-color: #1b98e0;
   text-transform: uppercase;
 }
 
@@ -380,12 +336,26 @@ body {
 }
 
 .main_text_redes {
-  color: #000;
+  color: var(--celadon);
   font-family: Jost;
-  font-size: 20px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.redes_text {
+  display: flex;
+  align-items: center;
+  column-gap: 2%;
+}
+
+.linha_vertical {
+  width: 8px;
+  height: 48px;
+  border: 0;
+  border-radius: 10px;
+  background-color: var(--carolina);
 }
 
 .redes_edit {
@@ -401,7 +371,7 @@ body {
 }
 
 .link_instagram {
-  color: #000;
+  color: var(--carolina);
   font-family: Jost;
   font-size: 16px;
   font-style: normal;
@@ -416,7 +386,7 @@ body {
 }
 
 .link_facebook {
-  color: #000;
+  color: var(--carolina);
   font-family: Jost;
   font-size: 16px;
   font-style: normal;
@@ -440,7 +410,7 @@ body {
   top: 30%;
   cursor: pointer;
   height: 48px;
-  width: 200px;
+  width: 100%;
   border-radius: 5px;
   border: 0;
   background: #1b98e0;
@@ -463,22 +433,24 @@ body {
   grid-column: 1;
   grid-row: 2;
   display: grid;
-  grid-template-columns: min-content min-content;
-  grid-template-rows: min-content;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: max-content;
   align-items: center;
   justify-content: center;
-  column-gap: 100px;
+  column-gap: 10%;
+  justify-self: center;
+  margin-left: 5%;
 }
 
 .text_pfp {
   grid-column: 1;
   grid-row: 1;
-  color: #000;
+  color: var(--celadon);
   text-align: center;
   font-family: Jost;
-  font-size: 32px;
+  font-size: 24px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: normal;
 }
 
@@ -487,41 +459,32 @@ body {
   grid-row: 2;
 }
 
-.btn_foto::file-selector-button,
-.btn_banner::file-selector-button {
-  width: 200px;
-  height: 43px;
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid #13293d;
-  cursor: pointer;
-  color: #000;
+.text_banner {
+  color: var(--celadon);
   text-align: center;
   font-family: Jost;
-  font-size: 20px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
 
-.text_banner {
-  color: #000;
-  text-align: center;
-  font-family: Jost;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+.img_container {
+  width: 400px;
+  height: 200px;
+  background-color: var(--azul_leve);
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .warn {
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--cinza);
   text-align: center;
   font-family: Jost;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 500;
 }
 
 .foto_container,
@@ -536,4 +499,96 @@ body {
 .banner_vendedor_forms {
   width: 350px;
   height: 150px;
+}
+
+.banner_text,
+.foto_text {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  column-gap: 5%;
+  width: 100%;
+}
+
+.destaques {
+  display: flex;
+  flex-direction: column;
+  grid-row: 3;
+  grid-column: 1/3;
+  margin-left: 5%;
+  row-gap: 20px;
+}
+
+.icon_destaques_vendedor {
+  width: 24px;
+  height: 24px;
+}
+
+.destaques_text {
+  display: flex;
+  align-items: center;
+  column-gap: 1%;
+}
+
+.destaques_main_text {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--celadon);
+}
+
+.destaques_container {
+  background-color: var(--azul_leve);
+  padding: 16px;
+  width: 94%;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  justify-content: space-around;
+}
+
+.botoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1/3;
+  column-gap: 5%;
+}
+
+.salvar {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  min-width: 192px;
+  font-size: 1.25rem;
+  /* 20px */
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+  background-color: #1b98e0;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.cancelar {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  min-width: 192px;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid var(--vermelho);
+  color: var(--vermelho);
+  text-transform: uppercase;
 }
