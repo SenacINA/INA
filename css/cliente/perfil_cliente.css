@@ -72,10 +72,8 @@ hr {
     top: 300px;
     right: 60px;
     text-align: center;
-  }
+}
   
-
-
 /* end botao_menu */
 
 
@@ -104,6 +102,7 @@ hr {
     justify-self: center;
     width: 295px;
     height: 295px;
+    top: -100px;
 }
 
 .perfil_cliente_pfp_cliente h1 {
@@ -166,7 +165,8 @@ hr {
 /* end infos_container */
 
 /* start about_container */
-.perfil_cliente_about_container, .perfil_cliente_about_container_2 {
+.perfil_cliente_about_container,
+.perfil_cliente_about_container_2 {
     display: grid;
     grid-template-columns: min-content auto;
     position: relative;

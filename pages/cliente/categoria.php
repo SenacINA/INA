@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/cliente/footer.css">
     <link rel="stylesheet" href="../../css/cliente/categoria.css">
+    <script src="../../js/geral/base.js"></script>
     <title>Categoria</title>
 </head>
 <body class="gradiente_azul">
@@ -195,12 +196,12 @@
                 </div>
             </div>
             <div class="produto_botoes">
-                <button type="button" onclick="window.open('about:blank', '_blank');" class="botao_estilo font_14px">
+                <button type="button" onclick="pag('cliente/carrinho_vazio')" class="botao_estilo font_14px">
                     <svg class="icone_carrinho" xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
                         <path d="M5.78305 3.94444H23.75L21.3056 12.5H7.09931M22.5278 17.3889H7.86111L5.41667 1.5H1.75M9.08333 22.2778C9.08333 22.9528 8.53612 23.5 7.86111 23.5C7.1861 23.5 6.63889 22.9528 6.63889 22.2778C6.63889 21.6027 7.1861 21.0556 7.86111 21.0556C8.53612 21.0556 9.08333 21.6027 9.08333 22.2778ZM22.5278 22.2778C22.5278 22.9528 21.9806 23.5 21.3056 23.5C20.6305 23.5 20.0833 22.9528 20.0833 22.2778C20.0833 21.6027 20.6305 21.0556 21.3056 21.0556C21.9806 21.0556 22.5278 21.6027 22.5278 22.2778Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <button type="button" onclick="window.open('about:blank', '_blank');" class="botao_estilo font_14px">
+                <button type="button" onclick="pag('cliente/produto')" class="botao_estilo font_14px">
                     Comprar
                 </button>
             </div>

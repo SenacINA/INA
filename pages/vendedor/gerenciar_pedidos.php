@@ -47,8 +47,8 @@
                   <div class="gerenciar_pedidos_input_status">
                     <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
                     <select name="select_cod" class="gerenciar_pedidos_select_status base_input">
-                      <option value="Entregue">Entregue</option>
-                      <option value="Em transporte">Em transporte</option>
+                      <option value="Entregue">Pago</option>
+                      <option value="Em transporte">Pendente</option>
                     </select>
                   </div>
                   <div class="gerenciar_pedidos_input_mes">

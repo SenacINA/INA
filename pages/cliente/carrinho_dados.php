@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="../../css/cliente/carinho_dados.css">
   <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body class="fundo">
   <!-- fazer responsividade -->
@@ -55,12 +56,11 @@
           <label for="opcaoEnvio">Opções de envio</label>
           <select name="opcaoEnvio" id="opcaoEnvio" class="base_input">
             <option value="" disabled selected>Selecione o tipo de entrega</option>
-            <option value="entrega_padrao">Entrega Padrão - R$13,25</option>
-            <option value="entrega_expressa">Entrega Expressa - R$26,30</option>
+            <option value="entrega_padrao">Entrega Padrão - R$15,00</option>
           </select>
         </form>
         <div class="botoes_carrinho">
-          <button class="salvar_carrinho"><img src="../../image/geral/confirm_botao.svg">Salvar</button>
+          <button class="salvar_carrinho" onclick="pag('cliente/carrinho_pagamentos')"><img src="../../image/geral/confirm_botao.svg">Salvar</button>
         </div>
       </div>
     </div>
