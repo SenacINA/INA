@@ -40,7 +40,7 @@
     </div>
   </div>
   <footer class="footer_carrinho">
-    <img src="../../image/cliente/footer/img_footer_placeholder.png" width="100%" height="100%">
+    <!-- <img src="../../image/cliente/footer/img_footer_placeholder.png" width="100%" height="100%"> -->
   </footer>
 </body>
 </html>
