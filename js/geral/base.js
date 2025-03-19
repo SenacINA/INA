@@ -5,7 +5,7 @@ function pag(url, loc = 1, params = "") {
         window.location.href = "../".repeat(loc ?? 1) + url + ".php" + params;
     }
 }
-
+// a
 function selectPag(event){
     pag(event);
 }
