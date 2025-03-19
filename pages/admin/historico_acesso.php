@@ -27,7 +27,7 @@
         </div>
         <div class="gerenciar_pedidos_linha_sublinhado"></div>
       </div>
-      <div class="gerenciar_pedidos_body_holder bg_azul_leve">
+      <div class="gerenciar_pedidos_body_holder ">
         <div class="gerenciar_pedidos_main_content">
           <div class="gerenciar_pedidos_quadrado_container">
             <div class="gerenciar_pedidos_pesquisar_pedidos">
@@ -41,22 +41,22 @@
               <form action="" method="post" class="gerenciar_pedidos_forms_pesquisa_pedidos">
                 <div class="gerenciar_pedidos_form_cliente">
                   <label class="font_subtitulo font_celadon">IP Do Usuário</label>
-                  <input type="text" spellcheck="false" class="base_input" placeholder="---.---.---.---">
+                  <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="gerenciar_pedidos_inputs_esquerda">
                   <div class="gerenciar_pedidos_input_status">
                     <label for="select_cod" class="font_subtitulo font_celadon">Horário</label>
-                    <input class="gerenciar_pedidos_select_status base_input" type="time" placeholder="00:00">
+                    <input class="gerenciar_pedidos_select_status base_input" type="time">
                   </div>
                   
                   <div class="gerenciar_pedidos_input_ano">
                     <label for="ano" class="font_subtitulo font_celadon">Data</label>
-                    <input class="gerenciar_pedidos_ano_select base_input" type="date" placeholder="dd/mm/aaaa">
+                    <input class="gerenciar_pedidos_ano_select base_input" type="date">
                   </div>
                 </div>
                 <div class="gerenciar_pedidos_holder_botao">
-                  <button type="reset" class="base_botao btn_red">CANCELAR</button>
-                  <button type="submit" class="base_botao btn_blue">CONFIRMAR</button>
+                  <button type="submit" class="base_botao btn_blue historico_acesso_base_botao">CONFIRMAR</button>
+                  <button type="reset" class="base_botao btn_red historico_acesso_base_botao">CANCELAR</button>
                 </div>
               </form>
             </div>
@@ -72,22 +72,22 @@
             
                 <div class="historico_acesso_info_user_item" id="historico_acesso_info_user_item_1" >
                   <label>IP</label>
-                  <input type="text" placeholder="192.168.0.1" class="base_input" readonly>
+                  <input type="text" class="base_input" readonly>
                 </div>
   
                 <div class="historico_acesso_info_user_item" id="historico_acesso_info_user_item_2">
                   <label>Cargo</label>
-                  <input type="text" placeholder="Admin" class="base_input" readonly>
+                  <input type="text" class="base_input" readonly>
                 </div>
   
                 <div class="historico_acesso_info_user_conjunto">
                   <div class="historico_acesso_info_user_item" id="historico_acesso_info_user_item_3">
                     <label>Data De Acesso</label>
-                    <input type="date" placeholder="00/00/00" class="base_input" readonly>
+                    <input type="date" class="base_input" readonly>
                   </div>
                   <div class="historico_acesso_info_user_item" id="historico_acesso_info_user_item_4">
                     <label>Horário</label>
-                    <input type="time" placeholder="00:00" class="base_input" readonly>
+                    <input type="time"class="base_input" readonly>
                   </div>
                 </div>
               </form>
