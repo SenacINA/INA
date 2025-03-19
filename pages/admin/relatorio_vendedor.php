@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório do Vendedor</title>
+    <title>E ao Quadrado</title>
     <link rel="stylesheet" href="../../css/admin/relatorio_vendedor.css">
     <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +17,8 @@
   ?>
   <main>
     <div class="relatorio_vendedor_body">
-      <div class="relatorio_vendedor_titulo" id="relatorio_vendedor_titulo_1">
-        <div class="relatorio_vendedor_text_titulo">
+      <div class="relatorio_vendedor_titulo_1">
+        <div class="relatorio_vendedor_text_titulo_1">
           <img src="../../image/admin/relatorio_vendedor/icon_relatorio.svg" alt="">
           <h1>RELATÓRIO DO VENDEDOR</h1>
         </div>
@@ -55,7 +55,6 @@
             </div>
           </form>
         </div>
-        
         
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_2">
           <hr class="relatorio_vendedor_vertical">
@@ -143,8 +142,8 @@
       </div>
     </div>
 
-    <div class="relatorio_vendedor_titulo" id="relatorio_vendedor_titulo_2">
-      <div class="relatorio_vendedor_text_titulo" id="relatorio_vendedor_text_titulo_2">
+    <div class="relatorio_vendedor_titulo_2">
+      <div class="relatorio_vendedor_text_titulo_2">
         <img src="../../image/admin/relatorio_vendedor/icon_maleta.svg" alt=""/>
         <h1>HISTÓRICO DE PEDIDOS</h1>
       </div>

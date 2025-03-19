@@ -1,3 +1,4 @@
+<!-- FINALIZADO -->
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -12,6 +13,9 @@
       <title>E ao Quadrado</title>
    </head>
    <body>
+   <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
       <div class='editar_produto_main'>
          <div class='editar_produto_container'>
             <div class='editar_produto_title'>
@@ -323,6 +327,9 @@
             </form>
          </div>
       </div>
+      <?php 
+         include_once('../../pages/geral/footer.php');
+      ?>
    </body>
    <script src="../../js/vendedor/img_input.js"></script>
    <script type="module" src="../../js/vendedor/text_editor.js"></script>

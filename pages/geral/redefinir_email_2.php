@@ -30,15 +30,9 @@
             <input class="base_input" type="text" name="email" id="email">
           </div>
 
-<<<<<<< HEAD
-          <div class="redefinir_email_2">
-            <label for="email">Confirmar Novo E-mail</label>
-            <input type="text" name="email" id="email">  
-=======
           <div class="redefinir_email_2_input">
             <label for="email">Confirmar E-mail:</label>
             <input class="base_input" type="text" name="email" id="confirm-email">
->>>>>>> 3f113019a58e9ef69a46a8dba38d5f50b3e71449
           </div>
         </form>
         
