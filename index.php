@@ -55,27 +55,30 @@ function gerarProdutoCards($quantidade) {
 <div class="index_body_main_container">
     <div class="index_body_carrossel">
         <div class="index_body_carrossel_content">
-            <button class="index_body_carrossel_but back">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19"/>
-                </svg>
-            </button>
-            <div class="index_body_carrossel_text">
-                <h2>CONSOLES</h2>
-                <h3>Experimente a próxima geração de entretenimento com nossos consoles de última tecnologia!</h3>
+                <button class="index_body_carrossel_but back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19"/>
+                    </svg>
+                </button>
+            <div class="carousel-container">
+                
+                <div class="carousel-wrapper">
+                    <img id="carrossel_image" src="./image/index/carrosselConsole.png" alt="Imagem Carrossel">
+                </div>
+
+                
             </div>
-            <img id="fg_image" src="./image/index/fgCarrosselEx.png" alt="">
-            <button class="index_body_carrossel_but forward">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19"/>
-                </svg> 
-            </button>
+            <button class="index_body_carrossel_but forward">                    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                         <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19"/>
+                    </svg> 
+                </button>
         </div>
         <div class="index_body_carrossel_nav">
-            <button class="active"></button>
-            <button></button>
-            <button></button>
-            <button></button>
+            <button class="active" onclick="currentSlide(1)"></button>
+            <button onclick="currentSlide(2)"></button>
+            <button onclick="currentSlide(3)"></button>
+            <button onclick="currentSlide(4)"></button>
         </div>
         <div class="index_body_categorias_nav">
             <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
@@ -172,6 +175,11 @@ function gerarProdutoCards($quantidade) {
             </div>
         </div>
     </div>
+    <?php 
+        $isIndex = 1;
+        include_once('./pages/geral/footer.php');
+    ?>
 </div>
+<script src="js/geral/index.js"></script>
 </body>
 </html>

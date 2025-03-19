@@ -1,3 +1,4 @@
+<!-- SEMI RESPONSIVO -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,20 +22,20 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="relatorio_vendas_header_holder">
         <div class="relatorio_vendas_text_titulo">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <img src="../../image/vendedor/relatorio_vendas/relatorio.svg" alt="">
           <h1 class="relatorio_vendas_header_holder font_titulo">RELATÓRIO DE VENDAS</h1>
         </div>
         <hr class="relatorio_vendas_linha_sublinhado">
       </div>
       
-      <div class="relatorio_vendas_body_holder">
+      <div class="relatorio_vendas_body_holder"> 
         <div class="relatorio_vendas_main_content">
           <div class="relatorio_vendas_quadrado_container">
             <div class="relatorio_vendas_pesquisar_pedidos">
               <div class="relatorio_vendas_subtitulo_generico">
                 <div class="relatorio_vendas_linha_vertical"></div>
                 <div class="relatorio_vendas_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/vendedor/relatorio_vendas/pesquisar_pedido.svg" />
                   <h2 class="font_subtitulo font_celadon">Pesquisar Pedidos</p>
                 </div>
               </div>
@@ -88,8 +89,15 @@
                   </div>
                 </div>
                 <div class="relatorio_vendas_holder_botao">
-                  <button type="reset" class="base_botao btn_red">CANCELAR</button>
-                  <button type="submit" class="base_botao btn_blue">CONFIRMAR</button>
+                  <button type="reset" class="base_botao btn_red">
+                    <img src="../../image/geral/botoes/x_icon_branco.svg">
+                    CANCELAR
+                  </button>
+
+                  <button type="submit" class="base_botao btn_blue">
+                    <img src="../../image/geral/botoes/v_icon_branco.svg">
+                    CONFIRMAR
+                  </button>
                 </div>
               </form>
             </div>
@@ -97,7 +105,7 @@
               <div class="relatorio_vendas_subtitulo_generico">
                 <div class="relatorio_vendas_linha_vertical"></div>
                 <div class="relatorio_vendas_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/vendedor/relatorio_vendas/estatisticas.svg" />
                   <h2 class="font_subtitulo font_celadon">Estatísticas</p>
                 </div>
               </div>
@@ -223,6 +231,9 @@
       </div>
     </div>
   </main>
+  <?php 
+    include_once('../../pages/geral/footer.php');
+  ?>
 </body>
 
 </html>

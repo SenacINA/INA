@@ -21,7 +21,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_pedidos_header_holder">
         <div class="gerenciar_pedidos_text_titulo">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <img src="../../image/vendedor/gerenciar_pedidos/gerenciar_pedido.svg" alt="">
           <h1 class="gerenciar_pedidos_header_holder font_titulo">GERENCIAR PEDIDOS</h1>
         </div>
         <hr class="gerenciar_pedidos_linha_sublinhado">
@@ -34,7 +34,7 @@
               <div class="gerenciar_pedidos_subtitulo_generico">
                 <div class="gerenciar_pedidos_linha_vertical"></div>
                 <div class="gerenciar_pedidos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/vendedor/gerenciar_pedidos/pesquisar_pedido.svg" />
                   <h2 class="font_subtitulo font_celadon">Pesquisar Pedidos</p>
                 </div>
               </div>
@@ -47,8 +47,8 @@
                   <div class="gerenciar_pedidos_input_status">
                     <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
                     <select name="select_cod" class="gerenciar_pedidos_select_status base_input">
-                      <option value="Entregue">Entregue</option>
-                      <option value="Em transporte">Em transporte</option>
+                      <option value="Entregue">Pago</option>
+                      <option value="Em transporte">Pendente</option>
                     </select>
                   </div>
                   <div class="gerenciar_pedidos_input_mes">
@@ -88,8 +88,15 @@
                   </div>
                 </div>
                 <div class="gerenciar_pedidos_holder_botao">
-                  <button type="reset" class="base_botao btn_red">CANCELAR</button>
-                  <button type="submit" class="base_botao btn_blue">CONFIRMAR</button>
+                  <button type="reset" class="base_botao btn_red">
+                    <img src="../../image/geral/botoes/x_icon_branco.svg">
+                    CANCELAR
+                  </button>
+
+                  <button type="submit" class="base_botao btn_blue">
+                    <img src="../../image/geral/botoes/v_icon_branco.svg">
+                    CONFIRMAR
+                  </button>
                 </div>
               </form>
             </div>
@@ -97,7 +104,7 @@
               <div class="gerenciar_pedidos_subtitulo_generico">
                 <div class="gerenciar_pedidos_linha_vertical"></div>
                 <div class="gerenciar_pedidos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/vendedor/gerenciar_pedidos/estatisticas.svg" />
                   <h2 class="font_subtitulo font_celadon">Estatísticas</p>
                 </div>
               </div>
@@ -223,6 +230,9 @@
       </div>
     </div>
   </main>
+  <?php 
+      include_once('../../pages/geral/footer.php');
+  ?>
 </body>
 
 </html>

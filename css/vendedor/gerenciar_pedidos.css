@@ -27,6 +27,11 @@
   width: 100%;
   display: flex;
   gap: 16px;
+
+  & img {
+    width: 32px;
+    height: 100%;
+  }
 }
 
 .base_icon{
@@ -58,6 +63,7 @@
 
   width: 100%;
   margin-top: 16px;
+
 }
 
 .gerenciar_pedidos_text_titulo,
@@ -69,7 +75,7 @@
 .gerenciar_pedidos_text_titulo img,
 .gerenciar_pedidos_header_title img {
   align-self: center;
-  width: 28px;
+  width: 32px;
   height: auto;
   margin-right: 8px;
 }
@@ -257,6 +263,11 @@
     font-size: 1.5rem;
   }
 
+  .gerenciar_pedidos_text_titulo {
+    position: absolute;
+    top: -65px;
+  }
+
   .gerenciar_pedidos_estatistica_holder{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -297,7 +308,6 @@
   }
 
   .gerenciar_pedidor_firula_holder{
-    background-color: transparent;
     gap: 16px;
     padding: 0;
   }

@@ -104,9 +104,9 @@
                 </div>
             </div>
         </div>
-        <footer class="footer_carrinho">
-            <img src="../../image/cliente/footer/img_footer_placeholder.png" width="100%" height="100%">
-        </footer>
+        <?php 
+            include_once('../../pages/geral/footer.php');
+        ?>
     </div>
 </body>
 
