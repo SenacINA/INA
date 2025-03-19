@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../../js/geral/base.js"></script>
 </head>
 <body>
     <!-- fazer responsividade -->
@@ -38,8 +39,8 @@
         </div>
 
         <div class="grid_scroll">
-            <div class="icon1_scroll">
-                <img src="../../image/cliente/produto/icon_seta.png" alt="">
+            <div class="icon_scroll">
+                <img src="../../image/cliente/produto/icon_seta.svg" alt="">
             </div>
 
             <div class="images_scroll">
@@ -49,8 +50,8 @@
                 <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
             </div>
 
-            <div class="icon2_scroll">
-                <img src="../../image/cliente/produto/icon_seta.png" alt="">
+            <div class="icon_scroll foward">
+                <img src="../../image/cliente/produto/icon_seta.svg" alt="">
             </div>
         </div>
 
@@ -63,37 +64,44 @@
 
         <div class="grid_produto_info_bg">
             <div class="grid_produto_info">
-                <div class="produto_info_nome">
-                    <h1>CADEIRA GAMER THRONE - RGB</h1>
-                </div>
-                
-
-                <div class="produto_info_text">
-                    <h2>Vendido e entregue por: <a href="">THUNDER GAMES</a> </h2>
-                    <h3>Em estoque</h3>
-                </div>
-                <div class="grid_produto_info_valor">
-                    <div class="produto_info_valor">
-                        <h2>R$2000,00</h2>
-                        <h3>30% OFF</h3>
-                        <h1>R$1400,00</h1>
+                <div>
+                    <div class="produto_info_nome">
+                        <h1>CADEIRA GAMER THRONE - RGB</h1>
+                    </div>
+                    <div class="produto_info_text">
+                        <h2>Vendido e entregue por: <a href=""><b>THUNDER GAMES</b></a> </h2>
+                        <h3>Em estoque</h3>
                     </div>
                 </div>
-                <div class="produto_info_text2">
-                    <h1>À vista no PIX com até 10% OFF </h1>
-                    <h2>R$ 1400,00 Em até 10x de R$ 140,00 sem juros no cartão Ou em 1x no cartão com até 5% OFF</h2>
+                <div>
+                    <div class="grid_produto_info_valor">
+                        <div class="produto_info_valor">
+                            <h2>R$2000,00</h2>
+                            <div class='produto_bandeira'>
+                                <h3>30%<br>OFF</h3>
+                            </div>
+                            <h1>R$1400,00</h1>
+                        </div>
+                    </div>
+                    <div class="produto_info_text2">
+                        <h2>À vista no PIX com até 10% OFF
+                            <b>R$ 1400,00</b>
+                            Em até 10x de
+                            <b>R$ 140,00</b>
+                            sem juros no cartão Ou em 1x no cartão com até 5% OFF
+                        </h2>
+                    </div>
                 </div>
+                
+                
 
-                <div class="grid_produto_info_botton">
-                    <button class="comprar"><img src="../../image//geral/cesta_botao.svg" alt="">COMPRAR</button>
-                    <button class="comprar_2"><img src="../../image/geral/add_botao_azul.svg" alt="">COMPRAR</button>
+                <div class="grid_produto_info_button">
+                    <button class="base_botao btn_blue"><img src="../../image//geral/cesta_botao.svg" alt="">COMPRAR</button>
+                    <button class="base_botao btn_outline_blue"><img src="../../image/geral/add_botao_azul.svg" alt="">COMPRAR</button>
                 </div>
             </div>
         </div>
 
-        <div class="descricao_produto_item1">
-            <h1>Descrição do Produto</h1>
-        </div>
 
         <div class="grid_consultar_fetre_cupom">
             <div class="consultar_frete">
