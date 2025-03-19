@@ -1,6 +1,7 @@
 <!-- PROBLEMA NA RESPONSIVIDADE -->
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,16 +14,21 @@
   <link rel="stylesheet" href="../../css/style.css">
   <script src="../../js/geral/base.js"></script>
 </head>
+
 <body>
   <!-- fazer responsividade -->
 
   <?php
-    include_once('../../pages/geral/navbar.php');
+  include_once('../../pages/geral/navbar.php');
   ?>
 
   <div class="cadastro_vendedor_2_grid_bg">
-    <div class="cadastro_vendedor_2_titulo">
-      <h1>INFORMAÇÕES DA EMPRESA</h1>
+    <div class="cadastro_vendedor2_titulo">
+      <div class="cadastro_vendedor2_titulo_img">
+        <img src="../../image/vendedor/cadastro_vendedor_1/cadastro_icon.png" alt="">
+        <h1>CADASTRO DE VENDEDOR</h1>
+      </div>
+      <hr>
     </div>
     <div class="cadastro_vendedor_2_grid_conteudo">
       <div class="cadastro_vendedor_2_grid_conteudo_1">
@@ -104,11 +110,11 @@
         <!-- Categoria de Produtos -->
         <label for="categoria_produtos">Categoria de Produtos</label> <br>
         <select name="categoria_produtos" id="categoria_produtos" class="base_input">
-        <option value="opc1">Opção 1</option>
-        <option value="opc2">Opção 2</option>
-        <option value="opc3">Opção 3</option>
-        <option value="opc4">Opção 4</option>
-        <option value="opc5">Opção 5</option>
+          <option value="opc1">Opção 1</option>
+          <option value="opc2">Opção 2</option>
+          <option value="opc3">Opção 3</option>
+          <option value="opc4">Opção 4</option>
+          <option value="opc5">Opção 5</option>
 
         </select>
         <br>
@@ -131,11 +137,12 @@
       </div>
     </div>
     <div class="cadastro_vendedor_2_botao" onclick="pag('vendedor/perfil_vendedor')">
+      <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg">
       <h1>Finalizar Cadastro</h1>
     </div>
   </div>
-  <?php 
-      include_once('../../pages/geral/footer.php');
+  <?php
+  include_once('../../pages/geral/footer.php');
   ?>
 </body>
 

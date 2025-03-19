@@ -55,7 +55,7 @@
 
         <div class="cadastro_vendedor1_botao_salvar">
             <button class="cadastro_vendedor1_salvar">
-                <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg" alt="">
+                <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg">
                 <label>CONTINUAR</label>
             </button>
         </div>
