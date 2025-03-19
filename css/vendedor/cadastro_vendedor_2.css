@@ -214,17 +214,16 @@ margin-right: 8px;
 
 @media (max-width: 1024px) {
   .cadastro_vendedor2_titulo {
-    position: absolute;
-    display: flex;
-    justify-content: start;
-    top: -65px;
-    left: 16px;
+    margin-top: 16px;
+  }
+
+  .cadastro_vendedor2_titulo hr {
     width: 95%;
   }
 
   .cadastro_vendedor_2_grid_bg {
     justify-self: center;
-    width: 95%;
+    width: 90%;
     height: 780px;
   }
 
@@ -237,18 +236,33 @@ margin-right: 8px;
     margin: 0%;
   }
 
-  .cadastro_vendedor2_titulo hr {
-    display: none
-  }
-
   .cadastro_vendedor_2_grid_conteudo_1,
   .cadastro_vendedor_2_grid_conteudo_2 {
-    width: 96%;
+    width: 90%;
     margin-top: 3%;
+  }
+
+  .cadastro_vendedor_2_botao_finalizar {
+    justify-self: center;
+    justify-content: center;
+    right: auto;
   }
 }
 
 @media (max-width: 768px) {
+  .cadastro_vendedor2_titulo {
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    top: -65px;
+    left: 16px;
+    width: 95%;
+  }
+
+  .cadastro_vendedor2_titulo hr {
+    display: none
+  }
+
   .cadastro_vendedor_2_grid_bg {
     justify-self: center;
     width: 95%;
