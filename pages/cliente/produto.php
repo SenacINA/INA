@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="images_scroll">
-                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img class='imagem_selecionada' src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                     <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                     <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                     <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
@@ -110,7 +110,7 @@
             </div>
 
 
-            <div class="grid_consultar_fetre_cupom">
+            <div class="grid_consultar_frete_cupom">
                 <div class="consultar_frete">
                     <h1>CONSULTAR FRETE</h1>
                     <div class="consultar_input">

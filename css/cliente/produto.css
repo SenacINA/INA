@@ -37,7 +37,7 @@ body {
   grid-row: 3;
 }
 
-.grid_consultar_fetre_cupom {
+.grid_consultar_frete_cupom {
   grid-column: 2;
   grid-row: 3;
 }
@@ -208,8 +208,9 @@ body {
 }
 
 .produto_image img {
-  width: 390px;
-  height: 366px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
 }
 
 .ultra_blue_produto_image {
@@ -502,7 +503,7 @@ body {
 }
 
 /* start consultar_fetre_cupom */
-.grid_consultar_fetre_cupom {
+.grid_consultar_frete_cupom {
   display: flex;
   justify-content: flex-end;
   justify-self: center;
@@ -1002,8 +1003,76 @@ body {
     }
   }
 
-  .grid_consultar_fetre_cupom {
+  .grid_consultar_frete_cupom {
     max-width: none;
   }
+
+  .icon_scroll {
+    display: none;
+    visibility: hidden;
+  }
   
+  .grid_scroll {
+    width: 100%;
+  }
+
+
+  .images_scroll {
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+    align-items: center;
+    display: flex;
+
+    img {
+      filter: brightness(0);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: none;
+  }
+
+  .imagem_selecionada {
+      width: 32px !important;
+      height: 32px !important;
+      
+      img {
+          width: 32px !important;
+          height: 32px !important;
+          visibility: visible;
+      }
+    }
+    
+  }
+
+}
+
+@media (max-width: 510px) {
+  .produto_img_vendedor {
+    width: 100%;
+  }
+
+  .grid_nome_vendedor {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .grid_produto {
+    padding-top: 96px;
+  }
+
+  .avaliacao_vendedor {
+    padding: 0;
+    border: none;
+    border-top: 2px black solid;
+    width: 100%;
+    padding-top: 16px;
+  }
+}
+
+@media (max-width: 425px) {
+  .grid_consultar_frete_cupom {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
