@@ -24,6 +24,8 @@
 .relatorio_vendedor_text_titulo_1 {
   display: flex;
   justify-content: center;
+
+  margin-top: 16px;
 }
 
 .relatorio_vendedor_text_titulo_2 {

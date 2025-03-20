@@ -329,4 +329,8 @@
     .gerenciar_produtos_holder_botao{
       justify-content: center;
     }
+
+    .base_botao {
+      width: 100%;
+    }
   }
