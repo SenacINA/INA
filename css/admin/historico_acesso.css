@@ -1,11 +1,11 @@
-.gerenciar_pedidos_body_container {
+.historico_acesso_body_container {
   padding: 0px 48px 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.gerenciar_pedidos_body_holder {
+.historico_acesso_body_holder {
   border-radius: 10px;
 }
 
@@ -17,13 +17,13 @@
   padding: 32px;
 }
 
-.gerenciar_pedidos_navbar_principal {
+.historico_acesso_navbar_principal {
   background-color: #fff;
   width: 100%;
   height: 67px;
 }
 
-.gerenciar_pedidos_subtitulo_generico{
+.historico_acesso_subtitulo_generico{
   width: 100%;
   display: flex;
   gap: 16px;
@@ -33,34 +33,34 @@
   height: 32px;
 }
 
-.gerenciar_pedidos_linha_vertical{
+.historico_acesso_linha_vertical{
   width: 8px;
   height: 48px;
   background-color: var(--carolina);
   border-radius: 10px;
 }
 
-.gerenciar_pedidos_subtitle_holder{
+.historico_acesso_subtitle_holder{
   display: flex;
   gap: 8px;
   align-items: center;
 }
 
-.gerenciar_pedidos_header_holder{
+.historico_acesso_header_holder{
   width: 100%;
 }
 
-.gerenciar_pedidos_header_title {
+.historico_acesso_header_title {
   display: flex;
   justify-content: center;
   gap: 4px;
 }
 
-.gerenciar_pedidos_text_header {
+.historico_acesso_text_header {
   color: #255e7e;
 }
 
-.gerenciar_pedidos_quadrado_container {
+.historico_acesso_quadrado_container {
   width: 100%;
   height: fit-content;
   display: grid;
@@ -69,40 +69,40 @@
   gap: 10%;
 }
 
-.gerenciar_pedidos_main_content {
+.historico_acesso_main_content {
   padding: 32px;
 }
 
-.gerenciar_pedidos_pesquisar_pedidos {
+.historico_acesso_pesquisar_pedidos {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
 }
 
-.gerenciar_pedidos_form_cliente {
+.historico_acesso_form_cliente {
   display: flex;
   flex-direction: column;
 }
 
-.gerenciar_pedidos_input_ano {
+.historico_acesso_input_ano {
   display: flex;
   flex-direction: column;
 }
 
-.gerenciar_pedidos_input_status {
+.historico_acesso_input_status {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.gerenciar_pedidos_linha_sublinhado {
+.historico_acesso_linha_sublinhado {
   width: 95%;
   height: 5px;
   background-color: #2888b1;
   border-radius: 20px;
 }
 
-.gerenciar_pedidos_forms_pesquisa_pedidos {
+.historico_acesso_forms_pesquisa_pedidos {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -110,18 +110,18 @@
   margin: 16px 0 0;
 }
 
-.gerenciar_pedidos_holder_botao {
+.historico_acesso_holder_botao {
   display: flex;
   justify-content: flex-end;
   gap: 16px;
 }
 
-.gerenciar_pedidos_input_ano,
-.gerenciar_pedidos_input_mes{
+.historico_acesso_input_ano,
+.historico_acesso_input_mes{
   width: 100%;
 }
 
-.gerenciar_pedidos_inputs_esquerda {
+.historico_acesso_inputs_esquerda {
   display: flex;
   gap: 8px;
 
@@ -130,38 +130,38 @@
   }
 }
 
-.gerenciar_pedidos_select_status {
+.historico_acesso_select_status {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.gerenciar_pedidos_mes_select {
+.historico_acesso_mes_select {
   display: flex;
   flex-direction: column;
   width: fit-content;
 }
 
-.gerenciar_pedidos_ano_select {
+.historico_acesso_ano_select {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.gerenciar_pedidos_estatistica_holder {
+.historico_acesso_estatistica_holder {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 4px;
 }
 
-.gerenciar_pedidos_estatisticas {
+.historico_acesso_estatisticas {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.gerenciar_pedidos_card {
+.historico_acesso_card {
   background: var(--branco_gelo);
   padding: 8px;
   display: flex;
@@ -171,23 +171,23 @@
   border-radius: 5px;
 }
 
-.gerenciar_pedidos_titulo {
+.historico_acesso_titulo {
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
 }
 
-.gerenciar_pedidos_estatistica_descricao {
+.historico_acesso_estatistica_descricao {
   font-size: 1rem;
   font-weight: 300;
 }
 
-.gerenciar_pedidos_table{
+.historico_acesso_table{
   display: flex;
   flex-direction: column;
 }
 
-.gerenciar_pedidos_table_filtro{
+.historico_acesso_table_filtro{
   display: flex;
   width: fit-content;
   align-items: center;
@@ -206,23 +206,23 @@
   }
 }
 
-.gerenciar_pedidos_filtro_titulo{
+.historico_acesso_filtro_titulo{
   color: #fff;
 }
 
 /**Individual para cada tabela */
-.gerenciar_pedidos_table_col-1,
-.gerenciar_pedidos_table_col-4{
+.historico_acesso_table_col-1,
+.historico_acesso_table_col-4{
   width: 4%;
 }
-.gerenciar_pedidos_table_col-3,
-.gerenciar_pedidos_table_col-6{
+.historico_acesso_table_col-3,
+.historico_acesso_table_col-6{
   width: 8%;
 }
 
-.gerenciar_pedidos_table_col-2,
-.gerenciar_pedidos_table_col-5,
-.gerenciar_pedidos_table_col-7{
+.historico_acesso_table_col-2,
+.historico_acesso_table_col-5,
+.historico_acesso_table_col-7{
   width: 20%;
 }
 
@@ -256,35 +256,35 @@
     font-size: 1.5rem;
   }
 
-  .gerenciar_pedidos_estatistica_holder{
+  .historico_acesso_estatistica_holder{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
 
-  .gerenciar_pedidos_titulo {
+  .historico_acesso_titulo {
     font-size: 1rem;
   }
   
-  .gerenciar_pedidos_estatistica_descricao {
+  .historico_acesso_estatistica_descricao {
     font-size: 0.75rem;
   }
-  .gerenciar_pedidos_quadrado_container {
+  .historico_acesso_quadrado_container {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .gerenciar_pedidos_body_container {
+  .historico_acesso_body_container {
     padding: 0px 16px 16px;
     gap: 8px;
   }
 
-  .gerenciar_pedidos_body_holder {
+  .historico_acesso_body_holder {
     background-color: #EFF3F5;
     padding: 8px;
   }
 
-  .gerenciar_pedidos_main_content {
+  .historico_acesso_main_content {
     padding: 8px;
   }
 
@@ -292,7 +292,7 @@
     min-width: 56px;
   }
 
-  .gerenciar_pedidos_linha_sublinhado{
+  .historico_acesso_linha_sublinhado{
     display: none;
   }
 
@@ -302,32 +302,22 @@
     padding: 0;
   }
 
-  .gerenciar_pedidos_header_title{
+  .historico_acesso_header_title{
     justify-content: flex-start;
   }
 
-  .gerenciar_pedidos_input_ano,
-  .gerenciar_pedidos_input_mes{
+  .historico_acesso_input_ano,
+  .historico_acesso_input_mes{
     width: 100%;
   }
 
-  .gerenciar_pedidos_mes_select,
-  .gerenciar_pedidos_select_status,
-  .gerenciar_pedidos_ano_select{
+  .historico_acesso_mes_select,
+  .historico_acesso_select_status,
+  .historico_acesso_ano_select{
     width: 100%;
   }
 
-  .gerenciar_pedidos_holder_botao{
+  .historico_acesso_holder_botao{
     justify-content: center;
-  }
-  .historico_acesso_info_user_item label{
-    display: flex;
-    color: #EFF3F5;
-    background-color: #1B98E0;
-    width: 180px;
-    align-items: center;
-    padding: 0 8px;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
   }
 }

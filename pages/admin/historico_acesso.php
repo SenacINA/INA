@@ -18,53 +18,53 @@
   <?php
     include_once('../../pages/geral/navbar.php');
     ?>
-  <main class="gerenciar_pedidos_body_container">
+  <main class="historico_acesso_body_container">
     <div class="gerenciar_pedidor_firula_holder">
-      <div class="gerenciar_pedidos_header_holder">
-        <div class="gerenciar_pedidos_header_title">
-          <img src="../../image/admin/histórico_acesso/icone_tempo.svg" />
-          <h1 class="gerenciar_pedidos_text_header font_titulo">HISTÓRICO DE ACESSO</h1>
+      <div class="historico_acesso_header_holder">
+        <div class="historico_acesso_header_title">
+          <img src="../../image/admin/historico_acesso/icone_tempo.svg" />
+          <h1 class="historico_acesso_text_header font_titulo">HISTÓRICO DE ACESSO</h1>
         </div>
-        <div class="gerenciar_pedidos_linha_sublinhado"></div>
+        <div class="historico_acesso_linha_sublinhado"></div>
       </div>
-      <div class="gerenciar_pedidos_body_holder ">
-        <div class="gerenciar_pedidos_main_content">
-          <div class="gerenciar_pedidos_quadrado_container">
-            <div class="gerenciar_pedidos_pesquisar_pedidos">
-              <div class="gerenciar_pedidos_subtitulo_generico">
-                <div class="gerenciar_pedidos_linha_vertical"></div>
-                <div class="gerenciar_pedidos_subtitle_holder">
+      <div class="historico_acesso_body_holder ">
+        <div class="historico_acesso_main_content">
+          <div class="historico_acesso_quadrado_container">
+            <div class="historico_acesso_pesquisar_pedidos">
+              <div class="historico_acesso_subtitulo_generico">
+                <div class="historico_acesso_linha_vertical"></div>
+                <div class="historico_acesso_subtitle_holder">
                   <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
                   <h2 class="font_subtitulo font_celadon">Relátório Geral</p>
                 </div>
               </div>
-              <form action="" method="post" class="gerenciar_pedidos_forms_pesquisa_pedidos">
-                <div class="gerenciar_pedidos_form_cliente">
+              <form action="" method="post" class="historico_acesso_forms_pesquisa_pedidos">
+                <div class="historico_acesso_form_cliente">
                   <label class="font_subtitulo font_celadon">IP Do Usuário</label>
                   <input type="text" spellcheck="false" class="base_input">
                 </div>
-                <div class="gerenciar_pedidos_inputs_esquerda">
-                  <div class="gerenciar_pedidos_input_status">
+                <div class="historico_acesso_inputs_esquerda">
+                  <div class="historico_acesso_input_status">
                     <label for="select_cod" class="font_subtitulo font_celadon">Horário</label>
-                    <input class="gerenciar_pedidos_select_status base_input" type="time">
+                    <input class="historico_acesso_select_status base_input" type="time">
                   </div>
                   
-                  <div class="gerenciar_pedidos_input_ano">
+                  <div class="historico_acesso_input_ano">
                     <label for="ano" class="font_subtitulo font_celadon">Data</label>
-                    <input class="gerenciar_pedidos_ano_select base_input" type="date">
+                    <input class="historico_acesso_ano_select base_input" type="date">
                   </div>
                 </div>
-                <div class="gerenciar_pedidos_holder_botao">
+                <div class="historico_acesso_holder_botao">
                   <button type="submit" class="base_botao btn_blue historico_acesso_base_botao">CONFIRMAR</button>
                   <button type="reset" class="base_botao btn_red historico_acesso_base_botao">CANCELAR</button>
                 </div>
               </form>
             </div>
-            <div class="gerenciar_pedidos_estatisticas">
-              <div class="gerenciar_pedidos_subtitulo_generico">
-                <div class="gerenciar_pedidos_linha_vertical"></div>
-                <div class="gerenciar_pedidos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+            <div class="historico_acesso_estatisticas">
+              <div class="historico_acesso_subtitulo_generico">
+                <div class="historico_acesso_linha_vertical"></div>
+                <div class="historico_acesso_subtitle_holder">
+                  <img class="base_icon" src="../../image/admin/historico_acesso/info_user.svg" />
                   <h2 class="font_subtitulo font_celadon">Informações de Usuário</p>
                 </div>
               </div>
@@ -96,13 +96,13 @@
         </div>
       </div>
     </div>
-    <div class="gerenciar_pedidos_header_title">
-      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg" />
-      <h1 class="gerenciar_pedidos_text_header font_titulo">HISTÓRICO DE ACESSO</h1>
+    <div class="historico_acesso_header_title">
+      <img src="../../image/admin/historico_acesso/historico.svg" />
+      <h1 class="historico_acesso_text_header font_titulo">HISTÓRICO DE ACESSO</h1>
     </div>
-    <div class="gerenciar_pedidos_table">
-      <div class="gerenciar_pedidos_table_filtro bg_carolina">
-        <p class="gerenciar_pedidos_filtro_titulo font_subtitulo">Organizar por:</p>
+    <div class="historico_acesso_table">
+      <div class="historico_acesso_table_filtro bg_carolina">
+        <p class="historico_acesso_filtro_titulo font_subtitulo">Organizar por:</p>
         <select>
           <option value="" selected disable style="display: none;"></option>
           <option value="">IP</option>
@@ -114,11 +114,11 @@
       <div class="base_tabela">
         <table>
           <colgroup>
-            <col class="gerenciar_pedidos_table_col-1">
-            <col class="gerenciar_pedidos_table_col-2">
-            <col class="gerenciar_pedidos_table_col-3">
-            <col class="gerenciar_pedidos_table_col-4">
-            <col class="gerenciar_pedidos_table_col-5">
+            <col class="historico_acesso_table_col-1">
+            <col class="historico_acesso_table_col-2">
+            <col class="historico_acesso_table_col-3">
+            <col class="historico_acesso_table_col-4">
+            <col class="historico_acesso_table_col-5">
    
           </colgroup>
           <thead>
