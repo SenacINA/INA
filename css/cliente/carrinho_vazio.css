@@ -319,6 +319,8 @@
 .quantity-controls {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  min-width: 100px;
 }
 
 .quantity-btn {
@@ -340,6 +342,7 @@
   flex-direction: column;
   align-items: center;
   text-align: left;
+  min-width: 150px;
 }
 
 .carrinho_vazio_self_left{

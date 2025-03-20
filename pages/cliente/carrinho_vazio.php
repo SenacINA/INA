@@ -148,7 +148,7 @@ function exibirProdutos()
                       <!-- Price -->
                       <div class="price-container">
                         <p id="carrinhoVazioPrecoTotal" class="font_base font_bold font_cinza carrinho_vazio_self_left">R$1400,00</p>
-                        <p class="font_descricao font_cinza carrinho_vazio_self_left">R$1400,00 unid.</p>
+                        <p id="carrinhoVazioPrecoBase" class="font_descricao font_cinza carrinho_vazio_self_left">R$1400,00 unid.</p>
                         <button class="remove-btn">
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="3 6 5 6 21 6"></polyline>
