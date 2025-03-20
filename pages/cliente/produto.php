@@ -20,110 +20,119 @@
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
-    <div class="grid_produto">
-        <div class="grid_nome_vendedor">
-            <div class="imagem_nome_vendedor">
-                <img src="../../image/cliente/produto/user_thunder_gamers.png" alt="">
-            </div>
-            <div class="nome_vendedor">
-                <h1>THUNDER GAMERS</h1>
-                <img src="../../image/cliente/produto/ponteiro.png" alt="">
-                <h2>São Paulo, São Paulo</h2>
-            </div>
-            <div class="avaliacao_vendedor">
-                <h1>AVALIAÇÃO GERAL</h1>
-                <img src="../../image/cliente/produto/estrelas.png" alt="">
-                <h2>4.5</h2>
-                <h3>(156mil+)</h3>
-            </div>
-        </div>
-
-        <div class="grid_scroll">
-            <div class="icon_scroll">
-                <img src="../../image/cliente/produto/icon_seta.svg" alt="">
-            </div>
-
-            <div class="images_scroll">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-            </div>
-
-            <div class="icon_scroll foward">
-                <img src="../../image/cliente/produto/icon_seta.svg" alt="">
-            </div>
-        </div>
-
-        <div class="grid_produto_image">
-            <div class="produto_image">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-            </div>
-            
-        </div>
-
-        <div class="grid_produto_info_bg">
-            <div class="grid_produto_info">
-                <div>
-                    <div class="produto_info_nome">
-                        <h1>CADEIRA GAMER THRONE - RGB</h1>
+    <div class='produto_main_container'>
+        <div class="grid_produto">
+            <div class="grid_nome_vendedor">
+                <div class='produto_img_vendedor'>
+                    <div class="imagem_nome_vendedor">
+                        <img src="../../image/cliente/produto/user_thunder_gamers.png" alt="">
                     </div>
-                    <div class="produto_info_text">
-                        <h2>Vendido e entregue por: <a href=""><b>THUNDER GAMES</b></a> </h2>
-                        <h3>Em estoque</h3>
+                    <div class="nome_vendedor">
+                        <h1>THUNDER GAMERS</h1>
+                        <h2>
+                            <img src="../../image/cliente/produto/local_icon.svg" alt="">
+                            São Paulo, São Paulo</h2>
                     </div>
                 </div>
-                <div>
-                    <div class="grid_produto_info_valor">
-                        <div class="produto_info_valor">
-                            <h2>R$2000,00</h2>
-                            <div class='produto_bandeira'>
-                                <h3>30%<br>OFF</h3>
-                            </div>
-                            <h1>R$1400,00</h1>
+                
+                <div class="avaliacao_vendedor">
+                    <h1>AVALIAÇÃO GERAL</h1>
+                    <div class='vendedor_rating'>
+                        <h2 class='nome_vendedor_estrela'>★★★★★</h2>
+                        <h2>4.5</h2>
+                    </div>
+                    <h3>(156mil+)</h3>
+                </div>
+            </div>
+
+            <div class="grid_scroll">
+                <div class="icon_scroll">
+                    <img src="../../image/cliente/produto/icon_seta.svg" alt="">
+                </div>
+
+                <div class="images_scroll">
+                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                </div>
+
+                <div class="icon_scroll foward">
+                    <img src="../../image/cliente/produto/icon_seta.svg" alt="">
+                </div>
+            </div>
+
+            <div class="grid_produto_image">
+                <div class="produto_image">
+                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                </div>
+                
+            </div>
+
+            <div class="grid_produto_info_bg">
+                <div class="grid_produto_info">
+                    <div>
+                        <div class="produto_info_nome">
+                            <h1>CADEIRA GAMER THRONE - RGB</h1>
+                        </div>
+                        <div class="produto_info_text">
+                            <h2>Vendido e entregue por: <a href=""><b>THUNDER GAMES</b></a> </h2>
+                            <h3>Em estoque</h3>
                         </div>
                     </div>
-                    <div class="produto_info_text2">
-                        <h2>À vista no PIX com até 10% OFF
-                            <b>R$ 1400,00</b>
-                            Em até 10x de
-                            <b>R$ 140,00</b>
-                            sem juros no cartão Ou em 1x no cartão com até 5% OFF
-                        </h2>
+                    <div class='div_produto_valor'>
+                        <div class="grid_produto_info_valor">
+                            <div class="produto_info_valor">
+                                <h2>R$2000,00</h2>
+                                <div class='produto_bandeira'>
+                                    <h3>30%<br>OFF</h3>
+                                </div>
+                                <h1>R$1400,00</h1>
+                            </div>
+                        </div>
+                        <div class="produto_info_text2">
+                            <h2>À vista no PIX com até 10% OFF
+                                <b>R$ 1400,00</b>
+                                Em até 10x de
+                                <b>R$ 140,00</b>
+                                sem juros no cartão Ou em 1x no cartão com até 5% OFF
+                            </h2>
+                        </div>
+                    </div>
+                    
+                    
+
+                    <div class="grid_produto_info_button">
+                        <button class="base_botao btn_blue"><img src="../../image//geral/cesta_botao.svg" alt="">COMPRAR</button>
+                        <button class="base_botao btn_outline_blue"><img src="../../image/geral/add_botao_azul.svg" alt="">COMPRAR</button>
                     </div>
                 </div>
-                
-                
-
-                <div class="grid_produto_info_button">
-                    <button class="base_botao btn_blue"><img src="../../image//geral/cesta_botao.svg" alt="">COMPRAR</button>
-                    <button class="base_botao btn_outline_blue"><img src="../../image/geral/add_botao_azul.svg" alt="">COMPRAR</button>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="grid_consultar_fetre_cupom">
-            <div class="consultar_frete">
-                <h1>CONSULTAR FRETE</h1>
-                <div class="consultar_buttom">
-                    <input class="base_input" type="text">
-                    <button>Ok</button>
-                </div>
             </div>
 
-            <div class="consultar_cupom">
-                <h1>CUPOM</h1>
-                <div class="consultar_buttom">
-                    <input class="base_input" type="text">
-                    <button>Ok</button>
+
+            <div class="grid_consultar_fetre_cupom">
+                <div class="consultar_frete">
+                    <h1>CONSULTAR FRETE</h1>
+                    <div class="consultar_input">
+                        <input class="base_input" type="text">
+                        <button class='base_botao btn_blue btn_consulta'>Ok</button>
+                    </div>
                 </div>
-                
+
+                <div class="consultar_cupom">
+                    <h1>CUPOM</h1>
+                    <div class="consultar_input">
+                        <input class="base_input" type="text">
+                        <button class='base_botao btn_blue'>Ok</button>
+                    </div>
+                    
+                </div>
             </div>
-        </div>
     </div>
+    </div>
+    
 
-    <div class="retangle1"></div>
+    <!-- <div class="retangle1"></div>
 
     <div class="grid_descricao_produto">
         <div class="descricao_produto_item2">
@@ -219,7 +228,6 @@
             </div>
         </div>
         <div class="separacao_comentario"></div>
-        <!-- Usuário 2 -->
         <div class="grid_comentario_usuario_2">
             <div class="comentario_usuario_2">
                 <div class="grid_user_2">
@@ -262,7 +270,6 @@
             </div>
         </div>
         <div class="separacao_comentario"></div>
-        <!-- Usuário 3 -->
         <div class="grid_comentario_usuario_3">
             <div class="comentario_usuario_3">
                 <div class="grid_user_3">
@@ -304,7 +311,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <?php 
       include_once('../../pages/geral/footer.php');
     ?>
