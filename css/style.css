@@ -946,12 +946,6 @@ select.base_input {
   fill: var(--vermelho);
 }
 
-/* Focus styles for accessibility */
-button:focus,
-a:focus {
-  outline: 2px solid var(--carolina);
-  outline-offset: 2px;
-}
 
 .sr-only {
   position: absolute;
