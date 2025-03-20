@@ -894,7 +894,7 @@ select.base_input {
 .close-button {
   background: none;
   border: none;
-  color: var(--carolina);
+  color: var(--branco);
   font-size: 1.5rem;
   cursor: pointer;
   width: 30px;
