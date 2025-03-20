@@ -28,7 +28,43 @@ body {
   border-radius: 10px;
 }
 
+.title_mobile {
+  display: none;
+}
+
+.title {
+  grid-column: 1/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 1%;
+}
+
+.title_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1%;
+  width: 100%;
+}
+
+.title_main_text {
+  text-transform: uppercase;
+  color: var(--sappire);
+}
+
+.linha_title {
+  width: 95%;
+  height: 5px;
+  border-radius: 20px;
+  background-color: #2888b1;
+  border: 0;
+}
+
 .mini_perfil_vendedor {
+  grid-column: 1;
+  grid-row: 2;
   position: relative;
   left: 7%;
   top: 8%;
@@ -247,7 +283,7 @@ body {
   flex-direction: column;
   justify-content: center;
   grid-column: 2;
-  grid-row: 1/2;
+  grid-row: 2/3;
   margin-top: 10%;
   margin-left: 5%;
   row-gap: 25px;
@@ -439,7 +475,7 @@ body {
 
 .edit_foto {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 3;
   display: grid;
   grid-template-columns: max-content max-content;
   grid-template-rows: max-content;
@@ -521,7 +557,7 @@ body {
 .destaques {
   display: flex;
   flex-direction: column;
-  grid-row: 3;
+  grid-row: 4;
   grid-column: 1/3;
   margin-left: 4%;
   row-gap: 20px;
@@ -717,6 +753,21 @@ body {
 }
 
 @media (max-width: 1024px) {
+  body {
+    margin-top: 150px !important;
+  }
+  .title {
+    display: none;
+  }
+  .title_mobile {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 25px;
+  }
+  .title_text {
+    align-items: center;
+    justify-content: left;
+  }
   .quadrado_vendedor {
     display: flex;
     flex-direction: column;
@@ -790,6 +841,10 @@ body {
   body {
     margin-top: 150px !important;
   }
+  .title_mobile {
+    margin-left: 20px;
+    margin-bottom: 25px;
+  }
   .pfp_vendedor {
     left: 0;
   }
@@ -846,6 +901,9 @@ body {
 @media (max-width: 425px) {
   body {
     margin-top: 150px !important;
+  }
+  .title {
+    margin-bottom: 5px;
   }
   .mini_perfil_vendedor {
     grid-template-rows: repeat(5, min-content);

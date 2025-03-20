@@ -43,13 +43,24 @@ function gerarProdutoCards($quantidade)
 </head>
 
 <body>
-  <!-- fazer responsividade -->
-  <!-- arruamar o nome das class -->
 
   <?php
   include_once('../../pages/geral/navbar.php');
   ?>
+  <div class="title_mobile">
+    <div class="title_text">
+      <img src="../../image/vendedor/editar_perfil/pessoa.svg">
+      <h1 class="font_titulo title_main_text">Editar perfil</h1>
+    </div>
+  </div>
   <main class="quadrado_vendedor">
+    <div class="title">
+      <div class="title_text">
+        <img src="../../image/vendedor/editar_perfil/pessoa.svg">
+        <h1 class="font_titulo title_main_text">Editar perfil</h1>
+      </div>
+      <hr class="linha_title">
+    </div>
     <div class="mini_perfil_vendedor">
       <img src="../../image/vendedor/editar_perfil/banner_vendedor_mini_perfil.png" alt="banner" class="banner_vendedor">
       <img src="../../image/vendedor/editar_perfil/pfp_vendedor.png" alt="pfp_vendedor" class="pfp_vendedor">
