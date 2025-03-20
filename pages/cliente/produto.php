@@ -59,39 +59,15 @@
             <div class="produto_image">
                 <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
             </div>
-            <div class="ultra_blue_produto_image">
-                <div class="ultra_blue_produto_image1">
-                    <img src="../../image/cliente/produto/triangulo_ultra_blue.png" alt="">
-                </div>
-                <div class="ultra_blue_produto_image2">
-                    <img src="../../image/cliente/produto/ultra_blue.png" alt="">
-                </div>
-            </div>
+            
         </div>
 
         <div class="grid_produto_info_bg">
             <div class="grid_produto_info">
                 <div class="produto_info_nome">
                     <h1>CADEIRA GAMER THRONE - RGB</h1>
-                    <h2>INDICADO</h2>
                 </div>
-                <div class="produto_info_time">
-                    <img src="../../image/cliente/produto/ultra_blue_2l.png" alt="">
-                    <h1>TERMINA EM:</h1>
-                    <div class="grid_produto_time">
-                        <h1>12</h1>
-                        <h1>:</h1>
-                        <h1>39</h1>
-                        <h1>:</h1>
-                        <h1>59</h1>
-
-                        <h3>HORAS</h3>
-                        <h3></h3>
-                        <h3>MINUTOS</h3>
-                        <h3></h3>
-                        <h3>SEGUNDOS</h3>
-                    </div>
-                </div>
+                
 
                 <div class="produto_info_text">
                     <h2>Vendido e entregue por: <a href="">THUNDER GAMES</a> </h2>
@@ -100,7 +76,7 @@
                 <div class="grid_produto_info_valor">
                     <div class="produto_info_valor">
                         <h2>R$2000,00</h2>
-                        <h3>43% OFF</h3>
+                        <h3>30% OFF</h3>
                         <h1>R$1400,00</h1>
                     </div>
                 </div>
