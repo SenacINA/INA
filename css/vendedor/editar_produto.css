@@ -1,8 +1,11 @@
 .editar_produto_main {
     display: flex;
     flex-direction: column;
-    background-color: var(--branco_gelo);
-    padding: 48px;
+    
+    background-color: #EFF3F5;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
 
     h2 {
         color: var(--sappire);
