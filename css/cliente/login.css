@@ -173,6 +173,10 @@
     margin-right: 10px;
     cursor: pointer;
   }
+
+  .login_form_content{
+    width: 500px;
+  }
   
   @media (max-width: 768px) {
     .login_botoes {
@@ -184,6 +188,10 @@
     .login_botao_entrar {
       width: 100%;
       max-width: none;
+    }
+
+    .login_form_content{
+      width: 100%;
     }
   
   }
