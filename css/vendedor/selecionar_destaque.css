@@ -1,160 +1,140 @@
-.nav_bar{
-    height: 65px;
-    background-color: darkcyan;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jost", sans-serif;
+    user-select: none;
 }
 
-/* Barra azul */
-.vendedor_selecionar_destaque_barra_azul{
-    height: 190px;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    color: white;
-    margin-left: 120px;
-    margin-right: 120px;
+/* CORPO PRINCIPAL */
+.selecionardestaques_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFF3F5;
+  width: 90%;
+  height: 100%;
+  border-radius: 10px;
+  margin: 80px auto 0;
 }
 
-.display_grid{
-    display: grid;
-}
-
-
-.vendedor_selecionar_destaque_conteudo{
-    grid-template-rows: repeat(auto);
-    margin: 20px;
-}
-/* .vendedor_selecionar_destaque_opcoes{
-    padding: 0 50px;
-} */
-
-.prod{
-    width: 210px;
-    height: 317px;
-    background-color: chocolate;
-    justify-self: center;
-}
-
-.vendedor_selecionar_destaque_conteudo_externo{
-    grid-template-columns: repeat(auto);
-    background-color: #F9F9FC;
-}
-
-.vendedor_selecionar_destaque_grid_produtos{
-    width: fit-content;
-    grid-template-columns: repeat(3, auto);
-    gap: 5%;
-    margin: 100px;
-}
-
-.page_container {
-    background-color: #f5f5f5;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-.highlights_title {
-    text-align: center;
-    padding: 15px;
-    background-color: #fff;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.vendedor_selecionar_destaque_produtos{
+/* Header */
+.selecionardestaques_titulo {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 16px;
+    gap: 8px;
+}
+  
+.selecionardestaques_text_titulo {
+    display: flex;
+    align-items: center;
+}
+
+.selecionardestaques_text_titulo img {
+    width: 28px;
+    height: auto;
+    margin-right: 8px;
+}
+  
+.selecionardestaques_text_titulo h1 {
+    font-weight: 500;
+    color: #255e7e;
+    text-align: center;
+    font-size: 32px;
+}
+  
+.selecionardestaques_linha_titulo {
+    width: 95%;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #2888b1;
+    border: none;
+}
+
+/* CONTAINER */
+
+.selecionardestaques_body_container_botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
-    margin-left: 120px;
-    margin-right: 120px;
-    padding: 16px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.vendedor_selecionar_destaque_titulo{
+    place-items: center;
+    background-color: transparent;
     width: 100%;
-    border-bottom: 2px solid #aaa ;
-    text-align: center;
-    margin-bottom: 16px;
+    height: 100%;
+    border-radius: 10px;
+    margin: 32px auto 0 auto;
+    padding: 24px 8% 24px 8%;
+    gap: 4%;
 }
 
-.vendedor_selecionar_destaque_produto_holder{
+.selecionardestaques_body_container_botoes_base {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.vendedor_selecionar_destaque_cartao_produto {
-    flex: 1;
-    max-width: 250px;
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.product_image {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 200px;
-    object-fit: contain;
-    margin-bottom: 10px;
+    height: 100%;
+    border-radius: 10px;
+    gap: 8px;
+    text-align: center;
+    padding: 16px;
 }
 
-.vendedor_selecionar_destaque_produto_titulo {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.vendedor_selecionar_destaque_preco {
-    color: #e44d26;
+.selecionardestaques_add_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    color: var(--carolina);
+    font-size: 32px;
+    border-radius: 8px;
     font-weight: bold;
-    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.vendedor_selecionar_destaque_tabela_produto {
-    border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    margin-left: 120px;
-    margin-right: 120px;
-    width: auto;
+.selecionardestaques_add_button:hover {
+    background-color: #83BEE0;
+    transform: scale(1.1);
 }
 
-.vendedor_selecionar_destaque_tabela_titulo {
-    background-color: #f8f9fa;
-    color: #333;
-    text-align: left;
-    padding: 12px;
-    font-size: 14px;
-    border-bottom: 2px solid #dee2e6;
+@media (max-width: 1224px) {
+    .selecionardestaques_body_container_botoes {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 24px 2% 24px 2%; /* 2 colunas ao invés de 3 e 1 quebrado */
+    }
 }
 
-.vendedor_selecionar_destaque_tabela_celula {
-    padding: 4px;
-    border-bottom: 1px solid #dee2e6;
-    font-size: 14px;
-    color: #555;
+@media (max-width: 1024px) {
+    .selecionardestaques_body_container_botoes{
+        grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas */
+        padding: 24px 8% 24px 8%;
+    }
 }
 
-.vendedor_selecionar_destaque_tabela_linha:hover {
-    background-color: #f8f9fa;
+@media (max-width: 768px) {
+    .selecionardestaques_body_container_botoes{
+        grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas no mobile */
+        padding: 24px 8% 24px 8%;
+    }
 }
 
-.small_product_image {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-}
+@media (max-width: 500px) {
+    .selecionardestaques_body_container_botoes{
+        grid-template-columns: repeat(1, 1fr); /* Mantém 2 colunas no mobile */
+        padding: 24px 4% 24px 4%;
+        gap: 24px;
+    }
 
-.vendedor_selecionar_destaque_estrelas {
-    color: #ffc107;
-    font-size: 12px;
+    .selecionardestaques_add_button{
+        margin: 80px;
+    }
 }
