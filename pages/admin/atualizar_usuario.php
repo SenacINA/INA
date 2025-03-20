@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body> 
+  <!-- Até 375px -->
+
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>

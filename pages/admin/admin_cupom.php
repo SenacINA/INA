@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+  <!-- Até 375px -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -22,7 +23,7 @@
       <div class="admin_cupom_header">
         <div class="admin_cupom_text_header">
           <img src="../../image/admin/cupom/cupom.svg" alt="">
-          <h1>Gerar Cupom</h1>
+          <h1>GERAR CUPOM</h1>
         </div>
         <hr class="admin_cupom_linha_header">
       </div>
