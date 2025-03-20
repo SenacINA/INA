@@ -116,8 +116,7 @@
   gap: 16px;
 }
 
-.historico_acesso_input_ano,
-.historico_acesso_input_mes{
+.historico_acesso_input_ano{
   width: 100%;
 }
 
@@ -136,50 +135,16 @@
   width: 100%;
 }
 
-.historico_acesso_mes_select {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-}
-
 .historico_acesso_ano_select {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.historico_acesso_estatistica_holder {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 4px;
-}
-
 .historico_acesso_estatisticas {
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.historico_acesso_card {
-  background: var(--branco_gelo);
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-}
-
-.historico_acesso_titulo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.historico_acesso_estatistica_descricao {
-  font-size: 1rem;
-  font-weight: 300;
 }
 
 .historico_acesso_table{
@@ -255,19 +220,7 @@
   .font_titulo{
     font-size: 1.5rem;
   }
-
-  .historico_acesso_estatistica_holder{
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-
-  .historico_acesso_titulo {
-    font-size: 1rem;
-  }
   
-  .historico_acesso_estatistica_descricao {
-    font-size: 0.75rem;
-  }
   .historico_acesso_quadrado_container {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
@@ -306,8 +259,7 @@
     justify-content: flex-start;
   }
 
-  .historico_acesso_input_ano,
-  .historico_acesso_input_mes{
+  .historico_acesso_input_ano{
     width: 100%;
   }
 
