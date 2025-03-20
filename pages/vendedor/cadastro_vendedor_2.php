@@ -1,6 +1,6 @@
+<!-- PROBLEMA NA RESPONSIVIDADE -->
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,9 +134,12 @@
       </div>
     </div>
     <div class="cadastro_vendedor_2_botao" onclick="pag('vendedor/perfil_vendedor')">
-      <h1>Finalizar Cadastro</h1>
+      <h1 onclick="pag('vendedor/perfil_vendedor')">Finalizar Cadastro</h1>
     </div>
   </div>
+  <?php 
+      include_once('../../pages/geral/footer.php');
+  ?>
 </body>
 
 </html>
