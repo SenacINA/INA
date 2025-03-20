@@ -8,11 +8,19 @@
     border-radius: 5px;
 
     h2 {
-        color: var(--sappire);
+        justify-self: center;
+        font-weight: 500;
+        color: #255e7e;
+        text-align: center;
+        font-size: 32px;
     }
 
     h3 {
+        justify-self: center;
+        font-weight: 500;
         color: var(--celadon);
+        text-align: center;
+        font-size: 32px;
     }
 
     h2, h3 {
@@ -58,7 +66,7 @@
     font-size: 32px;
 
     & > svg {
-        height: 32px;
+        height: 28px;
         width: auto;
     }
 
@@ -78,8 +86,9 @@
     align-items: center;
     gap: 8px;
     font-size: 32px;
+    
     svg {
-        height: 32px;
+        height: 28px;
         width: auto;
     }
 

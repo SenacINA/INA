@@ -27,6 +27,7 @@
                   </svg>
                   Editar Produto
                </h2>
+               <hr>
             </div>
             <form action="#" class='editar_produto_form_grid'>
                <div class='editar_produto_form'>

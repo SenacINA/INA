@@ -21,8 +21,8 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_usuario_header_holder">
         <div class="gerenciar_usuario_text_titulo">
-          <img src="../../image/vendedor/gerenciar_usuario/gerenciar_pedido.svg" alt="">
-          <h1 class="gerenciar_usuario_header_holder font_titulo">GERENCIAR USUÁRIO</h1>
+          <img src="../../image/vendedor/gerenciar_pedidos/gerenciar_pedido.svg" alt="">
+          <h1 class="gerenciar_usuario_header_holder font_titulo">GERENCIAR USUÁRIOS</h1>
         </div>
         <hr class="gerenciar_usuario_linha_sublinhado">
       </div>
@@ -34,13 +34,13 @@
               <div class="gerenciar_usuario_subtitulo_generico">
                 <div class="gerenciar_usuario_linha_vertical"></div>
                 <div class="gerenciar_usuario_subtitle_holder">
-                  <img class="base_icon" src="../../image/vendedor/gerenciar_usuario/pesquisar_pedido.svg" />
-                  <h2 class="font_subtitulo font_celadon">Pesquisar Pedidos</p>
+                  <img src="../../image/geral/user_lupa_icon.svg" alt="">
+                  <h2 class="font_subtitulo font_celadon">Pesquisar Usuários</p>
                 </div>
               </div>
               <form action="" method="post" class="gerenciar_usuario_forms_pesquisa_usuario">
                 <div class="gerenciar_usuario_form_cliente">
-                  <label class="font_subtitulo font_celadon">Código Do Produto / Nome Cliente</label>
+                  <label class="font_subtitulo font_celadon">Código Do Usuário / Nome Usuário</label>
                   <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="gerenciar_usuario_inputs_esquerda">
@@ -104,13 +104,13 @@
               <div class="gerenciar_usuario_subtitulo_generico">
                 <div class="gerenciar_usuario_linha_vertical"></div>
                 <div class="gerenciar_usuario_subtitle_holder">
-                  <img class="base_icon" src="../../image/vendedor/gerenciar_usuario/estatisticas.svg" />
-                  <h2 class="font_subtitulo font_celadon">Estatísticas</p>
+                  <img class="base_icon" src="../../image/admin/perfil_admin/perfil_icon.svg" />
+                  <h2 class="font_subtitulo font_celadon">Perfil de Usuário</p>
                 </div>
               </div>
               <div class="gerenciar_usuario_estatistica_holder">
                 <div class="gerenciar_usuario_card">
-                  <img src="../../image/admin/perfil_admin/perfil_admin.svg" alt="">
+                  <img src="../../image/admin/perfil_admin/perfil_admin.svg" alt="" class="gerenciar_usuario_card_img_perfil">
                   <span class="gerenciar_usuario_titulo">Luis Fernando</span>
                   <button type="reset" class="base_botao btn_red">
                     <img src="../../image/geral/botoes/x_icon_branco.svg">
@@ -140,7 +140,7 @@
       </div>
     </div>
     <div class="gerenciar_usuario_header_title">
-      <img src="../../image/vendedor/gerenciar_usuario/pasta_clock.svg"/>
+      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg"/>
       <h1 class="gerenciar_usuario_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_usuario_table">

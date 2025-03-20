@@ -23,15 +23,14 @@
   height: 67px;
 }
 
-.gerenciar_usuario_subtitulo_generico{
+.gerenciar_usuario_subtitulo_generico {
   width: 100%;
   display: flex;
   gap: 16px;
+}
 
-  & img {
-    width: 32px;
-    height: 100%;
-  }
+.gerenciar_usuario_subtitle_holder img {
+  width: 46px;
 }
 
 .base_icon{
@@ -51,8 +50,6 @@
   align-items: center;
 }
 
-
-/* header */
 .gerenciar_usuario_titulo {
   position: relative;
 
@@ -183,7 +180,14 @@
 .gerenciar_usuario_estatistica_holder {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  height: min-content;
   column-gap: 4px;
+}
+
+.gerenciar_usuario_card_img_perfil {
+  width: 150px;
+  height: 150px;
 }
 
 .gerenciar_usuario_card_column_2 {
@@ -282,11 +286,6 @@
     top: -65px;
   }
 
-  .gerenciar_usuario_estatistica_holder{
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-
   .gerenciar_usuario_titulo {
     font-size: 1rem;
   }
@@ -294,12 +293,18 @@
   .gerenciar_usuario_estatistica_descricao {
     font-size: 0.75rem;
   }
+  
   .gerenciar_usuario_quadrado_container {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
+  .gerenciar_usuario_card_img_perfil {
+    width: 130px;
+    height: 130px;
+  }
+  
   .gerenciar_usuario_body_container {
     padding: 0px 16px 16px;
     gap: 8px;
@@ -341,7 +346,11 @@
     width: 100%;
   }
 
-  .gerenciar_usuario_holder_botao{
+  .gerenciar_usuario_holder_botao {
     justify-content: center;
+  }
+
+  .base_botao {
+    width: 100%;
   }
 }
