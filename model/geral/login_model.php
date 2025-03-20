@@ -9,7 +9,7 @@
 
         switch ($login) {
             case 'admin':
-                $_SESSION['user_type'] = "cliente";
+                $_SESSION['user_type'] = "admin";
 
                 header('Location:../../pages/admin/dashboard.php');
                 exit();

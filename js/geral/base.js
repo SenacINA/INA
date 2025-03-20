@@ -91,8 +91,19 @@ document.addEventListener('DOMContentLoaded', () => {
     openModalBtn.addEventListener('click', openModal);
     closeModalBtn.addEventListener('click', closeModal);
     modalContainer.addEventListener('click', handleOutsideClick);
-    logout.addEventListener('click', () => {
-        fetch('../../model/geral/logout_model.php', { method: 'POST' })
+    logout.addEventListener('click', (e) => {
+        const changeble = window.location.href.includes("index") ? "./" : "../../"
+        e.preventDefault()
+        fetch(`${changeble}model/geral/logout_model.php`, { method: 'POST' })
+        .then(response => {
+            if(!response.ok)return
+
+            if(window.location.href.includes("index")){
+                window.location.href = "./index.php"
+                return
+            }
+            window.location.href = "../../index.php"
+        })
         .catch(error => {
             console.error('Error:', error);
         });
