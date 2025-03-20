@@ -39,7 +39,6 @@ function gerarProdutoCards($quantidade)
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
@@ -156,7 +155,11 @@ function gerarProdutoCards($quantidade)
       </div>
       <div class="destaques_container">
         <?php gerarProdutoCards(3); ?>
+        <button class="add">
+          <img src="../../image/geral/add_ico.svg">
+        </button>
       </div>
+      <p class="destaques_num">3 / 5</p>
     </div>
     <div class="botoes">
       <button class="salvar">
