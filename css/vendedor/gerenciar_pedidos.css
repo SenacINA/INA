@@ -330,4 +330,8 @@
   .gerenciar_pedidos_holder_botao{
     justify-content: center;
   }
+
+  .base_botao {
+    width: 100%;
+  }
 }
