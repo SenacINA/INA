@@ -21,7 +21,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="aprovar_vendedor_header_holder">
         <div class="aprovar_vendedor_text_titulo">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <img src="../../image/admin/aprovar_vendedor/vendedor.svg" alt="">
           <h1 class="aprovar_vendedor_header_holder font_titulo">APROVAR VENDEDOR</h1>
         </div>
         <hr class="aprovar_vendedor_linha_sublinhado">
@@ -34,7 +34,7 @@
               <div class="aprovar_vendedor_subtitulo_generico">
                 <div class="aprovar_vendedor_linha_vertical"></div>
                 <div class="aprovar_vendedor_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/admin/aprovar_vendedor/requisicao.svg" />
                   <h2 class="font_subtitulo font_celadon">Pesquisar Requisições</p>
                 </div>
               </div>
@@ -104,7 +104,7 @@
               <div class="aprovar_vendedor_subtitulo_generico">
                 <div class="aprovar_vendedor_linha_vertical"></div>
                 <div class="aprovar_vendedor_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image/admin/aprovar_vendedor/estatistica.svg" />
                   <h2 class="font_subtitulo font_celadon">Estatísticas de Aprovação</h2>
                 </div>
               </div>
