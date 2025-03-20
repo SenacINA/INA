@@ -23,13 +23,12 @@ body {
 }
 
 .editar_perfil_container {
-  
   display: grid;
   grid-template-columns:1fr 1fr;
-  width: 1820px;
+  width: 100%;
   height: 100%;
-  row-gap: 32px;
-  justify-self: center;
+  row-gap: 10%;
+  justify-items: center;
 }
 
 .editar_perfil_view {
@@ -37,11 +36,9 @@ body {
   grid-template-rows: 218px auto auto;
   grid-column: auto;
   position: relative;
-  width: 823px;
-  height: 748px;
+  width: 80%;
+  height: 100%;
   border: 1px solid #000;
-  top: 85px;
-  left: 135px;
 }
 
 .editar_perfil_pfp {
@@ -54,9 +51,10 @@ body {
 }
 
 .editar_perfil_banner {
+  width: 100%;
   z-index: 1;
-  grid-column: 1;
-  grid-row: 1;
+  position: relative;
+  bottom: 120%;
 }
 
 .editar_perfil_nome_cliente {
@@ -144,9 +142,10 @@ body {
 .editar_perfil_edicao {
   grid-column: 2;
   position: relative;
-  left: 66px;
-  top: 89px;
-  width: 500px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  width: 100%;
 }
 
 .editar_perfil_edicao form label {
@@ -164,7 +163,6 @@ body {
 
 .editar_perfil_botoes {
   position: relative;
-  top: 20px;
   display: grid;
   grid-template-columns: 230px 230px 230px;
 }
@@ -263,16 +261,13 @@ body {
 }
 
 .editar_perfil_upload {
-  grid-column: 1;
-  grid-row: 2;
   position: relative;
-  top: 50%;
 }
 
 .editar_perfil_upload form {
-  display: grid;
+  display: flex;
+  flex-direction: row;
   grid-template-columns: 1fr 1fr;
-  column-gap: 50px;
   justify-content: center;
   justify-self: center;
   align-items: center;
@@ -306,11 +301,132 @@ footer {
   text-align: center;
   align-items: center;
   width: 100%;
-  height: 124px;
+  height: 20%;
   background-color: #d7e8ea;
   color: #0f3b62;
 
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
+}
+@media (max-width:1024px){
+  .editar_perfil_banner,
+  .editar_perfil_botoes,
+  .editar_perfil_cliente_ativo,
+  .editar_perfil_cliente_localizacao,
+  .editar_perfil_cliente_tempo,
+  .editar_perfil_container,
+  .editar_perfil_detalhes,
+  .editar_perfil_edicao,
+  .editar_perfil_edit,
+  .editar_perfil_editar_redes,
+  .editar_perfil_ico,
+  .editar_perfil_ico_ativo,
+  .editar_perfil_nome_cliente,
+  .editar_perfil_pfp,
+  .editar_perfil_redefinir_email,
+  .editar_perfil_redefinir_senha,
+  .editar_perfil_redes,
+  .editar_perfil_redes2,
+  .editar_perfil_redes_sociais,
+  .editar_perfil_redes_sociais_mini_text,
+  .editar_perfil_separador,
+  .editar_perfil_text,
+  .editar_perfil_text_button,
+  .editar_perfil_title_redes,
+  .editar_perfil_upload,
+  .editar_perfil_view{font-size: 1rem;}
+
+ .editar_perfil_edicao form input{
+  width: 80%;
+  height: 80%;
+ }
+
+ .editar_perfil_container{
+  display: flex;
+  flex-direction: column;
+ }
+
+ .editar_perfil_upload form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .editar_perfil_banner{
+    width: 50%;
+    bottom: 200%;
+  }
+
+}
+
+@media (max-width:425px){
+  .editar_perfil_banner,
+  .editar_perfil_botoes,
+  .editar_perfil_cliente_ativo,
+  .editar_perfil_cliente_localizacao,
+  .editar_perfil_cliente_tempo,
+  .editar_perfil_container,
+  .editar_perfil_detalhes,
+  .editar_perfil_edicao,
+  .editar_perfil_edit,
+  .editar_perfil_editar_redes,
+  .editar_perfil_ico,
+  .editar_perfil_ico_ativo,
+  .editar_perfil_nome_cliente,
+  .editar_perfil_pfp,
+  .editar_perfil_redefinir_email,
+  .editar_perfil_redefinir_senha,
+  .editar_perfil_redes,
+  .editar_perfil_redes2,
+  .editar_perfil_redes_sociais,
+  .editar_perfil_redes_sociais_mini_text,
+  .editar_perfil_separador,
+  .editar_perfil_text,
+  .editar_perfil_text_button,
+  .editar_perfil_title_redes,
+  .editar_perfil_upload,
+  .editar_perfil_view{font-size: 0.5rem;}
+
+  .editar_perfil_edicao form input{
+    width: 80%;
+    height: 80%;
+   }
+
+   .editar_perfil_banner{
+    width: 68%;
+    bottom: 300%;
+  }
+}
+@media (max-width:768px){
+  .editar_perfil_banner,
+  .editar_perfil_botoes,
+  .editar_perfil_cliente_ativo,
+  .editar_perfil_cliente_localizacao,
+  .editar_perfil_cliente_tempo,
+  .editar_perfil_container,
+  .editar_perfil_detalhes,
+  .editar_perfil_edicao,
+  .editar_perfil_edit,
+  .editar_perfil_editar_redes,
+  .editar_perfil_ico,
+  .editar_perfil_ico_ativo,
+  .editar_perfil_nome_cliente,
+  .editar_perfil_pfp,
+  .editar_perfil_redefinir_email,
+  .editar_perfil_redefinir_senha,
+  .editar_perfil_redes,
+  .editar_perfil_redes2,
+  .editar_perfil_redes_sociais,
+  .editar_perfil_redes_sociais_mini_text,
+  .editar_perfil_separador,
+  .editar_perfil_text,
+  .editar_perfil_text_button,
+  .editar_perfil_title_redes,
+  .editar_perfil_upload,
+  .editar_perfil_view{font-size: 0.75rem;}
+
+  .editar_perfil_edicao form input{
+    width: 80%;
+    height: 80%;
+   }
 }
