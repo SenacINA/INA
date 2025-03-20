@@ -328,8 +328,7 @@
     justify-content: center;
   }
 
-  .base_botao btn_red,
-  .base_botao btn_blue {
+  .base_botao {
     width: 100%;
   }
 }

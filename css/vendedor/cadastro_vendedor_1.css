@@ -107,7 +107,7 @@ body {
     background-color: #1B98E0;
     width: 192px;
     margin: 0;
-    height: 48px;
+    height: 40px;
   }
   
   .cadastro_vendedor1_salvar label {
@@ -216,6 +216,8 @@ ol li::before {
         height: 890px;  
         background-color: var(--Cores-Azul-Leve, #EFF3F5);
         border-radius: 10px;
+
+        margin-bottom: 100px;
     }
 
     .cadastro_vendedor1_grid {
