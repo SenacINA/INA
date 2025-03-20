@@ -396,6 +396,14 @@
     height: 700px; 
   }
 
+  .admin_carrossel_main_informacoes_anuncio {
+    width: 100%;
+    position: relative;
+  }
+
+  .admin_carrossel_forms_informacoes_anuncio_1 {
+    margin-top: 0px;
+  }
 
   .admin_carrossel_content {
     display: flex;
@@ -419,7 +427,6 @@
   .admin_carrossel_linha_main_text {
     display: none;
   }
-
 
   .admin_carrossel_main_text_informacoes_anuncio {
     font-size: 24px;

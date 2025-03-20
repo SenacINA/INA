@@ -476,7 +476,7 @@ input:checked + .toggle_slider::before {
 
     background-color: #eff3f5;
     width: 95%;
-    height: 1100px;
+    height: 1200px;
     border-radius: 10px;
     margin: 0px 2%;
     margin-top: 86px;
@@ -509,8 +509,6 @@ input:checked + .toggle_slider::before {
     font-size: 32px;
   }
 
-  
-
   /* grid principal */
   .admin_cupom_grid_conteudo {
     display: grid;
@@ -519,23 +517,9 @@ input:checked + .toggle_slider::before {
     row-gap: 4%;
   }
 
-  .bg_mobile_1 {
-    position: absolute;
-    height: 336px;
-    width: 100%;
-
-    z-index: -1;
-    border-radius: 10px;
-  }
-
+  .bg_mobile_1,
   .bg_mobile_2 {
-    position: absolute;
-    height: 1065px;
-    width: 100%;
-
-    z-index: -1;
-    border-radius: 10px;
-    margin-top: 422px;
+    height: 0px;
   }
 
   #cupom_text_1 {
@@ -646,6 +630,10 @@ input:checked + .toggle_slider::before {
 }
 
 @media (max-width: 768px) {
+  .admin_cupom_body {
+    height: 1100px;
+  }
+
   .admin_cupom_header {
     position: absolute;
 
@@ -666,7 +654,6 @@ input:checked + .toggle_slider::before {
   .admin_cupom_linha_header {
     display: none;
   }
-
 }
 
 @media (max-width: 375px) {
