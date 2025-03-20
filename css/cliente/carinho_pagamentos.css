@@ -7,17 +7,65 @@
 .fundo {
   height: 100%;
   width: 100%;
-  background-color: #dce5eb;
+  background-color: #fff;
 }
 
 .carrinho_pagamentos {
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .carrinho_top {
-  position: relative;
-  margin-bottom: 61px;
-  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1%;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.text {
+  color: var(--carolina);
+  text-align: center;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.text-2 {
+  color: var(--cinza);
+  text-align: center;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.ico {
+  width: 40px;
+  height: 40px;
+  color: var(--carolina);
+}
+
+.ico-2 {
+  width: 40px;
+  height: 40px;
+  color: var(--cinza);
+}
+
+.check {
+  width: 30px;
+  height: 30px;
+}
+
+.divisoria {
+  width: 5%;
+  height: 2px;
+  border: 0;
+  background-color: var(--cinza);
 }
 
 .navbar {
@@ -30,7 +78,7 @@
   grid-row: 2;
   width: 1600px;
   height: 740px;
-  background-color: #fff;
+  background-color: #eff3f5;
 }
 
 .main_container_carrinho_pagamentos {
@@ -43,7 +91,7 @@
 .separador_carrinho {
   width: 1545px;
   height: 3px;
-  background: rgba(0, 100, 148, 0.33);
+  background: var(--carolina);
   border: 0;
 }
 
@@ -56,7 +104,7 @@
   align-items: center;
   justify-content: center;
   justify-items: center;
-  color: #000;
+  color: var(--celadon);
   text-align: center;
   font-family: Jost;
   font-size: 24px;
@@ -66,7 +114,7 @@
 }
 
 .conversar_vendedor {
-  color: #000;
+  color: var(--celadon);
   text-align: center;
   font-family: Jost;
   font-size: 24px;
@@ -100,6 +148,7 @@
 
 .baixar_whats {
   color: #4caad6;
+  text-decoration: underline;
   font-family: Jost;
   font-size: 20px;
   font-style: normal;
@@ -116,7 +165,6 @@
 .main_text_carrinho_pagamentos {
   color: #247ba0;
   text-align: center;
-  font-feature-settings: "liga" off, "clig" off;
   font-family: Jost;
   font-size: 35px;
   font-style: normal;
@@ -147,7 +195,7 @@
   font-size: 20px;
   font-weight: 600;
   color: #fff;
-  height: 48px;
+  height: 40px;
   width: 200px;
 }
 
@@ -163,6 +211,91 @@
   font-size: 20px;
   font-weight: 600;
   color: #d73232;
-  height: 48px;
+  height: 40px;
   width: 200px;
+}
+
+@media (max-width: 768px) {
+  .fundo {
+    margin-top: 160px !important;
+  }
+  .carrinho_top {
+    width: 95%;
+  }
+  .main_pagamentos {
+    width: 95%;
+    height: 780px;
+  }
+  .separador_carrinho {
+    width: 700px;
+  }
+  .botao_whats {
+    width: 450px;
+  }
+  .botoes {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .finalizar {
+    width: 644px;
+    column-gap: 1%;
+  }
+  .voltar {
+    width: 644px;
+    column-gap: 1%;
+  }
+  .botao_whats {
+    width: 450px;
+  }
+  .botoes {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .finalizar {
+    width: 644px;
+    column-gap: 1%;
+  }
+  .voltar {
+    width: 644px;
+    column-gap: 1%;
+  }
+}
+
+@media (max-width: 425px) {
+  .text {
+    font-size: 15px;
+  }
+  .text-2 {
+    font-size: 15px;
+  }
+  .carrinho_top {
+    margin-bottom: 25px;
+  }
+  .main_text_carrinho_pagamentos {
+    font-size: 28px;
+  }
+  .main_pagamentos {
+    height: 880px;
+  }
+  .separador_carrinho {
+    width: 380px;
+  }
+  .botao_whats {
+    width: 350px;
+  }
+  .separador_whats {
+    width: 300px;
+  }
+  .botoes {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .finalizar {
+    width: 400px;
+    column-gap: 1%;
+  }
+  .voltar {
+    width: 400px;
+    column-gap: 1%;
+  }
 }
