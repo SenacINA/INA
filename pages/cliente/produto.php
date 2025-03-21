@@ -20,6 +20,7 @@
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
+    
     <div class="grid_produto">
         <div class="grid_nome_vendedor">
             <div class="imagem_nome_vendedor">

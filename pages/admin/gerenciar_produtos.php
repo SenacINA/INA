@@ -12,8 +12,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
+  <!-- Até 768px -->
+
   <?php
     include_once('../../pages/geral/navbar.php');
     ?>
@@ -216,8 +219,13 @@
           </thead>
         </table>
       </div>
+      <a href="./dashboard.php">
+        <div class="voltar">
+          <button type="reset" class="base_botao btn_outline_blue">
+                        <img src="../../image/geral/botoes/v_icon_carolina.svg">VOLTAR</button>
+        </div>
+      </a>
     </div>
   </main>
 </body>
-
 </html>
