@@ -1,270 +1,334 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Jost;
+.relatorio_vendas_body_container {
+  padding: 0px 48px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.main_container {
-  overflow-x: clip;
-  width: 100vw;
-  height: 100vh;
+.relatorio_vendas_body_holder {
+  border-radius: 10px;
 }
 
-.navbar_principal {
+.gerenciar_pedidor_firula_holder{
+  border-radius: 10px;
+  background-color: #EFF3F5;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 32px 16px 32px;
+}
+
+.relatorio_vendas_navbar_principal {
   background-color: #fff;
-  width: 100vw;
+  width: 100%;
   height: 67px;
 }
 
-.header_relatorio {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+.relatorio_vendas_subtitulo_generico{
   width: 100%;
-  height: 188px;
-  background-color: #0f3b62;
+  display: flex;
+  gap: 16px;
 }
 
-.inner_header {
+.base_icon{
+  height: 32px;
+}
+
+.relatorio_vendas_linha_vertical{
+  width: 8px;
+  height: 48px;
+  background-color: var(--carolina);
+  border-radius: 10px;
+}
+
+.relatorio_vendas_subtitle_holder{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  & img{
+    width: 32px;
+    height: 100%;
+  }
+}
+
+
+/* header */
+.relatorio_vendas_titulo {
   position: relative;
-  top: 38%;
+
+  display: grid;
+  grid-template-columns: auto;
+  align-content: center;
+  justify-items: center;
+
   width: 100%;
+  margin-top: 16px;
+}
+
+.relatorio_vendas_text_titulo,
+.relatorio_vendas_header_title {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-self: center;
 }
 
-.text_header {
-  color: #ffff;
+.relatorio_vendas_text_titulo img,
+.relatorio_vendas_header_title img {
+  align-self: center;
+  width: 32px;
+  height: auto;
+  margin-right: 8px;
 }
 
-.linha_header {
+.relatorio_vendas_text_titulo h1,
+.relatorio_vendas_header_title h1 {
+  justify-self: center;
+  font-weight: 500;
+  color: #255e7e;
+  text-align: center;
+  font-size: 32px;
+}
+
+.relatorio_vendas_linha_sublinhado {
   width: 95%;
-  height: 9px;
-  background-color: #2888b1;
+  height: 5px;
   border-radius: 20px;
+  background-color: #2888b1;
   border: 0;
 }
 
-.quadrado_container {
-  grid-row: 1;
-  width: 113rem;
-  height: 36rem;
-  border: 2px solid rgba(0, 0, 0, 0.3);
-  background: #f1f1f1;
+
+.relatorio_vendas_quadrado_container {
+  width: 100%;
+  height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
+  gap: 10%;
 }
 
-.main_content {
-  position: relative;
-  top: 2%;
-  display: grid;
+.relatorio_vendas_main_content {
+  padding: 32px;
+}
+
+.relatorio_vendas_pesquisar_pedidos {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-items: center;
-  grid-template-rows: 590px 96px 752px;
 }
 
-.pesquisar_pedidos {
-  position: relative;
-  top: 10%;
-  left: 10%;
-  display: grid;
-  grid-template-columns: min-content min-content min-content;
-  grid-template-rows: min-content min-content;
-  justify-items: center;
+.relatorio_vendas_form_cliente {
+  display: flex;
+  flex-direction: column;
 }
 
-.header_pedidos {
-  grid-column: 1/4;
+.relatorio_vendas_input_ano {
+  display: flex;
+  flex-direction: column;
+}
+
+.relatorio_vendas_input_status {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
-.text_pedidos {
-  font-size: 32px;
-  text-align: center;
-}
-
-.linha_pedidos {
+.relatorio_vendas_forms_pesquisa_pedidos {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 2px;
-  border: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  gap: 16px;
+  margin: 16px 0 0;
 }
 
-.forms_pesquisa_pedidos {
-  position: relative;
-  top: 10%;
-  left: -5%;
-  display: grid;
-  grid-template-columns: 280px min-content min-content;
-  column-gap: 5%;
-  grid-column: 1/4;
+.relatorio_vendas_holder_botao {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
 }
 
-.confirmar,
-.cancelar {
-  position: relative;
-  top: 100%;
-}
-
-.confirmar {
-  grid-column: 3;
-}
-
-.cancelar {
-  grid-column: 2;
-}
-
-.forms_pesquisa_pedidos input,
-select {
-  height: 34px;
-  border: none;
-}
-
-.forms_pesquisa_pedidos label {
-  color: #000;
-  font-family: Jost;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.input_cod {
-  grid-column: 1/4;
-}
-
-.label_status {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.select_status {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.mes {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.label_cod {
-  grid-column: 1/3;
-}
-
-.mes_select {
-  grid-column: 2;
-  grid-row: 4;
-}
-
-.ano_select {
-  grid-column: 3;
-  grid-row: 4;
-}
-
-.estatisticas {
-  position: relative;
-  top: 8.5%;
-  display: grid;
-  grid-template-columns: 30% 25% 30%;
-  grid-template-rows: repeat(5, min-content);
-}
-
-.header_estatisticas {
+.relatorio_vendas_input_ano,
+.relatorio_vendas_input_mes{
   width: 100%;
-  grid-column: 1/4;
 }
 
-.text_estatisticas {
-  font-size: 32px;
-  text-align: center;
+.relatorio_vendas_inputs_esquerda {
+  display: flex;
+  gap: 8px;
+
+  select{
+    width: 100%;
+  }
 }
 
-.linha_estatisticas {
-  height: 2px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border: 0;
+.relatorio_vendas_select_status {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.titulo_geral {
-  grid-column: 2;
-  text-align: center;
+.relatorio_vendas_mes_select {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
 }
 
-.valor_total,
-.total_vendas,
-.pedidos_recebidos {
-  grid-row: 3;
+.relatorio_vendas_ano_select {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
 }
 
-.horario_medio,
-.total_pedidos,
-.reembolso {
-  grid-row: 4;
+.relatorio_vendas_estatistica_holder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 4px;
 }
 
-.valor_total,
-.horario_medio,
-.medio_entrega {
-  grid-column: 1;
+.relatorio_vendas_estatisticas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.total_vendas,
-.total_pedidos {
-  grid-column: 2;
-}
-.valor_total,
-.total_vendas,
-.pedidos_recebidos,
-.horario_medio,
-.total_pedidos,
-.reembolso,
-.medio_entrega,
-.placeholder {
-  background: #dce5eb;
-  padding: 5%;
+.relatorio_vendas_card {
+  background: var(--branco_gelo);
+  padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-right: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 
-.pedidos_recebidos,
-.reembolso {
-  grid-column: 3;
-  border-right: none;
-}
-
-.titulo {
-  color: #000;
-  font-family: Jost;
-  font-size: 16px;
-  font-style: normal;
+.relatorio_vendas_titulo {
+  font-size: 1.5rem;
   font-weight: 700;
+  text-align: center;
 }
 
-.num {
-  color: #000;
-  font-family: Jost;
-  font-size: 16px;
-  font-style: normal;
+.relatorio_vendas_estatistica_descricao {
+  font-size: 1rem;
   font-weight: 300;
 }
 
-.table {
-  width: 113rem;
-  height: 752px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  background: #f1f1f1;
-  grid-row: 3;
-  display: grid;
-  grid-template-columns: 168px 374px 133px 186px 364px 124px 473px;
-  grid-template-rows: 64px repeat(13, 45px);
-  row-gap: 8px;
+.relatorio_vendas_table{
+  display: flex;
+  flex-direction: column;
+}
+
+.relatorio_vendas_table_filtro{
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  padding: 0 8px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+  & select{
+    background-color: var(--carolina);
+    border: 0;
+    height: 32px;
+  }
+
+  & select:focus-visible{
+    outline: solid 1px #e0e0e0;
+  }
+}
+
+.relatorio_vendas_filtro_titulo{
+  color: #fff;
+}
+
+/**Individual para cada tabela */
+.relatorio_vendas_table_col-1,
+.relatorio_vendas_table_col-4{
+  width: 4%;
+}
+.relatorio_vendas_table_col-3,
+.relatorio_vendas_table_col-6{
+  width: 8%;
+}
+
+.relatorio_vendas_table_col-2,
+.relatorio_vendas_table_col-5,
+.relatorio_vendas_table_col-7{
+  width: 20%;
+}
+
+@media (max-width:1024px) {
+  .font_titulo{
+    font-size: 1.5rem;
+  }
+
+  .relatorio_vendas_text_titulo {
+    position: absolute;
+    top: -65px;
+  }
+
+  .relatorio_vendas_estatistica_holder{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .relatorio_vendas_titulo {
+    font-size: 1rem;
+  }
+  
+  .relatorio_vendas_estatistica_descricao {
+    font-size: 0.75rem;
+  }
+  .relatorio_vendas_quadrado_container {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .relatorio_vendas_body_container {
+    padding: 0px 16px 16px;
+    gap: 8px;
+  }
+
+  .relatorio_vendas_body_holder {
+    padding: 8px;
+  }
+
+  .relatorio_vendas_main_content {
+    padding: 8px;
+  }
+
+  
+  .relatorio_vendas_linha_sublinhado{
+    display: none;
+  }
+
+  .gerenciar_pedidor_firula_holder{
+    gap: 16px;
+    padding: 0;
+  } 
+
+
+  .relatorio_vendas_header_title{
+    justify-content: flex-start;
+  }
+
+  .relatorio_vendas_input_ano,
+  .relatorio_vendas_input_mes{
+    width: 100%;
+  }
+
+  .relatorio_vendas_mes_select,
+  .relatorio_vendas_select_status,
+  .relatorio_vendas_ano_select{
+    width: 100%;
+  }
+
+  .relatorio_vendas_holder_botao{
+    justify-content: center;
+  }
+
+  .base_botao {
+    width: 100%;
+  }
 }

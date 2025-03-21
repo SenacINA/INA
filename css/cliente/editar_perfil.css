@@ -1,9 +1,9 @@
-@import './style.css';
+@import "./style.ss";
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Jost';
+  font-family: "Jost";
 }
 
 html {
@@ -18,18 +18,21 @@ nav {
 }
 
 body {
-  background-color: #E8F1F2;
+  background-color: #e8f1f2;
   height: 100%;
 }
 
-main {
-  height: 100%;
+.editar_perfil_container {
+  
   display: grid;
-  grid-template-columns: 950px auto;
-  grid-template-rows: auto auto;
+  grid-template-columns:1fr 1fr;
+  width: 1820px;
+  height: 100%;
+  row-gap: 32px;
+  justify-self: center;
 }
 
-.view {
+.editar_perfil_view {
   display: grid;
   grid-template-rows: 218px auto auto;
   grid-column: auto;
@@ -41,22 +44,22 @@ main {
   left: 135px;
 }
 
-.pfp {
+.editar_perfil_pfp {
   grid-column: 1;
   grid-row: 1;
   z-index: 2;
   position: relative;
-  left: calc(50% - (152px/2));
-  top: calc(100% - (152px /2));
+  left: calc(50% - (152px / 2));
+  top: calc(100% - (152px / 2));
 }
 
-.banner {
+.editar_perfil_banner {
   z-index: 1;
   grid-column: 1;
   grid-row: 1;
 }
 
-.nome_cliente {
+.editar_perfil_nome_cliente {
   grid-column: 1;
   grid-row: 2;
   justify-self: center;
@@ -67,7 +70,7 @@ main {
   font-weight: 700;
 }
 
-.detalhes {
+.editar_perfil_detalhes {
   grid-row: 2;
   grid-column: 1;
   position: relative;
@@ -80,12 +83,12 @@ main {
   justify-items: center;
 }
 
-.separador {
+.editar_perfil_separador {
   position: relative;
   top: calc(-100%);
 }
 
-.redes_sociais_mini_text {
+.editar_perfil_redes_sociais_mini_text {
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -95,7 +98,7 @@ main {
   left: 5%;
 }
 
-.redes2 {
+.editar_perfil_redes2 {
   position: relative;
   top: 15%;
   left: 10%;
@@ -105,37 +108,40 @@ main {
   grid-template-rows: auto auto;
 }
 
-.cliente_ativo , .ico_ativo{
+.editar_perfil_cliente_ativo,
+.editar_perfil_ico_ativo {
   grid-column: 1;
   grid-row: 1;
 }
 
-.ico_ativo{
+.editar_perfil_ico_ativo {
   position: relative;
   left: -50%;
 }
 
-.ico_tempo {
+.editar_perfil_ico_tempo {
   position: relative;
   left: -55%;
 }
 
-.ico_localizacao{
+.editar_perfil_ico_localizacao {
   position: relative;
   left: -45%;
 }
 
-.cliente_tempo, .ico_tempo {
+.editar_perfil_cliente_tempo,
+.editar_perfil_ico_tempo {
   grid-column: 3;
   grid-row: 1;
 }
 
-.cliente_localizacao, .ico_localizacao {
+.editar_perfil_cliente_localizacao,
+.editar_perfil_ico_localizacao {
   grid-column: 2;
   grid-row: 2;
 }
 
-.edicao {
+.editar_perfil_edicao {
   grid-column: 2;
   position: relative;
   left: 66px;
@@ -143,36 +149,35 @@ main {
   width: 500px;
 }
 
-.edicao form label {
+.editar_perfil_edicao form label {
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
 
-.edicao form input {
-  width: 650px;
-  height: 35px;
-  border: none;
-  margin-bottom: 2%;
-  padding-left: 5px;
+.editar_perfil_edicao form input {
+  width: 600px;
+  height: 40px;
+  
 }
 
-.botoes {
+.editar_perfil_botoes {
   position: relative;
   top: 20px;
   display: grid;
   grid-template-columns: 230px 230px 230px;
 }
 
-.redefinir_email {
+.editar_perfil_redefinir_email {
+  text-transform: uppercase;
   cursor: pointer;
-  background: transparent;
-  border-radius: 10px;
-  border: 3px solid #006494;
-  color: #006494;
-  width: 191px;
-  height: 50px;
+  background: #1B98E0;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  width: fit-content;
+  height: 48px;
   padding: 10px;
   font-size: 20px;
   font-style: normal;
@@ -180,14 +185,15 @@ main {
   line-height: normal;
 }
 
-.redefinir_senha {
+.editar_perfil_redefinir_senha {
+  text-transform: uppercase;
   cursor: pointer;
-  background: transparent;
-  border-radius: 10px;
-  border: 3px solid #006494;
-  color: #006494;
-  width: 191px;
-  height: 50px;
+  background: #006494;
+  border-radius: 5px;
+  color: #fff;
+  border: 0;
+  width: fit-content;
+  height: 48px;
   padding: 10px;
   font-size: 20px;
   font-style: normal;
@@ -195,22 +201,7 @@ main {
   line-height: normal;
 }
 
-.sair_perfil {
-  cursor: pointer;
-  background: transparent;
-  border-radius: 10px;
-  color: red;
-  width: 191px;
-  height: 50px;
-  padding: 10px;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  border: 3px solid red;
-}
-
-.redes_sociais {
+.editar_perfil_redes_sociais {
   position: relative;
   top: 10%;
   display: grid;
@@ -218,47 +209,51 @@ main {
   row-gap: 30px;
 }
 
-.title_redes {
+.editar_perfil_title_redes {
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
 
-.redes {
+.editar_perfil_redes {
   display: grid;
   grid-template-columns: 40px;
   grid-template-rows: auto auto;
   row-gap: 10px;
 }
 
-.ico {
+.editar_perfil_ico {
   display: inline-block;
   grid-row: 1;
 }
 
-.text {
+.editar_perfil_text {
   grid-row: 1;
 }
 
-.editar_redes {
+.editar_perfil_editar_redes {
   display: grid;
   grid-template-columns: 50px auto;
   grid-template-rows: auto;
   text-decoration: none;
 }
 
-.edit {
+.editar_perfil_edit {
   grid-row: 1;
   border: 0;
-  background-color: #fff;
-  border-radius: 40px;
-  width: 39px;
-  height: 38px;
+  background-color: #1B98E0;
+  border-radius: 5px;
+  width: 200px;
+  height: 48px;
   cursor: pointer;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
 }
 
-.text_button {
+.editar_perfil_text_button {
   grid-row: 1;
   text-decoration: none;
   font-size: 20px;
@@ -267,23 +262,24 @@ main {
   line-height: normal;
 }
 
-.upload {
+.editar_perfil_upload {
   grid-column: 1;
   grid-row: 2;
   position: relative;
   top: 50%;
 }
 
-.upload form {
+.editar_perfil_upload form {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   column-gap: 50px;
   justify-content: center;
+  justify-self: center;
   align-items: center;
   text-align: center;
 }
 
-.upload form label {
+.editar_perfil_upload form label {
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -291,26 +287,29 @@ main {
   position: relative;
 }
 
-.upload form p {
+.editar_perfil_upload form p {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-.upload form input {
+.editar_perfil_upload form input {
   border: 0;
 }
 
 footer {
+  position: relative;
   margin-top: 15%;
-  width: 100%;
-  height: 124px;
-  background-color: #D7E8EA;
-  color: #0F3B62;
+
+  display: grid;
   text-align: center;
   align-items: center;
-  display: grid;
+  width: 100%;
+  height: 124px;
+  background-color: #d7e8ea;
+  color: #0f3b62;
+
   font-size: 24px;
   font-style: normal;
   font-weight: 600;

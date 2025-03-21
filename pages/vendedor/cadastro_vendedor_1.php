@@ -1,3 +1,4 @@
+<!-- PROBLEMA NA RESPONSIVIDADE -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,37 +10,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-    <div class="nav_bar"></div>
-    <div class="grid_bg" >
-        <div class="titulo"><h1>CADASTRO DE VENDEDOR</h1></div>
-        <img src="../../image/geral/linha-divisoria-azul.png" alt="">
-        <div class="lista_ordenada" >
-            <ol>
-                <h1>Bem-Vindo!</h1>
-                <li>
-                    <h1>Fornecer informações e documentos</h1>
-                    <h2>Informações pessoais e comerciais relevantes para cumprir as medidas de identificação e verificação. </h2>
-                </li>
-                <li>
-                    <h1>Aprovação das credênciais</h1>
-                    <h2>Os dados fornecidos serão verificados através do nosso sistema de validação. Essa etapa auxilia na confiabilidade das vendas.</h2>
-                </li>
-                <li>
-                    <h1>Cadastro de produtos </h1>
-                    <h2>Após a verificação das informações e documentos (5 dias úteis). Faça o registro dos seus produtos. </h2>
-                </li>
-            </ol>
-            <L>
-                <h1>Dados necessários:</h1>
-                <li>Documento de identidade (RG) ou passaporte válido emitido pelo governo;</li>
-                <li>Declaração do banco ou cartão de crédito recente; </li>
-                <li>Cartão de crédito ou débito para cobrança;</li>
-                <li>Celular ou E-mail. </li>
-            </L>
+  <!-- Atá 375px -->
+
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
+  <main>
+    <div class="cadastro_vendedor1_background">
+      <div class="cadastro_vendedor1_grid" >   
+        <div class="cadastro_vendedor1_titulo">
+          <div class="cadastro_vendedor1_titulo_img">
+              <img src="../../image/vendedor/cadastro_vendedor_1/cadastro_icon.png" alt="">
+              <h1>CADASTRO DE VENDEDOR</h1>
+          </div>
+          <hr>
         </div>
-        <div class="botao"><h1>Iniciar Cadastro</h1></div>
+
+        <div class="cadastro_vendedor1_lista_ordenada" >
+          <ol>
+              <h1>Bem-Vindo!</h1>
+              <li>
+                  <h1>Fornecer informações e documentos</h1>
+                  <h2>Informações pessoais e comerciais relevantes para cumprir as medidas de identificação e verificação. </h2>
+              </li>
+              <li>
+                  <h1>Aprovação das credênciais</h1>
+                  <h2>Os dados fornecidos serão verificados através do nosso sistema de validação. Essa etapa auxilia na confiabilidade das vendas.</h2>
+              </li>
+              <li>
+                  <h1>Cadastro de produtos </h1>
+                  <h2>Após a verificação das informações e documentos (5 dias úteis). Faça o registro dos seus produtos. </h2>
+              </li>
+          </ol>
+          <L>
+              <h1>Dados necessários:</h1>
+              <li>Documento de identidade (RG) ou passaporte válido emitido pelo governo;</li>
+              <li>Declaração do banco ou cartão de crédito recente; </li>
+              <li>Cartão de crédito ou débito para cobrança;</li>
+              <li>Celular ou E-mail. </li>
+          </L>
+        </div>
+
+        <div class="cadastro_vendedor1_botao_salvar">
+            <button class="cadastro_vendedor1_salvar" onclick="pag('vendedor/cadastro_vendedor_2')">
+                <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg" alt="">
+                <label>CONTINUAR</label>
+            </button>
+        </div>
+      </div>
     </div>
+  </main>
+  <?php 
+      include_once('../../pages/geral/footer.php');
+  ?>
 </body>
 </html>

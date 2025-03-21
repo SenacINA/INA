@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- fazer a responsividade -->
+    <!--arrumar o nome das class  -->
+    
+    <?php
+    include_once('../../pages/geral/navbar.php');
+    ?>
     <div class="body_registro_produto_a_ser_vendido_ficha_tecnica">
-        <div class="nav_bar"></div>
         <div class="grid_bg">
             <div class="grid_titulo">
                 <h1>FICHA TÉCNICA</h1>
@@ -20,22 +27,22 @@
                 <hr>
                 <h3>Novo Produto</h3>
             </div>
-            
+
             <div class="grid_conteudo">
                 <div class="grid_conteudo_1">
                     <h1>Informações do Produto</h1>
 
                     <!-- Lote do Produto -->
                     <label for="nomedoproduto">Nome do Produto</label> <br>
-                    <input type="text" name="nomedoproduto" id="nomedoproduto" required> <br>    
+                    <input class="base_input" type="text" name="nomedoproduto" id="nomedoproduto"> <br>
 
                     <!-- Preço -->
                     <label for="preco">Preço (R$)</label> <br>
-                    <input type="number" name="preco" id="preco" step="0.01" min="0" required> <br>
+                    <input class="base_input" type="number" name="preco" id="preco" step="0.01" min="0"> <br>
 
                     <!-- Categoria -->
-                    <label for="categoria">Categoria</label> <br> 
-                    <select name="categoria" id="categoria" required>
+                    <label for="categoria">Categoria</label> <br>
+                    <select class="base_input" name="categoria" id="categoria">
                         <option value="categoria1">Categoria 1</option>
                         <option value="categoria2">Categoria 2</option>
                         <option value="categoria3">Categoria 3</option>
@@ -43,7 +50,7 @@
 
                     <!-- Observações -->
                     <label for="observacoes">Observações</label> <br>
-                    <textarea name="observacoes" id="observacoes" rows="4"></textarea>
+                    <textarea class="base_input" name="observacoes" id="observacoes" rows="4"></textarea>
                 </div>
 
                 <div class="grid_conteudo_2">
@@ -51,15 +58,15 @@
 
                     <!-- Peso Líquido -->
                     <label for="pesoliquido">Peso Líquido</label> <br>
-                    <input type="text" name="pesoliquido" id="pesoliquido" placeholder="Kg" required> <br>    
+                    <input class="base_input" type="text" name="pesoliquido" id="pesoliquido" placeholder="Kg"> <br>
 
                     <!-- Peso Bruto -->
-                    <label for="pesobruto">Peso Bruto</label> <br> 
-                    <input type="text" name="pesobruto" id="pesobruto" placeholder="Kg" required> <br>
+                    <label for="pesobruto">Peso Bruto</label> <br>
+                    <input class="base_input" type="text" name="pesobruto" id="pesobruto" placeholder="Kg"> <br>
 
                     <!-- Material -->
                     <label for="material">Material</label> <br>
-                    <select name="material" id="material">
+                    <select class="base_input" name="material" id="material">
                         <option value="madeira">Madeira</option>
                         <option value="metal">Metal</option>
                         <option value="plastico">Plástico</option>
@@ -67,7 +74,7 @@
 
                     <!-- Descrição do produto -->
                     <label for="descricao">Descrição do Produto</label> <br>
-                    <textarea name="descricao" id="descricao" rows="4"></textarea>
+                    <textarea class="base_input" name="descricao" id="descricao" rows="4"></textarea>
                 </div>
 
                 <div class="grid_conteudo_3">
@@ -88,18 +95,19 @@
                 <div class="grid_conteudo_4">
                     <div class="botoes">
                         <div class="cancelar">
-                            <h1>Cancelar</h1>
+                            <h1><img src="../../image/geral/x_botao_vermelho.svg" alt="">Cancelar</h1>
                         </div>
                         <div class="salvar">
-                            <h1>Salvar</h1>
+                            <h1><img src="../../image/geral/confirm_botao.svg" alt="">Adicionar</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="footer_carrinho">
-            <img src="../../image/cliente/footer/img_footer_placeholder.png" width="100%" height="100%">
-        </footer>
+        <?php 
+            include_once('../../pages/geral/footer.php');
+        ?>
     </div>
 </body>
+
 </html>

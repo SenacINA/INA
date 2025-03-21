@@ -1,15 +1,20 @@
-*{
-    margin: 0%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost";
+  user-select: none;
 }
+
 
 body {
     margin: 0%;
-    background-color: #E8F1F2;
+    background-color: #F9F9FC;
     font-family: 'Jost';
 }
 
 /* start header */
-.nav_bar {
+.cadastro_vendedor1_nav_bar {
     width: 100%;
     height: 67px;
     color: rgb(0, 0, 0);
@@ -18,58 +23,127 @@ body {
 }
 /* end header */
 
-.grid_bg {
+.cadastro_vendedor1_titulo{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content min-content;
+
+    height: 86px;
+    width: 100%;
+
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cadastro_vendedor1_titulo_img {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin-top: 18px;
+    gap: 8px;
+}
+
+.cadastro_vendedor1_titulo img{
+    width: 28px;
+    height: 28px;
+}
+
+.cadastro_vendedor1_titulo h1 {
+    justify-self: center;
+    font-weight: 500;
+    color: #255e7e;
+    text-align: start;
+    font-size: 32px;
+}
+
+.cadastro_vendedor1_titulo hr {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    width: 100%;
+    max-width: 1608px;
+    
+    height:5px;
+    background-color: #2888B1;
+    border-radius: 20px;
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+.cadastro_vendedor1_background{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Cores-Azul-Leve, #EFF3F5);
+    
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    align-items: center; 
+    justify-self: center;
+    margin: 0px 1.5%;
+}
+
+.cadastro_vendedor1_grid {
     display: grid;
     grid-template-columns: auto;
-    background-color: var(--Cores-Azul-Leve, #DCE5EB);;
-    margin: 2%;
-    margin-right: auto;
-    margin-left: auto;
-    width: 1780px;
-    height: 780px;
+    grid-template-rows: auto;
+    color: #247BA0;
+    margin: 0px 2%;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
     text-align: center;
+    justify-self: center;
 }
 
-.grid_bg img {
-    width: 1700px;
-    height: 5px;
-    margin: auto;
-    margin-bottom: 3%;
-}
-
-.botao {
-    margin: auto;
-    cursor: pointer;
-    transition: transform 0.1s ease;
-}
-
-.botao h1 {
+.cadastro_vendedor1_salvar {
     display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    color: white;
+    border-radius: 5px;
+    background-color: #1B98E0;
+    width: 192px;
+    margin: 0;
     height: 40px;
-    padding: 5px;
-    background-color: #2075C2;
-    font-size: 32px;
-    font-weight: normal;
-    border-radius: 10px;
-    margin-bottom: 10%;
-}
+  }
+  
+  .cadastro_vendedor1_salvar label {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .cadastro_vendedor1_botao_salvar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 90px;
+    border: none;
+    cursor: pointer;
+  }
 
-.botao:active {
-    transform: scale(0.95);
-}
-
-
-.lista_ordenada {
+  .cadastro_vendedor1_salvar img {
+    width: 24px;
+    height: auto;
+  }
+  
+  .cadastro_vendedor1_botao_salvar button {
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+.cadastro_vendedor1_lista_ordenada {
     display: grid;
-    grid-template-columns: 880px 500px;
-    column-gap: 12%;
+    grid-template-columns: auto auto;
+    max-width: 1700px;
+    column-gap: 10%;
     text-align: justify;
+    margin: 0px 40px;
 }
 
 ol li {
@@ -95,17 +169,129 @@ ol li::before {
     grid-area: 1 / 1/ 3 / 2 ;
 }
 
-.lista_ordenada li h1, .lista_ordenada L li {
-    color: #000;
+.cadastro_vendedor1_lista_ordenada li h1, .cadastro_vendedor1_lista_ordenada L li {
+    color: #247BA0;
     font-size: 32px;
 }
 
-.lista_ordenada li h2, .lista_ordenada L li {
+.cadastro_vendedor1_lista_ordenada li h2, .cadastro_vendedor1_lista_ordenada L li {
     color: rgba(0, 0, 0, 0.61);
     font-size: 20px;
     font-weight: normal;
 }
 
-.lista_ordenada L {
+.cadastro_vendedor1_lista_ordenada L {
     margin-top: 45px;
+}
+
+/* Responsividade aprimorada para mobile */
+@media (max-width: 768px) {
+    .cadastro_vendedor1_nav_bar {
+        height: 67px;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .cadastro_vendedor1_titulo{
+        display: flex;
+        justify-content: flex-start;
+        position: absolute;
+        width: 100%;
+        height: 86px;
+        top: -95px;
+        margin-left: 32px;
+    }
+
+    .cadastro_vendedor1_titulo hr {
+        display: none;
+    }
+
+    .cadastro_vendedor1_background {
+        margin-top: 85px;
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        height: 890px;  
+        background-color: var(--Cores-Azul-Leve, #EFF3F5);
+        border-radius: 10px;
+
+        margin-bottom: 100px;
+    }
+
+    .cadastro_vendedor1_grid {
+        width: 95%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cadastro_vendedor1_lista_ordenada {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        gap: 25px;
+    }
+
+    ol {
+        padding-left: 0;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        gap: 10px;
+        text-align: start;
+        width: 100%;
+    }
+
+    li {
+        margin-top: 20px;
+        align-items: left;
+        gap: 10px;
+        text-align: start;
+        width: 100%;
+    }
+
+    ol li::before {
+        width: 40px;
+        height: 40px;
+        font-size: 26px;
+        margin: 0 auto;
+    }
+
+    .cadastro_vendedor1_lista_ordenada li h1 {
+        font-size: 22px;
+    }
+
+    .cadastro_vendedor1_lista_ordenada li h2 {
+        font-size: 18px;
+    }
+
+    .cadastro_vendedor1_botao_salvar {
+        width: 105%; 
+    }
+
+    .cadastro_vendedor1_salvar {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 425px) {
+    .cadastro_vendedor1_background {
+        height: 1000px;
+    }
+}
+
+@media (max-width: 375px) {
+    .cadastro_vendedor1_background {
+        height: 1080px;
+    }
 }

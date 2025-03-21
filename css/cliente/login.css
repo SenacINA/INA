@@ -1,55 +1,178 @@
-html,body{
-    display: grid;
-    color: white;
-    overflow: hidden;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Jost";
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh; 
+    width: 100%;
     background-image: url("../../image/cliente/cadastro/cadastro_fundo.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0;
-    height: 100%;
-}
-
-
-.container-login{
-    display: grid;
-    align-self: center;
-    justify-self: center;
+    background-size: cover; 
+    background-position: center; 
+  }
+  
+  main {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-content: start;
-    color: black;
-    text-align: center;
-    background-color: #DCE5EB;
-    padding: 40px 0px 0px 0px;;
-    height: 640px;
-    width: 715px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .login_quadrado {
+    max-width: 670px;
+    width: 100%;
+    height: 740px;
+    background: #dce5eb;
+    margin: 0px 1.5% 1.5% 1.5%;
     border-radius: 10px;
-}
-
-input{
-    width: 590px;
-    height: 30px;
-    padding: 10px;
-    border: none;
-}
-
-.checkbox-container{
+  }
+  
+  .login_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 16px 2% 0px 2%;
+    max-height: 600px;
+    height: 100%;
+  }
+  
+  .login_bem_vindo {
     display: grid;
-    grid-template-columns: repeat(2,auto);    
-    width: fit-content;
-}
+    grid-template-columns: 1fr;
+  
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  
+  .login_bem_vindo h1 {
+    color: #006494;
+    font-size: 32px;
+    text-transform: uppercase;
+    text-align: center;
+  }
 
-.input-checkbox{
-    width: 23.97px;
-    height: 24px;
-    border-radius: 3px;
-    padding: 10px;
-}
+  .login_bem_vindo h2 {
+    color: #6F6F6F;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .login_divisoria_login {
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .login_formulario_login,
+  .login_redefinir_senha_2_form,
+  .login_quadrado input,
+  .login_redefinir_senha_2_form input {
+    width: 100%;
+  }
 
-p{margin: 0;}
+  
+  .login_formulario_login label, 
+  .login_redefinir_senha_2_form label,
+  .login_checkbox_container p  {
+    color:#6F6F6F;
+    font-style: normal;
+    font-size: 24px;
+    text-transform: capitalize;
+  }
 
-a{
-    color: black;
-    text-decoration: none;
-}
+  .login_checkbox_container {
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: center;
+    justify-items: start;
+    column-gap: 8px;
+  }
 
+  .login_checkbox_container input {
+    width: 20px;
+    height: 20px;
+  }
 
+  .login_links_conatiner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    margin-top: 8px;
+  }
+
+  .login_links {
+    margin-top: 16px;
+  }
+  
+  .login_links p {
+    color: #000;
+    cursor: pointer;
+
+    font-family: Jost;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; 
+  }
+
+  .login_botoes {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+  }
+  
+  .login_botao_entrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    text-align: center;
+    border: 0;
+    color: white;
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #1b98e0;
+  }
+  
+  .login_redefinir_senha_2 {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  
+  #eye-icon-senha, 
+  #eye-icon-nova-senha {
+    display: flex;
+    position: absolute;
+    align-self: center;
+    width: 32px;
+    height: auto;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .login_form_content{
+    max-width: 500px;
+    width: 100%;
+  }
+  

@@ -9,9 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="../../css/cliente/carinho_dados.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body class="fundo">
-  <nav class="navbar">nav</nav>
+  <!-- fazer responsividade -->
+  <!-- arrumar o nome das class -->
+   
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
+
   <div class="carrinho_dados">
     <img src="../../image/cliente/carrinho_dados/carrinho_top.png" class="carrinho_top">
     <div class="forms_dados">
@@ -22,45 +30,44 @@
       <div class="container_forms">
         <form action="" class="forms_carrinho">
           <label for="nome_carrinho">Nome:</label>
-          <input type="text">
+          <input type="text" class="base_input">
           <label for="cpf_carrinho">CPF:</label>
-          <input type="text">
+          <input type="text" class="base_input">
           <label for="endereco_carrinho">Endereço:</label>
-          <input type="text">
+          <input type="text" class="base_input">
           <div class="informacoes_cep">
             <label for="cep" class="cep">CEP:</label>
-            <input type="number" name="cep" id="cep">
+            <input type="number" name="cep" id="cep" class="base_input">
             <label for="cidade" class="cidade">Cidade:</label>
-            <input type="text" id="cidade">
+            <input type="text" id="cidade" class="base_input">
           </div>
           <label for="telefone">Telefone:</label>
-          <input type="text" name="telefone" id="telefone">
+          <input type="text" name="telefone" id="telefone" class="base_input">
           <label for="email">Email:</label>
-          <input type="text" name="email" id="email">
+          <input type="text" name="email" id="email" class="base_input">
         </form>
         <form action="" class="dados_adicionais">
           <label for="ponto">Ponto de referência(opcional):</label>
-          <input type="text" name="ponto" id="ponto">
+          <input type="text" name="ponto" id="ponto" class="base_input">
           <label for="numeroCasa">Número da casa:</label>
-          <input type="number" name="numeroCasa" id="numeroCasa">
+          <input type="number" name="numeroCasa" id="numeroCasa" class="base_input">
           <label for="mensagem_vendedor">Mensagem para o vendedor(opcional):</label>
-          <input type="text">
+          <input type="text" class="base_input">
           <label for="opcaoEnvio">Opções de envio</label>
-          <select name="opcaoEnvio" id="opcaoEnvio">
+          <select name="opcaoEnvio" id="opcaoEnvio" class="base_input">
             <option value="" disabled selected>Selecione o tipo de entrega</option>
-            <option value="entrega_padrao">Entrega Padrão - R$13,25</option>
-            <option value="entrega_expressa">Entrega Expressa - R$26,30</option>
+            <option value="entrega_padrao">Entrega Padrão - R$15,00</option>
           </select>
         </form>
         <div class="botoes_carrinho">
-          <button class="voltar_carrinho">Voltar</button>
-          <button class="salvar_carrinho">Salvar</button>
+          <button class="salvar_carrinho" onclick="pag('cliente/carrinho_pagamentos')"><img src="../../image/geral/confirm_botao.svg">Salvar</button>
         </div>
       </div>
     </div>
   </div>
-  <footer class="footer_carrinho">
-    <img src="../../image/cliente/footer/img_footer_placeholder.png" width="100%" height="100%">
-  </footer>
+  <?php 
+      include_once('../../pages/geral/footer.php');
+  ?>
 </body>
+
 </html>
