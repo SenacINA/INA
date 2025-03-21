@@ -558,6 +558,8 @@ select.base_input {
   align-items: center;
   justify-content: center;
   background-color: #0F3B62;
+
+  width: 100%;
   color: #fff;
   padding: 24px 128px;
   gap: 16px;
