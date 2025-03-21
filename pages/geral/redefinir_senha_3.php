@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +13,12 @@
   <script src="../../js/geral/base.js"></script>
 </head>
 <body>
+  <!-- Até 375px -->
+
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>
+
   <main>
     <div class="redefinir_senha_3_container">
       <div class="redefinir_senha_3_content">

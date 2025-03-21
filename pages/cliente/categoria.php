@@ -19,6 +19,7 @@
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
+    
     <div class="img_fundo largura_com_scroll">
     <div class="index_body_carrossel">
         <div class="index_body_carrossel_content">

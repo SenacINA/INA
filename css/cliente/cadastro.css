@@ -125,7 +125,7 @@ main {
   border-radius: 5px;
   width: 100%;
   max-width: 200px;
-  height: 48px;
+  height: 40px;
   cursor: pointer;
   text-transform: uppercase;
   background-color: transparent;
@@ -145,7 +145,8 @@ main {
   justify-content: end;
 }
 
-#eye-icon-senha, #eye-icon-nova-senha {
+#eye-icon-senha, 
+#eye-icon-nova-senha {
   display: flex;
   position: absolute;
   align-self: center;
@@ -174,5 +175,4 @@ main {
     max-height: 630px;
     height: 100%;
   }
-  
 }
