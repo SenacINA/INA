@@ -2,19 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: "Jost";
-  box-sizing: border-box;
-  /* outline: green 2px solid; */
-}
-
-body {
-  font-size: 14px;
-  overflow-x: hidden;
-  height: 100%;
-  background-color: #EFF3F5;
-}
-
-main {
-  height: 100%;
+  
 }
 
 hr {
@@ -24,17 +12,15 @@ hr {
   margin-bottom: 5%;
 }
 
-.hr_1 {
+.hr_1, .hr_2 {
   width: 95%;
-  height: 0.25rem;
-  border-radius: 20px;
-  background: #4a4a4a;
-}
-
-.hr_2 {
-  width: 95%;
-  height: 0.375rem;
+  height: 4px;
   background: #d9d9d9;
+  border: none;
+  border-radius: 10px;
+  justify-self: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .vr {
@@ -54,7 +40,7 @@ hr {
 
 .banner_vendedor {
   z-index: -1;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -62,17 +48,14 @@ hr {
 /* start botao_menu */
 .menu_1 select {
   position: absolute;
+  border: 2px solid var(--carolina);
+  border-radius: 5px;
   width: 300px;
   height: 40px;
-  top: 250px;
-  left: 700px;
+  top: 235px;
+  right: 60px;
   text-align: center;
 }
-
-.menu_2 {
-  display: none;
-}
-
 /* end botao_menu */
 
 /* start grid_principal */
@@ -88,7 +71,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  height: 340px;
 }
 
 .pfp_container {
@@ -110,13 +93,13 @@ hr {
 }
 
 .nome_vendedor {
-  color: #000;
-  font-family: Jost;
-  font-size: 2rem;
-  font-style: normal;
+  color: var(--cinza);
+  font-size: 32px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 90%;
+
+  margin-top: 16px;
 }
 /* end pfp_vendedor */
 
@@ -124,16 +107,22 @@ hr {
 .infos_container {
   position: relative;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
-  justify-items: start;
-  row-gap: 5%;
-  column-gap: 5%;
-  height: 10vh;
+  justify-items: center;
+  gap: 5%;
+
+  max-width: 800px;
+  width: 100%;
+  margin-top: 8px;
+  height: 150px;
 }
 
 .infos_container img {
-  width: 2rem;
+  width: 32px;
+
+  margin-right: 8px;
 }
 
 .infos_container p {
@@ -201,15 +190,16 @@ hr {
 
 .about_text {
   position: relative;
-  right: 6.5%;
+  
   width: 100%;
+  margin-bottom: 8px;
   display: flex;
   column-gap: 1%;
 }
 
 .about_text > img,
 .about_container_2 > img {
-  width: 24px;
+  width: 28px;
 }
 
 .about_text > h1 {
@@ -218,10 +208,9 @@ hr {
 
 .about_container h1,
 .about_container_2 h1 {
-  font-family: Jost;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 600;
+  color: var(--sappire);
+  font-size: 32px;
+  font-weight: 500;
 }
 
 .about_container p,
@@ -258,7 +247,7 @@ hr {
 }
 
 .contatos_vendedor > img {
-  width: 60%;
+  width: 40px;
 }
 
 .contatos_vendedor a {
@@ -277,239 +266,108 @@ hr {
   width: 100%;
   display: grid;
   row-gap: 3%;
+
+  margin-bottom: 100px;
 }
 
 /* start cards */
-.produto_card {
-  width: 190px;
-  height: 350px;
-  padding: 0.3125rem;
-  border-radius: 5px;
-  display: grid;
-  grid-template-rows: repeat(4, auto);
-  gap: 0.3125rem;
-  position: relative;
-  border: 1px solid rgba(206, 206, 206, 0.5);
-  box-shadow: 2px 2px 0.625rem 0px rgba(0, 0, 0, 0.25);
-}
-
-.produto_preco_estrela {
+.historico_items {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  align-self: stretch;
-  height: 2rem;
+  justify-self: center;
 }
 
-.produto_botoes {
+.ver_mais_container {
   display: flex;
-  align-self: stretch;
-  justify-content: space-between;
-  gap: 0.8125rem;
-}
-
-.botao_estilo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-self: stretch;
-  background-color: #1b98e0;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  flex: 1 0 0;
-  width: 100%;
-}
-
-.botao_estilo:hover {
-  color: #727272;
-}
-
-.icone_carrinho {
-  stroke: #fff;
-  padding: 0.25rem;
-}
-
-.icone_carrinho:hover {
-  stroke: #727272;
-}
-
-.card_desconto {
-  width: 5rem;
-  height: 1.25rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
-  right: 0px;
-  top: 0.5rem;
-}
-
-.card_desconto p {
-  display: inline-block;
-  z-index: 2;
-  color: #fff;
-}
-
-.card_desconto svg {
-  width: 5rem;
-  height: 1.25rem;
-  transform: translate(0.125rem, 0);
-}
-
-.grid_produtos {
-  display: grid;
-  grid-template-columns: repeat(5, min-content);
-  column-gap: 5%;
-  row-gap: 5%;
-  justify-content: center;
-  margin-bottom: 2%;
-}
-
-.estrela {
-  width: 2rem;
-  height: 2rem;
-}
-
-.card_desconto .texto_esquerda {
-  padding-right: 0.3125rem;
-}
-
-.card_preco {
-  color: #ff7a00;
-}
-
-.card_preco {
-  color: #ff7a00;
-}
-.estrela_0 {
-  background: linear-gradient(90deg, #ffd600 0%, #989898 100%);
-}
-.estrela_5 {
-  background: linear-gradient(90deg, #ffd600 10%, #989898 90%);
-}
-.estrela_10 {
-  background: linear-gradient(90deg, #ffd600 20%, #989898 80%);
-}
-.estrela_15 {
-  background: linear-gradient(90deg, #ffd600 30%, #989898 70%);
-}
-.estrela_20 {
-  background: linear-gradient(90deg, #ffd600 40%, #989898 60%);
-}
-.estrela_25 {
-  background: linear-gradient(90deg, #ffd600 50%, #989898 50%);
-}
-.estrela_30 {
-  background: linear-gradient(90deg, #ffd600 60%, #989898 40%);
-}
-.estrela_35 {
-  background: linear-gradient(90deg, #ffd600 70%, #989898 30%);
-}
-.estrela_40 {
-  background: linear-gradient(90deg, #ffd600 80%, #989898 20%);
-}
-.estrela_45 {
-  background: linear-gradient(90deg, #ffd600 90%, #989898 10%);
-}
-.estrela_50 {
-  background: linear-gradient(90deg, #ffd600 100%, #989898 0%);
-}
-
-.card_estrela_texto {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.card_estrela_texto,
-.card_estrela_quantidade {
-  width: fit-content;
-}
-
-.container_card_estrela {
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
-}
-
-.card_estrela_quantidade {
-  color: #4a4a4a;
-}
-
-.container_card_preco {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: end;
+  position: relative;
+  right: 5%;
+  column-gap: 0.5%;
+  cursor: pointer;
 }
 
-.card_preco_desconto {
-  color: #808080;
-  text-decoration: line-through;
-}
-
-.img_card {
-  max-width: 100%;
+.ver_mais_text {
+  color: var(--sappire);
+  text-align: center;
+  font-family: Jost;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {
+  body {
+    margin-top: 120px;
+  }
+
   .grid_produtos {
     display: grid;
     grid-template-columns: repeat(3, min-content);
     column-gap: 5%;
     justify-content: center;
   }
-}
 
-@media (max-width: 768px) {
-  .botao_menu {
-    left: 40vw;
+  .historico_items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 8px;
   }
-  .menu_1 {
-    display: none;
-  }
-  .menu_2 {
-    display: block;
-  }
-  .infos_container img {
-    width: 24px;
-  }
-  .pfp_container {
-    bottom: 60px;
-    margin-bottom: -70px;
-  }
-  .botao_menu {
-    bottom: 50px;
-  }
-  .nome_vendedor {
-    font-size: 1.5rem;
-  }
+
   .pfp_vendedor {
-    height: 40vh;
+    bottom: 154px;
   }
 
   .pfp_vendedor_ico {
-    width: 120px;
+    width: 150px;
   }
-  .infos_item1 > p,
-  .infos_item2 > p,
-  .infos_item3 > p,
-  .infos_item4 > p {
-    font-size: 1rem;
+
+  .banner_vendedor {
+    width: 100%;
+    height: 180px;
   }
-  .about_text > h1,
-  .about_container_2 > h1 {
-    font-size: 1.5rem;
+
+  .pfp_container {
+    top: -55px;
   }
-  .about_container > p {
-    font-size: 1rem;
+
+  .menu_1 select {
+    width: 200px;
+    top: 210px;
+  }
+
+  .info_container {
+    margin-bottom: 100px;
+  }
+
+  .ver_mais_container_text_2 {
+    height: 20px;
+    margin-bottom: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .historico_items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+  }
+
+  .infos_container {
+    max-width: 600px;
+  }
+
+  .ver_mais_container_text_2 {
+    height: 20px;
+    margin-bottom: 200px;
   }
 }
 
 @media (max-width: 480px) {
-  .pfp_vendedor_ico {
-    width: 100px; /* Ajuste para telas muito pequenas */
+  .historico_items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 8px;
   }
 }
 

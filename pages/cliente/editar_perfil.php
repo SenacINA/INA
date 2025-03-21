@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
   <title>E ao quadrado</title>
-  <link rel="stylesheet" href="../../css/cliente/editar_perfil.css">
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/cliente/editar_perfil.css">
   <script src="../../js/geral/base.js"></script>
 </head>
 <body>
@@ -18,6 +18,7 @@
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>
+
   <main>
     <div class="editar_perfil_container">
       <div class="editar_perfil_view">
@@ -85,10 +86,11 @@
         </form>
       </div>
     </div>
-    <?php 
+  </main>
+
+  <?php 
       include_once('../../pages/geral/footer.php');
     ?>
-  </main>
-  
+
 </body>
 </html>

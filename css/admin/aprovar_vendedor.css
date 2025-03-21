@@ -14,7 +14,7 @@
   background-color: #EFF3F5;
   display: flex;
   flex-direction: column;
-  padding: 16px 32px 16px 32px;
+  padding: 0px 32px 16px 32px;
 }
 
 .aprovar_vendedor_navbar_principal {
@@ -46,8 +46,6 @@
   align-items: center;
 }
 
-
-/* header */
 .aprovar_vendedor_titulo {
   position: relative;
 
@@ -57,8 +55,12 @@
   justify-items: center;
 
   width: 100%;
+}
+
+.aprovar_vendedor_text_titulo {
   margin-top: 16px;
 }
+
 
 .aprovar_vendedor_text_titulo,
 .aprovar_vendedor_header_title {
@@ -69,7 +71,7 @@
 .aprovar_vendedor_text_titulo img,
 .aprovar_vendedor_header_title img {
   align-self: center;
-  width: 28px;
+  width: 32px;
   height: auto;
   margin-right: 8px;
 }
@@ -89,8 +91,8 @@
   border-radius: 20px;
   background-color: #2888b1;
   border: 0;
+  justify-self: center;
 }
-
 
 .aprovar_vendedor_quadrado_container {
   width: 100%;
@@ -307,11 +309,6 @@
     font-size: 1.5rem;
   }
 
-  .aprovar_vendedor_text_titulo {
-    position: absolute;
-    top: -65px;
-  }
-
   .aprovar_vendedor_estatistica_holder{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -324,6 +321,7 @@
   .aprovar_vendedor_estatistica_descricao {
     font-size: 0.75rem;
   }
+
   .aprovar_vendedor_quadrado_container {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
@@ -343,16 +341,12 @@
     padding: 8px;
   }
 
-  .aprovar_vendedor_linha_sublinhado{
-    display: none;
-  }
-
   .gerenciar_pedidor_firula_holder{
     gap: 16px;
     padding: 0;
   } 
 
-  .aprovar_vendedor_header_title{
+  .aprovar_vendedor_header_title {
     justify-content: flex-start;
   }
 
@@ -382,5 +376,16 @@
     width: 100px;
     height: 30px;
   }
-  
+
+}
+
+@media (max-width: 768px) {
+  .aprovar_vendedor_text_titulo {
+    position: absolute;
+    top: -85px;
+  }
+
+  .aprovar_vendedor_linha_sublinhado{
+    display: none;
+  }
 }

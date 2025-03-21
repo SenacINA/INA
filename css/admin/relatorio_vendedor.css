@@ -24,6 +24,8 @@
 .relatorio_vendedor_text_titulo_1 {
   display: flex;
   justify-content: center;
+
+  margin-top: 16px;
 }
 
 .relatorio_vendedor_text_titulo_2 {
@@ -465,6 +467,17 @@ color: #2888b1;
 
   .relatorio_vendedor_text_titulo_1  {
     position: absolute;
-    top: -65px;
+    top: -85px;
+  }
+  .relatorio_vendedor_titulo_1 h1,
+  .relatorio_vendedor_titulo_2 h1 {
+    text-align: start;
+  }
+}
+
+@media (max-width: 425px) {
+  .relatorio_vendedor_text_titulo_1  {
+    position: absolute;
+    top: -105px;
   }
 }

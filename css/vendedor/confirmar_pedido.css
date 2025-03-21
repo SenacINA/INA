@@ -605,9 +605,6 @@
     }
 
     /* end grid_principal */
-}
-
-@media (max-width: 425px) {
     .confirmar_pedido_body {
         height: 1850px;
     }
@@ -635,7 +632,9 @@
     
     .confirmar_pedido_produtos {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: min-content auto;
+
+        width: 90%;
         column-gap: 8px;
     }
 

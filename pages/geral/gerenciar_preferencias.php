@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../../css/admin/admin_cupom.css">
     </head>
 <body>
+    <!-- Até 375px -->
 
     <?php
     include_once('../../pages/geral/navbar.php');

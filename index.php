@@ -37,7 +37,7 @@ function gerarProdutoCards($quantidade) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,7 +125,10 @@ function gerarProdutoCards($quantidade) {
                     <h2>Novidades</h2>
                 </div>
                 <div class="index_body_produtos_content">
-                    <?php gerarProdutoCards(6); ?>
+                    <?php 
+                        include ('./pages/geral/card_produto.php');
+                        gerarProdutoCards(6, 1);
+                    ?>                
                 </div>
                 <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
                     <p>Ver Mais</p>
@@ -144,7 +147,7 @@ function gerarProdutoCards($quantidade) {
                     <h2>Descontos</h2>
                 </div>
                 <div class="index_body_produtos_content">
-                    <?php gerarProdutoCards(6); ?>
+                    <?php gerarProdutoCards(6, 1); ?>
                 </div>
                 <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
                     <p>Ver Mais</p>
@@ -164,7 +167,7 @@ function gerarProdutoCards($quantidade) {
                     <h2>Mais Vendidos</h2>
                 </div>
                 <div class="index_body_produtos_content">
-                    <?php gerarProdutoCards(6); ?>
+                    <?php gerarProdutoCards(6, 1); ?>
                 </div>
                 <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
                     <p>Ver Mais</p>

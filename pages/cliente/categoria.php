@@ -19,10 +19,37 @@
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
+    
     <div class="img_fundo largura_com_scroll">
-        <div class="carrossel_categoria">
-            <img src="../../image/cliente/categoria/img_carrossel_placeholder.png" alt="carrossel">
+    <div class="index_body_carrossel">
+        <div class="index_body_carrossel_content">
+                <button class="index_body_carrossel_but back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19"/>
+                    </svg>
+                </button>
+            <div class="carousel-container">
+                
+                <div class="carousel-wrapper">
+                    <img id="carrossel_image" src="../../image/index/carrosselConsole.png" alt="Imagem Carrossel">
+                </div>
+
+                
+            </div>
+            <button class="index_body_carrossel_but forward">                    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                         <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19"/>
+                    </svg> 
+                </button>
         </div>
+        <div class="index_body_carrossel_nav">
+            <button class="active" onclick="currentSlide(1)"></button>
+            <button onclick="currentSlide(2)"></button>
+            <button onclick="currentSlide(3)"></button>
+            <button onclick="currentSlide(4)"></button>
+        </div>
+        
+    </div>
     </div>
 
     <main class="conteudo_categoria grid_categoria">
@@ -167,8 +194,8 @@
     </main>
     <br>
     <div class="container_voltar">
-        <button class="base_botao btn_outline_red">
-            Voltar
+        <button class="redefinir_email_1_botao_voltar" onclick="history.back()">
+            <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
         </button>
     </div>
     <br>
@@ -212,4 +239,5 @@
     ?>
     <script type="text/javascript" src="../../js/cliente/categoria.js"></script>
 </body>
+<script src="../../js/cliente/carrossel.js"></script>
 </html>
