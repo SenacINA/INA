@@ -854,8 +854,8 @@ body, html {
 
     @media (max-width: 638px) {
         .index_body_produtos_content {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
             p {
                 font-size: 12px;
             }
@@ -868,7 +868,7 @@ body, html {
 
     @media (max-width:411px) {
         .index_body_produtos_content {
-            gap: 4px;
+            grid-template-columns: 1fr;
     }
 }
 }

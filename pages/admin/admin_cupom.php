@@ -11,8 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/geral/base.js"></script>
 </head>
 <body>
+  <!-- Até 375px -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -22,7 +24,7 @@
       <div class="admin_cupom_header">
         <div class="admin_cupom_text_header">
           <img src="../../image/admin/cupom/cupom.svg" alt="">
-          <h1>Gerar Cupom</h1>
+          <h1>GERAR CUPOM</h1>
         </div>
         <hr class="admin_cupom_linha_header">
       </div>

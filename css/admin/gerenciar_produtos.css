@@ -22,6 +22,15 @@
     width: 100%;
     height: 67px;
   }
+
+  .voltar{
+    margin-top: 24px;
+    
+    & img {
+      height: 24px
+    };
+  }
+  
   
   .gerenciar_produtos_subtitulo_generico{
     width: 100%;
@@ -329,8 +338,61 @@
     .gerenciar_produtos_holder_botao{
       justify-content: center;
     }
+<<<<<<< HEAD
+  }
+
+  @media (max-width: 468px) {
+      .gerenciar_produtos_inputs_esquerda {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gerenciar_produtos_holder_botao {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gerenciar_produtos_estatistica_holder {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gerenciar_produtos_text_titulo {
+        margin-top: 16px;
+        gap: 8px;
+        
+        & h1 {
+          display: flex;
+          word-wrap: break-word;
+          font-size: 24px;
+          width: fit-content;
+        }
+
+        & img {
+          margin: 0px;
+        }
+      }
+
+      .gerenciar_produtos_header_title{
+        margin-top: 16px;
+        gap: 8px;
+
+        & h1 {
+          display: flex;
+          word-wrap: break-word;
+          font-size: 24px;
+          width: fit-content;
+        }
+
+        & img {
+          margin: 0px;
+        }
+      }
+=======
 
     .base_botao {
       width: 100%;
     }
+>>>>>>> 590eff2f08acea8893bee8d850ccf6bf25a87f17
   }

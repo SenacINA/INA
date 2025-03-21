@@ -20,107 +20,121 @@
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
-    <div class="grid_produto">
-        <div class="grid_nome_vendedor">
-            <div class="imagem_nome_vendedor">
-                <img src="../../image/cliente/produto/user_thunder_gamers.png" alt="">
-            </div>
-            <div class="nome_vendedor">
-                <h1>THUNDER GAMERS</h1>
-                <img src="../../image/cliente/produto/ponteiro.png" alt="">
-                <h2>São Paulo, São Paulo</h2>
-            </div>
-            <div class="avaliacao_vendedor">
-                <h1>AVALIAÇÃO GERAL</h1>
-                <img src="../../image/cliente/produto/estrelas.png" alt="">
-                <h2>4.5</h2>
-                <h3>(156mil+)</h3>
-            </div>
-        </div>
-
-        <div class="grid_scroll">
-            <div class="icon1_scroll">
-                <img src="../../image/cliente/produto/icon_seta.png" alt="">
-            </div>
-
-            <div class="images_scroll">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-            </div>
-
-            <div class="icon2_scroll">
-                <img src="../../image/cliente/produto/icon_seta.png" alt="">
-            </div>
-        </div>
-
-        <div class="grid_produto_image">
-            <div class="produto_image">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-            </div>
-            
-        </div>
-
-        <div class="grid_produto_info_bg">
-            <div class="grid_produto_info">
-                <div class="produto_info_nome">
-                    <h1>CADEIRA GAMER THRONE - RGB</h1>
-                </div>
-                
-
-                <div class="produto_info_text">
-                    <h2>Vendido e entregue por: <a href="">THUNDER GAMES</a> </h2>
-                    <h3>Em estoque</h3>
-                </div>
-                <div class="grid_produto_info_valor">
-                    <div class="produto_info_valor">
-                        <h2>R$2000,00</h2>
-                        <h3>30% OFF</h3>
-                        <h1>R$1400,00</h1>
+    <div class='produto_main_container'>
+        <div class="grid_produto">
+            <div class="grid_nome_vendedor">
+                <div class='produto_img_vendedor'>
+                    <div class="imagem_nome_vendedor">
+                        <img src="../../image/cliente/produto/user_thunder_gamers.png" alt="">
+                    </div>
+                    <div class="nome_vendedor">
+                        <h1>THUNDER GAMERS</h1>
+                        <h2>
+                            <img src="../../image/cliente/produto/local_icon.svg" alt="">
+                            São Paulo, São Paulo</h2>
                     </div>
                 </div>
-                <div class="produto_info_text2">
-                    <h1>À vista no PIX com até 10% OFF </h1>
-                    <h2>R$ 1400,00 Em até 10x de R$ 140,00 sem juros no cartão Ou em 1x no cartão com até 5% OFF</h2>
-                </div>
-
-                <div class="grid_produto_info_botton">
-                    <button class="comprar"><img src="../../image//geral/cesta_botao.svg" alt="">COMPRAR</button>
-                    <button class="comprar_2"><img src="../../image/geral/add_botao_azul.svg" alt="">COMPRAR</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="descricao_produto_item1">
-            <h1>Descrição do Produto</h1>
-        </div>
-
-        <div class="grid_consultar_fetre_cupom">
-            <div class="consultar_frete">
-                <h1>CONSULTAR FRETE</h1>
-                <div class="consultar_buttom">
-                    <input class="base_input" type="text">
-                    <button>Ok</button>
+                
+                <div class="avaliacao_vendedor">
+                    <h1>AVALIAÇÃO GERAL</h1>
+                    <div class='vendedor_rating'>
+                        <h2 class='nome_vendedor_estrela'>★★★★★</h2>
+                        <h2>4.5</h2>
+                    </div>
+                    <h3>(156mil+)</h3>
                 </div>
             </div>
 
-            <div class="consultar_cupom">
-                <h1>CUPOM</h1>
-                <div class="consultar_buttom">
-                    <input class="base_input" type="text">
-                    <button>Ok</button>
+            <div class="grid_scroll">
+                <div class="icon_scroll">
+                    <img src="../../image/cliente/produto/icon_seta.svg" alt="">
+                </div>
+
+                <div class="images_scroll">
+                    <div class='imagem_selecionada'><img src="../../image/cliente/produto/cadeira_gamer_1.jpg" alt=""></div>
+                    <div><img src="../../image/cliente/produto/cadeira_gamer_2.jpg" alt=""></div>
+                    <div><img src="../../image/cliente/produto/cadeira_gamer_3.jpg" alt=""></div>
+                    <div><img src="../../image/cliente/produto/cadeira_gamer_4.jpg" alt=""></div>
+                </div>
+
+
+                <div class="icon_scroll foward">
+                    <img src="../../image/cliente/produto/icon_seta.svg" alt="">
+                </div>
+            </div>
+
+            <div class="grid_produto_image">
+                <div class="produto_image">
+                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                 </div>
                 
+            </div>
+
+            <div class="grid_produto_info_bg">
+                <div class="grid_produto_info">
+                    <div class='produto_title'>
+                        <div class="produto_info_nome">
+                            <h1>CADEIRA GAMER THRONE - RGB</h1>
+                        </div>
+                        <div class="produto_info_text">
+                            <h2>Vendido e entregue por: <a href=""><b>THUNDER GAMES</b></a> </h2>
+                            <h3>Em estoque</h3>
+                        </div>
+                    </div>
+                    <div class='div_produto_valor'>
+                        <div class="grid_produto_info_valor">
+                            <div class="produto_info_valor">
+                                <h2>R$2000,00</h2>
+                                <div class='produto_bandeira'>
+                                    <h3>30%<br>OFF</h3>
+                                </div>
+                                <h1>R$1400,00</h1>
+                            </div>
+                        </div>
+                        <div class="produto_info_text2">
+                            <h2>À vista no PIX com até 10% OFF
+                                <b>R$ 1400,00</b>
+                                Em até 10x de
+                                <b>R$ 140,00</b>
+                                sem juros no cartão Ou em 1x no cartão com até 5% OFF
+                            </h2>
+                        </div>
+                    </div>
+                    
+                    
+
+                    <div class="grid_produto_info_button">
+                        <button class="base_botao btn_blue"><img src="../../image//geral/cesta_botao.svg" alt="">CARRINHO</button>
+                        <button class="base_botao btn_outline_blue" onclick="pag('cliente/carrinho_vazio')"><img src="../../image/geral/add_botao_azul.svg" alt="">COMPRAR</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid_consultar_frete_cupom">
+                <div class="consultar_frete">
+                    <h1>CONSULTAR FRETE</h1>
+                    <div class="consultar_input">
+                        <input class="base_input" type="text">
+                        <button class='base_botao btn_blue btn_consulta'>Ok</button>
+                    </div>
+                </div>
+
+                <div class="consultar_cupom">
+                    <h1>CUPOM</h1>
+                    <div class="consultar_input">
+                        <input class="base_input" type="text">
+                        <button class='base_botao btn_blue'>Ok</button>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="retangle1"></div>
-
     <div class="grid_descricao_produto">
         <div class="descricao_produto_item2">
-            <img src="../../image/cliente/produto/icon_tiket.png" alt="">
+            <img src="../../image/cliente/produto/icon_label.svg" alt="">
             <h1>DESCRIÇÃO DO PRODUTO</h1>
         </div>
         <p><strong>CADEIRA GAMER THRONE RGB</strong></p>
@@ -128,19 +142,18 @@
         <p>Maciez e conforto com sua base de nylon reforçado. E não podíamos deixar de falar do seu principal diferencial, que é o sistema de iluminação. Acompanha controle remoto para personalização da iluminação. Você poderá escolher a cor que deseja ou navegar através dos efeitos disponíveis!</p>
         <p><strong>Especificações Técnicas:</strong></p>
         <ul>
-            <li>Almofadas para apoio cervical e lombar para uma posição ergonômica e confortável</li>
-            <li>Ajuste de altura com sistema butterfly</li>
-            <li>Apoio de braço 3D regulável em PVC de alta resistência</li>
-            <li>Iluminação em LED RGB</li>
+            <li>● Almofadas para apoio cervical e lombar para uma posição ergonômica e confortável</li>
+            <li>● Ajuste de altura com sistema butterfly</li>
+            <li>● Apoio de braço 3D regulável em PVC de alta resistência</li>
+            <li>● Iluminação em LED RGB</li>
         </ul>
         <p> <a href="">Compre já o seu na E ao Quadrado!</a></p>
     </div>
 
-    <div class="retangle2"></div>
-
-    <div class="grid_avaliacao_produto">
+    <div class="grid_descricao_produto">
+        <div class="line_top"></div>
         <div class="descricao_produto_item3">
-            <img src="../../image/cliente/produto/icon_tiket.png" alt="">
+            <img src="../../image/cliente/produto/icon_label.svg" alt="">
             <h1>AVALIAÇÕES DO PRODUTO</h1>
         </div>
 
@@ -150,22 +163,18 @@
                     <h1>4.5</h1>
                 </div>
                 <div class="estrelas_avaliacao_produto">
-                    <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                    <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                    <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                    <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                    <img src="../../image/cliente/produto/icon_estrela_metade.png" alt="">
+                    <h2 class='nome_vendedor_estrela'>★★★★★</h2>
                 </div>
             </div>
 
             <div class="grid_retangulos_avaliacao_produto ">
                 <div class="retangulos_avaliacao_produto">
-                    <p>5 Estrelas (1,3 mil)</p>
-                    <p>4 Estrelas (708)</p>
-                    <p>3 Estrelas (19)</p>
-                    <p>2 Estrelas (75)</p>
-                    <p>1 Estrela (5)</p>
-                    <p>Com mídia (3)</p>
+                    <button><p>5 Estrelas (1,3 mil)</p></button>
+                    <button><p>4 Estrelas (708)</p></button>
+                    <button><p>3 Estrelas (19)</p></button>
+                    <button><p>2 Estrelas (75)</p></button>
+                    <button><p>1 Estrela (5)</p></button>
+                    <button><p>Com mídia (3)</p></button>
                 </div>
             </div>
         </div>
@@ -174,15 +183,13 @@
     <div class="grid_comentarios_usuarios">
         <div class="comentario_usuario_1">
             <div class="grid_user_1">
-                <img src="/image/produto/icon_homem.png" alt="">
-                <h1>Carlos</h1>
+                <div class='cliente_nome_pic'>
+                    <img src="../../image/cliente/produto/icon_profile.svg" alt="">
+                    <h1>Carlos</h1>
+                </div>
 
-                <div class="estrelas_user_1">
-                    <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                    <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                    <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                    <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                    <img src="../../image/cliente/produto/icon_estrela_metade.png" alt="">
+                <div class="estrelas_avaliacao_produto">
+                    <h2 class='nome_vendedor_estrela'>★★★★★</h2>
                 </div>
             </div>
 
@@ -195,112 +202,105 @@
                     <h2>Parecido com o anúncio:</h2>
                     <h3>Sim</h3>
                 </div>
-                <h2>Uma cadeira gamer envolvente e seduzente é muito mais do que um simples móvel. Ela combina conforto ergonômico com um design atraente que promove uma imersão total na experiência de jogo. Com seu encosto alto e ajustes personalizáveis, não só proporciona suporte para longas sessões de jogo, mas também se torna um elemento marcante no ambiente, convidando você a se entregar ao mundo virtual com estilo e conforto.</h2>
+                <h2 class='produto_comentario'>
+                    Uma cadeira gamer envolvente e seduzente é muito mais do que um simples móvel. Ela combina conforto ergonômico com um design atraente que promove uma imersão total na experiência de jogo. Com seu encosto alto e ajustes personalizáveis, não só proporciona suporte para longas sessões de jogo, mas também se torna um elemento marcante no ambiente, convidando você a se entregar ao mundo virtual com estilo e conforto.
+                </h2>
             </div>
 
             <div class="grid_images_user_1">
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                <div class="bar_image_user_1">
-                    <div class="image1_user_1">
-                        <img src="../../image/cliente/produto/bar_video.png" alt="">
-                    </div>
-                    <div class="image2_user_1">
-                        <img src="../../image/cliente/produto/icon_camera.png" alt="">
-                    </div>
-                </div>
-                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-            </div>
-        </div>
-        <div class="separacao_comentario"></div>
-        <!-- Usuário 2 -->
-        <div class="grid_comentario_usuario_2">
-            <div class="comentario_usuario_2">
-                <div class="grid_user_2">
-                    <img src="/image/produto/icon_mulher.png" alt="">
-                    <h1>Maria</h1>
-
-                    <div class="estrelas_user_2">
-                        <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                        <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                        <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                        <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                        <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                    </div>
-                </div>
-
-                <div class="grid_comentario_user_2">
-                    <div class="avaliacao_user_2_item1">
-                        <h2>Qualidade:</h2>
-                        <h3>Excelente</h3>
-                    </div>
-                    <div class="avaliacao_user_2_item2">
-                        <h2>Parecido com o anúncio:</h2>
-                        <h3>Sim</h3>
-                    </div>
-                    <h2>A cadeira é muito confortável, ideal para longas sessões de uso. O material é de alta qualidade e parece bem durável.</h2>
-                </div>
-
-                <div class="grid_images_user_2">
+                <div class="image1_user_1">
                     <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                    <div class="bar_image_user_2">
-                        <div class="image1_user_2">
-                            <img src="../../image/cliente/produto/bar_video.png" alt="">
-                        </div>
-                        <div class="image2_user_2">
-                            <img src="../../image/cliente/produto/icon_camera.png" alt="">
-                        </div>
+                    <div class='div_video'>
+                        <img src="../../image/cliente/produto/icon_camera.svg" alt="">
+                        1:32
                     </div>
+                </div>
+                <div class='image1_user_1'>
                     <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                 </div>
             </div>
         </div>
-        <div class="separacao_comentario"></div>
-        <!-- Usuário 3 -->
-        <div class="grid_comentario_usuario_3">
-            <div class="comentario_usuario_3">
-                <div class="grid_user_3">
-                    <img src="/image/produto/icon_homem.png" alt="">
-                    <h1>Lucas</h1>
 
-                    <div class="estrelas_user_3">
-                        <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                        <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                        <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                        <img src="../../image/cliente/produto/icon_estrela_completa.png" alt="">
-                        <img src="../../image/cliente/produto/icon_estrela_metade.png" alt="">
-                    </div>
+        <div class="comentario_usuario_1">
+            <div class="grid_user_1">
+                <div class='cliente_nome_pic'>
+                    <img src="../../image/cliente/produto/icon_profile.svg" alt="">
+                    <h1>Julia</h1>
                 </div>
 
-                <div class="grid_comentario_user_3">
-                    <div class="avaliacao_user_3_item1">
-                        <h2>Qualidade:</h2>
-                        <h3>Boa</h3>
-                    </div>
-                    <div class="avaliacao_user_3_item2">
-                        <h2>Parecido com o anúncio:</h2>
-                        <h3>Não</h3>
-                    </div>
-                    <h2>Embora a cadeira seja boa, o modelo não é exatamente o mesmo que o anunciado. Contudo, ainda assim, estou satisfeito com a compra.</h2>
+                <div class="estrelas_avaliacao_produto">
+                    <h2 class='nome_vendedor_estrela'>★★★★★</h2>
                 </div>
+            </div>
 
-                <div class="grid_images_user_3">
+            <div class="grid_comentario_user_1">
+                <div class="avaliacao_user_1_item1">
+                    <h2>Qualidade:</h2>
+                    <h3>Muito boa</h3>
+                </div>
+                <div class="avaliacao_user_1_item2">
+                    <h2>Parecido com o anúncio:</h2>
+                    <h3>Sim</h3>
+                </div>
+                <h2 class='produto_comentario'>
+                    Uma cadeira gamer que se destaca pela sua envolvência, sedução e incrível conforto transcende o conceito tradicional de móvel. Com linhas sofisticadas e um encosto que abraça suavemente, ela não apenas complementa o ambiente com seu design elegante, mas também oferece um suporte ergonômico que se adapta perfeitamente ao corpo.
+                </h2>
+            </div>
+
+            <div class="grid_images_user_1">
+                <div class='image1_user_1'>
                     <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                    <div class="bar_image_user_3">
-                        <div class="image1_user_3">
-                            <img src="../../image/cliente/produto/bar_video.png" alt="">
-                        </div>
-                        <div class="image2_user_3">
-                            <img src="../../image/cliente/produto/icon_camera.png" alt="">
-                        </div>
-                    </div>
+                </div>
+                <div class='image1_user_1'>
                     <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                 </div>
             </div>
         </div>
+
+        <div class="comentario_usuario_1">
+            <div class="grid_user_1">
+                <div class='cliente_nome_pic'>
+                    <img src="../../image/cliente/produto/icon_profile.svg" alt="">
+                    <h1>Alex</h1>
+                </div>
+                
+                <div class="estrelas_avaliacao_produto">
+                    <h2 class='nome_vendedor_estrela'>★★★★★</h2>
+                </div>
+            </div>
+
+            <div class="grid_comentario_user_1">
+                <div class="avaliacao_user_1_item1">
+                    <h2>Qualidade:</h2>
+                    <h3>Incrível</h3>
+                </div>
+                <div class="avaliacao_user_1_item2">
+                    <h2>Parecido com o anúncio:</h2>
+                    <h3>Sim</h3>
+                </div>
+                <h2 class='produto_comentario'>
+                    Meu irmao adorou a cadeira 😁
+                </h2>
+            </div>
+
+            <div class="grid_images_user_1">
+                <div class="image1_user_1">
+                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <div class='div_video'>
+                        <img src="../../image/cliente/produto/icon_camera.svg" alt="">
+                        0:45
+                    </div>
+                </div>
+                <div class='image1_user_1'>
+                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                </div>
+            </div>
+        </div>
+
     </div>
     <?php 
       include_once('../../pages/geral/footer.php');
     ?>
 </body>
-
+<script type='module' src='../../js/cliente/produto_carrossel.js'></script>
 </html>

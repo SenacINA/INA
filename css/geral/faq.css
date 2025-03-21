@@ -1,9 +1,11 @@
 .faq_body {
     padding: 16px;
+    max-width: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    justify-self: center;
     row-gap: 24px;
 }
 
@@ -58,7 +60,7 @@
     justify-content: start; 
     
     p {
-        font-size: 32px;
+        font-size: 24px;
         font-weight: 500;
         
         svg {
@@ -286,7 +288,7 @@
     }
 
     .faq_button {
-        height: 48px;
+        height: 40px;
         font-size: 18px;
         padding: 12px 16px;
         width: 100%;

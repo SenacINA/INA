@@ -13,9 +13,12 @@
   <script src="../../js/geral/base.js"></script>
 </head>
 <body>
+  <!-- Até 375px -->
+
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>
+  
   <main>
     <div class="redefinir_email_1_container">
       <div class="redefinir_email_1_main_content">
@@ -33,7 +36,7 @@
               </a>
           </div>
           <a href="./redefinir_senha_1.php">Redefinir Senha</a>
-        </form>
+        </form>
       </div>
 
       <div class="redefinir_email_1_botoes">

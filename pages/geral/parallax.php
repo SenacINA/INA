@@ -11,6 +11,5 @@
     <div class="parallax_div_animate" id="hoverElement">
         <img class="parallax_img_logo" src="../../image/geral/parallax/img_logo_texto.svg" alt="logo">
     </div>
-
 </body>
 </html>

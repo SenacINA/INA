@@ -125,7 +125,6 @@
 
 
 @media (max-width: 1024px) {
-
     .dashboard_body{
         height: 100%;
         padding-top: 2%;
@@ -137,7 +136,7 @@
     }
 
     .dashboard_body_container_botoes{
-        padding: 0px 8% 0px 8%;
+        padding: 0px 8% 32px 8%;
     }
 }
 

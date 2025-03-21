@@ -445,18 +445,31 @@ display: none;}
 .container_voltar{
     display: flex;
     align-items: center;
-    justify-content: center;
+
+    width: 95%;
+    justify-content: end;
 }
 
-.botao_voltar{
-    color: red;
-    border-radius: 10px;
-    padding: 10px;
-    border: 2px solid red;
+.redefinir_email_1_botao_voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+  text-align: center;
+  border: 0;
+  color: white;
+  font-family: Jost;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 200px;
+  height: 40px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: #d73232;
 }
-.botao_voltar:hover{
-    background-color: #d1d1d1;
-}
+
 
 .font_cinza{
     color: #4A4A4A;

@@ -19,6 +19,7 @@
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
+    
     <div class="img_fundo largura_com_scroll">
     <div class="index_body_carrossel">
         <div class="index_body_carrossel_content">
@@ -193,8 +194,8 @@
     </main>
     <br>
     <div class="container_voltar">
-        <button class="base_botao btn_outline_red">
-            Voltar
+        <button class="redefinir_email_1_botao_voltar" onclick="history.back()">
+            <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
         </button>
     </div>
     <br>

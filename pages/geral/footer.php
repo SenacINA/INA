@@ -13,23 +13,23 @@ if (isset($isIndex) && $isIndex) {
     <div class='footer_info'>
         <div class='footer_coluna'>
             <h2>Categorias</h2>
-            <a href="" class="base_link">Hardware</a>
-            <a href="" class="base_link">Periféricos</a>
-            <a href="" class="base_link">Escritório</a>
-            <a href="" class="base_link">Celulares</a>
-            <a href="" class="base_link">Eletrodomésticos</a>
-            <a href="" class="base_link">Games</a>
-            <a href="" class="base_link">Livros</a>
-            <a href="" class="base_link">Áudio</a>
-            <a href="" class="base_link">Geek</a>
+            <a href="../cliente/categoria.php" class="base_link">Hardware</a>
+            <a href="../cliente/categoria.php" class="base_link">Periféricos</a>
+            <a href="../cliente/categoria.php" class="base_link">Escritório</a>
+            <a href="../cliente/categoria.php" class="base_link">Celulares</a>
+            <a href="../cliente/categoria.php" class="base_link">Eletrodomésticos</a>
+            <a href="../cliente/categoria.php" class="base_link">Games</a>
+            <a href="../cliente/categoria.php" class="base_link">Livros</a>
+            <a href="../cliente/categoria.php" class="base_link">Áudio</a>
+            <a href="../cliente/categoria.php" class="base_link">Geek</a>
         </div>
         <div class='footer_coluna'>
             <h2>Termos e Condições</h2>
             <h3>FAQ</h3>
-            <a href="" class="base_link underline">Acessibilidade</a>
-            <a href="" class="base_link underline">Privacidade e Proteção de dados</a>
-            <a href="" class="base_link underline">Informações de venda</a>
-            <a href="" class="base_link underline">Trabalhe conosco</a>
+            <a href="../geral/faq.php" class="base_link underline">Acessibilidade</a>
+            <a href="../geral/faq.php" class="base_link underline">Privacidade e Proteção de dados</a>
+            <a href="../geral/faq.php" class="base_link underline">Informações de venda</a>
+            <a href="../geral/faq.php" class="base_link underline">Trabalhe conosco</a>
         </div>
         <div class='footer_coluna'>
             <h2>Contato</h2>

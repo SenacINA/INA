@@ -13,10 +13,11 @@
     <script src="../../js/geral/base.js"></script>
 </head>
 <body>
+  <!-- Até 375px -->
+
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>
-
   <main>
       <div class="dashboard_body">
         <div class="dashboard_titulo">
