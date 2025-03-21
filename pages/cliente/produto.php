@@ -104,8 +104,8 @@
                     
 
                     <div class="grid_produto_info_button">
-                        <button class="base_botao btn_blue"><img src="../../image//geral/cesta_botao.svg" alt="">COMPRAR</button>
-                        <button class="base_botao btn_outline_blue"><img src="../../image/geral/add_botao_azul.svg" alt="">COMPRAR</button>
+                        <button class="base_botao btn_blue"><img src="../../image//geral/cesta_botao.svg" alt="">CARRINHO</button>
+                        <button class="base_botao btn_outline_blue" onclick="pag('cliente/carrinho_vazio')"><img src="../../image/geral/add_botao_azul.svg" alt="">COMPRAR</button>
                     </div>
                 </div>
             </div>
