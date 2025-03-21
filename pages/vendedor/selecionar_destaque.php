@@ -6,109 +6,164 @@
     <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
     <title>E ao Quadrado</title>
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/vendedor/selecionar_destaque.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/style.css">
+    <script src='../../js/geral/base.js'></script>
 </head>
 <body>
-    <!-- fazer a responsividade -->
-    <!--arrumar o nome das class  -->
 
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
 
-    <div class="vendedor_selecionar_destaque_conteudo_externo display_grid">
-        <div class="vendedor_selecionar_destaque_barra_azul bg_sappire">
-            <h2 class="font_titulo">SELECIONAR DESTAQUES</h2>
+    <main>
+        <div class = "selecionardestaques_body">
+            <div class="selecionardestaques_titulo">
+                <div class="selecionardestaques_text_titulo">
+                    <img src="../../image/vendedor/selecionar_destaques/estrela.svg" alt="">
+                    <h1>SELECIONAR DESTAQUES</h1>
+                </div>
+                <hr class="selecionardestaques_linha_titulo">
+            </div>
+            <div class="selecionardestaques_body_container_botoes">
+                <?php 
+                    include_once ('../../pages/geral/card_produto.php');
+                    gerarProdutoCards(3, 0);
+                ?>
+                <button class="selecionardestaques_add_button">
+                    <img src="../../image/vendedor/selecionar_destaques/add.svg" alt="">
+                </button>
+            </div> 
         </div>
-        <div class="vendedor_selecionar_destaque_produtos">
-            <h2 class="font_titulo vendedor_selecionar_destaque_titulo">DESTAQUES</h2>
-            <div class="vendedor_selecionar_destaque_produto_holder">
-                <div class="vendedor_selecionar_destaque_cartao_produto">
-                    <img src="https://placehold.co/200x200.png" alt="Gaming Chair" class="product_image">
-                    <div class="vendedor_selecionar_destaque_produto_titulo">Nova DigitalDeluxe Matrix S2 Pro</div>
-                    <div class="vendedor_selecionar_destaque_estrelas">★★★★☆</div>
-                    <div class="vendedor_selecionar_destaque_preco">R$2.099,99</div>
-                </div>
-                <div class="vendedor_selecionar_destaque_cartao_produto">
-                    <img src="https://placehold.co/200x200.png" alt="Gaming Keyboard" class="product_image">
-                    <div class="vendedor_selecionar_destaque_produto_titulo">Fone De Ouvido Ultra Avançar</div>
-                    <div class="vendedor_selecionar_destaque_estrelas">★★★★★</div>
-                    <div class="vendedor_selecionar_destaque_preco">R$569,99</div>
-                </div>
-                <div class="vendedor_selecionar_destaque_cartao_produto">
-                    <img src="https://placehold.co/200x200.png" alt="Gaming Headset" class="product_image">
-                    <div class="vendedor_selecionar_destaque_produto_titulo">Headset Gamer Star Pro Astro A50</div>
-                    <div class="vendedor_selecionar_destaque_estrelas">★★★★☆</div>
-                    <div class="vendedor_selecionar_destaque_preco">R$899,99</div>
-                </div>
+
+        <div class="gerenciar_pedidos_header_title">
+            <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg"/>
+            <h1 class="gerenciar_pedidos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
+        </div>
+
+        <div class="gerenciar_pedidos_table">
+            <div class="gerenciar_pedidos_table_filtro bg_carolina">
+                <p class="gerenciar_pedidos_filtro_titulo font_subtitulo">Organizar por:</p>
+                <select>
+                <option value="" selected disable style="display: none;"></option>
+                <option value="">Opa1</option>
+                <option value="">Opa2</option>
+                <option value="">Opa3</option>
+                <option value="">Opa4</option>
+                </select>
+            </div>
+            <div class="base_tabela">
+                <table>
+                    <colgroup>
+                        <col class="gerenciar_pedidos_table_col-1">
+                        <col class="gerenciar_pedidos_table_col-2">
+                        <col class="gerenciar_pedidos_table_col-3">
+                        <col class="gerenciar_pedidos_table_col-4">
+                        <col class="gerenciar_pedidos_table_col-5">
+                        <col class="gerenciar_pedidos_table_col-6">
+                        <col class="gerenciar_pedidos_table_col-7">
+                        <col class="gerenciar_pedidos_table_col-8">
+                        
+                    </colgroup>
+                    <thead>
+                        <tr>
+                        <th>Cód.</th>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Promoção</th>
+                        <th>Valor Final</th>
+                        <th>Vendas</th>
+                        <th>Classificação</th>
+                        <th>Avaliações</th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td class="gerenciar_pedidos_table_td_check">
+                                    <span>    
+                                        <input type="checkbox" name="" id="">
+                                    </span>
+                                </td>
+                                <td class="gerenciar_pedidos_table_td-img">
+                                    <span>
+                                        <img src="../../image/index/Produto04.jpg" alt="">
+                                        Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB
+                                    </span>
+                                </td>
+                                <td>R$ 2.000,00</td>
+                                <td>30% OFF</td>
+                                <td><span>R$ 1.400,00</span></td>
+                                <td>R$ 1,400,00</td>
+                                <td><span>4,5 Estrelas</span></td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td class="gerenciar_pedidos_table_td_check">
+                                    <span>    
+                                        <input type="checkbox" name="" id="">
+                                    </span>
+                                </td>
+                                <td class="gerenciar_pedidos_table_td-img">
+                                    <span>
+                                        <img src="../../image/index/Produto03.jpg" alt="">
+                                        Cadeira Gamer Throne - RGB
+                                    </span>
+                                </td>
+                                <td>R$ 2.000,00</td>
+                                <td>30% OFF</td>
+                                <td>R$ 1,400,00</td>
+                                <td>Pendente</td>
+                                <td>4,5 Estrelas</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td class="gerenciar_pedidos_table_td_check">
+                                    <span>    
+                                        <input type="checkbox" name="" id="">
+                                    </span>
+                                </td>
+                                <td class="gerenciar_pedidos_table_td-img">
+                                    <span>
+                                        <img src="../../image/index/Produto02.jpg" alt="">
+                                        Cadeira Gamer Throne - RGB
+                                    </span>
+                                </td>
+                                <td>R$ 2.000,00</td>
+                                <td>Nenhuma</td>
+                                <td>R$ 1,400,00</td>
+                                <td>Pendente</td>
+                                <td>4,5 Estrelas</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td class="gerenciar_pedidos_table_td_check">
+                                    <span>    
+                                        <input type="checkbox" name="" id="">
+                                    </span>
+                                </td>
+                                <td class="gerenciar_pedidos_table_td-img">
+                                    <span>
+                                        <img src="../../image/index/Produto01.jpg" alt="">
+                                        Cadeira Gamer Throne - RGB
+                                    </span>
+                                </td>
+                                <td>R$ 2.000,00</td>
+                                <td>30% OFF</td>
+                                <td>R$ 1,400,00</td>
+                                <td>Pago</td>
+                                <td>4,5 Estrelas</td>
+                                <td>500</td>
+                            </tr>
+                        </tbody>
+                    </thead>
+                </table>
             </div>
         </div>
+    </main>
 
-        <table class="vendedor_selecionar_destaque_tabela_produto">
-            <thead>
-                <tr>
-                    <th class="vendedor_selecionar_destaque_tabela_titulo">PRODUTO</th>
-                    <th class="vendedor_selecionar_destaque_tabela_titulo">PREÇO</th>
-                    <th class="vendedor_selecionar_destaque_tabela_titulo">PROMOÇÃO</th>
-                    <th class="vendedor_selecionar_destaque_tabela_titulo">VALOR FINAL</th>
-                    <th class="vendedor_selecionar_destaque_tabela_titulo">TOTAL DE VENDAS</th>
-                    <th class="vendedor_selecionar_destaque_tabela_titulo">CLASSIFICAÇÃO</th>
-                    <th class="vendedor_selecionar_destaque_tabela_titulo">AVALIAÇÕES</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="vendedor_selecionar_destaque_tabela_linha">
-                    <td class="vendedor_selecionar_destaque_tabela_celula">
-                        <img src="https://placehold.co/50x50.png" alt="Product" class="small_product_image">
-                        Cadeira Gamer Throne - RGB
-                    </td>
-                    <td class="vendedor_selecionar_destaque_tabela_celula">R$2.000,00</td>
-                    <td class="vendedor_selecionar_destaque_tabela_celula">45% OFF</td>
-                    <td class="vendedor_selecionar_destaque_tabela_celula">R$1.400,00</td>
-                    <td class="vendedor_selecionar_destaque_tabela_celula">573 UN</td>
-                    <td class="vendedor_selecionar_destaque_tabela_celula">4.5 Estrelas</td>
-                    <td class="vendedor_selecionar_destaque_tabela_celula">689</td>
-                </tr>
-                <!-- Additional rows with similar structure -->
-            </tbody>
-        </table>
-
-    </div>
-    <?php 
-      include_once('../../pages/geral/footer.php');
-    ?>
+    <!-- <?php 
+    //   include_once('../../pages/geral/footer.php');
+    ?> -->
 </body>
-
 </html>
-
-
-<!-- <body>
-    <header class="nav_bar">
-        <h1>Nav</h1>
-    </header>
-    <div class="vendedor_selecionar_destaque_barra_azul">
-        <p>Selecionar Destaques</p>
-    </div>
-    <div class="vendedor_selecionar_destaque_conteudo display_grid">
-        <div class="vendedor_selecionar_destaque_opcoes">
-            <h2>Destaques</h2>
-
-            <div class="vendedor_selecionar_destaque_grid_produtos display_grid">
-                <div class="prod">
-                    <p>Lol</p>
-                </div>
-                <div class="prod">
-                    <p>Lol</p>
-                </div>
-                <div class="prod">
-                    <p>Lol</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body> -->

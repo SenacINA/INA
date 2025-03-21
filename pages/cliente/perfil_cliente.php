@@ -13,12 +13,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/style.css">
   <script src="../../js/geral/base.js"></script>
-
 </head>
 <body>
+    <!-- fazer responsividade -->
+
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
+    
     <main>
         <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner_cliente">
 

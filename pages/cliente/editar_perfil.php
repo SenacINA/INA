@@ -18,6 +18,7 @@
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>
+
   <main>
     <div class="editar_perfil_container">
       <div class="editar_perfil_view">

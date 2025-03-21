@@ -41,12 +41,13 @@ function gerarProdutoCards($quantidade)
   <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <!-- Atá 375px -->  
 
   <?php
   include_once('../../pages/geral/navbar.php');
   ?>
+  
   <div class="title_mobile">
     <div class="title_text">
       <img src="../../image/vendedor/editar_perfil/pessoa.svg">
@@ -121,8 +122,15 @@ function gerarProdutoCards($quantidade)
         </div>
       </form>
       <div class="botoes_redefinir">
-        <button type="button" class='redefinir_senha_vendedor'>Redefinir senha</button>
-        <button type="button" class="redefinir_email_vendedor">Redefinir email</button>
+        <button type="button" class='redefinir_senha_vendedor'>
+          <img src="../../image/geral/seta_botao_branco.svg" alt="">
+          Redefinir senha
+
+        </button>
+        <button type="button" class="redefinir_email_vendedor">
+          <img src="../../image/geral/seta_botao_branco.svg" alt="">
+          Redefinir email
+        </button>
       </div>
       <div class="redes_sociais_vendedor">
         <div class="redes_text">
@@ -133,7 +141,10 @@ function gerarProdutoCards($quantidade)
           <img src="../../image/vendedor/editar_perfil/icon_instagram_vendedor.svg" alt="instagram"> <a href="#" class="link_instagram">my.thudergames </a>
           <img src="../../image/vendedor/editar_perfil/icon_facebook_vendedor.svg" alt="facebook"> <a href="#" class="link_facebook">thundergames</a>
         </div>
-        <button class="botao_edit">Editar</button>
+        <button class="botao_edit">
+          <img src="../../image/geral/caneta_branca_icon.svg" alt="">
+          Editar
+        </button>
       </div>
     </div>
     <div class="edit_foto">
