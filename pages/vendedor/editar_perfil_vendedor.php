@@ -41,12 +41,13 @@ function gerarProdutoCards($quantidade)
   <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <!-- Atá 375px -->  
 
   <?php
   include_once('../../pages/geral/navbar.php');
   ?>
+  
   <div class="title_mobile">
     <div class="title_text">
       <img src="../../image/vendedor/editar_perfil/pessoa.svg">
