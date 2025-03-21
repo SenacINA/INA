@@ -31,20 +31,35 @@ function handleAddRemoveButton(value, add = 1, max = 10, min = 1){
     return num + add < min ? num : num + add;
 }
 
+const removerTudoFun = () => {
+    const elemento = document.getElementsByClassName('carrinho_vazio_conteudo_items')[0]
+    if(!elemento)return
+
+    elemento.innerHTML = '<h1 class="items_vazio">NENHUM ITEM NO CARRINHO</h1>'
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const btn_add = document.getElementById("carrinhoVazioBotaoAumentar")
     const btn_dec = document.getElementById("carrinhoVazioBotaoDiminuir")
     const carrinho_value = document.getElementById("quantidadeCarrinho")
     const precoTotal = document.getElementById("carrinhoVazioPrecoTotal")
     const precoBase = document.getElementById("carrinhoVazioPrecoBase")
+    
+    const removerTudo = document.getElementById("carrinhoVazioRemoverTudo")
+    const removerTudoItem = document.getElementById("carrinhoVazioRemoverItem")
+
+
     console.log('algo2')
 
-    if(!(btn_add && btn_dec && carrinho_value && precoTotal && precoBase)){
+    if(!(btn_add && btn_dec && carrinho_value && precoTotal && precoBase && removerTudo && removerTudoItem)){
         console.log('Carrinho vazio ou Erro ao encontrar elementos')
         return
     }
     console.log('algo3')
     
+    removerTudo.addEventListener('click', removerTudoFun)
+    removerTudoItem.addEventListener('click', removerTudoFun)
 
     btn_add.addEventListener('click', () => {
         

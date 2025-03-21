@@ -137,7 +137,7 @@
 
 .carrinho_vazio_conteudo_servicos {
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -169,11 +169,13 @@
 
 .carrinho_vazio_conteudo_items {
   width: 100%;
-  height: 70%;
+  height: 300px;
+  max-height: 300px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin: 32px 0;
+  margin: 16px 0;
 }
 
 .carrinho_vazio_sem_itens{
@@ -188,8 +190,11 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 4px;
+  background-color: var(--azul_leve);
 }
 
 
@@ -214,11 +219,17 @@
   position: relative;
   left: 70%;
 }
+.carrinho_vazio_holder_final{
+  display: flex;
+  gap: 16px;
+  width: min-content;
+}
 
 .carrinho_vazio_botoes_holder {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   margin: 24px 0;
 }
 
@@ -232,6 +243,11 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  gap: 16px;
+}
+
+.carrinho_vazio_bold{
+  font-weight: 500;
 }
 
 .carrinho_vazio_image_holder{
@@ -240,6 +256,8 @@
   align-items: center;
 
   img{
+    height: 128px;
+    width: 128px;
     object-fit: cover;
   }
 }
@@ -276,7 +294,7 @@
 
 /* Product details */
 .product-details {
-  width: 70%;
+  width: 60%;
 }
 
 .manufacturer {
@@ -284,9 +302,6 @@
   color: var(--cinza);
 }
 
-.product-name {
-  margin: 4px 0 8px 0;
-}
 
 .payment-info {
   font-size: 1rem;
@@ -345,8 +360,8 @@
   min-width: 150px;
 }
 
-.carrinho_vazio_self_left{
-  align-self: flex-start;
+.carrinho_vazio_self_right{
+  align-self: flex-end;
 }
 
 .remove-btn {
@@ -357,14 +372,7 @@
   margin-top: 8px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  
-  .quantity-price {
-    width: 100%;
-    justify-content: space-between;
-  }
-}
+
 
 /* FIm Card Produto*/
 
@@ -389,6 +397,16 @@
     column-gap: 4px;
   }
 
+  .carrinho_vazio_servicos_text{
+    p{
+      font-size: 1.25rem;
+    }
+  }
+
+  .quantity-price{
+    flex-direction: column;
+    align-items: end;
+  }
   .carrinho_vazio_conteudo_holder{
     flex-direction: column;
   }
@@ -406,15 +424,15 @@
     height: 100%;
   }
 
-  /* .carrinho_vazio_conteudo_servicos{
-    height: 25%;
-  } */
-
   .carrinho_vazio_conteudo{
     max-height: none;
   }
   .carrinho_vazio_text_info {
     padding: 4px 0 ;
+
+    h2{
+      font-size: 1.5rem;
+    }
   }
 
   .carrinho_vazio_conteudo{
@@ -425,5 +443,43 @@
 @media (max-width:768px) {
   .carrinho_vazio_main{
     margin: 0 16px;
+  }
+
+  .product-details{
+    width: 100%;
+  }
+
+  .carrinho_vazio_nav_item{
+    span{
+      font-size: 0.875rem
+    };
+  }
+
+  .quantity-price {
+    gap: 16px;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .carrinho_vazio_botoes_holder{
+    flex-direction: column-reverse;
+
+    button{
+      width: 100%;
+    }
+  }
+
+  .carrinho_vazio_detalhes_holder{
+    flex-direction: column;
+  }
+
+  .quantity-price{
+    align-items: center;
+  }
+
+  .carrinho_vazio_text_info{
+    h2{
+      font-size: 1rem;
+    }
   }
 }

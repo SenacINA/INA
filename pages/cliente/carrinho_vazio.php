@@ -34,7 +34,68 @@ function exibirProdutos()
       }
 
       $quant_produto += 1;
-      echo substr($ids[$i], 3);
+      echo '
+          <div class="carrinho_vazio_product_card">
+          <div class="product-container">
+            <div class="seller-info">
+              Vendido e entregue por: <span class="seller-name">E ao Quadrado</span> | <span class="stock-status">Em estoque</span>
+            </div>
+
+            <div class="carrinho_vazio_detalhes_holder">
+              <div class="carrinho_vazio_image_holder">
+                <img src="https://placehold.co/200" alt="Cadeira gamer throne RGB" class="product-image">
+                <!-- Product details -->
+                <div class="product-details">
+                  <p class="font_descricao font_cinza carrinho_vazio_bold">Fabricante: Grapol</p>
+                  <h2 class=" font_celadon carrinho_vazio_bold">Cadeira gamer throne - RGB</h2>
+                  <div class="font_descricao font_cinza">
+                    <p>À vista no PIX com até 10% OFF</p>
+                    <p class="font_descricao font_cinza">
+                      R$ 1400,00 Em até 10x de R$ 140,00 sem juros no cartão Ou em 1x no cartão com até 5% OFF
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Quantity and price -->
+              <div class="quantity-price">
+                <!-- Quantity controls -->
+                <div class="quantity-container">
+                  <div class="quantity-controls">
+                    <button id="carrinhoVazioBotaoDiminuir" class="base_botao btn_outline_blue quantity-btn">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </button>
+                    <span id="quantidadeCarrinho">1</span>
+                    <button id="carrinhoVazioBotaoAumentar" class="base_botao btn_outline_blue quantity-btn">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Price -->
+                <div class="price-container">
+                  <p id="carrinhoVazioPrecoTotal" class="font_base font_bold font_cinza carrinho_vazio_self_right">R$1400,00</p>
+                  <p id="carrinhoVazioPrecoBase" class="font_descricao font_cinza carrinho_vazio_self_right">R$1400,00 unid.</p>
+                  <button id="carrinhoVazioRemoverItem" class="remove-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="3 6 5 6 21 6"></polyline>
+                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                      <line x1="10" y1="11" x2="10" y2="17"></line>
+                      <line x1="14" y1="11" x2="14" y2="17"></line>
+                    </svg>
+                  </button>
+                </div>
+            </div>
+            <!-- Product image -->
+            
+            </div>
+          </div>
+        </div>
+      ';
     }
 
     if ($quant_produto == 0) {
@@ -82,13 +143,8 @@ function exibirProdutos()
       </div>
       <hr class="carrinho_vazio_divisoria">
       <div class="carrinho_vazio_nav_item">
-        <img src="../../image/carrinho/conclusao.svg">
-        <span>Conclusão</span>
-      </div>
-      <hr class="carrinho_vazio_divisoria">
-      <div class="carrinho_vazio_nav_item">
-        <img src="../../image/carrinho/confirmacao.svg">
-        <span>Confirmação</span>
+        <img src="../../image/carrinho/pagamento.svg">
+        <span>Pagamento</span>
       </div>
     </div>
     <div class="carrinho_vazio_conteudo">
@@ -102,70 +158,8 @@ function exibirProdutos()
             <hr class="carrinho_vazio_divisoria_quadrado">
           </div>
           <div class="carrinho_vazio_main_content">
-          <!-- carrinho_vazio_sem_itens -->
             <div class="carrinho_vazio_conteudo_items ">
-              <div class="carrinho_vazio_product_card">
-                <div class="product-container">
-                  <div class="seller-info">
-                    Vendido e entregue por: <span class="seller-name">E ao Quadrado</span> | <span class="stock-status">Em estoque</span>
-                  </div>
-
-                  <div class="carrinho_vazio_detalhes_holder">
-                    <div class="carrinho_vazio_image_holder">
-                      <img src="https://placehold.co/200" alt="Cadeira gamer throne RGB" class="product-image">
-                      <!-- Product details -->
-                      <div class="product-details">
-                        <p class="manufacturer">Fabricante: Grapol</p>
-                        <h3 class="product-name font_celadon">Cadeira gamer throne - RGB</h3>
-                        <div class="font_descricao">
-                          <p>À vista no PIX com até 10% OFF</p>
-                          <p class="font_descricao font_bold font_cinza">
-                            R$ 1400,00 Em até 10x de R$ 140,00 sem juros no cartão Ou em 1x no cartão com até 5% OFF
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Quantity and price -->
-                    <div class="quantity-price">
-                      <!-- Quantity controls -->
-                      <div class="quantity-container">
-                        <div class="quantity-controls">
-                          <button id="carrinhoVazioBotaoDiminuir" class="base_botao btn_outline_blue quantity-btn">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                              <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                          </button>
-                          <span id="quantidadeCarrinho">1</span>
-                          <button id="carrinhoVazioBotaoAumentar" class="base_botao btn_outline_blue quantity-btn">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                              <line x1="12" y1="5" x2="12" y2="19"></line>
-                              <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <!-- Price -->
-                      <div class="price-container">
-                        <p id="carrinhoVazioPrecoTotal" class="font_base font_bold font_cinza carrinho_vazio_self_left">R$1400,00</p>
-                        <p id="carrinhoVazioPrecoBase" class="font_descricao font_cinza carrinho_vazio_self_left">R$1400,00 unid.</p>
-                        <button class="remove-btn">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="3 6 5 6 21 6"></polyline>
-                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                            <line x1="10" y1="11" x2="10" y2="17"></line>
-                            <line x1="14" y1="11" x2="14" y2="17"></line>
-                          </svg>
-                        </button>
-                      </div>
-                  </div>
-                  <!-- Product image -->
-                  
-                  </div>
-                </div>
-              </div>
-              <?php //exibirProdutos()
-              ?>
+              <?php exibirProdutos()?>
             </div>
             <div class="carrinho_vazio_conteudo_servicos">
               <div class="carrinho_vazio_servicos_text">
@@ -192,9 +186,11 @@ function exibirProdutos()
         </div>
       </div>
       <div class="carrinho_vazio_botoes_holder">
-        <button class="base_botao btn_outline_blue"><img src="../../image/geral/seta_botao.svg">VOLTAR</button>
-        <button class="base_botao btn_red"><img src="../../image/geral/x_botao.svg">REMOVER TUDO</button>
-        <button class="base_botao btn_blue"><img src="../../image/geral/confirm_botao.svg">SALVAR</button>
+        <button class="carrinho_vazio_start base_botao btn_outline_blue" onclick="history.back()"><img src="../../image/geral/seta_botao.svg">VOLTAR</button>
+        <div class="carrinho_vazio_holder_final">
+          <button id="carrinhoVazioRemoverTudo" class="base_botao btn_red"><img src="../../image/geral/x_botao.svg">REMOVER TUDO</button>
+          <button class="base_botao btn_blue" onclick="pag('cliente/carrinho_dados')"><img src="../../image/geral/confirm_botao.svg" >SALVAR</button>
+        </div>
       </div>
     </div>
   </main>
