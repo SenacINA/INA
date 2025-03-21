@@ -72,6 +72,8 @@ hr {
 
 .menu_1 select {
   position: absolute;
+  border: 2px solid var(--carolina);
+  border-radius: 5px;
   width: 300px;
   height: 40px;
   top: 300px;
@@ -386,7 +388,9 @@ hr {
     height: 150px;
     margin-top: 60%;
   }
+
   .menu_1 select {
+    width: 200px;
     top: 200px;
   }
   .historico_items {
@@ -421,10 +425,12 @@ hr {
   .perfil_cliente_about_container_2 h1 {
     font-size: 24px;
   }
+
   .menu_1 select {
     top: 150px;
-    width: 150px;
+    width: 200px;
   }
+  
   .perfil_cliente_grid_principal {
     top: -130px;
   }
@@ -437,40 +443,69 @@ hr {
   body {
     margin-top: 120px !important;
   }
+
   .perfil_cliente_pfp_cliente img {
     margin-top: 90%;
     width: 100px;
     height: 100px;
   }
+  
   .perfil_cliente_banner_cliente {
     height: 90px;
   }
+
   .historico_items {
     margin-left: 2%;
     grid-template-columns: repeat(2, 200px);
   }
+
   .anuncio {
     width: 400px;
   }
+
   .perfil_cliente_infos_container {
     column-gap: 5px;
   }
+
   .perfil_cliente_infos_container img {
     width: 20px;
   }
+
   .menu_1 select {
-    left: 70%;
-    top: 100px;
-    width: 100px;
+    z-index: 2;
+
+    top: 380px;
+    left: 50%;
+    width: 200px;
   }
+
   .perfil_cliente_about_container_2 img {
     width: 20px;
   }
+
   .ver_mais_container {
     margin-top: 10%;
   }
+  
   .perfil_cliente_infos_container {
     margin-left: 3%;
+  }
+}
+
+@media (max-width: 425px) {
+  .menu_1 select {
+    z-index: 2;
+
+    top: 375px;
+    left: 55%;
+    width: 150px;
+  }
+
+  .historico_items {
+    margin-left: 2%;
+    grid-template-columns: repeat(1, 200px);
+
+    justify-self: center;
   }
 }
 
