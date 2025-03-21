@@ -57,7 +57,7 @@ function gerarProdutoCards($quantidade)
 
         <div class="menu_1">
             <form action="">
-                <select name="menu" id="menu" onchange="selectPag(this.value)">
+                <select name="menu base_input" id="menu" onchange="selectPag(this.value)">
                     <option selected disabled value="">Menu</option>
                     <option value="cliente/editar_perfil">Editar Perfil</option>
                     <option value="vendedor/cadastro_vendedor_1">Cadastro como vendedor</option>
@@ -109,7 +109,7 @@ function gerarProdutoCards($quantidade)
                 </div>
             </div>
 
-            <img src="../../image/cliente/perfil_cliente/Anuncio.png" class="anuncio">
+            <!-- <img src="../../image/cliente/perfil_cliente/Anuncio.png" class="anuncio"> -->
     </main>
 
     <?php
