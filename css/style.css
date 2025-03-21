@@ -8,6 +8,7 @@
   --cinza: #6F6F6F;
   --vermelho: #D73232;
   --shadow-color: rgba(0, 0, 0, 0.2);
+  --mob_branco: #EFF3F5;
 }
 * {
   margin: 0;
@@ -20,7 +21,7 @@
 
 body,
 html {
-  min-height: 100%;
+  min-height: 100vh;
   background-repeat: no-repeat;
 }
 
@@ -136,7 +137,6 @@ body{
 }
 
 select.base_input {
-  /* padding-top: 0.25rem !important; */
   cursor: pointer;
 }
 
@@ -347,7 +347,6 @@ select.base_input {
 
   select.base_input,
   option.base_input{
-    /* padding-top: 0.625rem !important; */
     font-size: 1.125rem;
   }
 }
@@ -949,12 +948,6 @@ select.base_input {
   fill: var(--vermelho);
 }
 
-/* Focus styles for accessibility */
-button:focus,
-a:focus {
-  outline: 2px solid var(--carolina);
-  outline-offset: 2px;
-}
 
 .sr-only {
   position: absolute;
