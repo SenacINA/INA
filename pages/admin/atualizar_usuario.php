@@ -137,6 +137,11 @@
           </div>
         </form>
 
+        <div class="atualizar_usuario_text_titulo" id="atualizar_usuario_text_titulo_mobile">
+          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <h1>ALTERAR DADOS</h1>
+        </div> 
+
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_4">
           <hr class="atualizar_usuario_vertical">
           <img src="../../image/admin/atualizar_usuario/engrenagem_icon.svg" alt="">
@@ -197,12 +202,6 @@
             </div>
           </div>
         </form>
-
-        <div class="atualizar_usuario_text_titulo" id="atualizar_usuario_text_titulo_mobile">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
-          <h1>ALTERAR DADOS</h1>
-        </div>  
-
         <div class="atualizar_usuario_botao_salvar">
           <button class="atualizar_usuario_salvar">
             <img src="../../image/admin/atualizar_usuario/v_icon.svg" alt="">
@@ -210,11 +209,7 @@
           </button>
         </div>
       </div>
-    
-    </div>
-    
-    <!-- Falta footer -->
-    
+    </div> 
   </main>
 </body>
 </html>
