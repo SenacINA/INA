@@ -41,9 +41,8 @@ function gerarProdutoCards($quantidade)
   <link rel="stylesheet" href="../../css/style.css">
   <script src="../../js/geral/base.js"></script>
 </head>
-
 <body>
-    <!-- fazer responsividade -->
+    <!-- Até 375px -->
 
     <?php
     include_once('../../pages/geral/navbar.php');
