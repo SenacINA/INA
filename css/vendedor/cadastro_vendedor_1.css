@@ -286,18 +286,12 @@ ol li::before {
 
 @media (max-width: 425px) {
     .cadastro_vendedor1_background {
-        height: 1025px;
+        height: 1000px;
     }
 }
 
 @media (max-width: 375px) {
     .cadastro_vendedor1_background {
         height: 1080px;
-    }
-}
-
-@media (max-width: 320px) {
-    .cadastro_vendedor1_background {
-        height: 1180px;
     }
 }
