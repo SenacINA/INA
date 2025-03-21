@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../../js/geral/base.js"></script>
 </head>
 <body>
     <!-- fazer responsividade -->
@@ -19,6 +20,7 @@
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
+    
     <div class="grid_produto">
         <div class="grid_nome_vendedor">
             <div class="imagem_nome_vendedor">

@@ -73,16 +73,12 @@
   }
   
   .login_formulario_login,
-  .login_redefinir_senha_2_form {
-    max-width: 500px;
-    width: 100%;
-  }
-  
+  .login_redefinir_senha_2_form,
   .login_quadrado input,
   .login_redefinir_senha_2_form input {
-    max-width: 500px;
     width: 100%;
-  } 
+  }
+
   
   .login_formulario_login label, 
   .login_redefinir_senha_2_form label,
@@ -152,7 +148,7 @@
     border-radius: 5px;
     width: 100%;
     max-width: 200px;
-    height: 48px;
+    height: 40px;
     cursor: pointer;
     text-transform: uppercase;
     background-color: #1b98e0;
@@ -164,7 +160,8 @@
     justify-content: end;
   }
   
-  #eye-icon-senha, #eye-icon-nova-senha {
+  #eye-icon-senha, 
+  #eye-icon-nova-senha {
     display: flex;
     position: absolute;
     align-self: center;
@@ -173,17 +170,9 @@
     margin-right: 10px;
     cursor: pointer;
   }
-  
-  @media (max-width: 768px) {
-    .login_botoes {
-      grid-template-columns: 1fr;
-      width: 100%;
-      row-gap: 8px;
-    }
-  
-    .login_botao_entrar {
-      width: 100%;
-      max-width: none;
-    }
-  
+
+  .login_form_content{
+    max-width: 500px;
+    width: 100%;
   }
+  

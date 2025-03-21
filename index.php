@@ -142,7 +142,7 @@
             </div>
         </div>
     </div>
-    <?php 
+    <?php
         $isIndex = 1;
         include_once('./pages/geral/footer.php');
     ?>

@@ -338,6 +338,7 @@
     .gerenciar_produtos_holder_botao{
       justify-content: center;
     }
+<<<<<<< HEAD
   }
 
   @media (max-width: 468px) {
@@ -388,4 +389,10 @@
           margin: 0px;
         }
       }
+=======
+
+    .base_botao {
+      width: 100%;
+    }
+>>>>>>> 590eff2f08acea8893bee8d850ccf6bf25a87f17
   }

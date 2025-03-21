@@ -1,6 +1,6 @@
 <!-- FINALIZADO -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +10,29 @@
       <link rel="stylesheet" href="../../css/admin/admin_cupom.css">
       <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
       <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      <script src="../../js/geral/base.js"></script>
       <title>E ao Quadrado</title>
-   </head>
-   <body>
+</head>
+<body>
+   <!-- Atá 375px -->  
+
    <?php
-    include_once('../../pages/geral/navbar.php');
-    ?>
+   include_once('../../pages/geral/navbar.php');
+   ?>
+   <main>
       <div class='editar_produto_main'>
+         <div class='editar_produto_title'>
+            <h2>
+               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path
+                     d="M30.8647 7.45769C31.5303 6.78602 31.5303 5.66658 30.8647 5.02936L26.8711 0.999355C26.2396 0.327689 25.1303 0.327689 24.4647 0.999355L21.3244 4.15102L27.7245 10.6094M0.639648 25.0416V31.4999H7.03965L25.9154 12.4349L19.5154 5.97658L0.639648 25.0416Z"
+                     fill="#006494" />
+               </svg>
+               EDITAR PRODUTO
+            </h2>
+            <hr class="editar_produto_linha_titulo">
+         </div>
          <div class='editar_produto_container'>
-            <div class='editar_produto_title'>
-               <h2>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                     <path
-                        d="M30.8647 7.45769C31.5303 6.78602 31.5303 5.66658 30.8647 5.02936L26.8711 0.999355C26.2396 0.327689 25.1303 0.327689 24.4647 0.999355L21.3244 4.15102L27.7245 10.6094M0.639648 25.0416V31.4999H7.03965L25.9154 12.4349L19.5154 5.97658L0.639648 25.0416Z"
-                        fill="#006494" />
-                  </svg>
-                  Editar Produto
-               </h2>
-            </div>
             <form action="#" class='editar_produto_form_grid'>
                <div class='editar_produto_form'>
                   <div class='editar_produto_form_title'>
@@ -330,8 +335,10 @@
       <?php 
          include_once('../../pages/geral/footer.php');
       ?>
-   </body>
+   </main>
+   
    <script src="../../js/vendedor/img_input.js"></script>
    <script type="module" src="../../js/vendedor/text_editor.js"></script>
    <script src="../../js/vendedor/promocao_toggle.js"></script>
+</body>
 </html>

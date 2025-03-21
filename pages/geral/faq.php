@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="../../css/geral/faq.css">
     </head>
 <body>
+    <!-- Até 375px -->
+
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
+
     <div class='faq_body'>
         <div class="faq_main_container">
             <div class='faq_title_img'>
