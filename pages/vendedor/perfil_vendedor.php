@@ -63,7 +63,7 @@ function gerarProdutoCards($quantidade)
                     <option value="vendedor/editar_perfil_vendedor">Editar Perfil</option>
                     <option value="vendedor/confirmar_pedido">Pedidos</option>
                     <option value="vendedor/relatorio_vendas">Relatório</option>
-                    <option value="admin/cupom">Criar Cupom</option>
+                    <option value="admin/admin_cupom">Criar Cupom</option>
                     <option value="vendedor/editar_produto">Editar Produtos</option>
                     <option value="cliente/login">Sair</option>
                 </select>
