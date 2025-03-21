@@ -255,6 +255,7 @@ margin-right: 8px;
     display: flex;
     justify-content: start;
     top: -65px;
+    margin: 0;
     left: 16px;
     width: 95%;
   }

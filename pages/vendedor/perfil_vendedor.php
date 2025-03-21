@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="../../css/style.css">
     <script src="../../js/geral/base.js"></script>
 </head>
-
 <body>
+    <!-- Fazer responsividade -->
+
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>

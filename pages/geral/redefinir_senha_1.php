@@ -13,9 +13,12 @@
   <script src="../../js/geral/base.js"></script>
 </head>
 <body>
+  <!-- Até 375px -->
+
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>
+  
   <main>
     <div class="redefinir_senha_1_container">
       <div class="redefinir_senha_1_main_content">
