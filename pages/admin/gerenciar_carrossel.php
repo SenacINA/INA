@@ -63,22 +63,29 @@
                 <div class="gerenciar_carrossel_perfil">
                   <img src="../../image/admin/gerenciar_carrossel/foto.svg">
                 </div>
-                <form action="" method="post" class="perfil_admin_forms">
-                  <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_1">
+                <form action="" method="post" class="gerenciar_carrossel_forms_pesquisa_pedidos">
+                  <div class="gerenciar_carrossel_form_cliente">
                     <label class="font_subtitulo font_celadon">Nome</label>
                     <input type="text" class="base_input">
                   </div>
-                  <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_2">
-                    <label class="font_subtitulo font_celadon">E-mail</label>
-                    <input type="text" class="base_input">
+                  <div class="gerenciar_carrossel_input_status">
+                    <label for="select_cod" class="font_subtitulo font_celadon">Plano</label>
+                    <select name="select_cod" class="gerenciar_carrossel_select_status base_input">
+                      <option value="Semanal">Semanal</option>
+                      <option value="Mensal">Mensal</option>
+                      <option value="Bimestral">Bimestral</option>
+
+                    </select>
                   </div>
-                  <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_3">
-                    <label class="font_subtitulo font_celadon">CPF</label>
-                    <input type="text" class="base_input">
-                  </div>
-                  <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_4">
-                    <label class="font_subtitulo font_celadon">Telefone</label>
-                    <input type="text" class="base_input">
+                  <div class="gerenciar_carrossel_flex">                  
+                    <div class="gerenciar_carrossel_input_mes">
+                      <label class="font_subtitulo font_celadon">Data de Início</label>
+                      <input type="date" class="gerenciar_carrossel_mes_select base_input">
+                    </div>
+                    <div class="gerenciar_carrossel_input_ano">
+                      <label class="font_subtitulo font_celadon">Data de Expiração</label>
+                      <input type="date" class="gerenciar_carrossel_ano_select base_input">
+                    </div>
                   </div>
                 </form>
                   </div>

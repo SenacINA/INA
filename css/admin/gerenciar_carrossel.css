@@ -9,6 +9,12 @@
   border-radius: 10px;
 }
 
+.gerenciar_carrossel_form_cliente h2 {
+  color: rgba(87, 149, 206, 0.60);
+  font-size: 20px;
+  max-width: 600px;
+}
+
 .gerenciar_pedidor_firula_holder{
   border-radius: 10px;
   background-color: #EFF3F5;
@@ -141,13 +147,13 @@
 .gerenciar_carrossel_mes_select {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: 350px;
 }
 
 .gerenciar_carrossel_ano_select {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width:350px;
 }
 
 .gerenciar_carrossel_estatistica_holder {
@@ -219,6 +225,11 @@
   color: #fff;
 }
 
+.gerenciar_carrossel_flex{
+  display: flex;
+  gap: 55px;
+}
+
 /**Individual para cada tabela */
 .gerenciar_carrossel_table_col-1,
 .gerenciar_carrossel_table_col-4{
@@ -253,7 +264,6 @@
     font-size: 0.75rem;
   }
   .gerenciar_carrossel_quadrado_container {
-    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
     gap: 32px;
   }
@@ -292,6 +302,7 @@
   .gerenciar_carrossel_input_ano,
   .gerenciar_carrossel_input_mes{
     width: 100%;
+
   }
 
   .gerenciar_carrossel_mes_select,
@@ -303,4 +314,20 @@
   .gerenciar_carrossel_holder_botao{
     justify-content: center;
   }
+
+  .gerenciar_carrossel_pesquisar_pedidos {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+  .gerenciar_carrossel_flex{
+    display: block;
+    gap: 0px;
+
+
+  }
+  
 }
+
