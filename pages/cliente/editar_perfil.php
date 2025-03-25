@@ -63,7 +63,7 @@
       <hr class="separador_mini_perfil">
       <div class="about_container">
         <img src="../../image/vendedor/editar_perfil/icon_about_us.svg" class="icon_about_us">
-        <h1 class="sobre_nos_cliente">Sobre nós:</h1>
+        <h1 class="sobre_nos_cliente">Sobre:</h1>
         <p class="text_about">Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</p>
       </div>
       <div class="contatos_container">
