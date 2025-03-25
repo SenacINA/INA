@@ -143,6 +143,14 @@
         <p class="warn">As dimensões recomendadas são: 1500 x 500 pixels.</p>
       </div>
     </div>
+    <div class="botoes">
+      <button class="salvar">
+        <img src="../../image/geral/botoes/v_icon_branco.svg">Salvar
+      </button>
+      <button class="cancelar">
+        <img src="../../image/geral/botoes/x_icon_vermelho.svg">Cancelar
+      </button>
+    </div>
   </main>
   <?php
   include_once('../../pages/geral/footer.php');
