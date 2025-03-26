@@ -43,7 +43,7 @@ function exibirProdutos()
 
             <div class="carrinho_vazio_detalhes_holder">
               <div class="carrinho_vazio_image_holder">
-                <img src="https://placehold.co/200" alt="Cadeira gamer throne RGB" class="product-image">
+                <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="Cadeira gamer throne RGB" class="product-image">
                 <!-- Product details -->
                 <div class="product-details">
                   <p class="font_descricao font_cinza carrinho_vazio_bold">Fabricante: Grapol</p>
