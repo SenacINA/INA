@@ -15,7 +15,7 @@
 
   background-color: #EFF3F5;
   width: 90%;
-  height: 779px;
+  height: 780px;
   
   border-radius: 10px;
   margin: 0px 1.5%;
@@ -64,7 +64,7 @@
 /* grid principal */
 .perfil_admin_grid_conteudo {
   display: grid;
-  grid-template-columns: minmax(0px, 320px) minmax(0px, 581px) minmax(0px, 570px);
+  grid-template-columns: minmax(0px, 320px) minmax(0px, 580px) minmax(0px, 570px);
   grid-template-rows: repeat(2, auto);
   gap: 5% 3%;
   margin: 8px 5% 0px 5%;

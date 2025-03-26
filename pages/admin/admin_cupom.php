@@ -87,8 +87,8 @@
 
           <div class="admin_cupom_achar_produto_organizar">
             <p>Organizar por :</p>
-            <img src="../../image/admin/arrowwhitedown.svg" alt="">
           </div>
+          
           <div class="admin_cupom_metodo_procura_body">
             <p id="cupom_metodo_procura" class="admin_cupom_metodo_procura_body_head">Cód.</p>
             <div></div>

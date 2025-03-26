@@ -24,7 +24,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_produtos_header_holder">
         <div class="gerenciar_produtos_text_titulo">
-          <img src="../../image/admin/gerenciar_produtos/produto.svg" alt="">
+          <img src="../../image/geral/icons/produto_icon.svg" alt="">
           <h1 class="gerenciar_produtos_header_holder font_titulo">GERENCIAR PRODUTOS</h1>
         </div>
         <hr class="gerenciar_produtos_linha_sublinhado">
@@ -37,7 +37,7 @@
               <div class="gerenciar_produtos_subtitulo_generico">
                 <div class="gerenciar_produtos_linha_vertical"></div>
                 <div class="gerenciar_produtos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/gerenciar_produtos/pesquisar_produto.svg" />
+                  <img class="base_icon" src="../../image/geral/icons/produto_lupa_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Pesquisar Produtos</p>
                 </div>
               </div>
@@ -101,7 +101,7 @@
               <div class="gerenciar_produtos_subtitulo_generico">
                 <div class="gerenciar_produtos_linha_vertical"></div>
                 <div class="gerenciar_produtos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/gerenciar_produtos/estatisticas.svg" />
+                  <img class="base_icon" src="../../image/geral/icons/grafico_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Estatísticas</p>
                 </div>
               </div>
@@ -137,7 +137,7 @@
       </div>
     </div>
     <div class="gerenciar_produtos_header_title">
-      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg" />
+      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="gerenciar_produtos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_produtos_table">
@@ -219,6 +219,14 @@
           </thead>
         </table>
       </div>
+      <a href="./dashboard.php">
+        <div class="voltar">
+          <button type="reset" class="base_botao btn_outline_blue">
+            <img src="../../image/geral/botoes/seta_esquerda_carolina_icon.svg">
+              VOLTAR
+            </button>
+        </div>
+      </a>
     </div>
   </main>
 </body>

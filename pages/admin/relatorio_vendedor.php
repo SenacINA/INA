@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
     <div class="relatorio_vendedor_body">
       <div class="relatorio_vendedor_titulo_1">
         <div class="relatorio_vendedor_text_titulo_1">
-          <img src="../../image/admin/relatorio_vendedor/icon_relatorio.svg" alt="">
+          <img src="../../image\geral\icons\lista_relatorio_icon.svg" alt="">
           <h1>RELATÓRIO DO VENDEDOR</h1>
         </div>
         <hr class="relatorio_vendedor_linha_titulo">
@@ -34,7 +34,7 @@
        
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_1"> 
           <hr class="relatorio_vendedor_vertical">
-          <img src="../../image/admin/relatorio_vendedor/icon_perfil.svg" alt=""/>
+          <img src="../../image\geral\icons\perfil_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Dados Pessoais</h1>
         </div>
 
@@ -61,7 +61,7 @@
         
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_2">
           <hr class="relatorio_vendedor_vertical">
-          <img src="../../image/admin/relatorio_vendedor/icon_loja.svg" alt=""/>
+          <img src="../../image\geral\icons\loja_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Loja</h1>
         </div>
         
@@ -91,7 +91,7 @@
 
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_3">
           <hr class="relatorio_vendedor_vertical">
-          <img src="../../image/admin/relatorio_vendedor/icon_localizacao.svg" alt=""/>
+          <img src="../../image\geral\icons\localizacao_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Localização</h1>
         </div>
 
@@ -133,7 +133,7 @@
 
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_4">
           <hr class="relatorio_vendedor_vertical">
-          <img src="../../image/admin/relatorio_vendedor/icon_texto.svg" alt=""/>
+          <img src="../../image\geral\icons\lista_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Perfil Do Vendedor</h1>
         </div>        
     
@@ -147,7 +147,7 @@
 
     <div class="relatorio_vendedor_titulo_2">
       <div class="relatorio_vendedor_text_titulo_2">
-        <img src="../../image/admin/relatorio_vendedor/icon_maleta.svg" alt=""/>
+        <img src="../../image\geral\icons\pasta_clock_icon.svg" alt=""/>
         <h1>HISTÓRICO DE PEDIDOS</h1>
       </div>
     </div>
