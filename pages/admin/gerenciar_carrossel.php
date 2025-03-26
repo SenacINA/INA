@@ -12,8 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="../../js/geral/base.js"></script>
-
 </head>
+  <!-- Até 768px -->
+  <!-- Caminho de Icon Correto -->
 
 <body>
   <?php
@@ -24,7 +25,7 @@
       <div class="gerenciar_carrossel_header_holder">
         <div class="gerenciar_carrossel_header_title_1">
           <img src="../../image/geral/icons/carrossel_icon.svg"/>
-          <h1 class="gerenciar_carrossel_text_header font_titulo">GERENCIAR CARROSSEL</h1>
+          <h1 class="gerenciar_carrossel_text_header">GERENCIAR CARROSSEL</h1>
         </div>
         <div class="gerenciar_carrossel_linha_sublinhado"></div>
       </div>

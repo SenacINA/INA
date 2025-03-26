@@ -23,12 +23,6 @@
   padding: 32px;
 }
 
-.gerenciar_carrossel_navbar_principal {
-  background-color: #fff;
-  width: 100%;
-  height: 67px;
-}
-
 .gerenciar_carrossel_subtitulo_generico{
   width: 100%;
   display: flex;
@@ -80,6 +74,11 @@
 
 .gerenciar_carrossel_text_header {
   color: var(--sappire);
+  justify-self: center;
+  font-weight: 500;
+  color: #255e7e;
+  text-align: center;
+  font-size: 32px;
 }
 
 .gerenciar_carrossel_quadrado_container {
@@ -203,9 +202,11 @@
 }
 
 .gerenciar_carrossel_titulo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  justify-self: center;
+  font-weight: 500;
+  color: #255e7e;
   text-align: center;
+  font-size: 32px;
 }
 
 .gerenciar_carrossel_estatistica_descricao {
@@ -306,7 +307,6 @@
   }
 
   .gerenciar_pedidor_firula_holder{
-    background-color: transparent;
     gap: 16px;
     padding: 0;
   }
@@ -341,9 +341,12 @@
   .gerenciar_carrossel_flex{
     display: block;
     gap: 0px;
-
-
   }
-  
 }
 
+@media (max-width: 768px) {
+  .gerenciar_carrossel_header_title_1 {
+    position: absolute;
+    top: -55px;
+  }
+}

@@ -16,6 +16,7 @@
 </head>
 <body>
   <!-- Até 768px -->
+  <!-- Caminho de Icon Correto -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
