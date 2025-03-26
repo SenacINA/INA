@@ -96,12 +96,12 @@
         </div>
       </form>
       <div class="botoes_redefinir">
-        <button type="button" class='redefinir_senha_cliente'>
+        <button type="button" class='base_botao btn_blue redefinir_senha_cliente'>
           <img src="../../image/geral/seta_botao_branco.svg" alt="">
           Redefinir senha
 
         </button>
-        <button type="button" class="redefinir_email_cliente">
+        <button type="button" class="base_botao btn_blue redefinir_email_cliente">
           <img src="../../image/geral/seta_botao_branco.svg" alt="">
           Redefinir email
         </button>
@@ -144,10 +144,10 @@
       </div>
     </div>
     <div class="botoes">
-      <button class="salvar">
+      <button class="base_botao btn_blue salvar">
         <img src="../../image/geral/botoes/v_icon_branco.svg">Salvar
       </button>
-      <button class="cancelar">
+      <button class="base_botao btn_outline_red cancelar">
         <img src="../../image/geral/botoes/x_icon_vermelho.svg">Cancelar
       </button>
     </div>

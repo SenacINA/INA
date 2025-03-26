@@ -191,7 +191,8 @@ body {
   grid-template-columns: auto;
   grid-template-rows: auto auto;
   position: relative;
-  
+  padding: 2%;
+  text-justify: auto;
   row-gap: 5%;
 }
 
@@ -208,7 +209,6 @@ body {
   font-style: normal;
   font-weight: 400;
   grid-row: 2;
-
   max-width: 760px;
   width: 100%;
 }
