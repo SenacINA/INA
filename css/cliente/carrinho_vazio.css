@@ -233,6 +233,11 @@
   margin: 24px 0;
 }
 
+.carrinho_vazio_start img {
+  height: 24px;
+  width: 24px;
+}
+
 /* Card Produto*/
 /* Product card container */
 .carrinho_vazio_product_card {
