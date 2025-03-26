@@ -207,12 +207,12 @@ display: none;}
 }
 
 .produtos_container{
-    height: 2347px;
+    height: fit-content;
     justify-self: stretch;
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .produto_card{
@@ -246,25 +246,6 @@ display: none;}
     gap: 13px;
 }
 
-.botao_estilo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-self: stretch;
-    background-color: #1B98E0;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    flex: 1 0 0;
-}
-
-.filtros{
-    width: 300px;
-    height: fit-content;
-    display: grid;
-    grid-template-rows: repeat(4, auto);
-    gap: 20px;
-}
 
 .botao_estilo:hover{
     color: #727272;
@@ -282,6 +263,7 @@ display: none;}
 .grid_produtos{
     display: grid;
     grid-template-columns: repeat(5, auto);
+    justify-content: space-between;
 }
 
 
@@ -385,62 +367,124 @@ display: none;}
 }
 
 
-.container_filtro{
-    padding: 10px;
-    height: fit-content;
-}
-
-.grid_filtro{
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    padding-top: 10px;
-}
-
-.filtro_item{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    height: fit-content;
-    gap: 5px;
-}
 .css_checkbox {
-    height: 16px;
     width: 16px;
+    height: 16px;
     appearance: none;
     -webkit-appearance: none;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     cursor: pointer;
-    border: 1px solid #4A4A4A;
+    border: 1px solid var(--cinza);
+    position: relative; 
 }
-/* https://sentry.io/answers/how-to-style-a-checkbox-using-css/ */
-.css_checkbox::before{
-        content: "";
-        width: 14px;
-        height: 14px;
-        clip-path: polygon(18% 18%, 82% 18%, 82% 82%, 18% 82%);
-        transform: scale(0);
-        background-color: #1B98E0;
+
+.css_checkbox::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--carolina);
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+    position: absolute; 
 }
 
 .css_checkbox:checked::before {
     transform: scale(1);
-}  
-
-.filtro_item label, input{
-    align-self: center;
 }
 
-.titulo_filtro{
+.filtros {
+    width: 300px;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+    height: fit-content;
+    transition: height 0.3s ease-in-out;
+    user-select: none;
+}
+
+.container_filtro {
+    padding: 16px;
+    height: fit-content;
+    border-radius: 4px;
+}
+
+.grid_filtro {
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    transition: transform 0.3s ease-out, max-height 0.3s ease-out, padding-top 0.3s ease-out;
+}
+
+.container_filtro.active_filter .grid_filtro {
+    max-height: fit-content; 
+    padding-top: 16px; 
+}
+
+.filtro_item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px;
+    align-items: center;
+}
+
+.filtro_item label, .filtro_item input {
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.filtro_item label:hover {
+    color: var(--cinza);
+    cursor: pointer;
+}
+
+.titulo_filtro {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    cursor: pointer; /* Indica que é clicável */
 }
 
-.titulo_filtro img{
-    width: 25px;
-    height: 25px;
-    padding: 6.5px 5.5px 6.5px 5.5px;
+.titulo_filtro img {
+    width: auto;
+    height: 16px;
+    transition: transform 0.2s ease;
 }
+
+.container_filtro.active_filter .titulo_filtro img {
+    transform: rotate(180deg); /* Seta rotacionada quando aberto */
+}
+
+/* Código do checkbox customizado */
+.css_checkbox {
+    width: 16px;
+    height: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #4A4A4A;
+    position: relative;
+}
+
+.css_checkbox::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #1B98E0;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+    position: absolute;
+}
+
+.css_checkbox:checked::before {
+    transform: scale(1);
+}
+
+
 
 .container_voltar{
     display: flex;
