@@ -26,11 +26,11 @@
 .aprovar_vendedor_subtitulo_generico{
   width: 100%;
   display: flex;
-  gap: 16px;
+  gap: 8px;
 }
 
 .base_icon{
-  height: 32px;
+  height: 24px;
 }
 
 .aprovar_vendedor_linha_vertical{
@@ -71,7 +71,7 @@
 .aprovar_vendedor_text_titulo img,
 .aprovar_vendedor_header_title img {
   align-self: center;
-  width: 32px;
+  width: 28px;
   height: auto;
   margin-right: 8px;
 }
