@@ -27,7 +27,7 @@
       </div>
       
       <button class="redefinir_senha_3_botao_tela_inicial" onclick="pag('cliente/login')">
-        <img src="" alt="">
+        <img src="../../image/geral/botoes/sair_branco_icon.svg" alt="">
         <h3>TELA INICIAL</h3>
       </button>
     </div>

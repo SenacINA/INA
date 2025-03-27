@@ -14,7 +14,6 @@
 </head>
 <body>
   <!-- Até 375px -->
-  <!--Camino de Icon Correto -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -44,10 +43,10 @@
       </div>
       <div class="redefinir_email_2_botoes">
         <button class="redefinir_email_2_botao_voltar" onclick="history.back()">
-          <img src="../../image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">Voltar
+          <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
         </button>
         <button class="redefinir_email_2_botao_salvar" onclick="pag('geral/redefinir_email_3')">
-          <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">Salvar
+          <img src="../../image/geral/confirm_botao.svg" alt="">Salvar
         </button>
       </div>
     </div>

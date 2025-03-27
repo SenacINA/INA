@@ -14,7 +14,6 @@
 </head>
 <body>
   <!-- Até 375px -->
-  <!-- Caminho de Icon Correto -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -38,10 +37,10 @@
 
       <div class="redefinir_senha_1_botoes">
         <button class="redefinir_senha_1_botao_voltar" onclick="history.back()">
-          <img src="../../image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">Voltar
+          <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
         </button>
         <button class="redefinir_senha_1_botao_avancar" onclick="pag('geral/redefinir_senha_2')">
-          <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">Avançar
+          <img src="../../image/geral/confirm_botao.svg" alt="">Avançar
         </button>
       </div>
     </div>

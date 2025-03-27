@@ -14,7 +14,6 @@
 </head>
 <body>
   <!-- Até 375px -->
-  <!-- Caminho de Icon Correto -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -28,7 +27,7 @@
       </div>
       
       <button class="redefinir_email_3_botao_tela_inicial" onclick="pag('index',2)">
-        <img src="../../image/geral/botoes/sair_branco_icon.svg" alt="">
+        <img src="" alt="">
         <h3>TELA INICIAL</h3>
       </button>
     </div>

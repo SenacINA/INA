@@ -14,8 +14,8 @@
     <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-    <!-- fazer responsividade -->
-    <!-- arrumar o nome das class -->
+    <!-- Até 375px -->
+    <!-- Caminho de Icon Correto -->
      
     <?php
     include_once('../../pages/geral/navbar.php');
@@ -30,7 +30,7 @@
                     <div class="nome_vendedor">
                         <h1>THUNDER GAMERS</h1>
                         <h2>
-                            <img src="../../image/cliente/produto/local_icon.svg" alt="">
+                            <img src="../../image/geral/icons/localizacao_icon.svg" alt="">
                             São Paulo, São Paulo</h2>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
 
             <div class="grid_scroll">
                 <div class="icon_scroll">
-                    <img src="../../image/cliente/produto/icon_seta.svg" alt="">
+                    <img src="../../image/geral/icons/seta_menor_icon.svg" alt="">
                 </div>
 
                 <div class="images_scroll">
@@ -59,7 +59,7 @@
 
 
                 <div class="icon_scroll foward">
-                    <img src="../../image/cliente/produto/icon_seta.svg" alt="">
+                    <img src="../../image/geral/icons/seta_menor_icon.svg" alt="">
                 </div>
             </div>
 
@@ -101,11 +101,12 @@
                         </div>
                     </div>
                     
-                    
-
                     <div class="grid_produto_info_button">
-                        <button class="base_botao btn_blue"><img src="../../image//geral/cesta_botao.svg" alt="">CARRINHO</button>
-                        <button class="base_botao btn_outline_blue" onclick="pag('cliente/carrinho_vazio')"><img src="../../image/geral/add_botao_azul.svg" alt="">COMPRAR</button>
+                        <button class="base_botao btn_blue"><img src="../../image/geral/botoes/cesta_branca_icon.svg" alt="">CARRINHO</button>
+                        <button class="base_botao btn_outline_blue" onclick="pag('cliente/carrinho_vazio')">
+                            <img src="../../image/geral/botoes/+_carolina_icon.svg" alt="">
+                            COMPRAR
+                        </button>
                     </div>
                 </div>
             </div>
@@ -134,7 +135,7 @@
 
     <div class="grid_descricao_produto">
         <div class="descricao_produto_item2">
-            <img src="../../image/cliente/produto/icon_label.svg" alt="">
+            <img src="../../image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>DESCRIÇÃO DO PRODUTO</h1>
         </div>
         <p><strong>CADEIRA GAMER THRONE RGB</strong></p>
@@ -153,7 +154,7 @@
     <div class="grid_descricao_produto">
         <div class="line_top"></div>
         <div class="descricao_produto_item3">
-            <img src="../../image/cliente/produto/icon_label.svg" alt="">
+            <img src="../../image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>AVALIAÇÕES DO PRODUTO</h1>
         </div>
 

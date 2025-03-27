@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="../../css/style.css"> 
     <link rel="stylesheet" href="../../css/geral/faq.css">
     <script src="../../js/geral/base.js"></script>
-</head>
+
+    </head>
 <body>
     <!-- Até 375px -->
-    <!-- Arrumar o caminho dos Icons. Não sou corno pr fazer isso não Elias -->
 
     <?php
     include_once('../../pages/geral/navbar.php');
