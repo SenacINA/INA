@@ -41,10 +41,10 @@ function gerarProdutoCards($quantidade)
   <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="../../js/geral/base.js"></script>
-
 </head>
 <body>
-  <!-- Atá 375px -->  
+  <!-- Atá 375px --> 
+  <!-- Caminho de Icon Correto --> 
 
   <?php
   include_once('../../pages/geral/navbar.php');
@@ -52,54 +52,54 @@ function gerarProdutoCards($quantidade)
   
   <div class="title_mobile">
     <div class="title_text">
-      <img src="../../image/vendedor/editar_perfil/pessoa.svg">
+      <img src="../../image/geral/icons/perfil_icon.svg">
       <h1 class="font_titulo title_main_text">Editar perfil</h1>
     </div>
   </div>
   <main class="quadrado_vendedor">
     <div class="title">
       <div class="title_text">
-        <img src="../../image/vendedor/editar_perfil/pessoa.svg">
+        <img src="../../image/geral/icons/perfil_icon.svg">
         <h1 class="font_titulo title_main_text">Editar perfil</h1>
       </div>
       <hr class="linha_title">
     </div>
     <div class="mini_perfil_vendedor">
-      <img src="../../image/vendedor/editar_perfil/banner_vendedor_mini_perfil.png" alt="banner" class="banner_vendedor">
-      <img src="../../image/vendedor/editar_perfil/pfp_vendedor.png" alt="pfp_vendedor" class="pfp_vendedor">
+      <img src="../../image/vendedor/editar_perfil_vendedor/banner_vendedor_mini_perfil.png" alt="banner" class="banner_vendedor">
+      <img src="../../image/vendedor/editar_perfil_vendedor/pfp_vendedor.png" alt="pfp_vendedor" class="pfp_vendedor">
       <div class="infos_container">
         <div class="nome_vendedor">
           <h1 class="nome_vendedor">THUNDER GAMES</h1>
         </div>
         <div class="produtos_vendedor_container">
-          <img src="../../image/vendedor/editar_perfil/icon_produtos_vendedor.svg" class="icon_produtos_vendedor">
+          <img src="../../image/geral/icons/loja_icon.svg" class="icon_produtos_vendedor">
           <p class="produtos_vendedor">Produtos: 8</p>
         </div>
         <div class="avaliacao_vendedor_container">
-          <img src="../../image/vendedor/editar_perfil/icon_avaliacao_vendedor.svg">
+          <img src="../../image/geral/icons/estela_icon.svg">
           <p class="avaliacao_vendedor">Avaliação geral: 4.5</p>
         </div>
         <div class="tempo_vendedor_container">
-          <img src="../../image/vendedor/editar_perfil/icon_tempo_vendedor.svg">
+          <img src="../../image/geral/icons/perfil_membros_icon.svg">
           <p class="tempo_vendedor">Vendedor há: 4 Meses</p>
         </div>
         <div class="localizacao_vendedor_container">
-          <img src="../../image/vendedor/editar_perfil/icon_localizacao_vendedor.svg">
+          <img src="../../image/geral/icons/localizacao_icon.svg">
           <p class="localizacao_vendedor">São Paulo, São Paulo</p>
         </div>
       </div>
       <hr class="separador_mini_perfil">
       <div class="about_container">
-        <img src="../../image/vendedor/editar_perfil/icon_about_us.svg" class="icon_about_us">
+        <img src="../../image/geral/icons/texto_icon.svg" class="icon_about_us">
         <h1 class="sobre_nos_vendedor">Sobre nós:</h1>
         <p class="text_about">Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</p>
       </div>
       <div class="contatos_container">
         <div class="contatos_vendedor">
-          <img src="../../image/vendedor/editar_perfil/icon_instagram_vendedor.svg" class="icon_instagram_vendedor">
+          <img src="../../image/geral/icons/instagram_icon.svg" class="icon_instagram_vendedor">
           <a href="#" class="instagram_vendedor">my.thudergames</a>
           <hr class="linha_vertical_mini">
-          <img src="../../image/vendedor/editar_perfil/icon_facebook_vendedor.svg" class="icon_facebook_vendedor">
+          <img src="../../image/geral/icons/facebook_icon.svg" class="icon_facebook_vendedor">
           <a href="#" class="facebook_vendedor">thundergames</a>
         </div>
       </div>
@@ -125,12 +125,12 @@ function gerarProdutoCards($quantidade)
       </form>
       <div class="botoes_redefinir">
         <button type="button" class='redefinir_senha_vendedor'>
-          <img src="../../image/geral/seta_botao_branco.svg" alt="">
+          <img src="../../image/geral/botoes/sair_branco_icon.svg" alt="">
           Redefinir senha
 
         </button>
         <button type="button" class="redefinir_email_vendedor">
-          <img src="../../image/geral/seta_botao_branco.svg" alt="">
+          <img src="../../image/geral/botoes/sair_branco_icon.svg" alt="">
           Redefinir email
         </button>
       </div>
@@ -140,11 +140,11 @@ function gerarProdutoCards($quantidade)
           <p class="main_text_redes">Redes Sociais:</p>
         </div>
         <div class="redes_edit">
-          <img src="../../image/vendedor/editar_perfil/icon_instagram_vendedor.svg" alt="instagram"> <a href="#" class="link_instagram">my.thudergames </a>
-          <img src="../../image/vendedor/editar_perfil/icon_facebook_vendedor.svg" alt="facebook"> <a href="#" class="link_facebook">thundergames</a>
+          <img src="../../image/geral/icons/instagram_icon.svg" alt="instagram"> <a href="#" class="link_instagram">my.thudergames </a>
+          <img src="../../image/geral/icons/facebook_icon.svg" alt="facebook"> <a href="#" class="link_facebook">thundergames</a>
         </div>
         <button class="botao_edit">
-          <img src="../../image/geral/caneta_branca_icon.svg" alt="">
+          <img src="../../image/geral/icons/caneta_branca_icon.svg" alt="">
           Editar
         </button>
       </div>
@@ -156,7 +156,7 @@ function gerarProdutoCards($quantidade)
           <p class="text_pfp">Imagem de Perfil:</p>
         </div>
         <button class="img_container">
-          <img src="../../image/vendedor/editar_perfil/pfp_vendedor.png">
+          <img src="../../image/vendedor/editar_perfil_vendedor/pfp_vendedor.png">
         </button>
         <p class="warn">As dimensões recomendadas são: 400 x 400 pixels.</p>
       </div>
@@ -166,7 +166,7 @@ function gerarProdutoCards($quantidade)
           <p class="text_banner">Imagem de Banner:</p>
         </div>
         <button class="img_container">
-          <img src="../../image/vendedor/editar_perfil/banner_vendedor_mini_perfil.png" class="banner_vendedor_forms">
+          <img src="../../image/vendedor/editar_perfil_vendedor/banner_vendedor_mini_perfil.png" class="banner_vendedor_forms">
         </button>
         <p class="warn">As dimensões recomendadas são: 1500 x 500 pixels.</p>
       </div>
@@ -174,29 +174,32 @@ function gerarProdutoCards($quantidade)
     <div class="destaques">
       <div class="destaques_text">
         <hr class="linha_vertical">
-        <img src="../../image/vendedor/editar_perfil/icon_produtos_vendedor.svg" class="icon_destaques_vendedor">
+        <img src="../../image/geral/icons/loja_icon.svg" class="icon_destaques_vendedor">
         <p class="destaques_main_text">Destaques</p>
       </div>
       <div class="destaques_container">
         <?php gerarProdutoCards(3); ?>
         <button class="add">
-          <img src="../../image/geral/add_ico.svg">
+          <img src="../../image/geral/icons/add_ico.svg">
         </button>
       </div>
       <p class="destaques_num">3 / 5</p>
     </div>
     <div class="botoes">
       <button class="salvar">
-        <img src="../../image/geral/botoes/v_icon_branco.svg">Salvar
+        <img src="../../image/geral/botoes/v_branco_icon.svg">
+        Salvar
       </button>
       <button class="cancelar">
-        <img src="../../image/geral/botoes/x_icon_vermelho.svg">Cancelar
+        <img src="../../image/geral/botoes/x_vermelho_icon.svg">
+        Cancelar
       </button>
     </div>
   </main>
+
   <?php
   include_once('../../pages/geral/footer.php');
   ?>
-</body>
 
+</body>
 </html>
