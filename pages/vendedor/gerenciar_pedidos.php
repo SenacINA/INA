@@ -16,6 +16,7 @@
 </head>
 <body>
   <!-- Atá 375px -->  
+  <!-- Caminho de Icon Correto -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -24,7 +25,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_pedidos_header_holder">
         <div class="gerenciar_pedidos_text_titulo">
-          <img src="../../image/vendedor/gerenciar_pedidos/gerenciar_pedido.svg" alt="">
+          <img src="../../image/geral/icons/engrenagem_icon.svg" alt="">
           <h1 class="gerenciar_pedidos_header_holder font_titulo">GERENCIAR PEDIDOS</h1>
         </div>
         <hr class="gerenciar_pedidos_linha_sublinhado">
@@ -37,7 +38,7 @@
               <div class="gerenciar_pedidos_subtitulo_generico">
                 <div class="gerenciar_pedidos_linha_vertical"></div>
                 <div class="gerenciar_pedidos_subtitle_holder">
-                  <img class="base_icon" src="../../image/vendedor/gerenciar_pedidos/pesquisar_pedido.svg" />
+                  <img class="base_icon" src="../../image/geral/icons/lista_lupa_icon.svg" />
                   <h2 class="font_subtitulo font_celadon">Pesquisar Pedidos</p>
                 </div>
               </div>
@@ -92,12 +93,12 @@
                 </div>
                 <div class="gerenciar_pedidos_holder_botao">
                   <button type="reset" class="base_botao btn_red">
-                    <img src="../../image/geral/botoes/x_icon_branco.svg">
+                    <img src="../../image/geral/botoes/x_branco_icon.svg">
                     CANCELAR
                   </button>
 
                   <button type="submit" class="base_botao btn_blue">
-                    <img src="../../image/geral/botoes/v_icon_branco.svg">
+                    <img src="../../image/geral/botoes/v_branco_icon.svg">
                     CONFIRMAR
                   </button>
                 </div>
@@ -107,7 +108,7 @@
               <div class="gerenciar_pedidos_subtitulo_generico">
                 <div class="gerenciar_pedidos_linha_vertical"></div>
                 <div class="gerenciar_pedidos_subtitle_holder">
-                  <img class="base_icon" src="../../image/vendedor/gerenciar_pedidos/estatisticas.svg" />
+                  <img class="base_icon" src="../../image/geral/icons/grafico_icon.svg" />
                   <h2 class="font_subtitulo font_celadon">Estatísticas</p>
                 </div>
               </div>
@@ -143,7 +144,7 @@
       </div>
     </div>
     <div class="gerenciar_pedidos_header_title">
-      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg"/>
+      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="gerenciar_pedidos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_pedidos_table">

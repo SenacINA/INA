@@ -180,7 +180,7 @@ function gerarProdutoCards($quantidade)
       <div class="destaques_container">
         <?php gerarProdutoCards(3); ?>
         <button class="add">
-          <img src="../../image/geral/icons/add_ico.svg">
+          <img src="../../image/geral/icons/add_icon.svg">
         </button>
       </div>
       <p class="destaques_num">3 / 5</p>

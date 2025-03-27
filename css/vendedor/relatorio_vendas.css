@@ -14,13 +14,7 @@
   background-color: #EFF3F5;
   display: flex;
   flex-direction: column;
-  padding: 16px 32px 16px 32px;
-}
-
-.relatorio_vendas_navbar_principal {
-  background-color: #fff;
-  width: 100%;
-  height: 67px;
+  padding: 0px 32px 16px 32px;
 }
 
 .relatorio_vendas_subtitulo_generico{
@@ -51,8 +45,6 @@
   }
 }
 
-
-/* header */
 .relatorio_vendas_titulo {
   position: relative;
 
@@ -62,6 +54,10 @@
   justify-items: center;
 
   width: 100%;
+  margin-top: 16px;
+}
+
+.relatorio_vendas_text_titulo {
   margin-top: 16px;
 }
 
@@ -75,7 +71,7 @@
 .relatorio_vendas_header_title img {
   align-self: center;
   width: 32px;
-  height: auto;
+  height: 32px;
   margin-right: 8px;
 }
 
@@ -94,8 +90,9 @@
   border-radius: 20px;
   background-color: #2888b1;
   border: 0;
-}
 
+  justify-self: center;
+}
 
 .relatorio_vendas_quadrado_container {
   width: 100%;
@@ -262,11 +259,6 @@
     font-size: 1.5rem;
   }
 
-  .relatorio_vendas_text_titulo {
-    position: absolute;
-    top: -65px;
-  }
-
   .relatorio_vendas_estatistica_holder{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -298,16 +290,10 @@
     padding: 8px;
   }
 
-  
-  .relatorio_vendas_linha_sublinhado{
-    display: none;
-  }
-
   .gerenciar_pedidor_firula_holder{
     gap: 16px;
     padding: 0;
   } 
-
 
   .relatorio_vendas_header_title{
     justify-content: flex-start;
@@ -331,4 +317,17 @@
   .base_botao {
     width: 100%;
   }
+}
+
+@media (max-width: 768px) {
+  .relatorio_vendas_text_titulo {
+    position: absolute;
+    top: -85px;
+    margin-top: none;
+  }
+
+  .relatorio_vendas_linha_sublinhado{
+    display: none;
+  }
+
 }
