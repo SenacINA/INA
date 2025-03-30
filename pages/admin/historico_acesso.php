@@ -21,20 +21,20 @@
   <main class="historico_acesso_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="historico_acesso_header_holder">
-        <div class="historico_acesso_header_title">
-          <img src="../../image/admin/historico_acesso/icone_tempo.svg" />
+        <div class="historico_acesso_header_title_1">
+          <img src="../../image\geral\icons\tempo_icon.svg"/>
           <h1 class="historico_acesso_text_header font_titulo">HISTÓRICO DE ACESSO</h1>
         </div>
         <div class="historico_acesso_linha_sublinhado"></div>
       </div>
-      <div class="historico_acesso_body_holder ">
+      <div class="historico_acesso_body_holder">
         <div class="historico_acesso_main_content">
           <div class="historico_acesso_quadrado_container">
             <div class="historico_acesso_pesquisar_pedidos">
               <div class="historico_acesso_subtitulo_generico">
                 <div class="historico_acesso_linha_vertical"></div>
                 <div class="historico_acesso_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/atualizar_usuario/perfil_icon.svg" />
+                  <img class="base_icon" src="../../image\geral\icons\grafico_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Relátório Geral</p>
                 </div>
               </div>
@@ -55,8 +55,14 @@
                   </div>
                 </div>
                 <div class="historico_acesso_holder_botao">
-                  <button type="submit" class="base_botao btn_blue historico_acesso_base_botao">CONFIRMAR</button>
-                  <button type="reset" class="base_botao btn_red historico_acesso_base_botao">CANCELAR</button>
+                  <button type="reset" class="base_botao btn_red historico_acesso_base_botao">
+                    <img src="../../image/geral/botoes/x_branco_icon.svg" alt="">
+                    CANCELAR
+                  </button>
+                  <button type="submit" class="base_botao btn_blue historico_acesso_base_botao">
+                    <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">
+                    CONFIRMAR
+                  </button>
                 </div>
               </form>
             </div>
@@ -64,7 +70,7 @@
               <div class="historico_acesso_subtitulo_generico">
                 <div class="historico_acesso_linha_vertical"></div>
                 <div class="historico_acesso_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/historico_acesso/info_user.svg" />
+                  <img class="base_icon" src="../../image/geral/icons/perfil_info_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Informações de Usuário</p>
                 </div>
               </div>
@@ -96,8 +102,8 @@
         </div>
       </div>
     </div>
-    <div class="historico_acesso_header_title">
-      <img src="../../image/admin/historico_acesso/historico.svg" />
+    <div class="historico_acesso_header_title_2">
+      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="historico_acesso_text_header font_titulo">HISTÓRICO DE ACESSO</h1>
     </div>
     <div class="historico_acesso_table">

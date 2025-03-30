@@ -11,18 +11,18 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="../../js/geral/base.js"></script>
-
 </head>
 <body>
     <!-- Atá 375px -->  
-     
+    <!-- Caminho de Icon Correto -->
+
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
     <div class="confirmar_pedido_body">
         <div class="confirmar_pedido_titulo">
             <div class="confirmar_pedido_text_titulo">
-                <img src="../../image/vendedor/confirmar_pedido/carrinho_icon.svg" alt="">
+                <img src="../../image/geral/icons/carrinho_carga_icon.svg" alt="">
                 <h1>CONFIRMAR PEDIDO</h1>
             </div>
                 
@@ -81,14 +81,14 @@
                 </div>
                 
                 <div class="confirmar_pedido_botao_confirmar_envio">
-                    <img src="../../image/vendedor/confirmar_pedido/aprovar.svg" alt="">
+                    <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">
                     <h1>CONFIRMAR ENVIO</h1>
                 </div>
             </div>
 
             <div class="confirmar_pedido_container_2">
                 <div class="confirmar_pedido_titulo_cronograma">
-                    <img src="../../image/vendedor/confirmar_pedido/relogio_icon.svg" alt="">
+                    <img src="../../image/geral/icons/relogio_icon.svg" alt="">
                     <h1>CRONOGRAMA</h1>
                 </div>
                     
@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="confirmar_pedido_botao_receber_pagamento">
-                    <img src="../../image/vendedor/confirmar_pedido/baixar.svg" alt="">
+                    <img src="../../image/geral/botoes/enviar_branco_icon.svg" alt="">
                     <h1>RECEBER PAGAMENTO</h1>
                 </div>
             </div>
@@ -172,7 +172,6 @@
                 <div class="confirmar_pedido_container_4_item">
                     <div class="confirmar_pedido_linha">
                         <h1>INFORMAÇÕES DE CONTATO</h1>
-                        <img src="../../image/vendedor/confirmar_pedido/botao_copiar.svg" alt="">
                     </div>
                     <h2>(67) 9 9999-9999</h2>
                 </div>
@@ -180,7 +179,6 @@
                 <div class="confirmar_pedido_container_4_item">
                     <div class="confirmar_pedido_linha">
                         <h1>ENDEREÇO DE ENTREGA</h1>
-                        <img src="../../image/vendedor/confirmar_pedido/botao_copiar.svg" alt="">
                     </div>
                     <div class="confirmar_pedido_linha_2">
                         <h3>CEP:</h3>
@@ -189,7 +187,7 @@
                     <h2>Rua Vinte e Três, Tancredo Neves - Rio Branco, AC</h2>
                 </div>
                 <div class="confirmar_pedido_botao_denunciar_usuario">
-                    <img src="../../image/vendedor/confirmar_pedido/cancelar.svg" alt="">
+                    <img src="../../image/geral/botoes/x_branco_icon.svg" alt="">
                     <h1>DENUNCIAR</h1>
                 </div>
             </div>

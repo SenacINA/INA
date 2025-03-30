@@ -14,6 +14,7 @@
 </head>
 <body>
   <!-- Até 375px -->
+  <!-- Caminho de Icon Correto -->
    
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -38,7 +39,7 @@
           <div class="cadastro_redefinir_senha_2">
               <input type="password" name="senha" id="senha" class="base_input">
               <a href="javascript:void(0);" id="eye-icon-senha">
-                  <img id="eye-img-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
+                  <img id="eye-img-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
               </a>
           </div>
         
@@ -46,7 +47,7 @@
           <div class="cadastro_redefinir_senha_2">
               <input type="password" name="nova_senha" id="nova_senha" class="base_input">
               <a href="javascript:void(0);" id="eye-icon-nova-senha">
-                  <img id="eye-img-nova-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
+                  <img id="eye-img-nova-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
               </a>
           </div>
 
@@ -63,10 +64,12 @@
 
       <div class="cadastro_botoes">
         <button class="cadastro_botao_voltar" onclick="pag('cliente/login')">
-          <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
+          <img src="../../image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">
+          Voltar
         </button>
         <button class="cadastro_botao_cadastrar" onclick="pag('cliente/perfil_cliente')">
-          <img src="../../image/geral/confirm_botao.svg" alt="">Cadastrar
+          <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">
+          Cadastrar
         </button>
       </div>
     </div>

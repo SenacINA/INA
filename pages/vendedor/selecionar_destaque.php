@@ -22,7 +22,7 @@
         <div class = "selecionardestaques_body">
             <div class="selecionardestaques_titulo">
                 <div class="selecionardestaques_text_titulo">
-                    <img src="../../image/vendedor/selecionar_destaques/estrela.svg" alt="">
+                    <img src="../../image/geral/icons/estela_icon.svg" alt="">
                     <h1>SELECIONAR DESTAQUES</h1>
                 </div>
                 <hr class="selecionardestaques_linha_titulo">
@@ -33,13 +33,13 @@
                     gerarProdutoCards(3, 0);
                 ?>
                 <button class="selecionardestaques_add_button">
-                    <img src="../../image/vendedor/selecionar_destaques/add.svg" alt="">
+                    <img src="../../image/geral/icons/add_icon.svg" alt="">
                 </button>
             </div> 
         </div>
 
         <div class="gerenciar_pedidos_header_title">
-            <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg"/>
+            <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
             <h1 class="gerenciar_pedidos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
         </div>
 

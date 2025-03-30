@@ -14,6 +14,7 @@
 </head>
 <body>
   <!-- Até 375px -->
+  <!-- Caminho de Icon Correto -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -32,7 +33,7 @@
           <div class="redefinir_email_1_input">
               <input class="base_input" type="password" name="senha" id="senha-email">
               <a href="javascript:void(0);" id="eye-icon-email">
-                  <img id="eye-img-email" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
+                  <img id="eye-img-email" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
               </a>
           </div>
           <a href="./redefinir_senha_1.php">Redefinir Senha</a>
@@ -41,10 +42,10 @@
 
       <div class="redefinir_email_1_botoes">
         <button class="redefinir_email_1_botao_voltar" onclick="history.back()">
-          <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
+          <img src="../../image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">Voltar
         </button>
         <button class="redefinir_email_1_botao_avancar" onclick="pag('geral/redefinir_email_2')">
-          <img src="../../image/geral/confirm_botao.svg" alt="">Avançar
+          <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">Avançar
         </button>
       </div>
     </div>

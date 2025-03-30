@@ -17,12 +17,6 @@
   padding: 16px 32px 32px 32px;
 }
 
-.historico_acesso_navbar_principal {
-  background-color: #fff;
-  width: 100%;
-  height: 67px;
-}
-
 .historico_acesso_subtitulo_generico{
   width: 100%;
   display: flex;
@@ -30,7 +24,7 @@
 }
 
 .base_icon{
-  height: 32px;
+  height: 24px;
 }
 
 .historico_acesso_linha_vertical{
@@ -50,10 +44,24 @@
   width: 100%;
 }
 
-.historico_acesso_header_title {
+.historico_acesso_header_title_1 {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 8px;
+}
+
+.historico_acesso_header_title_2 {
+  display: flex;
+  justify-content: start;
+  gap: 8px;
+}
+
+.historico_acesso_header_title_1 img,
+.historico_acesso_header_title_2 img {
+  width: 28px;
+  height: 28px;
+
+  align-self: center;
 }
 
 .historico_acesso_text_header {

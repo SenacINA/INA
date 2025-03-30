@@ -15,6 +15,7 @@
 </head>
 <body>
   <!-- Atá 375px -->
+  <!-- Caminho de Icon Correto -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -24,7 +25,7 @@
       <div class="cadastro_vendedor1_grid" >   
         <div class="cadastro_vendedor1_titulo">
           <div class="cadastro_vendedor1_titulo_img">
-              <img src="../../image/vendedor/cadastro_vendedor_1/cadastro_icon.png" alt="">
+              <img src="../../image/geral/icons/etiqueta_add_icon.svg" alt="">
               <h1>CADASTRO DE VENDEDOR</h1>
           </div>
           <hr>
@@ -57,7 +58,7 @@
 
         <div class="cadastro_vendedor1_botao_salvar">
             <button class="cadastro_vendedor1_salvar" onclick="pag('vendedor/cadastro_vendedor_2')">
-                <img src="../../image/vendedor/cadastro_vendedor_1/v_icon.svg" alt="">
+                <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">
                 <label>CONTINUAR</label>
             </button>
         </div>

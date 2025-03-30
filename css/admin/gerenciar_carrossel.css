@@ -23,20 +23,10 @@
   padding: 32px;
 }
 
-.gerenciar_carrossel_navbar_principal {
-  background-color: #fff;
-  width: 100%;
-  height: 67px;
-}
-
 .gerenciar_carrossel_subtitulo_generico{
   width: 100%;
   display: flex;
   gap: 16px;
-}
-
-.base_icon{
-  height: 32px;
 }
 
 .gerenciar_carrossel_linha_vertical{
@@ -52,18 +42,43 @@
   align-items: center;
 }
 
+.gerenciar_carrossel_subtitle_holder img {
+  width: 24px;
+  height: 24px;
+}
+
 .gerenciar_carrossel_header_holder{
   width: 100%;
 }
 
-.gerenciar_carrossel_header_title {
+.gerenciar_carrossel_header_title_1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gerenciar_carrossel_header_title_2 {
   display: flex;
   justify-content: start;
-  gap: 4px;
+  gap: 8px;
+}
+
+.gerenciar_carrossel_header_title_1 img,
+.gerenciar_carrossel_header_title_2 img {
+  height: 28px;
+  width: 28px;
+
+  align-self: center;
 }
 
 .gerenciar_carrossel_text_header {
   color: var(--sappire);
+  justify-self: center;
+  font-weight: 500;
+  color: #255e7e;
+  text-align: center;
+  font-size: 32px;
 }
 
 .gerenciar_carrossel_quadrado_container {
@@ -187,9 +202,11 @@
 }
 
 .gerenciar_carrossel_titulo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  justify-self: center;
+  font-weight: 500;
+  color: #255e7e;
   text-align: center;
+  font-size: 32px;
 }
 
 .gerenciar_carrossel_estatistica_descricao {
@@ -290,7 +307,6 @@
   }
 
   .gerenciar_pedidor_firula_holder{
-    background-color: transparent;
     gap: 16px;
     padding: 0;
   }
@@ -325,9 +341,12 @@
   .gerenciar_carrossel_flex{
     display: block;
     gap: 0px;
-
-
   }
-  
 }
 
+@media (max-width: 768px) {
+  .gerenciar_carrossel_header_title_1 {
+    position: absolute;
+    top: -55px;
+  }
+}

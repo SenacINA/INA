@@ -14,7 +14,8 @@
 </head>
 <body>
   <!-- Até 375px -->
-
+  <!-- Caminho de Icon Correto -->
+    
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>
@@ -33,7 +34,7 @@
             <div class="redefinir_senha_2">
                 <input class="base_input" type="password" name="senha" id="senha">
                 <a href="javascript:void(0);" id="eye-icon-senha">
-                    <img id="eye-img-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
+                    <img id="eye-img-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
                 </a>
             </div>
           </div>
@@ -43,7 +44,7 @@
             <div class="redefinir_senha_2">
                 <input class="base_input" type="password" name="nova_senha" id="nova_senha">
                 <a href="javascript:void(0);" id="eye-icon-nova-senha">
-                    <img id="eye-img-nova-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
+                    <img id="eye-img-nova-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
                 </a>
             </div>
           </div>
@@ -51,10 +52,10 @@
       </div>
       <div class="redefinir_senha_2_botoes">
         <button class="redefinir_senha_2_botao_voltar" onclick="history.back()">
-          <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
+          <img src="../../image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">Voltar
         </button>
         <button class="redefinir_senha_2_botao_salvar" onclick="pag('geral/redefinir_senha_3')">
-          <img src="../../image/geral/confirm_botao.svg" alt="">Salvar
+          <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">Salvar
         </button>
       </div>
     </div>
