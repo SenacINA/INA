@@ -43,6 +43,7 @@ function gerarProdutoCards($quantidade)
 </head>
 <body>
     <!-- Até 375px -->
+    <!-- Caminho de Icon Correto -->
 
     <?php
     include_once('../../pages/geral/navbar.php');
@@ -56,9 +57,9 @@ function gerarProdutoCards($quantidade)
             <h1>Cliente 10</h1>
         </div>
 
-        <div class="menu_1">
+        <div class="menu_1 base_input_select">
             <form action="">
-                <select name="menu base_input" id="menu" onchange="selectPag(this.value)">
+                <select name="base_input" id="menu" onchange="selectPag(this.value)">
                     <option selected disabled value="">Menu</option>
                     <option value="cliente/editar_perfil">Editar Perfil</option>
                     <option value="vendedor/cadastro_vendedor_1">Cadastro como vendedor</option>
@@ -70,25 +71,25 @@ function gerarProdutoCards($quantidade)
         <div class="perfil_cliente_grid_principal">
             <div class="perfil_cliente_infos_container">
                 <div class="perfil_cliente_infos_item1">
-                    <img src="../../image/cliente/perfil_cliente/icon_localizacao_cliente.svg">
+                    <img src="../../image/geral/icons/localizacao_icon.svg">
                     <p>São Paulo, São Paulo</p>
                 </div>
                 <div class="perfil_cliente_infos_item2">
-                    <img src="../../image/cliente/perfil_cliente/chat_user.svg">
+                    <img src="../../image/geral/icons/balao_exclamacao_icon.svg">
                     <p>Ativo há: Agora</p>
                 </div>
                 <div class="perfil_cliente_infos_item3">
-                    <img src="../../image/cliente/perfil_cliente/membro_user.svg">
+                    <img src="../../image/geral/icons/perfil_membros_icon.svg">
                     <p>Cliente há: 6 Meses</p>
                 </div>
                 <div class="perfil_cliente_contatos_cliente">
                     <div class="instagram_cliente">
-                        <img src="../../image/cliente/perfil_cliente/icon_instagram_cliente.svg" class="perfil_cliente_icon_instagram_cliente">
+                        <img src="../../image/geral/icons/instagram_icon.svg" class="perfil_cliente_icon_instagram_cliente">
                         <a href="#" class="perfil_cliente_instagram_cliente">my.cliente10</a>
                     </div>
                     <hr class="linha_vertical">
                     <div class="facebook_cliente">
-                        <img src="../../image/cliente/perfil_cliente/icon_facebook_cliente.svg" class="perfil_cliente_icon_facebook_cliente">
+                        <img src="../../image/geral/icons/facebook_icon.svg" class="perfil_cliente_icon_facebook_cliente">
                         <a href="#" class="perfil_cliente_facebook_cliente">cliente10</a>
                     </div>
                 </div>
@@ -98,7 +99,7 @@ function gerarProdutoCards($quantidade)
 
             <div class="perfil_cliente_grid_historico">
                 <div class="perfil_cliente_about_container_2">
-                    <img src="../../image/cliente/perfil_cliente/icon_lojinha.svg" alt="Icon Loja">
+                    <img src="../../image/geral/icons/tempo_icon.svg" alt="Icon Loja">
                     <h1>Histórico:</h1>
                 </div>
                 <div class="historico_items">
@@ -106,7 +107,7 @@ function gerarProdutoCards($quantidade)
                 </div>
                 <div class="ver_mais_container">
                     <p class="ver_mais_text">Ver Mais</p>
-                    <img src="../../image/cliente/perfil_cliente/seta.svg">
+                    <img src="../../image/geral/icons/seta_longa_icon.svg">
                 </div>
             </div>
 

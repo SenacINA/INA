@@ -14,7 +14,8 @@
 </head>
 <body> 
   <!-- Até 375px -->
-
+  <!-- Caminho de Icon Correto -->
+  
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>
@@ -22,7 +23,7 @@
     <div class="atualizar_usuario_body">
       <div class="atualizar_usuario_titulo">
         <div class="atualizar_usuario_text_titulo">
-          <img src="../../image/admin/atualizar_usuario/header_icon.svg" alt="">
+          <img src="../../image/geral/icons/atualizar_icon.svg" alt="">
           <h1>ATUALIZAR USUARIO</h1>
         </div>
         <hr class="atualizar_usuario_linha_titulo">
@@ -35,7 +36,7 @@
        
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_1"> 
           <hr class="atualizar_usuario_vertical">
-          <img src="../../image/admin/atualizar_usuario/texto_icon.svg" alt="">
+          <img src="../../image/geral/icons/lista_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Alternar Permissões</h1>
         </div>
 
@@ -56,7 +57,7 @@
         
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_2">
           <hr class="atualizar_usuario_vertical">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <img src="../../image/geral/icons/perfil_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Dados Pessoais</h1>
         </div>
         
@@ -97,7 +98,7 @@
 
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_3">
           <hr class="atualizar_usuario_vertical">
-          <img src="../../image/admin/atualizar_usuario/localizacao_icon.svg" alt="">
+          <img src="../../image/geral/icons/localizacao_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Localização</h1>
         </div>
 
@@ -138,13 +139,13 @@
         </form>
 
         <div class="atualizar_usuario_text_titulo" id="atualizar_usuario_text_titulo_mobile">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <img src="../../image/geral/icons/lista_caneta_icon.svg" alt="">
           <h1>ALTERAR DADOS</h1>
         </div> 
 
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_4">
           <hr class="atualizar_usuario_vertical">
-          <img src="../../image/admin/atualizar_usuario/engrenagem_icon.svg" alt="">
+          <img src="../../image/geral/icons/engrenagem_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Alterar Permissões</h1>
         </div>
 
@@ -203,13 +204,15 @@
           </div>
         </form>
         <div class="atualizar_usuario_botao_salvar">
-          <button class="atualizar_usuario_salvar">
-            <img src="../../image/admin/atualizar_usuario/v_icon.svg" alt="">
+          <button class="atualizar_usuario_salvar base_botao">
+            <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">
             <label>CONFIRMAR</label>
           </button>
         </div>
       </div>
     </div> 
+    </div>
   </main>
+
 </body>
 </html>

@@ -16,6 +16,7 @@
 </head>
 <body>
   <!-- Até 768px -->
+  <!-- Caminho de Icon Correto -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -24,7 +25,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_produtos_header_holder">
         <div class="gerenciar_produtos_text_titulo">
-          <img src="../../image/admin/gerenciar_produtos/produto.svg" alt="">
+          <img src="../../image/geral/icons/produto_icon.svg" alt="">
           <h1 class="gerenciar_produtos_header_holder font_titulo">GERENCIAR PRODUTOS</h1>
         </div>
         <hr class="gerenciar_produtos_linha_sublinhado">
@@ -37,7 +38,7 @@
               <div class="gerenciar_produtos_subtitulo_generico">
                 <div class="gerenciar_produtos_linha_vertical"></div>
                 <div class="gerenciar_produtos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/gerenciar_produtos/pesquisar_produto.svg" />
+                  <img class="base_icon" src="../../image/geral/icons/produto_lupa_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Pesquisar Produtos</p>
                 </div>
               </div>
@@ -48,7 +49,7 @@
                 </div>
                 <div class="gerenciar_produtos_inputs_esquerda">
                   
-                  <div class="gerenciar_produtos_input_mes">
+                  <div class="gerenciar_produtos_input_mes base_input_select">
                     <label for="mes" class="font_subtitulo font_celadon">Mês</label>
                     <select name="mes" id="mes" class="gerenciar_produtos_mes_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
@@ -66,11 +67,11 @@
                       <option value="dezembro">Dezembro</option>
                     </select>
                   </div>
-                  <div class="gerenciar_produtos_input_ano">
+                  <div class="gerenciar_produtos_input_ano base_input_select">
                     <label for="ano" class="font_subtitulo font_celadon">Ano</label>
                     <select name="ano" id="ano" class="gerenciar_produtos_ano_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
-                      <option value=" 2020">2020</option>
+                      <option value="2020">2020</option>
                       <option value="2021">2021</option>
                       <option value="2022">2022</option>
                       <option value="2023">2023</option>
@@ -86,12 +87,12 @@
                 </div>
                 <div class="gerenciar_produtos_holder_botao">
                   <button type="reset" class="base_botao btn_red">
-                    <img src="../../image/geral/botoes/x_icon_branco.svg">
+                    <img src="../../image/geral/botoes/x_branco_icon.svg">
                     CANCELAR
                   </button>
 
                   <button type="submit" class="base_botao btn_blue">
-                    <img src="../../image/geral/botoes/v_icon_branco.svg">
+                    <img src="../../image/geral/botoes/v_branco_icon.svg">
                     CONFIRMAR
                   </button>
                 </div>
@@ -101,7 +102,7 @@
               <div class="gerenciar_produtos_subtitulo_generico">
                 <div class="gerenciar_produtos_linha_vertical"></div>
                 <div class="gerenciar_produtos_subtitle_holder">
-                  <img class="base_icon" src="../../image/admin/gerenciar_produtos/estatisticas.svg" />
+                  <img class="base_icon" src="../../image/geral/icons/grafico_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Estatísticas</p>
                 </div>
               </div>
@@ -137,7 +138,7 @@
       </div>
     </div>
     <div class="gerenciar_produtos_header_title">
-      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg" />
+      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="gerenciar_produtos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_produtos_table">
@@ -222,7 +223,9 @@
       <a href="./dashboard.php">
         <div class="voltar">
           <button type="reset" class="base_botao btn_outline_blue">
-                        <img src="../../image/geral/botoes/v_icon_carolina.svg">VOLTAR</button>
+            <img src="../../image/geral/botoes/seta_esquerda_carolina_icon.svg">
+              VOLTAR
+            </button>
         </div>
       </a>
     </div>
