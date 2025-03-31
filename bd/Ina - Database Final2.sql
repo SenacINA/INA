@@ -85,20 +85,6 @@ foreign key (categoria_produto) references categoria(id_categoria),
 foreign key (subcategoria_produto) references subcategoria(id_subcategoria)
 );
 
-create table cupom( -- 4
-id_cupom int auto_increment primary key,
-nome_cupom varchar(100) not null,
-codigo_cupom varchar(50) unique not null,
-id_vendedor int not null, -- FK
-uso_total_cupom int not null,
-uso_por_cliente_cupom int not null,
-valor_minimo_cupom float default 0,
-desconto_cupom float not null,
-data_criacao_cupom date not null,
-data_final_cupom date not null,
-tipo_sobre_frete_cupom BOOLEAN DEFAULT false, -- aplica ao frete 
-foreign key (id_vendedor) references vendedor(id_vendedor)
-);
 
 create table metodo_pagamento( -- 13
 id_metodo_pagamento int auto_increment primary key,
@@ -217,11 +203,9 @@ id_metodo_pagamento int,
 data_limite_entrega_compra date not null,
 status_pagamento_compra boolean,
 status_entrega_compra boolean,
-id_cupom int,
 foreign key (id_compra) references compra(id_compra),
 foreign key (id_produto) references produto(id_produto),
 foreign key (id_metodo_pagamento) references metodo_pagamento(id_metodo_pagamento),
-foreign key (id_cupom) references cupom(id_cupom)
 );
 
 create table imagem_avaliacao( -- 23
