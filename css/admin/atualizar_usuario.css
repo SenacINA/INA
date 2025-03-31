@@ -544,7 +544,6 @@ cursor: pointer;
   }
 }
 
-<<<<<<< HEAD
 @media (max-width: 425px) {
   #atualizar_usuario_text_2 {
     margin-top: 140px;
@@ -554,10 +553,8 @@ cursor: pointer;
 @media (max-width: 375px){
   #atualizar_usuario_text_2 {
     margin-top: 92px;
-=======
-@media (max-width: 375px) {
+  }
   .bg_mobile_2 {
     height: 990px;
->>>>>>> 590eff2f08acea8893bee8d850ccf6bf25a87f17
   }
 }

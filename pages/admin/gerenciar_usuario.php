@@ -113,8 +113,9 @@
               </div>
               <div class="gerenciar_usuario_estatistica_holder">
                 <div class="gerenciar_usuario_card">
+                  <span class="gerenciar_usuario_titulo2">Luis Fernando</span>
                   <img src="../../image/admin/perfil_admin/perfil_admin.svg" alt="" class="gerenciar_usuario_card_img_perfil">
-                  <span class="gerenciar_usuario_titulo">Luis Fernando</span>
+
                   <button type="reset" class="base_botao btn_red">
                     <img src="../../image/geral/botoes/x_icon_branco.svg">
                     DESATIVAR

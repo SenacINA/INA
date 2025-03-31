@@ -112,7 +112,7 @@
                 </div>
                 <div class="gerenciar_produtos_card">
                   <span class="gerenciar_produtos_titulo">Total De Vendas</span>
-                  <span class="gerenciar_produtos_estatistica_descricao font_descricao">14 UNI</span>
+                  <span class="gerenciar_produtos_estatistica_descricao">14 UNI</span>
                 </div>
                 <div class="gerenciar_produtos_card">
                   <span class="gerenciar_produtos_titulo">Tempo Medio De Entrega</span>
