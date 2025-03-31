@@ -3,13 +3,15 @@
     margin-top: 0;
 }
 
-.img_fundo{
-    height: 666px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(76, 155, 189, 0.00) 49.5%, #4C9BBD 100%), url("../../image/cliente/categoria/img_fundo_categoria.png") lightgray 0px 0px / 100% 131.532% no-repeat;
+.img_fundo {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(76, 155, 189, 0.00) 49.5%, #4C9BBD 100%), 
+                url("../../image/cliente/categoria/img_fundo_categoria.png") lightgray 0 0 / no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+    width: auto;
+  }
 
 
 .carousel-container {
@@ -191,6 +193,7 @@ display: none;}
 }
 
 .grid_categoria{
+    margin-top: 10%;
     display: grid;
     grid-template-columns: auto auto;
     padding: 0 5%;
@@ -531,6 +534,58 @@ display: none;}
     font-size: 0.625rem;
 }
 
+.mobile-filters-dropdown {
+    display: none;
+}
+
+.dropdown-toggle {
+    display: none;
+}
+
+
+.btn-topo {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1B98E0;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    transition: all 0.3s ease;
+    opacity: 0; 
+    transform: translateY(20px);
+    pointer-events: none; 
+    display: flex;
+    padding: 8px;
+}
+
+.btn-topo.visible {
+    opacity: 1;
+    transform: translateY(0); 
+    pointer-events: auto;
+}
+
+.btn-topo:hover {
+    background-color: #1476b3;
+    transform: translateY(-3px) scale(1.05);
+}
+
+.btn-topo:hover {
+    background-color: #1476b3;
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 @media (max-width: 1700px) {
     .produtos_container {
         padding: 16px 32px;
@@ -543,6 +598,7 @@ display: none;}
 
 @media (max-width: 1024px) {
     .grid_categoria {
+        margin-top: 20%;
         padding: 0 2%;
         grid-template-columns: auto;
     }
@@ -552,5 +608,110 @@ display: none;}
 
     .grid_produtos {
         gap: 24px;
+    }
+
+    .mobile-filters-dropdown {
+        display: block;
+    }
+    
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 16px;
+        color: white;
+        background: var(--sappire);
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 24px;
+        border: none;
+
+        img {
+            height: 24px;
+            width: auto;
+        }
+    }
+    
+    .filtros {
+        display: none;
+        grid-template-rows: auto;
+        gap: 16px;
+        padding: 16px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .filtros.active {
+        display: grid;
+    }
+    
+    .container_filtro {
+        padding: 0;
+        border: none;
+    }
+    
+    .titulo_filtro {
+        padding: 12px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .grid_filtro {
+        padding-left: 16px;
+    }
+    
+    .container_filtro.active_filter .grid_filtro {
+        padding-top: 8px;
+    }
+    
+    .container_filtro .titulo_filtro img {
+        transition: transform 0.3s ease;
+    }
+    
+    .container_filtro.active_filter .titulo_filtro img {
+        transform: rotate(180deg);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .btn-topo {
+        right: 16px;
+        bottom: 16px;
+    }
+    
+    .produtos_container {
+        padding: 16px;
+    }
+
+    .grid_categoria {
+        padding: 16px;
+        margin-top: 30%;
+    }
+
+    .grid_produtos {
+        grid-template-columns: auto auto;
+        gap: 16px;
+    }
+}
+
+
+@media (max-width: 465px) {
+    .btn-topo {
+        right: 8px;
+        bottom: 8px;
+    }
+    .produtos_container {
+        padding: 8px;
+    }
+
+    .grid_produtos {
+        grid-template-columns: auto;
+        gap: 16px;
+    }
+
+    .grid_categoria {
+        margin-top: 40%;
     }
 }

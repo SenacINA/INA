@@ -23,38 +23,16 @@
     ?>
 
     <div class="img_fundo largura_com_scroll">
-        <div class="index_body_carrossel">
-            <div class="index_body_carrossel_content">
-                <button class="index_body_carrossel_but back">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19" />
-                    </svg>
-                </button>
-                <div class="carousel-container">
-
-                    <div class="carousel-wrapper">
-                        <img id="carrossel_image" src="../../image/index/carrosselConsole.png" alt="Imagem Carrossel">
-                    </div>
-
-
-                </div>
-                <button class="index_body_carrossel_but forward">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19" />
-                    </svg>
-                </button>
-            </div>
-            <div class="index_body_carrossel_nav">
-                <button class="active" onclick="currentSlide(1)"></button>
-                <button onclick="currentSlide(2)"></button>
-                <button onclick="currentSlide(3)"></button>
-                <button onclick="currentSlide(4)"></button>
-            </div>
-
-        </div>
+        
     </div>
 
     <main class="conteudo_categoria grid_categoria">
+        <div class="mobile-filters-dropdown">
+            <button class="dropdown-toggle">
+                Filtrar
+                <img src="../../image/geral/icons/configure.svg" alt="filtro">
+            </button>
+        </div>
 
         <div class="filtros">
             <div class="container_filtro bg_branco">
@@ -212,63 +190,15 @@
             </div>
         </div>
     </main>
-    <br>
-    <div class="container_voltar">
-        <button class="redefinir_email_1_botao_voltar" onclick="history.back()">
-            <img src="../../image/geral/seta_botao_branco.svg" alt="">Voltar
-        </button>
-    </div>
-    <br>
-    <template id="produto_card_template">
-        <div class="produto_card bg_branco">
-            <div id="card_desconto_template" class="card_desconto font_descricao font_bold font_10px">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 21" fill="none" style="position: absolute;">
-                    <path d="M0 0.5H80V20.5H0L17.3359 10.5L0 0.5Z" fill="#006494" />
-                </svg>
-                <p class="valor_desconto">30</p>
-                <p class="texto_esquerda">% OFF</p>
-            </div>
-            <a target="_blank" href="about:blank">
-                <img src="https://placehold.co/200x225.webp?text=Placeholder\n200w\nx\n225h" alt="Placeholder">
-            </a>
-            <p class="produto_nome font_descricao font_bold font_14px">Nome produto placeholder Nome produto placeholder</p>
-            <div class="produto_preco_estrela font_descricao font_bold font_14px">
-                <div class="container_card_estrela">
-                    <p class="card_estrela_texto font_14px">★★★★★</p>
-                    <p class="card_estrela_quantidade font_10px">(1342)</p>
-                </div>
-                <div class="container_card_preco">
-                    <p class="card_preco_desconto font_10px">R$24.532,90</p>
-                    <p class="card_preco">R$24.532,90</p>
-                </div>
-            </div>
-            <div class="produto_botoes">
-                <button type="button" onclick="pag('cliente/carrinho_vazio')" class="botao_estilo font_14px">
-                    <svg class="icone_carrinho" xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
-                        <path d="M5.78305 3.94444H23.75L21.3056 12.5H7.09931M22.5278 17.3889H7.86111L5.41667 1.5H1.75M9.08333 22.2778C9.08333 22.9528 8.53612 23.5 7.86111 23.5C7.1861 23.5 6.63889 22.9528 6.63889 22.2778C6.63889 21.6027 7.1861 21.0556 7.86111 21.0556C8.53612 21.0556 9.08333 21.6027 9.08333 22.2778ZM22.5278 22.2778C22.5278 22.9528 21.9806 23.5 21.3056 23.5C20.6305 23.5 20.0833 22.9528 20.0833 22.2778C20.0833 21.6027 20.6305 21.0556 21.3056 21.0556C21.9806 21.0556 22.5278 21.6027 22.5278 22.2778Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <button type="button" onclick="pag('cliente/produto')" class="botao_estilo font_14px">
-                    Comprar
-                </button>
-            </div>
-        </div>
-    </template>
+    <button id="btnTopo" class="btn-topo" title="Voltar ao topo">
+        <img src="../../image/geral/icons/seta_cima.svg" alt="">
+    </button>
     <?php 
       include_once('../../pages/geral/footer.php');
     ?>
     <!-- <script type="text/javascript" src="../../js/cliente/categoria.js"></script> -->
 </body>
+<script src='../../js/geral/btn_topo.js'></script>
 <script src="../../js/cliente/carrossel.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const titulos = document.querySelectorAll('.titulo_filtro');
-        titulos.forEach(titulo => {
-            titulo.addEventListener('click', function() {
-                this.parentElement.classList.toggle('active_filter');
-            });
-        });
-    });
-</script>
-
+<script src='../../js/cliente/filtro.js'></script>
 </html>
