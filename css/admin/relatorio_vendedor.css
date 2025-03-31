@@ -34,12 +34,9 @@
   width: 90%;
 }
 
-.relatorio_vendedor_text_titulo_1 img,
-.relatorio_vendedor_text_titulo_2 img {
-  align-self: center;
-  width: 28px;
-  height: 28px;
-  margin-right: 8px;
+.relatorio_vendedor_text_titulo_1,
+.relatorio_vendedor_text_titulo_2 {
+  gap: 8px;
 }
 
 .relatorio_vendedor_text_titulo_1 h1,
@@ -129,14 +126,8 @@ grid-row: 3;
   display: flex;
   align-items: center;
   height: min-content;
-}
 
-.relatorio_vendedor_text img{
-  margin: 0px 8px;
-  width: 24px;
-  height: 24px;
-  align-self: center;
-  justify-self: center;
+  gap: 8px;
 }
 
 .relatorio_vendedor_vertical {

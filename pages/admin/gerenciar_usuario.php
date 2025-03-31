@@ -24,7 +24,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_usuario_header_holder">
         <div class="gerenciar_usuario_text_titulo">
-          <img src="../../image/geral/icons/lista_lupa_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/lista_lupa_icon.svg" alt="">
           <h1 class="gerenciar_usuario_header_holder font_titulo">GERENCIAR USUÁRIOS</h1>
         </div>
         <hr class="gerenciar_usuario_linha_sublinhado">
@@ -37,7 +37,7 @@
               <div class="gerenciar_usuario_subtitulo_generico">
                 <div class="gerenciar_usuario_linha_vertical"></div>
                 <div class="gerenciar_usuario_subtitle_holder">
-                  <img src="../../image/geral/icons/perfil_lupa_icon.svg" alt="" class="gerenciar_usuario_img_lupa">
+                  <img class="base_icon" src="../../image/geral/icons/perfil_lupa_icon.svg" alt="">
                   <h2 class="font_subtitulo font_celadon">Pesquisar Usuários</p>
                 </div>
               </div>
@@ -132,14 +132,13 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="gerenciar_usuario_header_title">
-      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
+      <img class="base_icon" src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="gerenciar_usuario_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_usuario_table">

@@ -24,7 +24,7 @@
     <div class="admin_cupom_body">
       <div class="admin_cupom_header">
         <div class="admin_cupom_text_header">
-          <img src="../../image/geral/icons/cupom_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/cupom_icon.svg" alt="">
           <h1>GERAR CUPOM</h1>
         </div>
         <hr class="admin_cupom_linha_header">
@@ -37,7 +37,7 @@
        
         <div class="admin_cupom_text" id="cupom_text_1"> 
           <hr class="admin_cupom_vertical">
-          <img src="../../image/geral/icons/lista_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/lista_icon.svg" alt="">
           <h1 class="admin_cupom_text">Seu Perfil</h1>
         </div>
 
@@ -74,7 +74,7 @@
         
         <div class="admin_cupom_text" id="cupom_text_2">
           <hr class="admin_cupom_vertical">
-          <img src="../../image/geral/icons/perfil_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/perfil_icon.svg" alt="">
           <h1 class="admin_cupom_text">Buscar Produtos</h1>
         </div>
         
@@ -102,7 +102,7 @@
 
         <div class="admin_cupom_text" id="cupom_text_3">
           <hr class="admin_cupom_vertical">
-          <img src="../../image/geral/icons/engrenagem_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/engrenagem_icon.svg" alt="">
           <h1 class="admin_cupom_text">Tipo de Cupom</h1>
         </div>
 

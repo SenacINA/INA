@@ -213,6 +213,14 @@ body{
   cursor: pointer;
 }
 
+.base_botao img {
+  height: 18px;
+  width: 18px;
+
+  justify-self: center;
+  align-self: center;
+}
+
 .btn_red{
   background-color:var(--vermelho);
   color: var(--branco);
@@ -266,10 +274,15 @@ body{
   color: var(--cinza);
   border: var(--cinza) solid 2px;
 }
-
-
-
 /* < */
+
+.base_icon {
+  width: 32px;
+  height: 32px;
+
+  justify-self: center;
+  align-self: center;
+}
 
 .base_tabela{
   *{
