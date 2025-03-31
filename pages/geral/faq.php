@@ -1,5 +1,4 @@
-<!-- FINALIZADO -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,8 +12,6 @@
     <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-    <!-- Até 375px -->
-    <!-- Arrumar o caminho dos Icons. Não sou corno pr fazer isso não Elias -->
 
     <?php
     include_once('../../pages/geral/navbar.php');
@@ -123,5 +120,4 @@
     ?>
 </body>
 </html>
-
-
+-->
