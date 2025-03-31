@@ -24,14 +24,14 @@
   
   <div class="title_mobile">
     <div class="title_text">
-      <img src="../../image/vendedor/editar_perfil/pessoa.svg">
+      <img src="../../image/geral/icons/perfil_icon.svg">
       <h1 class="font_titulo title_main_text">Editar perfil</h1>
     </div>
   </div>
   <main class="quadrado_cliente">
     <div class="title">
       <div class="title_text">
-        <img src="../../image/vendedor/editar_perfil/pessoa.svg">
+        <img src="../../image/geral/icons/perfil_icon.svg">
         <h1 class="font_titulo title_main_text">Editar perfil</h1>
       </div>
       <hr class="linha_title">
@@ -44,34 +44,34 @@
           <h1 class="nome_cliente">Cliente10</h1>
         </div>
         <div class="produtos_cliente_container">
-          <img src="../../image/vendedor/editar_perfil/icon_produtos_vendedor.svg" class="icon_produtos_cliente">
+          <img src="../../image/geral/icons/loja_icon.svg" class="icon_produtos_cliente">
           <p class="produtos_cliente">Produtos: 8</p>
         </div>
         <div class="avaliacao_cliente_container">
-          <img src="../../image/vendedor/editar_perfil/icon_avaliacao_vendedor.svg">
+          <img src="../../image/geral/icons/estela_icon.svg">
           <p class="avaliacao_cliente">Avaliação geral: 4.5</p>
         </div>
         <div class="tempo_cliente_container">
-          <img src="../../image/vendedor/editar_perfil/icon_tempo_vendedor.svg">
+          <img src="../../image/geral/icons/perfil_membros_icon.svg">
           <p class="tempo_cliente">Cliente há: 4 Meses</p>
         </div>
         <div class="localizacao_cliente_container">
-          <img src="../../image/vendedor/editar_perfil/icon_localizacao_vendedor.svg">
+          <img src="../../image/geral/icons/localizacao_icon.svg">
           <p class="localizacao_cliente">São Paulo, São Paulo</p>
         </div>
       </div>
       <hr class="separador_mini_perfil">
       <div class="about_container">
-        <img src="../../image/vendedor/editar_perfil/icon_about_us.svg" class="icon_about_us">
+        <img src="../../image/geral/icons/texto_icon.svg" class="icon_about_us">
         <h1 class="sobre_nos_cliente">Sobre:</h1>
         <p class="text_about">Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</p>
       </div>
       <div class="contatos_container">
         <div class="contatos_cliente">
-          <img src="../../image/vendedor/editar_perfil/icon_instagram_vendedor.svg" class="icon_instagram_cliente">
+          <img src="../../image/geral/icons/instagram_icon.svg" class="icon_instagram_cliente">
           <a href="#" class="instagram_cliente">my.Cliente10</a>
           <hr class="linha_vertical_mini">
-          <img src="../../image/vendedor/editar_perfil/icon_facebook_vendedor.svg" class="icon_facebook_cliente">
+          <img src="../../image/geral/icons/facebook_icon.svg" class="icon_facebook_cliente">
           <a href="#" class="facebook_cliente">Cliente10</a>
         </div>
       </div>
@@ -97,12 +97,12 @@
       </form>
       <div class="botoes_redefinir">
         <button type="button" class='base_botao btn_blue redefinir_senha_cliente'>
-          <img src="../../image/geral/seta_botao_branco.svg" alt="">
+          <img src="../../image/geral/botoes/sair_branco_icon.svg" alt="">
           Redefinir senha
 
         </button>
         <button type="button" class="base_botao btn_blue redefinir_email_cliente">
-          <img src="../../image/geral/seta_botao_branco.svg" alt="">
+          <img src="../../image/geral/botoes/sair_branco_icon.svg" alt="">
           Redefinir email
         </button>
       </div>
@@ -112,11 +112,11 @@
           <p class="main_text_redes">Redes Sociais:</p>
         </div>
         <div class="redes_edit">
-          <img src="../../image/vendedor/editar_perfil/icon_instagram_vendedor.svg" alt="instagram"> <a href="#" class="link_instagram">my.Cliente10 </a>
-          <img src="../../image/vendedor/editar_perfil/icon_facebook_vendedor.svg" alt="facebook"> <a href="#" class="link_facebook">Cliente10</a>
+          <img src="../../image/geral/icons/instagram_icon.svg" alt="instagram"> <a href="#" class="link_instagram">my.Cliente10 </a>
+          <img src="../../image/geral/icons/facebook_icon.svg" alt="facebook"> <a href="#" class="link_facebook">Cliente10</a>
         </div>
         <button class="base_botao btn_blue botao_edit">
-          <img src="../../image/geral/caneta_branca_icon.svg" alt="">
+          <img src="../../image/geral/icons/caneta_branca_icon.svg" alt="">
           Editar
         </button>
       </div>
@@ -145,10 +145,10 @@
     </div>
     <div class="botoes">
       <button class="base_botao btn_blue salvar">
-        <img src="../../image/geral/botoes/v_icon_branco.svg">Salvar
+        <img src="../../image/geral/botoes/v_branco_icon.svg">Salvar
       </button>
       <button class="base_botao btn_outline_red cancelar">
-        <img src="../../image/geral/botoes/x_icon_vermelho.svg">Cancelar
+        <img src="../../image/geral/botoes/x_vermelho_icon.svg">Cancelar
       </button>
     </div>
   </main>

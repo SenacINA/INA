@@ -95,6 +95,7 @@ body {
   grid-row: 1;
   z-index: 0;
   width: 100%;
+  /* margin-bottom: 100px; */
 }
 
 .pfp_cliente {
