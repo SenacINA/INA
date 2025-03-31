@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,13 @@
     <link rel="stylesheet" href="../../css/style.css">
     <script src="../../js/geral/base.js"></script>
 </head>
-<body>    
+<body>
+  <!-- Até 375px -->
+
+  <?php
+    include_once('../../pages/geral/navbar.php');
+  ?>
+    
   <main>
     <div class="login_quadrado">
       <div class="login_container">
@@ -21,40 +27,41 @@
           <h1>Login de usuário</h1>
           <h2>Bem-vindo de volta!</h2>
         </div>
+        <form class="login_form_content" id="loginForm" method="post" action="../../model/geral/login_model.php">
+          <div class="login_formulario_login">
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" class="base_input"><br>
+          </div>
 
-        <form class="login_formulario_login">
-          <label for="email">Email:</label><br>
-          <input type="text" id="email" class="base_input"><br>
-        </form>
-
-        <form class="login_redefinir_senha_2_form" action="">
-            <label for="senha">Senha:</label>
-            <div class="login_redefinir_senha_2">
-              <input type="password" name="senha" id="senha" class="base_input">
-              <a href="javascript:void(0);" id="eye-icon-senha">
-                <img id="eye-img-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
-              </a>
-            </div>
-            
-            <div class="login_links_conatiner">
-              <div class="login_checkbox_container">
-                <input type="checkbox">
-                <p>Manter Conectado</p>
+          <div class="login_redefinir_senha_2_form">
+              <label for="senha">Senha:</label>
+              <div class="login_redefinir_senha_2">
+                <input type="password" name="senha" id="senha" class="base_input">
+                <a href="javascript:void(0);" id="eye-icon-senha">
+                  <img id="eye-img-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
+                </a>
               </div>
-            </div>
-
-            <div class="login_links">
-                <div onclick="pag('geral/redefinir_senha_1')">
-                  <p>Redefinir Senha</p>
-                </div>        
-                <div onclick="pag('cliente/cadastro')">
-                  <p>Não tem login? Clique aqui</p>
+              
+              <div class="login_links_conatiner">
+                <div class="login_checkbox_container">
+                  <input type="checkbox" class="base_input">
+                  <p>Manter Conectado</p>
                 </div>
-            </div>
+              </div>
+
+              <div class="login_links">
+                  <div class="login_fit_content" onclick="pag('geral/redefinir_senha_1')">
+                    <p>Redefinir Senha</p>
+                  </div>        
+                  <div class="login_fit_content" onclick="pag('cliente/cadastro')">
+                    <p>Não tem login? Clique aqui</p>
+                  </div>
+              </div>
+          </div>
         </form>
       </div>
       <div class="login_botoes">
-          <button class="login_botao_entrar" onclick="login()">
+          <button class="login_botao_entrar" type="submit" form="loginForm">
               <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">Entrar
           </button>
         </div>

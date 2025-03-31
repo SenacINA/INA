@@ -34,6 +34,10 @@
     border-radius: 10px;
   }
   
+  .login_fit_content{
+    width: fit-content;
+  }
+
   .login_container {
     display: flex;
     flex-direction: column;
