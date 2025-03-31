@@ -102,7 +102,6 @@
   color: #2888b1;
 }
 
-
 /* Start grid_conteudo */
 .cadastro_vendedor_2_grid_conteudo {
   display: grid;
@@ -131,7 +130,6 @@
   color: rgba(0, 0, 0, 0.5);
   font-size: 18px;
   font-weight: 500;
-
 }
 
 .cadastro_vendedor_2_grid_conteudo_1,
@@ -267,7 +265,7 @@ margin-right: 8px;
   .cadastro_vendedor_2_grid_bg {
     justify-self: center;
     width: 95%;
-    height: 1050px;
+    height: 1055px;
     margin-bottom: 100px;
   }
 
