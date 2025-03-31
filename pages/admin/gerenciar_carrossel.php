@@ -71,7 +71,7 @@
                     <label class="font_subtitulo font_celadon">Nome</label>
                     <input type="text" class="base_input">
                   </div>
-                  <div class="gerenciar_carrossel_input_status">
+                  <div class="gerenciar_carrossel_input_status base_input_select">
                     <label for="select_cod" class="font_subtitulo font_celadon">Plano</label>
                     <select name="select_cod" class="gerenciar_carrossel_select_status base_input">
                       <option value="Semanal">Semanal</option>

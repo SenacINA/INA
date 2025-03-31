@@ -142,9 +142,9 @@ foreign key (id_produto) references produto(id_produto)
 
 create table imagem_carrossel( -- 12
 id_imagem_carrossel int primary key,
-id_anuncio int,
+id_carrossel int,
 endereco_carrossel varchar(200) not null,
-foreign key (id_anuncio) references carrossel(id_carrossel)
+foreign key (id_carrossel) references carrossel(id_carrossel)
 );
 
 create table perfil( -- 17

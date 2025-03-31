@@ -58,7 +58,7 @@ function gerarProdutoCards($quantidade)
         </div>
 
         <div class="botao_menu">
-            <form action="" class="menu_1">
+            <form action="" class="menu_1 base_input_select">
                 <select name="menu" id="menu" onchange="selectPag(this.value)">
                     <option selected disabled value="">Menu</option>
                     <option value="vendedor/editar_perfil_vendedor">Editar Perfil</option>
