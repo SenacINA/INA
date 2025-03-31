@@ -175,38 +175,38 @@
             <div id="destaque_produtos" class="linha_card_produto grid_produtos">
                 <?php 
                     include_once ('../../pages/geral/card_produto.php');
-                    gerarProdutoCards(5, 0);
+                    gerarProdutoCards(6, 0);
                 ?>
             </div>
             <h2 class="font_cinza font_subtitulo">Produtos</h2>
             <div class="produtos_categoria">
                 <div id="linha1" class="linha_card_produto grid_produtos">
                     <?php 
-                        gerarProdutoCards(5, 0);
+                        gerarProdutoCards(6, 0);
                     ?>
 
                 </div>
                 <div id="linha2" class="linha_card_produto grid_produtos">
                     <?php 
-                        gerarProdutoCards(5, 0);
+                        gerarProdutoCards(6, 0);
                     ?>
 
                 </div>
                 <div id="linha3" class="linha_card_produto grid_produtos">
                     <?php 
-                        gerarProdutoCards(5, 0);
+                        gerarProdutoCards(6, 0);
                     ?>
 
                 </div>
                 <div id="linha4" class="linha_card_produto grid_produtos">
                     <?php 
-                        gerarProdutoCards(5, 0);
+                        gerarProdutoCards(6, 0);
                     ?>
 
                 </div>
                 <div id="linha5" class="linha_card_produto grid_produtos">
                     <?php 
-                        gerarProdutoCards(5, 0);
+                        gerarProdutoCards(6, 0);
                     ?>
                 </div>
             </div>
