@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="../../css/index.css">
       <link rel="stylesheet" href="../../css/style.css">
-      <link rel="stylesheet" href="../../css/vendedor/editar_produto.css">
+      <link rel="stylesheet" href="../../css/vendedor/registro_produto.css">
       <link rel="stylesheet" href="../../css/admin/admin_cupom.css">
       <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
       <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -21,23 +21,23 @@
    include_once('../../pages/geral/navbar.php');
    ?>
    <main>
-      <div class='editar_produto_main'>
-         <div class='editar_produto_title'>
+      <div class='registro_produto_main'>
+         <div class='registro_produto_title'>
             <h2>
                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <path
                      d="M30.8647 7.45769C31.5303 6.78602 31.5303 5.66658 30.8647 5.02936L26.8711 0.999355C26.2396 0.327689 25.1303 0.327689 24.4647 0.999355L21.3244 4.15102L27.7245 10.6094M0.639648 25.0416V31.4999H7.03965L25.9154 12.4349L19.5154 5.97658L0.639648 25.0416Z"
                      fill="#006494" />
                </svg>
-               EDITAR PRODUTO
+               FICHA TECNICA
             </h2>
-            <hr class="editar_produto_linha_titulo">
+            <hr class="registro_produto_linha_titulo">
          </div>
-         <div class='editar_produto_container'>
-            <form action="#" class='editar_produto_form_grid'>
-               <div class='editar_produto_form'>
-                  <div class='editar_produto_form_title'>
-                     <div class='editar_produto_line'></div>
+         <div class='registro_produto_container'>
+            <form action="#" class='registro_produto_form_grid'>
+               <div class='registro_produto_form'>
+                  <div class='registro_produto_form_title'>
+                     <div class='registro_produto_line'></div>
                      <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                            <path
@@ -47,46 +47,68 @@
                         Informações do Produto
                      </h3>
                   </div>
-                  <div class='editar_produto_form_input'>
-                     <div class='editar_produto_input'>
+                  <div class='registro_produto_form_input'>
+                     <div class='registro_produto_input'>
                         <label for="nomeProduto">Nome do Produto</label>
                         <input class='base_input' type="text" id='nomeProduto' name='nomeProduto'>
                      </div>
-                     <div class='editar_produto_small_input'>
-                        <div class='editar_produto_input'>
+                     <div class='registro_produto_small_input'>
+                        <div class='registro_produto_input'>
                            <label for="valorProduto">Valor</label>
                            <input class='base_input' type="number" id='valorProduto' name='valorProduto'>
                         </div>
-                        <div class='editar_produto_input'>
+                        <div class='registro_produto_input'>
                            <label for="categoriaProduto">Categoria</label>
                            <input class='base_input' type="text" id='categoriaProduto' name='categoriaProduto'>
                         </div>
                      </div>
-                     <div class='editar_produto_input'>
+                     <div class='registro_produto_input'>
                         <label for="marcaProduto">Marca</label>
                         <input class='base_input' type="text" id='marcaProduto' name='marcaProduto'>
                      </div>
-                     <div class='editar_produto_small_input'>
-                        <div class='editar_produto_input'>
+                     <div class='registro_produto_small_input'>
+                        <div class='registro_produto_input'>
                            <label for="codigoProduto">Código</label>
                            <input class='base_input' type="number" id='codigoProduto' name='codigoProduto'>
                         </div>
-                        <div class='editar_produto_input'>
+                        <div class='registro_produto_input'>
                            <label for="estoqueProduto">Estoque</label>
                            <input class='base_input' type="number" id='estoqueProduto' name='estoqueProduto'>
                         </div>
                      </div>
-                     <div class='editar_produto_small_input'>
-                        <div class='editar_produto_input'>
+                     <div class='registro_produto_small_input'>
+                        <div class='registro_produto_input'>
                            <label for="origemProduto">Origem</label>
                            <input class='base_input' type="text" id='origemProduto' name='origemProduto'>
                         </div>
                      </div>
+                     <div class='base_input_select'>
+                        <label for="categoriaProduto">Categoria</label>
+                        <select class='base_input' id='categoriaProduto' name='categoriaProduto'>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="categoria1">Categoria 1</option>
+                            <option value="categoria2">Categoria 2</option>
+                            <option value="categoria3">Categoria 3</option>
+                            <option value="categoria4">Categoria 4</option>
+                        </select>
+                    </div>
+
+                     <div class='base_input_select'>
+                        <label for="categoriaProduto">Sub-Categoria</label>
+                        <select class='base_input' id='categoriaProduto' name='categoriaProduto'>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="categoria1">Sub-Categoria 1</option>
+                            <option value="categoria2">Sub-Categoria 2</option>
+                            <option value="categoria3">Sub-Categoria 3</option>
+                            <option value="categoria4">Sub-Categoria 4</option>
+                        </select>
+                    </div>
+
                   </div>
                </div>
-               <div class='editar_produto_form'>
-                  <div class='editar_produto_form_title'>
-                     <div class='editar_produto_line'></div>
+               <div class='registro_produto_form'>
+                  <div class='registro_produto_form_title'>
+                     <div class='registro_produto_line'></div>
                      <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                            <path
@@ -96,13 +118,13 @@
                         Dimensões E Peso
                      </h3>
                   </div>
-                  <div class='editar_produto_form_input'>
-                     <div class='editar_produto_small_input'>
-                        <div class='editar_produto_input'>
+                  <div class='registro_produto_form_input'>
+                     <div class='registro_produto_small_input'>
+                        <div class='registro_produto_input'>
                            <label for="pesoLiquidoProduto">Peso Líquido</label>
                            <input class='base_input' type="number" id='pesoLiquidoProduto' name='pesoProduto'>
                         </div>
-                        <div class='editar_produto_input'>
+                        <div class='registro_produto_input'>
                            <label for="pesoBrutoProduto">Peso Bruto</label>
                            <input class='base_input' type="text" id='pesoBrutoProduto' name='pesoBrutoProduto'>
                         </div>
@@ -115,25 +137,25 @@
                               <option value="outro">Outro</option>
                            </select>
                         </div>
-                        <div class='editar_produto_input'>
+                        <div class='registro_produto_input'>
                            <label for="larguraProduto">Largura</label>
                            <input class='base_input' type="text" id='larguraProduto' name='larguraProduto'>
                         </div>
-                        <div class='editar_produto_input'>
+                        <div class='registro_produto_input'>
                            <label for="alturaProduto">Altura</label>
                            <input class='base_input' type="text" id='alturaProduto' name='alturaProduto'>
                         </div>
-                        <div class='editar_produto_input'>
+                        <div class='registro_produto_input'>
                            <label for="comprimentoProduto">Comprimento</label>
                            <input class='base_input' type="text" id='comprimentoProduto' name='comprimentoProduto'>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class='editar_produto_form'>
-                  <div class='editar_produto_text_editor'>
-                     <div class='editar_produto_form_title'>
-                        <div class='editar_produto_line'></div>
+               <div class='registro_produto_form'>
+                  <div class='registro_produto_text_editor'>
+                     <div class='registro_produto_form_title'>
+                        <div class='registro_produto_line'></div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="2 2 20 20">
                            <path fill="#247BA0" d="M14 17H7v-2h7m3-2H7v-2h10m0-2H7V7h10m2-4H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/>
                         </svg>
@@ -207,9 +229,9 @@
                      </div>
                   </div>
                </div>
-               <div class='editar_produto_form' id='promocao_container'>
-                  <div class='editar_produto_form_title'>
-                     <div class='editar_produto_line'></div>
+               <div class='registro_produto_form' id='promocao_container'>
+                  <div class='registro_produto_form_title'>
+                     <div class='registro_produto_line'></div>
                      <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                            <path
@@ -225,7 +247,7 @@
                      <h4>Ativar Promoção</h4>
                   </label>
 
-                  <div class='editar_produto_promocao'>
+                  <div class='registro_produto_promocao'>
                      <h4>Tipos de Promoção</h4>
                      <div class='radio_inputs'>
                         <label for="reaisSobreTotal">Reais sobre o Total</label>
@@ -240,8 +262,8 @@
                         <input name='tipoPromocaoProduto' id='porcenSobreProduto' type="radio">
                      </div>
                   </div>
-                  <div class='editar_produto_small_input'>
-                     <div class='editar_produto_input'>
+                  <div class='registro_produto_small_input'>
+                     <div class='registro_produto_input'>
                         <label for="produtoDescontPromo">Desconto da Promoção</label>
                         <div class="input_icon_container">
                            <input class='base_input' type="text" id='produtoDescontPromo' name='produtoDescontPromo'>
@@ -255,28 +277,28 @@
                         </div>  
                      </div>             
                   </div>
-                  <div class='editar_produto_small_input' id='small_duas_colunas'>
-                     <div class='editar_produto_input'>
+                  <div class='registro_produto_small_input' id='small_duas_colunas'>
+                     <div class='registro_produto_input'>
                         <label for="promoDataInicio">Data de Início</label>
                         <input class='base_input' type="date" id='promoDataInicio' name='promoDataInicio'>
                      </div>
-                     <div class='editar_produto_input'>
+                     <div class='registro_produto_input'>
                         <label for="promoDataFim">Data de Término</label>
                         <input class='base_input' type="date" id='promoDataFim' name='promoDataFim'>
                      </div>
-                     <div class='editar_produto_input'>
+                     <div class='registro_produto_input'>
                         <label for="promoHoraInicio">Horário de Início</label>
                         <input class='base_input' type="time" id='promoHoraInicio' name='promoHoraInicio'>
                      </div>
-                     <div class='editar_produto_input'>
+                     <div class='registro_produto_input'>
                         <label for="promoHoraFim">Horário de Término</label>
                         <input class='base_input' type="time" id='promoHoraFim' name='promoHoraFim'>
                      </div>
                   </div> 
                </div>
-               <div class='editar_produto_form' id='image_container'>
-                  <div class='editar_produto_form_title'>
-                     <div class='editar_produto_line'></div>
+               <div class='registro_produto_form' id='image_container'>
+                  <div class='registro_produto_form_title'>
+                     <div class='registro_produto_line'></div>
                      <h3>
                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M0 3.81814C0 2.01302 1.34531 0.54541 3 0.54541H21C22.6547 0.54541 24 2.01302 24 3.81814V20.1818C24 21.9869 22.6547 23.4545 21 23.4545H3C1.34531 23.4545 0 21.9869 0 20.1818V3.81814ZM15.1781 9.26416C14.9672 8.92666 14.6203 8.72723 14.25 8.72723C13.8797 8.72723 13.5281 8.92666 13.3219 9.26416L9.24375 15.7892L8.00156 14.0965C7.78594 13.8051 7.4625 13.6363 7.125 13.6363C6.7875 13.6363 6.45938 13.8051 6.24844 14.0965L3.24844 18.1875C2.97656 18.5556 2.925 19.0619 3.1125 19.4863C3.3 19.9108 3.69375 20.1818 4.125 20.1818H19.875C20.2922 20.1818 20.6766 19.9312 20.8688 19.5272C21.0609 19.1233 21.0375 18.6375 20.8031 18.2642L15.1781 9.26416ZM5.25 8.72723C5.84674 8.72723 6.41903 8.46863 6.84099 8.00831C7.26295 7.54799 7.5 6.92367 7.5 6.27268C7.5 5.6217 7.26295 4.99737 6.84099 4.53706C6.41903 4.07674 5.84674 3.81814 5.25 3.81814C4.65326 3.81814 4.08097 4.07674 3.65901 4.53706C3.23705 4.99737 3 5.6217 3 6.27268C3 6.92367 3.23705 7.54799 3.65901 8.00831C4.08097 8.46863 4.65326 8.72723 5.25 8.72723Z" fill="#247BA0"/>
@@ -284,7 +306,7 @@
                         Imagens e Vídeos
                      </h3>
                   </div>
-                  <div class="editar_produto_imagens"></div>
+                  <div class="registro_produto_imagens"></div>
                   <div class="contador">
                      <span id="contador-total">0</span>
                      <span id="contador-restante"> / 1</span>
@@ -310,7 +332,7 @@
                      </span>
                   </div>
                </div>    
-               <div class='editar_produto_form_buttons'>
+               <div class='registro_produto_form_buttons'>
                   <button class="base_botao btn_red">
                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                         <path d="M9 0C4.023 0 0 4.023 0 9C0 13.977 4.023 18 9 18C13.977 18 18 13.977 18 9C18 4.023 13.977 0 9 0ZM12.87 12.87C12.7867 12.9534 12.6878 13.0196 12.579 13.0648C12.4701 13.11 12.3534 13.1332 12.2355 13.1332C12.1176 13.1332 12.0009 13.11 11.892 13.0648C11.7832 13.0196 11.6843 12.9534 11.601 12.87L9 10.269L6.399 12.87C6.23072 13.0383 6.00248 13.1328 5.7645 13.1328C5.52652 13.1328 5.29828 13.0383 5.13 12.87C4.96172 12.7017 4.86718 12.4735 4.86718 12.2355C4.86718 12.1177 4.89039 12.001 4.93549 11.8921C4.98058 11.7832 5.04668 11.6843 5.13 11.601L7.731 9L5.13 6.399C4.96172 6.23072 4.86718 6.00248 4.86718 5.7645C4.86718 5.52652 4.96172 5.29828 5.13 5.13C5.29828 4.96172 5.52652 4.86718 5.7645 4.86718C6.00248 4.86718 6.23072 4.96172 6.399 5.13L9 7.731L11.601 5.13C11.6843 5.04668 11.7832 4.98058 11.8921 4.93549C12.001 4.89039 12.1177 4.86718 12.2355 4.86718C12.3533 4.86718 12.47 4.89039 12.5789 4.93549C12.6878 4.98058 12.7867 5.04668 12.87 5.13C12.9533 5.21332 13.0194 5.31224 13.0645 5.42111C13.1096 5.52998 13.1328 5.64666 13.1328 5.7645C13.1328 5.88234 13.1096 5.99902 13.0645 6.10789C13.0194 6.21676 12.9533 6.31568 12.87 6.399L10.269 9L12.87 11.601C13.212 11.943 13.212 12.519 12.87 12.87Z" fill="white"/>

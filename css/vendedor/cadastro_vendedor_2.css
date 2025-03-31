@@ -82,8 +82,8 @@
 .cadastro_vendedor_2_text_1 img, 
 .cadastro_vendedor_2_text_2 img{
   margin: 0px 8px;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   align-self: center;
   justify-self: center;
 }
@@ -101,7 +101,6 @@
   font-size: 32px;
   color: #2888b1;
 }
-
 
 /* Start grid_conteudo */
 .cadastro_vendedor_2_grid_conteudo {
@@ -131,7 +130,6 @@
   color: rgba(0, 0, 0, 0.5);
   font-size: 18px;
   font-weight: 500;
-
 }
 
 .cadastro_vendedor_2_grid_conteudo_1,
@@ -206,8 +204,8 @@ cursor: pointer;
 }
 
 .cadastro_vendedor_2_finalizar img{
-width: 24px;
-height: 24px;
+width: 18px;
+height: 18px;
 cursor: pointer;
 margin-right: 8px;
 }
@@ -267,7 +265,7 @@ margin-right: 8px;
   .cadastro_vendedor_2_grid_bg {
     justify-self: center;
     width: 95%;
-    height: 1050px;
+    height: 1055px;
     margin-bottom: 100px;
   }
 

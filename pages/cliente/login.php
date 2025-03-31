@@ -38,7 +38,7 @@
               <div class="login_redefinir_senha_2">
                 <input type="password" name="senha" id="senha" class="base_input">
                 <a href="javascript:void(0);" id="eye-icon-senha">
-                  <img id="eye-img-senha" src="../../image/geral/olho_fechado.svg" alt="Olho Fechado">
+                  <img id="eye-img-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
                 </a>
               </div>
               
@@ -50,10 +50,10 @@
               </div>
 
               <div class="login_links">
-                  <div onclick="pag('geral/redefinir_senha_1')">
+                  <div class="login_fit_content" onclick="pag('geral/redefinir_senha_1')">
                     <p>Redefinir Senha</p>
                   </div>        
-                  <div onclick="pag('cliente/cadastro')">
+                  <div class="login_fit_content" onclick="pag('cliente/cadastro')">
                     <p>Não tem login? Clique aqui</p>
                   </div>
               </div>
@@ -62,7 +62,7 @@
       </div>
       <div class="login_botoes">
           <button class="login_botao_entrar" type="submit" form="loginForm">
-              <img src="../../image/geral/confirm_botao.svg" alt="">Entrar
+              <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">Entrar
           </button>
         </div>
     </div>

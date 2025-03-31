@@ -13,10 +13,10 @@
   <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="../../js/geral/base.js"></script>
-
 </head>
 <body>
   <!-- Atá 375px -->  
+  <!-- Caminho de Icon Correto -->
 
   <?php
     include_once('../../pages/geral/navbar.php');
@@ -25,7 +25,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_pedidos_header_holder">
         <div class="gerenciar_pedidos_text_titulo">
-          <img src="../../image/vendedor/gerenciar_pedidos/gerenciar_pedido.svg" alt="">
+          <img src="../../image/geral/icons/engrenagem_icon.svg" alt="">
           <h1 class="gerenciar_pedidos_header_holder font_titulo">GERENCIAR PEDIDOS</h1>
         </div>
         <hr class="gerenciar_pedidos_linha_sublinhado">
@@ -38,7 +38,7 @@
               <div class="gerenciar_pedidos_subtitulo_generico">
                 <div class="gerenciar_pedidos_linha_vertical"></div>
                 <div class="gerenciar_pedidos_subtitle_holder">
-                  <img class="base_icon" src="../../image/vendedor/gerenciar_pedidos/pesquisar_pedido.svg" />
+                  <img class="base_icon" src="../../image/geral/icons/lista_lupa_icon.svg" />
                   <h2 class="font_subtitulo font_celadon">Pesquisar Pedidos</p>
                 </div>
               </div>
@@ -48,14 +48,14 @@
                   <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="gerenciar_pedidos_inputs_esquerda">
-                  <div class="gerenciar_pedidos_input_status">
+                  <div class="gerenciar_pedidos_input_status base_input_select">
                     <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
                     <select name="select_cod" class="gerenciar_pedidos_select_status base_input">
                       <option value="Entregue">Pago</option>
                       <option value="Em transporte">Pendente</option>
                     </select>
                   </div>
-                  <div class="gerenciar_pedidos_input_mes">
+                  <div class="gerenciar_pedidos_input_mes base_input_select">
                     <label for="mes" class="font_subtitulo font_celadon">Mês</label>
                     <select name="mes" id="mes" class="gerenciar_pedidos_mes_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
@@ -73,7 +73,7 @@
                       <option value="dezembro">Dezembro</option>
                     </select>
                   </div>
-                  <div class="gerenciar_pedidos_input_ano">
+                  <div class="gerenciar_pedidos_input_ano base_input_select">
                     <label for="ano" class="font_subtitulo font_celadon">Ano</label>
                     <select name="ano" id="ano" class="gerenciar_pedidos_ano_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
@@ -93,12 +93,12 @@
                 </div>
                 <div class="gerenciar_pedidos_holder_botao">
                   <button type="reset" class="base_botao btn_red">
-                    <img src="../../image/geral/botoes/x_icon_branco.svg">
+                    <img src="../../image/geral/botoes/x_branco_icon.svg">
                     CANCELAR
                   </button>
 
                   <button type="submit" class="base_botao btn_blue">
-                    <img src="../../image/geral/botoes/v_icon_branco.svg">
+                    <img src="../../image/geral/botoes/v_branco_icon.svg">
                     CONFIRMAR
                   </button>
                 </div>
@@ -108,7 +108,7 @@
               <div class="gerenciar_pedidos_subtitulo_generico">
                 <div class="gerenciar_pedidos_linha_vertical"></div>
                 <div class="gerenciar_pedidos_subtitle_holder">
-                  <img class="base_icon" src="../../image/vendedor/gerenciar_pedidos/estatisticas.svg" />
+                  <img class="base_icon" src="../../image/geral/icons/grafico_icon.svg" />
                   <h2 class="font_subtitulo font_celadon">Estatísticas</p>
                 </div>
               </div>
@@ -144,7 +144,7 @@
       </div>
     </div>
     <div class="gerenciar_pedidos_header_title">
-      <img src="../../image/vendedor/gerenciar_pedidos/pasta_clock.svg"/>
+      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="gerenciar_pedidos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_pedidos_table">
