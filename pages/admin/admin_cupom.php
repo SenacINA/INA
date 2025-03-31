@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -14,9 +14,6 @@
   <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-  <!-- Até 375px -->
-  <!-- Caminho de Icon Correto -->
-
   <?php
     include_once('../../pages/geral/navbar.php');
   ?>
@@ -95,7 +92,6 @@
           </div>
           <div class="admin_cupom_caixa_procura">
 
-            <!-- Fazer -->
 
           </div>
         </form>
@@ -144,4 +140,4 @@
   </main>
   
 </body>
-</html>
+</html> -->
