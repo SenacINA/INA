@@ -22,7 +22,7 @@
     <div class="perfil_admin_body">
       <div class="perfil_admin_titulo">
         <div class="perfil_admin_text_titulo">
-          <img src="../../image/admin/perfil_admin/perfil_icon.svg" alt="">
+          <img src="../../image/geral/icons/perfil_icon.svg" alt="">
           <h1>PERFIL ADMIN</h1>
         </div>
         
@@ -32,23 +32,23 @@
       <div class="perfil_admin_grid_conteudo">
         <div class="perfil_admin_text_1">
           <hr class="perfil_admin_vertical">
-          <img src="../../image/admin/perfil_admin/texto_icon.svg" alt="">
+          <img src="../../image/geral/icons/lista_icon.svg" alt="">
           <h1 class="perfil_admin_text">Seu Perfil</h1>
         </div>
         <div class="perfil_admin_text_2">
           <hr class="perfil_admin_vertical">
-          <img src="../../image/admin/perfil_admin/engrenagem_icon.svg" alt="">
+          <img src="../../image/geral/icons/engrenagem_icon.svg" alt="">
           <h1 class="perfil_admin_text">Permissões</h1>
         </div>
         
         <div class="perfil_admin_foto">
           <label for="perfil_admin_foto">
-            <img src="../../image/admin/perfil_admin/perfil_admin.svg" alt="" id="img_admin_perfil">
+            <img src="../../image/admin/perfil_admin/perfil_img.svg" alt="" id="img_admin_perfil">
           </label>
 
           <form action="" method="post" class="perfil_admin_foto_pfp">
             <label for="perfil_admin_foto" class="perfil_admin_foto_label">
-              <img src="../../image/admin/perfil_admin/enviar_arquivo.png" alt="Enviar Arquivo" class="perfil_admin_foto">
+              <img src="../../image/admin/perfil_admin/enviar_arquivo.svg" alt="Enviar Arquivo" class="perfil_admin_foto">
             </label>
             <input type="file" name="pfp" id="perfil_admin_foto" class="base_input" style="display: none;">
           </form>
@@ -127,7 +127,7 @@
 
         <div class="perfil_admin_botao_salvar">
           <button class="perfil_admin_salvar" onclick="pag('admin/dashboard')">
-            <img src="../../image/admin/perfil_admin/v_icon.svg" alt="">
+            <img src="../../image/geral/botoes/v_icon_carolina.svg" alt="">
             <label>SALVAR</label>
           </button>
         </div>

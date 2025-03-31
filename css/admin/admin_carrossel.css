@@ -40,9 +40,9 @@
 }
 
 .admin_carrossel_img_anuncios{
-  width: 32;
+  width: 28px;
+  height: 28px;
   display: flex;
-  height: 32px;
   flex-direction: row;
 }
 
@@ -95,14 +95,13 @@
 
 .admin_carrossel_main_text_informacoes_anuncio p {
   display: flex;
-  gap: 10px;
+  gap: 4px;
   align-items: center;
   color: #2888b1;
 }
 
 .admin_carrossel_main_text_informacoes_anuncio svg{
   width: 28px;
-  height: 28px;
   color: #2888b1;
 }
 
@@ -249,8 +248,8 @@
   background-color: rgba(0, 100, 148, 1);
 }
 
-.admin_carrossel_forms_planos input[type="checkbox"] {
-  appearance: none;
+.admin_carrossel_forms_planos input[type="radio"] {
+  appearance: none; 
   width: 18px;
   height: 18px;
   border: 2px solid #ffffff;
@@ -259,17 +258,18 @@
   cursor: pointer;
   transition: 0.3s;
   position: relative;
+  background-color: transparent; 
 }
 
-.admin_carrossel_forms_planos input[type="checkbox"]:checked {
+.admin_carrossel_forms_planos input[type="radio"]:checked {
   border-color: rgb(255, 255, 255);
 }
 
-.admin_carrossel_forms_planos input[type="checkbox"]::before {
+.admin_carrossel_forms_planos input[type="radio"]::before {
   content: "";
   width: 10px;
   height: 10px;
-  background-color: white;
+  background-color: #ffffff; 
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -278,8 +278,13 @@
   transition: 0.3s ease-in-out;
 }
 
-.admin_carrossel_forms_planos input[type="checkbox"]:checked::before {
+.admin_carrossel_forms_planos input[type="radio"]:checked::before {
   transform: translate(-50%, -50%) scale(1);
+}
+
+.admin_carrossel_forms_planos input[type="radio"]:focus {
+  outline: none; 
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); 
 }
 
 .admin_carrossel_forms_planos label {
@@ -297,11 +302,11 @@
   justify-content: center;
   column-gap: 5%;
   border-radius: 5px;
-  background-color: transparent;
   border: 2px solid #d73232;
   font-size: 20px;
   font-weight: 600;
   color: #d73232;
+  background-color: white;
 }
 
 .admin_carrossel_excluir_button {

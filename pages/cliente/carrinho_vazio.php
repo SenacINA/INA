@@ -186,10 +186,20 @@ function exibirProdutos()
         </div>
       </div>
       <div class="carrinho_vazio_botoes_holder">
-        <button class="carrinho_vazio_start base_botao btn_outline_blue" onclick="history.back()"><img src="../../image/geral/seta_botao.svg">VOLTAR</button>
+        <button class="carrinho_vazio_start base_botao btn_outline_blue" onclick="history.back()">
+          <img src="../../image\geral\botoes\seta_esquerda_carolina_icon.svg">
+          VOLTAR
+        </button>
         <div class="carrinho_vazio_holder_final">
-          <button id="carrinhoVazioRemoverTudo" class="base_botao btn_red"><img src="../../image/geral/x_botao.svg">REMOVER TUDO</button>
-          <button class="base_botao btn_blue" onclick="pag('cliente/carrinho_dados')"><img src="../../image/geral/confirm_botao.svg" >SALVAR</button>
+          <button id="carrinhoVazioRemoverTudo" class="base_botao btn_red">
+            <img src="../../image\geral\botoes\x_branco_icon.svg">
+            REMOVER TUDO
+          </button>
+
+          <button class="base_botao btn_blue" onclick="pag('cliente/carrinho_dados')">
+            <img src="../../image\geral\botoes\v_branco_icon.svg">
+            SALVAR
+          </button>
         </div>
       </div>
     </div>

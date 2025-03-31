@@ -16,7 +16,8 @@
 </head>
 <body>
   <!-- Atá 375px -->  
-
+  <!-- Caminho de Icon Correto -->
+   
   <?php
   include_once('../../pages/geral/navbar.php');
   ?>
@@ -25,7 +26,7 @@
     <div class="cadastro_vendedor2_content">
       <div class="cadastro_vendedor2_titulo">
         <div class="cadastro_vendedor2_titulo_img">
-          <img src="../../image/vendedor/cadastro_vendedor_2/vendedor.svg" alt="">
+          <img src="../../image/geral/icons/lista_perfil_icon.svg" alt="">
           <h1>CADASTRO DE VENDEDOR</h1>
         </div>
         <hr>
@@ -34,7 +35,7 @@
         <div class="cadastro_vendedor_2_grid_conteudo_1">
           <div class="cadastro_vendedor_2_text_1">
             <hr class="cadastro_vendedor_2_vertical">
-            <img src="../../image/vendedor/cadastro_vendedor_2/icon_loja.svg" alt="">
+            <img src="../../image/geral/icons/loja_icon.svg" alt="">
             <h1 class="cadastro_vendedor_2_text">Loja</h1>
           </div>
           <!-- Local da Empresa -->
@@ -105,7 +106,7 @@
         <div class="cadastro_vendedor_2_grid_conteudo_2">
           <div class="cadastro_vendedor_2_text_2">
             <hr class="cadastro_vendedor_2_vertical">
-            <img src="../../image/vendedor/cadastro_vendedor_2/user.svg" alt="">
+            <img src="../../image/geral/icons/perfil_icon.svg" alt="">
             <h1 class="cadastro_vendedor_2_text">Seu Perfil</h1>
           </div>
 
@@ -163,7 +164,7 @@
       
       <div class="cadastro_vendedor_2_botao_finalizar">
         <button class="cadastro_vendedor_2_finalizar" onclick="pag('vendedor/perfil_vendedor')">
-          <img src="../../image/admin/perfil_admin/v_icon.svg" alt="">
+          <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">
           <label>FINALIZAR</label>
         </button>
       </div>

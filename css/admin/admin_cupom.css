@@ -6,13 +6,6 @@
   user-select: none;
 }
 
-/* NAVBAR */
-.admin_cupom_nav_bar {
-  width: 100%;
-  height: 67px;
-  background-color: black;
-}
-
 /* CORPO PRINCIPAL */
 .admin_cupom_body {
   display: flex;
@@ -379,8 +372,8 @@ input:checked + .toggle_slider::before {
   align-items: center;
 
   border: red solid 2px;
+  background-color: white;
   border-radius: 5px;
-  background-color: #1b98e000;
   gap: 8px;
   width: 192px;
   height: 40px;
@@ -402,9 +395,10 @@ input:checked + .toggle_slider::before {
   cursor: pointer;
 }
 
-.admin_cupom_salvar img {
-  width: 24px;
-  height: 24px;
+.admin_cupom_salvar img,
+.admin_cupom_cancelar img {
+  width: 18px;
+  height: 18px;
   cursor: pointer;
   margin-right: 8px;
 }
@@ -653,6 +647,9 @@ input:checked + .toggle_slider::before {
 
   .admin_cupom_linha_header {
     display: none;
+  }
+  .admin_cupom_dados_pessoais_item input {
+    max-width: none;
   }
 }
 
