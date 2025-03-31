@@ -147,12 +147,6 @@ endereco_carrossel varchar(200) not null,
 foreign key (id_anuncio) references carrossel(id_carrossel)
 );
 
-create table privacidade( -- 15
-id_cliente int,
-anuncios_personalizados boolean default true not null,
-foreign key (id_cliente) references cliente(id_cliente)
-);
-
 create table perfil( -- 17
 id_cliente int,
 foto_perfil varchar (200) not null default 'default_profile_picture.jpg',
