@@ -115,7 +115,7 @@
           <img src="../../image/vendedor/editar_perfil/icon_instagram_vendedor.svg" alt="instagram"> <a href="#" class="link_instagram">my.Cliente10 </a>
           <img src="../../image/vendedor/editar_perfil/icon_facebook_vendedor.svg" alt="facebook"> <a href="#" class="link_facebook">Cliente10</a>
         </div>
-        <button class="botao_edit">
+        <button class="base_botao btn_blue botao_edit">
           <img src="../../image/geral/caneta_branca_icon.svg" alt="">
           Editar
         </button>
