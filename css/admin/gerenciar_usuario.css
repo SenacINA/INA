@@ -55,7 +55,6 @@
   justify-items: center;
 
   width: 100%;
-  margin-top: 16px;
 }
 
 .gerenciar_usuario_text_titulo,
@@ -175,36 +174,37 @@
 .gerenciar_usuario_estatistica_holder {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
-  height: min-content;
-  column-gap: 4px;
+  gap: 8px;
+  height: 100%;
 }
 
 .gerenciar_usuario_card_img_perfil {
-  width: 150px;
-  height: 150px;
+  width: 104px;
+  height: 104px;
+  margin-bottom: 16px;
 }
 
 .gerenciar_usuario_card_column_2 {
   display: flex;
   flex-direction: column;
-  row-gap: 4px;
+  row-gap: 8px;
 }
 
 .gerenciar_usuario_estatisticas {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  height: 100%;
 }
 
 .gerenciar_usuario_card {
   background: var(--branco_gelo);
-  padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border-radius: 5px;
+  justify-content: flex-start;
+  border-radius: 8px;
+  height: 100%;
 }
 
 .gerenciar_usuario_card button {
@@ -212,14 +212,44 @@
 }
 
 .gerenciar_usuario_titulo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  display: flex;
+  padding: 8px;
+  height: 50%;
+  font-size: 16px;
+  font-weight: 600;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--carolina);
+  border-radius: 8px 8px 0px 0px;
+  overflow: hidden;
+}
+
+.gerenciar_usuario_titulo2 {
+  display: flex;
+  padding: 8px;
+  margin-bottom: 16px;
+  height: 36px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--carolina);
+  border-radius: 8px 8px 0px 0px;
+  overflow: hidden;
 }
 
 .gerenciar_usuario_estatistica_descricao {
-  font-size: 1rem;
-  font-weight: 300;
+  display: flex;
+  height: 50%;
+  font-size: 18px;
+  font-weight: 500;
+  align-items: center;
+  color: #255e7e;
 }
 
 .gerenciar_usuario_table{

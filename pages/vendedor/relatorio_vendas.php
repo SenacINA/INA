@@ -120,7 +120,7 @@
                 </div>
                 <div class="relatorio_vendas_card">
                   <span class="relatorio_vendas_titulo">Total De Vendas</span>
-                  <span class="relatorio_vendas_estatistica_descricao font_descricao">14 UNI</span>
+                  <span class="relatorio_vendas_estatistica_descricao">14 UNI</span>
                 </div>
                 <div class="relatorio_vendas_card">
                   <span class="relatorio_vendas_titulo">Tempo Medio De Entrega</span>
