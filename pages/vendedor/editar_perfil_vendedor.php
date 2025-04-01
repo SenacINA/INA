@@ -1,3 +1,31 @@
+<?php
+function gerarProdutoCards($quantidade)
+{
+  for ($i = 0; $i < $quantidade; $i++) {
+    echo "
+        <div class='index_body_produto_card'>
+            <div class='index_body_desconto'>
+                <span>20% OFF</span>
+            </div>
+            <div class='index_body_imagem_produto'>
+                <img src='https://placehold.co/200' alt=''>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque vel nulla quis dapibus. Donec purus purus, maximus eget sollicitudin a, maximus vitae enim. Maecenas facilisis elementum porta. Nullam sagittis, orci eu gravida consequat, turpis diam maximus lectus, in aliquam libero tortor a lorem. Donec malesuada purus at ligula consequat dignissim. Sed quis mollis sem. In laoreet metus maximus velit venenatis eleifend eu vel dui. Vivamus dignissim velit vel nisi lobortis aliquam</p>
+            </div>
+            <div class='index_body_estrela_valor'>
+                <div class='index_body_estrela_produto'>
+                    <p>★★★★★</p>
+                    <h4>(12)</h4>
+                </div>
+                <div class='index_body_valor_produto'>
+                    <p id='indexBodyValorAntigo'>R$1000</p>
+                    <p id='indexBodyValorProduto'>R$800</p>
+                </div>
+            </div>
+        </div>";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -144,6 +172,20 @@
         <p class="warn">As dimensões recomendadas são: 1500 x 500 pixels.</p>
       </div>
     </div>
+    <div class="destaques">
+        <div class="destaques_text">
+          <hr class="linha_vertical">
+          <img src="../../image/geral/icons/loja_icon.svg" class="icon_destaques_vendedor">
+          <p class="destaques_main_text">Destaques</p>
+        </div>
+        <div class="destaques_container">
+          <?php gerarProdutoCards(3); ?>
+          <button class="add">
+            <img src="../../image/geral/icons/add_icon.svg">
+          </button>
+        </div>
+        <p class="destaques_num">3 / 5</p>
+      </div>
     <div class="botoes">
       <button class="base_botao btn_blue salvar">
         <img src="../../image/geral/botoes/v_branco_icon.svg">Salvar
@@ -157,5 +199,4 @@
   include_once('../../pages/geral/footer.php');
   ?>
 </body>
-
 </html>

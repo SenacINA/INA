@@ -578,11 +578,13 @@ body {
 .destaques {
   display: flex;
   flex-direction: column;
+
   grid-row: 4;
-  grid-column: 1/3;
-  margin-left: 4%;
+  grid-column: 1 / 3;
+
   row-gap: 20px;
-  margin-top: 2%;
+  width: 92%;
+  margin: 2% 4% 2% 4%;
 }
 
 .icon_destaques_vendedor {
@@ -605,13 +607,13 @@ body {
 .destaques_container {
   background-color: var(--azul_leve);
   padding: 16px;
-  width: 94%;
+  width: 100%;
   border-radius: 5px;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(6, 1fr);
   gap: 0;
-  justify-content: space-around;
+  justify-content: start;
 }
 
 .destaques_num {
