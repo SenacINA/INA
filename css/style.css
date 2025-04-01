@@ -28,15 +28,21 @@ html {
 
 body{
   position: relative;
-  margin-top: 122px;
+  padding-top: 72px;
+}
+
+main{
+  margin-top: 32px;
 }
 
 @media (max-width:1024px) {
 
-  body{
-    margin-top: 216px;
+  main{
+    margin-top: 16px;
   }
-  
+  body{
+    padding-top: 124px;
+  }
 }
 
 .font_titulo {
@@ -505,7 +511,7 @@ body{
 
 #baseNavLogoHeader {
   content: url('../image/index/logoEscrita.svg');
-
+  cursor: pointer;
 }
 
 .base_nav_square_button_search {
