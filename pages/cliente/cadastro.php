@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
   <title>E ao Quadrado</title>
+  <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/cliente/cadastro.css">
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
+  
   <script src="../../js/geral/base.js"></script>
 </head>
 <body>
@@ -39,7 +40,7 @@
           <div class="cadastro_redefinir_senha_2">
               <input type="password" name="senha" id="senha" class="base_input">
               <a href="javascript:void(0);" id="eye-icon-senha">
-                  <img id="eye-img-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
+                  <img class="base_icon" id="eye-img-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
               </a>
           </div>
         
@@ -47,7 +48,7 @@
           <div class="cadastro_redefinir_senha_2">
               <input type="password" name="nova_senha" id="nova_senha" class="base_input">
               <a href="javascript:void(0);" id="eye-icon-nova-senha">
-                  <img id="eye-img-nova-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
+                  <img class="base_icon" id="eye-img-nova-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
               </a>
           </div>
 

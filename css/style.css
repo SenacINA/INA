@@ -10,6 +10,7 @@
   --shadow-color: rgba(0, 0, 0, 0.2);
   --mob_branco: #EFF3F5;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -282,6 +283,16 @@ body{
 
   justify-self: center;
   align-self: center;
+}
+
+@media (max-width:768px) {
+  .base_icon {
+    width: 24px;
+    height: 24px;
+  
+    justify-self: center;
+    align-self: center;
+  }
 }
 
 .base_tabela{
