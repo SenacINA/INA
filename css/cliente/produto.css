@@ -119,6 +119,7 @@ body {
   #247BA0 90%,
     #989898 90% 100%);
   -webkit-background-clip: text; 
+  background-clip: text;
   -webkit-text-fill-color: transparent; 
 }
 
