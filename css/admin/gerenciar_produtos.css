@@ -67,7 +67,7 @@
     justify-items: center;
   
     width: 100%;
-    margin-top: 16px;
+    /* margin-top: 16px; */
   }
   
   .gerenciar_produtos_text_titulo,
@@ -182,34 +182,48 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 4px;
+    gap: 8px;
+    height: 100%;
   }
   
   .gerenciar_produtos_estatisticas {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    height: 100%;
   }
   
   .gerenciar_produtos_card {
     background: var(--branco_gelo);
-    padding: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border-radius: 5px;
+    justify-content: flex-start;
+    border-radius: 8px;
   }
   
   .gerenciar_produtos_titulo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    display: flex;
+    padding: 8px;
+    height: 50%;
+    font-size: 16px;
+    font-weight: 600;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: var(--carolina);
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
   }
   
   .gerenciar_produtos_estatistica_descricao {
-    font-size: 1rem;
-    font-weight: 300;
+    display: flex;
+    height: 50%;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+    color: #255e7e;
   }
   
   .gerenciar_produtos_table{
@@ -328,6 +342,10 @@
     .gerenciar_produtos_holder_botao{
       justify-content: center;
     }
+
+    .base_botao {
+      width: 100%;
+    }
   }
 
   @media (max-width: 468px) {
@@ -382,4 +400,4 @@
     .base_botao {
       width: 100%;
     }
-  }
+}
