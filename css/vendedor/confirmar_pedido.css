@@ -55,13 +55,13 @@
     height: 779px;
 
     border-radius: 10px;
-    margin: 0px 1.5%;
+    margin: 32px 1.5%;
 }
 
 .confirmar_pedido_text_1{
     display: flex;
 }
-  
+
 .confirmar_pedido_vertical {
     border: none;
     background-color: #1B98E0;
