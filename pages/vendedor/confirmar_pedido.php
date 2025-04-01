@@ -22,7 +22,7 @@
     <div class="confirmar_pedido_body">
         <div class="confirmar_pedido_titulo">
             <div class="confirmar_pedido_text_titulo">
-                <img src="../../image/geral/icons/carrinho_carga_icon.svg" alt="">
+                <img class="base_icon" src="../../image/geral/icons/carrinho_carga_icon.svg" alt="">
                 <h1>CONFIRMAR PEDIDO</h1>
             </div>
                 
@@ -88,7 +88,7 @@
 
             <div class="confirmar_pedido_container_2">
                 <div class="confirmar_pedido_titulo_cronograma">
-                    <img src="../../image/geral/icons/relogio_icon.svg" alt="">
+                    <img class="base_icon" src="../../image/geral/icons/relogio_icon.svg" alt="">
                     <h1>CRONOGRAMA</h1>
                 </div>
                     

@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
   <title>E ao Quadrado</title>
+  <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/vendedor/cadastro_vendedor_2.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
   <script src="../../js/geral/base.js"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@
     <div class="cadastro_vendedor2_content">
       <div class="cadastro_vendedor2_titulo">
         <div class="cadastro_vendedor2_titulo_img">
-          <img src="../../image/geral/icons/lista_perfil_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/lista_perfil_icon.svg" alt="">
           <h1>CADASTRO DE VENDEDOR</h1>
         </div>
         <hr>
@@ -35,7 +35,7 @@
         <div class="cadastro_vendedor_2_grid_conteudo_1">
           <div class="cadastro_vendedor_2_text_1">
             <hr class="cadastro_vendedor_2_vertical">
-            <img src="../../image/geral/icons/loja_icon.svg" alt="">
+            <img class="base_icon" src="../../image/geral/icons/loja_icon.svg" alt="">
             <h1 class="cadastro_vendedor_2_text">Loja</h1>
           </div>
           <!-- Local da Empresa -->
@@ -108,7 +108,7 @@
         <div class="cadastro_vendedor_2_grid_conteudo_2">
           <div class="cadastro_vendedor_2_text_2">
             <hr class="cadastro_vendedor_2_vertical">
-            <img src="../../image/geral/icons/perfil_icon.svg" alt="">
+            <img class="base_icon" src="../../image/geral/icons/perfil_icon.svg" alt="">
             <h1 class="cadastro_vendedor_2_text">Seu Perfil</h1>
           </div>
 
