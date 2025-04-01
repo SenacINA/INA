@@ -139,7 +139,7 @@
         </form>
 
         <div class="atualizar_usuario_text_titulo" id="atualizar_usuario_text_titulo_mobile">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <img src="../../image/geral/icons/lista_caneta_icon.svg" alt="">
           <h1>ALTERAR DADOS</h1>
         </div> 
 

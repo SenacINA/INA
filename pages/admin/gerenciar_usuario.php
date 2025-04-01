@@ -47,14 +47,14 @@
                   <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="gerenciar_usuario_inputs_esquerda">
-                  <div class="gerenciar_usuario_input_status">
+                  <div class="gerenciar_usuario_input_status base_input_select">
                     <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
                     <select name="select_cod" class="gerenciar_usuario_select_status base_input">
                       <option value="Ativo">Ativo</option>
                       <option value="Inativo">Inativo</option>
                     </select>
                   </div>
-                  <div class="gerenciar_usuario_input_mes">
+                  <div class="gerenciar_usuario_input_mes base_input_select">
                     <label for="mes" class="font_subtitulo font_celadon">Mês</label>
                     <select name="mes" id="mes" class="gerenciar_usuario_mes_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
@@ -72,7 +72,7 @@
                       <option value="dezembro">Dezembro</option>
                     </select>
                   </div>
-                  <div class="gerenciar_usuario_input_ano">
+                  <div class="gerenciar_usuario_input_ano base_input_select">
                     <label for="ano" class="font_subtitulo font_celadon">Ano</label>
                     <select name="ano" id="ano" class="gerenciar_usuario_ano_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
@@ -83,10 +83,6 @@
                       <option value="2024">2024</option>
                       <option value="2025">2025</option>
                       <option value="2026">2026</option>
-                      <option value="2027">2027</option>
-                      <option value="2028">2028</option>
-                      <option value="2029">2029</option>
-                      <option value="2030">2030</option>
                     </select>
                   </div>
                 </div>

@@ -39,25 +39,27 @@
             <h1 class="cadastro_vendedor_2_text">Loja</h1>
           </div>
           <!-- Local da Empresa -->
-          <div class="cadastro_vendedor_2_content_local_empresa">
-            <label for="local_da_empresa">Local da Empresa</label> <br>
-            <select name="local_da_empresa" id="local_da_empresa" class="base_input">
-              <option value="" disabled selected>Selecione a cidade</option>
-              <option value="aquidauana">Aquidauana</option>
-              <option value="campo_grande">Campo Grande</option>
-              <option value="chapadão_do_sul">Chapadão do Sul</option>
-              <option value="corumbá">Corumbá</option>
-              <option value="coxim">Coxim</option>
-              <option value="dourados">Dourados</option>
-              <option value="maracaju">Maracaju</option>
-              <option value="nova_andradina">Nova Andradina</option>
-              <option value="paranaíba">Paranaíba</option>
-              <option value="ponta_pora">Ponta Porã</option>
-              <option value="porto_murtinho">Porto Murtinho</option>
-              <option value="sidrolândia">Sidrolândia</option>
-              <option value="três_lagoas">Três Lagoas</option>
-            </select>
-            <h2>Se você não tiver uma empresa, informe o estado de sua residência.</h2>
+          <div class="" >
+            <label for="local_da_empresa">Local da Empresa</label> 
+            <div class="base_input_select" >
+              <select name="local_da_empresa" id="local_da_empresa" class="base_input">
+                <option value="" disabled selected>Selecione a cidade</option>
+                <option value="aquidauana">Aquidauana</option>
+                <option value="campo_grande">Campo Grande</option>
+                <option value="chapadão_do_sul">Chapadão do Sul</option>
+                <option value="corumbá">Corumbá</option>
+                <option value="coxim">Coxim</option>
+                <option value="dourados">Dourados</option>
+                <option value="maracaju">Maracaju</option>
+                <option value="nova_andradina">Nova Andradina</option>
+                <option value="paranaíba">Paranaíba</option>
+                <option value="ponta_pora">Ponta Porã</option>
+                <option value="porto_murtinho">Porto Murtinho</option>
+                <option value="sidrolândia">Sidrolândia</option>
+                <option value="três_lagoas">Três Lagoas</option>
+              </select>
+              <h2>Se você não tiver uma empresa, informe o estado de sua residência.</h2>
+            </div>
           </div>
 
           <!-- CEP -->
@@ -130,18 +132,18 @@
             <input type="password" name="confirmar_senha" id="confirmar_senha" class="base_input">
             <br>
           </div>
-          
           <!-- Categoria de Produtos -->
           <div>
             <label for="categoria_produtos">Categoria de Produtos</label> <br>
-            <select name="categoria_produtos" id="categoria_produtos" class="base_input">
-              <option value="opc1">Opção 1</option>
-              <option value="opc2">Opção 2</option>
-              <option value="opc3">Opção 3</option>
-              <option value="opc4">Opção 4</option>
-              <option value="opc5">Opção 5</option>
-            </select>
-            <br>
+            <div class="base_input_select">
+              <select name="categoria_produtos" id="categoria_produtos" class="base_input">
+                <option value="opc1">Opção 1</option>
+                <option value="opc2">Opção 2</option>
+                <option value="opc3">Opção 3</option>
+                <option value="opc4">Opção 4</option>
+                <option value="opc5">Opção 5</option>
+              </select>
+            </div>
           </div>        
           
           <div class="cadastro_vendedor_2_conteudo_telefone">

@@ -49,7 +49,7 @@
                 </div>
                 <div class="gerenciar_produtos_inputs_esquerda">
                   
-                  <div class="gerenciar_produtos_input_mes">
+                  <div class="gerenciar_produtos_input_mes base_input_select">
                     <label for="mes" class="font_subtitulo font_celadon">Mês</label>
                     <select name="mes" id="mes" class="gerenciar_produtos_mes_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
@@ -67,11 +67,11 @@
                       <option value="dezembro">Dezembro</option>
                     </select>
                   </div>
-                  <div class="gerenciar_produtos_input_ano">
+                  <div class="gerenciar_produtos_input_ano base_input_select">
                     <label for="ano" class="font_subtitulo font_celadon">Ano</label>
                     <select name="ano" id="ano" class="gerenciar_produtos_ano_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
-                      <option value=" 2020">2020</option>
+                      <option value="2020">2020</option>
                       <option value="2021">2021</option>
                       <option value="2022">2022</option>
                       <option value="2023">2023</option>
@@ -87,12 +87,12 @@
                 </div>
                 <div class="gerenciar_produtos_holder_botao">
                   <button type="reset" class="base_botao btn_red">
-                    <img src="../../image/geral/botoes/x_icon_branco.svg">
+                    <img src="../../image/geral/botoes/x_branco_icon.svg">
                     CANCELAR
                   </button>
 
                   <button type="submit" class="base_botao btn_blue">
-                    <img src="../../image/geral/botoes/v_icon_branco.svg">
+                    <img src="../../image/geral/botoes/v_branco_icon.svg">
                     CONFIRMAR
                   </button>
                 </div>

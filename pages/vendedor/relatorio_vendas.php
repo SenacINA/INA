@@ -49,14 +49,14 @@
                   <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="relatorio_vendas_inputs_esquerda">
-                  <div class="relatorio_vendas_input_status">
+                  <div class="relatorio_vendas_input_status base_input_select">
                     <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
                     <select name="select_cod" class="relatorio_vendas_select_status base_input">
                       <option value="Entregue">Entregue</option>
                       <option value="Em transporte">Em transporte</option>
                     </select>
                   </div>
-                  <div class="relatorio_vendas_input_mes">
+                  <div class="relatorio_vendas_input_mes base_input_select">
                     <label for="mes" class="font_subtitulo font_celadon">Mês</label>
                     <select name="mes" id="mes" class="relatorio_vendas_mes_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
@@ -74,7 +74,7 @@
                       <option value="dezembro">Dezembro</option>
                     </select>
                   </div>
-                  <div class="relatorio_vendas_input_ano">
+                  <div class="relatorio_vendas_input_ano base_input_select">
                     <label for="ano" class="font_subtitulo font_celadon">Ano</label>
                     <select name="ano" id="ano" class="relatorio_vendas_ano_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>

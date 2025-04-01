@@ -149,6 +149,11 @@ font-weight: 600;
   max-width: 600px;
 }
 
+.atualizar_usuario_pesquisar_usuario_item {
+  display: flex;
+  flex-direction: column;
+}
+
 .atualizar_usuario_pesquisar_usuario_item input {
   max-width: 600px;
 }
@@ -207,9 +212,9 @@ margin-left: 20px;
 }
 
 .atualizar_usuario_forms_item_permissoes {
-display: flex;
-justify-content: start;
-align-items: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 .atualizar_usuario_forms_permissoes label {
@@ -348,7 +353,7 @@ cursor: pointer;
 
     width: 100%;
     height: 86px;
-    margin-top: 360px;
+    margin-top: 290px;
   }
   
   .atualizar_usuario_text_titulo h1 {
