@@ -25,7 +25,7 @@
       <div class="cadastro_vendedor1_grid" >   
         <div class="cadastro_vendedor1_titulo">
           <div class="cadastro_vendedor1_titulo_img">
-              <img src="../../image/geral/icons/etiqueta_add_icon.svg" alt="">
+              <img class="base_icon" src="../../image/geral/icons/etiqueta_add_icon.svg" alt="">
               <h1>CADASTRO DE VENDEDOR</h1>
           </div>
           <hr>

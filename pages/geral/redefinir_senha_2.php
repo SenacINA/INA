@@ -34,7 +34,7 @@
             <div class="redefinir_senha_2">
                 <input class="base_input" type="password" name="senha" id="senha">
                 <a href="javascript:void(0);" id="eye-icon-senha">
-                    <img id="eye-img-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
+                    <img class="base_icon" id="eye-img-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
                 </a>
             </div>
           </div>
@@ -44,7 +44,7 @@
             <div class="redefinir_senha_2">
                 <input class="base_input" type="password" name="nova_senha" id="nova_senha">
                 <a href="javascript:void(0);" id="eye-icon-nova-senha">
-                    <img id="eye-img-nova-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
+                    <img class="base_icon" id="eye-img-nova-senha" src="../../image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
                 </a>
             </div>
           </div>

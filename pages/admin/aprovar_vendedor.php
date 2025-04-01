@@ -25,7 +25,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="aprovar_vendedor_header_holder">
         <div class="aprovar_vendedor_text_titulo">
-          <img src="../../image/geral/icons/perfil_verificado_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/perfil_verificado_icon.svg" alt="">
           <h1 class="aprovar_vendedor_header_holder font_titulo">APROVAR VENDEDOR</h1>
         </div>
         <hr class="aprovar_vendedor_linha_sublinhado">
@@ -115,33 +115,33 @@
 
               <div class="aprovar_vendedor_estatistica_holder">
                 <div class="aprovar_vendedor_card">
-                  <span class="aprovar_vendedor_titulo">Requisições Aprovadas / Mês</span>
-                  <span class="aprovar_vendedor_estatistica_descricao">25</span>
+                  <div class="aprovar_vendedor_titulo">Requisições Aprovadas / Mês</div>
+                  <div class="aprovar_vendedor_estatistica_descricao">25</div>
                 </div>
                 
                 <div class="aprovar_vendedor_card">
-                  <span class="aprovar_vendedor_titulo">Pedidos Reprovados</span>
-                  <span class="aprovar_vendedor_estatistica_descricao">3</span>
+                  <div class="aprovar_vendedor_titulo">Pedidos Reprovados</div>
+                  <div class="aprovar_vendedor_estatistica_descricao">3</div>
                 </div>
                 
                <div class="aprovar_vendedor_card">
-                  <span class="aprovar_vendedor_titulo">Pedidos Inativados</span>
-                  <span class="aprovar_vendedor_estatistica_descricao">1</span>
+                  <div class="aprovar_vendedor_titulo">Pedidos Inativados</div>
+                  <div class="aprovar_vendedor_estatistica_descricao">1</div>
                 </div>
                 
                 <div class="aprovar_vendedor_card">
-                  <span class="aprovar_vendedor_titulo">Pedidos Pendentes de Aprovação</span>
-                  <span class="aprovar_vendedor_estatistica_descricao">5</span>
+                  <div class="aprovar_vendedor_titulo">Pedidos Pendentes de Aprovação</div>
+                  <div class="aprovar_vendedor_estatistica_descricao">5</div>
                 </div>
                 
                 <div class="aprovar_vendedor_card">
-                  <span class="aprovar_vendedor_titulo">Pedidos / Doc. Pendente</span>
-                  <span class="aprovar_vendedor_estatistica_descricao">2</span>
+                  <div class="aprovar_vendedor_titulo">Pedidos / Doc. Pendente</div>
+                  <div class="aprovar_vendedor_estatistica_descricao">2</div>
                 </div>
                 
                 <div class="aprovar_vendedor_card">
-                  <span class="aprovar_vendedor_titulo">Vendedores Inativados</span>
-                  <span class="aprovar_vendedor_estatistica_descricao">4</span>
+                  <div class="aprovar_vendedor_titulo">Vendedores Inativados</div>
+                  <div class="aprovar_vendedor_estatistica_descricao">4</div>
                 </div>
               </div>
             </div>
@@ -150,7 +150,7 @@
       </div>
     </div>
     <div class="aprovar_vendedor_header_title">
-      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
+      <img class="base_icon" src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="aprovar_vendedor_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="aprovar_vendedor_table">

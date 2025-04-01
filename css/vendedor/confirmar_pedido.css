@@ -19,13 +19,8 @@
 .confirmar_pedido_text_titulo {
     display: flex;
     justify-self: center;
-}
 
-.confirmar_pedido_text_titulo img {
-    align-self: center;
-    width: 28px;
-    height: auto;
-    margin-right: 8px;
+    gap: 8px;
 }
 
 .confirmar_pedido_text_titulo h1 {
@@ -247,13 +242,8 @@
     display: flex;
     justify-self: start;
     margin-bottom: auto;
-}
 
-.confirmar_pedido_titulo_cronograma img {
-    align-self: center;
-    margin-right: 8px;
-    width: 24px;
-    height: 24px;
+    gap: 8px;
 }
 
 .confirmar_pedido_titulo_cronograma h1 {

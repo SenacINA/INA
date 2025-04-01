@@ -10,6 +10,7 @@
   --shadow-color: rgba(0, 0, 0, 0.2);
   --mob_branco: #EFF3F5;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -219,6 +220,14 @@ main{
   cursor: pointer;
 }
 
+.base_botao img {
+  height: 18px;
+  width: 18px;
+
+  justify-self: center;
+  align-self: center;
+}
+
 .btn_red{
   background-color:var(--vermelho);
   color: var(--branco);
@@ -272,10 +281,25 @@ main{
   color: var(--cinza);
   border: var(--cinza) solid 2px;
 }
-
-
-
 /* < */
+
+.base_icon {
+  width: 32px;
+  height: 32px;
+
+  justify-self: center;
+  align-self: center;
+}
+
+@media (max-width:768px) {
+  .base_icon {
+    width: 24px;
+    height: 24px;
+  
+    justify-self: center;
+    align-self: center;
+  }
+}
 
 .base_tabela{
   *{
