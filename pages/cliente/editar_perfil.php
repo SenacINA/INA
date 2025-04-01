@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="../../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="../../js/geral/base.js"></script>
-
 </head>
 <body>
   <!-- Atá 375px -->  
@@ -24,14 +23,14 @@
   
   <div class="title_mobile">
     <div class="title_text">
-      <img src="../../image/geral/icons/perfil_icon.svg">
+      <img class="base_icon" src="../../image/geral/icons/perfil_icon.svg">
       <h1 class="font_titulo title_main_text">Editar perfil</h1>
     </div>
   </div>
   <main class="quadrado_cliente">
     <div class="title">
       <div class="title_text">
-        <img src="../../image/geral/icons/perfil_icon.svg">
+        <img class="base_icon" src="../../image/geral/icons/perfil_icon.svg">
         <h1 class="font_titulo title_main_text">Editar perfil</h1>
       </div>
       <hr class="linha_title">
@@ -68,10 +67,10 @@
       </div>
       <div class="contatos_container">
         <div class="contatos_cliente">
-          <img src="../../image/geral/icons/instagram_icon.svg" class="icon_instagram_cliente">
+          <img class="base_icon" src="../../image/geral/icons/instagram_icon.svg" class="icon_instagram_cliente">
           <a href="#" class="instagram_cliente">my.Cliente10</a>
           <hr class="linha_vertical_mini">
-          <img src="../../image/geral/icons/facebook_icon.svg" class="icon_facebook_cliente">
+          <img class="base_icon" src="../../image/geral/icons/facebook_icon.svg" class="icon_facebook_cliente">
           <a href="#" class="facebook_cliente">Cliente10</a>
         </div>
       </div>

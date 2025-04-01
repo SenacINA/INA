@@ -26,7 +26,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="relatorio_vendas_header_holder">
         <div class="relatorio_vendas_text_titulo">
-          <img src="../../image/geral/icons/lista_relatorio_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/lista_relatorio_icon.svg" alt="">
           <h1 class="relatorio_vendas_header_holder font_titulo">RELATÓRIO DE VENDAS</h1>
         </div>
         <hr class="relatorio_vendas_linha_sublinhado">
@@ -145,7 +145,7 @@
       </div>
     </div>
     <div class="relatorio_vendas_header_title">
-      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
+      <img class="base_icon" src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="relatorio_vendas_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="relatorio_vendas_table">

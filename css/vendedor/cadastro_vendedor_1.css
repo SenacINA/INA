@@ -45,11 +45,6 @@ body {
     gap: 8px;
 }
 
-.cadastro_vendedor1_titulo img{
-    width: 28px;
-    height: 28px;
-}
-
 .cadastro_vendedor1_titulo h1 {
     justify-self: center;
     font-weight: 500;

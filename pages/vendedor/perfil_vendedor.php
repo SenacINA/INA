@@ -74,19 +74,19 @@ function gerarProdutoCards($quantidade)
         <div class="grid_principal">
             <div class="infos_container">
                 <div class="infos_item1">
-                    <img src="../../image/geral/icons/localizacao_icon.svg">
+                    <img class="base_icon" src="../../image/geral/icons/localizacao_icon.svg">
                     <p>São Paulo, São Paulo</p>
                 </div>
                 <div class="infos_item2">
-                    <img src="../../image/geral/icons/produto_icon.svg">
+                    <img class="base_icon" src="../../image/geral/icons/produto_icon.svg">
                     <p>Produtos: 8</p>
                 </div>
                 <div class="infos_item3">
-                    <img src="../../image/geral/icons/perfil_membros_icon.svg">
+                    <img class="base_icon" src="../../image/geral/icons/perfil_membros_icon.svg">
                     <p>Vendedor há: 4 Meses</p>
                 </div>
                 <div class="infos_item4">
-                    <img src="../../image/geral/icons/estela_icon.svg">
+                    <img class="base_icon" src="../../image/geral/icons/estela_icon.svg">
                     <p>Avaliação geral: 4.5</p>
                 </div>
             </div>
@@ -95,30 +95,30 @@ function gerarProdutoCards($quantidade)
             <div class="info_container">
                 <div class="about_container">
                     <div class="about_text">
-                        <img src="../../image\geral\icons\texto_icon.svg">
+                        <img class="base_icon" src="../../image\geral\icons\texto_icon.svg">
                         <h1>Sobre nós:</h1>
                     </div>
                     <p>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</p>
                 </div>
                 <div class="contatos_vendedor">
-                    <img src="../../image/geral/icons/instagram_icon.svg" class="icon_instagram_vendedor">
+                    <img class="base_icon" src="../../image/geral/icons/instagram_icon.svg" class="icon_instagram_vendedor">
                     <a href="#" class="instagram_vendedor">my.thudergames</a>
 
-                    <img src="../../image/geral/icons/facebook_icon.svg" class="icon_facebook_vendedor">
+                    <img class="base_icon" src="../../image/geral/icons/facebook_icon.svg" class="icon_facebook_vendedor">
                     <a href="#" class="facebook_vendedor">thundergames</a>
 
-                    <img src="../../image/geral/icons/x_twitter_icon.svg" class="icon_x_vendedor">
+                    <img class="base_icon" src="../../image/geral/icons/x_twitter_icon.svg" class="icon_x_vendedor">
                     <a href="#" class="x_vendedor">thundergames_</a>
 
                     <hr class="vr">
 
-                    <img src="../../image/geral/icons/linkedin_icon.svg" class="icon_linkedin_vendedor">
+                    <img class="base_icon" src="../../image/geral/icons/linkedin_icon.svg" class="icon_linkedin_vendedor">
                     <a href="#" class="linkedin_vendedor">thundergames</a>
 
-                    <img src="../../image/geral/icons/youtube_icon.svg" class="icon_youtube_vendedor">
+                    <img class="base_icon" src="../../image/geral/icons/youtube_icon.svg" class="icon_youtube_vendedor">
                     <a href="#" class="youtube_vendedor">Thunder Games</a>
 
-                    <img src="../../image/geral/icons/tiktok_icon.svg" class="icon_tiktok_vendedor">
+                    <img class="base_icon" src="../../image/geral/icons/tiktok_icon.svg" class="icon_tiktok_vendedor">
                     <a href="#" class="tiktok_vendedor">thunder.games</a>
                 </div>
             </div>
@@ -127,7 +127,7 @@ function gerarProdutoCards($quantidade)
 
             <div class="grid_carrossel">
                 <div class="about_container_2">
-                    <img src="../../image/geral/icons/estela_icon.svg" alt="">
+                    <img class="base_icon" src="../../image/geral/icons/estela_icon.svg" alt="">
                     <h1>Destaques:</h1>
                 </div>
                 <div class="historico_items">
@@ -140,7 +140,7 @@ function gerarProdutoCards($quantidade)
                 </div>
 
                 <div class="about_container_2">
-                    <img src="../../image/geral/icons/produto_icon.svg" class="estrela">
+                    <img class="base_icon" src="../../image/geral/icons/produto_icon.svg" class="estrela">
                     <h1>Produtos:</h1>
                 </div>
 

@@ -34,10 +34,6 @@
   }
 }
 
-.base_icon{
-  height: 32px;
-}
-
 .gerenciar_pedidos_linha_vertical{
   width: 8px;
   height: 48px;
@@ -69,19 +65,15 @@
   display: flex;
   justify-content: center;
   margin-top: 16px;
+
+  gap: 8px;
 }
 
 .gerenciar_pedidos_header_title {
   display: flex;
   justify-content: start;
-}
 
-.gerenciar_pedidos_text_titulo img,
-.gerenciar_pedidos_header_title img {
-  align-self: center;
-  width: 32px;
-  height: auto;
-  margin-right: 8px;
+  gap: 8px;
 }
 
 .gerenciar_pedidos_text_titulo h1,

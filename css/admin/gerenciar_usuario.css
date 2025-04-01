@@ -20,17 +20,7 @@
 .gerenciar_usuario_subtitulo_generico {
   width: 100%;
   display: flex;
-  gap: 16px;
-}
-
-.gerenciar_usuario_img_lupa {
-  width: 32px;
-  height: 32px;
-}
-
-.gerenciar_usuario_img_user {
-  height: 24px;
-  width: 24px;
+  gap: 8px;
 }
 
 .gerenciar_usuario_linha_vertical{
@@ -55,20 +45,15 @@
   justify-items: center;
 
   width: 100%;
+  margin-top: 8px;
 }
 
 .gerenciar_usuario_text_titulo,
 .gerenciar_usuario_header_title {
   display: flex;
   justify-self: center;
-}
 
-.gerenciar_usuario_text_titulo img,
-.gerenciar_usuario_header_title img {
-  align-self: center;
-  width: 28px;
-  height: auto;
-  margin-right: 8px;
+  gap: 8px;
 }
 
 .gerenciar_usuario_text_titulo h1,

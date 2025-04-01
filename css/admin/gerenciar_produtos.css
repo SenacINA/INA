@@ -35,16 +35,12 @@
   .gerenciar_produtos_subtitulo_generico{
     width: 100%;
     display: flex;
-    gap: 16px;
+    gap: 8px;
 
     & img{
       width: 32px;
       height: 100%;
     }
-  }
-  
-  .base_icon{
-    height: 32px;
   }
   
   .gerenciar_produtos_linha_vertical{
@@ -78,14 +74,8 @@
   .gerenciar_produtos_header_title {
     display: flex;
     justify-self: center;
-  }
-  
-  .gerenciar_produtos_text_titulo img,
-  .gerenciar_produtos_header_title img {
-    align-self: center;
-    width: 32px;
-    height: auto;
-    margin-right: 8px;
+
+    gap: 8px;
   }
   
   .gerenciar_produtos_text_titulo h1,

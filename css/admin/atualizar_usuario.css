@@ -99,15 +99,9 @@ grid-row: 3;
 }
 
 .atualizar_usuario_text{
-display: flex;
-}
+  display: flex;
 
-.atualizar_usuario_text img{
-  margin: 0px 8px;
-  width: 24px;
-  height: 24px;
-  align-self: center;
-  justify-self: center;
+  gap: 8px;
 }
 
 .atualizar_usuario_vertical {
@@ -312,22 +306,20 @@ transform: translateX(24px);
 }
 
 .atualizar_usuario_salvar label {
-color: white;
-font-size: 24px;
-cursor: pointer;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .atualizar_usuario_botao_salvar button {
-border: none;
-cursor: pointer;
+  border: none;
+  cursor: pointer;
 }
 
 #atualizar_usuario_text_titulo_mobile {
   display: none;
 }
 
-
-/* <<< MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 @media (max-width: 1024px) {
   /* CORPO PRINCIPAL */
   .atualizar_usuario_body {

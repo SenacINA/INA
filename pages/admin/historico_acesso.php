@@ -22,7 +22,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="historico_acesso_header_holder">
         <div class="historico_acesso_header_title_1">
-          <img src="../../image\geral\icons\tempo_icon.svg"/>
+          <img class="base_icon" src="../../image/geral/icons/tempo_icon.svg"/>
           <h1 class="historico_acesso_text_header font_titulo">HISTÓRICO DE ACESSO</h1>
         </div>
         <div class="historico_acesso_linha_sublinhado"></div>
@@ -34,7 +34,7 @@
               <div class="historico_acesso_subtitulo_generico">
                 <div class="historico_acesso_linha_vertical"></div>
                 <div class="historico_acesso_subtitle_holder">
-                  <img class="base_icon" src="../../image\geral\icons\grafico_icon.svg"/>
+                  <img class="base_icon" src="../../image/geral/icons/grafico_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Relátório Geral</p>
                 </div>
               </div>
@@ -103,7 +103,7 @@
       </div>
     </div>
     <div class="historico_acesso_header_title_2">
-      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
+      <img class="base_icon" src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="historico_acesso_text_header font_titulo">HISTÓRICO DE ACESSO</h1>
     </div>
     <div class="historico_acesso_table">

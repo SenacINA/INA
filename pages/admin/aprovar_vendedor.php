@@ -25,7 +25,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="aprovar_vendedor_header_holder">
         <div class="aprovar_vendedor_text_titulo">
-          <img src="../../image/geral/icons/perfil_verificado_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/perfil_verificado_icon.svg" alt="">
           <h1 class="aprovar_vendedor_header_holder font_titulo">APROVAR VENDEDOR</h1>
         </div>
         <hr class="aprovar_vendedor_linha_sublinhado">
@@ -150,7 +150,7 @@
       </div>
     </div>
     <div class="aprovar_vendedor_header_title">
-      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
+      <img class="base_icon" src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="aprovar_vendedor_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="aprovar_vendedor_table">
