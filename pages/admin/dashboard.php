@@ -74,14 +74,6 @@
             </div>
           </a>
 
-          <!-- <a href="./admin_cupom.php">
-            <div class="dashboard_body_container_botoes_base">
-              <img src="../../image/admin/dashboard/gerenciar_cupom.svg" alt="">
-              <h2>Gerenciar Cupom</h2>
-              <img src="../../image/admin/dashboard/seta_baixo.svg" alt="">
-            </div>
-          </a> -->
-
           <a href="./gerenciar_carrossel.php">
             <div class="dashboard_body_container_botoes_base">
               <img src="../../image/admin/dashboard/gerenciar_carrossel.svg" alt="">

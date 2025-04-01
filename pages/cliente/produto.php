@@ -120,15 +120,6 @@
                         <button class='base_botao btn_blue btn_consulta'>Ok</button>
                     </div>
                 </div>
-
-                <!-- <div class="consultar_cupom">
-                    <h1>CUPOM</h1>
-                    <div class="consultar_input">
-                        <input class="base_input" type="text">
-                        <button class='base_botao btn_blue'>Ok</button>
-                    </div>
-                    
-                </div> -->
             </div>
         </div>
     </div>
