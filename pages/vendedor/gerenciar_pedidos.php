@@ -25,7 +25,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_pedidos_header_holder">
         <div class="gerenciar_pedidos_text_titulo">
-          <img src="../../image/geral/icons/engrenagem_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/engrenagem_icon.svg" alt="">
           <h1 class="gerenciar_pedidos_header_holder font_titulo">GERENCIAR PEDIDOS</h1>
         </div>
         <hr class="gerenciar_pedidos_linha_sublinhado">
@@ -48,14 +48,14 @@
                   <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="gerenciar_pedidos_inputs_esquerda">
-                  <div class="gerenciar_pedidos_input_status">
+                  <div class="gerenciar_pedidos_input_status base_input_select">
                     <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
                     <select name="select_cod" class="gerenciar_pedidos_select_status base_input">
                       <option value="Entregue">Pago</option>
                       <option value="Em transporte">Pendente</option>
                     </select>
                   </div>
-                  <div class="gerenciar_pedidos_input_mes">
+                  <div class="gerenciar_pedidos_input_mes base_input_select">
                     <label for="mes" class="font_subtitulo font_celadon">Mês</label>
                     <select name="mes" id="mes" class="gerenciar_pedidos_mes_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
@@ -73,7 +73,7 @@
                       <option value="dezembro">Dezembro</option>
                     </select>
                   </div>
-                  <div class="gerenciar_pedidos_input_ano">
+                  <div class="gerenciar_pedidos_input_ano base_input_select">
                     <label for="ano" class="font_subtitulo font_celadon">Ano</label>
                     <select name="ano" id="ano" class="gerenciar_pedidos_ano_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="gerenciar_pedidos_card">
                   <span class="gerenciar_pedidos_titulo">Total De Vendas</span>
-                  <span class="gerenciar_pedidos_estatistica_descricao font_descricao">14 UNI</span>
+                  <span class="gerenciar_pedidos_estatistica_descricao">14 UNI</span>
                 </div>
                 <div class="gerenciar_pedidos_card">
                   <span class="gerenciar_pedidos_titulo">Tempo Medio De Entrega</span>
@@ -144,7 +144,7 @@
       </div>
     </div>
     <div class="gerenciar_pedidos_header_title">
-      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
+      <img class="base_icon" src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="gerenciar_pedidos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_pedidos_table">

@@ -42,11 +42,6 @@
   align-items: center;
 }
 
-.gerenciar_carrossel_subtitle_holder img {
-  width: 24px;
-  height: 24px;
-}
-
 .gerenciar_carrossel_header_holder{
   width: 100%;
 }
@@ -62,14 +57,6 @@
   display: flex;
   justify-content: start;
   gap: 8px;
-}
-
-.gerenciar_carrossel_header_title_1 img,
-.gerenciar_carrossel_header_title_2 img {
-  height: 28px;
-  width: 28px;
-
-  align-self: center;
 }
 
 .gerenciar_carrossel_text_header {
@@ -116,6 +103,7 @@
   flex-direction: column;
   width: 100%;
 }
+
 .gerenciar_carrossel_linha_sublinhado {
   margin-top: 16px;
   width: 100%;

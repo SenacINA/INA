@@ -25,7 +25,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_produtos_header_holder">
         <div class="gerenciar_produtos_text_titulo">
-          <img src="../../image/geral/icons/produto_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/produto_icon.svg" alt="">
           <h1 class="gerenciar_produtos_header_holder font_titulo">GERENCIAR PRODUTOS</h1>
         </div>
         <hr class="gerenciar_produtos_linha_sublinhado">
@@ -49,7 +49,7 @@
                 </div>
                 <div class="gerenciar_produtos_inputs_esquerda">
                   
-                  <div class="gerenciar_produtos_input_mes">
+                  <div class="gerenciar_produtos_input_mes base_input_select">
                     <label for="mes" class="font_subtitulo font_celadon">Mês</label>
                     <select name="mes" id="mes" class="gerenciar_produtos_mes_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
@@ -67,11 +67,11 @@
                       <option value="dezembro">Dezembro</option>
                     </select>
                   </div>
-                  <div class="gerenciar_produtos_input_ano">
+                  <div class="gerenciar_produtos_input_ano base_input_select">
                     <label for="ano" class="font_subtitulo font_celadon">Ano</label>
                     <select name="ano" id="ano" class="gerenciar_produtos_ano_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
-                      <option value=" 2020">2020</option>
+                      <option value="2020">2020</option>
                       <option value="2021">2021</option>
                       <option value="2022">2022</option>
                       <option value="2023">2023</option>
@@ -87,12 +87,12 @@
                 </div>
                 <div class="gerenciar_produtos_holder_botao">
                   <button type="reset" class="base_botao btn_red">
-                    <img src="../../image/geral/botoes/x_icon_branco.svg">
+                    <img src="../../image/geral/botoes/x_branco_icon.svg">
                     CANCELAR
                   </button>
 
                   <button type="submit" class="base_botao btn_blue">
-                    <img src="../../image/geral/botoes/v_icon_branco.svg">
+                    <img src="../../image/geral/botoes/v_branco_icon.svg">
                     CONFIRMAR
                   </button>
                 </div>
@@ -113,7 +113,7 @@
                 </div>
                 <div class="gerenciar_produtos_card">
                   <span class="gerenciar_produtos_titulo">Total De Vendas</span>
-                  <span class="gerenciar_produtos_estatistica_descricao font_descricao">14 UNI</span>
+                  <span class="gerenciar_produtos_estatistica_descricao">14 UNI</span>
                 </div>
                 <div class="gerenciar_produtos_card">
                   <span class="gerenciar_produtos_titulo">Tempo Medio De Entrega</span>
@@ -138,7 +138,7 @@
       </div>
     </div>
     <div class="gerenciar_produtos_header_title">
-      <img src="../../image/geral/icons/pasta_clock_icon.svg"/>
+      <img class="base_icon" src="../../image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="gerenciar_produtos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="gerenciar_produtos_table">

@@ -30,7 +30,7 @@
                     <div class="nome_vendedor">
                         <h1>THUNDER GAMERS</h1>
                         <h2>
-                            <img src="../../image/geral/icons/localizacao_icon.svg" alt="">
+                            <img class="base_icon" src="../../image/geral/icons/localizacao_icon.svg" alt="">
                             São Paulo, São Paulo</h2>
                     </div>
                 </div>
@@ -120,22 +120,13 @@
                         <button class='base_botao btn_blue btn_consulta'>Ok</button>
                     </div>
                 </div>
-
-                <div class="consultar_cupom">
-                    <h1>CUPOM</h1>
-                    <div class="consultar_input">
-                        <input class="base_input" type="text">
-                        <button class='base_botao btn_blue'>Ok</button>
-                    </div>
-                    
-                </div>
             </div>
         </div>
     </div>
 
     <div class="grid_descricao_produto">
         <div class="descricao_produto_item2">
-            <img src="../../image/geral/icons/etiqueta_icon.svg" alt="">
+            <img class="base_icon" src="../../image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>DESCRIÇÃO DO PRODUTO</h1>
         </div>
         <p><strong>CADEIRA GAMER THRONE RGB</strong></p>
@@ -154,7 +145,7 @@
     <div class="grid_descricao_produto">
         <div class="line_top"></div>
         <div class="descricao_produto_item3">
-            <img src="../../image/geral/icons/etiqueta_icon.svg" alt="">
+            <img class="base_icon" src="../../image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>AVALIAÇÕES DO PRODUTO</h1>
         </div>
 
@@ -185,7 +176,7 @@
         <div class="comentario_usuario_1">
             <div class="grid_user_1">
                 <div class='cliente_nome_pic'>
-                    <img src="../../image/cliente/produto/icon_profile.svg" alt="">
+                    <img class="base_icon" src="../../image/cliente/produto/icon_profile.svg" alt="">
                     <h1>Carlos</h1>
                 </div>
 
@@ -225,7 +216,7 @@
         <div class="comentario_usuario_1">
             <div class="grid_user_1">
                 <div class='cliente_nome_pic'>
-                    <img src="../../image/cliente/produto/icon_profile.svg" alt="">
+                    <img class="base_icon" src="../../image/cliente/produto/icon_profile.svg" alt="">
                     <h1>Julia</h1>
                 </div>
 
@@ -261,7 +252,7 @@
         <div class="comentario_usuario_1">
             <div class="grid_user_1">
                 <div class='cliente_nome_pic'>
-                    <img src="../../image/cliente/produto/icon_profile.svg" alt="">
+                    <img class="base_icon" src="../../image/cliente/produto/icon_profile.svg" alt="">
                     <h1>Alex</h1>
                 </div>
                 

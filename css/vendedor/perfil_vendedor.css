@@ -47,8 +47,15 @@ hr {
 
 /* start botao_menu */
 .menu_1 select {
+  height: 40px;
+  border: #4eace2 solid 2px;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--cinza);
+
   position: absolute;
-  border: 2px solid var(--carolina);
   border-radius: 5px;
   width: 300px;
   height: 40px;
@@ -119,12 +126,6 @@ hr {
   height: 150px;
 }
 
-.infos_container img {
-  width: 32px;
-
-  margin-right: 8px;
-}
-
 .infos_container p {
   color: #006494;
   font-family: Jost;
@@ -141,6 +142,8 @@ hr {
   display: grid;
   grid-template-columns: min-content 110%;
   align-items: center;
+
+  gap: 8px;
 }
 
 .infos_item1 > img,
@@ -197,11 +200,6 @@ hr {
   column-gap: 1%;
 }
 
-.about_text > img,
-.about_container_2 > img {
-  width: 28px;
-}
-
 .about_text > h1 {
   color: #006494;
 }
@@ -239,15 +237,14 @@ hr {
 /* start contatos_vendedor */
 .contatos_vendedor {
   display: grid;
-  grid-template-columns: 7% min-content 2% 7% min-content;
+  grid-template-columns: 2% min-content 2% 2% min-content;
   align-items: center;
   justify-content: center;
   justify-items: center;
-  column-gap: 1%;
-}
 
-.contatos_vendedor > img {
-  width: 40px;
+  margin-top: 32px;
+  column-gap: 8px;
+  row-gap: 16px;
 }
 
 .contatos_vendedor a {
@@ -372,9 +369,6 @@ hr {
 }
 
 @media (max-width: 425px) {
-  .contatos_vendedor > img {
-    width: 24px;
-  }
   .infos_container {
     column-gap: 3%;
   }

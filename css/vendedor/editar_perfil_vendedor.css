@@ -9,12 +9,6 @@ html {
   height: 100%;
 }
 
-nav {
-  width: 100%;
-  height: 65px;
-  background-color: cadetblue;
-}
-
 body {
   background-color: #fff;
   height: 100%;
@@ -22,7 +16,7 @@ body {
 
 .quadrado_vendedor {
   display: grid;
-  grid-template-columns: 1f 1fr;
+  grid-template-columns: 1fr 1fr;
   width: 95%;
   justify-self: center;
   background-color: #eff3f5;
@@ -37,7 +31,7 @@ body {
   grid-column: 1/3;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-self: center;
   flex-direction: column;
   width: 95%;
   padding-top: 1%;
@@ -78,7 +72,8 @@ body {
   align-items: center;
   justify-content: center;
   justify-items: center;
-  grid-template-rows: 295px 193px 4px 150px min-content;
+  
+  grid-template-rows: 200px 193px 4px 150px min-content;
   grid-template-columns: 100%;
 }
 
@@ -94,7 +89,9 @@ body {
   grid-column: 1;
   grid-row: 1;
   z-index: 0;
+
   width: 100%;
+  height: 100%;
 }
 
 .pfp_vendedor {
@@ -102,8 +99,10 @@ body {
   grid-column: 1;
   z-index: 2;
   position: relative;
-  left: calc(50% - (826px / 2));
-  top: calc(100% - (300px / 2));
+  
+  top: 90px;
+  justify-self: center;
+  align-self: center;
 }
 
 .infos_container {
@@ -151,6 +150,15 @@ body {
   display: grid;
   grid-template-columns: max-content max-content;
   column-gap: 5px;
+
+  height: 24px;
+  text-align: center;
+  align-items: center;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .produtos_vendedor_container {
@@ -191,7 +199,8 @@ body {
   grid-template-columns: auto;
   grid-template-rows: auto auto;
   position: relative;
-  
+  padding: 2%;
+  text-justify: auto;
   row-gap: 5%;
 }
 
@@ -208,7 +217,6 @@ body {
   font-style: normal;
   font-weight: 400;
   grid-row: 2;
-
   max-width: 760px;
   width: 100%;
 }
@@ -410,7 +418,7 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  width: 83%;
+  width: 100%;
 }
 
 .redes_edit {
@@ -570,11 +578,13 @@ body {
 .destaques {
   display: flex;
   flex-direction: column;
+
   grid-row: 4;
-  grid-column: 1/3;
-  margin-left: 4%;
+  grid-column: 1 / 3;
+
   row-gap: 20px;
-  margin-top: 2%;
+  width: 92%;
+  margin: 2% 4% 2% 4%;
 }
 
 .icon_destaques_vendedor {
@@ -597,13 +607,13 @@ body {
 .destaques_container {
   background-color: var(--azul_leve);
   padding: 16px;
-  width: 94%;
+  width: 100%;
   border-radius: 5px;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(6, 1fr);
   gap: 0;
-  justify-content: space-around;
+  justify-content: start;
 }
 
 .destaques_num {
@@ -770,21 +780,6 @@ body {
     margin-top: 150px !important;
   }
 
-  .title {
-    display: none;
-  }
-
-  .title_mobile {
-    display: flex;
-    margin-bottom: 20px;
-    margin-left: 25px;
-  }
-
-  .title_text {
-    align-items: center;
-    justify-content: left;
-  }
-
   .quadrado_vendedor {
     display: flex;
     flex-direction: column;
@@ -828,6 +823,11 @@ body {
 
   .redes_sociais_vendedor {
     width: 95%;
+  }
+
+  .pfp_vendedor {
+    left: calc(48% - (826px / 2));
+    top: calc(100% - (300px / 2));
   }
 
   .redes_text,
@@ -893,10 +893,27 @@ body {
   body {
     margin-top: 150px !important;
   }
+
+  .title {
+    display: none;
+  }
+
+  .title_mobile {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 25px;
+  }
+
+  .title_text {
+    align-items: center;
+    justify-content: left;
+  }
+
   .title_mobile {
     margin-left: 20px;
     margin-bottom: 25px;
   }
+  
   .pfp_vendedor {
     left: 0;
   }
@@ -907,6 +924,10 @@ body {
   .pfp_vendedor {
     top: 50%;
     width: 140px;
+  }
+  .pfp_vendedor {
+    left: calc(63.5% - (826px / 2));
+    top: calc(130% - (380px / 2));
   }
   .infos_container {
     column-gap: 0;
@@ -966,6 +987,11 @@ body {
   .pfp_vendedor {
     top: 50%;
     width: 100px;
+  }
+
+  .pfp_vendedor {
+    left: calc(110% - (826px / 2));
+    top: calc(210% - (300px / 2));
   }
   .infos_container {
     column-gap: 0;

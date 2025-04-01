@@ -23,7 +23,7 @@
     <div class="atualizar_usuario_body">
       <div class="atualizar_usuario_titulo">
         <div class="atualizar_usuario_text_titulo">
-          <img src="../../image/geral/icons/atualizar_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/atualizar_icon.svg" alt="">
           <h1>ATUALIZAR USUARIO</h1>
         </div>
         <hr class="atualizar_usuario_linha_titulo">
@@ -33,10 +33,9 @@
       <div class="bg_mobile_2"></div>
      
       <div class="atualizar_usuario_grid_conteudo">
-       
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_1"> 
           <hr class="atualizar_usuario_vertical">
-          <img src="../../image/geral/icons/lista_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/lista_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Alternar Permissões</h1>
         </div>
 
@@ -57,12 +56,11 @@
         
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_2">
           <hr class="atualizar_usuario_vertical">
-          <img src="../../image/geral/icons/perfil_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/perfil_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Dados Pessoais</h1>
         </div>
         
         <form action="" method="post" class="atualizar_usuario_dados_pessoais">
-  
           <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_1" >
             <label>Nome</label>
             <input type="text" class="base_input">
@@ -98,7 +96,7 @@
 
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_3">
           <hr class="atualizar_usuario_vertical">
-          <img src="../../image/geral/icons/localizacao_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/localizacao_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Localização</h1>
         </div>
 
@@ -139,13 +137,13 @@
         </form>
 
         <div class="atualizar_usuario_text_titulo" id="atualizar_usuario_text_titulo_mobile">
-          <img src="../../image/admin/atualizar_usuario/perfil_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/lista_caneta_icon.svg" alt="">
           <h1>ALTERAR DADOS</h1>
         </div> 
 
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_4">
           <hr class="atualizar_usuario_vertical">
-          <img src="../../image/geral/icons/engrenagem_icon.svg" alt="">
+          <img class="base_icon" src="../../image/geral/icons/engrenagem_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Alterar Permissões</h1>
         </div>
 

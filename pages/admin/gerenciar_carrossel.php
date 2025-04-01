@@ -24,7 +24,7 @@
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_carrossel_header_holder">
         <div class="gerenciar_carrossel_header_title_1">
-          <img src="../../image/geral/icons/carrossel_icon.svg"/>
+          <img class="base_icon" src="../../image/geral/icons/carrossel_icon.svg"/>
           <h1 class="gerenciar_carrossel_text_header">GERENCIAR CARROSSEL</h1>
         </div>
         <div class="gerenciar_carrossel_linha_sublinhado"></div>
@@ -71,7 +71,7 @@
                     <label class="font_subtitulo font_celadon">Nome</label>
                     <input type="text" class="base_input">
                   </div>
-                  <div class="gerenciar_carrossel_input_status">
+                  <div class="gerenciar_carrossel_input_status base_input_select">
                     <label for="select_cod" class="font_subtitulo font_celadon">Plano</label>
                     <select name="select_cod" class="gerenciar_carrossel_select_status base_input">
                       <option value="Semanal">Semanal</option>
@@ -100,7 +100,7 @@
       </div>
     </div>
     <div class="gerenciar_carrossel_header_title_2">
-      <img src="../../image/geral/icons/anuncio_icon.svg"/>
+      <img class="base_icon" src="../../image/geral/icons/anuncio_icon.svg"/>
       <h1 class="gerenciar_carrossel_text_header font_titulo">Gerenciar Anúncios</h1>
     </div>
     <div class="gerenciar_carrossel_table">
@@ -115,7 +115,6 @@
           <option value="">Data de Início</option>
           <option value="">Data de Expiração</option>
           <option value="">Plano</option>
-
         </select>
       </div>
       <div class="base_tabela">
@@ -183,5 +182,4 @@
     </div>
   </main>
 </body>
-
 </html>
