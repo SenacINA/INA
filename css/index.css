@@ -32,19 +32,6 @@ body, html {
     transition: opacity 0.5s ease-in-out;
 }
 
-.index_body_carrossel_but {
-    position: absolute;
-    /* top: 50%; */
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.back { left: 10px; }
-.forward { right: 10px; }
-
 
 .mySlides {display: none}
 /* img {vertical-align: middle;} */
@@ -115,9 +102,7 @@ body, html {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
-}
+
 
 /* Fading animation */
 .fade {
@@ -238,183 +223,6 @@ body, html {
     align-items: center;
     overflow-x: hidden;
 
-    .index_body_carrossel {
-        width: 100%;
-        min-height: 70vh;
-        background: url(../image/index/fundoCarrossel.jpg) center/cover no-repeat;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        row-gap: 48px;
-        
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background: linear-gradient(to top, #2888B1, transparent);
-            z-index: 1;
-        }
-    }
-
-    .index_body_carrossel_content {
-        margin-top: 4%;
-        width: 100%;
-        padding: 0 5%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        z-index: 2;
-        
-        &:hover .index_body_carrossel_but {
-            opacity: 1;
-            cursor: pointer;
-        }
-
-        & > #fg_image {
-            max-width: 50%;
-        }
-    }
-
-    .index_body_carrossel_text {
-        color: #F9F9FC;
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        max-width: 600px;
-        padding: 20px;
-        z-index: 2;
-        text-align: left;
-
-        > h2 {
-            line-height: 1;
-            font-size: clamp(24px, 8vw, 96px);
-            word-wrap: break-word;
-        }
-
-        > h3 {
-            font-size: clamp(16px, 2.5vw, 24px);
-            width: 100%;
-            margin-top: 15px;
-        }
-    }
-
-    .index_body_carrossel_but {
-        cursor: pointer;
-        opacity: 0; 
-        transition: opacity 0.3s ease-in-out; 
-        padding: 0;
-        border: none;
-        background: transparent;
-        width: 40px;
-        height: 40px;
-        z-index: 2;
-        
-        svg {
-            width: 40px;
-            height: 40px;
-            color: #F9F9FC;
-            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-        
-        &:hover {
-            svg {
-                color: #C8C8DB;
-                transform: scale(1.1);
-            }
-        }
-    }
-
-    .back {
-        transform: rotate(-90deg);
-        margin-right: auto;
-    }
-
-    .forward {
-        transform: rotate(90deg);
-        margin-left: auto;
-
-    }
-
-    .index_body_carrossel_nav {
-        z-index: 2;
-        display: flex;
-        width: 100%;
-        padding: 0 30%;
-        justify-content: center;
-        gap: 15px;
-        margin: 20px 0;
-        
-        button {
-            width: 100%;
-            height: 15px;
-            border-radius: 10px;
-            border: none;
-            background: rgba(255, 255, 255, 0.63);
-            transition: background 0.3s ease-in-out;
-            
-            &:hover {
-                cursor: pointer;
-                background: rgba(255, 255, 255, 0.8);
-            }
-            
-            &.active {
-                background: rgba(0, 0, 0, 0.25);
-                
-                &:hover {
-                    cursor: pointer;
-                    background: rgba(0, 0, 0, 0.1);
-                }
-            }
-        }
-    }
-
-    .index_body_categorias_nav {
-        z-index: 2;
-        margin-bottom: 5%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 48px;
-        width: 100%;
-        
-        &:hover .index_body_categorias_block:not(:hover) {
-            cursor: pointer;
-            filter: brightness(0.8);
-            transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-    }
-
-    .index_body_categorias_block { 
-        z-index: 2;
-        padding: 16px;
-        display: flex; 
-        border-radius: 5px; 
-        background: rgba(255, 255, 255, 0.70); 
-        flex-direction: column; 
-        align-items: center; 
-        row-gap: 16px; 
-        min-height: 200px;
-        width: 160px; 
-        max-width: 100%;
-        transition: all 0.3s ease-in-out;
-        justify-content: flex-end;
-        
-        & img{
-            height: auto;
-            width: 90%;
-        }
-        
-        &:hover {
-            cursor: pointer;
-            transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.8); 
-        }
     }
 
     .index_body_bg_container {

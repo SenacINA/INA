@@ -16,13 +16,61 @@
 </head>
 
 <body class="gradiente_azul">
-    <!-- fazer responsividade -->
-
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
 
     <div class="img_fundo largura_com_scroll">
+        <div class="index_body_carrossel">
+            <div class="index_body_carrossel_content">
+                <button class="index_body_carrossel_but back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19"/>
+                    </svg>
+                </button>
+                <div class="carousel-container">
+                    
+                    <div class="carousel-wrapper">
+                        <img id="carrossel_image" src="./image/index/carrosselConsole.png" alt="Imagem Carrossel">
+                    </div>
+
+                    
+                </div>
+                <button class="index_body_carrossel_but forward">                    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19"/>
+                    </svg> 
+                </button>
+            </div>
+            <div class="index_body_carrossel_nav">
+                <button class="active" onclick="currentSlide(1)"></button>
+                <button onclick="currentSlide(2)"></button>
+                <button onclick="currentSlide(3)"></button>
+                <button onclick="currentSlide(4)"></button>
+            </div>
+            <div class="index_body_categorias_nav">
+                <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
+                    <img src="./image/index/carrosselHardware.png" alt="">
+                    <p>Hardware</p>
+                </div>
+                <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
+                    <img src="./image/index/carrosselPerifericos.png" alt="">
+                    <p>Periféricos</p>
+                </div>
+                <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
+                    <img src="./image/index/carrosselEscritorio.png" alt="">
+                    <p>Escritório</p>
+                </div>
+                <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
+                    <img src="./image/index/carrosselCelulares.png" alt="">
+                    <p>Celulares</p>
+                </div>
+                <div class="index_body_categorias_block" onclick="pag('cliente/categoria',0)">
+                    <img src="./image/index/carrosselEletro.png" alt="">
+                    <p>Eletrodomésticos</p>
+                </div>
+            </div>
+        </div>
         
     </div>
 
@@ -38,7 +86,7 @@
             <div class="container_filtro bg_branco">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Marcas</h2>
-                    <img src="../../image/cliente/categoria/img_seta_triangulo.png" alt="Setinha">
+                    <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
                 </div>
                 <div class="grid_filtro">
                     <div class="filtro_item font_descricao">
@@ -63,7 +111,7 @@
             <div class="container_filtro bg_branco">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Conexão</h2>
-                    <img src="../../image/cliente/categoria/img_seta_triangulo.png" alt="Setinha">
+                    <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
                 </div>
                 <div class="grid_filtro">
                     <div class="filtro_item font_descricao">
@@ -88,7 +136,7 @@
             <div class="container_filtro bg_branco">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Comprimento</h2>
-                    <img src="../../image/cliente/categoria/img_seta_triangulo.png" alt="Setinha">
+                    <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
                 </div>
                 <div class="grid_filtro">
                     <div class="filtro_item font_descricao">
@@ -117,7 +165,7 @@
             <div class="container_filtro bg_branco">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Cor</h2>
-                    <img src="../../image/cliente/categoria/img_seta_triangulo.png" alt="Setinha">
+                    <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
                 </div>
                 <div class="grid_filtro">
                     <div class="filtro_item font_descricao">

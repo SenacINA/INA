@@ -1112,3 +1112,326 @@ select.base_input {
   }
 }
 
+/* CARROSSEL */
+
+#carrossel_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+.categorias_nav {
+  z-index: 2;
+  margin-bottom: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px;
+  width: 100%;
+  
+  &:hover .categorias_block:not(:hover) {
+      cursor: pointer;
+      filter: brightness(0.8);
+      transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+}
+
+.categorias_block { 
+  z-index: 2;
+  padding: 16px;
+  display: flex; 
+  border-radius: 5px; 
+  background: rgba(255, 255, 255, 0.70); 
+  flex-direction: column; 
+  align-items: center; 
+  row-gap: 16px; 
+  min-height: 200px;
+  width: 160px; 
+  max-width: 100%;
+  transition: all 0.3s ease-in-out;
+  justify-content: flex-end;
+  
+  & img{
+      height: auto;
+      width: 90%;
+  }
+  
+  &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.8); 
+  }
+}
+
+.carrossel {
+  width: 100%;
+  min-height: 70vh;
+  background: url(../image/index/fundoCarrossel.jpg) center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 48px;
+  
+  &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30%;
+      background: linear-gradient(to top, #2888B1, transparent);
+      z-index: 1;
+  }
+}
+
+.carrossel_content {
+  margin-top: 4%;
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  z-index: 2;
+  
+  &:hover .carrossel_but {
+      opacity: 1;
+      cursor: pointer;
+  }
+
+  & > #fg_image {
+      max-width: 50%;
+  }
+}
+
+.carrossel_text {
+  color: #F9F9FC;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  z-index: 2;
+  text-align: left;
+
+  > h2 {
+      line-height: 1;
+      font-size: clamp(24px, 8vw, 96px);
+      word-wrap: break-word;
+  }
+
+  > h3 {
+      font-size: clamp(16px, 2.5vw, 24px);
+      width: 100%;
+      margin-top: 15px;
+  }
+}
+
+.forward {
+  right: 32px;
+}
+
+.back {
+  left: 32px;
+}
+
+.carrossel_but {
+  cursor: pointer;
+  opacity: 0; 
+  transition: opacity 0.3s ease-in-out; 
+  padding: 0;
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  
+  svg {
+      width: 40px;
+      height: 40px;
+      color: #F9F9FC;
+      transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  &:hover {
+      svg {
+          color: #C8C8DB;
+          transform: scale(1.1);
+      }
+  }
+}
+
+.back {
+  transform: rotate(-90deg) !important;
+  margin-right: auto;
+}
+
+.forward {
+  transform: rotate(90deg) !important;
+  margin-left: auto;
+
+}
+
+.carrossel_nav {
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  padding: 0 30%;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  
+  button {
+      width: 100%;
+      height: 15px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255, 255, 255, 0.63);
+      transition: background 0.3s ease-in-out;
+      
+      &:hover {
+          cursor: pointer;
+          background: rgba(255, 255, 255, 0.8);
+      }
+      
+      &.active {
+          background: rgba(0, 0, 0, 0.25);
+          
+          &:hover {
+              cursor: pointer;
+              background: rgba(0, 0, 0, 0.1);
+          }
+      }
+  }
+}
+
+.carrossel_but {
+  position: absolute;
+  /* top: 50%; */
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-container {
+  position: relative;
+  width: 1000px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media (max-width: 1024px) {
+    .carrossel {
+        min-height: 100vh;
+        
+        &::after {
+            background: linear-gradient(180deg, rgba(219, 219, 219, 0) 10%, #F9F9FC 100%);
+        }
+    }
+
+    .carrossel_content {
+        margin-top: 16px;
+        padding: 0 20%;
+        gap: 0;
+    }
+
+    .carrossel_nav {
+        padding: 0 176px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carrossel {
+        background: linear-gradient(to bottom right, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)), url(../image/index/fundoCarrossel.jpg) center / cover no-repeat;
+        max-width: 100vw;
+        position: relative;
+    }
+
+    .carrossel_content {
+        justify-content: start;
+        position: relative;
+        padding: 0;
+        color: white;
+        display: grid;
+        align-content: center;
+        grid-template-columns: auto auto;
+        background-size: cover;
+        width: 100vw;
+        height: 200px;
+
+        img {
+            z-index: 0;
+            position: absolute;
+            width: 50vw;
+            height: auto;
+            object-fit: cover;
+            right: 16px;
+            filter: brightness(0.8) blur(0.8px);
+        }
+    }
+
+    .carrossel_but {
+        position: absolute;
+        display: none;
+    }
+
+    .carrossel_text {
+        z-index: 2;
+        width: 80%;
+        padding: 0 16px;
+    }
+
+    .carrossel_nav {
+        padding: 16px;
+    }
+}

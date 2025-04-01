@@ -15,7 +15,7 @@ function changeImage(direction) {
     isTransitioning = true;
 
     // Disable buttons during transition
-    document.querySelectorAll('.index_body_carrossel_but').forEach(btn => btn.disabled = true);
+    document.querySelectorAll('.carrossel_but').forEach(btn => btn.disabled = true);
 
     // Calculate the next index
     const nextIndex = (currentIndex + direction + imagese.length) % imagese.length;
@@ -44,7 +44,7 @@ function changeImage(direction) {
             // Re-enable buttons after the fade-in completes
             setTimeout(() => {
                 isTransitioning = false;
-                document.querySelectorAll('.index_body_carrossel_but').forEach(btn => btn.disabled = false);
+                document.querySelectorAll('.carrossel_but').forEach(btn => btn.disabled = false);
             }, 500); // Match this timeout with the CSS transition duration
         }, 500); // Match this timeout with the CSS transition duration
     };
@@ -57,7 +57,7 @@ function currentSlide(index) {
 }
 
 function updateActiveButton(index) {
-    const buttons = document.querySelectorAll('.index_body_carrossel_nav button');
+    const buttons = document.querySelectorAll('.carrossel_nav button');
     buttons.forEach((button, i) => {
         if (i === index) {
             button.classList.add('active');
@@ -72,7 +72,7 @@ document.querySelector('.forward').addEventListener('click', () => changeImage(1
 document.querySelector('.back').addEventListener('click', () => changeImage(-1));
 
 // Event listeners for navigation buttons
-document.querySelectorAll('.index_body_carrossel_nav button').forEach((button, index) => {
+document.querySelectorAll('.carrossel_nav button').forEach((button, index) => {
     button.addEventListener('click', () => currentSlide(index + 1));
 });
 

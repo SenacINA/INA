@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const btnTopo = document.getElementById('btnTopo');
+    const pageHeight = document.documentElement.clientHeight;
     
     window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 2000) { 
+        if (window.pageYOffset > pageHeight) { 
             btnTopo.classList.add('visible');
         } else {
             btnTopo.classList.remove('visible');
