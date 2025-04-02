@@ -50,24 +50,25 @@ function gerarProdutoCards($quantidade)
     ?>
     
 <main>
-    <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner_cliente">
+    <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner">
 
-    <div class="perfil_cliente_pfp_cliente">
-        <img src="../../image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente">
-        <h1>Cliente 10</h1>
+    <div class="perfil_cliente_content_pfp">
+        <div class="perfil_cliente_pfp">
+            <img src="../../image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente">
+            <h1>Cliente 10</h1>
+        </div>
+        <div class="perfil_cliente_btn_menu base_input_select">
+            <form action="">
+                <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
+                    <option selected disabled value="">Menu</option>
+                    <option value="cliente/editar_perfil">Editar Perfil</option>
+                    <option value="vendedor/cadastro_vendedor_1">Cadastro de vendedor</option>
+                    <option value="cliente/login">Sair</option>
+                </select>
+            </form>
+        </div>
     </div>
-
-    <div class="menu_1 base_input_select">
-        <form action="">
-            <select name="base_input" id="menu" onchange="selectPag(this.value)">
-                <option selected disabled value="">Menu</option>
-                <option value="cliente/editar_perfil">Editar Perfil</option>
-                <option value="vendedor/cadastro_vendedor_1">Cadastro como vendedor</option>
-                <option value="cliente/login">Sair</option>
-            </select>
-        </form>
-    </div>
-
+    
     <div class="perfil_cliente_grid_principal">
         <div class="perfil_cliente_infos_container">
             <div class="perfil_cliente_infos_item1">
