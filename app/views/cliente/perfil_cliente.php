@@ -33,12 +33,13 @@ function gerarProdutoCards($quantidade)
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
   <title>E ao Quadrado</title>
+  <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/cliente/perfil_cliente.css">
   <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
+  
   <script src="../../js/geral/base.js"></script>
 </head>
 <body>
@@ -50,24 +51,25 @@ function gerarProdutoCards($quantidade)
     ?>
     
 <main>
-    <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner_cliente">
+    <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner">
 
-    <div class="perfil_cliente_pfp_cliente">
-        <img src="../../image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente">
-        <h1>Cliente 10</h1>
+    <div class="perfil_cliente_content_pfp">
+        <div class="perfil_cliente_pfp">
+            <img src="../../image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente">
+            <h1>Cliente 10</h1>
+        </div>
+        <div class="perfil_cliente_btn_menu base_input_select">
+            <form action="">
+                <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
+                    <option selected disabled value="">Menu</option>
+                    <option value="cliente/editar_perfil">Editar Perfil</option>
+                    <option value="vendedor/cadastro_vendedor_1">Cadastro de vendedor</option>
+                    <option value="cliente/login">Sair</option>
+                </select>
+            </form>
+        </div>
     </div>
-
-    <div class="menu_1 base_input_select">
-        <form action="">
-            <select name="base_input" id="menu" onchange="selectPag(this.value)">
-                <option selected disabled value="">Menu</option>
-                <option value="cliente/editar_perfil">Editar Perfil</option>
-                <option value="vendedor/cadastro_vendedor_1">Cadastro como vendedor</option>
-                <option value="cliente/login">Sair</option>
-            </select>
-        </form>
-    </div>
-
+    
     <div class="perfil_cliente_grid_principal">
         <div class="perfil_cliente_infos_container">
             <div class="perfil_cliente_infos_item1">
