@@ -1,83 +1,115 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const scriptTag = document.querySelector('script[data-isindex]');
+    const isIndex = parseInt(scriptTag.dataset.isindex, 10) || 0;
+    const URL = isIndex === 1 ? '' : '../.';
 
+    const desktopImages = [
+        `${URL}./image/carrossel/banner_carrossel_perifericos.png`,
+        `${URL}./image/carrossel/banner_carrossel_escritorio.png`,
+        `${URL}./image/carrossel/banner_carrossel_eletronicos.png`,
+        `${URL}./image/carrossel/banner_carrossel_eletrodomesticos.png`
+    ];
+    
+    const mobileImages = [
+        `${URL}./image/carrossel/banner_carrossel_perifericos_mobile.png`,
+        `${URL}./image/carrossel/banner_carrossel_escritorio_mobile.png`,
+        `${URL}./image/carrossel/banner_carrossel_eletronicos_mobile.png`,
+        `${URL}./image/carrossel/banner_carrossel_eletrodomesticos_mobile.png`
+    ];
 
-const imagese = [
-    '../../image/index/carrosselConsole.png',
-    '../../image/index/carrosselGamer.png',
-    '../../image/index/carrosselMovel.png',
-    '../../image/index/carrosselCasa.png'
-];
+    let activeImages = [];
+    const carrosselImage = document.getElementById('carrossel_image');
+    let isTransitioning = false;
+    let currentIndex = 0;
 
-const carrosselImagee = document.getElementById('carrossel_image');
-
-function changeImage(direction) {
-    // Prevent multiple transitions at once
-    if (isTransitioning) return;
-    isTransitioning = true;
-
-    // Disable buttons during transition
-    document.querySelectorAll('.index_body_carrossel_but').forEach(btn => btn.disabled = true);
-
-    // Calculate the next index
-    const nextIndex = (currentIndex + direction + imagese.length) % imagese.length;
-
-    // Preload the next image
-    const nextImage = new Image();
-    nextImage.src = imagese[nextIndex];
-
-    // Wait for the next image to load
-    nextImage.onload = () => {
-        // Fade out the current image
-        carrosselImagee.style.opacity = 0;
-
-        // Wait for the fade-out to complete
-        setTimeout(() => {
-            // Swap the image source
-            carrosselImagee.src = imagese[nextIndex];
-            currentIndex = nextIndex;
-
-            // Fade in the new image
-            carrosselImagee.style.opacity = 1;
-
-            // Update the active button
-            updateActiveButton(nextIndex);
-
-            // Re-enable buttons after the fade-in completes
-            setTimeout(() => {
-                isTransitioning = false;
-                document.querySelectorAll('.index_body_carrossel_but').forEach(btn => btn.disabled = false);
-            }, 500); // Match this timeout with the CSS transition duration
-        }, 500); // Match this timeout with the CSS transition duration
-    };
-}
-
-function currentSlide(index) {
-    if (isTransitioning) return;
-    const direction = index - 1 - currentIndex;
-    changeImage(direction);
-}
-
-function updateActiveButton(index) {
-    const buttons = document.querySelectorAll('.index_body_carrossel_nav button');
-    buttons.forEach((button, i) => {
-        if (i === index) {
-            button.classList.add('active');
+    const handleResponsiveChange = (mediaQuery) => {
+        if (mediaQuery.matches) {
+            activeImages = [...mobileImages];
         } else {
-            button.classList.remove('active');
+            activeImages = [...desktopImages];
+        }
+        
+        carrosselImage.src = activeImages[currentIndex];
+        updateNavButtons();
+        updateActiveButton(currentIndex);
+    };
+
+    const mediaQuery = window.matchMedia('(max-width: 1024px)');
+    mediaQuery.addListener(handleResponsiveChange);
+    handleResponsiveChange(mediaQuery);
+
+    function updateNavButtons() {
+        const navContainer = document.querySelector('.carrossel_nav');
+        navContainer.innerHTML = '';
+        activeImages.forEach((_, index) => {
+            const button = document.createElement('button');
+            button.onclick = () => currentSlide(index);
+            if (index === currentIndex) button.classList.add('active');
+            navContainer.appendChild(button);
+        });
+    }
+
+    function changeImage(direction) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        document.querySelectorAll('.carrossel_but').forEach(btn => btn.disabled = true);
+
+        const nextIndex = (currentIndex + direction + activeImages.length) % activeImages.length;
+        const nextImage = new Image();
+        nextImage.src = activeImages[nextIndex];
+
+        nextImage.onload = () => {
+            carrosselImage.style.opacity = 0;
+            setTimeout(() => {
+                carrosselImage.src = activeImages[nextIndex];
+                currentIndex = nextIndex;
+                carrosselImage.style.opacity = 1;
+                updateActiveButton(nextIndex);
+
+                setTimeout(() => {
+                    isTransitioning = false;
+                    document.querySelectorAll('.carrossel_but').forEach(btn => btn.disabled = false);
+                }, 500);
+            }, 500);
+        };
+    }
+
+    function currentSlide(index) {
+        if (isTransitioning) return;
+        const direction = index - currentIndex;
+        changeImage(direction);
+    }
+
+    function updateActiveButton(index) {
+        const buttons = document.querySelectorAll('.carrossel_nav button');
+        buttons.forEach((button, i) => {
+            button.classList.toggle('active', i === index);
+        });
+    }
+
+    document.querySelector('.forward').addEventListener('click', () => changeImage(1));
+    document.querySelector('.back').addEventListener('click', () => changeImage(-1));
+
+    // Adicionar funcionalidade de scroll para dispositivos móveis
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carrosselImage.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carrosselImage.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 30) {
+            changeImage(1); // Scroll para frente
+        }
+        if (touchStartX - touchEndX < -30) {
+            changeImage(-1); // Scroll para trás
         }
     });
-}
 
-// Event listeners for buttons
-document.querySelector('.forward').addEventListener('click', () => changeImage(1));
-document.querySelector('.back').addEventListener('click', () => changeImage(-1));
-
-// Event listeners for navigation buttons
-document.querySelectorAll('.index_body_carrossel_nav button').forEach((button, index) => {
-    button.addEventListener('click', () => currentSlide(index + 1));
+    setInterval(() => {
+        changeImage(1);
+    }, 10000);
 });
-
-// Optional: Auto-rotate every 5 seconds
-setInterval(() => {
-    changeImage(1);
-    updateActiveButton((currentIndex + 1) % imagese.length);
-}, 10000);
