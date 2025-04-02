@@ -20,7 +20,9 @@ rua_endereco varchar(100) not null,
 bairro_endereco varchar(100) not null,
 id_cidade int not null,
 numero_endereco smallint,
+id_cliente int not null,
 referencia_endereco varchar(200),
+foreign key (id_cliente) references cliente(id_cliente) 
 foreign key (id_cidade) references cidade(id_cidade) 
 );
 
@@ -33,7 +35,6 @@ email_cliente varchar(70) not null unique,
 cpf_cliente varchar(15) , 
 genero_cliente char(1),
 cep_cliente varchar(10),
-id_endereco int,
 rg_cliente varchar(14),
 numero_celular_cliente varchar(10),
 ddd_cliente tinyint,
@@ -41,7 +42,6 @@ foto_perfil_cliente varchar(200),
 banner_perfil_cliente varchar(200),
 tipo_conta_cliente tinyint not null, 
 status_conta_cliente tinyint,
-foreign key (id_endereco) references endereco(id_endereco)
 );
 
 create table categoria( -- 6

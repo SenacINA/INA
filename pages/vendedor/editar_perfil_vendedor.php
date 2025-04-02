@@ -43,8 +43,7 @@ function gerarProdutoCards($quantidade)
   <script src="../../js/geral/base.js"></script>
 </head>
 <body>
-  <!-- Atá 375px --> 
-  <!-- Caminho de Icon Correto --> 
+  <!-- Atá 375px -->  
 
   <?php
   include_once('../../pages/geral/navbar.php');
@@ -52,14 +51,14 @@ function gerarProdutoCards($quantidade)
   
   <div class="title_mobile">
     <div class="title_text">
-      <img src="../../image/geral/icons/perfil_icon.svg">
+      <img class="base_icon" src="../../image/geral/icons/perfil_icon.svg">
       <h1 class="font_titulo title_main_text">Editar perfil</h1>
     </div>
   </div>
   <main class="quadrado_vendedor">
     <div class="title">
       <div class="title_text">
-        <img src="../../image/geral/icons/perfil_icon.svg">
+        <img class="base_icon" src="../../image/geral/icons/perfil_icon.svg">
         <h1 class="font_titulo title_main_text">Editar perfil</h1>
       </div>
       <hr class="linha_title">
@@ -69,7 +68,7 @@ function gerarProdutoCards($quantidade)
       <img src="../../image/vendedor/editar_perfil_vendedor/pfp_vendedor.png" alt="pfp_vendedor" class="pfp_vendedor">
       <div class="infos_container">
         <div class="nome_vendedor">
-          <h1 class="nome_vendedor">THUNDER GAMES</h1>
+          <h1 class="nome_vendedor">Thunder Games</h1>
         </div>
         <div class="produtos_vendedor_container">
           <img src="../../image/geral/icons/loja_icon.svg" class="icon_produtos_vendedor">
@@ -81,7 +80,7 @@ function gerarProdutoCards($quantidade)
         </div>
         <div class="tempo_vendedor_container">
           <img src="../../image/geral/icons/perfil_membros_icon.svg">
-          <p class="tempo_vendedor">Vendedor há: 4 Meses</p>
+          <p class="tempo_vendedor">Cliente há: 4 Meses</p>
         </div>
         <div class="localizacao_vendedor_container">
           <img src="../../image/geral/icons/localizacao_icon.svg">
@@ -91,16 +90,16 @@ function gerarProdutoCards($quantidade)
       <hr class="separador_mini_perfil">
       <div class="about_container">
         <img src="../../image/geral/icons/texto_icon.svg" class="icon_about_us">
-        <h1 class="sobre_nos_vendedor">Sobre nós:</h1>
+        <h1 class="sobre_nos_vendedor">Sobre:</h1>
         <p class="text_about">Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</p>
       </div>
       <div class="contatos_container">
         <div class="contatos_vendedor">
-          <img src="../../image/geral/icons/instagram_icon.svg" class="icon_instagram_vendedor">
-          <a href="#" class="instagram_vendedor">my.thudergames</a>
+          <img class="base_icon" src="../../image/geral/icons/instagram_icon.svg" class="icon_instagram_vendedor">
+          <a href="#" class="instagram_vendedor">my.Thunder_Games</a>
           <hr class="linha_vertical_mini">
-          <img src="../../image/geral/icons/facebook_icon.svg" class="icon_facebook_vendedor">
-          <a href="#" class="facebook_vendedor">thundergames</a>
+          <img class="base_icon" src="../../image/geral/icons/facebook_icon.svg" class="icon_facebook_vendedor">
+          <a href="#" class="facebook_vendedor">Thunder_Games</a>
         </div>
       </div>
     </div>
@@ -124,12 +123,12 @@ function gerarProdutoCards($quantidade)
         </div>
       </form>
       <div class="botoes_redefinir">
-        <button type="button" class='redefinir_senha_vendedor'>
+        <button type="button" class='base_botao btn_blue redefinir_senha_vendedor'>
           <img src="../../image/geral/botoes/sair_branco_icon.svg" alt="">
           Redefinir senha
 
         </button>
-        <button type="button" class="redefinir_email_vendedor">
+        <button type="button" class="base_botao btn_blue redefinir_email_vendedor">
           <img src="../../image/geral/botoes/sair_branco_icon.svg" alt="">
           Redefinir email
         </button>
@@ -140,10 +139,12 @@ function gerarProdutoCards($quantidade)
           <p class="main_text_redes">Redes Sociais:</p>
         </div>
         <div class="redes_edit">
-          <img src="../../image/geral/icons/instagram_icon.svg" alt="instagram"> <a href="#" class="link_instagram">my.thudergames </a>
-          <img src="../../image/geral/icons/facebook_icon.svg" alt="facebook"> <a href="#" class="link_facebook">thundergames</a>
+          <img src="../../image/geral/icons/instagram_icon.svg" alt="instagram">
+           <a href="#" class="link_instagram">my.Thunder_Games </a>
+          <img src="../../image/geral/icons/facebook_icon.svg" alt="facebook">
+           <a href="#" class="link_facebook">Thunder_Games</a>
         </div>
-        <button class="botao_edit">
+        <button class="base_botao btn_blue botao_edit">
           <img src="../../image/geral/icons/caneta_branca_icon.svg" alt="">
           Editar
         </button>
@@ -172,34 +173,30 @@ function gerarProdutoCards($quantidade)
       </div>
     </div>
     <div class="destaques">
-      <div class="destaques_text">
-        <hr class="linha_vertical">
-        <img src="../../image/geral/icons/loja_icon.svg" class="icon_destaques_vendedor">
-        <p class="destaques_main_text">Destaques</p>
+        <div class="destaques_text">
+          <hr class="linha_vertical">
+          <img src="../../image/geral/icons/loja_icon.svg" class="icon_destaques_vendedor">
+          <p class="destaques_main_text">Destaques</p>
+        </div>
+        <div class="destaques_container">
+          <?php gerarProdutoCards(3); ?>
+          <button class="add">
+            <img src="../../image/geral/icons/add_icon.svg">
+          </button>
+        </div>
+        <p class="destaques_num">3 / 5</p>
       </div>
-      <div class="destaques_container">
-        <?php gerarProdutoCards(3); ?>
-        <button class="add">
-          <img src="../../image/geral/icons/add_icon.svg">
-        </button>
-      </div>
-      <p class="destaques_num">3 / 5</p>
-    </div>
     <div class="botoes">
-      <button class="salvar">
-        <img src="../../image/geral/botoes/v_branco_icon.svg">
-        Salvar
+      <button class="base_botao btn_blue salvar">
+        <img src="../../image/geral/botoes/v_branco_icon.svg">Salvar
       </button>
-      <button class="cancelar">
-        <img src="../../image/geral/botoes/x_vermelho_icon.svg">
-        Cancelar
+      <button class="base_botao btn_outline_red cancelar">
+        <img src="../../image/geral/botoes/x_vermelho_icon.svg">Cancelar
       </button>
     </div>
   </main>
-
   <?php
   include_once('../../pages/geral/footer.php');
   ?>
-
 </body>
 </html>

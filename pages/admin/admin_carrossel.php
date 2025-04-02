@@ -25,7 +25,7 @@
       <div class="admin_carrossel_content">
         <div class="admin_carrossel_main_text_container">
           <h1 class="admin_carrossel_texto_main_text">
-            <img  class="admin_carrossel_img_anuncios" src="../../image/geral/icons/megafone_icon.svg" alt="">
+            <img class="admin_carrossel_img_anuncios base_icon" src="../../image/geral/icons/megafone_icon.svg" alt="">
               ANÚNCIOS
             </h1>
           <hr class="admin_carrossel_linha_main_text">
@@ -36,13 +36,8 @@
             <hr class="admin_carrossel_linha_vertical_informacoes_anuncio">
             <h1 class="admin_carrossel_main_text_informacoes_anuncio">
             <p>
-            <img src="../../image/geral/icons/info_icon.svg" alt="">
-              <defs>
-                <clipPath id="clip0_7984_13526">
-                  <rect width="19" height="18" fill="white"/>
-                </clipPath>
-              </defs>
-              </svg> INFORMAÇÕES DO ANÚNCIO</h1>
+            <img class="base_icon" src="../../image/geral/icons/info_icon.svg" alt="">
+              INFORMAÇÕES DO ANÚNCIO</h1>
           </div>
           
           <form action="" method="post" class="admin_carrossel_forms_informacoes_anuncio_1">

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
     <title>E ao Quadrado</title>
-    <link rel="stylesheet" href="../../css/vendedor/confirmar_pedido.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/vendedor/confirmar_pedido.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="../../js/geral/base.js"></script>
 </head>
@@ -19,10 +19,10 @@
     <?php
     include_once('../../pages/geral/navbar.php');
     ?>
-    <div class="confirmar_pedido_body">
+    <main class="confirmar_pedido_body">
         <div class="confirmar_pedido_titulo">
             <div class="confirmar_pedido_text_titulo">
-                <img src="../../image/geral/icons/carrinho_carga_icon.svg" alt="">
+                <img class="base_icon" src="../../image/geral/icons/carrinho_carga_icon.svg" alt="">
                 <h1>CONFIRMAR PEDIDO</h1>
             </div>
                 
@@ -88,7 +88,7 @@
 
             <div class="confirmar_pedido_container_2">
                 <div class="confirmar_pedido_titulo_cronograma">
-                    <img src="../../image/geral/icons/relogio_icon.svg" alt="">
+                    <img class="base_icon" src="../../image/geral/icons/relogio_icon.svg" alt="">
                     <h1>CRONOGRAMA</h1>
                 </div>
                     
@@ -192,7 +192,7 @@
                 </div>
             </div>
         </div>
-    </div>
+</main>
     <?php 
       include_once('../../pages/geral/footer.php');
     ?>

@@ -36,13 +36,8 @@
 .perfil_admin_text_titulo {
   display: flex;
   justify-self: center;
-}
 
-.perfil_admin_text_titulo img {
-  align-self: center;
-  width: 28px;
-  height: auto;
-  margin-right: 8px;
+  gap: 8px;
 }
 
 .perfil_admin_text_titulo h1 {
@@ -104,15 +99,8 @@
 .perfil_admin_text_1, 
 .perfil_admin_text_2 {
   display: flex;
-}
 
-.perfil_admin_text_1 img, 
-.perfil_admin_text_2 img{
-  margin: 0px 8px;
-  width: 24px;
-  height: 24px;
-  align-self: center;
-  justify-self: center;
+  gap: 8px;
 }
 
 .perfil_admin_vertical {
@@ -341,8 +329,8 @@ input:checked + .toggle_slider::before {
 }
 
 .perfil_admin_salvar img{
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   cursor: pointer;
   margin-right: 8px;
 }
