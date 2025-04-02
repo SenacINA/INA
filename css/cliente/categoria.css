@@ -237,7 +237,7 @@
     padding: 16px;
     height: fit-content;
     border-radius: 4px;
-    background-color: var(--branco_gelo);
+    background-color: #fff;
 }
 
 .grid_filtro {
