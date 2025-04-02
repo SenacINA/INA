@@ -13,6 +13,8 @@
 </head>
 <body>
     <?php
+    // echo var_dump($_SERVER['REQUEST_URI']);
+    // echo var_dump($_SERVER['DOCUMENT_ROOT']);
     $isIndex = true;
     include_once('./pages/geral/navbar.php');
     ?>
