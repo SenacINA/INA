@@ -16,10 +16,50 @@
   justify-items: center;
 }
 
-.carrinho_top {
-  position: relative;
-  margin-bottom: 61px;
-  grid-row: 1;
+.carrinho_divisoria {
+  min-width: 4px;
+  width: 10%;
+  height: 3px;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--carolina);
+}
+
+.carrinho_nav_item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  img {
+    height: 40px;
+    width: 40px;
+  }
+  span {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--carolina);
+  }
+}
+
+.carrinho_nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 16px;
+  width: 100%;
+  padding: 16px 0;
+}
+
+.carrinho_nav_selected {
+  filter: brightness(0.9);
+}
+
+.separador_carrinho {
+  width: 95%;
+  border: 0;
+  background-color: var(--carolina);
+  border-radius: 5px;
+  height: 3px;
 }
 
 .navbar {
@@ -30,25 +70,24 @@
 
 .forms_dados {
   grid-row: 2;
-  width: 1600px;
-  height: 678px;
+  width: 90%;
+  height: 870px;
   background-color: #fff;
 }
 
 .main_container_carrinho_dados {
   display: grid;
   align-items: center;
-  justify-content: center;
   justify-items: center;
 }
 
 .container_forms {
   position: relative;
-  top: 28px;
+  margin-top: 28px;
   display: grid;
-  column-gap: 10%;
-  grid-template-columns: 500px 500px;
-  grid-template-rows: min-content;
+  column-gap: 5%;
+  row-gap: 3%;
+  grid-template-columns: 1fr 1fr;
   align-items: start;
   justify-content: center;
   justify-items: center;
@@ -67,7 +106,7 @@
 }
 
 .forms_carrinho {
-  grid-row: 2;
+  grid-row: 1;
   color: #0f3b62;
   font-feature-settings: "liga" off, "clig" off;
   font-family: Jost;
@@ -116,28 +155,13 @@
 
 #cidade {
   grid-column: 2;
-  grid-row: 2; 
-}
-
-.dados_adicionais {
-  display: grid;
-  grid-column: 2;
   grid-row: 2;
-  color: #0f3b62;
-  font-feature-settings: "liga" off, "clig" off;
-  font-family: Jost;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 130%;
-  
 }
 
 .botoes_carrinho {
-  grid-column: 2;
-  grid-row: 6;
+  grid-column: 1;
+  grid-row: 2;
   position: relative;
-  top: calc(80px);
   display: grid;
   grid-template-columns: auto auto;
   column-gap: 10%;
@@ -161,10 +185,155 @@
   line-height: normal;
   text-transform: uppercase;
   border-radius: 5px;
-  background: #1B98E0;
+  background: #1b98e0;
 }
 
-.footer_carrinho {
-  position: relative;
-  margin-top: 164px;
+.informacoes_salvas {
+  width: 100%;
+}
+
+.enderecos_salvos_main_text {
+  color: #247ba0;
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: Jost;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.enderecos_salvos_container {
+  width: 95%;
+  height: 600px;
+  overflow-y: auto;
+  background-color: var(--branco_gelo);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4%;
+  padding: 2%;
+}
+
+.info_container {
+  width: 100%;
+  background-color: var(--azul_leve);
+  padding: 2%;
+  border-radius: 5px;
+  display: flex;
+  column-gap: 2%;
+}
+
+.endereco_info_adicional {
+  color: var(--cinza);
+}
+
+.text_info {
+  display: flex;
+  width: 100%;
+}
+
+.botoes_info {
+  margin-left: 45%;
+  display: flex;
+  column-gap: 50%;
+  width: max-content;
+}
+
+.edit_info,
+.remove_info {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.remove_info > img,
+.edit_info > img {
+  width: 25px;
+}
+
+@media (max-width: 1024px) {
+  .forms_dados {
+    height: 1580px;
+  }
+  .container_forms {
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-self: center;
+  }
+  .informacoes_salvas {
+    grid-row: 1;
+  }
+  .forms_carrinho {
+    grid-row: 2;
+  }
+  .botoes_carrinho {
+    grid-row: 3;
+  }
+  .botoes_info {
+    margin-left: 30%;
+  }
+}
+
+@media (max-width: 425px) {
+  .main_text_carrinho_dados {
+    font-size: 28px;
+  }
+  .enderecos_salvos_main_text {
+    font-size: 22px;
+  }
+  .carrinho_nav {
+    column-gap: 10px;
+  }
+  .carrinho_divisoria {
+    width: 16px;
+  }
+  .carrinho_nav_item > img {
+    width: 20px;
+  }
+  .carrinho_nav_item > span {
+    font-size: 15px;
+  }
+  .botoes_info {
+    margin-left: 20%;
+  }
+  .base_input {
+    width: 95%;
+  }
+  .informacoes_cep input {
+    width: 90%;
+  }
+  .botoes_info {
+    margin-left: 8%;
+  }
+  .endereco_info {
+    font-size: 18px;
+  }
+  .endereco_info_adicional {
+    font-size: 14px;
+  }
+  .enderecos_salvos_container {
+    justify-self: center;
+  }
+  .informacoes_cep {
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+  .forms_carrinho > label,
+  .informacoes_cep > label {
+    font-size: 18px;
+  }
+  .enderecos_salvos_container {
+    width: 95%;
+  }
+  .container_forms {
+    justify-self: auto;
+  }
+  .remove_info > img,
+  .edit_info > img {
+    width: 20px;
+  }
+  .forms_dados {
+    height: 1550px;
+  }
 }
