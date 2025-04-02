@@ -4,15 +4,6 @@ body {
     background: #DCE5EB;
 }
 
-body, html {
-    min-height: 100vh;
-    min-width: 100vw;
-    overflow-x: hidden;
-}
-
-
-
-
 .mySlides {display: none}
 /* img {vertical-align: middle;} */
 

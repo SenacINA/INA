@@ -101,7 +101,11 @@
         include_once('./pages/geral/footer.php');
     ?>
 </div>
+<button id="btnTopo" class="btn-topo" title="Voltar ao topo">
+    <img src="./image/geral/icons/seta_cima.svg" alt="">
+</button>
 <script src="js/geral/index.js"></script>
 <script src='js/cliente/carrossel.js' data-isindex="1"></script>
+<script src='js/geral/btn_topo.js' data-isindex="1"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ function Carrossel($isIndex = 1) {
     $URL = $isIndex === 1 ? '' : '../.';
 
     echo <<<HTML
-    <div class="carrossel">
+    <div class="carrossel" style='background: url(${URL}./image/index/fundoCarrossel.jpg) center/cover no-repeat;'>
         <div class="carrossel_content">
             <button class="carrossel_but back">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -12,7 +12,7 @@ function Carrossel($isIndex = 1) {
             </button>
             <div class="carousel-container">
                 <div class="carousel-wrapper">
-                    <img id="carrossel_image" src="" alt="Imagem Carrossel">
+                    <img id="carrossel_image" alt="Imagem Carrossel">
                 </div>
             </div>
             <button class="carrossel_but forward">

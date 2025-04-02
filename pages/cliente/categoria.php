@@ -27,7 +27,7 @@
         ?>
     </div>
 
-    <main class="conteudo_categoria grid_categoria">
+    <main class="conteudo_categoria grid_categoria gradiente_azul">
         <div class="mobile-filters-dropdown">
             <button class="dropdown-toggle">
                 Filtrar
@@ -36,7 +36,7 @@
         </div>
 
         <div class="filtros">
-            <div class="container_filtro bg_branco">
+            <div class="container_filtro ">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Marcas</h2>
                     <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
@@ -61,7 +61,7 @@
                 </div>
             </div>
 
-            <div class="container_filtro bg_branco">
+            <div class="container_filtro ">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Conexão</h2>
                     <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="container_filtro bg_branco">
+            <div class="container_filtro ">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Comprimento</h2>
                     <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
@@ -115,7 +115,7 @@
                 </div>
             </div>
 
-            <div class="container_filtro bg_branco">
+            <div class="container_filtro ">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Cor</h2>
                     <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
@@ -199,7 +199,7 @@
     ?>
     <!-- <script type="text/javascript" src="../../js/cliente/categoria.js"></script> -->
 </body>
-<script src='../../js/geral/btn_topo.js'></script>
+<script src='../../js/geral/btn_topo.js' data-isindex="0"></script>
 <script src="../../js/cliente/carrossel.js" data-isindex="0"></script>
 <script src='../../js/cliente/filtro.js'></script>
 </html>
