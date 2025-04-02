@@ -17,10 +17,13 @@
     include_once('./pages/geral/navbar.php');
     ?>
 <div class="index_body_main_container">
+    
+    <!-- Import Carrossel -->
     <?php
         include_once('./pages/geral/carrossel.php');
         Carrossel(1);
     ?>
+
     <div class="index_body_bg_container">
         <div class="index_body_content_container">
             <div class="index_body_ad_box">
@@ -101,11 +104,16 @@
         include_once('./pages/geral/footer.php');
     ?>
 </div>
+<!-- ButtonTop -->
 <button id="btnTopo" class="btn-topo" title="Voltar ao topo">
     <img src="./image/geral/icons/seta_cima.svg" alt="">
 </button>
+
+<!-- ButtonTop -->
 <script src="js/geral/index.js"></script>
 <script src='js/cliente/carrossel.js' data-isindex="1"></script>
+
+<!-- Import do buttonTop -->
 <script src='js/geral/btn_topo.js' data-isindex="1"></script>
 </body>
 </html>
