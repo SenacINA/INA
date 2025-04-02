@@ -4,9 +4,8 @@
   font-family: "Jost";
 }
 
-body {
-  background-color: #fff;
-  margin-top: 72px !important;
+main {
+  margin-top: 0;
 }
 
 hr {
