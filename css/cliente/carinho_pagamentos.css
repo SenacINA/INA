@@ -68,11 +68,6 @@
   background-color: var(--cinza);
 }
 
-.navbar {
-  width: 100%;
-  height: 67px;
-  background-color: beige;
-}
 
 .main_pagamentos {
   grid-row: 2;

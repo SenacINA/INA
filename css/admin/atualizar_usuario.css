@@ -6,13 +6,6 @@
   user-select: none;
 }
 
-/* NAVBAR */
-.atualizar_usuario_nav_bar { 
-width: 100%;
-height: 67px;
-background-color: black;
-}
-
 /* CORPO PRINCIPAL */
 .atualizar_usuario_body {
 display: flex;

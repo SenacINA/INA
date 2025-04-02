@@ -1,3 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Jost;
+}
+
+
 .gerenciar_produtos_body_container {
     padding: 0px 48px 16px;
     display: flex;
@@ -17,11 +24,7 @@
     padding: 16px 32px 16px 32px;
   }
   
-  .gerenciar_produtos_navbar_principal {
-    background-color: #fff;
-    width: 100%;
-    height: 67px;
-  }
+
 
   .voltar{
     margin-top: 24px;
@@ -37,7 +40,7 @@
     display: flex;
     gap: 8px;
 
-    & img{
+    & img{  
       width: 32px;
       height: 100%;
     }

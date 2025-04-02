@@ -14,13 +14,7 @@ body {
 }
 
 /* start header */
-.cadastro_vendedor1_nav_bar {
-    width: 100%;
-    height: 67px;
-    color: rgb(0, 0, 0);
-    background-color: #0F3B62;
-    display: grid;
-}
+
 /* end header */
 
 .cadastro_vendedor1_titulo{
@@ -181,13 +175,6 @@ ol li::before {
 
 /* Responsividade aprimorada para mobile */
 @media (max-width: 768px) {
-    .cadastro_vendedor1_nav_bar {
-        height: 67px;
-        padding: 0 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
 
     .cadastro_vendedor1_titulo{
         display: flex;
