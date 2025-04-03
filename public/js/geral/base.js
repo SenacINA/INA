@@ -1,3 +1,11 @@
+// @ts-check
+
+/**
+ * Redireciona o usuário para página
+ * @param {string} url 
+ * @param {number} loc Inteiro
+ * @param {string} params SearchParams
+ */
 function pag(url, loc = 1, params = "") {
     if (loc === 0) {
         window.location.href = "./pages/" + url + ".php" + params;
@@ -10,23 +18,6 @@ function selectPag(event){
     pag(event);
 }
 
-function login(){
-    switch (document.getElementById("email").value) {
-        case "admin":
-            pag("admin/dashboard");
-            break;
-        case "vendedor":
-            pag("vendedor/perfil_vendedor");
-            break;
-        case "cliente":
-            pag("cliente/perfil_cliente");
-            break;
-        default:
-            alert("Login Incorreto");
-            break;
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const openModalBtn = document.getElementById('baseNavSideBar');
     const closeModalBtn = document.getElementById('close-modal');
@@ -37,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to open the modal
     function openModal() {
         // Show the modal container
+        if(!modalContainer || !modal)return
         modalContainer.removeAttribute('hidden');
         modalContainer.removeAttribute('inert');
         
@@ -62,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to close the modal
     function closeModal() {
+        if(!modalContainer || !openModalBtn)return
         // Hide the modal container
         modalContainer.setAttribute('hidden', '');
         modalContainer.setAttribute('inert', '');
@@ -88,10 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add event listeners
-    openModalBtn.addEventListener('click', openModal);
-    closeModalBtn.addEventListener('click', closeModal);
-    modalContainer.addEventListener('click', handleOutsideClick);
-    logout.addEventListener('click', (e) => {
+    openModalBtn && openModalBtn.addEventListener('click', openModal);
+    closeModalBtn && closeModalBtn.addEventListener('click', closeModal);
+    modalContainer && modalContainer.addEventListener('click', handleOutsideClick);
+    logout && logout.addEventListener('click', (e) => {
         const changeble = window.location.href.includes("index") ? "./" : "../../"
         e.preventDefault()
         fetch(`${changeble}model/geral/logout_model.php`, { method: 'POST' })
@@ -114,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('The "inert" attribute is not supported in this browser. Accessibility may be affected.');
         
         // Simple focus trap as fallback
-        modal.addEventListener('keydown', (event) => {
+        modal && modal.addEventListener('keydown', (event) => {
             if (event.key === 'Tab') {
                 const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
                 const firstElement = focusableElements[0];
@@ -122,9 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (event.shiftKey && document.activeElement === firstElement) {
                     event.preventDefault();
+                    //@ts-ignore
                     lastElement.focus();
                 } else if (!event.shiftKey && document.activeElement === lastElement) {
                     event.preventDefault();
+                    //@ts-ignore
                     firstElement.focus();
                 }
             }
