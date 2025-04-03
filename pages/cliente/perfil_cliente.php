@@ -102,7 +102,7 @@ function gerarProdutoCards($quantidade)
                 <img src="../../image/geral/icons/tempo_icon.svg" alt="Icon Loja">
                 <h1>Histórico:</h1>
             </div>
-            <div class="historico_items">
+            <div class="historico_itens">
                 <?php gerarProdutoCards(8); ?>
             </div>
             <div class="ver_mais_container">
