@@ -83,7 +83,7 @@
           </div>
           <forms action="" class="enderecos_salvos_container">
             <div class="info_container">
-              <input type="radio" name="endereco">
+              <input type="radio" name="endereco" class="base_radio" class="base_radio">
               <div class="text_info">
                 <div class="text">
                   <h3 class="endereco_info">Endereço</h3>
@@ -100,7 +100,7 @@
               </div>
             </div>
             <div class="info_container">
-              <input type="radio" name="endereco">
+              <input type="radio" name="endereco" class="base_radio">
               <div class="text_info">
                 <div class="text">
                   <h3 class="endereco_info">Endereço</h3>
@@ -117,7 +117,7 @@
               </div>
             </div>
             <div class="info_container">
-              <input type="radio" name="endereco">
+              <input type="radio" name="endereco" class="base_radio">
               <div class="text_info">
                 <div class="text">
                   <h3 class="endereco_info">Endereço</h3>
@@ -134,7 +134,7 @@
               </div>
             </div>
             <div class="info_container">
-              <input type="radio" name="endereco">
+              <input type="radio" name="endereco" class="base_radio">
               <div class="text_info">
                 <div class="text">
                   <h3 class="endereco_info">Endereço</h3>
@@ -151,7 +151,7 @@
               </div>
             </div>
             <div class="info_container">
-              <input type="radio" name="endereco">
+              <input type="radio" name="endereco" class="base_radio">
               <div class="text_info">
                 <div class="text">
                   <h3 class="endereco_info">Endereço</h3>
@@ -168,7 +168,7 @@
               </div>
             </div>
             <div class="info_container">
-              <input type="radio" name="endereco">
+              <input type="radio" name="endereco" class="base_radio">
               <div class="text_info">
                 <div class="text">
                   <h3 class="endereco_info">Endereço</h3>
@@ -185,7 +185,7 @@
               </div>
             </div>
             <div class="info_container">
-              <input type="radio" name="endereco">
+              <input type="radio" name="endereco" class="base_radio">
               <div class="text_info">
                 <div class="text">
                   <h3 class="endereco_info">Endereço</h3>
@@ -202,7 +202,7 @@
               </div>
             </div>
             <div class="info_container">
-              <input type="radio" name="endereco">
+              <input type="radio" name="endereco" class="base_radio">
               <div class="text_info">
                 <div class="text">
                   <h3 class="endereco_info">Endereço</h3>

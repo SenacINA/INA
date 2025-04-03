@@ -223,6 +223,18 @@
   border-radius: 5px;
   display: flex;
   column-gap: 2%;
+  align-items: center;
+}
+
+.base_radio {
+  border: 2px solid var(--carolina) !important;
+  &:checked::after {
+    background-color: var(--carolina) !important;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--carolina) !important;
+  }
 }
 
 .endereco_info_adicional {
@@ -253,12 +265,13 @@
   width: 25px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
   .forms_dados {
     height: 1580px;
   }
   .container_forms {
     grid-template-columns: 100%;
+    width: 100%;
     align-items: center;
     justify-self: center;
   }
