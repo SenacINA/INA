@@ -36,6 +36,8 @@ if(!isset($js)) {
 }
 
 $PATH_PUBLIC = $isIndex ? "./public" : "../../../public";
+$PATH_COMPONENTS = $isIndex ? "./app/components" : "../../../app/components";
+$PATH_VIEW = $isIndex ? "./app/views" : "../../../app/views";
 
 $head = "
 <head>

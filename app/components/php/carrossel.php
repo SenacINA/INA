@@ -1,9 +1,9 @@
 <?php
 function Carrossel($isIndex = 1) {
-    $URL = $isIndex === 1 ? '' : '../.';
+    global $PATH_PUBLIC, $PATH_VIEW;
 
     echo <<<HTML
-    <div class="carrossel" style='background: url(${URL}./image/index/fundoCarrossel.jpg) center/cover no-repeat;'>
+    <div class="carrossel" style='background: url({$PATH_PUBLIC}/image/index/fundoCarrossel.jpg) center/cover no-repeat;'>
         <div class="carrossel_content">
             <button class="carrossel_but back">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -28,24 +28,24 @@ function Carrossel($isIndex = 1) {
             <button onclick="currentSlide(3)"></button>
         </div>
         <div class="categorias_nav">
-            <div class="categorias_block" onclick="pag('${URL}./cliente/categoria',0)">
-                <img src="{$URL}./image/index/carrosselHardware.png" alt="">
+            <div class="categorias_block" onclick="pag('{$PATH_VIEW}/cliente/categoria',0)">
+                <img src="{$PATH_PUBLIC}/image/index/carrosselHardware.png" alt="">
                 <p>Hardware</p>
             </div>
-            <div class="categorias_block" onclick="pag('${URL}./cliente/categoria',0)">
-                <img src="{$URL}./image/index/carrosselPerifericos.png" alt="">
+            <div class="categorias_block" onclick="pag('{$PATH_VIEW}/cliente/categoria',0)">
+                <img src="{$PATH_PUBLIC}/image/index/carrosselPerifericos.png" alt="">
                 <p>Periféricos</p>
             </div>
-            <div class="categorias_block" onclick="pag('${URL}./cliente/categoria',0)">
-                <img src="{$URL}./image/index/carrosselEscritorio.png" alt="">
+            <div class="categorias_block" onclick="pag('{$PATH_VIEW}/cliente/categoria',0)">
+                <img src="{$PATH_PUBLIC}/image/index/carrosselEscritorio.png" alt="">
                 <p>Escritório</p>
             </div>
-            <div class="categorias_block" onclick="pag('${URL}./cliente/categoria',0)">
-                <img src="{$URL}./image/index/carrosselCelulares.png" alt="">
+            <div class="categorias_block" onclick="pag('{$PATH_VIEW}/cliente/categoria',0)">
+                <img src="{$PATH_PUBLIC}/image/index/carrosselCelulares.png" alt="">
                 <p>Celulares</p>
             </div>
-            <div class="categorias_block" onclick="pag('${URL}./cliente/categoria',0)">
-                <img src="{$URL}./image/index/carrosselEletro.png" alt="">
+            <div class="categorias_block" onclick="pag('{$PATH_VIEW}/cliente/categoria',0)">
+                <img src="{$PATH_PUBLIC}/image/index/carrosselEletro.png" alt="">
                 <p>Eletrodomésticos</p>
             </div>
         </div>

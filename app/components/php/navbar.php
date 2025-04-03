@@ -1,9 +1,5 @@
 <?php
 
-session_start();
-// Verifica se a variável $isIndex está definida
-$isIndex = isset($isIndex); // Supondo que $isIndex possa vir de algum lugar, como uma sessão ou configuração
-
 function handlePerfil()
 {
   $user = $_SESSION["user_type"] ?? '';

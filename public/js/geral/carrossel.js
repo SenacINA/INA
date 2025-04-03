@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const scriptTag = document.querySelector('script[data-isindex]');
-    const isIndex = parseInt(scriptTag.dataset.isindex, 10) || 0;
-    const URL = isIndex === 1 ? '' : '../.';
+
+    const IS_INDEX = window.location.href.includes('index')
+    const URL = IS_INDEX ? '.' : '../../..';
 
     const desktopImages = [
-        `${URL}./image/carrossel/banner_carrossel_perifericos.png`,
-        `${URL}./image/carrossel/banner_carrossel_escritorio.png`,
-        `${URL}./image/carrossel/banner_carrossel_eletronicos.png`,
-        `${URL}./image/carrossel/banner_carrossel_eletrodomesticos.png`
+        `${URL}/public/image/carrossel/banner_carrossel_perifericos.png`,
+        `${URL}/public/image/carrossel/banner_carrossel_escritorio.png`,
+        `${URL}/public/image/carrossel/banner_carrossel_eletronicos.png`,
+        `${URL}/public/image/carrossel/banner_carrossel_eletrodomesticos.png`
     ];
     
     const mobileImages = [
-        `${URL}./image/carrossel/banner_carrossel_perifericos_mobile.png`,
-        `${URL}./image/carrossel/banner_carrossel_escritorio_mobile.png`,
-        `${URL}./image/carrossel/banner_carrossel_eletronicos_mobile.png`,
-        `${URL}./image/carrossel/banner_carrossel_eletrodomesticos_mobile.png`
+        `${URL}/public/image/carrossel/banner_carrossel_perifericos_mobile.png`,
+        `${URL}/public/image/carrossel/banner_carrossel_escritorio_mobile.png`,
+        `${URL}/public/image/carrossel/banner_carrossel_eletronicos_mobile.png`,
+        `${URL}/public/image/carrossel/banner_carrossel_eletrodomesticos_mobile.png`
     ];
 
     let activeImages = [];

@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
-    <link rel="stylesheet" href="./css/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
-    <title>E ao Quadrado</title>
-    <link rel="icon" type="image/x-icon" href="./image/geral/icone_eaoquadrado.ico">    
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="js/geral/base.js"></script>
-</head>
+    <?php
+        $css = ["/css/index.css"];
+        require_once('./utils/head.php')
+    ?>
 <body>
     <?php
     // echo var_dump($_SERVER['REQUEST_URI']);
     // echo var_dump($_SERVER['DOCUMENT_ROOT']);
-    $isIndex = true;
-    include_once('./pages/geral/navbar.php');
+        include_once("$PATH_COMPONENTS/php/navbar.php");
     ?>
 <div class="index_body_main_container">
     
     <!-- Import Carrossel -->
     <?php
-        include_once('./pages/geral/carrossel.php');
+        include_once("$PATH_COMPONENTS/php/carrossel.php");
         Carrossel(1);
     ?>
 
@@ -30,11 +22,11 @@
         <div class="index_body_content_container">
             <div class="index_body_ad_box">
                 <div class="index_body_big_ad">
-                    <img src="./image/index/BannerCupom25.jpg" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/index/BannerCupom25.jpg" alt="">
                 </div>
                 <div class="index_body_mid_ad">
-                    <img src="./image/index/BannerCupom10.jpg" alt="">
-                    <img src="./image/index/BannerGarantia.jpg" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/index/BannerCupom10.jpg" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/index/BannerGarantia.jpg" alt="">
                 </div>
             </div>
             <h1>Descobertas do Dia</h1>
@@ -47,7 +39,7 @@
                 </div>
                 <div class="index_body_produtos_content">
                     <?php 
-                        include ('./pages/geral/card_produto.php');
+                        include ("$PATH_COMPONENTS/php/card_produto.php");
                         gerarProdutoCards(6, 1);
                     ?>                
                 </div>
@@ -79,7 +71,7 @@
                     </button>
                 </div>
             </div>
-            <img class="index_body_large_ad" src="./image/index/BannerRedragon.jpg" alt="">
+            <img class="index_body_large_ad" src="<?=$PATH_PUBLIC?>/image/index/BannerRedragon.jpg" alt="">
             <div class="index_body_produto_container">
                 <div class="index_body_container_title">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -102,20 +94,18 @@
         </div>
     </div>
     <?php
-        $isIndex = 1;
-        include_once('./pages/geral/footer.php');
+        include_once("$PATH_COMPONENTS/php/footer.php");
     ?>
 </div>
 <!-- ButtonTop -->
 <button id="btnTopo" class="btn-topo" title="Voltar ao topo">
-    <img src="./image/geral/icons/seta_cima.svg" alt="">
+    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_cima.svg" alt="">
 </button>
 
 <!-- ButtonTop -->
-<script src="js/geral/index.js"></script>
-<script src='js/cliente/carrossel.js' data-isindex="1"></script>
+<script src='<?=$PATH_PUBLIC?>/js/geral/carrossel.js' data-isindex="1"></script>
 
 <!-- Import do buttonTop -->
-<script src='js/geral/btn_topo.js' data-isindex="1"></script>
+<script src='<?=$PATH_PUBLIC?>/js/geral/btn_topo.js' data-isindex="1"></script>
 </body>
 </html>
