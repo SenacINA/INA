@@ -89,7 +89,7 @@
         
         <div class="carousel-container">
             <div class="carousel" id="carousel">
-                <img src="../../image/index/Produto01.jpg" alt="Person 1">
+                <img src="../../image/geral/sobre/enzo.png" alt="Person 1">
                 <img src="../../image/index/Produto02.jpg" alt="Person 2">
                 <img src="../../image/index/Produto03.jpg" alt="Person 3">
                 <img src="../../image/index/Produto04.jpg" alt="Person 4">
@@ -116,7 +116,7 @@
         const totalImages = images.length;
         
         const descriptions = [
-            { name: "Roberto Filho", text: "Fez poha nenhuma<br>Fica dando spoiler de Invencível<br>Não consegue concentrar em uma tarefa por mais de 5 minutos.<br>Não gosta de JojoLand" },
+            { name: "Enzo Guenka Lopez", text: "Trabalhou dia e noite para idk man." },
             { name: "Pessoa 2", text: "Descrição da pessoa 2 aqui." },
             { name: "Pessoa 3", text: "Descrição da pessoa 3 aqui." },
             { name: "Pessoa 4", text: "Descrição da pessoa 4 aqui." },
