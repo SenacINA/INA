@@ -1,5 +1,6 @@
 
 
+
 .carrinho_vazio_body{
   display: flex;
   background-color: var(--branco);
@@ -454,7 +455,6 @@
   .carrinho_vazio_holder_final{
     flex-direction: column-reverse;
     width: 100%;
-
   }
 
   .product-details{

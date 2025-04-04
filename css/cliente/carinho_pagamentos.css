@@ -1,8 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-  font-family: "Jost";
-}
+
 
 .fundo {
   height: 100%;
@@ -68,11 +64,6 @@
   background-color: var(--cinza);
 }
 
-.navbar {
-  width: 100%;
-  height: 67px;
-  background-color: beige;
-}
 
 .main_pagamentos {
   grid-row: 2;
