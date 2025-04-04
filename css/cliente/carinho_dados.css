@@ -115,15 +115,11 @@
   font-weight: 600;
   line-height: 130%;
   display: grid;
+  width: 80%;
 }
 
 .forms_carrinho input {
   grid-column: 1;
-}
-
-.base_input {
-  width: 600px;
-  height: 40px;
 }
 
 .informacoes_cep input {
@@ -285,7 +281,22 @@
     grid-row: 3;
   }
   .botoes_info {
-    margin-left: 30%;
+    margin-left: 65%;
+  }
+  .enderecos_salvos_container {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .botoes_info {
+    margin-left: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .botoes_info {
+    margin-left: 40%;
   }
 }
 
@@ -308,23 +319,17 @@
   .carrinho_nav_item > span {
     font-size: 15px;
   }
-  .botoes_info {
-    margin-left: 20%;
-  }
-  .base_input {
-    width: 95%;
-  }
   .informacoes_cep input {
     width: 90%;
   }
   .botoes_info {
-    margin-left: 8%;
+    margin-left: 10%;
   }
   .endereco_info {
-    font-size: 18px;
+    font-size: 15px;
   }
   .endereco_info_adicional {
-    font-size: 14px;
+    font-size: 12px;
   }
   .enderecos_salvos_container {
     justify-self: center;
@@ -348,5 +353,15 @@
   }
   .forms_dados {
     height: 1550px;
+  }
+}
+
+@media (max-width: 375px) {
+  .botoes_info {
+    margin-left: 5%;
+  }
+  .remove_info > img,
+  .edit_info > img {
+    width: 18px;
   }
 }
