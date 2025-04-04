@@ -195,6 +195,35 @@ main{
   color: var(--cinza);
 }
 
+.base_radio {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--branco_gelo);
+    border-radius: 50%;
+    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.2s ease;
+    cursor: pointer;
+    &:checked::after {
+        content: '';
+        width: 16px;
+        height: 16px;
+        background-color: var(--branco_gelo);
+        border-radius: 50%;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--branco_gelo);
+        outline-offset: 2px;
+    }
+}
+
+
 .base_input:disabled{
   border: var(--cinza) solid 2px;
   cursor: default;
