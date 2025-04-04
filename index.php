@@ -110,7 +110,6 @@
 </button>
 
 <!-- ButtonTop -->
-<script src="js/geral/index.js"></script>
 <script src='js/cliente/carrossel.js' data-isindex="1"></script>
 
 <!-- Import do buttonTop -->
