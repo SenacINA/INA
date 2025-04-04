@@ -219,11 +219,11 @@
                         Promoção
                      </h3>
                   </div>
-                  <label class="toggle">
+                  <!-- <label class="toggle">
                      <input type="checkbox" name="toggle-group" id="toggle-promotion">
                      <span class="slider"></span>
                      <h4>Ativar Promoção</h4>
-                  </label>
+                  </label> -->
 
                   <div class='editar_produto_promocao'>
                      <h4>Tipos de Promoção</h4>

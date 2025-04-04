@@ -876,9 +876,25 @@ input:focus + .input_icon {
 }
 
 @media (max-width: 380px) {
+    * {
+        min-width: 0 !important;
+        word-wrap: break-word;
+    }
+    .toolbar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        button {
+            width: 100%;
+        }
+    }
     .editar_produto_main {
         gap: 8px;
     }
+
+    .editar_produto_form_grid {
+        padding: 0;
+    }
+
     .editar_produto_form_buttons {
         flex-direction: column;
         
