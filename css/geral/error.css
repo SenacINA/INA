@@ -1,8 +1,165 @@
 .error_main {
-    align-items: center;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 128px;
+    height: 87vh;
+    row-gap: 32px;
+    align-items: center;
+    align-content: space-between;
+    max-width: 100vw;
+    align-content: center;
+
+    h1 {
+        justify-content: flex-start;
+        display: flex;
+        width: 100%;
+        font-size: 80px;
+        color: var(--carolina);
+    }
 }
 
 .error_erroBot {
     position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    max-width: 100vw;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+#errorMessage{
+    position: absolute;
+}
+
+#homeButton {
+    grid-area: 2 / 1 / 2 / 3;
+    width: fit-content;
+    padding: 0 16px;
+    justify-self: center;
+}
+
+#errorMessage {
+    top: 53%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    height: 55%;
+    object-fit: fill;
+    width: 65%;
+}
+
+#televisionError {
+    z-index: 3;
+    max-height: 600px;
+}
+
+#inaBot {
+    z-index: 4;
+    max-height: 600px;
+    transform: translateX(36%) translateY(2%);
+}
+
+.error_div{
+    position: relative;
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1266px) {
+    #televisionError, #inaBot {
+        max-height: 380px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .error_main {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 0 24px;
+        row-gap: 24px;
+        height: 80vh;
+        h1 {
+            justify-content: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+    }
+
+    #homeButton {
+        grid-area: auto;
+    }
+    
+    #televisionError, #inaBot {
+        max-width: 100%;
+    }
+    
+    #inaBot {
+        transform: none;
+        position: absolute;
+        left: -48%;
+        bottom: -8%;
+    }
+
+    .error_erroBot {
+        justify-content: center;
+        width: fit-content;
+        transform: translateX(16%);
+    }
+}
+
+@media (max-width: 768px) {
+    #homeButton {
+        width: 100%;
+    }
+
+    #televisionError, #inaBot {
+        max-width: 100%;
+    }
+
+    .error_main {
+        h1 {
+            font-size: 32px;
+        }
+    }
+
+    .error_erroBot {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .error_main {
+        padding: 8px;
+        max-height: 75vh;
+    }
+
+    #televisionError, #inaBot {
+        max-height: 260px;
+        height: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .error_main {
+        padding: 8px;
+    }
+
+    #televisionError, #inaBot {
+        max-height: 220px;
+        max-width: 100%;
+    }
 }
