@@ -1,5 +1,5 @@
 <?php
-function Carrossel($isIndex = 1) {
+function Carrossel() {
     global $PATH_PUBLIC, $PATH_VIEW;
 
     echo <<<HTML

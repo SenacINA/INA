@@ -1,56 +1,50 @@
 <?php
 
-session_start();
-$isIndex = false;
-  $current_url = $_SERVER['REQUEST_URI'];
-  if(str_contains($current_url, "index")){
-    $isIndex = true;
+  session_start();
+  // $current_url = $_SERVER['REQUEST_URI']; URL atual do site
+
+/**
+   * Lista de stylesheets para carregar na página
+   * @var string $titulo
+   */
+  if(!isset($titulo)) {
+    $titulo = "E ao Quadrado";
   }
-  // if($isIndex){
-  //   echo "isIndex: true";
-  // }else{
-  //   echo "isIndex: false";
-  // }
-/**
- * Lista de stylesheets para carregar na página
- * @var string $titulo
- */
-if(!isset($titulo)) {
-  $titulo = "E ao Quadrado";
-}
 
-/**
- * Lista de stylesheets para carregar na página
- * @var string[] $css
- */
-if(!isset($css)) {
-  $css = [];
-}
+  /**
+   * Lista de stylesheets para carregar na página
+   * @var string[] $css
+   */
+  if(!isset($css)) {
+    $css = [];
+  }
 
-/**
- * Lista de scripts para carregar na página
- * @var string[] $js
- */
-if(!isset($js)) {
-  $js = [];
-}
+  /**
+   * Lista de scripts para carregar na página
+   * @var string[] $js
+   */
+  if(!isset($js)) {
+    $js = [];
+  }
 
-$PATH_PUBLIC = $isIndex ? "./public" : "../../../public";
-$PATH_COMPONENTS = $isIndex ? "./app/components" : "../../../app/components";
-$PATH_VIEW = $isIndex ? "./app/views" : "../../../app/views";
+  $PATH_PUBLIC = "../../../public";
+  $PATH_COMPONENTS = "../../../app/components";
+  $PATH_VIEW = "../../../app/views";
 
-$head = "
-<head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <link href='https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'> 
-  <link rel='icon' type='image/x-icon' href='$PATH_PUBLIC/image/geral/icone_eaoquadrado.ico'>
-  <title>$titulo</title>
-  <link rel='stylesheet' href='$PATH_PUBLIC/css/style.css'>
-  <script src='$PATH_PUBLIC/js/geral/base.js'></script>
-  ";
+  $head = "
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link href='https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'> 
+    <link rel='icon' type='image/x-icon' href='$PATH_PUBLIC/image/geral/icone_eaoquadrado.ico'>
+    <title>$titulo</title>
+    <link rel='stylesheet' href='$PATH_PUBLIC/css/style.css'>
+    <script src='$PATH_PUBLIC/js/geral/base.js'></script>
+    ";
 
-$str_css = implode('\n' ,array_map(fn($item): string => "<link rel='stylesheet' href='". $PATH_PUBLIC . $item . "'>", $css));
-$str_js = implode('\n' ,array_map(fn($item): string => "<script src='" . $PATH_PUBLIC . $item . "'></script>", $js));
+  //concatena os CSSs e Scripts
+  $str_css = implode('\n' , array_map(fn($item): string => "<link rel='stylesheet' href='". $PATH_PUBLIC . $item . "'>", $css));
+  $str_js = implode('\n' , array_map(fn($item): string => "<script src='" . $PATH_PUBLIC . $item . "'></script>", $js));
 
-echo $head . $str_css . $str_js . "\n</head>";
+  //Valor final injetado na tela
+  echo $head . $str_css . $str_js . "\n</head>";

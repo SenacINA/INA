@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-.parallax_div_animate,.parallax_div_animate:focus-within{
+.parallax_div_animate,
+.parallax_div_animate:focus-within{
 animation-name: slide, final;
 animation-duration: 1.5s, 2s;
 animation-timing-function: ease-out;

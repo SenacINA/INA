@@ -10,7 +10,7 @@
   <!-- Caminho de Icon Correto -->
 
   <?php
-    include_once('../../pages/geral/navbar.php');
+    include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main>
     <div class="cadastro_quadrado">

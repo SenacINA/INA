@@ -1,15 +1,6 @@
-<?php 
-
-if (isset($isIndex) && $isIndex) {
-    $url = '';
-} else {
-    $url = '../.';
-}
-
-?>
 
 <footer class='footer_body'>
-    <img src="<?php echo $url ?>./image/geral/footer_crop.svg" alt="">
+    <img src="<?=$PATH_PUBLIC?>/image/geral/footer_crop.svg" alt="">
     <div class='footer_info'>
         <div class='footer_coluna'>
             <h2>Categorias</h2>
@@ -45,7 +36,7 @@ if (isset($isIndex) && $isIndex) {
         </div>
         <div class='footer_coluna footer_coluna_logo'>
             <div class='footer_logo'>
-                <img src="<?php echo $url ?>./image/index/Logo.svg" alt="">
+                <img src="<?=$PATH_PUBLIC?>/image/index/Logo.svg" alt="">
             </div>
             <div class='footer_whatsapp'>
                 <button>
