@@ -1,6 +1,6 @@
 <?php
 function Carrossel() {
-    global $PATH_PUBLIC, $PATH_VIEW;
+    global $PATH_PUBLIC;
 
     echo <<<HTML
     <div class="carrossel" style='background: url({$PATH_PUBLIC}/image/index/fundoCarrossel.jpg) center/cover no-repeat;'>
@@ -28,23 +28,23 @@ function Carrossel() {
             <button onclick="currentSlide(3)"></button>
         </div>
         <div class="categorias_nav">
-            <div class="categorias_block" onclick="pag('{$PATH_VIEW}/cliente/categoria',0)">
+            <div class="categorias_block" onclick="pag('../cliente/categoria',0)">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselHardware.png" alt="">
                 <p>Hardware</p>
             </div>
-            <div class="categorias_block" onclick="pag('{$PATH_VIEW}/cliente/categoria',0)">
+            <div class="categorias_block" onclick="pag('../cliente/categoria',0)">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselPerifericos.png" alt="">
                 <p>Periféricos</p>
             </div>
-            <div class="categorias_block" onclick="pag('{$PATH_VIEW}/cliente/categoria',0)">
+            <div class="categorias_block" onclick="pag('../cliente/categoria',0)">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselEscritorio.png" alt="">
                 <p>Escritório</p>
             </div>
-            <div class="categorias_block" onclick="pag('{$PATH_VIEW}/cliente/categoria',0)">
+            <div class="categorias_block" onclick="pag('../cliente/categoria',0)">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselCelulares.png" alt="">
                 <p>Celulares</p>
             </div>
-            <div class="categorias_block" onclick="pag('{$PATH_VIEW}/cliente/categoria',0)">
+            <div class="categorias_block" onclick="pag('../cliente/categoria',0)">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselEletro.png" alt="">
                 <p>Eletrodomésticos</p>
             </div>

@@ -29,7 +29,6 @@
 
   $PATH_PUBLIC = "../../../public";
   $PATH_COMPONENTS = "../../../app/components";
-  $PATH_VIEW = "../../../app/views";
 
   $head = "
   <head>
