@@ -153,15 +153,11 @@ function generateModalContent($user) {
   return $content;
 }
 // Função para gerar o valor do onclick com base na variável $isIndex
-function getOnClickValue($path)
-{
-  global $isIndex;
-  return $isIndex ? "pag('$path', 0)" : "pag('$path')";
-}
+
 ?>
 
 <div class="base_nav_nav" id="baseNavHeaderMain">
-  <div class="base_nav_logo_container" onclick="<?php echo getOnClickValue('../index'); ?>">
+  <div class="base_nav_logo_container" onclick="pag('geral/home')">
     <img id="baseNavLogoHeader">
   </div>
   <div class="base_nav_search_container">
@@ -173,7 +169,7 @@ function getOnClickValue($path)
     </button>
   </div>
   <div class="base_nav_button_container">
-    <button class="base_nav_square_button" onclick="<?php echo getOnClickValue(handlePerfil()); ?>">
+    <button class="base_nav_square_button" onclick="pag('<?=handlePerfil()?>')">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <g fill="none" fill-rule="evenodd">
           <path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z" />
@@ -181,7 +177,7 @@ function getOnClickValue($path)
         </g>
       </svg>
     </button>
-    <button class="base_nav_square_button" onclick="<?php echo getOnClickValue('cliente/carrinho_vazio'); ?>">
+    <button class="base_nav_square_button" onclick="pag('cliente/carrinho_vazio')">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="currentColor" d="M17 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2M1 2v2h2l3.6 7.59l-1.36 2.45c-.15.28-.24.61-.24.96a2 2 0 0 0 2 2h12v-2H7.42a.25.25 0 0 1-.25-.25q0-.075.03-.12L8.1 13h7.45c.75 0 1.41-.42 1.75-1.03l3.58-6.47c.07-.16.12-.33.12-.5a1 1 0 0 0-1-1H5.21l-.94-2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2" />
       </svg>
