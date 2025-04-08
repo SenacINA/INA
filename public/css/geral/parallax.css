@@ -1,0 +1,58 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.parallax_div_animate,
+.parallax_div_animate:focus-within{
+animation-name: slide, final;
+animation-duration: 1.5s, 2s;
+animation-timing-function: ease-out;
+animation-delay: 1.5s, 3s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+background-position: left;
+
+background-image: url(../../image/geral/parallax/img_parallax_background.png);
+background-position:  right;
+height: 100vh;
+}
+
+.parallax_img_logo{
+animation-name: logo;
+animation-duration: 1.5s;
+animation-timing-function: ease-out;
+animation-delay: 1.5s;
+animation-iteration-count: 1;
+animation-fill-mode: normal;
+
+position: absolute;
+opacity: 0;
+}
+
+.parallax_div_animate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax_img_logo{
+    position: -100px;
+}
+
+@keyframes slide {
+    0% {background-position: left; }
+    100% {background-position: right;}   
+}
+
+@keyframes final {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes logo {
+    0% {transform: translateY(100%); opacity: 0;}
+    100% {transform: translateY(0%);opacity: 1;}
+}
+
