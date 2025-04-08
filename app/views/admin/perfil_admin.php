@@ -1,28 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E ao Quadrado</title>
-  <link rel="stylesheet" href="../../css/admin/perfil_admin.css">
-  <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-  <script src="../../js/geral/base.js"></script>
-</head>
+<html lang="pt-br">
+<?php
+  $titulo = "Perfil - E ao Quadrado";
+  $css = ["/css/admin/perfil_admin.css"];
+  require_once('../../../utils/head.php');
+?>
 <body>
   <!-- Até 375px -->
 
   <?php
-    include_once('../../pages/geral/navbar.php');
+    include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main>
     <div class="perfil_admin_body">
       <div class="perfil_admin_titulo">
         <div class="perfil_admin_text_titulo">
-          <img class="base_icon" src="../../image/geral/icons/perfil_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_icon.svg" alt="">
           <h1>PERFIL ADMIN</h1>
         </div>
         
@@ -32,23 +25,23 @@
       <div class="perfil_admin_grid_conteudo">
         <div class="perfil_admin_text_1">
           <hr class="perfil_admin_vertical">
-          <img class="base_icon" src="../../image/geral/icons/lista_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_icon.svg" alt="">
           <h1 class="perfil_admin_text">Seu Perfil</h1>
         </div>
         <div class="perfil_admin_text_2">
           <hr class="perfil_admin_vertical">
-          <img class="base_icon" src="../../image/geral/icons/engrenagem_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/engrenagem_icon.svg" alt="">
           <h1 class="perfil_admin_text">Permissões</h1>
         </div>
         
         <div class="perfil_admin_foto">
           <label for="perfil_admin_foto">
-            <img  src="../../image/admin/perfil_admin/perfil_img.svg" alt="" id="img_admin_perfil">
+            <img  src="<?=$PATH_PUBLIC?>/image/admin/perfil_admin/perfil_img.svg" alt="" id="img_admin_perfil">
           </label>
 
           <form action="" method="post" class="perfil_admin_foto_pfp">
             <label for="perfil_admin_foto" class="perfil_admin_foto_label">
-              <img class="base_icon" src="../../image/admin/perfil_admin/enviar_arquivo.svg" alt="Enviar Arquivo" class="perfil_admin_foto">
+              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/admin/perfil_admin/enviar_arquivo.svg" alt="Enviar Arquivo" class="perfil_admin_foto">
             </label>
             <input type="file" name="pfp" id="perfil_admin_foto" class="base_input" style="display: none;">
           </form>
@@ -127,7 +120,7 @@
 
         <div class="perfil_admin_botao_salvar">
           <button class="perfil_admin_salvar" onclick="pag('admin/dashboard')">
-            <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
             <label>SALVAR</label>
           </button>
         </div>

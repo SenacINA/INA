@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E ao Quadrado</title>
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/admin/historico_acesso.css">
-  <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-
+<?php
+  $titulo = "Histórico de Acesso - E ao Quadrado";
+  $css = ["/css/admin/historico_acesso.css"];
+  require_once('../../../utils/head.php');
+?>
 <body>
   <?php
-    include_once('../../pages/geral/navbar.php');
-    ?>
+    include_once("$PATH_COMPONENTS/php/navbar.php");
+  ?>
   <main class="historico_acesso_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="historico_acesso_header_holder">
         <div class="historico_acesso_header_title_1">
-          <img class="base_icon" src="../../image/geral/icons/tempo_icon.svg"/>
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/tempo_icon.svg"/>
           <h1 class="historico_acesso_text_header font_titulo">HISTÓRICO DE ACESSO</h1>
         </div>
         <div class="historico_acesso_linha_sublinhado"></div>
@@ -34,7 +25,7 @@
               <div class="historico_acesso_subtitulo_generico">
                 <div class="historico_acesso_linha_vertical"></div>
                 <div class="historico_acesso_subtitle_holder">
-                  <img class="base_icon" src="../../image/geral/icons/grafico_icon.svg"/>
+                  <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/grafico_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Relátório Geral</p>
                 </div>
               </div>
@@ -56,11 +47,11 @@
                 </div>
                 <div class="historico_acesso_holder_botao">
                   <button type="reset" class="base_botao btn_red historico_acesso_base_botao">
-                    <img src="../../image/geral/botoes/x_branco_icon.svg" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_branco_icon.svg" alt="">
                     CANCELAR
                   </button>
                   <button type="submit" class="base_botao btn_blue historico_acesso_base_botao">
-                    <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
                     CONFIRMAR
                   </button>
                 </div>
@@ -70,7 +61,7 @@
               <div class="historico_acesso_subtitulo_generico">
                 <div class="historico_acesso_linha_vertical"></div>
                 <div class="historico_acesso_subtitle_holder">
-                  <img class="base_icon" src="../../image/geral/icons/perfil_info_icon.svg"/>
+                  <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_info_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Informações de Usuário</p>
                 </div>
               </div>
@@ -103,7 +94,7 @@
       </div>
     </div>
     <div class="historico_acesso_header_title_2">
-      <img class="base_icon" src="../../image/geral/icons/pasta_clock_icon.svg"/>
+      <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="historico_acesso_text_header font_titulo">HISTÓRICO DE ACESSO</h1>
     </div>
     <div class="historico_acesso_table">

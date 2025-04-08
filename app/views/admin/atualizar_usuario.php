@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E ao Quadrado</title>
-  <link rel="stylesheet" href="../../css/admin/atualizar_usuario.css">
-  <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-  <script src="../../js/geral/base.js"></script>
-</head>
+<?php
+  $titulo = "Atualizar Vendedores - E ao Quadrado";
+  $css = ["/css/admin/atualizar_usuario.css"];
+  require_once('../../../utils/head.php');
+?>
 <body> 
   <!-- Até 375px -->
   <!-- Caminho de Icon Correto -->
   
   <?php
-    include_once('../../pages/geral/navbar.php');
+    include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main>
     <div class="atualizar_usuario_body">
       <div class="atualizar_usuario_titulo">
         <div class="atualizar_usuario_text_titulo">
-          <img class="base_icon" src="../../image/geral/icons/atualizar_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/atualizar_icon.svg" alt="">
           <h1>ATUALIZAR USUARIO</h1>
         </div>
         <hr class="atualizar_usuario_linha_titulo">
@@ -35,7 +28,7 @@
       <div class="atualizar_usuario_grid_conteudo">
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_1"> 
           <hr class="atualizar_usuario_vertical">
-          <img class="base_icon" src="../../image/geral/icons/lista_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Alternar Permissões</h1>
         </div>
 
@@ -56,7 +49,7 @@
         
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_2">
           <hr class="atualizar_usuario_vertical">
-          <img class="base_icon" src="../../image/geral/icons/perfil_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Dados Pessoais</h1>
         </div>
         
@@ -96,7 +89,7 @@
 
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_3">
           <hr class="atualizar_usuario_vertical">
-          <img class="base_icon" src="../../image/geral/icons/localizacao_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Localização</h1>
         </div>
 
@@ -137,13 +130,13 @@
         </form>
 
         <div class="atualizar_usuario_text_titulo" id="atualizar_usuario_text_titulo_mobile">
-          <img class="base_icon" src="../../image/geral/icons/lista_caneta_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_caneta_icon.svg" alt="">
           <h1>ALTERAR DADOS</h1>
         </div> 
 
         <div class="atualizar_usuario_text" id="atualizar_usuario_text_4">
           <hr class="atualizar_usuario_vertical">
-          <img class="base_icon" src="../../image/geral/icons/engrenagem_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/engrenagem_icon.svg" alt="">
           <h1 class="atualizar_usuario_text">Alterar Permissões</h1>
         </div>
 
@@ -203,7 +196,7 @@
         </form>
         <div class="atualizar_usuario_botao_salvar">
           <button class="atualizar_usuario_salvar base_botao">
-            <img src="../../image/geral/botoes/v_branco_icon.svg" alt="">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
             <label>CONFIRMAR</label>
           </button>
         </div>

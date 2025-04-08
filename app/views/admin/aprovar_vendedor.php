@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E ao Quadrado</title>
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/admin/aprovar_vendedor.css">
-  <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script src="../../js/geral/base.js"></script>
-</head>
+<?php
+  $titulo = "Aprovar Vendedores - E ao Quadrado";
+  $css = ["/css/admin/aprovar_vendedor.css"];
+  require_once('../../../utils/head.php');
+?>
 <body>
   <!-- Até 768px -->
   <!-- Caminho de Icon Correto -->
-  
   <?php
-    include_once('../../pages/geral/navbar.php');
-    ?>
+    include_once("$PATH_COMPONENTS/php/navbar.php");
+  ?>
   <main class="aprovar_vendedor_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="aprovar_vendedor_header_holder">
         <div class="aprovar_vendedor_text_titulo">
-          <img class="base_icon" src="../../image/geral/icons/perfil_verificado_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_verificado_icon.svg" alt="">
           <h1 class="aprovar_vendedor_header_holder font_titulo">APROVAR VENDEDOR</h1>
         </div>
         <hr class="aprovar_vendedor_linha_sublinhado">
@@ -38,7 +28,7 @@
               <div class="aprovar_vendedor_subtitulo_generico">
                 <div class="aprovar_vendedor_linha_vertical"></div>
                 <div class="aprovar_vendedor_subtitle_holder">
-                  <img class="base_icon" src="../../image/geral/icons/lista_lupa_icon.svg" />
+                  <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_lupa_icon.svg" />
                   <h2 class="font_subtitulo font_celadon">Pesquisar Requisições</p>
                 </div>
               </div>
@@ -93,12 +83,12 @@
                 </div>
                 <div class="aprovar_vendedor_holder_botao">
                   <button type="reset" class="base_botao btn_red">
-                    <img src="../../image/geral/botoes/x_branco_icon.svg">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_branco_icon.svg">
                     CANCELAR
                   </button>
 
                   <button type="submit" class="base_botao btn_blue">
-                    <img src="../../image/geral/botoes/v_branco_icon.svg">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">
                     CONFIRMAR
                   </button>
                 </div>
@@ -108,7 +98,7 @@
               <div class="aprovar_vendedor_subtitulo_generico">
                 <div class="aprovar_vendedor_linha_vertical"></div>
                 <div class="aprovar_vendedor_subtitle_holder">
-                  <img class="base_icon" src="../../image/geral/icons/grafico_icon.svg" />
+                  <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/grafico_icon.svg" />
                   <h2 class="font_subtitulo font_celadon">Estatísticas de Aprovação</h2>
                 </div>
               </div>
@@ -150,7 +140,7 @@
       </div>
     </div>
     <div class="aprovar_vendedor_header_title">
-      <img class="base_icon" src="../../image/geral/icons/pasta_clock_icon.svg"/>
+      <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/pasta_clock_icon.svg"/>
       <h1 class="aprovar_vendedor_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
     <div class="aprovar_vendedor_table">
