@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const IS_INDEX = window.location.href.includes('index')
-    const URL = IS_INDEX ? '.' : '../../..';
+    
+    const URL = '../../..';
 
     const desktopImages = [
         `${URL}/public/image/carrossel/banner_carrossel_perifericos.png`,

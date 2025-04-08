@@ -111,39 +111,30 @@ function exibirProdutos()
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E ao Quadrado</title>
-  <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/cliente/carrinho_vazio.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script src="../../js/geral/base.js"></script>
-  <script src="../../js/cliente/carrinho.js"></script>
-  
-</head>
+<?php
+  $css = ["/css/cliente/carrinho_vazio.css"];
+  require_once("../../../utils/head.php")
+?>
 
 <body class="carrinho_vazio_body">
   <?php
-  include_once('../../pages/geral/navbar.php');
+    include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
+
   <main class="carrinho_vazio_main">
     <div class="carrinho_vazio_nav">
       <div class="carrinho_vazio_nav_item carrinho_vazio_nav_selected">
-        <img src="../../image/carrinho/carrinho.svg">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/carrinho.svg">
         <span>Carrinho</span>
       </div>
       <hr class="carrinho_vazio_divisoria">
       <div class="carrinho_vazio_nav_item">
-        <img src="../../image/carrinho/identificacao.svg">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/identificacao.svg">
         <span>Identificação</span>
       </div>
       <hr class="carrinho_vazio_divisoria">
       <div class="carrinho_vazio_nav_item">
-        <img src="../../image/carrinho/pagamento.svg">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/pagamento.svg">
         <span>Pagamento</span>
       </div>
     </div>
@@ -163,11 +154,11 @@ function exibirProdutos()
             </div>
             <div class="carrinho_vazio_conteudo_servicos">
               <div class="carrinho_vazio_servicos_text">
-                <img src="../../image/carrinho/servico.svg" class="servico_icon">
+                <img src="<?=$PATH_PUBLIC?>/image/carrinho/servico.svg" class="servico_icon">
                 <p class="font_subtitulo font_celadon">SERVIÇOS</p>
               </div>
               <div class="subtotal_container_text">
-                <img src="../../image/carrinho/seta.svg" class="seta">
+                <img src="<?=$PATH_PUBLIC?>/image/carrinho/seta.svg" class="seta">
                 <p class="font_descricao font_celadon font_bold">Subtotal serviços: R$ 00,00</p>
               </div>
             </div>
@@ -187,24 +178,26 @@ function exibirProdutos()
       </div>
       <div class="carrinho_vazio_botoes_holder">
         <button class="carrinho_vazio_start base_botao btn_outline_blue" onclick="history.back()">
-          <img src="../../image\geral\botoes\seta_esquerda_carolina_icon.svg">
+          <img src="<?=$PATH_PUBLIC?>/image\geral\botoes\seta_esquerda_carolina_icon.svg">
           VOLTAR
         </button>
         <div class="carrinho_vazio_holder_final">
           <button id="carrinhoVazioRemoverTudo" class="base_botao btn_red">
-            <img src="../../image\geral\botoes\x_branco_icon.svg">
+            <img src="<?=$PATH_PUBLIC?>/image\geral\botoes\x_branco_icon.svg">
             REMOVER TUDO
           </button>
 
           <button class="base_botao btn_blue" onclick="pag('cliente/carrinho_dados')">
-            <img src="../../image\geral\botoes\v_branco_icon.svg">
+            <img src="<?=$PATH_PUBLIC?>/image\geral\botoes\v_branco_icon.svg">
             SALVAR
           </button>
         </div>
       </div>
     </div>
   </main>
-  
+
+
 </body>
+
 
 </html>

@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <title>E ao Quadrado</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="../../css/cliente/carinho_dados.css">
-  <link rel="stylesheet" href="../../css/style.css">
-  <script src="../../js/geral/base.js"></script>
-</head>
+ <?php
+  $css = ["/css/cliente/carinho_dados.css"];
+  require_once("../../../utils/head.php")
+?>
 <body class="fundo">
   <!-- fazer responsividade -->
   <!-- arrumar o nome das class -->
    
   <?php
-    include_once('../../pages/geral/navbar.php');
+    include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
 
   <div class="carrinho_dados">
-    <img src="../../image/cliente/carrinho_dados/carrinho_top.png" class="carrinho_top">
+    <img src="<?=$PATH_PUBLIC?>/image/cliente/carrinho_dados/carrinho_top.png" class="carrinho_top">
     <div class="forms_dados">
       <div class="main_container_carrinho_dados">
         <p class="main_text_carrinho_dados">Identificação</p>
-        <img src="../../image/cliente/carrinho_dados/separador_carrinho.png" class="separador_carrinho">
+        <img src="<?=$PATH_PUBLIC?>/image/cliente/carrinho_dados/separador_carrinho.png" class="separador_carrinho">
       </div>
       <div class="container_forms">
         <form action="" class="forms_carrinho">
@@ -60,13 +52,13 @@
           </select>
         </form>
         <div class="botoes_carrinho">
-          <button class="salvar_carrinho" onclick="pag('cliente/carrinho_pagamentos')"><img src="../../image/geral/confirm_botao.svg">Salvar</button>
+          <button class="salvar_carrinho" onclick="pag('cliente/carrinho_pagamentos')"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
         </div>
       </div>
     </div>
   </div>
-  <?php 
-      include_once('../../pages/geral/footer.php');
+  <?php
+        include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
 </body>
 

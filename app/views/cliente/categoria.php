@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/cliente/footer.css">
-    <link rel="stylesheet" href="../../css/cliente/categoria.css">
-    <script src="../../js/geral/base.js"></script>
-    <title>Categoria</title>
-</head>
+<?php
+  $css = ["/css/cliente/categoria.css"];
+  require_once("../../../utils/head.php")
+?>
 
 <body class="gradiente_azul">
     <?php
-    include_once('../../pages/geral/navbar.php');
+        include_once("$PATH_COMPONENTS/php/navbar.php");
     ?>
 
     <div class="img_fundo largura_com_scroll">
         <?php
-            include_once('../../pages/geral/carrossel.php');
-            Carrossel(0);
+            include_once("$PATH_COMPONENTS/php/carrossel.php");
+            Carrossel();
         ?>
+        
     </div>
 
     <main class="conteudo_categoria grid_categoria gradiente_azul">
         <div class="mobile-filters-dropdown">
             <button class="dropdown-toggle">
                 Filtrar
-                <img src="../../image/geral/icons/configure.svg" alt="filtro">
+                <img src="<?=$PATH_PUBLIC?>/image/geral/icons/configure.svg" alt="filtro">
             </button>
         </div>
 
@@ -39,7 +31,7 @@
             <div class="container_filtro ">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Marcas</h2>
-                    <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_filtro.svg" alt="Setinha">
                 </div>
                 <div class="grid_filtro">
                     <div class="filtro_item font_descricao">
@@ -64,7 +56,7 @@
             <div class="container_filtro ">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Conexão</h2>
-                    <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_filtro.svg" alt="Setinha">
                 </div>
                 <div class="grid_filtro">
                     <div class="filtro_item font_descricao">
@@ -89,7 +81,7 @@
             <div class="container_filtro ">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Comprimento</h2>
-                    <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_filtro.svg" alt="Setinha">
                 </div>
                 <div class="grid_filtro">
                     <div class="filtro_item font_descricao">
@@ -118,7 +110,7 @@
             <div class="container_filtro ">
                 <div class="titulo_filtro">
                     <h2 class="font_cinza font_subtitulo">Cor</h2>
-                    <img src="../../image/geral/icons/seta_filtro.svg" alt="Setinha">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_filtro.svg" alt="Setinha">
                 </div>
                 <div class="grid_filtro">
                     <div class="filtro_item font_descricao">
@@ -153,7 +145,7 @@
             <h2 class="font_cinza font_subtitulo">Destaques</h2>
             <div id="destaque_produtos" class="linha_card_produto grid_produtos">
                 <?php 
-                    include_once ('../../pages/geral/card_produto.php');
+                    include_once ("$PATH_COMPONENTS/php/card_produto.php");
                     gerarProdutoCards(6, 0);
                 ?>
             </div>
@@ -192,14 +184,14 @@
         </div>
     </main>
     <button id="btnTopo" class="btn-topo" title="Voltar ao topo">
-        <img src="../../image/geral/icons/seta_cima.svg" alt="">
+        <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_cima.svg" alt="">
     </button>
     <?php 
-      include_once('../../pages/geral/footer.php');
+      include_once("$PATH_COMPONENTS/php/footer.php");
     ?>
     <!-- <script type="text/javascript" src="../../js/cliente/categoria.js"></script> -->
 </body>
-<script src='../../js/geral/btn_topo.js' data-isindex="0"></script>
-<script src="../../js/cliente/carrossel.js" data-isindex="0"></script>
-<script src='../../js/cliente/filtro.js'></script>
+<script src='<?=$PATH_PUBLIC?>/js/geral/btn_topo.js'></script>
+<script src="<?=$PATH_PUBLIC?>/js/geral/carrossel.js"></script>
+<script src='<?=$PATH_PUBLIC?>/js/cliente/filtro.js'></script>
 </html>

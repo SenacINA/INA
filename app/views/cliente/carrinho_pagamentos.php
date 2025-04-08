@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <title>E ao Quadrado</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/cliente/carinho_pagamentos.css">
-  <link rel="stylesheet" href="../../css/style.css">
-  <script src="../../js/geral/base.js"></script>
-</head>
+<?php
+  $css = ["/css/cliente/carrinho_pagamentos.css"];
+  require_once("../../../utils/head.php")
+?>
+<bod
 
 <body class="fundo">
   <!-- fazer responsividade -->
-
   <?php
-  include_once('../../pages/geral/navbar.php');
+    include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <div class="carrinho_pagamentos">
     <div class="carrinho_top">
@@ -63,21 +55,21 @@
       </div>
       <div class="container_whats">
         <p>Conversar com Atendimento direto do vendedor</p>
-        <img src="../../image/cliente/carrinho_pagamentos/whatsapp_user_carrinho_pagamentos.png" alt="">
+        <img src="<?=$PATH_PUBLIC?>/image/cliente/carrinho_pagamentos/whatsapp_user_carrinho_pagamentos.png" alt="">
         <p class="conversar_vendedor">Conversar com Vendedor no WhatsApp</p>
         <button class="botao_whats">Iniciar conversa</button>
         <div class="separador_whats"></div>
         <p class="nao_tem">Ainda não tem o WhatsApp?</p>
         <a href="#" class="baixar_whats">Baixar</a>
         <div class="botoes">
-          <button class="finalizar" onclick="pag('../index')">Finalizar</button>
-          <button class="voltar" onclick="history.back()"><img src="../../image/geral/voltar_vermelho_botao.svg" alt="">Voltar</button>
+          <button class="base_botao btn_blue" onclick="pag('../../index')">Finalizar</button>
+          <button class="base_botao btn_red" onclick="history.back()"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/sair_branco_icon.svg" alt="">Voltar</button>
         </div>
       </div>
     </div>
   </div>
-  <?php 
-      include_once('../../pages/geral/footer.php');
+  <?php
+        include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
 </body>
 
