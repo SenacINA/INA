@@ -4,7 +4,7 @@
   font-family: "Jost";
 }
 
-.fundo {
+.carrinho_dados_fundo {
   height: 100%;
   width: 100%;
   background-color: #dce5eb;
@@ -16,7 +16,7 @@
   justify-items: center;
 }
 
-.carrinho_divisoria {
+.carrinho_dados_carrinho_divisoria {
   min-width: 4px;
   width: 10%;
   height: 3px;
@@ -25,23 +25,22 @@
   background-color: var(--carolina);
 }
 
-.carrinho_nav_item {
+.carrinho_dados_carrinho_nav_item {
   display: flex;
   gap: 8px;
   align-items: center;
-
-  img {
-    height: 40px;
-    width: 40px;
-  }
-  span {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--carolina);
-  }
+}
+.carrinho_dados_carrinho_nav_item img {
+  height: 40px;
+  width: 40px;
+}
+.carrinho_dados_carrinho_nav_item span {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--carolina);
 }
 
-.carrinho_nav {
+.carrinho_dados_carrinho_nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,11 +49,11 @@
   padding: 16px 0;
 }
 
-.carrinho_nav_selected {
+.carrinho_dados_carrinho_nav_selected {
   filter: brightness(0.9);
 }
 
-.separador_carrinho {
+.carrinho_dados_separador_carrinho {
   width: 95%;
   border: 0;
   background-color: var(--carolina);
@@ -62,26 +61,26 @@
   height: 3px;
 }
 
-.navbar {
+.carrinho_dados_navbar {
   width: 100%;
   height: 67px;
   background-color: beige;
 }
 
-.forms_dados {
+.carrinho_dados_forms_dados {
   grid-row: 2;
   width: 90%;
   height: 870px;
   background-color: #fff;
 }
 
-.main_container_carrinho_dados {
+.carrinho_dados_main_container_carrinho_dados {
   display: grid;
   align-items: center;
   justify-items: center;
 }
 
-.container_forms {
+.carrinho_dados_container_forms {
   position: relative;
   margin-top: 28px;
   display: grid;
@@ -93,7 +92,7 @@
   justify-items: center;
 }
 
-.main_text_carrinho_dados {
+.carrinho_dados_main_text_carrinho_dados {
   color: #247ba0;
   text-align: center;
   font-feature-settings: "liga" off, "clig" off;
@@ -105,7 +104,7 @@
   padding: 1%;
 }
 
-.forms_carrinho {
+.carrinho_dados_forms_carrinho {
   grid-row: 1;
   color: #0f3b62;
   font-feature-settings: "liga" off, "clig" off;
@@ -118,23 +117,22 @@
   width: 80%;
 }
 
-.forms_carrinho input {
+.carrinho_dados_forms_carrinho input {
   grid-column: 1;
 }
 
-.informacoes_cep input {
+.carrinho_dados_informacoes_cep input {
   width: 100%;
 }
 
-.informacoes_cep {
+.carrinho_dados_informacoes_cep {
   grid-column: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   column-gap: 2%;
 }
 
-.cep {
+.carrinho_dados_cep {
   grid-column: 1;
   grid-row: 1;
 }
@@ -144,7 +142,7 @@
   grid-row: 2;
 }
 
-.cidade {
+.carrinho_dados_cidade {
   grid-column: 2;
   grid-row: 1;
 }
@@ -154,7 +152,7 @@
   grid-row: 2;
 }
 
-.botoes_carrinho {
+.carrinho_dados_botoes_carrinho {
   grid-column: 1;
   grid-row: 2;
   position: relative;
@@ -163,10 +161,10 @@
   column-gap: 10%;
 }
 
-.salvar_carrinho {
+.carrinho_dados_salvar_carrinho {
   cursor: pointer;
   width: 150px;
-  height: 48px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,22 +182,35 @@
   background: #1b98e0;
 }
 
-.informacoes_salvas {
+.carrinho_dados_informacoes_salvas {
   width: 100%;
 }
 
-.enderecos_salvos_main_text {
+.carrinho_dados_enderecos_salvos_main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3%;
+}
+
+.carrinho_dados_carrinho_dados_linha {
+  background: transparent;
+  border: 4px var(--carolina) solid;
+  border-radius: 20px;
+  height: 48px;
+}
+
+.carrinho_dados_enderecos_salvos_main_text {
   color: #247ba0;
   text-align: center;
-  font-feature-settings: "liga" off, "clig" off;
   font-family: Jost;
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
-.enderecos_salvos_container {
+.carrinho_dados_enderecos_salvos_container {
   width: 95%;
   height: 600px;
   overflow-y: auto;
@@ -212,7 +223,7 @@
   padding: 2%;
 }
 
-.info_container {
+.carrinho_dados_info_container {
   width: 100%;
   background-color: var(--azul_leve);
   padding: 2%;
@@ -224,144 +235,145 @@
 
 .base_radio {
   border: 2px solid var(--carolina) !important;
-  &:checked::after {
-    background-color: var(--carolina) !important;
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--carolina) !important;
-  }
+}
+.base_radio:checked::after {
+  background-color: var(--carolina) !important;
+}
+.base_radio:focus-visible {
+  outline: 2px solid var(--carolina) !important;
 }
 
-.endereco_info_adicional {
+.carrinho_dados_endereco_info_adicional {
   color: var(--cinza);
 }
 
-.text_info {
+.carrinho_dados_text_info {
   display: flex;
   width: 100%;
 }
 
-.botoes_info {
+.carrinho_dados_botoes_info {
   margin-left: 45%;
   display: flex;
   column-gap: 50%;
   width: max-content;
 }
 
-.edit_info,
-.remove_info {
+.carrinho_dados_edit_info,
+.carrinho_dados_remove_info {
   background-color: transparent;
   border: 0;
   cursor: pointer;
 }
 
-.remove_info > img,
-.edit_info > img {
+.carrinho_dados_remove_info > img,
+.carrinho_dados_edit_info > img {
   width: 25px;
 }
 
+/* MEDIA QUERIES */
+
 @media (max-width: 1440px) {
-  .forms_dados {
+  .carrinho_dados_forms_dados {
     height: 1580px;
   }
-  .container_forms {
+  .carrinho_dados_container_forms {
     grid-template-columns: 100%;
     width: 100%;
     align-items: center;
     justify-self: center;
   }
-  .informacoes_salvas {
+  .carrinho_dados_informacoes_salvas {
     grid-row: 1;
   }
-  .forms_carrinho {
+  .carrinho_dados_forms_carrinho {
     grid-row: 2;
   }
-  .botoes_carrinho {
+  .carrinho_dados_botoes_carrinho {
     grid-row: 3;
   }
-  .botoes_info {
+  .carrinho_dados_botoes_info {
     margin-left: 65%;
   }
-  .enderecos_salvos_container {
+  .carrinho_dados_enderecos_salvos_container {
     margin: 0 auto;
   }
 }
 
 @media (max-width: 1024px) {
-  .botoes_info {
+  .carrinho_dados_botoes_info {
     margin-left: 55%;
   }
 }
 
 @media (max-width: 768px) {
-  .botoes_info {
+  .carrinho_dados_botoes_info {
     margin-left: 40%;
   }
 }
 
 @media (max-width: 425px) {
-  .main_text_carrinho_dados {
+  .carrinho_dados_main_text_carrinho_dados {
     font-size: 28px;
   }
-  .enderecos_salvos_main_text {
+  .carrinho_dados_enderecos_salvos_main_text {
     font-size: 22px;
   }
-  .carrinho_nav {
+  .carrinho_dados_carrinho_nav {
     column-gap: 10px;
   }
-  .carrinho_divisoria {
+  .carrinho_dados_carrinho_divisoria {
     width: 16px;
   }
-  .carrinho_nav_item > img {
+  .carrinho_dados_carrinho_nav_item > img {
     width: 20px;
   }
-  .carrinho_nav_item > span {
+  .carrinho_dados_carrinho_nav_item > span {
     font-size: 15px;
   }
-  .informacoes_cep input {
+  .carrinho_dados_informacoes_cep input {
     width: 90%;
   }
-  .botoes_info {
+  .carrinho_dados_botoes_info {
     margin-left: 10%;
   }
-  .endereco_info {
+  .carrinho_dados_endereco_info {
     font-size: 15px;
   }
-  .endereco_info_adicional {
+  .carrinho_dados_endereco_info_adicional {
     font-size: 12px;
   }
-  .enderecos_salvos_container {
+  .carrinho_dados_enderecos_salvos_container {
     justify-self: center;
   }
-  .informacoes_cep {
+  .carrinho_dados_informacoes_cep {
     grid-template-columns: 0.5fr 0.5fr;
   }
-  .forms_carrinho > label,
-  .informacoes_cep > label {
+  .carrinho_dados_forms_carrinho > label,
+  .carrinho_dados_informacoes_cep > label {
     font-size: 18px;
   }
-  .enderecos_salvos_container {
+  .carrinho_dados_enderecos_salvos_container {
     width: 95%;
   }
-  .container_forms {
+  .carrinho_dados_container_forms {
     justify-self: auto;
   }
-  .remove_info > img,
-  .edit_info > img {
+  .carrinho_dados_remove_info > img,
+  .carrinho_dados_edit_info > img {
     width: 20px;
   }
-  .forms_dados {
+  .carrinho_dados_forms_dados {
     height: 1550px;
   }
 }
 
 @media (max-width: 375px) {
-  .botoes_info {
+  .carrinho_dados_botoes_info {
     margin-left: 5%;
   }
-  .remove_info > img,
-  .edit_info > img {
+  .carrinho_dados_remove_info > img,
+  .carrinho_dados_edit_info > img {
     width: 18px;
   }
 }
