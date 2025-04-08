@@ -422,6 +422,7 @@ body {
             align-items: center;
             justify-content: center;
             padding: 4px;
+            border: 0;
 
             &:hover {
                 cursor: pointer;
