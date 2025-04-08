@@ -256,16 +256,10 @@ hr {
 .produtos_itens {
   margin-top: 1%;
   display: grid;
-  grid-template-columns: repeat(8, 200px);
-  column-gap: 1%;
-  row-gap: 5%;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  justify-content: space-around;
   margin-left: 4.5%;
-}
-
-.index_body_imagem_produto {
-  row-gap: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 .ver_mais_container {
@@ -275,6 +269,27 @@ hr {
   right: 5%;
   column-gap: 0.5%;
   cursor: pointer;
+  button {
+    color: white;
+    border-radius: 5px;
+    background-color: #1b98e0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    svg {
+      transform: rotate(90deg);
+      cursor: pointer;
+    }
+  }
 }
 
 .ver_mais_text {
@@ -291,33 +306,31 @@ hr {
 }
 
 @media (max-width: 1440px) {
-  .destaques_itens,
-  .produtos_itens {
-    grid-template-columns: repeat(6, 200px);
-  }
   .perfil_vendedor_about_container_2 {
     margin-top: 5%;
   }
 }
 
 @media (max-width: 1024px) {
-  .destaques_itens,
-  .produtos_itens {
-    grid-template-columns: repeat(4, 200px);
-    margin-left: 10%;
-  }
   .ver_mais_container {
     top: 50px;
+  }
+  .destaques_itens,
+  .produtos_itens {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 16px;
   }
 }
 
 @media (max-width: 768px) {
-  .perfil_vendedor_about_container_2 {
-    margin-top: 12%;
-  }
   .destaques_itens,
   .produtos_itens {
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 16px;
+  }
+  .perfil_vendedor_grid_produtos {
+    margin-top: 10%;
+    margin-bottom: 10%;
   }
   .perfil_vendedor_btn_menu select {
     width: 150px;
@@ -360,8 +373,12 @@ hr {
 @media (max-width: 425px) {
   .destaques_itens,
   .produtos_itens {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, 1fr);
     margin-left: 2%;
+  }
+  .perfil_vendedor_grid_produtos {
+    margin-top: 20%;
+    margin-bottom: 20%;
   }
   .perfil_vendedor_infos_item3 {
     grid-row: 2;
@@ -400,21 +417,10 @@ hr {
 @media (max-width: 375px) {
   .destaques_itens,
   .produtos_itens {
-    grid-template-columns: repeat(1, 200px);
-    margin: 0;
-    justify-content: center;
-  }
-  .perfil_vendedor_grid_destaques {
-    margin-bottom: 30%;
-  }
-  .ver_mais_container {
-    top: 120px;
-  }
-  .footer_body {
-    margin-top: 140px;
-  }
-  .perfil_vendedor_about_container_2:last-child {
-    margin-top: 60%;
+    margin-top: 10%;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 30px;
   }
   .perfil_vendedor_pfp img {
     width: 100px;

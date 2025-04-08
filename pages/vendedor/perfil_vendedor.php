@@ -1,31 +1,3 @@
-<?php
-function gerarProdutoCards($quantidade)
-{
-    for ($i = 0; $i < $quantidade; $i++) {
-        echo "
-        <div class='index_body_produto_card'>
-            <div class='index_body_desconto'>
-                <span>20% OFF</span>
-            </div>
-            <div class='index_body_imagem_produto'>
-                <img src='https://placehold.co/200' alt=''>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque vel nulla quis dapibus. Donec purus purus, maximus eget sollicitudin a, maximus vitae enim. Maecenas facilisis elementum porta. Nullam sagittis, orci eu gravida consequat, turpis diam maximus lectus, in aliquam libero tortor a lorem. Donec malesuada purus at ligula consequat dignissim. Sed quis mollis sem. In laoreet metus maximus velit venenatis eleifend eu vel dui. Vivamus dignissim velit vel nisi lobortis aliquam</p>
-            </div>
-            <div class='index_body_estrela_valor'>
-                <div class='index_body_estrela_produto'>
-                    <p>★★★★★</p>
-                    <h4>(12)</h4>
-                </div>
-                <div class='index_body_valor_produto'>
-                    <p id='indexBodyValorAntigo'>R$1000</p>
-                    <p id='indexBodyValorProduto'>R$800</p>
-                </div>
-            </div>
-        </div>";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -48,6 +20,7 @@ function gerarProdutoCards($quantidade)
     <!-- Caminho de Icon Correto -->
 
     <?php
+    $isIndex = 0;
     include_once('../../pages/geral/navbar.php');
     ?>
 
@@ -154,11 +127,18 @@ function gerarProdutoCards($quantidade)
                     <h1>Destaques:</h1>
                 </div>
                 <div class="destaques_itens">
-                    <?php gerarProdutoCards(8); ?>
+                    <?php
+                    include('../geral/card_produto.php');
+                    gerarProdutoCards(6, 0);
+                    ?>
                 </div>
                 <div class="ver_mais_container">
                     <p class="ver_mais_text">Ver Mais</p>
-                    <img src="../../image/geral/icons/seta_longa_icon.svg">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19" />
+                        </svg>
+                    </button>
                 </div>
             </div>
 
@@ -168,11 +148,17 @@ function gerarProdutoCards($quantidade)
                     <h1>Produtos:</h1>
                 </div>
                 <div class="produtos_itens">
-                    <?php gerarProdutoCards(8); ?>
+                    <?php
+                    gerarProdutoCards(6, 0);
+                    ?>
                 </div>
                 <div class="ver_mais_container">
                     <p class="ver_mais_text">Ver Mais</p>
-                    <img src="../../image/geral/icons/seta_longa_icon.svg">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
