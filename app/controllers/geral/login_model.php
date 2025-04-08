@@ -11,17 +11,17 @@
             case 'admin':
                 $_SESSION['user_type'] = "admin";
 
-                header('Location:../../pages/admin/dashboard.php');
+                header('Location:../../views/admin/dashboard.php');
                 exit();
             case 'cliente':
                 $_SESSION['user_type'] = "cliente";
 
-                header('Location:../../pages/cliente/perfil_cliente.php');
+                header('Location:../../views/cliente/perfil_cliente.php');
                 exit();
             case 'vendedor':
                 $_SESSION['user_type'] = "vendedor";
 
-                header('Location:../../pages/vendedor/perfil_vendedor.php');
+                header('Location:../../views/vendedor/perfil_vendedor.php');
                 exit();
             default:
                 header("Location:../../index.php");

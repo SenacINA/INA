@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const imageList = [
-        '../../image/cliente/produto/cadeira_gamer_1.jpg',
-        '../../image/cliente/produto/cadeira_gamer_2.jpg',
-        '../../image/cliente/produto/cadeira_gamer_3.jpg',
-        '../../image/cliente/produto/cadeira_gamer_4.jpg'
+        '../../../public/image/cliente/produto/cadeira_gamer_1.jpg',
+        '../../../public/image/cliente/produto/cadeira_gamer_2.jpg',
+        '../../../public/image/cliente/produto/cadeira_gamer_3.jpg',
+        '../../../public/image/cliente/produto/cadeira_gamer_4.jpg'
     ];
 
     const mainImage = document.querySelector('.produto_image img');

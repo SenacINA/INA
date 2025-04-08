@@ -28,34 +28,25 @@ function gerarProdutoCards($quantidade)
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <title>E ao Quadrado</title>
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/cliente/perfil_cliente.css">
-  <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
-  <script src="../../js/geral/base.js"></script>
-</head>
+<?php
+  $css = ["/css/cliente/perfil_cliente.css"];
+  require_once("../../../utils/head.php")
+?>
+
 <body>
     <!-- Até 375px -->
     <!-- Caminho de Icon Correto -->
 
     <?php
-    include_once('../../pages/geral/navbar.php');
+        include_once("$PATH_COMPONENTS/php/navbar.php");
     ?>
     
 <main>
-    <img src="../../image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner">
+    <img src="<?=$PATH_PUBLIC?>/image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner">
 
     <div class="perfil_cliente_content_pfp">
         <div class="perfil_cliente_pfp">
-            <img src="../../image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente">
+            <img src="<?=$PATH_PUBLIC?>/image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente">
             <h1>Cliente 10</h1>
         </div>
         <div class="perfil_cliente_btn_menu base_input_select">
@@ -73,25 +64,25 @@ function gerarProdutoCards($quantidade)
     <div class="perfil_cliente_grid_principal">
         <div class="perfil_cliente_infos_container">
             <div class="perfil_cliente_infos_item1">
-                <img class="base_icon" src="../../image/geral/icons/localizacao_icon.svg">
+                <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg">
                 <p>São Paulo, São Paulo</p>
             </div>
             <div class="perfil_cliente_infos_item2">
-                <img class="base_icon" src="../../image/geral/icons/balao_exclamacao_icon.svg">
+                <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/balao_exclamacao_icon.svg">
                 <p>Ativo há: Agora</p>
             </div>
             <div class="perfil_cliente_infos_item3">
-                <img class="base_icon" src="../../image/geral/icons/perfil_membros_icon.svg">
+                <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_membros_icon.svg">
                 <p>Cliente há: 6 Meses</p>
             </div>
             <div class="perfil_cliente_contatos_cliente">
                 <div class="instagram_cliente">
-                    <img class="base_icon" src="../../image/geral/icons/instagram_icon.svg" class="perfil_cliente_icon_instagram_cliente">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" class="perfil_cliente_icon_instagram_cliente">
                     <a href="#" class="perfil_cliente_instagram_cliente">my.cliente10</a>
                 </div>
                 <hr class="linha_vertical">
                 <div class="facebook_cliente">
-                    <img class="base_icon" src="../../image/geral/icons/facebook_icon.svg" class="perfil_cliente_icon_facebook_cliente">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" class="perfil_cliente_icon_facebook_cliente">
                     <a href="#" class="perfil_cliente_facebook_cliente">cliente10</a>
                 </div>
             </div>
@@ -99,7 +90,7 @@ function gerarProdutoCards($quantidade)
         <hr>
         <div class="perfil_cliente_grid_historico">
             <div class="perfil_cliente_about_container_2">
-                <img src="../../image/geral/icons/tempo_icon.svg" alt="Icon Loja">
+                <img src="<?=$PATH_PUBLIC?>/image/geral/icons/tempo_icon.svg" alt="Icon Loja">
                 <h1>Histórico:</h1>
             </div>
             <div class="historico_items">
@@ -107,13 +98,13 @@ function gerarProdutoCards($quantidade)
             </div>
             <div class="ver_mais_container">
                 <p class="ver_mais_text">Ver Mais</p>
-                <img src="../../image/geral/icons/seta_longa_icon.svg">
+                <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_longa_icon.svg">
             </div>
         </div>
     </div> 
 </main>
 <?php
-include_once('../../pages/geral/footer.php');
+    include_once("$PATH_COMPONENTS/php/footer.php");
 ?>
 
 </body>

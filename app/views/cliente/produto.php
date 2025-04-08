@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
-    <title>E ao Quadrado</title>
-    <link rel="stylesheet" href="../../css/cliente/produto.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="../../js/geral/base.js"></script>
-</head>
+<?php
+  $css = ["/css/cliente/produto.css"];
+  require_once("../../../utils/head.php")
+?>
+
 <body>
     <!-- Até 375px -->
     <!-- Caminho de Icon Correto -->
-     
     <?php
-    include_once('../../pages/geral/navbar.php');
+        include_once("$PATH_COMPONENTS/php/navbar.php");
     ?>
+
     <div class='produto_main_container'>
         <div class="grid_produto">
             <div class="grid_nome_vendedor">
                 <div class='produto_img_vendedor'>
                     <div class="imagem_nome_vendedor">
-                        <img src="../../image/cliente/produto/user_thunder_gamers.png" alt="">
+                        <img src="<?=$PATH_PUBLIC?>/image/cliente/produto/user_thunder_gamers.png" alt="">
                     </div>
                     <div class="nome_vendedor">
                         <h1>THUNDER GAMERS</h1>
                         <h2>
-                            <img class="base_icon" src="../../image/geral/icons/localizacao_icon.svg" alt="">
+                            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg" alt="">
                             São Paulo, São Paulo</h2>
                     </div>
                 </div>
@@ -47,25 +40,25 @@
 
             <div class="grid_scroll">
                 <div class="icon_scroll">
-                    <img src="../../image/geral/icons/seta_menor_icon.svg" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_menor_icon.svg" alt="">
                 </div>
 
                 <div class="images_scroll">
-                    <div class='imagem_selecionada'><img src="../../image/cliente/produto/cadeira_gamer_1.jpg" alt=""></div>
-                    <div><img src="../../image/cliente/produto/cadeira_gamer_2.jpg" alt=""></div>
-                    <div><img src="../../image/cliente/produto/cadeira_gamer_3.jpg" alt=""></div>
-                    <div><img src="../../image/cliente/produto/cadeira_gamer_4.jpg" alt=""></div>
+                    <div class='imagem_selecionada'><img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_1.jpg" alt=""></div>
+                    <div><img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_2.jpg" alt=""></div>
+                    <div><img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_3.jpg" alt=""></div>
+                    <div><img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_4.jpg" alt=""></div>
                 </div>
 
 
                 <div class="icon_scroll foward">
-                    <img src="../../image/geral/icons/seta_menor_icon.svg" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_menor_icon.svg" alt="">
                 </div>
             </div>
 
             <div class="grid_produto_image">
                 <div class="produto_image">
-                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                 </div>
                 
             </div>
@@ -102,9 +95,9 @@
                     </div>
                     
                     <div class="grid_produto_info_button">
-                        <button class="base_botao btn_blue"><img src="../../image/geral/botoes/cesta_branca_icon.svg" alt="">CARRINHO</button>
+                        <button class="base_botao btn_blue"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/cesta_branca_icon.svg" alt="">CARRINHO</button>
                         <button class="base_botao btn_outline_blue" onclick="pag('cliente/carrinho_vazio')">
-                            <img src="../../image/geral/botoes/+_carolina_icon.svg" alt="">
+                            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/+_carolina_icon.svg" alt="">
                             COMPRAR
                         </button>
                     </div>
@@ -126,7 +119,7 @@
 
     <div class="grid_descricao_produto">
         <div class="descricao_produto_item2">
-            <img class="base_icon" src="../../image/geral/icons/etiqueta_icon.svg" alt="">
+            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>DESCRIÇÃO DO PRODUTO</h1>
         </div>
         <p><strong>CADEIRA GAMER THRONE RGB</strong></p>
@@ -145,7 +138,7 @@
     <div class="grid_descricao_produto">
         <div class="line_top"></div>
         <div class="descricao_produto_item3">
-            <img class="base_icon" src="../../image/geral/icons/etiqueta_icon.svg" alt="">
+            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>AVALIAÇÕES DO PRODUTO</h1>
         </div>
 
@@ -176,7 +169,7 @@
         <div class="comentario_usuario_1">
             <div class="grid_user_1">
                 <div class='cliente_nome_pic'>
-                    <img class="base_icon" src="../../image/cliente/produto/icon_profile.svg" alt="">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/cliente/produto/icon_profile.svg" alt="">
                     <h1>Carlos</h1>
                 </div>
 
@@ -201,14 +194,14 @@
 
             <div class="grid_images_user_1">
                 <div class="image1_user_1">
-                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                     <div class='div_video'>
-                        <img src="../../image/cliente/produto/icon_camera.svg" alt="">
+                        <img src="<?=$PATH_PUBLIC?>/image/cliente/produto/icon_camera.svg" alt="">
                         1:32
                     </div>
                 </div>
                 <div class='image1_user_1'>
-                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                 </div>
             </div>
         </div>
@@ -216,7 +209,7 @@
         <div class="comentario_usuario_1">
             <div class="grid_user_1">
                 <div class='cliente_nome_pic'>
-                    <img class="base_icon" src="../../image/cliente/produto/icon_profile.svg" alt="">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/cliente/produto/icon_profile.svg" alt="">
                     <h1>Julia</h1>
                 </div>
 
@@ -241,10 +234,10 @@
 
             <div class="grid_images_user_1">
                 <div class='image1_user_1'>
-                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                 </div>
                 <div class='image1_user_1'>
-                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                 </div>
             </div>
         </div>
@@ -252,7 +245,7 @@
         <div class="comentario_usuario_1">
             <div class="grid_user_1">
                 <div class='cliente_nome_pic'>
-                    <img class="base_icon" src="../../image/cliente/produto/icon_profile.svg" alt="">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/cliente/produto/icon_profile.svg" alt="">
                     <h1>Alex</h1>
                 </div>
                 
@@ -277,22 +270,22 @@
 
             <div class="grid_images_user_1">
                 <div class="image1_user_1">
-                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                     <div class='div_video'>
-                        <img src="../../image/cliente/produto/icon_camera.svg" alt="">
+                        <img src="<?=$PATH_PUBLIC?>/image/cliente/produto/icon_camera.svg" alt="">
                         0:45
                     </div>
                 </div>
                 <div class='image1_user_1'>
-                    <img src="../../image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="<?=$PATH_PUBLIC?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
                 </div>
             </div>
         </div>
 
     </div>
-    <?php 
-      include_once('../../pages/geral/footer.php');
+    <?php
+        include_once("$PATH_COMPONENTS/php/footer.php");
     ?>
 </body>
-<script type='module' src='../../js/cliente/produto_carrossel.js'></script>
+<script type='module' src='<?=$PATH_PUBLIC?>/js/cliente/produto_carrossel.js'></script>
 </html>
