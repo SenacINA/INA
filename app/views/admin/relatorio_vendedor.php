@@ -1,28 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E ao Quadrado</title>
-    <link rel="stylesheet" href="../../css/admin/relatorio_vendedor.css">
-    <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/style.css">
-    <script src="../../js/geral/base.js"></script>
-</head>
+<html lang="pt-br">
+<?php
+  $titulo = "Perfil - E ao Quadrado";
+  $css = ["/css/admin/relatorio_vendedor.css"];
+  require_once('../../../utils/head.php');
+?>
 <body>
   <!-- Até 375px -->
 
   <?php
-    include('../../pages/geral/navbar.php');
+    include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main>
     <div class="relatorio_vendedor_body">
       <div class="relatorio_vendedor_titulo_1">
         <div class="relatorio_vendedor_text_titulo_1">
-          <img class="base_icon" src="../../image\geral\icons\lista_relatorio_icon.svg" alt="">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image\geral\icons\lista_relatorio_icon.svg" alt="">
           <h1>RELATÓRIO DO VENDEDOR</h1>
         </div>
         <hr class="relatorio_vendedor_linha_titulo">
@@ -34,7 +27,7 @@
        
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_1"> 
           <hr class="relatorio_vendedor_vertical">
-          <img class="base_icon" src="../../image\geral\icons\perfil_icon.svg" alt=""/>
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image\geral\icons\perfil_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Dados Pessoais</h1>
         </div>
 
@@ -61,7 +54,7 @@
         
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_2">
           <hr class="relatorio_vendedor_vertical">
-          <img class="base_icon" src="../../image\geral\icons\loja_icon.svg" alt=""/>
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image\geral\icons\loja_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Loja</h1>
         </div>
         
@@ -91,7 +84,7 @@
 
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_3">
           <hr class="relatorio_vendedor_vertical">
-          <img class="base_icon" src="../../image\geral\icons\localizacao_icon.svg" alt=""/>
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image\geral\icons\localizacao_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Localização</h1>
         </div>
 
@@ -133,12 +126,12 @@
 
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_4">
           <hr class="relatorio_vendedor_vertical">
-          <img class="base_icon" src="../../image\geral\icons\lista_icon.svg" alt=""/>
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image\geral\icons\lista_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Perfil Do Vendedor</h1>
         </div>        
     
         <div class="relatorio_vendedor_perfil_usuario">
-          <img src="../../image/admin/relatorio_vendedor/imagem_perfil_vendedor.png" alt=""/>
+          <img src="<?=$PATH_PUBLIC?>/image/admin/relatorio_vendedor/imagem_perfil_vendedor.png" alt=""/>
           <h1>THUNDER GAMES</h1>
           <h2>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</h2>
         </div>
@@ -147,7 +140,7 @@
 
     <div class="relatorio_vendedor_titulo_2">
       <div class="relatorio_vendedor_text_titulo_2">
-        <img class="base_icon" src="../../image\geral\icons\pasta_clock_icon.svg" alt=""/>
+        <img class="base_icon" src="<?=$PATH_PUBLIC?>/image\geral\icons\pasta_clock_icon.svg" alt=""/>
         <h1>HISTÓRICO DE PEDIDOS</h1>
       </div>
     </div>

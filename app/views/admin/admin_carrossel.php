@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <title>E ao Quadrado</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/admin/admin_carrossel.css">
-  <link rel="stylesheet" href="../../css/style.css">
-  <script src="../../js/geral/base.js"></script>
-</head>
+<?php
+  $titulo = "Gerenciar Carrossel - E ao Quadrado";
+  $css = ["/css/admin/admin_carrossel.css"];
+  require_once('../../../utils/head.php');
+?>
 <body>
-  <!-- Até 375px -->
-  <!-- Caminho de Icon Correto -->
-
   <?php
-    include_once('../../pages/geral/navbar.php');
+    include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main>
     <div class="admin_carrossel_quadrado_container">
       <div class="admin_carrossel_content">
         <div class="admin_carrossel_main_text_container">
           <h1 class="admin_carrossel_texto_main_text">
-            <img class="admin_carrossel_img_anuncios base_icon" src="../../image/geral/icons/megafone_icon.svg" alt="">
+            <img class="admin_carrossel_img_anuncios base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/megafone_icon.svg" alt="">
               ANÚNCIOS
             </h1>
           <hr class="admin_carrossel_linha_main_text">
@@ -36,7 +25,7 @@
             <hr class="admin_carrossel_linha_vertical_informacoes_anuncio">
             <h1 class="admin_carrossel_main_text_informacoes_anuncio">
             <p>
-            <img class="base_icon" src="../../image/geral/icons/info_icon.svg" alt="">
+            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/info_icon.svg" alt="">
               INFORMAÇÕES DO ANÚNCIO</h1>
           </div>
           
@@ -80,17 +69,17 @@
 
         <div class="admin_carrossel_buttons_container">
           <button class="admin_carrossel_cancelar_button base_botao" onclick="history.back()">
-            <img src="../../image/geral/botoes/x_vermelho_icon.svg">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_vermelho_icon.svg">
             Cancelar
           </button>
 
           <button class="admin_carrossel_excluir_button base_botao" onclick="history.back()">
-            <img src="../../image/geral/botoes/lixo_branco_icon.svg">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/lixo_branco_icon.svg">
             Excluir
           </button>
 
           <button class="admin_carrossel_salvar_button base_botao" onclick="history.back()">
-            <img src="../../image/geral/botoes/v_branco_icon.svg">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">
             Salvar
           </button>
         </div>

@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E ao Quadrado</title>
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/admin/gerenciar_carrossel.css">
-  <link rel="shortcut icon" href="../../image/geral/icone_eaoquadrado.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script src="../../js/geral/base.js"></script>
-</head>
+<?php
+  $titulo = "Gerenciar Carrossel- E ao Quadrado";
+  $css = ["/css/admin/gerenciar_carrossel.css"];
+  require_once('../../../utils/head.php');
+?>
   <!-- Até 768px -->
   <!-- Caminho de Icon Correto -->
-
 <body>
   <?php
-    include_once('../../pages/geral/navbar.php');
-    ?>
+    include_once("$PATH_COMPONENTS/php/navbar.php");
+  ?>
   <main class="gerenciar_carrossel_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_carrossel_header_holder">
         <div class="gerenciar_carrossel_header_title_1">
-          <img class="base_icon" src="../../image/geral/icons/carrossel_icon.svg"/>
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/carrossel_icon.svg"/>
           <h1 class="gerenciar_carrossel_text_header">GERENCIAR CARROSSEL</h1>
         </div>
         <div class="gerenciar_carrossel_linha_sublinhado"></div>
@@ -36,7 +27,7 @@
               <div class="gerenciar_carrossel_subtitulo_generico">
                 <div class="gerenciar_carrossel_linha_vertical"></div>
                 <div class="gerenciar_carrossel_subtitle_holder">
-                  <img class="base_icon" src="../../image/geral/icons/lista_icon.svg"/>
+                  <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Pesquisar</p>
                 </div>
               </div>
@@ -59,12 +50,12 @@
               <div class="gerenciar_carrossel_subtitulo_generico">
                 <div class="gerenciar_carrossel_linha_vertical"></div>
                 <div class="gerenciar_carrossel_subtitle_holder">
-                  <img class="base_icon" src="../../image/geral/icons/perfil_icon.svg"/>
+                  <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_icon.svg"/>
                   <h2 class="font_subtitulo font_celadon">Informações Do usuário</p>
                 </div>
               </div>
                 <div class="gerenciar_carrossel_perfil">
-                  <img src="../../image/admin/gerenciar_carrossel/perfil_img.svg">
+                  <img src="<?=$PATH_PUBLIC?>/image/admin/gerenciar_carrossel/perfil_img.svg">
                 </div>
                 <form action="" method="post" class="gerenciar_carrossel_forms_pesquisa_pedidos">
                   <div class="gerenciar_carrossel_form_cliente">
@@ -100,7 +91,7 @@
       </div>
     </div>
     <div class="gerenciar_carrossel_header_title_2">
-      <img class="base_icon" src="../../image/geral/icons/anuncio_icon.svg"/>
+      <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/anuncio_icon.svg"/>
       <h1 class="gerenciar_carrossel_text_header font_titulo">Gerenciar Anúncios</h1>
     </div>
     <div class="gerenciar_carrossel_table">
