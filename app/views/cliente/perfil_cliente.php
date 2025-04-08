@@ -22,7 +22,7 @@ require_once("../../../utils/head.php")
         <form action="">
           <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
             <option selected disabled value="">Menu</option>
-            <option value="cliente/editar_perfil">Editar Perfil</option>
+            <option value="cliente/editar_perfil_cliente">Editar Perfil</option>
             <option value="vendedor/cadastro_vendedor_1">Cadastro de vendedor</option>
             <option value="cliente/login">Sair</option>
           </select>

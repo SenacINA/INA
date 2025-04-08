@@ -9,8 +9,8 @@ function pag(url, params = "") {
     window.location.href = "../" + url + ".php" + params;
 }
 
-function selectPag(event){
-    pag(event);
+function selectPag(valor){
+    pag(valor);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -80,17 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModalBtn && closeModalBtn.addEventListener('click', closeModal);
     modalContainer && modalContainer.addEventListener('click', handleOutsideClick);
     logout && logout.addEventListener('click', (e) => {
-        const changeble = window.location.href.includes("index") ? "./" : "../../"
         e.preventDefault()
-        fetch(`${changeble}model/geral/logout_model.php`, { method: 'POST' })
+        fetch(`../../controllers/geral/logout_model.php`, { method: 'POST' })
         .then(response => {
             if(!response.ok)return
 
-            if(window.location.href.includes("index")){
-                window.location.href = "./index.php"
-                return
-            }
-            window.location.href = "../../index.php"
+            window.location.href = "../geral/home.php"
+            return
         })
         .catch(error => {
             console.error('Error:', error);
