@@ -66,10 +66,13 @@
           <label for="mensagem_vendedor">Mensagem para o vendedor(opcional):</label>
           <input type="text" class="base_input">
           <label for="opcaoEnvio">Opções de envio</label>
-          <select name="opcaoEnvio" id="opcaoEnvio" class="base_input_select">
-            <option value="" disabled selected>Selecione o tipo de entrega</option>
-            <option value="entrega_padrao">Entrega Padrão - R$15,00</option>
-          </select>
+          <div  class="base_input_select">
+            <select name="opcaoEnvio" id="opcaoEnvio" class="base_input">
+              <option value="" disabled selected>Selecione o tipo de entrega</option>
+              <option value="entrega_padrao">Entrega Padrão - R$15,00</option>
+            </select>
+          </div>
+          
         </form>
         <div class="carrinho_dados_botoes_carrinho">
           <button class="carrinho_dados_salvar_carrinho" onclick="pag('cliente/carrinho_pagamentos')"><img src="../../image/geral/botoes/v_branco_icon.svg">Salvar</button>
