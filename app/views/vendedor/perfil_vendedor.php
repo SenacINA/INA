@@ -1,144 +1,154 @@
-<?php
-function gerarProdutoCards($quantidade)
-{
-  for ($i = 0; $i < $quantidade; $i++) {
-    echo "
-        <div class='index_body_produto_card'>
-            <div class='index_body_desconto'>
-                <span>20% OFF</span>
-            </div>
-            <div class='index_body_imagem_produto'>
-                <img src='https://placehold.co/200' alt=''>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque vel nulla quis dapibus. Donec purus purus, maximus eget sollicitudin a, maximus vitae enim. Maecenas facilisis elementum porta. Nullam sagittis, orci eu gravida consequat, turpis diam maximus lectus, in aliquam libero tortor a lorem. Donec malesuada purus at ligula consequat dignissim. Sed quis mollis sem. In laoreet metus maximus velit venenatis eleifend eu vel dui. Vivamus dignissim velit vel nisi lobortis aliquam</p>
-            </div>
-            <div class='index_body_estrela_valor'>
-                <div class='index_body_estrela_produto'>
-                    <p>★★★★★</p>
-                    <h4>(12)</h4>
-                </div>
-                <div class='index_body_valor_produto'>
-                    <p id='indexBodyValorAntigo'>R$1000</p>
-                    <p id='indexBodyValorProduto'>R$800</p>
-                </div>
-            </div>
-        </div>";
-  }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-  $titulo = "Perfil- E ao Quadrado";
+  $titulo = "Perfil - E ao Quadrado";
   $css = ["/css/vendedor/perfil_vendedor.css"];
   require_once('../../../utils/head.php');
 ?>
+
 <body>
+  <!-- Até 375px -->
+  <!-- Caminho de Icon Correto -->
+
   <?php
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
+
   <main>
-    <div class="pfp_vendedor">
-      <img src="<?=$PATH_PUBLIC?>/image/vendedor/perfil_vendedor/banner_vendedor_mini_perfil.png" alt="banner" class="banner_vendedor">
-      <div class="pfp_container">
-        <img src="<?=$PATH_PUBLIC?>/image/vendedor/perfil_vendedor/pfp_vendedor.png" alt="pfp_vendedor" class="pfp_vendedor_ico">
-        <h1 class="nome_vendedor">THUNDER GAMES</h1>
+    <img src="<?=$PATH_PUBLIC?>/image/vendedor/perfil_vendedor/banner_vendedor_mini_perfil.png" alt="banner" class="perfil_vendedor_banner">
+
+    <div class="perfil_vendedor_content_pfp">
+      <div class="perfil_vendedor_pfp">
+        <img src="<?=$PATH_PUBLIC?>/image/vendedor/perfil_vendedor/pfp_vendedor.png" alt="pfp_vendedor">
+        <h1>THUNDER GAMES</h1>
+      </div>
+      <div class="perfil_vendedor_btn_menu base_input_select">
+        <form action="">
+          <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
+            <option selected disabled value="">Menu</option>
+            <option value="vendedor/editar_perfil_vendedor">Editar Perfil</option>
+            <option value="vendedor/confirmar_pedido">Pedidos</option>
+            <option value="vendedor/relatorio_vendas">Relatório</option>
+            <option value="vendedor/editar_produto">Editar Produtos</option>
+            <option value="cliente/login">Sair</option>
+          </select>
+        </form>
       </div>
     </div>
 
-    <div class="botao_menu">
-      <form action="" class="menu_1 base_input_select">
-        <select name="menu" id="menu" onchange="selectPag(this.value)">
-          <option selected disabled value="">Menu</option>
-          <option value="vendedor/editar_perfil_vendedor">Editar Perfil</option>
-          <option value="vendedor/confirmar_pedido">Pedidos</option>
-          <option value="vendedor/relatorio_vendas">Relatório</option>
-          <option value="admin/admin_cupom">Criar Cupom</option>
-          <option value="vendedor/editar_produto">Editar Produtos</option>
-          <option value="cliente/login">Sair</option>
-        </select>
-      </form>
-    </div>
-
-    <div class="grid_principal">
-      <div class="infos_container">
-        <div class="infos_item1">
+    <div class="perfil_vendedor_grid_principal">
+      <div class="perfil_vendedor_infos_container">
+        <div class="perfil_vendedor_infos_item1">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg">
           <p>São Paulo, São Paulo</p>
         </div>
-        <div class="infos_item2">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/produto_icon.svg">
+        <div class="perfil_vendedor_infos_item2">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/loja_icon.svg">
           <p>Produtos: 8</p>
         </div>
-        <div class="infos_item3">
+        <div class="perfil_vendedor_infos_item3">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_membros_icon.svg">
-          <p>Vendedor há: 4 Meses</p>
+          <p>Vendedor há: 6 Meses</p>
         </div>
-        <div class="infos_item4">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/estela_icon.svg">
+        <div class="perfil_vendedor_infos_item4">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/estela_icon.svg" class="base_icon">
           <p>Avaliação geral: 4.5</p>
         </div>
       </div>
+      <hr>
 
-      <hr class="hr_1">
       <div class="info_container">
         <div class="about_container">
           <div class="about_text">
-            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image\geral\icons\texto_icon.svg">
+            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/texto_icon.svg">
             <h1>Sobre nós:</h1>
           </div>
-          <p>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</p>
+          <p>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio.
+            In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis.
+            Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus.
+            At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae.
+            At dolorum quos non omnis internos et quos quis.
+          </p>
         </div>
+
         <div class="contatos_vendedor">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" class="icon_instagram_vendedor">
-          <a href="#" class="instagram_vendedor">my.thudergames</a>
+          <div class="contatos_vendedor_column">
+            <div class="item_contatos_vendedor">
+              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" class="icon_instagram_vendedor">
+              <a href="#">my.thudergames</a>
+            </div>
 
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" class="icon_facebook_vendedor">
-          <a href="#" class="facebook_vendedor">thundergames</a>
+            <div class="item_contatos_vendedor">
+              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" class="icon_facebook_vendedor">
+              <a href="#">thundergames</a>
+            </div>
 
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg" class="icon_x_vendedor">
-          <a href="#" class="x_vendedor">thundergames_</a>
+            <div class="item_contatos_vendedor">
+              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg" class="icon_x_vendedor">
+              <a href="#">thundergames_</a>
+            </div>
+          </div>
 
-          <hr class="vr">
+          <hr>
 
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg" class="icon_linkedin_vendedor">
-          <a href="#" class="linkedin_vendedor">thundergames</a>
+          <div class="contatos_vendedor_column">
+            <div class="item_contatos_vendedor">
+              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg" class="icon_linkedin_vendedor">
+              <a href="#">thundergames</a>
+            </div>
 
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" class="icon_youtube_vendedor">
-          <a href="#" class="youtube_vendedor">Thunder Games</a>
+            <div class="item_contatos_vendedor">
+              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" class="icon_youtube_vendedor">
+              <a href="#">Thunder Games</a>
+            </div>
 
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg" class="icon_tiktok_vendedor">
-          <a href="#" class="tiktok_vendedor">thunder.games</a>
+            <div class="item_contatos_vendedor">
+              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg" class="icon_tiktok_vendedor">
+              <a href="#">thunder.games</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="perfil_vendedor_grid_destaques">
+        <div class="perfil_vendedor_about_container_2">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/tempo_icon.svg" alt="Icon Loja" class="base_icon">
+          <h1>Destaques:</h1>
+        </div>
+        <div class="destaques_itens">
+          <?php
+          include("$PATH_COMPONENTS/php/card_produto.php");
+          gerarProdutoCards(6, 0);
+          ?>
+        </div>
+        <div class="ver_mais_container">
+          <p class="ver_mais_text">Ver Mais</p>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19" />
+            </svg>
+          </button>
         </div>
       </div>
 
-      <hr class="hr_2">
-
-      <div class="grid_carrossel">
-        <div class="about_container_2">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/estela_icon.svg" alt="">
-          <h1>Destaques:</h1>
-        </div>
-        <div class="historico_items">
-          <?php gerarProdutoCards(8); ?>
-        </div>
-
-        <div class="ver_mais_container">
-          <p class="ver_mais_text">Ver Mais</p>
-          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_longa_icon.svg">
-        </div>
-
-        <div class="about_container_2">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/produto_icon.svg" class="estrela">
+      <div class="perfil_vendedor_grid_produtos">
+        <div class="perfil_vendedor_about_container_2">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/tempo_icon.svg" alt="Icon Loja" class="base_icon">
           <h1>Produtos:</h1>
         </div>
-
-        <div class="historico_items historico_items_2">
-          <?php gerarProdutoCards(8); ?>
+        <div class="produtos_itens">
+          <?php
+          gerarProdutoCards(6, 0);
+          ?>
         </div>
-        <div class="ver_mais_container ver_mais_container_text_2">
+        <div class="ver_mais_container">
           <p class="ver_mais_text">Ver Mais</p>
-          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_longa_icon.svg">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
