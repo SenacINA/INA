@@ -1,58 +1,82 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+#hoverElement{
+    position: absolute;
+    inset: 0 0 0 0;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 100;
 }
 
 .parallax_div_animate,
-.parallax_div_animate:focus-within{
-animation-name: slide, final;
-animation-duration: 1.5s, 2s;
-animation-timing-function: ease-out;
-animation-delay: 1.5s, 3s;
-animation-iteration-count: 1;
-animation-fill-mode: forwards;
-background-position: left;
-
-background-image: url(../../image/geral/parallax/img_parallax_background.png);
-background-position:  right;
-height: 100vh;
+.parallax_div_animate:focus-within {
+    animation-name: slide, final;
+    animation-duration: 1.5s, 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 1.5s, 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    background-repeat: no-repeat;
+    background-image: url(../../../public/image/geral/parallax/img_parallax_background.png);
+    background-position: center center; /* Ajusta a posição do fundo */
+    background-size: cover; /* Garante que a imagem cubra todo o container */
+    height: 100vh; /* Garantir que ocupe toda a altura da tela */
+    width: 100%; /* Garantir que ocupe toda a largura da tela */
 }
 
-.parallax_img_logo{
-animation-name: logo;
-animation-duration: 1.5s;
-animation-timing-function: ease-out;
-animation-delay: 1.5s;
-animation-iteration-count: 1;
-animation-fill-mode: normal;
-
-position: absolute;
-opacity: 0;
+.parallax_img_logo {
+    animation-name: logo;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: normal;
+    position: absolute;
+    opacity: 0;
+    transform: translateY(100%);
 }
 
-.parallax_div_animate{
+.parallax_div_animate {
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: cover; /* Faz a imagem se ajustar ao espaço disponível, mantendo a proporção */
+    /* width: 100%;  Certifica que o contêiner tenha 100% de largura  */
+    /* height: 100%; Certifica que o contêiner tenha 100% de altura */
 }
 
-.parallax_img_logo{
-    position: -100px;
-}
-
+/* Animações */
 @keyframes slide {
-    0% {background-position: left; }
-    100% {background-position: right;}   
+    0% { background-position: left; }
+    100% { background-position: right; }
 }
 
 @keyframes final {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 @keyframes logo {
-    0% {transform: translateY(100%); opacity: 0;}
-    100% {transform: translateY(0%);opacity: 1;}
+    0% { transform: translateY(100%); opacity: 0; }
+    100% { transform: translateY(0%); opacity: 1; }
 }
 
+/* Responsividade para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+    .parallax_div_animate {
+        background-size: cover;
+        height: 80vh; /* Ajusta a altura para telas menores */
+    }
+}
+
+@media (max-width: 425px) {
+    .parallax_div_animate {
+        background-size: cover;
+        height: 70vh; /* Ajusta a altura para telas ainda menores */
+    }
+}
+
+@media (max-width: 375px) {
+    .parallax_div_animate {
+        background-size: cover;
+        height: 60vh; /* Ajusta ainda mais a altura em telas muito pequenas */
+    }
+}

@@ -39,12 +39,11 @@
     <link rel='icon' type='image/x-icon' href='$PATH_PUBLIC/image/geral/icone_eaoquadrado.ico'>
     <title>$titulo</title>
     <link rel='stylesheet' href='$PATH_PUBLIC/css/style.css'>
-    <script src='$PATH_PUBLIC/js/geral/base.js'></script>
-    ";
+    <script src='$PATH_PUBLIC/js/geral/base.js'></script>";
 
   //concatena os CSSs e Scripts
-  $str_css = implode('\n' , array_map(fn($item): string => "<link rel='stylesheet' href='". $PATH_PUBLIC . $item . "'>", $css));
-  $str_js = implode('\n' , array_map(fn($item): string => "<script src='" . $PATH_PUBLIC . $item . "'></script>", $js));
+  $str_css = implode('' , array_map(fn($item): string => "<link rel='stylesheet' href='$PATH_PUBLIC$item'>", $css));
+  $str_js = implode('' , array_map(fn($item): string => "<script src='$PATH_PUBLIC$item'></script>", $js));
 
   //Valor final injetado na tela
-  echo $head . $str_css . $str_js . "\n</head>";
+  echo $head . $str_css . $str_js . "</head>";
