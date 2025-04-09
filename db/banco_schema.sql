@@ -7,27 +7,15 @@ nome_estado varchar(50) not null,
 sigla_estado varchar(2) not null
 );
 
-create table cidade ( -- 19
-id_cidade integer auto_increment primary key, 
+create table if not exists cidade ( -- 19
+id_cidade int auto_increment primary key, 
 nome_cidade varchar(50) not null, 
 id_estado tinyint not null,  
 foreign key (id_estado) references estado(id_estado)  
 );
 
-create table if not exists endereco( -- 14
-id_endereco int auto_increment primary key,
-rua_endereco varchar(100) not null,
-bairro_endereco varchar(100) not null,
-id_cidade int not null,
-numero_endereco smallint,
-id_cliente int not null,
-referencia_endereco varchar(200),
-foreign key (id_cliente) references cliente(id_cliente) 
-foreign key (id_cidade) references cidade(id_cidade) 
-);
-
-create table cliente( -- 1
-id_cliente int auto_increment primary key not null,
+create table if not exists cliente(
+id_cliente int auto_increment primary key,
 nome_cliente varchar(70) not null,
 senha_cliente varchar(70) not null,
 data_registro_cliente date not null,
@@ -40,32 +28,45 @@ numero_celular_cliente varchar(10),
 ddd_cliente tinyint,
 foto_perfil_cliente varchar(200),
 banner_perfil_cliente varchar(200),
-tipo_conta_cliente tinyint not null, 
-status_conta_cliente tinyint,
+tipo_conta_cliente tinyint not null,
+status_conta_cliente tinyint
 );
 
-create table categoria( -- 6
+create table if not exists endereco( -- 14
+id_endereco int auto_increment primary key,
+rua_endereco varchar(100) not null,
+bairro_endereco varchar(100) not null,
+numero_endereco smallint,
+referencia_endereco varchar(200),
+id_cidade int,
+id_cliente int not null,
+foreign key (id_cliente) references cliente(id_cliente),
+foreign key (id_cidade) references cidade(id_cidade) 
+);
+
+
+create table if not exists categoria( -- 6
 id_categoria int auto_increment primary key,
 nome_categoria varchar(30) not null,
 endereco_imagem_categoria varchar(200),
 index_banner_categoria tinyint default 0
 );
 
-create table subcategoria( -- 8
+create table if not exists subcategoria( -- 8
 id_subcategoria int auto_increment primary key,
 nome_subcategoria varchar(30) not null,
 categoria_subcategoria int, -- a ser revisado
 foreign key (categoria_subcategoria) references categoria(id_categoria)
 );
 
-create table vendedor( -- 3
+create table if not exists vendedor( -- 3
 id_vendedor int auto_increment primary key,
 cnpj_vendedor varchar(30) unique not null,
 requerimento_10_vendas boolean
 );
 
-create table produto( -- 2
-id_produto int auto_increment primary key not null,
+create table if not exists produto( -- 2
+id_produto int auto_increment primary key,
 id_vendedor int not null,
 nome_produto varchar(200) not null,
 preco_produto decimal not null,
@@ -86,12 +87,12 @@ foreign key (subcategoria_produto) references subcategoria(id_subcategoria)
 );
 
 
-create table metodo_pagamento( -- 13
+create table if not exists metodo_pagamento( -- 13
 id_metodo_pagamento int auto_increment primary key,
 tipo_pagamento varchar(50)
 );
 
-create table compra( -- 5
+create table if not exists compra( -- 5
 id_compra int auto_increment primary key,
 id_cliente int not null,
 data_compra date not null,
@@ -101,7 +102,7 @@ foreign key (id_cliente) references cliente (id_cliente),
 foreign key (id_endereço) references endereco(id_endereco)
 );
 
-create table avaliacao( -- 7
+create table if not exists avaliacao( -- 7
 id_avaliacao int auto_increment primary key,
 status_avaliacao boolean not null,
 estrelas_avaliacao float(5) default 0, -- ver float dps
@@ -115,7 +116,7 @@ foreign key (id_cliente) references cliente(id_cliente),
 foreign key (id_vendedor) references vendedor(id_vendedor)
 );
 
-create table carrossel( -- 9
+create table if not exists carrossel( -- 9
 id_carrossel int auto_increment primary key,
 id_vendedor int not null, -- foreign key
 link_carrossel varchar(200) not null,
@@ -124,7 +125,7 @@ foi_pago_esse_mes_carrossel boolean not null,
 foreign key (id_vendedor) references vendedor(id_vendedor)
 );
 
-create table carrinho( -- 10
+create table if not exists carrinho( -- 10
 id_cliente int,
 id_produto int,
 quantidade_produto smallint not null,
@@ -132,22 +133,23 @@ foreign key (id_cliente) references cliente(id_cliente),
 foreign key (id_produto) references produto(id_produto)
 );
 
-create table imagem_produto( -- 11
-id_imagem_produto int primary key,
+create table if not exists imagem_produto( -- 11
+id_imagem_produto int auto_increment primary key,
 id_produto int,
 endereco_imagem_produto varchar(200) not null,
 index_imagem_produto int not null,
 foreign key (id_produto) references produto(id_produto)
 );
 
-create table imagem_carrossel( -- 12
-id_imagem_carrossel int primary key,
+create table if not exists imagem_carrossel( -- 12
+id_imagem_carrossel int auto_increment primary key,
 id_carrossel int,
 endereco_carrossel varchar(200) not null,
 foreign key (id_carrossel) references carrossel(id_carrossel)
 );
 
-create table perfil( -- 17
+create table if not exists perfil( -- 17
+id_perfil int PRIMARY KEY AUTO_INCREMENT,
 id_cliente int,
 foto_perfil varchar (200) not null default 'default_profile_picture.jpg',
 banner_perfil varchar(200) not null default 'default_banner_picture.jpg',
@@ -160,7 +162,7 @@ instagram_perfil varchar(50),
 foreign key (id_cliente) references cliente(id_cliente)
 );
 
-create table historico_acesso( -- 16
+create table if not exists historico_acesso( -- 16
 id_historico_acesso int primary key auto_increment,
 id_cliente int,
 ip_historico_acesso varchar(50),
@@ -170,7 +172,8 @@ navegador_historico_acesso varchar(200),
 foreign key (id_cliente) references cliente(id_cliente)
 );
 
-create table promocao( -- 20
+create table if not exists promocao( -- 20
+id_promocao int primary key auto_increment,
 id_produto int unique,
 ativo_promocao boolean default false,
 tipo_promocao int,
@@ -182,13 +185,13 @@ hora_fim_promocao time,
 foreign key (id_produto) references produto(id_produto) 
 );
 
-create table anuncio( -- 21
-index_anuncio integer unique primary key, 
+create table if not exists anuncio( -- 21
+index_anuncio int unique primary key, 
 endereco_imagem_anuncio varchar(200) not null  
 );
 
-create table item_compra( -- 22
-id_item_compra int primary key,
+create table if not exists item_compra( -- 22
+id_item_compra int primary key auto_increment,
 id_compra int,
 id_produto int,
 quantidade_compra smallint,
@@ -199,31 +202,31 @@ status_pagamento_compra boolean,
 status_entrega_compra boolean,
 foreign key (id_compra) references compra(id_compra),
 foreign key (id_produto) references produto(id_produto),
-foreign key (id_metodo_pagamento) references metodo_pagamento(id_metodo_pagamento),
+foreign key (id_metodo_pagamento) references metodo_pagamento(id_metodo_pagamento)
 );
 
-create table imagem_avaliacao( -- 23
-id_imagem_avaliacao int primary key,
+create table if not exists imagem_avaliacao( -- 23
+id_imagem_avaliacao int primary key auto_increment,
 endereco_imagem_avaliacao varchar(200) not null,
 id_avaliacao int,
 foreign key (id_avaliacao) references avaliacao(id_avaliacao)
 );
 
-create table tag( --26
-id_tag int primary key,
+create table if not exists tag( -- 26
+id_tag int primary key auto_increment,
 nome_tag varchar(200) not null
 );
 
-create table tag_produto ( -- 25
-id_tag_produto integer primary key, 
+create table if not exists tag_produto ( -- 25
+id_tag_produto integer primary key auto_increment, 
 id_produto int,  
 id_tag int,
 foreign key (id_produto) references produto(id_produto),  
 foreign key (id_tag) references tag(id_tag)  
 );
 
-create table tag_vinculo( -- 27
-id_tag_vinculo int primary key,
+create table if not exists tag_vinculo( -- 27
+id_tag_vinculo int primary key auto_increment,
 id_tag int,
 id_categoria int,
 id_subcategoria int,
