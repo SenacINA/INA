@@ -1,0 +1,40 @@
+.error_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 87vh;
+    row-gap: 32px;
+    align-items: center;
+    align-content: space-between;
+    max-width: 100vw;
+    align-content: center;
+}
+
+.error_bot_message {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error_bot_img {
+    height: auto;
+    width: 100%;
+    max-width: 986px;
+}
+
+#homeButton {
+    padding: 0 8px;
+}
+
+@media (max-width:1024px) {
+    #homeButton {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .error_main {
+        padding: 0 16px;
+    }
+}
