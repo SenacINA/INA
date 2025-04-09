@@ -4,6 +4,10 @@
   font-family: "Jost";
 }
 
+main {
+  margin: 0;
+}
+
 select {
   cursor: pointer;
 }
@@ -33,15 +37,17 @@ select {
   display: flex;
   gap: 8px;
   align-items: center;
-}
-.carrinho_dados_carrinho_nav_item img {
-  height: 40px;
-  width: 40px;
-}
-.carrinho_dados_carrinho_nav_item span {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--carolina);
+
+  img {
+    height: 40px;
+    width: 40px;
+  }
+
+  span {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--carolina);
+  }
 }
 
 .carrinho_dados_carrinho_nav {
@@ -65,17 +71,56 @@ select {
   height: 3px;
 }
 
-.carrinho_dados_navbar {
+/* start nav_carrinho */
+.carrinho_vazio_nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 16px;
   width: 100%;
-  height: 67px;
-  background-color: beige;
+  padding: 16px 0;
+
+  hr {
+    min-width: 4px;
+    width: 10%;
+    height: 3px;
+    border: 0;
+    border-radius: 4px;
+    background-color: var(--carolina);
+  }
 }
 
+.carrinho_vazio_nav_item{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  img{
+    height: 40px;
+    width: 40px;
+  }
+
+  span{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--cinza);
+  }
+}
+
+.carrinho_vazio_nav_selected{
+  filter: brightness(0.9);
+
+  span {
+    color: var(--carolina);
+  }
+}
+  
+/* end nav_carrinho */
 .carrinho_dados_forms_dados {
-  grid-row: 2;
   width: 90%;
-  height: 870px;
-  background-color: #fff;
+  background-color: var(--mob_branco);
+  border-radius: 10px;
+  height: 880px;
 }
 
 .carrinho_dados_main_container_carrinho_dados {
@@ -160,22 +205,11 @@ select {
 .carrinho_dados_botoes_carrinho {
   grid-column: 1;
   grid-row: 2;
-  position: relative;
-  display: grid;
-  grid-template-columns: auto;
-  column-gap: 10%;
-}
-
-.carrinho_dados_botoes_carrinho button {
+  
+  width: 80%;
   display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-}
-
-.carrinho_dados_botoes_carrinho img {
-  width: 18px;
-  height: 18px;
+  justify-content: space-between;
+  column-gap: 10%;
 }
 
 .carrinho_dados_salvar_carrinho {
