@@ -5,47 +5,51 @@
   $css = ["/css/cliente/carrinho_pagamentos.css"];
   require_once("../../../utils/head.php")
 ?>
-
 <body>
   <?php
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
 <main>
-  <div class="carrinho_vazio_nav">
-    <div class="carrinho_vazio_nav_item">
-      <img src="<?=$PATH_PUBLIC?>/image/carrinho/carrinho.svg">
+  <div class="carrinho_pagamentos_nav">
+    <div class="carrinho_pagamentos_nav_item">
+      <img src="<?=$PATH_PUBLIC?>/image/carrinho/carrinho_cinza_icon.svg">
       <span>Carrinho</span>
     </div>
     <hr>
-    <div class="carrinho_vazio_nav_item">
-      <img src="<?=$PATH_PUBLIC?>/image/carrinho/identificacao.svg">
+    <div class="carrinho_pagamentos_nav_item">
+      <img src="<?=$PATH_PUBLIC?>/image/carrinho/identificacao_cinza_icon.svg">
       <span>Identificação</span>
     </div>
     <hr>
-    <div class="carrinho_vazio_nav_item  carrinho_vazio_nav_selected">
-      <img src="<?=$PATH_PUBLIC?>/image/carrinho/pagamento.svg">
+    <div class="carrinho_pagamentos_nav_item carrinho_pagamentos_nav_selected">
+      <img src="<?=$PATH_PUBLIC?>/image/carrinho/pagamento_icon.svg">
       <span>Pagamento</span>
     </div>
   </div>
 
   <div class="carrinho_dados_pagamentos">
     <div class="container_whats">
-      <p>Conversar com Atendimento direto do vendedor</p>
-      <img src="<?=$PATH_PUBLIC?>/image/cliente/carrinho_pagamentos/whatsapp_user_carrinho_pagamentos.png" alt="">
-      <p>Conversar com Vendedor no WhatsApp</p>
-      <button class="botao_whats base_botao">Iniciar conversa</button>
+      <p>Fale diretamente com o seu Vendedor.</p>
+      <img src="<?=$PATH_PUBLIC?>/image/carrinho/whatsapp_user_carrinho_pagamentos.png" alt="">
+      <p>Continue com o Pagamento no WhatsApp!</p>
+      <button class="botao_whats base_botao">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/whatsapp_icon.svg" alt="">
+          Iniciar conversa
+      </button>
       <div class="separador_whats"></div>
-      <p>Ainda não tem o WhatsApp?</p>
-      <a>Baixar</a>
+      <p>Não tem o WhatsApp ainda?</p>
+      <a>Baixe agora e comece a conversar</a>
 
       <div class="botoes_content">
-        <button class="base_botao btn_blue" onclick="pag('../../index')">
-          Finalizar
-        </button>
-        <button class="base_botao btn_red" onclick="history.back()">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/sair_branco_icon.svg" alt="">
-          Voltar
-        </button>
+          <button class="carrinho_pagamentos_start base_botao btn_outline_blue" onclick="history.back()">
+              <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_carolina_icon.svg">
+              VOLTAR
+          </button>
+
+          <button class="base_botao btn_blue" onclick="pag('../../index')">
+              <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
+              FINALIZAR
+          </button>
       </div>
     </div>
   </div>

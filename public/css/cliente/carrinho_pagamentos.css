@@ -1,5 +1,9 @@
+main {
+  margin: 0;
+}
+
 /* start nav_carrinho */
-.carrinho_vazio_nav {
+.carrinho_pagamentos_nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +21,7 @@
   }
 }
 
-.carrinho_vazio_nav_item{
+.carrinho_pagamentos_nav_item{
   display: flex;
   gap: 8px;
   align-items: center;
@@ -34,7 +38,7 @@
   }
 }
 
-.carrinho_vazio_nav_selected{
+.carrinho_pagamentos_nav_selected{
   filter: brightness(0.9);
 
   span {
@@ -80,6 +84,7 @@
   a {
     color: var(--carolina);
     text-decoration: underline;
+    cursor: pointer;
     font-size: 20px;
   }
 }
@@ -111,4 +116,3 @@ hr {
   height: 5px;
   background: rgba(0, 0, 0, 0.05);
 }
-

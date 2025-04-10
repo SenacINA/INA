@@ -5,7 +5,6 @@
   $css = ["/css/cliente/carinho_dados.css"];
   require_once("../../../utils/head.php")
 ?>
-
 <body>
   <?php
     include_once("$PATH_COMPONENTS/php/navbar.php");
@@ -13,19 +12,19 @@
 <main>
   <div class="carrinho_dados">
 
-    <div class="carrinho_vazio_nav">
-      <div class="carrinho_vazio_nav_item">
-        <img src="<?=$PATH_PUBLIC?>/image/carrinho/carrinho.svg">
+    <div class="carrinho_dados_nav">
+      <div class="carrinho_dados_nav_item">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/carrinho_cinza_icon.svg">
         <span>Carrinho</span>
       </div>
       <hr>
-      <div class="carrinho_vazio_nav_item  carrinho_vazio_nav_selected">
-        <img src="<?=$PATH_PUBLIC?>/image/carrinho/identificacao.svg">
+      <div class="carrinho_dados_nav_item  carrinho_dados_nav_selected">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/identificacao_icon.svg">
         <span>Identificação</span>
       </div>
       <hr>
-      <div class="carrinho_vazio_nav_item">
-        <img src="<?=$PATH_PUBLIC?>/image/carrinho/pagamento.svg">
+      <div class="carrinho_dados_nav_item">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/pagamento_cinza_icon.svg">
         <span>Pagamento</span>
       </div>
     </div>
@@ -69,13 +68,13 @@
           
         </form>
         <div class="carrinho_dados_botoes_carrinho">
-          <button class="carrinho_vazio_start base_botao btn_outline_blue" onclick="history.back()">
-            <img src="<?=$PATH_PUBLIC?>/image\geral\botoes\seta_esquerda_carolina_icon.svg">
+          <button class="carrinho_dados_start base_botao btn_outline_blue" onclick="history.back()">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_carolina_icon.svg">
             VOLTAR
           </button>
 
           <button class="carrinho_dados_salvar_carrinho base_botao" onclick="pag('cliente/carrinho_pagamentos')">
-            <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">
+            <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/enviar_branco_icon.svg">
             Salvar
           </button>
         </div>
@@ -226,6 +225,11 @@
             </div>
           </forms>
         </div>
+
+        <button class="carrinho_dados_avançar_carrinho base_botao" onclick="pag('cliente/carrinho_pagamentos')">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">
+          AVANÇAR
+        </button>
       </div>
     </div>
   </div>
