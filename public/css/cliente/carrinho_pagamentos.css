@@ -61,9 +61,11 @@
   justify-self: center;
   justify-content: center;
 
+  border-radius: 10px;
+  padding: 32px;
   row-gap: 16px;
   width: 550px;
-  background-color: var(-mob_branco);
+  background-color: var(--mob_branco);
 
   p {
     color: var(--celadon);
@@ -91,18 +93,6 @@
   margin-bottom: 50px;
 }
 
-.text {
-  color: var(--carolina);
-  text-align: center;
-  font-size: 24px;
-}
-
-.text-2 {
-  color: var(--cinza);
-  text-align: center;
-  font-size: 24px;
-}
-
 .botao_whats {
   border: none;
   color: white;
@@ -111,7 +101,9 @@
 
 .botoes_content {
   display: flex;
-  justify-items: space-between;
+  gap: 25%;
+  justify-content: center;
+  align-content: center;
 }
 
 hr {
@@ -120,13 +112,3 @@ hr {
   background: rgba(0, 0, 0, 0.05);
 }
 
-.main_text_carrinho_pagamentos {
-  color: #247ba0;
-  text-align: center;
-  font-family: Jost;
-  font-size: 35px;
-  font-style: normal;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 1%;
-}
