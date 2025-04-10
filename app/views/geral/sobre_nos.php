@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">    
 <?php
-  $titulo = "Sobre Nos - E ao Quadrado";
+  $titulo = "Sobre Nós - E ao Quadrado";
   $css = ["/css/geral/sobre_nos.css"];
   require_once('../../../utils/head.php');
 ?>
