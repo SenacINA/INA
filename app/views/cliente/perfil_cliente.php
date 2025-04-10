@@ -24,7 +24,7 @@ require_once("../../../utils/head.php")
             <option selected disabled value="">Menu</option>
             <option value="cliente/editar_perfil_cliente">Editar Perfil</option>
             <option value="vendedor/cadastro_vendedor_1">Cadastro de vendedor</option>
-            <option value="cliente/login">Sair</option>
+            <option value="geral/login">Sair</option>
           </select>
         </form>
       </div>
