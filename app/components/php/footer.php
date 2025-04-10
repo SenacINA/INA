@@ -21,6 +21,8 @@
             <a href="../geral/faq.php" class="base_link underline">Privacidade e Proteção de dados</a>
             <a href="../geral/faq.php" class="base_link underline">Informações de venda</a>
             <a href="../geral/faq.php" class="base_link underline">Trabalhe conosco</a>
+            <h3>I.N.A.</h3>
+            <a href="./pages/geral/sobre_nos.php" class="base_link underline">Sobre nós</a>
         </div>
         <div class='footer_coluna'>
             <h2>Contato</h2>
