@@ -489,6 +489,10 @@ main {
 @media (max-width: 425px) {
   .carrinho_vazio_conteudo {
     height: 1150px;
+  } 
+
+  .carrinho_vazio_conteudo {
+    margin-top: 72px;
   }
 
   .carrinho_vazio_conteudo_servicos {
@@ -504,7 +508,8 @@ main {
     justify-content: center;
   }
 
-  .quantidade_text {
+  .quantidade_text,
+  .carrinho_vazio_nav {
     display: none;
   }
 }

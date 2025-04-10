@@ -53,7 +53,6 @@ main {
   align-items: center;
   justify-content: center;
 
-  
   margin: auto;
 }
 
@@ -66,9 +65,11 @@ main {
   justify-content: center;
 
   border-radius: 10px;
-  padding: 32px;
+
+  padding: 32px 16px;
+  margin: 0 16px;
   row-gap: 16px;
-  width: 550px;
+  max-width: 550px;
   background-color: var(--mob_branco);
 
   p {
@@ -106,13 +107,30 @@ main {
 
 .botoes_content {
   display: flex;
-  gap: 25%;
-  justify-content: center;
-  align-content: center;
+  width: 100%;
+
+  justify-content: space-between;
+  align-items: center;
 }
 
-hr {
-  width: 500px;
-  height: 5px;
-  background: rgba(0, 0, 0, 0.05);
+
+@media (max-width: 425px) {
+  .carrinho_pagamentos_nav {
+    display: none;
+  }
+
+  .container_whats {
+    margin: 72px 16px 0 16px;
+  }
+  
+  .botoes_content {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+
+    button {
+      max-width: none;
+      width: 100%;
+    }
+  }
 }
