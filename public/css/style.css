@@ -1545,7 +1545,8 @@ main{
   align-items: center;
   flex-direction: row;
   gap: 1em;
-  height: 40px;
+  max-height: 80px;
+  min-height: 40px;
   overflow: hidden;
   padding: 8px;
   border-radius: 5px;
