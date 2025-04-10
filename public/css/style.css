@@ -1497,6 +1497,8 @@ main{
   transform: translateY(-3px);
 }
 
+/* TOAST (MENSAGEM) */
+
 .toast-container {
   position: absolute;
   width: fit-content;
@@ -1507,8 +1509,6 @@ main{
   right: 0;
   background-color: red;
 }
-
-/* TOAST (MENSAGEM) */
 
 /* From Uiverse.io by xerith_8140 */ 
 /* Notification container */
