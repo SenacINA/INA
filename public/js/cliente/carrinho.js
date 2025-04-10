@@ -70,14 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleBotao.addEventListener('click', () => toggleMostarServicos() )
     }
 
-
-    console.log('algo2')
-
     if(!(btn_add && btn_dec && carrinho_value && precoTotal && precoBase && removerTudo && removerTudoItem)){
         console.log('Carrinho vazio ou Erro ao encontrar elementos')
         return
     }
-    console.log('algo3')
     
     removerTudo.addEventListener('click', removerTudoFun)
     removerTudoItem.addEventListener('click', removerTudoFun)
@@ -93,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return
         }
 
-        console.log(newValue)
         if(!newValue){
             console.log(`Não foi possivel calcular o novo valor: ${newValue}`)
             return
