@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
@@ -7,35 +6,36 @@
   require_once("../../../utils/head.php");
   include_once("$PATH_COMPONENTS/php/produto_carrinho.php");
 ?>
-<body class="carrinho_vazio_body">
+<body>
   <?php
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
 
-  <main class="carrinho_vazio_main">
+  <main>
     <div class="carrinho_vazio_nav">
       <div class="carrinho_vazio_nav_item carrinho_vazio_nav_selected">
-        <img src="<?=$PATH_PUBLIC?>/image/carrinho/carrinho.svg">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/carrinho_icon.svg">
         <span>Carrinho</span>
       </div>
-      <hr class="carrinho_vazio_divisoria">
+      <hr>
       <div class="carrinho_vazio_nav_item">
-        <img src="<?=$PATH_PUBLIC?>/image/carrinho/identificacao.svg">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/identificacao_cinza_icon.svg">
         <span>Identificação</span>
       </div>
-      <hr class="carrinho_vazio_divisoria">
+      <hr>
       <div class="carrinho_vazio_nav_item">
-        <img src="<?=$PATH_PUBLIC?>/image/carrinho/pagamento.svg">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/pagamento_cinza_icon.svg">
         <span>Pagamento</span>
       </div>
     </div>
+
     <div class="carrinho_vazio_conteudo">
       <div class="carrinho_vazio_conteudo_holder">
         <div class="carrinho_vazio_main_holder">
           <div>
             <div class="carrinho_vazio_text_info">
               <h2>Produto</h2>
-              <h2>Quantidade</h2>
+              <h2 class="quantidade_text">Quantidade</h2>
             </div>
             <hr class="carrinho_vazio_divisoria_quadrado">
           </div>
@@ -43,18 +43,38 @@
             <div class="carrinho_vazio_conteudo_items ">
               <?php exibirProdutos()?>
             </div>
+
             <div class="carrinho_vazio_conteudo_servicos">
-              <div class="carrinho_vazio_servicos_text">
-                <img src="<?=$PATH_PUBLIC?>/image/carrinho/servico.svg" class="servico_icon">
-                <p class="font_subtitulo font_celadon">SERVIÇOS</p>
-              </div>
-              <div class="subtotal_container_text">
-                <img src="<?=$PATH_PUBLIC?>/image/carrinho/seta.svg" class="seta">
-                <p class="font_descricao font_celadon font_bold">Subtotal serviços: R$ 00,00</p>
+              <div class="servicos_container_1">
+                <div class="text_servicos">
+                  <img src="<?=$PATH_PUBLIC?>/image/carrinho/servico.svg" class="base_icon">
+                  <p class="font_subtitulo font_celadon">FRETE</p>
+                </div>
+
+                <button id="btn_mostrar_servicos" class="btn_mostrar_servicos">
+                  <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_baixo.svg" class="base_icon">
+                </button>
+
+                <div id="frete_container_1" class="frete_container_1 visible_servicos">
+                  <div class="consultar_frete">
+                    <h1>CONSULTAR FRETE</h1>
+                    <div class="consultar_input">
+                        <input class="base_input" type="text">
+                        <button class='base_botao btn_blue btn_consulta'>Ok</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="frete_container_2" class="frete_container_2 visible_servicos">
+                  <p class="font_descricao font_celadon font_bold">Total de Itens: 1</p>
+                  <p class="font_descricao font_celadon font_bold">Frete Total: R$ 10,00</p>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
+
         <div class="carrinho_vazio_resumo_holder">
           <div>
             <div class="carrinho_vazio_text_info carrinho_vazio_text_resumo">
@@ -67,28 +87,28 @@
           </div>
         </div>
       </div>
+
       <div class="carrinho_vazio_botoes_holder">
         <button class="carrinho_vazio_start base_botao btn_outline_blue" onclick="history.back()">
-          <img src="<?=$PATH_PUBLIC?>/image\geral\botoes\seta_esquerda_carolina_icon.svg">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_carolina_icon.svg">
           VOLTAR
         </button>
         <div class="carrinho_vazio_holder_final">
           <button id="carrinhoVazioRemoverTudo" class="base_botao btn_red">
-            <img src="<?=$PATH_PUBLIC?>/image\geral\botoes\x_branco_icon.svg">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/lixo_branco_icon.svg">
             REMOVER TUDO
           </button>
 
           <button class="base_botao btn_blue" onclick="pag('cliente/carrinho_dados')">
-            <img src="<?=$PATH_PUBLIC?>/image\geral\botoes\v_branco_icon.svg">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">
             SALVAR
           </button>
         </div>
       </div>
     </div>
   </main>
-
-
+  <?php
+    include_once("$PATH_COMPONENTS/php/footer.php");
+  ?>
 </body>
-
-
 </html>

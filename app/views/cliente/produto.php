@@ -104,14 +104,11 @@
                 </div>
             </div>
 
-
-            <div class="grid_consultar_frete_cupom">
-                <div class="consultar_frete">
-                    <h1>CONSULTAR FRETE</h1>
-                    <div class="consultar_input">
-                        <input class="base_input" type="text">
-                        <button class='base_botao btn_blue btn_consulta'>Ok</button>
-                    </div>
+            <div class="consultar_frete">
+                <h1>CONSULTAR FRETE</h1>
+                <div class="consultar_input">
+                    <input class="base_input" type="text">
+                    <button class='base_botao btn_blue btn_consulta'>Ok</button>
                 </div>
             </div>
         </div>

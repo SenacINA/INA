@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  
 <?php
   $css = ["/css/cliente/carinho_dados.css"];
   require_once("../../../utils/head.php")
 ?>
-<body class="carrinho_dados_fundo">
+<body>
   <?php
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
+<main>
   <div class="carrinho_dados">
-    <div class="carrinho_dados_carrinho_nav">
-      <div class="carrinho_dados_carrinho_nav_item">
-        <img src="<?= $PATH_PUBLIC ?>/image/carrinho/carrinho_cinza.svg">
+
+    <div class="carrinho_dados_nav">
+      <div class="carrinho_dados_nav_item">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/carrinho_cinza_icon.svg">
         <span>Carrinho</span>
       </div>
-      <hr class="carrinho_dados_carrinho_divisoria">
-      <div class="carrinho_dados_carrinho_nav_item">
-        <img src="<?= $PATH_PUBLIC ?>/image/carrinho/identificacao_selected.svg">
+      <hr>
+      <div class="carrinho_dados_nav_item  carrinho_dados_nav_selected">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/identificacao_icon.svg">
         <span>Identificação</span>
       </div>
-      <hr class="carrinho_dados_carrinho_divisoria">
-      <div class="carrinho_dados_carrinho_nav_item">
-        <img src="<?= $PATH_PUBLIC ?>/image/carrinho/pagamento.svg">
+      <hr>
+      <div class="carrinho_dados_nav_item">
+        <img src="<?=$PATH_PUBLIC?>/image/carrinho/pagamento_cinza_icon.svg">
         <span>Pagamento</span>
       </div>
     </div>
+
     <div class="carrinho_dados_forms_dados">
       <div class="carrinho_dados_main_container_carrinho_dados">
         <p class="carrinho_dados_main_text_carrinho_dados">Identificação</p>
@@ -64,7 +68,15 @@
           
         </form>
         <div class="carrinho_dados_botoes_carrinho">
-          <button class="carrinho_dados_salvar_carrinho" onclick="pag('cliente/carrinho_pagamentos')"><img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
+          <button class="carrinho_dados_start base_botao btn_outline_blue" onclick="history.back()">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_carolina_icon.svg">
+            VOLTAR
+          </button>
+
+          <button class="carrinho_dados_salvar_carrinho base_botao" onclick="pag('cliente/carrinho_pagamentos')">
+            <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/enviar_branco_icon.svg">
+            Salvar
+          </button>
         </div>
         <div class="carrinho_dados_informacoes_salvas">
           <div class="carrinho_dados_enderecos_salvos_main">
@@ -213,12 +225,17 @@
             </div>
           </forms>
         </div>
+
+        <button class="carrinho_dados_avançar_carrinho base_botao" onclick="pag('cliente/carrinho_pagamentos')">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">
+          AVANÇAR
+        </button>
       </div>
     </div>
   </div>
+</main>
   <?php
     include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
 </body>
-
 </html>
