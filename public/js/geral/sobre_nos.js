@@ -1,11 +1,11 @@
 let currentIndex = 0;
-const carousel = document.getElementById("carousel");
-const images = document.querySelectorAll(".carousel img");
-const footer = document.getElementById("footer");
+const carousel = document.getElementById("sobrenos_carousel");
+const images = document.querySelectorAll(".sobrenos_carousel img");
+const footer = document.getElementById("sobrenos_carousel_footer");
 const totalImages = images.length;
 
 const descriptions = [
-    { name: "Enzo Guenka Lopez", text: "Trabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manou dia e noite para idk man." },
+    { name: "Enzo Guenka Lopez", text: "Trabalhou dia e noite para idk man..." },
     { name: "Pessoa 2", text: "Descrição da pessoa 2 aqui." },
     { name: "Pessoa 3", text: "Descrição da pessoa 3 aqui." },
     { name: "Pessoa 4", text: "Descrição da pessoa 4 aqui." },
@@ -30,5 +30,5 @@ function prevSlide() {
     updateCarousel();
 }
 
-// Initialize the carousel
+// Inicialização
 updateCarousel();
