@@ -29,8 +29,10 @@ body {
 }
 
 .popup {
-  width: 773px;
-  height: 438px;
+  max-width: 760px;
+  width: 90%;
+  max-height: 440px;
+  height: 100%;
   background-color: #fff;
   border: #0000005d solid 1px;
   border-radius: 20px;
