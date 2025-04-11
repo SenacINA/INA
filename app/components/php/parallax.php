@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../public/css/geral/parallax.css">
-    <title>Parallax</title>
-</head>
-<body>
-    <div class="parallax_div_animate" id="hoverElement">
-        <img class="parallax_img_logo" src="../../../public/image/geral/parallax/img_logo_texto.svg" alt="logo">
-    </div>
-</body>
-</html>
+
+<div class="parallax_div_animate" id="hoverElement">
+    <img class="parallax_img_logo" src="<?=$PATH_PUBLIC?>/image/geral/parallax/logo_parallax.svg" alt="logo">
+</div>
