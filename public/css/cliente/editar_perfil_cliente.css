@@ -870,6 +870,10 @@ body {
     margin-top: 150px !important;
   }
 
+  .popup {
+    padding: 2.5%;
+  }
+
   .quadrado_cliente {
     display: flex;
     flex-direction: column;
@@ -985,6 +989,10 @@ body {
     margin-top: 150px !important;
   }
 
+  .text_popup>div {
+    width: 64%;
+  }
+
   .title {
     display: none;
   }
@@ -1079,6 +1087,38 @@ body {
 @media (max-width: 425px) {
   body {
     margin-top: 150px !important;
+  }
+
+  .popup {
+    max-height: none;
+    height: 70%;
+    border-radius: 10px;
+    padding: 3%;
+    row-gap: 2%;
+  }
+
+  .text_popup>div {
+    width: 39%;
+  }
+  
+  .forms_redes_sociais>div{
+    row-gap: 0;
+  }
+
+  .forms_redes_sociais>div>label {
+    column-gap: 1%;
+  }
+  
+  .forms_redes_sociais {
+    grid-template-columns: 100%;
+  }
+
+  .forms_redes_sociais>button {
+    grid-column: 1;
+  }
+  
+  .forms_redes_sociais>p {
+    margin-top: 0;
   }
 
   .title {

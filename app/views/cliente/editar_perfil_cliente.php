@@ -146,7 +146,7 @@
     <div class="popup">
       <div class="text_popup">
         <hr class="linha_vertical">
-        <h1>Redes Sociais</h1>
+        <h1 class="font_titulo">Redes Sociais</h1>
         <div>
           <button class="fechar" id="close_btn">X</button>
         </div>
