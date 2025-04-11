@@ -1496,3 +1496,245 @@ main{
   background-color: #1476b3;
   transform: translateY(-3px);
 }
+
+/* TOAST (MENSAGEM) */
+
+.toast-container {
+  position: absolute;
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  right: 0;
+  background-color: red;
+}
+
+/* From Uiverse.io by xerith_8140 */ 
+/* Notification container */
+
+.notification-container {
+  /* Position top left */
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+  max-width: 256px;
+  width: 100%;
+
+  --content-color: var(--branco_gelo);
+  --background-color: var(--cinza);
+  --font-size-content: 16px;
+  --icon-size: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  list-style-type: none;
+  font-family: Jost;
+  color: var(--content-color);
+}
+
+/* Notification Item */
+
+.notification-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1em;
+  max-height: 80px;
+  min-height: 40px;
+  overflow: hidden;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: rgba(111, 111, 111, 0.2) 0px 8px 24px;
+  background-color: var(--background-color);
+  transition: all 250ms ease;
+  max-width: 256px;
+}
+
+.notification-item svg {
+  transition: 250ms ease;
+}
+
+.notification-item:hover {
+  transform: scale(1.01);
+}
+
+.notification-item:active {
+  transform: scale(1.05);
+}
+
+.notification-item .notification-close:hover svg {
+  filter: brightness(.8);
+}
+
+.notification-item .notification-close:active svg {
+  transform: scale(1.1);
+}
+
+/* Notification Icons */
+
+.notification-item .notification-close {
+  padding: 2px;
+  border-radius: 5px;
+  transition: all 250ms;
+}
+
+.notification-container svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: var(--content-color);
+}
+
+.notification-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Successo */
+
+.success {
+  color: var(--branco_gelo);
+  background-color: var(--carolina);
+}
+
+.success svg {
+  color: var(--branco_gelo);
+}
+
+.success .notification-progress-bar {
+  background-color: var(--branco_gelo);
+}
+
+.success:hover {
+  background-color: var(--celadon);
+}
+
+.notification-item.success .notification-close:hover {
+  background-color: #2b445394;
+}
+
+/* Info */
+
+.info {
+  color: var(--branco_gelo);
+  background-color: #7eb8ff;
+}
+
+.info svg {
+  color: var(--branco_gelo);
+}
+
+.info .notification-progress-bar {
+  background-color: var(--branco_gelo);
+}
+
+.info:hover {
+  background-color: #84b1e9;
+}
+
+.notification-item.info .notification-close:hover {
+  background-color: #5485a394;
+}
+
+/* Alerta */
+
+.warning {
+  color: #535353;
+  background-color: #ffe57e;
+}
+
+.warning svg {
+  color: #535353;
+}
+
+.warning .notification-progress-bar {
+  background-color: #535353;
+}
+
+.warning:hover {
+  background-color: #ffde59;
+}
+
+.notification-item.warning .notification-close:hover {
+  background-color: #ffffff96;
+}
+
+/* Erro */
+
+.error {
+  color: var(--content-color);
+  background-color: var(--vermelho);
+}
+
+.error svg {
+  color: var(--content-color);
+}
+
+.error .notification-progress-bar {
+  background-color: var(--branco_gelo);
+}
+
+.error:hover {
+  background-color: #ff5f5f;
+}
+
+.notification-item.error .notification-close:hover {
+  background-color: #fd00007e;
+}
+
+/* Notification content */
+
+.notification-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.notification-text {
+  font-size: var(--font-size-content);
+  user-select: none;
+}
+
+.notification-close {
+  cursor: pointer;
+}
+
+/* Notification progress bar */
+
+.notification-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: var(--content-color);
+  width: 100%;
+  transform: translateX(100%);
+
+  /* Remove the infinite property for your website */
+
+  animation: progressBar 5s linear forwards infinite;
+}
+
+.notification-item.slide-out-right {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* progressBar Animation */
+
+@keyframes progressBar {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
