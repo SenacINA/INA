@@ -37,7 +37,8 @@ body {
   grid-row: 3;
 }
 
-.grid_consultar_frete_cupom {
+.consultar_frete {
+  justify-self: end;
   grid-column: 2;
   grid-row: 3;
 }
@@ -71,7 +72,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 
 .imagem_nome_vendedor img {
   width: auto;
@@ -665,7 +665,6 @@ body {
 
 
 /* Consultar inputs */
-
 .grid_consultar_fetre_cupom {
   max-width: 749px;
 }
@@ -685,10 +684,12 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
+
   input {
     width: 100%;
     border-radius: 5px 0 0 5px;
   }
+
   button {
     text-transform: uppercase;
     border-radius: 0 5px 5px 0;

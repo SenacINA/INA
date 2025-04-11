@@ -1,17 +1,5 @@
-
-
-.carrinho_vazio_body{
-  display: flex;
-  background-color: var(--branco);
-}
-
-.carrinho_vazio_main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100%;
-  margin: 0 182px;
+main {
+  margin: 0;
 }
 
 .carrinho_vazio_conteudo_holder{
@@ -34,6 +22,7 @@
   flex-direction: column;
 }
 
+/* start nav_carrinho */
 .carrinho_vazio_nav {
   display: flex;
   align-items: center;
@@ -41,6 +30,15 @@
   column-gap: 16px;
   width: 100%;
   padding: 16px 0;
+
+  hr {
+    min-width: 4px;
+    width: 10%;
+    height: 3px;
+    border: 0;
+    border-radius: 4px;
+    background-color: var(--carolina);
+  }
 }
 
 .carrinho_vazio_nav_item{
@@ -52,16 +50,23 @@
     height: 40px;
     width: 40px;
   }
+
   span{
     font-size: 24px;
     font-weight: 600;
-    color: var(--carolina);
+    color: var(--cinza);
   }
 }
 
 .carrinho_vazio_nav_selected{
   filter: brightness(0.9);
+
+  span {
+    color: var(--carolina);
+  }
 }
+
+/* end nav_carrinho */
 .carrinho_vazio_text_info {
   display: flex;
   align-items: center;
@@ -81,19 +86,11 @@
   justify-content: center;
 }
 
-.carrinho_vazio_divisoria {
-  min-width: 4px;
-  width: 10%;
-  height: 3px;
-  border: 0;
-  border-radius: 4px;
-  background-color: var(--carolina);
-}
-
 .carrinho_vazio_conteudo {
-  width: 100%;
-  height: 100%;
-  max-height: 70vh;
+  width: 90%;
+  height: 700px;
+  justify-self: center;
+  
   background-color: var(--mob_branco);
   padding: 0 32px;
   border-radius: 10px;
@@ -110,8 +107,11 @@
 }
 
 .carrinho_vazio_main_content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto min-content;
+
+  width: 100%;
   height: 100%;
 }
 
@@ -130,31 +130,87 @@
   justify-content: start;
 }
 
-.servico_icon {
-  width: 25px;
-  height: 25px;
-}
-
 .carrinho_vazio_conteudo_servicos {
   width: 100%;
-  height: 50%;
+  margin: auto;
+
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: var(--azul_leve);
 }
 
-.carrinho_vazio_servicos_text {
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
+.servicos_container_1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+  margin: 8px 16px;
+  height: 100%;
 }
 
-.servicos_text {
-  color: #0f3b62;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
+.btn_mostrar_servicos {
+  cursor: pointer;
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  justify-self: end;
+}
+
+.frete_container_1 {
+  display: block;
+  margin-top: 8px;
+}
+
+.frete_container_2 p {
+  text-align: end;
+}
+
+.visible_servicos {
+  display: none; 
+}
+
+.text_servicos {
+  display: flex;
+  justify-self: start;
+  
+  gap: 8px;
+}
+
+/* Consultar inputs */
+.grid_consultar_fetre_cupom {
+  max-width: 750px;
+}
+
+.consultar_frete,
+.consultar_cupom {
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  h1 {
+    font-size: 24px;
+    color: var(--cinza);
+  }
+}
+
+.consultar_input {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  input {
+    width: 100%;
+    border-radius: 5px 0 0 5px;
+  }
+
+  button {
+    text-transform: uppercase;
+    border-radius: 0 5px 5px 0;
+    min-width: 40px;
+    max-width: 40px;
+  }
 }
 
 .subtotal_text {
@@ -197,8 +253,6 @@
   background-color: var(--azul_leve);
 }
 
-
-
 .quadrado_resumo {
   width: 170px;
   height: 26px;
@@ -213,12 +267,6 @@
   border: 0;
 }
 
-.seta {
-  width: 33px;
-  height: 33px;
-  position: relative;
-  left: 70%;
-}
 .carrinho_vazio_holder_final{
   display: flex;
   gap: 16px;
@@ -231,11 +279,6 @@
   justify-content: space-between;
   gap: 16px;
   margin: 24px 0;
-}
-
-.carrinho_vazio_start img {
-  height: 24px;
-  width: 24px;
 }
 
 /* Card Produto*/
@@ -307,7 +350,6 @@
   color: var(--cinza);
 }
 
-
 .payment-info {
   font-size: 1rem;
   color: #333;
@@ -377,42 +419,16 @@
   margin-top: 8px;
 }
 
-
-
-/* FIm Card Produto*/
-
-@media (max-width:1440px) {
-  .carrinho_vazio_main{
-    margin: 0 100px;
-  }
-}
-
 @media (max-width:1024px) {
-  .carrinho_vazio_nav_item{
-    gap: 4px;
-    img{
-      height: 1.5rem;
-      width: auto;
-    }
-    span{
-      font-size: 1rem;
-    }
-  }
-
-  .carrinho_vazio_nav{
-    column-gap: 4px;
-  }
-
-  .carrinho_vazio_servicos_text{
-    p{
-      font-size: 1.25rem;
-    }
+  .carrinho_vazio_conteudo {
+    height: 850px;
   }
 
   .quantity-price{
     flex-direction: column;
     align-items: end;
   }
+
   .carrinho_vazio_conteudo_holder{
     flex-direction: column;
   }
@@ -421,34 +437,20 @@
     height: 100%;
   }
 
+  .carrinho_vazio_conteudo_items {
+    min-height: 230px;
+  }
+
   .carrinho_vazio_resumo_holder{
     width: 100%;
+    min-height: 200px;
     height: 100%;
-  }
-
-  .carrinho_vazio_conteudo_items{
-    height: 50vh;
-  }
-
-  .carrinho_vazio_conteudo{
-    max-height: none;
-  }
-  .carrinho_vazio_text_info {
-    padding: 4px 0 ;
-
-    h2{
-      font-size: 1.5rem;
-    }
-  }
-
-  .carrinho_vazio_conteudo{
-    padding: 0 16px;
   }
 }
 
 @media (max-width:768px) {
-  .carrinho_vazio_main{
-    margin: 0 16px;
+  .carrinho_vazio_conteudo {
+    height: 950px;
   }
 
   .carrinho_vazio_holder_final{
@@ -459,12 +461,6 @@
 
   .product-details{
     width: 100%;
-  }
-
-  .carrinho_vazio_nav_item{
-    span{
-      font-size: 0.875rem
-    };
   }
 
   .quantity-price {
@@ -488,10 +484,32 @@
   .quantity-price{
     align-items: center;
   }
+}
 
-  .carrinho_vazio_text_info{
-    h2{
-      font-size: 1rem;
-    }
+@media (max-width: 425px) {
+  .carrinho_vazio_conteudo {
+    height: 1150px;
+  } 
+
+  .carrinho_vazio_conteudo {
+    margin-top: 72px;
+  }
+
+  .carrinho_vazio_conteudo_servicos {
+    grid-template-columns: 1fr; 
+  }
+
+  .frete_container_1,
+  .frete_container_2 {
+    grid-column: 1/ 3;
+  }
+
+  .carrinho_vazio_text_info {
+    justify-content: center;
+  }
+
+  .quantidade_text,
+  .carrinho_vazio_nav {
+    display: none;
   }
 }

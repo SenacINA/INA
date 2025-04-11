@@ -38,6 +38,20 @@ const removerTudoFun = () => {
     elemento.innerHTML = '<h1 class="items_vazio">NENHUM ITEM NO CARRINHO</h1>'
 }
 
+const toggleMostarServicos = () => {
+    console.log('aaaaaaaaaaaaaaaaaaak')
+    const freteContainer1 = document.getElementById("frete_container_1");
+    const freteContainer2 = document.getElementById("frete_container_2");
+
+    if (!freteContainer1 || !freteContainer2) {
+        console.log('Sem serviços');
+        return;
+    }
+
+    freteContainer1.classList.toggle('visible_servicos');
+    freteContainer2.classList.toggle('visible_servicos');
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const btn_add = document.getElementById("carrinhoVazioBotaoAumentar")
@@ -48,15 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const removerTudo = document.getElementById("carrinhoVazioRemoverTudo")
     const removerTudoItem = document.getElementById("carrinhoVazioRemoverItem")
+    const toggleBotao = document.getElementById("btn_mostrar_servicos")
 
 
-    console.log('algo2')
+    if(toggleBotao){
+        console.log('boooooooooooota')
+        toggleBotao.addEventListener('click', () => toggleMostarServicos() )
+    }
 
     if(!(btn_add && btn_dec && carrinho_value && precoTotal && precoBase && removerTudo && removerTudoItem)){
         console.log('Carrinho vazio ou Erro ao encontrar elementos')
         return
     }
-    console.log('algo3')
     
     removerTudo.addEventListener('click', removerTudoFun)
     removerTudoItem.addEventListener('click', removerTudoFun)
@@ -72,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return
         }
 
-        console.log(newValue)
         if(!newValue){
             console.log(`Não foi possivel calcular o novo valor: ${newValue}`)
             return
