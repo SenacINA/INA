@@ -105,7 +105,7 @@
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" alt="instagram"> <a href="#" class="link_instagram">my.Cliente10 </a>
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" alt="facebook"> <a href="#" class="link_facebook">Cliente10</a>
         </div>
-        <button class="base_botao btn_blue botao_edit">
+        <button class="base_botao btn_blue botao_edit" id="botao_editar">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/caneta_branca_icon.svg" alt="">
           Editar
         </button>
@@ -142,10 +142,41 @@
       </button>
     </div>
   </main>
+  <div class="popup_container" id="popup">
+    <div class="popup">
+      <div class="text_popup">
+        <hr class="linha_vertical">
+        <h1>Redes Sociais</h1>
+        <div>
+          <button class="fechar" id="close_btn">X</button>
+        </div>
+      </div>
+      <form action="#" method="get" class="forms_redes_sociais">
+        <div>
+          <label for="instagram"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg">Instagram *</label>
+          <input class="base_input" type="text" name="instagram" placeholder="my.Cliente10">
+          <label for="facebook"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg">Facebook *</label>
+          <input class="base_input" type="text" name="facebook" placeholder="Cliente10">
+          <label for="x"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg">X.com *</label>
+          <input class="base_input" type="text" name="x">
+        </div>
+        <div>
+          <label for="linkedin"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg">Linkedin *</label>
+          <input class="base_input" type="text" name="linkedin">
+          <label for="youtube"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg">Youtube *</label>
+          <input class="base_input" type="text" name="youtube">
+          <label for="tiktok"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg">Tiktok *</label>
+          <input class="base_input" type="text" name="tiktok">
+        </div>
+        <p>* Opcional</p>
+        <button class="base_botao btn_blue"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
+      </form>
+    </div>
+  </div>
   <?php
         include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
-
+<script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
 </body>
 
 </html>
