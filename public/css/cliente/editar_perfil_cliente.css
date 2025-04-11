@@ -14,6 +14,95 @@ body {
   height: 100%;
 }
 
+.popup_container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000002d;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup {
+  width: 773px;
+  height: 438px;
+  background-color: #fff;
+  border: #0000005d solid 1px;
+  border-radius: 20px;
+  padding: 1.5%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5%;
+}
+
+.text_popup {
+  display: flex;
+  column-gap: 2%;
+}
+
+.text_popup>h1 {
+  color: var(--celadon);
+}
+
+.text_popup>div {
+  display: flex;
+  width: 65%;
+  justify-content: flex-end;
+}
+
+.fechar {
+  width: 50px;
+  height: 50px;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--carolina);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.forms_redes_sociais {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+.forms_redes_sociais>button {
+  grid-column: 1/3;
+  grid-row: 4;
+  margin-top: 1%;
+}
+
+.forms_redes_sociais>p {
+  grid-row: 3;
+  margin-top: 7%;
+  font-weight: 600;
+  color: var(--cinza);
+}
+
+.forms_redes_sociais>div {
+  display: grid;
+  row-gap: 2%;
+}
+
+.forms_redes_sociais>div>label {
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  column-gap: 3%;
+  color: var(--cinza);
+}
+
+.forms_redes_sociais>div>label>img {
+  width: 30px;
+  height: 30px;
+}
+
 .quadrado_cliente {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -72,7 +161,7 @@ body {
   align-items: center;
   justify-content: center;
   justify-items: center;
-  
+
   grid-template-rows: 200px 193px 4px 150px min-content;
   grid-template-columns: 100%;
 }
@@ -97,9 +186,8 @@ body {
 .pfp_cliente {
   grid-row: 1;
   grid-column: 1;
-  z-index: 2;
+  z-index: 1;
   position: relative;
-  
   top: 90px;
   justify-self: center;
   align-self: center;
@@ -127,7 +215,8 @@ body {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 90%; /* 18px */
+  line-height: 90%;
+  /* 18px */
   justify-content: center;
 }
 
@@ -140,7 +229,8 @@ body {
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
-  line-height: 90%; /* 11.7px */
+  line-height: 90%;
+  /* 11.7px */
 }
 
 .tempo_cliente_container,
@@ -297,7 +387,7 @@ body {
   justify-content: center;
   grid-column: 2;
   grid-row: 2/3;
-  
+
   width: 85%;
   margin: 8% 5% 0 5%;
   row-gap: 25px;
@@ -697,14 +787,14 @@ body {
     text-overflow: ellipsis;
   }
 }
+
 .index_body_desconto {
   position: absolute;
   top: 8px;
   right: 0;
   width: 80px;
   height: 20px;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="20" viewBox="0 0 80 20" fill="none"><path d="M0 0H80V20H0L17.3359 10L0 0Z" fill="%23006494"/></svg>')
-    no-repeat;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="20" viewBox="0 0 80 20" fill="none"><path d="M0 0H80V20H0L17.3359 10L0 0Z" fill="%23006494"/></svg>') no-repeat;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -844,6 +934,7 @@ body {
     width: 96%;
     margin: 0;
   }
+
   .botao_edit {
     width: 100%;
   }
@@ -915,47 +1006,59 @@ body {
   .pfp_cliente {
     left: 0;
   }
+
   .mini_perfil_cliente {
     grid-template-rows: repeat(5, min-content);
     height: 720px;
   }
+
   .pfp_cliente {
     top: 50%;
     width: 140px;
   }
+
   .pfp_cliente {
     left: calc(63.5% - (826px / 2));
     top: calc(130% - (300px / 2));
   }
+
   .infos_container {
     column-gap: 0;
   }
+
   .nome_cliente {
     margin-top: 10%;
     grid-column: 1 / 4;
     position: relative;
     right: 4%;
   }
+
   .about_container {
     margin-top: 5%;
   }
+
   .separador_mini_perfil {
     margin-top: 10%;
     width: 90%;
   }
+
   .sobre_nos_cliente {
     left: 5%;
   }
+
   .linha_vertical_mini {
     margin-right: 10px;
     margin-left: 10px;
   }
+
   .contatos_container {
     margin-top: 5%;
   }
+
   .text_about {
     width: 90%;
   }
+
   .about_container {
     left: 5%;
   }
@@ -975,13 +1078,16 @@ body {
   body {
     margin-top: 150px !important;
   }
+
   .title {
     margin-bottom: 5px;
   }
+
   .mini_perfil_cliente {
     grid-template-rows: repeat(5, min-content);
     height: 650px;
   }
+
   .pfp_cliente {
     top: 50%;
     width: 100px;
@@ -991,41 +1097,52 @@ body {
     left: calc(110% - (826px / 2));
     top: calc(210% - (300px / 2));
   }
+
   .infos_container {
     column-gap: 0;
     left: 0;
   }
+
   .nome_cliente {
     margin-top: 10%;
     grid-column: 1 / 3;
   }
+
   .about_container {
     margin-top: 5%;
   }
+
   .separador_mini_perfil {
     margin-top: 10%;
   }
+
   .sobre_nos_cliente {
     left: 9%;
   }
+
   .linha_vertical_mini {
     margin-right: 10px;
     margin-left: 10px;
   }
+
   .contatos_container {
     margin-top: 10%;
   }
+
   .tempo_cliente_container {
     grid-column: 2;
     grid-row: 3;
   }
+
   .localizacao_cliente_container {
     grid-column: 1;
   }
+
   .redefinir_email_cliente,
   .redefinir_senha_cliente {
     font-size: 16px;
   }
+
   .destaques_container {
     grid-template-columns: 1fr 1fr;
   }
