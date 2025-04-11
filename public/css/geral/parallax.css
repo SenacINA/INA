@@ -16,10 +16,10 @@
     animation-fill-mode: forwards;
     background-repeat: no-repeat;
     background-image: url(../../../public/image/geral/parallax/img_parallax_background.png);
-    background-position: center center; /* Ajusta a posição do fundo */
-    background-size: cover; /* Garante que a imagem cubra todo o container */
-    height: 100vh; /* Garantir que ocupe toda a altura da tela */
-    width: 100%; /* Garantir que ocupe toda a largura da tela */
+    background-position: center center; 
+    background-size: cover; 
+    height: 100vh; 
+    width: 100%; 
 }
 
 .parallax_img_logo {
@@ -38,9 +38,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    object-fit: cover; /* Faz a imagem se ajustar ao espaço disponível, mantendo a proporção */
-    /* width: 100%;  Certifica que o contêiner tenha 100% de largura  */
-    /* height: 100%; Certifica que o contêiner tenha 100% de altura */
+    object-fit: cover; 
+
 }
 
 /* Animações */
@@ -59,24 +58,23 @@
     100% { transform: translateY(0%); opacity: 1; }
 }
 
-/* Responsividade para diferentes tamanhos de tela */
 @media (max-width: 768px) {
     .parallax_div_animate {
         background-size: cover;
-        height: 80vh; /* Ajusta a altura para telas menores */
+        height: 80vh;
     }
 }
 
 @media (max-width: 425px) {
     .parallax_div_animate {
         background-size: cover;
-        height: 70vh; /* Ajusta a altura para telas ainda menores */
+        height: 70vh; 
     }
 }
 
 @media (max-width: 375px) {
     .parallax_div_animate {
         background-size: cover;
-        height: 60vh; /* Ajusta ainda mais a altura em telas muito pequenas */
+        height: 60vh; 
     }
 }
