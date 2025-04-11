@@ -79,7 +79,7 @@ function retornarToast(mensagem, tipo) {
     `;
 
     toast.querySelector('.notification-close').addEventListener('click', () => {
-        toast.classList.add('fade-out');
+        toast.classList.add('slide-out-right');
         setTimeout(() => {
             toast.remove();
         }, 300); 
