@@ -47,48 +47,25 @@
       <p>
         Também queremos dedicar um espaço a alguns colegas que fizeram parte da nossa caminhada, mas que, por motivos pessoais, precisaram se afastar do curso, ou mudarem de turno. A contribuição de vocês foi essencial para o início desse projeto, e levamos com carinho tudo o que vivemos juntos. Obrigado por terem feito parte da nossa história.
       </p>
-  </section>
+    </section>
 
-
-    <!-- Perfil do membro da equipe -->
-    <div class="sobrenos_team_profile">
-      <div class="sobrenos_profile_image">
-        <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Foto de Enzo">
-      </div>
-      <div class="sobrenos_profile_text">
-        <div class="sobrenos_profile_text_titulo">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/star_icon.svg">
-          <h2>Enzo Guenka Lopes</h2>
-        </div>
-        <p>Enzo é um dos fundadores da E ao Quadrado, com paixão por inovação e tecnologia. Atua como desenvolvedor full stack, sempre buscando soluções eficientes e criativas.</p>
+    <div class="sobrenos_team_profile" id="sobrenos_carousel_wrapper">
+      <div class="carrossel_btn voltar" onclick="prevSlide()">
+        <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_branca_icon.svg" alt="Anterior">
       </div>
 
+      <div class="sobrenos_carousel" id="sobrenos_carousel">
+        <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Person 1">
+        <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Person 1">
+      </div>
+
+      <div class="sobrenos_profile_text" id="sobrenos_carousel_footer"></div>
+
+      <div class="carrossel_btn ir" onclick="nextSlide()">
+        <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_branca_ir_icon.svg" alt="Próximo">
+      </div>
     </div>
-    
-
-    <!-- Carrossel de imagens
-    <div class="sobrenos_carousel_wrapper">
-      <div class="sobrenos_arrow" onclick="prevSlide()">&#9664;</div>
-
-      <div class="sobrenos_carousel_container">
-        <div class="sobrenos_carousel" id="sobrenos_carousel">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Person 1">
-          <img src="../../image/index/Produto02.jpg" alt="Person 2">
-          <img src="../../image/index/Produto03.jpg" alt="Person 3">
-          <img src="../../image/index/Produto04.jpg" alt="Person 4">
-          <img src="../../image/index/Produto05.jpg" alt="Person 5">
-          <img src="../../image/index/Produto06.jpg" alt="Person 6">
-          <img src="../../image/index/Produto07.jpg" alt="Person 7">
-          <img src="../../image/index/Produto08.jpg" alt="Person 8">
-        </div>
-      </div>
-
-      <div class="sobrenos_arrow" onclick="nextSlide()">&#9654;</div>
-    </div>
-
-    <div id="sobrenos_carousel_footer" class="sobrenos_carousel_footer"></div> -->
   </div>
-
   <script src='<?=$PATH_PUBLIC?>/js/geral/sobre_nos.js'></script>
   <?php include_once("$PATH_COMPONENTS/php/footer.php"); ?>
 </body>
