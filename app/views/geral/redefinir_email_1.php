@@ -14,7 +14,7 @@
     <div class="redefinir_email_1_container">
       <div class="redefinir_email_1_main_content">
         <div class="redefinir_email_1_bem_vindo">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/logo-eaoquadrado.png">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/logo_eaoquadrado.png">
           <h1>Redefinir E-mail</h1>
         </div>
 
