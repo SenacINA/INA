@@ -45,15 +45,32 @@
       </div>
       <div class="redefinir_senha_2_botoes">
         <button class="redefinir_senha_2_botao_voltar" onclick="history.back()">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">Voltar
+          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">
+          Voltar
         </button>
-        <button class="redefinir_senha_2_botao_salvar" onclick="pag('geral/redefinir_senha_3')">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">Salvar
+        <button class="redefinir_senha_2_botao_salvar" id="continuar_button">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
+          Salvar
         </button>
       </div>
     </div>
   </main>
 
+  <!-- Pop-Up -->
+  <div class="popup_container" id="popup">
+    <div class="popup">
+      <div class="text_popup">
+        <img src="<?=$PATH_PUBLIC?>/image/geral/icons/check_carolina_icon.svg" width="200px" height="200px">
+        <p class="font_base font_bold">Redefinição de senha realizada!</p>
+      </div>
+      <button class="base_botao btn_blue" id="close_btn">
+        <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/sair_branco_icon.svg" alt="" onclick="pag('cliente/login')">
+        TELA INICIAL
+      </button>
+    </div>
+  </div>
+
+  <script src="<?=$PATH_PUBLIC?>/js/geral/pop-Up_redefinir.js"></script>
   <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
 </body>
 </html>
