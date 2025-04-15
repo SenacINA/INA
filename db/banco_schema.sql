@@ -156,7 +156,7 @@ banner_perfil varchar(200) not null default 'default_banner_picture.jpg',
 descricao_perfil varchar(500),
 tiktok_perfil varchar(50),
 linkedin_perfil varchar(50),
-facebook_perfil varchar(50),
+facebook_perfil varchar(50),  
 youtube_perfil varchar(50),
 instagram_perfil varchar(50),
 foreign key (id_cliente) references cliente(id_cliente)
