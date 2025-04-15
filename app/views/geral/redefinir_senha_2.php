@@ -63,8 +63,8 @@
         <img src="<?=$PATH_PUBLIC?>/image/geral/icons/check_carolina_icon.svg" width="200px" height="200px">
         <p class="font_base font_bold">Redefinição de senha realizada!</p>
       </div>
-      <button class="base_botao btn_blue" id="close_btn">
-        <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/sair_branco_icon.svg" alt="" onclick="pag('cliente/login')">
+      <button class="base_botao btn_blue" id="close_btn" onclick="pag('cliente/login')">
+        <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/sair_branco_icon.svg" alt="">
         TELA INICIAL
       </button>
     </div>
