@@ -1,34 +1,31 @@
 <?php
-// config/database.php
 
-// Configurações do Banco de Dados
-define('DB_HOST', 'localhost');     // Host do MySQL
-define('DB_NAME', 'e2_database'); // Nome do seu banco de dados
-define('DB_USER', 'root');          // Usuário do banco
-define('DB_PASS', '');     // Senha do banco
+function loadEnv($filePath) {
+    if (!file_exists($filePath)) {
+        die("Erro: Arquivo .env não encontrado em $filePath");
+    }
 
-try {
-    // Conexão PDO
-    $pdo = new PDO(
-        "mysql:host=" . DB_HOST . 
-        ";dbname=" . DB_NAME . 
-        ";charset=utf8",
-        DB_USER,
-        DB_PASS,
-        [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES => false
-        ]
-    );
-} catch (PDOException $e) {
-    // Em caso de erro na conexão
-    die("Erro de conexão: " . $e->getMessage());
+    $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (str_starts_with(trim($line), '#')) {
+            continue;
+        }
+
+        $parts = explode('=', $line, 2);
+        if (count($parts) === 2) {
+            $key = trim($parts[0], "\"'");
+            $value = trim($parts[1], "\"'");
+
+            putenv("$key=$value");
+            $_ENV[$key] = $value; 
+        }
+    }
 }
 
-// Funções úteis (opcional)
-function db_prepare($sql) {
-    global $pdo;
-    return $pdo->prepare($sql);
-}
-?>
+loadEnv(__DIR__ . '/../config.env');
+
+define('DB_HOST', $_ENV['DB_HOST']);
+define('DB_NAME', $_ENV['DB_NAME']);
+define('DB_USER', $_ENV['DB_USER']);
+define('DB_PASS', $_ENV['DB_PASS']);
+define('DB_CHARSET', $_ENV['DB_CHARSET']);
