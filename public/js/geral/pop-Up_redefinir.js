@@ -1,4 +1,4 @@
-const btn = document.getElementById('enviar_button');
+const btn = document.getElementById('continuar_button');
 const close_btn = document.getElementById('close_btn');
 const popup = document.getElementById('popup');
 

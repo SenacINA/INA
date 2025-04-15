@@ -25,6 +25,43 @@ main {
   height: 100%;
 }
 
+/* start Pop-Up */
+.popup_container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000002d;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup {
+  max-width: 760px;
+  width: 90%;
+  max-height: 440px;
+  height: 100%;
+  background-color: #fff;
+  border: #0000005d solid 1px;
+  border-radius: 20px;
+  padding: 1.5%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15%;
+}
+
+.text_popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* End Pop-Up */
+
 .redefinir_email_2_container {
   max-width: 670px;
   width: 100%;
