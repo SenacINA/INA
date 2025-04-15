@@ -21,14 +21,11 @@
           <h1>Cadastro de usuário</h1>
         </div>
 
-        <form class="cadastro_formulario_cadastro">
+        <form class="cadastro_formulario_cadastro" action='/user/register' methot='POST'>
           <label for="nomeDeUsuario">Nome:</label><br>
           <input type="text" class="base_input"><br>
           <label for="email">Email:</label><br>
           <input type="text" class="base_input"><br>
-        </form>
-
-        <form class="cadastro_redefinir_senha_2_form" action="">
           <label for="senha">Senha:</label>
           <div class="cadastro_redefinir_senha_2">
               <input type="password" name="senha" id="senha" class="base_input">
@@ -36,7 +33,6 @@
                   <img class="base_icon" id="eye-img-senha" src="<?=$PATH_PUBLIC?>/image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
               </a>
           </div>
-        
           <label for="nova_senha">Confirmar Senha:</label>
           <div class="cadastro_redefinir_senha_2">
               <input type="password" name="nova_senha" id="nova_senha" class="base_input">
@@ -44,8 +40,8 @@
                   <img class="base_icon" id="eye-img-nova-senha" src="<?=$PATH_PUBLIC?>/image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
               </a>
           </div>
-
-          <div class="cadastro_regras">
+        </form>
+        <div class="cadastro_regras">
             <ul class="cadastro_lista">
               <li>Deve conter ao menos 6 caracteres;</li>
               <li>Deve conter ao menos uma letra minúscula;</li>
@@ -53,7 +49,6 @@
               <li>Não pode ser uma de suas senhas antigas.</li>
             </ul>
           </div>
-        </form>
       </div>
 
       <div class="cadastro_botoes">
@@ -61,7 +56,7 @@
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">
           Voltar
         </button>
-        <button class="cadastro_botao_cadastrar" onclick="pag('cliente/perfil_cliente')">
+        <button class="cadastro_botao_cadastrar" type='submit'>
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
           Cadastrar
         </button>
@@ -71,4 +66,5 @@
     <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
   </main>
 </body>
+<script type='module' src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
 </html>

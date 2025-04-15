@@ -1,6 +1,6 @@
 <?php 
 
-require '../../config/database.php';
+require __DIR__ . '/../../config/database.php';
 
 class Database {
     private $host;

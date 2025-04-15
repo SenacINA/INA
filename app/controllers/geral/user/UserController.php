@@ -1,0 +1,52 @@
+<?php
+
+require __DIR__ . '../../components/js/toast.js';
+
+class UserController {
+    public function register() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = [
+                'nome' => trim($_POST['nome']),
+                'email' => trim($_POST['email']),
+                'senha' => $_POST['senha'],
+                'nova_senha' => $_POST['nova_senha']
+            ];
+
+            if (empty($data['nome']) || empty($data['email']) || empty($data['senha']) || empty($data['nova_senha'])) {
+                echo "<script>gerarToast('Todos os campos são obrigatórios.', 'erro');</script>";
+                include 'views/clientes/cadastro.php';
+                return;
+            }
+
+            if ($data['senha'] !== $data['nova_senha']) {
+                echo "<script>gerarToast('As senhas não coincidem.', 'erro');</script>";
+                include 'views/clientes/cadastro.php';
+                return;
+            }
+
+            if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                echo "<script>gerarToast('Email inválido.', 'erro');</script>";
+                include 'views/clientes/cadastro.php';
+                return;
+            }
+
+            $userModel = new UserModel();
+            if ($userModel->emailExists($data['email'])) {
+                echo "<script>gerarToast('O email já está registrado.', 'aviso');</script>";
+                include 'views/clientes/cadastro.php';
+                return;
+            }
+
+            if ($userModel->createUser($data)) {
+                echo "<script>gerarToast('Usuário registrado com sucesso!', 'sucesso');</script>";
+                header('Location: /user/login');
+                exit;
+            } else {
+                echo "<script>gerarToast('Erro ao registrar o usuário. Tente novamente.', 'erro');</script>";
+                include 'views/clientes/cadastro.php';
+            }
+        } else {
+            include 'views/clientes/cadastro.php';
+        }
+    }
+}

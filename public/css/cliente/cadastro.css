@@ -28,10 +28,11 @@ main {
 .cadastro_quadrado {
   max-width: 670px;
   width: 100%;
-  height: 740px;
+  height: fit-content;
   background: #dce5eb;
   margin: 0px 1.5% 1.5% 1.5%;
-  border-radius: 10px;
+  border-radius: 5px;
+  padding: 8px;
 }
 
 .cadastro_container {
@@ -90,6 +91,7 @@ main {
   display: grid;
   justify-content: flex-start;
   margin-top: 16px;
+  max-width: 500px;
 }
 
 .cadastro_lista {
