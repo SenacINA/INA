@@ -31,24 +31,35 @@
 
       <div class="redefinir_senha_1_botoes">
         <button class="redefinir_senha_1_botao_voltar" onclick="history.back()">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">Voltar
+          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">
+          Voltar
         </button>
-        <button class="redefinir_senha_1_botao_avancar" id="enviar_button">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">Enviar
+        <button class="redefinir_senha_1_botao_avancar" id="continuar_button">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
+          Enviar
         </button>
       </div>
     </div>
   </main>
+
+  <!-- Pop-Up -->
   <div class="popup_container" id="popup">
     <div class="popup">
       <div class="text_popup">
         <img src="<?=$PATH_PUBLIC?>/image/geral/icons/check_carolina_icon.svg" width="200px" height="200px">
-        <p class="font_base font_bold">Enviamos um link de redefinição para o seu email. Por favor, verifique sua caixa de entrada (ou spam) para continuar o processo.</p>
+        <p class="font_base font_bold">
+          Enviamos um link de redefinição para o seu email.
+          Por favor, verifique sua caixa de entrada (ou spam) para continuar o processo.
+        </p>
       </div>
-      <button class="base_botao btn_blue" id="close_btn"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">Ok</button>
+      <button class="base_botao btn_blue" id="close_btn">
+        <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
+        Ok
+      </button>
     </div>
   </div>
+
   <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
-  <script src="<?=$PATH_PUBLIC?>/js/geral/redefinir_senha_1_popup.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/geral/pop-Up_redefinir.js"></script>
 </body>
 </html>

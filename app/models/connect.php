@@ -1,6 +1,10 @@
 <?php 
 
 require __DIR__ . '/../../config/database.php';
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 
 class Database {
     private $host;
