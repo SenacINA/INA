@@ -27,9 +27,9 @@
     $js = [];
   }
 
-  $PATH_PUBLIC = "../../../public";
-  $PATH_COMPONENTS = "../../../app/components";
-  $PATH_CONTROLLER = '../../../app/controllers';
+  $PATH_PUBLIC = "./public";
+  $PATH_COMPONENTS = "./app/components";
+  $PATH_CONTROLLER = './app/controllers';
 
   $head = "
   <head>

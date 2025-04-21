@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    const URL = '../../..';
+    const URL = '.';
 
     const desktopImages = [
         `${URL}/public/image/carrossel/banner_carrossel_perifericos.png`,

@@ -3,7 +3,7 @@
     <?php
         $css = ["/css/geral/home.css", "/css/geral/parallax.css"];
         $js = ["/js/geral/parallax.js"];
-        require_once('../../../utils/head.php')
+        require_once('./utils/head.php')
     ?>
 <body>
     <?php

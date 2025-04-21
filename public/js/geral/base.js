@@ -6,7 +6,7 @@
  * @param {string} params SearchParams
  */
 function pag(url, params = "") {
-    window.location.href = "../" + url + ".php" + params;
+    window.location.href = "./" + url + ".php" + params;
 }
 
 function selectPag(valor){
