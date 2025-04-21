@@ -1,11 +1,11 @@
 <?php
 
     return [
-        '/' => '/app/views/geral/home.php',
         '' => '/app/views/geral/home.php',
-        '/index' => '/app/views/geral/home.php',
-        '/sobre' => '/app/views/geral/sobre_nos.php',
+        'index.php' => '/app/views/geral/home.php',
+        'sobre' => '/app/views/geral/sobre_nos.php',
         '404' => '/app/views/geral/error.php',
+        'carrinho_vazio.php' => '/app/views/cliente/carrinho_vazio.php',
     ];
 
 ?>
