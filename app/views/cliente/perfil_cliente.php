@@ -5,7 +5,7 @@
 $css = ["/css/cliente/perfil_cliente.css"];
 require_once("../../../utils/head.php");
 require_once("../../models/cliente/perfil_cliente_model.php");
-$array = getPerfil();
+$array = getPerfil($_SESSION['cliente_id']);
 ?>
 
 <body>
