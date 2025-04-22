@@ -27,7 +27,7 @@
     $js = [];
   }
 
-  $PATH_PUBLIC = "./public";
+  $PATH_PUBLIC = "/INA/public";
   $PATH_COMPONENTS = "./app/components";
   $PATH_CONTROLLER = './app/controllers';
 

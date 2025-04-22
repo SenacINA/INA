@@ -3,7 +3,7 @@
 
 <?php
   $css = ["/css/cliente/produto.css"];
-  require_once("../../../utils/head.php")
+  require_once("./utils/head.php")
 ?>
 
 <body>

@@ -6,6 +6,7 @@
         require_once('./utils/head.php')
     ?>
 <body>
+    
     <?php
     // echo var_dump($_SERVER['REQUEST_URI']);
     // echo var_dump($_SERVER['DOCUMENT_ROOT']);
@@ -17,7 +18,6 @@
     
     <!-- Import Carrossel -->
     <?php
-        echo $str_css;
         include_once("$PATH_COMPONENTS/php/carrossel.php");
         Carrossel();
     ?>

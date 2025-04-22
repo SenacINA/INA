@@ -157,7 +157,7 @@ function generateModalContent($user) {
 ?>
 
 <div class="base_nav_nav" id="baseNavHeaderMain">
-  <div class="base_nav_logo_container" onclick="pag('geral/home')">
+  <div class="base_nav_logo_container" onclick="pag('')">
     <img id="baseNavLogoHeader">
   </div>
   <div class="base_nav_search_container">

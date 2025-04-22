@@ -2,9 +2,6 @@
 
 class notFoundController extends RenderView {
     public function index () {
-        $this->loadView('error', [
-            'title' => 'Home',
-            'users' => 'eu',
-        ]);
+        $this->loadView('geral/error', []);
     }
 }

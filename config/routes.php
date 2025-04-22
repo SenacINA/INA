@@ -10,7 +10,8 @@
 
     $routes = [
         '/' => 'HomeController@index',
-        '/users/{id}' => 'UserController@show'
+        '/users/{id}' => 'UserController@show',
+        '/cliente/produto' => 'ProdutoController@index',
     ]
 
 // MVC Baseada em controller
