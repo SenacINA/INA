@@ -2,8 +2,16 @@
 <html lang="pt-br">
 
 <?php
-  $css = ["/css/cliente/login.css"];
-  require_once("../../../utils/head.php")
+   // Parte 1: Configurações iniciais
+   $css = ["/css/cliente/login.css"];
+   require_once("../../../utils/head.php");
+
+   
+   // Parte 2: Sessão (deve ser iniciada ANTES de qualquer output)
+   if (isset($_SESSION['erro_login'])) {
+       echo '<div class="erro">' . $_SESSION['erro_login'] . '</div>';
+       unset($_SESSION['erro_login']);
+   }
 ?>
 
 <body>
@@ -21,7 +29,7 @@
           <h1>Login de usuário</h1>
           <h2>Bem-vindo de volta!</h2>
         </div>
-        <form class="login_form_content" id="loginForm" method="post" action="<?=$PATH_CONTROLLER?>/geral/login_model.php">
+        <form class="login_form_content" id="loginForm" method="post" action="<?=$PATH_CONTROLLER?>/geral/login_controller.php">
           <div class="login_formulario_login">
             <label for="email">Email:</label><br>
             <input type="text" id="email" name="email" class="base_input"><br>
@@ -63,5 +71,24 @@
 
     <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
   </main>
+
+  <?php if (isset($_GET['error'])): ?>
+    <script>
+        <?php
+        switch ($_GET['error']) {
+            case 'emptyfields':
+                echo "console.error('Erro: Campos de email ou senha vazios');";
+                break;
+            case 'invalidpassword':
+                echo "console.error('Erro: Senha inválida');";
+                break;
+            case 'notfound':
+                echo "console.error('Erro: Usuário não encontrado');";
+                break;
+        }
+        ?>
+    </script>
+<?php endif; ?>
+
 </body>
 </html>
