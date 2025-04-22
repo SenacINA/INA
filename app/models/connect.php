@@ -24,7 +24,7 @@ class Database {
             $dsn = "mysql:host={$this->host};dbname={$this->dbName};charset={$this->charset}";
             $this->pdo = new PDO($dsn, $this->user, $this->pass);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Conexão estabelecida com sucesso!<br>";
+            // echo "Conexão estabelecida com sucesso!<br>";
         } catch (PDOException $e) {
             die("Erro na conexão com o banco de dados: " . $e->getMessage());
         }
@@ -33,9 +33,9 @@ class Database {
     public function disconnect() {
         if ($this->pdo) {
             $this->pdo = null; 
-            echo "Conexão encerrada com sucesso!<br>";
+            // echo "Conexão encerrada com sucesso!<br>";
         } else {
-            echo "Não há conexão ativa para encerrar.<br>";
+            // echo "Não há conexão ativa para encerrar.<br>";
         }
     }
 

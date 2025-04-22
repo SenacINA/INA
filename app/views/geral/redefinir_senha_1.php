@@ -4,6 +4,10 @@
     $titulo = "Redefinir Senha - E ao Quadrado";
     $css = ["/css/geral/redefinir_senha_1.css"];
     require_once('../../../utils/head.php');
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
   ?>
 <body>
   <!-- Até 375px -->

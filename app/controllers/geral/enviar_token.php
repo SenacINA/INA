@@ -1,5 +1,9 @@
 <?php
-require_once '../../models/connect.php'; // ajuste o caminho conforme sua estrutura
+require_once __DIR__ . '/../../models/connect.php';
+
+$db = new Database();
+$db->connect();
+$pdo = $db->getConnection();
 
 $email = $_POST['email'] ?? '';
 
@@ -20,7 +24,7 @@ $stmt->execute([$cliente['id_cliente'], $token, $expira]);
 
 $link = "http://localhost/INA/app/views/geral/redefinir_senha_2.php?token=$token";
 
-// ⚠️ Envio de e-mail simples (teste básico)
-mail($email, "Redefina sua senha", "Clique aqui: $link");
+// ⚠️ Envio de e-mail simples (pode comentar se der erro)
+// mail($email, "Redefina sua senha", "Clique aqui para redefinir sua senha: $link");
 
 echo json_encode(["mensagem" => "Enviamos um link para o seu e-mail."]);

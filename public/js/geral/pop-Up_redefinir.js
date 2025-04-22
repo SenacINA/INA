@@ -14,7 +14,7 @@ document.getElementById("continuar_button").addEventListener("click", async () =
   formData.append("email", email);
 
   try {
-    const res = await fetch("/INA/app/controllers/geral/enviar_token.php", {
+    const res = await fetch("http://localhost/INA/app/controllers/geral/enviar_token.php", {
       method: "POST",
       body: formData
     });
