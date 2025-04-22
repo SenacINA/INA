@@ -63,26 +63,26 @@ class Database {
     }
 }
 
-// $db = new Database();
-// $db->connect();
+$db = new Database();
+$db->connect();
 
-// $sql = "SELECT * FROM cliente WHERE email_cliente = :email";
-// $params = [':email' => 'carlos@email.com'];
+$sql = "SELECT * FROM cliente WHERE email_cliente = :email";
+$params = [':email' => 'carlos@email.com'];
 
-// $result = $db->executeQuery($sql, $params);
+$result = $db->executeQuery($sql, $params);
 
-// if ($result) {
+if ($result) {
 
-//     $storedHash = $result[0]['senha_cliente'];
+    $storedHash = $result[0]['senha_cliente'];
 
-//     if (password_verify('minhasenha123', $storedHash)) {
-//         echo "Senha válida para o cliente: " . $result[0]['nome_cliente'] . "<br>";
-//     } else {
-//         echo "Senha inválida.<br>";
-//     }
-// } else {
-//     echo "Cliente não encontrado.<br>";
-// }
+    if (password_verify('minhasenha123', $storedHash)) {
+        echo "Senha válida para o cliente: " . $result[0]['nome_cliente'] . "<br>";
+    } else {
+        echo "Senha inválida.<br>";
+    }
+} else {
+    echo "Cliente não encontrado.<br>";
+}
 
 
-// $db->disconnect();
+$db->disconnect();
