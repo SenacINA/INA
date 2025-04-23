@@ -3,7 +3,7 @@
   <?php
     $titulo = "Redefinir E-mail - E ao Quadrado";
     $css = ["/css/geral/redefinir_email_1.css"];
-    require_once('../../../utils/head.php');
+    require_once('./utils/head.php');
   ?>
 <body>
   <?php

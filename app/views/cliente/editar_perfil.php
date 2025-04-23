@@ -3,7 +3,7 @@
 
 <?php
   $css = ["/css/cliente/editar_perfil_cliente.css"];
-  require_once("../../../utils/head.php")
+  require_once("./utils/head.php")
 ?>
 
 <body>

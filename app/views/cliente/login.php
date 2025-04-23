@@ -4,7 +4,7 @@
 <?php
    // Parte 1: Configurações iniciais
    $css = ["/css/cliente/login.css"];
-   require_once("../../../utils/head.php");
+   require_once("./utils/head.php");
 
    
    // Parte 2: Sessão (deve ser iniciada ANTES de qualquer output)

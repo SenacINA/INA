@@ -3,7 +3,7 @@
 
 <?php
   $css = ["/css/cliente/categoria.css"];
-  require_once("../../../utils/head.php")
+  require_once("./utils/head.php")
 ?>
 
 <body class="gradiente_azul">
@@ -14,7 +14,7 @@
     <div class="img_fundo largura_com_scroll">
         <?php
             include_once("$PATH_COMPONENTS/php/carrossel.php");
-            Carrossel();
+            Carrossel('../');
         ?>
         
     </div>

@@ -4,7 +4,9 @@ class Core {
     public function run($routes) {
         $url = '/' . ($_GET['url'] ?? '');
 
-        ($url != '/') ? $url = rtrim($url, '/') : '';
+        if ($url !== '/') {
+            $url = rtrim($url, '/');
+        }
 
         $routerFound = false;
 
@@ -13,19 +15,27 @@ class Core {
 
             if (preg_match($pattern, $url, $matches)) {
                 array_shift($matches);
-                [$currentController, $action] = explode('@', $controller);
-                require_once __DIR__ . "/../app/controllers/$currentController.php";
+                
+                [$namespace, $controllerAction] = explode('/', $controller); 
+                [$controllerName, $action] = explode('@', $controllerAction);
+                
+                $filePath = __DIR__ . "/../app/controllers/$namespace/$controllerName.php";
 
-                $routerFound = true;
+                if (file_exists($filePath)) {
+                    require_once $filePath;
 
-                $newController = new $currentController();
-                $newController->$action(...array_values($matches));
-                return;
+                    $fullControllerName = $controllerName;
+                    $routerFound = true;
+
+                    $newController = new $fullControllerName();
+                    $newController->$action(...array_values($matches));
+                    return;
+                }
             }
         }
 
         if (!$routerFound) {
-            require_once __DIR__ . "/../app/controllers/notFoundController.php";
+            require_once __DIR__ . "/../app/controllers/geral/notFoundController.php";
             $controller = new notFoundController();
             $controller->index();
         }

@@ -19,7 +19,7 @@
     <!-- Import Carrossel -->
     <?php
         include_once("$PATH_COMPONENTS/php/carrossel.php");
-        Carrossel();
+        Carrossel('./');
     ?>
 
     <div class="index_body_bg_container">
@@ -96,6 +96,7 @@
                 </div>
             </div>
         </div>
+        <button onclick="pag('cliente/editar_perfil')">TESTE</button>
     </div>
     <?php
         include_once("$PATH_COMPONENTS/php/footer.php");

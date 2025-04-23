@@ -3,7 +3,7 @@
 
 <?php
   $css = ["/css/cliente/cadastro.css"];
-  require_once("../../../utils/head.php")
+  require_once("./utils/head.php")
 ?>
 <body>
   <!-- Até 375px -->

@@ -1,9 +1,9 @@
 <?php
-function Carrossel() {
-    $PATH_PUBLIC = './public';
+function Carrossel($path) {
+    $PATH_PUBLIC = $path . '/public';
 
     echo <<<HTML
-    <div class="carrossel" style="background: url('{$PATH_PUBLIC}/image/index/fundoCarrossel.jpg') center/cover no-repeat;">
+    <div class="carrossel" data-path="{$PATH_PUBLIC}" style="background: url('{$PATH_PUBLIC}/image/index/fundoCarrossel.jpg') center/cover no-repeat;">
         <div class="carrossel_content">
             <button class="carrossel_but back">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
