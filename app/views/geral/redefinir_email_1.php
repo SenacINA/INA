@@ -35,7 +35,7 @@
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">
           Voltar
         </button>
-        <button class="redefinir_email_1_botao_avancar" onclick="pag('geral/redefinir_email_2')">
+        <button class="redefinir_email_1_botao_avancar" onclick="pag('geral/redefinir-email/confirmar')">
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
           Avançar
         </button>

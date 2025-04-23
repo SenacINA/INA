@@ -3,7 +3,7 @@
 <?php
   $titulo = "Dashboard - E ao Quadrado";
   $css = ["/css/admin/dashboard.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <!-- Até 375px -->

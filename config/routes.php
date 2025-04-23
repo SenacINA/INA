@@ -1,23 +1,51 @@
 <?php
     $routes = [
         '/' => 'geral/HomeController@index',
-        '/user/{id}' => 'ClienteController@show',
-        '/cliente/produto' => 'cliente/ProdutoController@index',
-        '/cliente/carrinho' => 'cliente/CarrinhoController@index',
-        '/cliente/categoria' => 'cliente/CategoriaController@index',
-        '/cliente/perfil' => 'cliente/ClienteController@perfil',
-        '/cliente/cadastro' => 'cliente/ClienteController@cadastro',
-        '/cliente/login' => 'cliente/ClienteController@login',
-        '/cliente/carrinho_dados' => 'cliente/ClienteController@dados',
-        '/cliente/carrinho_pagamentos' => 'cliente/ClienteController@pagamentos',
-        '/cliente/editar_perfil' => 'cliente/ClienteController@editarPerfil',
-        '/geral/redefinir-email' => 'auth/AuthController@requestEmailReset',
-        '/geral/redefinir-email/confirmar' => 'auth/AuthController@confirmEmailReset',
-        '/geral/redefinir-senha' => 'auth/AuthController@requestPasswordReset',
-        '/geral/redefinir-senha/confirmar'=> 'auth/AuthController@confirmPasswordReset',
-        '/geral/sobre_nos' => 'geral/GeralController@sobreNos',
+        '/user/{id}' => 'cliente/ClienteController@show', // Exemplo com parâmetro dinâmico
 
-        // Join DIRECTOR SEPARETOR
+        // Cliente
+        '/produto' => 'cliente/ProdutoController@index',
+        '/carrinho' => 'cliente/CarrinhoController@index',
+        '/categoria' => 'cliente/CategoriaController@index',
+        '/perfil-cliente' => 'cliente/ClienteController@perfil',
+        '/cadastro-cliente' => 'cliente/ClienteController@cadastro',
+        '/login-cliente' => 'cliente/ClienteController@login',
+        '/carrinho-dados' => 'cliente/ClienteController@dados',
+        '/carrinho-pagamentos' => 'cliente/ClienteController@pagamentos',
+        '/editar-perfil-cliente' => 'cliente/ClienteController@editarPerfil',
 
-    ]
+        // Geral
+        '/redefinir-email' => 'auth/AuthController@requestEmailReset',
+        '/redefinir-email/confirmar' => 'auth/AuthController@confirmEmailReset',
+        '/redefinir-senha' => 'auth/AuthController@requestPasswordReset',
+        '/redefinir-senha/confirmar'=> 'auth/AuthController@confirmPasswordReset',
+        '/sobre-nos' => 'geral/GeralController@sobreNos',
+
+        // Vendedor - Cadastro e Perfil
+        '/cadastro-vendedor-info' => 'vendedor/VendedorController@showInfo',
+        '/cadastro-vendedor' => 'vendedor/VendedorController@showFormCadastro',
+        '/perfil-vendedor' => 'vendedor/VendedorController@perfil',
+        '/editar-perfil-vendedor' => 'vendedor/VendedorController@editarPerfil',
+
+        // Vendedor - Produtos e Pedidos
+        '/pedidos-vendedor' => 'vendedor/VendedorProductController@pedidos',
+        '/pedido-confirmar' => 'vendedor/VendedorProductController@confirm',
+        '/produto-registrar' => 'vendedor/VendedorProductController@create',
+        '/produto-editar' => 'vendedor/VendedorProductController@edit',
+        '/relatorio-vendas' => 'vendedor/VendedorProductController@report',
+
+        // Admin
+        '/admin-dashboard' => 'admin/AdminController@dashboard',
+        '/admin-perfil' => 'admin/AdminController@perfil',
+        '/aprovar-vendedor' => 'admin/AdminController@aprovarVendedor',
+        '/atualizar-usuario' => 'admin/AdminController@atualizarUsuario',
+        '/gerenciar-usuarios' => 'admin/AdminController@gerenciarUsuarios',
+        '/gerenciar-produtos' => 'admin/AdminController@gerenciarProdutos',
+        '/gerenciar-carrossel' => 'admin/AdminController@gerenciarCarrossel',
+        '/relatorio-vendedor' => 'admin/AdminController@relatorioVendedor',
+        '/historico-acesso' => 'admin/AdminController@historicoAcesso',
+        '/admin-carrossel' => 'admin/AdminController@adminCarrossel',
+    ];
+
+    // Join DIRECTOR SEPARETOR
 ?>

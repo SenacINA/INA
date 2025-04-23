@@ -1,17 +1,17 @@
 <?php
 
-class AuthController {
+class AuthController extends RenderView {
     public function requestEmailReset() {
-      require __DIR__ . 'geral/redefinir_email_1.php';
+      $this->loadview('geral/redefinir_email_1', []);
     }
     public function confirmEmailReset() {
-      require __DIR__ . 'geral/redefinir_email_2.php';
+      $this->loadview('geral/redefinir_email_2', []);
     }
     public function requestPasswordReset() {
-      require __DIR__ . 'geral/redefinir_senha_1.php';
+      $this->loadview('geral/redefinir_senha_1', []);
     }
     public function confirmPasswordReset() {
-      require __DIR__ . 'geral/redefinir_senha_2.php';
+      $this->loadview('geral/redefinir_senha_2', []);
     }
   }
   

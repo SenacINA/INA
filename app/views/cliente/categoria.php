@@ -14,7 +14,7 @@
     <div class="img_fundo largura_com_scroll">
         <?php
             include_once("$PATH_COMPONENTS/php/carrossel.php");
-            Carrossel('../');
+            Carrossel('.');
         ?>
         
     </div>
@@ -146,38 +146,38 @@
             <div id="destaque_produtos" class="linha_card_produto grid_produtos">
                 <?php 
                     include_once ("$PATH_COMPONENTS/php/card_produto.php");
-                    gerarProdutoCards(6, 0);
+                    gerarProdutoCards(6, 1);
                 ?>
             </div>
             <h2 class="font_cinza font_subtitulo">Produtos</h2>
             <div class="produtos_categoria">
                 <div id="linha1" class="linha_card_produto grid_produtos">
                     <?php 
-                        gerarProdutoCards(6, 0);
+                        gerarProdutoCards(6, 1);
                     ?>
 
                 </div>
                 <div id="linha2" class="linha_card_produto grid_produtos">
                     <?php 
-                        gerarProdutoCards(6, 0);
+                        gerarProdutoCards(6, 1);
                     ?>
 
                 </div>
                 <div id="linha3" class="linha_card_produto grid_produtos">
                     <?php 
-                        gerarProdutoCards(6, 0);
+                        gerarProdutoCards(6, 1);
                     ?>
 
                 </div>
                 <div id="linha4" class="linha_card_produto grid_produtos">
                     <?php 
-                        gerarProdutoCards(6, 0);
+                        gerarProdutoCards(6, 1);
                     ?>
 
                 </div>
                 <div id="linha5" class="linha_card_produto grid_produtos">
                     <?php 
-                        gerarProdutoCards(6, 0);
+                        gerarProdutoCards(6, 1);
                     ?>
                 </div>
             </div>
