@@ -25,6 +25,7 @@ align-self: center;
   height: 779px;
   border-radius: 10px;
   margin: 0px 1.5%;
+  row-gap: 8px;
 }
 
 /* header */
@@ -152,6 +153,12 @@ font-weight: 600;
   max-width: 600px;
 }
 
+.atualizar_usuario_pesquisar_usuario button{
+  border-color: transparent;
+  margin-top: 16px;
+  width: 30%;
+}
+
 /* Localização */
 .atualizar_usuario_localizacao_conjunto {
 display: grid;
@@ -172,7 +179,8 @@ column-gap: 2%;
 }
 
 .atualizar_usuario_dados_pessoais_item input {
-  max-width: 600px;
+  /* max-width: 600px; */
+  width: 100%;
 }
 
 .atualizar_usuario_dados_pessoais_conjunto {
@@ -191,11 +199,16 @@ column-gap: 2%;
   flex-direction: column;
   width: 100%;
   max-width: 600px;
+  row-gap: 16px;
 }
 
 .atualizar_usuario_permissoes_conjunto {
 display: grid;
 grid-template-columns: 1fr 1fr;
+}
+
+.atualizar_usuario_permissoes_conjunto button {
+  width: 80%;
 }
 
 .label_container {
@@ -429,7 +442,7 @@ transform: translateX(24px);
   .atualizar_usuario_dados_pessoais_item input,
   .atualizar_usuario_dados_pessoais_conjunto,
   .atualizar_usuario_localizacao_conjunto {
-    max-width: 100%;
+    width: 100%;
   }
 
   .atualizar_usuario_dados_pessoais_conjunto {
@@ -437,6 +450,7 @@ transform: translateX(24px);
   }
 
   .atualizar_usuario_permissoes_conjunto {
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -471,6 +485,7 @@ transform: translateX(24px);
 }
 
 @media (max-width: 768px) {
+
   .atualizar_usuario_titulo {
     position: absolute;
   
@@ -510,7 +525,7 @@ transform: translateX(24px);
   .bg_mobile_2 {
     position: absolute;
     background-color: #EFF3F5;
-    height: 950px;
+    height: 1200px;
     width: 100%;
 
     z-index: -1;
@@ -522,10 +537,25 @@ transform: translateX(24px);
     margin-top: 140px;
   }
 
+
   .atualizar_usuario_botao_salvar {
     top: 190px;
   }
+
+  .atualizar_usuario_forms_item_permissoes{
+    margin-bottom: 16px;
+  }
+
+  .atualizar_usuario_forms_permissoes {
+    row-gap: 0px;
+  }
+
+  .atualizar_usuario_permissoes_conjunto button {
+    width: 100%;
+  }
 }
+
+
 
 @media (max-width: 425px) {
   #atualizar_usuario_text_2 {
