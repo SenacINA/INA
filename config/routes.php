@@ -8,11 +8,13 @@
         '/carrinho' => 'cliente/CarrinhoController@index',
         '/categoria' => 'cliente/CategoriaController@index',
         '/perfil-cliente' => 'cliente/ClienteController@perfil',
-        '/cadastro-cliente' => 'cliente/ClienteController@cadastro',
         '/login-cliente' => 'cliente/ClienteController@login',
         '/carrinho-dados' => 'cliente/ClienteController@dados',
         '/carrinho-pagamentos' => 'cliente/ClienteController@pagamentos',
         '/editar-perfil-cliente' => 'cliente/ClienteController@editarPerfil',
+        '/login/auth' => 'auth/AuthController@login',
+        '/logout'     => 'auth/AuthController@logout',
+        '/cadastro-cliente' => 'cliente/ClienteController@cadastro',
 
         // Geral
         '/redefinir-email' => 'auth/AuthController@requestEmailReset',

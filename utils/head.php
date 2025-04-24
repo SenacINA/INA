@@ -1,6 +1,6 @@
 <?php
 
-  session_start();
+  // session_start();
   // $current_url = $_SERVER['REQUEST_URI']; URL atual do site
 
 /**
