@@ -28,25 +28,25 @@ class ClienteController extends RenderView {
 
     public function cadastro()
       {
-          // Se for GET, apenas exibe a view
+          session_start();
+          $model = new ClienteModel();
+  
+          // Se for GET, só renderiza a página
           if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-              $this->loadView('cliente/cadastro', [
-                  'old'    => [],
-                  'errors' => []
-              ]);
+              $this->loadView('cliente/cadastro', []);
               return;
           }
   
-          // Se POST, processa o formulário
-          session_start();
-          $nome         = trim($_POST['nome'] ?? '');
-          $email        = trim($_POST['email'] ?? '');
-          $senha        = $_POST['senha'] ?? '';
-          $confirma     = $_POST['confirmaSenha'] ?? '';
-          $errors       = [];
+          // Captura e sanitiza
+          $nome         = trim($_POST['nome']         ?? '');
+          $email        = trim($_POST['email']        ?? '');
+          $senha        = $_POST['senha']             ?? '';
+          $confirmaSenha= $_POST['confirmaSenha']     ?? '';
   
-          // Validações
-          if (!$nome || !$email || !$senha || !$confirma) {
+          $errors = [];
+  
+          // 1) validações básicas
+          if (!$nome || !$email || !$senha || !$confirmaSenha) {
               $errors[] = 'Preencha todos os campos.';
           }
           if (strlen($senha) < 6) {
@@ -58,33 +58,30 @@ class ClienteController extends RenderView {
           if (!preg_match('/\d/', $senha)) {
               $errors[] = 'A senha deve conter ao menos um número.';
           }
-          if ($senha !== $confirma) {
+          if ($senha !== $confirmaSenha) {
               $errors[] = 'As senhas não coincidem.';
           }
-  
-          $model = new ClienteModel();
+          // 2) email duplicado?
           if ($model->emailExists($email)) {
               $errors[] = 'Este e-mail já está cadastrado.';
           }
   
-          // Se houver erros, volta para a view com eles
+          // Se houve erros, grava em sessão e redireciona de volta
           if ($errors) {
-            $query = http_build_query(['error' => $errors[0]]); // ou serialize array se preferir
-            header("Location: /INA/cadastro-cliente?$query");
-            exit;
-            }  
-        
+              $_SESSION['flash_errors'] = $errors;
+              // guarda valores já digitados
+              $_SESSION['flash_old']    = ['nome'=>$nome, 'email'=>$email];
+              header('Location: /INA/cadastro-cliente');
+              exit;
+          }
   
-          // Cria o usuário
+          // 3) cria usuário (hash Bcrypt)
           $hash = password_hash($senha, PASSWORD_BCRYPT);
-          $model->createUser([
-              'nome'   => $nome,
-              'email'  => $email,
-              'senha'  => $hash
-          ]);
+          $model->createUser($nome, $email, $hash);
   
-          // Redireciona com flag de sucesso
-          header('Location: /INA/cadastro-cliente?cadastro=success');
+          // sucesso
+          $_SESSION['flash_success'] = 'Cadastro realizado com sucesso!';
+          header('Location: /INA/login-cliente');
           exit;
       }
 

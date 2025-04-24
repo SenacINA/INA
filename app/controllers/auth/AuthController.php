@@ -18,37 +18,40 @@ class AuthController extends RenderView {
     }
 
     public function login()
-    {
-      session_start();
-      $email = $_POST['email'] ?? '';
-      $senha = $_POST['senha'] ?? '';
+      {
+        session_start();
+        $email = $_POST['email'] ?? '';
+        $senha = $_POST['senha'] ?? '';
 
-      // 1) valida campos vazios
-      if (!$email || !$senha) {
-          header("Location: /INA/login-cliente?error=emptyfields");
-          exit;
-      }
+        
 
-      // 2) busca usuário
-      $model = new ClienteModel();
-      $user  = $model->findByEmail($email);
+        // 1) valida campos vazios
+        if (!$email || !$senha) {
+            header("Location: /INA/login-cliente?error=emptyfields");
+            exit;
+        }
 
-      if (!$user) {
-          header("Location: /INA/login-cliente?error=notfound");
-          exit;
-      }
+        // 2) busca usuário
+        $model = new ClienteModel();
+        $user  = $model->findByEmail($email);
 
-      // 3) comparação direta (texto puro)
-      if ($senha !== $user['senha_cliente']) {
-          header("Location: /INA/login-cliente?error=invalidpassword");
-          exit;
-      }
+        if (!$user) {
+            header("Location: /INA/login-cliente?error=notfound");
+            exit;
+        }
 
-      // 4) sucesso
-      $_SESSION['cliente_id'] = $user['id_cliente'];
-      header("Location: /INA/perfil-cliente");
-      exit;
-  }
+        // 3) verifica a senha usando password_verify
+        if (!password_verify($senha, $user['senha_cliente'])) {
+            header("Location: /INA/login-cliente?error=invalidpassword");
+            exit;
+        }
+
+        // 4) sucesso
+        $_SESSION['cliente_id'] = $user['id_cliente'];
+        header("Location: /INA/perfil-cliente");
+        exit;
+    }
+
 
   public function logout()
   {

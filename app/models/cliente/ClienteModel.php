@@ -11,7 +11,6 @@ class ClienteModel
         $this->db->connect();
     }
 
-    /** Verifica se existe cliente com este email */
     public function emailExists(string $email): bool
     {
         $sql  = "SELECT COUNT(*) FROM cliente WHERE email_cliente = :email";
@@ -21,8 +20,17 @@ class ClienteModel
         return (int)$stmt->fetchColumn() > 0;
     }
 
-    /** Insere novo cliente na base */
-    public function createUser(array $data): bool
+    public function findByEmail(string $email): ?array
+    {
+        $sql = "SELECT * FROM cliente WHERE email_cliente = :email LIMIT 1";
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ?: null;
+    }
+
+    public function createUser(string $nome, string $email, string $senha): bool
     {
         $sql = "INSERT INTO cliente
                   (nome_cliente, email_cliente, senha_cliente,
@@ -31,9 +39,9 @@ class ClienteModel
                   (:nome, :email, :senha, CURDATE(), 2, 1)";
 
         $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':nome',   $data['nome']);
-        $stmt->bindValue(':email',  $data['email']);
-        $stmt->bindValue(':senha',  $data['senha']);
+        $stmt->bindValue(':nome',  $nome);
+        $stmt->bindValue(':email', $email);
+        $stmt->bindValue(':senha', $senha);
         return $stmt->execute();
     }
 }

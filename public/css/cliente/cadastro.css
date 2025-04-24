@@ -41,7 +41,7 @@ main {
   justify-content: start;
   align-items: center;
   margin: 16px 2% 0px 2%;
-  max-height: 600px;
+  max-height: fit-content;
   height: 100%;
 }
 

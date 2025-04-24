@@ -2,7 +2,11 @@
 <html lang="pt-br">
 <?php
   $css = ["/css/cliente/cadastro.css"];
-  require_once __DIR__ . '/../../../utils/head.php';
+  require_once './utils/head.php';
+
+  $errors = $_SESSION['flash_errors'] ?? [];
+  $old    = $_SESSION['flash_old']    ?? [];
+  unset($_SESSION['flash_errors'], $_SESSION['flash_old']);
 ?>
 <body>
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
@@ -11,107 +15,84 @@
     <div class="cadastro_quadrado">
       <div class="cadastro_container">
         <div class="cadastro_bem_vindo">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/logo-eaoquadrado.png" alt="Logo">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/logo-eaoquadrado.png" alt="">
           <h1>Cadastro de usuário</h1>
         </div>
 
-        <form id="cadastroForm"
-              action="/INA/cadastro-cliente"
-              method="POST"
-              class="cadastro_formulario_cadastro">
+        <!-- FORMULÁRIO ÚNICO COM TODOS OS CAMPOS -->
+        <form id="cadastroForm" class="cadastro_formulario_cadastro" action="/INA/cadastro-cliente" method="POST">
 
           <label for="nome">Nome:</label><br>
-          <input type="text"
-                 id="nome"
-                 name="nome"
-                 class="base_input"
-                 value="<?= htmlspecialchars($old['nome'] ?? '') ?>"
-          ><br>
+          <input type="text" class="base_input" name="nome" id="nome" value="<?= htmlspecialchars($old['nome'] ?? '') ?>"><br>
 
           <label for="email">Email:</label><br>
-          <input type="email"
-                 id="email"
-                 name="email"
-                 class="base_input"
-                 value="<?= htmlspecialchars($old['email'] ?? '') ?>"
-          ><br>
+          <input type="email" class="base_input" name="email" id="email" value="<?= htmlspecialchars($old['email'] ?? '') ?>"><br>
 
           <label for="senha">Senha:</label>
           <div class="cadastro_redefinir_senha_2">
-            <input type="password"
-                   id="senha"
-                   name="senha"
-                   class="base_input"
-            >
+            <input type="password" name="senha" id="senha" class="base_input">
             <a href="javascript:void(0);" id="eye-icon-senha">
-              <img class="base_icon"
-                   id="eye-img-senha"
-                   src="<?=$PATH_PUBLIC?>/image/geral/icons/olho_fechado_icon.svg"
-                   alt="Mostrar senha"
-              >
+              <img class="base_icon" id="eye-img-senha" src="<?=$PATH_PUBLIC?>/image/geral/icons/olho_fechado_icon.svg" alt="Mostrar Senha">
             </a>
           </div>
 
           <label for="confirmaSenha">Confirmar Senha:</label>
           <div class="cadastro_redefinir_senha_2">
-            <input type="password"
-                   id="confirmaSenha"
-                   name="confirmaSenha"
-                   class="base_input"
-            >
-            <a href="javascript:void(0);" id="eye-icon-confirma">
-              <img class="base_icon"
-                   id="eye-img-confirma"
-                   src="<?=$PATH_PUBLIC?>/image/geral/icons/olho_fechado_icon.svg"
-                   alt="Mostrar senha"
-              >
+            <input type="password" name="confirmaSenha" id="confirmaSenha" class="base_input">
+            <a href="javascript:void(0);" id="eye-icon-nova-senha">
+              <img class="base_icon" id="eye-img-nova-senha" src="<?=$PATH_PUBLIC?>/image/geral/icons/olho_fechado_icon.svg" alt="Mostrar Senha">
             </a>
           </div>
+
+          <div class="cadastro_regras">
+            <ul class="cadastro_lista">
+              <li>Deve conter ao menos 6 caracteres;</li>
+              <li>Deve conter ao menos uma letra minúscula;</li>
+              <li>Deve conter ao menos um número;</li>
+              <li>Não pode ser uma de suas senhas antigas.</li>
+            </ul>
+          </div>
+
+          <div class="cadastro_botoes">
+            <button type="button" class="cadastro_botao_voltar" onclick="pag('cliente/login')">
+              <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">Voltar
+            </button>
+            <button type="submit" class="cadastro_botao_cadastrar">
+              <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">Cadastrar
+            </button>
+          </div>
+
         </form>
-
-        <div class="cadastro_regras">
-          <ul class="cadastro_lista">
-            <li>Deve conter ao menos 6 caracteres;</li>
-            <li>Deve conter ao menos uma letra minúscula;</li>
-            <li>Deve conter ao menos um número;</li>
-            <li>Não pode ser uma de suas senhas antigas.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="cadastro_botoes">
-        <button class="cadastro_botao_voltar"
-                type="button"
-                onclick="pag('cliente/login')">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">
-          Voltar
-        </button>
-        <button class="cadastro_botao_cadastrar"
-                type="submit"
-                form="cadastroForm">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
-          Cadastrar
-        </button>
       </div>
     </div>
   </main>
 
-  <!-- Toggle senha -->
+  <!-- Scripts -->
   <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
 
   <script>
-    // Se vier $errors do back, exibe toast
-    <?php if (!empty($errors)): ?>
-      <?php foreach ($errors as $e): ?>
-        window.gerarToast("<?= addslashes($e) ?>", "erro");
-      <?php endforeach; ?>
-    <?php endif; ?>
+    document.addEventListener('DOMContentLoaded', () => {
+      const erros = [
+        <?php foreach ($errors as $e): ?>
+          "<?= addslashes($e) ?>",
+        <?php endforeach; ?>
+      ];
 
-    // Se cadastro ok
-    <?php if (!empty($_GET['cadastro']) && $_GET['cadastro']==='success'): ?>
-      window.gerarToast("Cadastro realizado com sucesso!", "sucesso");
-    <?php endif; ?>
+      erros.forEach((mensagem, index) => {
+        setTimeout(() => {
+          gerarToast(mensagem, 'erro');
+        }, 150 * index);
+      });
+
+      <?php if (!empty($_SESSION['flash_success'])): ?>
+        setTimeout(() => {
+          gerarToast("<?= addslashes($_SESSION['flash_success']) ?>", "sucesso");
+        }, 150 * <?= count($errors) ?>);
+        <?php unset($_SESSION['flash_success']); ?>
+      <?php endif; ?>
+    });
   </script>
-<script src="./app/components/js/toast.js"></script>
+
 </body>
 </html>

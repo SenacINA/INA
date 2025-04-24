@@ -65,7 +65,7 @@ require_once("./utils/head.php")
         <div class="historico_itens">
           <?php
           include("$PATH_COMPONENTS/php/card_produto.php");
-          gerarProdutoCards(6, 0);
+          gerarProdutoCards(6, 1);
           ?>
         </div>
         <div class="ver_mais_container">
