@@ -20,7 +20,7 @@ $array = getPerfil($_SESSION['cliente_id']);
       <div class="perfil_cliente_pfp">
         <img src="<?= $PATH_PUBLIC;
                   echo $array[0]['foto_perfil'] ?>" alt="pfp_cliente">
-        <h1>Cliente 10</h1>
+        <h1><?=$array[0]['nome_cliente'] ?></h1>
       </div>
       <div class="perfil_cliente_btn_menu base_input_select">
         <form action="">
