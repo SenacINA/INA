@@ -47,7 +47,7 @@
               <input type="text" class="base_input">
             </div>
 
-            <button class="btn_blue base_botao">
+            <button type="submit" name="pesquisar" class="btn_blue base_botao">
               <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
               PESQUISAR
             </button>

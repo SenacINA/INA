@@ -1,3 +1,4 @@
+-- Active: 1733486036307@@127.0.0.1@3306@e2_database
 create database if not exists e2_database;
 use e2_database;
 
@@ -234,3 +235,5 @@ foreign key (id_tag) references tag(id_tag),
 foreign key (id_categoria) references categoria(id_categoria),
 foreign key (id_subcategoria) references subcategoria(id_subcategoria)
 );
+
+SELECT* FROM cliente;
