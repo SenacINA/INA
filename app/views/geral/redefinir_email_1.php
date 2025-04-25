@@ -1,61 +1,45 @@
 <?php
+require_once ('../../models/connect.php');
 
-// Simulando os dados de um usuário autenticado
-$_SESSION['cliente'] = [
-    'id' => 1, // ID do usuário
-    'email' => 'joao.silva@example.com',  // Agora com o e-mail do cliente
-    'senha_cliente' => 'hashed_password_example',  // Certifique-se de usar um hash válido
-    'nome' => 'João Silva'
-];
+if (!isset($_SESSION['cliente_id'])) {
+    header("Location: ../cliente/login.php");
+    exit();
+}
 
-// Verifique se a senha foi enviada
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once('../../../config/database.php'); // Arquivo de configuração com dados do banco
-    
-    // A senha recebida do formulário
-    $senha_enviada = $_POST['senha_cliente'];  
+    header('Content-Type: application/json');
 
-    if (isset($_SESSION['cliente'])) {  // Verifica se o cliente está autenticado
-        $cliente_id = $_SESSION['cliente']['id'];  // Acessa o id do cliente na sessão
+    $senha = $_POST['senha_cliente'] ?? '';
+    $cliente_id = $_SESSION['cliente_id'];
 
-        try {
-            // Conectar ao banco de dados utilizando PDO
-            $db = new PDO("mysql:host=localhost;dbname=e2_database", "epiliF", "1234");
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    if (empty($senha)) {
+        echo json_encode(['status' => 'error', 'message' => 'Senha não pode estar vazia.']);
+        exit();
+    }
 
-            // Preparar a consulta para buscar as informações do cliente, incluindo e-mail
-            $stmt = $db->prepare("SELECT id_cliente, nome_cliente, email_cliente, senha_cliente FROM cliente WHERE id_cliente = ?");
-            $stmt->execute([$cliente_id]);
-            $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
+    $db = new Database();
+    $db->connect();
 
-            if ($cliente) {
-                // Verificar se a senha é válida
-                if (password_verify($senha_enviada, $cliente['senha_cliente'])) {
-                    // Retorna os dados do cliente, incluindo o e-mail
-                    echo json_encode([
-                        'status' => 'success',
-                        'cliente' => [
-                            'id' => $cliente['id_cliente'],
-                            'nome' => $cliente['nome_cliente'],
-                            'email' => $cliente['email_cliente']
-                        ]
-                    ]);  // Envia sucesso com os dados do cliente
-                } else {
-                    echo json_encode(['status' => 'error', 'message' => 'Senha incorreta!']);
-                }
-            } else {
-                echo json_encode(['status' => 'error', 'message' => 'Usuário não encontrado!']);
-            }
-        } catch (PDOException $e) {
-            echo json_encode(['status' => 'error', 'message' => 'Erro ao conectar ao banco de dados: ' . $e->getMessage()]);
+    $sql = "SELECT senha_cliente FROM cliente WHERE id_cliente = :id";
+    $params = [':id' => $cliente_id];
+    $result = $db->executeQuery($sql, $params);
+
+    if ($result) {
+        $storedHash = $result[0]['senha_cliente'];
+
+        if (password_verify($senha, $storedHash)) {
+            echo json_encode(['status' => 'success']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Senha incorreta.']);
         }
     } else {
-        echo json_encode(['status' => 'error', 'message' => 'Usuário não autenticado!']);
+        echo json_encode(['status' => 'error', 'message' => 'Cliente não encontrado.']);
     }
+
+    $db->disconnect();
     exit();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -88,7 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <a href="./redefinir_senha_1.php">Redefinir Senha</a>
 
-            <!-- Área onde a mensagem de erro/sucesso será exibida -->
             <div id="response-message"></div>
           </form>
         </div>
@@ -100,8 +83,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </button>
 
           <button type="button" id="avancar-btn" class="redefinir_email_1_botao_avancar">
-            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
-            Avançar
+            <span id="btn-text">
+              <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="Ícone de avançar">
+              <span>Avançar</span>
+            </span>
           </button>
         </div>
       </div>
@@ -110,36 +95,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
 
     <script>
-      document.getElementById("avancar-btn").addEventListener("click", function() {
-        // Captura o valor do campo de senha
-        var senha = document.getElementById("senha-email").value;
-        
-        // Envia a requisição AJAX
-        var formData = new FormData();
-        formData.append('senha_cliente', senha);  // Envia a senha do campo
+      document.getElementById("avancar-btn").addEventListener("click", function () {
+      const senha = document.getElementById("senha-email").value;
+      const responseBox = document.getElementById("response-message");
 
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "redefinir_email_1.php", true);
+      const formData = new FormData();
+      formData.append("senha_cliente", senha);
 
-        xhr.onload = function() {
-          var response = JSON.parse(xhr.responseText);
-          
-          if (response.status === 'success') {
-            // Caso a senha esteja correta, você pode redirecionar ou mostrar a mensagem de sucesso
-            document.getElementById('response-message').style.color = 'green';
-            document.getElementById('response-message').innerText = 'Senha verificada com sucesso!';
-            // Redirecionar para a próxima página ou continuar no fluxo
-            setTimeout(function() {
-              window.location.href = "./redefinir_email_2.php";
-            }, 2000); // Redireciona após 2 segundos
+      fetch("redefinir_email_1.php", {
+        method: "POST",
+        body: formData
+      })
+        .then(res => res.json())
+        .then(response => {
+          if (response.status === "success") {
+            responseBox.style.color = "green";
+            responseBox.innerText = "Senha verificada com sucesso!";
+            setTimeout(() => {
+              window.location.href = "redefinir_email_2.php";
+            }, 2000);
           } else {
-            // Caso haja erro, mostra a mensagem de erro
-            document.getElementById('response-message').style.color = 'red';
-            document.getElementById('response-message').innerText = response.message;
+            responseBox.style.color = "red";
+            responseBox.innerText = response.message;
           }
-        };
-
-        xhr.send(formData);
+        })
+        .catch(() => {
+          responseBox.style.color = "red";
+          responseBox.innerText = "Erro inesperado ao processar.";
+        });
       });
     </script>
   </body>
