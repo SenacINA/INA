@@ -6,6 +6,7 @@
   require_once('../../../utils/head.php');
   require_once("../../models/vendedor/perfil_vendedor_model.php");
   $array = getPerfil($_SESSION['cliente_id']);
+ 
 ?>
 
 <body>
@@ -24,7 +25,7 @@
       <div class="perfil_vendedor_pfp">
         <img src="<?= $PATH_PUBLIC;
               echo $array[0]['foto_perfil'] ?>" alt="pfp_vendedor">
-        <h1>THUNDER GAMES</h1>
+        <h1><?=$array[0]['nome_cliente'] ?></h1>
       </div>
       <div class="perfil_vendedor_btn_menu base_input_select">
         <form action="">
