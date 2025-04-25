@@ -3,7 +3,9 @@
 
 <?php
 $css = ["/css/cliente/perfil_cliente.css"];
-require_once("../../../utils/head.php")
+require_once("../../../utils/head.php");
+require_once("../../models/cliente/perfil_cliente_model.php");
+$array = getPerfil($_SESSION['cliente_id']);
 ?>
 
 <body>
@@ -11,12 +13,14 @@ require_once("../../../utils/head.php")
   include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main>
-    <img src="<?= $PATH_PUBLIC ?>/image/cliente/perfil_cliente/banner_user.png" alt="banner" class="perfil_cliente_banner">
+    <img src="<?= $PATH_PUBLIC;
+              echo $array[0]['banner_perfil'] ?>" alt="banner" class="perfil_cliente_banner">
 
     <div class="perfil_cliente_content_pfp">
       <div class="perfil_cliente_pfp">
-        <img src="<?= $PATH_PUBLIC ?>/image/cliente/perfil_cliente/foto_user.png" alt="pfp_cliente">
-        <h1>Cliente 10</h1>
+        <img src="<?= $PATH_PUBLIC;
+                  echo $array[0]['foto_perfil'] ?>" alt="pfp_cliente">
+        <h1><?=$array[0]['nome_cliente'] ?></h1>
       </div>
       <div class="perfil_cliente_btn_menu base_input_select">
         <form action="">
@@ -47,12 +51,12 @@ require_once("../../../utils/head.php")
         <div class="perfil_cliente_contatos_cliente">
           <div class="instagram_cliente">
             <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/instagram_icon.svg" class="perfil_cliente_icon_instagram_cliente">
-            <a href="#" class="perfil_cliente_instagram_cliente">my.cliente10</a>
+            <a href="#" class="perfil_cliente_instagram_cliente"><?php echo $array[0]['instagram_perfil']; ?></a>
           </div>
           <hr class="linha_vertical">
           <div class="facebook_cliente">
             <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/facebook_icon.svg" class="perfil_cliente_icon_facebook_cliente">
-            <a href="#" class="perfil_cliente_facebook_cliente">cliente10</a>
+            <a href="#" class="perfil_cliente_facebook_cliente"><?php echo $array[0]['facebook_perfil']; ?></a>
           </div>
         </div>
       </div>
