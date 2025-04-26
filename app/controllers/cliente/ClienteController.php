@@ -37,10 +37,10 @@ class ClienteController extends RenderView {
         }
         header('Content-Type: application/json; charset=utf-8');
 
-        $nome        = trim($_POST['nome']         ?? '');
-        $email       = trim($_POST['email']        ?? '');
-        $senha       = $_POST['senha']             ?? '';
-        $confirma    = $_POST['confirmaSenha']     ?? '';
+        $nome = trim($_POST['nome'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $senha = $_POST['senha'] ?? '';
+        $confirma = $_POST['confirmaSenha'] ?? '';
 
         $errors = [];
 
@@ -56,6 +56,11 @@ class ClienteController extends RenderView {
         if (!preg_match('/\d/', $senha)) {
             $errors[] = 'A senha deve conter ao menos um número.';
         }
+
+        if (preg_match('/\s/', $senha)) {
+            $errors[] = 'A senha não pode conter espaços.';
+        }
+
         if ($senha !== $confirma) {
             $errors[] = 'As senhas não coincidem.';
         }
