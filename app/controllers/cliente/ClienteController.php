@@ -25,7 +25,7 @@ class ClienteController extends RenderView {
         $this->loadView('cliente/login', ['error' => $error]);
       }
 
-      public function cadastro()
+    public function cadastro()
       {
           $this->loadView('cliente/cadastro', []);
       }
