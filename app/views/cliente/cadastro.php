@@ -15,13 +15,13 @@
           <h1>Cadastro de usuário</h1>
         </div>
 
-        <form id="cadastroForm" class="cadastro_formulario_cadastro" action="/INA/cadastro-cliente" method="POST">
+        <form id="cadastroForm" class="cadastro_formulario_cadastro">
 
           <label for="nome">Nome:</label><br>
-          <input type="text" class="base_input" name="nome" id="nome" value="<?= htmlspecialchars($old['nome'] ?? '') ?>"><br>
+          <input type="text" class="base_input" name="nome" id="nome"><br>
 
           <label for="email">Email:</label><br>
-          <input type="email" class="base_input" name="email" id="email" value="<?= htmlspecialchars($old['email'] ?? '') ?>"><br>
+          <input type="email" class="base_input" name="email" id="email"><br>
 
           <label for="senha">Senha:</label>
           <div class="cadastro_redefinir_senha_2">
