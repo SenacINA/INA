@@ -15,6 +15,7 @@
         '/login/auth' => 'auth/AuthController@login',
         '/logout'     => 'auth/AuthController@logout',
         '/cadastro-cliente' => 'cliente/ClienteController@cadastro',
+        '/api/cliente/register'     => 'cliente/ClienteController@register',
 
         // Geral
         '/redefinir-email' => 'auth/AuthController@requestEmailReset',

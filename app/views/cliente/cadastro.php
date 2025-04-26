@@ -3,10 +3,6 @@
 <?php
   $css = ["/css/cliente/cadastro.css"];
   require_once './utils/head.php';
-
-  $errors = $_SESSION['flash_errors'] ?? [];
-  $old    = $_SESSION['flash_old']    ?? [];
-  unset($_SESSION['flash_errors'], $_SESSION['flash_old']);
 ?>
 <body>
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
@@ -19,7 +15,6 @@
           <h1>Cadastro de usuário</h1>
         </div>
 
-        <!-- FORMULÁRIO ÚNICO COM TODOS OS CAMPOS -->
         <form id="cadastroForm" class="cadastro_formulario_cadastro" action="/INA/cadastro-cliente" method="POST">
 
           <label for="nome">Nome:</label><br>
@@ -70,29 +65,7 @@
   <!-- Scripts -->
   <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
   <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const erros = [
-        <?php foreach ($errors as $e): ?>
-          "<?= addslashes($e) ?>",
-        <?php endforeach; ?>
-      ];
-
-      erros.forEach((mensagem, index) => {
-        setTimeout(() => {
-          gerarToast(mensagem, 'erro');
-        }, 150 * index);
-      });
-
-      <?php if (!empty($_SESSION['flash_success'])): ?>
-        setTimeout(() => {
-          gerarToast("<?= addslashes($_SESSION['flash_success']) ?>", "sucesso");
-        }, 150 * <?= count($errors) ?>);
-        <?php unset($_SESSION['flash_success']); ?>
-      <?php endif; ?>
-    });
-  </script>
+  <script src="<?=$PATH_PUBLIC?>/js/cliente/cadastro.js"></script>
 
 </body>
 </html>
