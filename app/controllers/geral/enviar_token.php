@@ -22,9 +22,11 @@ $expira = date('Y-m-d H:i:s', strtotime('+1 hour'));
 $stmt = $pdo->prepare("INSERT INTO redefinicao_senha (id_cliente, token, expira_em) VALUES (?, ?, ?)");
 $stmt->execute([$cliente['id_cliente'], $token, $expira]);
 
+// ⚡ Em vez de enviar e-mail, vamos gerar o link
 $link = "http://localhost/INA/app/views/geral/redefinir_senha_2.php?token=$token";
 
-// ⚠️ Envio de e-mail simples (pode comentar se der erro)
-// mail($email, "Redefina sua senha", "Clique aqui para redefinir sua senha: $link");
-
-echo json_encode(["mensagem" => "Enviamos um link para o seu e-mail."]);
+// Agora enviamos o link junto no JSON
+echo json_encode([
+    "mensagem" => "Clique no link abaixo para redefinir sua senha:",
+    "link" => $link
+]);

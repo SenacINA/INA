@@ -2,7 +2,7 @@ const btn = document.getElementById('continuar_button');
 const close_btn = document.getElementById('close_btn');
 const popup = document.getElementById('popup');
 
-document.getElementById("continuar_button").addEventListener("click", async () => {
+btn.addEventListener("click", async () => {
   const email = document.getElementById("email-senha").value;
 
   if (!email) {
@@ -21,8 +21,18 @@ document.getElementById("continuar_button").addEventListener("click", async () =
 
     const data = await res.json();
 
-    document.querySelector(".text_popup p").innerText = data.mensagem;
-    document.getElementById("popup").style.display = "flex";
+    // Aqui corrigido: Se veio um link, mostra o link
+    if (data.link) {
+      document.querySelector(".text_popup p").innerHTML = `
+        ${data.mensagem}<br><br>
+        <a href="${data.link}" class="btn-blue" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Redefinir Senha</a>
+      `;
+    } else {
+      document.querySelector(".text_popup p").innerText = data.mensagem;
+    }
+
+    popup.style.display = 'flex';
+
   } catch (error) {
     alert("Erro ao enviar solicitação.");
     console.error(error);
