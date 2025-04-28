@@ -4,6 +4,9 @@
   $titulo = "Perfil - E ao Quadrado";
   $css = ["/css/vendedor/perfil_vendedor.css"];
   require_once('../../../utils/head.php');
+  require_once("../../models/vendedor/perfil_vendedor_model.php");
+  $array = getPerfil($_SESSION['cliente_id']);
+ 
 ?>
 
 <body>
@@ -15,12 +18,14 @@
   ?>
 
   <main>
-    <img src="<?=$PATH_PUBLIC?>/image/vendedor/perfil_vendedor/banner_vendedor_mini_perfil.png" alt="banner" class="perfil_vendedor_banner">
+    <img src="<?= $PATH_PUBLIC;
+              echo $array[0]['banner_perfil'] ?>" alt="banner" class="perfil_vendedor_banner">
 
     <div class="perfil_vendedor_content_pfp">
       <div class="perfil_vendedor_pfp">
-        <img src="<?=$PATH_PUBLIC?>/image/vendedor/perfil_vendedor/pfp_vendedor.png" alt="pfp_vendedor">
-        <h1>THUNDER GAMES</h1>
+        <img src="<?= $PATH_PUBLIC;
+              echo $array[0]['foto_perfil'] ?>" alt="pfp_vendedor">
+        <h1><?=$array[0]['nome_cliente'] ?></h1>
       </div>
       <div class="perfil_vendedor_btn_menu base_input_select">
         <form action="">
@@ -75,17 +80,17 @@
           <div class="contatos_vendedor_column">
             <div class="item_contatos_vendedor">
               <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" class="icon_instagram_vendedor">
-              <a href="#">my.thudergames</a>
+              <a href="#"><?php echo $array[0]['instagram_perfil']; ?></a>
             </div>
 
             <div class="item_contatos_vendedor">
               <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" class="icon_facebook_vendedor">
-              <a href="#">thundergames</a>
+              <a href="#"><?php echo $array[0]['facebook_perfil']; ?></a>
             </div>
 
             <div class="item_contatos_vendedor">
               <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg" class="icon_x_vendedor">
-              <a href="#">thundergames_</a>
+              <a href="#">tu dudududud udududud</a>
             </div>
           </div>
 
@@ -94,17 +99,17 @@
           <div class="contatos_vendedor_column">
             <div class="item_contatos_vendedor">
               <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg" class="icon_linkedin_vendedor">
-              <a href="#">thundergames</a>
+              <a href="#"><?php echo $array[0]['linkedin_perfil']; ?></a>
             </div>
 
             <div class="item_contatos_vendedor">
               <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" class="icon_youtube_vendedor">
-              <a href="#">Thunder Games</a>
+              <a href="#"><?php echo $array[0]['youtube_perfil']; ?></a>
             </div>
 
             <div class="item_contatos_vendedor">
               <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg" class="icon_tiktok_vendedor">
-              <a href="#">thunder.games</a>
+              <a href="#"><?php echo $array[0]['tiktok_perfil']; ?></a>
             </div>
           </div>
         </div>
