@@ -3,8 +3,8 @@
 
 <?php
 $css = ["/css/cliente/perfil_cliente.css"];
-require_once("../../../utils/head.php");
-require_once("../../models/cliente/perfil_cliente_model.php");
+require_once("./utils/head.php");
+require_once("./app/models/cliente/perfil_cliente_model.php");
 $array = getPerfil($_SESSION['cliente_id']);
 ?>
 
@@ -20,7 +20,7 @@ $array = getPerfil($_SESSION['cliente_id']);
       <div class="perfil_cliente_pfp">
         <img src="<?= $PATH_PUBLIC;
                   echo $array[0]['foto_perfil'] ?>" alt="pfp_cliente">
-        <h1>Cliente 10</h1>
+        <h1><?=$array[0]['nome_cliente'] ?></h1>
       </div>
       <div class="perfil_cliente_btn_menu base_input_select">
         <form action="">
@@ -69,7 +69,7 @@ $array = getPerfil($_SESSION['cliente_id']);
         <div class="historico_itens">
           <?php
           include("$PATH_COMPONENTS/php/card_produto.php");
-          gerarProdutoCards(6, 0);
+          gerarProdutoCards(6, 1);
           ?>
         </div>
         <div class="ver_mais_container">

@@ -3,7 +3,7 @@
 <?php
   $titulo = "Gerenciar Pedidos- E ao Quadrado";
   $css = ["/css/vendedor/gerenciar_pedidos.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <?php

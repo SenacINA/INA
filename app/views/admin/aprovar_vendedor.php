@@ -3,7 +3,7 @@
 <?php
   $titulo = "Aprovar Vendedores - E ao Quadrado";
   $css = ["/css/admin/aprovar_vendedor.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <!-- Até 768px -->
