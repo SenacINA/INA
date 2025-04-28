@@ -5,8 +5,9 @@
  * @param {string} url 
  * @param {string} params SearchParams
  */
-function pag(url, params = "") {
-    window.location.href = "../" + url + ".php" + params;
+function pag(url = "", params = "") {
+    const base = window.location.origin + "/INA/";
+    window.location.href = base + url + params;
 }
 
 function selectPag(valor){

@@ -1,6 +1,6 @@
 <?php
 
-  session_start();
+  // session_start();
   // $current_url = $_SERVER['REQUEST_URI']; URL atual do site
 
 /**
@@ -27,9 +27,9 @@
     $js = [];
   }
 
-  $PATH_PUBLIC = "../../../public";
-  $PATH_COMPONENTS = "../../../app/components";
-  $PATH_CONTROLLER = '../../../app/controllers';
+  $PATH_PUBLIC = "/INA/public";
+  $PATH_COMPONENTS = "./app/components";
+  $PATH_CONTROLLER = './app/controllers';
 
   $head = "
   <head>

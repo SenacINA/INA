@@ -3,7 +3,7 @@
 <?php
   $titulo = "Sobre Nós - E ao Quadrado";
   $css = ["/css/geral/sobre_nos.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <?php
@@ -21,13 +21,13 @@
         <div class="carousel-container">
             <div class="carousel" id="carousel">
                 <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Person 1">
-                <img src="../../image/index/Produto02.jpg" alt="Person 2">
-                <img src="../../image/index/Produto03.jpg" alt="Person 3">
-                <img src="../../image/index/Produto04.jpg" alt="Person 4">
-                <img src="../../image/index/Produto05.jpg" alt="Person 5">
-                <img src="../../image/index/Produto06.jpg" alt="Person 6">
-                <img src="../../image/index/Produto07.jpg" alt="Person 7">
-                <img src="../../image/index/Produto08.jpg" alt="Person 8">
+                <img src="<?=$PATH_PUBLIC?>/image/index/Produto02.jpg" alt="Person 2">
+                <img src="<?=$PATH_PUBLIC?>/image/index/Produto03.jpg" alt="Person 3">
+                <img src="<?=$PATH_PUBLIC?>/image/index/Produto04.jpg" alt="Person 4">
+                <img src="<?=$PATH_PUBLIC?>/image/index/Produto05.jpg" alt="Person 5">
+                <img src="<?=$PATH_PUBLIC?>/image/index/Produto06.jpg" alt="Person 6">
+                <img src="<?=$PATH_PUBLIC?>/image/index/Produto07.jpg" alt="Person 7">
+                <img src="<?=$PATH_PUBLIC?>/image/index/Produto08.jpg" alt="Person 8">
             </div>
         </div>
         

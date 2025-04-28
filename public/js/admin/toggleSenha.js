@@ -5,10 +5,10 @@ function toggleSenha(senhaId, eyeImgId) {
   if (senhaInput && eyeImg) {
     if (senhaInput.type === "password") {
         senhaInput.type = "text"; 
-        eyeImg.src = "../../../public/image/geral/icons/olho_aberto_icon.svg"; 
+        eyeImg.src = "./public/image/geral/icons/olho_aberto_icon.svg"; 
     } else {
         senhaInput.type = "password"; 
-        eyeImg.src = "../../../public/image/geral/icons/olho_fechado_icon.svg"; 
+        eyeImg.src = "./public/image/geral/icons/olho_fechado_icon.svg"; 
     }
   }
 }

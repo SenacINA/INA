@@ -4,7 +4,7 @@
 <?php
   $titulo = "Cadastro Vendedor - E ao Quadrado";
   $css = ["/css/vendedor/cadastro_vendedor_2.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <?php
