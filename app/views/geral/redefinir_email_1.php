@@ -1,4 +1,5 @@
 <?php
+
 require_once ('../../models/connect.php');
 
 if (!isset($_SESSION['cliente_id'])) {
@@ -18,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $db = new Database();
-    $db->connect();
+    $db -> connect();
 
     $sql = "SELECT senha_cliente FROM cliente WHERE id_cliente = :id";
     $params = [':id' => $cliente_id];
