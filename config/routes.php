@@ -12,7 +12,7 @@
         '/carrinho-dados' => 'cliente/ClienteController@dados',
         '/carrinho-pagamentos' => 'cliente/ClienteController@pagamentos',
         '/editar-perfil-cliente' => 'cliente/ClienteController@editarPerfil',
-        '/login/auth' => 'auth/AuthController@login',
+        '/auth' => 'auth/AuthController@loginForm',
         '/logout'     => 'auth/AuthController@logout',
         '/cadastro-cliente' => 'cliente/ClienteController@cadastro',
         '/api/cliente/register'     => 'cliente/ClienteController@register',

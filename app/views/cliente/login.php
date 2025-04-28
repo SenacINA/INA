@@ -6,6 +6,12 @@
    $css = ["/css/cliente/login.css"];
    require_once("./utils/head.php");
 
+   
+   // Parte 2: Sessão (deve ser iniciada ANTES de qualquer output)
+   if (isset($_SESSION['erro_login'])) {
+       echo '<div class="erro">' . $_SESSION['erro_login'] . '</div>';
+       unset($_SESSION['erro_login']);
+   }
 ?>
 
 <body>
@@ -14,7 +20,6 @@
   <?php
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
-
     
   <main>
     <div class="login_quadrado">
@@ -24,7 +29,7 @@
           <h1>Login de usuário</h1>
           <h2>Bem-vindo de volta!</h2>
         </div>
-        <form class="login_form_content" id="loginForm" method="post" action="/INA/login/auth">
+        <form class="login_form_content" id="loginForm" method="post" action="auth">
           <div class="login_formulario_login">
             <label for="email">Email:</label><br>
             <input type="text" id="email" name="email" class="base_input"><br>
@@ -47,10 +52,10 @@
               </div>
 
               <div class="login_links">
-                  <div class="login_fit_content" onclick="pag('redefinir-senha')">
+                  <div class="login_fit_content" onclick="pag('geral/redefinir_senha_1')">
                     <p><u>Redefinir Senha</u></p>
                   </div>        
-                  <div class="login_fit_content">
+                  <div class="login_fit_content" >
                     <p>Não tem login? <u onclick="pag('cadastro-cliente')">Clique aqui</u></p>
                   </div>
               </div>
@@ -65,36 +70,25 @@
     </div>
 
     <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
+  </main>
+
+  <?php if (isset($_GET['error'])): ?>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const error = params.get('error');
-      if (!error) return;
-
-      let mensagem;
-      switch (error) {
-        case 'emptyfields':
-          mensagem = 'Preencha todos os campos.';
-          break;
-        case 'notfound':
-          mensagem = 'Usuário não encontrado.';
-          break;
-        case 'invalidpassword':
-          mensagem = 'Senha inválida.';
-          break;
-        default:
-          mensagem = 'Ocorreu um erro inesperado.';
-      }
-
-      gerarToast(mensagem, 'erro');
-    });
-  
-  </script>
-</main>
-
-
-
-<script type="module" src="./app/components/js/toast.js"></script>
+        <?php
+        switch ($_GET['error']) {
+            case 'emptyfields':
+                echo "console.error('Erro: Campos de email ou senha vazios');";
+                break;
+            case 'invalidpassword':
+                echo "console.error('Erro: Senha inválida');";
+                break;
+            case 'notfound':
+                echo "console.error('Erro: Usuário não encontrado');";
+                break;
+        }
+        ?>
+    </script>
+<?php endif; ?>
 
 </body>
 </html>

@@ -17,48 +17,81 @@ class AuthController extends RenderView {
       $this->loadView('geral/redefinir_senha_2', []);
     }
 
-    public function login()
-      {
+    public function loginForm()
+    {
         session_start();
-        $email = $_POST['email'] ?? '';
-        $senha = $_POST['senha'] ?? '';
 
-        
-
-        // 1) valida campos vazios
-        if (!$email || !$senha) {
-            header("Location: /INA/login-cliente?error=emptyfields");
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            http_response_code(405);
             exit;
         }
 
-        // 2) busca usuário
-        $model = new ClienteModel();
-        $user  = $model->findByEmail($email);
+        $email    = trim($_POST['email'] ?? '');
+        $password = $_POST['senha'] ?? '';
 
-        if (!$user) {
-            header("Location: /INA/login-cliente?error=notfound");
+        $errors = [];
+
+        if (empty($email) || empty($password)) {
+            $errors[] = 'Preencha todos os campos.';
+            $this->loadView('cliente/login', ['errors' => $errors]);
             exit;
         }
 
-        // 3) verifica a senha usando password_verify
-        if (!password_verify($senha, $user['senha_cliente'])) {
-            header("Location: /INA/login-cliente?error=invalidpassword");
+        $db = new Database();
+        $db->connect();
+
+        $sql    = "SELECT * FROM cliente WHERE email_cliente = :email";
+        $params = [':email' => $email];
+        $result = $db->executeQuery($sql, $params);
+
+        if ($result) {
+            $user = $result[0];
+            $storedHash = $user['senha_cliente'];
+
+            if (password_verify($password, $storedHash)) {
+                $_SESSION['cliente_id'] = $user['id_cliente'];
+
+                $tipoConta = $user['tipo_conta_cliente'];
+
+                if ($tipoConta == 0) {
+                    $_SESSION['user_type'] = 'admin';
+                    $this->loadView('admin/dashboard', []);
+                } elseif ($tipoConta == 1) {
+                    $_SESSION['user_type'] = 'vendedor';
+                    $this->loadView('vendedor/perfil_vendedor', []);
+                } elseif ($tipoConta == 2) {
+                    $_SESSION['user_type'] = 'cliente';
+                    $this->loadView('cliente/perfil_cliente', []);
+                } else {
+                    $_SESSION['user_type'] = 'desconhecido';
+                    $this->loadView('cliente/perfil_cliente', []);
+                }
+
+                exit;
+            } else {
+                $errors[] = 'Senha inválida.';
+                $this->loadView('cliente/login', ['errors' => $errors]);
+                exit;
+            }
+        } else {
+            $errors[] = 'Usuário não encontrado.';
+            $this->loadView('cliente/login', ['errors' => $errors]);
             exit;
         }
 
-        // 4) sucesso
-        $_SESSION['cliente_id'] = $user['id_cliente'];
-        header("Location: /INA/perfil-cliente");
-        exit;
+        $db->disconnect();
     }
+
 
 
   public function logout()
   {
     session_start();
     session_destroy();
-    header("Location: /INA/");
-    exit;
+    http_response_code(200);
+    echo json_encode(['status' => 'success', 'message' => 'Sesssão destruida']);
+    header("Location: /");
+    exit();
   }
 }
   

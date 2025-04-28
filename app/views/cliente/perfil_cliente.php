@@ -3,8 +3,8 @@
 
 <?php
 $css = ["/css/cliente/perfil_cliente.css"];
-require_once("../../../utils/head.php");
-require_once("../../models/cliente/perfil_cliente_model.php");
+require_once("./utils/head.php");
+require_once("./app/models/cliente/perfil_cliente_model.php");
 $array = getPerfil($_SESSION['cliente_id']);
 ?>
 

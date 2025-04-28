@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../models/connect.php');
+require_once('./app/models/connect.php');
 
 function getPerfil($id) {
     $db = new Database();
