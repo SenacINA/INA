@@ -31,7 +31,7 @@ function gerarProdutoCards($quantidade, $path) {
             </div>
             <div class='index_body_imagem_produto'>
                 <img id='produto' src='$imageSrc' alt='Produto'>
-                <p>Lorem ipsum dolor sit amet...</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus orci, lobortis eu eros vitae, consequat molestie velit. Maecenas pulvinar nisi ac interdum mollis. Curabitur vitae mattis nibh. Integer accumsan suscipit sem, nec ullamcorper velit ultricies vel. Mauris at egestas velit. Ut dapibus, neque in posuere molestie, metus erat pellentesque neque, id egestas mauris orci in tortor. Nullam sed magna ullamcorper, pharetra arcu sit amet, maximus mi. Curabitur libero mauris, sollicitudin ac auctor sit amet, malesuada id ipsum. Donec egestas lacus elit, vel ultricies ex volutpat ut. Vivamus viverra quam a est viverra sagittis.</p>
             </div>
             <div class='index_body_estrela_valor'>
                 <div class='index_body_estrela_produto'>

@@ -36,6 +36,10 @@
   
   .login_fit_content{
     width: fit-content;
+
+    u {
+      color: var(--carolina);
+    }
   }
 
   .login_container {
@@ -119,13 +123,15 @@
   
   .login_links p {
     color: #000;
-    cursor: pointer;
-
+    user-select: none;
     font-family: Jost;
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
     line-height: 150%; 
+    u {
+      cursor: pointer;
+    }
   }
 
   .login_botoes {

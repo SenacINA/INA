@@ -48,10 +48,10 @@
 
               <div class="login_links">
                   <div class="login_fit_content" onclick="pag('redefinir-senha')">
-                    <p>Redefinir Senha</p>
+                    <p><u>Redefinir Senha</u></p>
                   </div>        
-                  <div class="login_fit_content" onclick="pag('cadastro-cliente')">
-                    <p>Não tem login? Clique aqui</p>
+                  <div class="login_fit_content">
+                    <p>Não tem login? <u onclick="pag('cadastro-cliente')">Clique aqui</u></p>
                   </div>
               </div>
           </div>

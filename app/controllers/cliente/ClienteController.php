@@ -2,7 +2,6 @@
 
 require_once __DIR__.'/../../models/cliente/ClienteModel.php';
 
-
 class ClienteController extends RenderView {
     public function perfil() {
         $this->loadView('cliente/perfil', []);
@@ -28,61 +27,73 @@ class ClienteController extends RenderView {
 
     public function cadastro()
       {
-          session_start();
-          $model = new ClienteModel();
-  
-          // Se for GET, só renderiza a página
-          if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-              $this->loadView('cliente/cadastro', []);
-              return;
-          }
-  
-          // Captura e sanitiza
-          $nome         = trim($_POST['nome']         ?? '');
-          $email        = trim($_POST['email']        ?? '');
-          $senha        = $_POST['senha']             ?? '';
-          $confirmaSenha= $_POST['confirmaSenha']     ?? '';
-  
-          $errors = [];
-  
-          // 1) validações básicas
-          if (!$nome || !$email || !$senha || !$confirmaSenha) {
-              $errors[] = 'Preencha todos os campos.';
-          }
-          if (strlen($senha) < 6) {
-              $errors[] = 'A senha deve ter ao menos 6 caracteres.';
-          }
-          if (!preg_match('/[a-z]/', $senha)) {
-              $errors[] = 'A senha deve conter ao menos uma letra minúscula.';
-          }
-          if (!preg_match('/\d/', $senha)) {
-              $errors[] = 'A senha deve conter ao menos um número.';
-          }
-          if ($senha !== $confirmaSenha) {
-              $errors[] = 'As senhas não coincidem.';
-          }
-          // 2) email duplicado?
-          if ($model->emailExists($email)) {
-              $errors[] = 'Este e-mail já está cadastrado.';
-          }
-  
-          // Se houve erros, grava em sessão e redireciona de volta
-          if ($errors) {
-              $_SESSION['flash_errors'] = $errors;
-              // guarda valores já digitados
-              $_SESSION['flash_old']    = ['nome'=>$nome, 'email'=>$email];
-              header('Location: /INA/cadastro-cliente');
-              exit;
-          }
-  
-          // 3) cria usuário (hash Bcrypt)
-          $hash = password_hash($senha, PASSWORD_BCRYPT);
-          $model->createUser($nome, $email, $hash);
-  
-          // sucesso
-          $_SESSION['flash_success'] = 'Cadastro realizado com sucesso!';
-          header('Location: /INA/login-cliente');
-          exit;
+          $this->loadView('cliente/cadastro', []);
       }
+
+    public function register() {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            http_response_code(405);
+            exit;
+        }
+        header('Content-Type: application/json; charset=utf-8');
+
+        $nome = trim($_POST['nome'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $senha = $_POST['senha'] ?? '';
+        $confirma = $_POST['confirmaSenha'] ?? '';
+
+        $errors = [];
+
+        if (!$nome || !$email || !$senha || !$confirma) {
+            $errors[] = 'Preencha todos os campos.';
+        }
+        if (strlen($senha) < 6) {
+            $errors[] = 'A senha deve ter ao menos 6 caracteres.';
+        }
+        if (!preg_match('/[a-z]/', $senha)) {
+            $errors[] = 'A senha deve conter ao menos uma letra minúscula.';
+        }
+        if (!preg_match('/\d/', $senha)) {
+            $errors[] = 'A senha deve conter ao menos um número.';
+        }
+
+        if (preg_match('/\s/', $senha)) {
+            $errors[] = 'A senha não pode conter espaços.';
+        }
+
+        if ($senha !== $confirma) {
+            $errors[] = 'As senhas não coincidem.';
+        }
+
+        $model = new ClienteModel();
+        if ($model->emailExists($email)) {
+            $errors[] = 'Este e-mail já está cadastrado.';
+        }
+
+        if (!empty($errors)) {
+            echo json_encode([
+                'success' => false,
+                'errors'  => $errors
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        $hash = password_hash($senha, PASSWORD_BCRYPT);
+        $ok   = $model->createUser($nome, $email, $hash);
+
+        if ($ok) {
+            echo json_encode([
+            'success' => true,
+            'message' => 'Cadastro realizado com sucesso!'
+            ], JSON_UNESCAPED_UNICODE);
+        } else {
+            http_response_code(500);
+            echo json_encode([
+            'success' => false,
+            'errors'  => ['Erro interno, tente novamente mais tarde.']
+            ], JSON_UNESCAPED_UNICODE);
+        }
+        exit;
+    }
 
 }
