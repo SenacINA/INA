@@ -4,7 +4,7 @@ require_once __DIR__.'/../../models/cliente/ClienteModel.php';
 
 class ClienteController extends RenderView {
     public function perfil() {
-        $this->loadView('cliente/perfil', []);
+        $this->loadView('cliente/perfil_cliente', []);
     }
 
     public function editarPerfil() {

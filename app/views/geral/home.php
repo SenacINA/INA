@@ -96,7 +96,6 @@
                 </div>
             </div>
         </div>
-        <button onclick="pag('vendedor/perfil')">TESTE</button>
     </div>
     <?php
         include_once("$PATH_COMPONENTS/php/footer.php");
