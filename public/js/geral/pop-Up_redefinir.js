@@ -25,7 +25,7 @@ btn.addEventListener("click", async () => {
     if (data.link) {
       document.querySelector(".text_popup p").innerHTML = `
         ${data.mensagem}<br><br>
-        <a href="${data.link}" class="btn-blue" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Redefinir Senha</a>
+        <a href="${data.link}" class="base_botao btn_blue" id="close_btn" >Redefinir Senha</a>
       `;
     } else {
       document.querySelector(".text_popup p").innerText = data.mensagem;
