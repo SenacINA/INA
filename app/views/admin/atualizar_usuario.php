@@ -4,6 +4,8 @@
   $titulo = "Atualizar Vendedores - E ao Quadrado";
   $css = ["/css/admin/atualizar_usuario.css"];
   require_once('../../../utils/head.php');
+
+  
 ?>
 
 <!-- FAZER A RESPONSIVIDADE -->
@@ -40,11 +42,11 @@
           <form action="" method="post" class="atualizar_usuario_forms">
             <div class="atualizar_usuario_pesquisar_usuario_item" id="atualizar_usuario_pesquisar_usuario_item_1">
               <label>ID Do Usuário</label>
-              <input type="text" class="base_input">
+              <input type="text" class="base_input" name="idUsuario">
             </div>
             <div class="atualizar_usuario_pesquisar_usuario_item" id="atualizar_usuario_pesquisar_usuario_item_2">
               <label>E-mail</label>
-              <input type="text" class="base_input">
+              <input type="text" class="base_input" name="emailUsuario">
             </div>
 
             <button type="submit" name="pesquisar" class="btn_blue base_botao">
