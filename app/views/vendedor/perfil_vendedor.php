@@ -3,8 +3,8 @@
 <?php
   $titulo = "Perfil - E ao Quadrado";
   $css = ["/css/vendedor/perfil_vendedor.css"];
-  require_once('../../../utils/head.php');
-  require_once("../../models/vendedor/perfil_vendedor_model.php");
+  require_once('./utils/head.php');
+  require_once("./app/models/vendedor/perfil_vendedor_model.php");
   $array = getPerfil($_SESSION['cliente_id']);
  
 ?>
@@ -18,12 +18,12 @@
   ?>
 
   <main>
-    <img src="<?= $PATH_PUBLIC;
+    <img src="<?= $PATH_PUBLIC . '/';
               echo $array[0]['banner_perfil'] ?>" alt="banner" class="perfil_vendedor_banner">
 
     <div class="perfil_vendedor_content_pfp">
       <div class="perfil_vendedor_pfp">
-        <img src="<?= $PATH_PUBLIC;
+        <img src="<?= $PATH_PUBLIC . '/';
               echo $array[0]['foto_perfil'] ?>" alt="pfp_vendedor">
         <h1><?=$array[0]['nome_cliente'] ?></h1>
       </div>
@@ -124,7 +124,7 @@
         <div class="destaques_itens">
           <?php
           include("$PATH_COMPONENTS/php/card_produto.php");
-          gerarProdutoCards(6, 0);
+          gerarProdutoCards(6, 1);
           ?>
         </div>
         <div class="ver_mais_container">
@@ -144,7 +144,7 @@
         </div>
         <div class="produtos_itens">
           <?php
-          gerarProdutoCards(6, 0);
+          gerarProdutoCards(6, 1);
           ?>
         </div>
         <div class="ver_mais_container">
