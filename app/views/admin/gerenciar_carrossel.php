@@ -3,7 +3,7 @@
 <?php
   $titulo = "Gerenciar Carrossel- E ao Quadrado";
   $css = ["/css/admin/gerenciar_carrossel.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
   <!-- Até 768px -->
   <!-- Caminho de Icon Correto -->

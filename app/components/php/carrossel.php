@@ -1,9 +1,9 @@
 <?php
-function Carrossel() {
-    global $PATH_PUBLIC;
+function Carrossel($path) {
+    $PATH_PUBLIC = $path . '/public';
 
     echo <<<HTML
-    <div class="carrossel" style='background: url({$PATH_PUBLIC}/image/index/fundoCarrossel.jpg) center/cover no-repeat;'>
+    <div class="carrossel" data-path="{$PATH_PUBLIC}" style="background: url('{$PATH_PUBLIC}/image/index/fundoCarrossel.jpg') center/cover no-repeat;">
         <div class="carrossel_content">
             <button class="carrossel_but back">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -28,23 +28,23 @@ function Carrossel() {
             <button onclick="currentSlide(3)"></button>
         </div>
         <div class="categorias_nav">
-            <div class="categorias_block" onclick="pag('cliente/categoria',0)">
+            <div class="categorias_block" onclick="pag('categoria')">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselHardware.png" alt="">
                 <p>Hardware</p>
             </div>
-            <div class="categorias_block" onclick="pag('cliente/categoria',0)">
+            <div class="categorias_block" onclick="pag('categoria')">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselPerifericos.png" alt="">
                 <p>Periféricos</p>
             </div>
-            <div class="categorias_block" onclick="pag('cliente/categoria',0)">
+            <div class="categorias_block" onclick="pag('categoria')">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselEscritorio.png" alt="">
                 <p>Escritório</p>
             </div>
-            <div class="categorias_block" onclick="pag('cliente/categoria',0)">
+            <div class="categorias_block" onclick="pag('categoria')">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselCelulares.png" alt="">
                 <p>Celulares</p>
             </div>
-            <div class="categorias_block" onclick="pag('cliente/categoria',0)">
+            <div class="categorias_block" onclick="pag('categoria')">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselEletro.png" alt="">
                 <p>Eletrodomésticos</p>
             </div>
@@ -52,4 +52,5 @@ function Carrossel() {
     </div>
 HTML;
 }
+
 ?>

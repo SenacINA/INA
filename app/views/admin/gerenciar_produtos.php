@@ -3,7 +3,7 @@
 <?php
   $titulo = "Gerenciar Produtos - E ao Quadrado";
   $css = ["/css/admin/gerenciar_produtos.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <!-- Até 768px -->
