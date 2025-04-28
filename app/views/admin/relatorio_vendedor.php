@@ -3,7 +3,7 @@
 <?php
   $titulo = "Perfil - E ao Quadrado";
   $css = ["/css/admin/relatorio_vendedor.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <!-- Até 375px -->

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
     $css = ["/css/geral/error.css"];
-    require_once('../../../utils/head.php')
+    require_once('./utils/head.php')
 ?>
 
 
@@ -15,10 +15,10 @@
 
     <main class="error_main">
         <div class='error_bot_message'>
-            <img class='error_bot_img' src="<?=$PATH_PUBLIC?>/image/geral/error/inaBot_tv.png" alt="">
+            <img class='error_bot_img' src="<?="$PATH_PUBLIC"?>/image/geral/error/inaBot_tv.png" alt="">
         </div>
-        <button id='homeButton' class='base_botao btn_blue' onclick="pag('geral/home')">
-            <img src="<?=$PATH_PUBLIC?>/image/geral/icons/loja_icon_branco.svg" alt="">
+        <button id='homeButton' class='base_botao btn_blue' onclick="pag('')">
+            <img src="<?="$PATH_PUBLIC"?>/image/geral/icons/loja_icon_branco.svg" alt="">
             VOLTAR PARA A TELA INICIAL
         </button>
         

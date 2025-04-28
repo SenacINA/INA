@@ -3,7 +3,7 @@
 <?php
   $titulo = "Confirmar Pedido - E ao Quadrado";
   $css = ["/css/vendedor/confirmar_pedido.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <?php

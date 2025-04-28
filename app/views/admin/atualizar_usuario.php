@@ -3,7 +3,7 @@
 <?php
   $titulo = "Atualizar Vendedores - E ao Quadrado";
   $css = ["/css/admin/atualizar_usuario.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body> 
   <!-- Até 375px -->

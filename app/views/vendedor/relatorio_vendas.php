@@ -3,7 +3,7 @@
 <?php
   $titulo = "Relatório de Vendas- E ao Quadrado";
   $css = ["/css/vendedor/relatorio_vendas.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <?php

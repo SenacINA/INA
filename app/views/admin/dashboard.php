@@ -3,7 +3,7 @@
 <?php
   $titulo = "Dashboard - E ao Quadrado";
   $css = ["/css/admin/dashboard.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <!-- Até 375px -->
@@ -85,7 +85,7 @@
             </div>
           </a>
 
-          <a href="./aprovar_vendedor.php">
+          <a onclick="pag('aprovar-vendedor')">
             <div class="dashboard_body_container_botoes_base">
               <img src="<?=$PATH_PUBLIC?>/image/admin/dashboard/aprovar_vendedor.svg" alt="">
               <h2>Aprovar Vendedor</h2>

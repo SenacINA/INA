@@ -4,7 +4,7 @@
 <?php
   $titulo = "Cadastro Vendedor - E ao Quadrado";
   $css = ["/css/vendedor/cadastro_vendedor_1.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <?php
@@ -47,7 +47,7 @@
         </div>
 
         <div class="cadastro_vendedor1_botao_salvar">
-            <button class="cadastro_vendedor1_salvar" onclick="pag('vendedor/cadastro_vendedor_2')">
+            <button class="cadastro_vendedor1_salvar" onclick="pag('vendedor/cadastro')">
                 <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
                 <label>CONTINUAR</label>
             </button>

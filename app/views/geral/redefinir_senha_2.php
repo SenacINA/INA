@@ -3,7 +3,7 @@
 <?php
   $titulo = "Redefinir Senha - E ao Quadrado";
   $css = ["/css/geral/redefinir_senha_2.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <!-- Até 375px -->

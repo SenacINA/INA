@@ -1457,6 +1457,13 @@ main{
     }
 }
 
+@media (max-width: 320px) {
+  .categorias_block {
+    width: 136px;
+  }
+  
+}
+
 /* BOTÃO IR AO TOPO */
 
 .btn-topo {

@@ -4,7 +4,7 @@
 <?php
    // Parte 1: Configurações iniciais
    $css = ["/css/cliente/login.css"];
-   require_once("../../../utils/head.php");
+   require_once("./utils/head.php");
 
    
    // Parte 2: Sessão (deve ser iniciada ANTES de qualquer output)
@@ -29,7 +29,7 @@
           <h1>Login de usuário</h1>
           <h2>Bem-vindo de volta!</h2>
         </div>
-        <form class="login_form_content" id="loginForm" method="post" action="<?=$PATH_CONTROLLER?>/geral/login_controller.php">
+        <form class="login_form_content" id="loginForm" method="post" action="auth">
           <div class="login_formulario_login">
             <label for="email">Email:</label><br>
             <input type="text" id="email" name="email" class="base_input"><br>
@@ -53,10 +53,10 @@
 
               <div class="login_links">
                   <div class="login_fit_content" onclick="pag('geral/redefinir_senha_1')">
-                    <p>Redefinir Senha</p>
+                    <p><u>Redefinir Senha</u></p>
                   </div>        
-                  <div class="login_fit_content" onclick="pag('cliente/cadastro')">
-                    <p>Não tem login? Clique aqui</p>
+                  <div class="login_fit_content" >
+                    <p>Não tem login? <u onclick="pag('cadastro-cliente')">Clique aqui</u></p>
                   </div>
               </div>
           </div>

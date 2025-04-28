@@ -3,7 +3,7 @@
 <?php
   $css = ["/css/cliente/carrinho_vazio.css"];
   $js = ["/js/cliente/carrinho.js"];
-  require_once("../../../utils/head.php");
+  require_once("./utils/head.php");
   include_once("$PATH_COMPONENTS/php/produto_carrinho.php");
 ?>
 <body>

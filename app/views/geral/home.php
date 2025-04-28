@@ -3,9 +3,10 @@
     <?php
         $css = ["/css/geral/home.css", "/css/geral/parallax.css"];
         $js = ["/js/geral/parallax.js"];
-        require_once('../../../utils/head.php')
+        require_once('./utils/head.php')
     ?>
 <body>
+    
     <?php
     // echo var_dump($_SERVER['REQUEST_URI']);
     // echo var_dump($_SERVER['DOCUMENT_ROOT']);
@@ -17,9 +18,8 @@
     
     <!-- Import Carrossel -->
     <?php
-        echo $str_css;
         include_once("$PATH_COMPONENTS/php/carrossel.php");
-        Carrossel();
+        Carrossel('./');
     ?>
 
     <div class="index_body_bg_container">
