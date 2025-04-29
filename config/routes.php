@@ -37,6 +37,7 @@
         '/produto-registrar' => 'vendedor/VendedorProductController@create',
         '/produto-editar' => 'vendedor/VendedorProductController@edit',
         '/relatorio-vendas' => 'vendedor/VendedorProductController@report',
+        '/cadastro-produto' => 'vendedor/ProdutoController@produto',
 
         // Admin
         '/admin-dashboard' => 'admin/AdminController@dashboard',
