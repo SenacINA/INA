@@ -86,12 +86,12 @@
         </div>
       </form>
       <div class="botoes_redefinir">
-        <button type="button" class='base_botao btn_blue redefinir_senha_cliente'>
+        <button type="button" onclick="pag('redefinir-senha')" class='base_botao btn_blue redefinir_senha_cliente'>
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/sair_branco_icon.svg" alt="">
           Redefinir senha
-
         </button>
-        <button type="button" class="base_botao btn_blue redefinir_email_cliente">
+
+        <button type="button" onclick="pag('redefinir-email')" class="base_botao btn_blue redefinir_email_cliente">
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/sair_branco_icon.svg" alt="">
           Redefinir email
         </button>

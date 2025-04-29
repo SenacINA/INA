@@ -1,9 +1,9 @@
 <?php
 
-require_once ('../../models/connect.php');
+require_once ('./app/models/connect.php');
 
 if (!isset($_SESSION['cliente_id'])) {
-    header("Location: ../cliente/login.php");
+    header("Location: login-cliente");
     exit();
 }
 

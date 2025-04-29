@@ -19,8 +19,6 @@ class AuthController extends RenderView {
 
     public function loginForm()
     {
-        session_start();
-
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             http_response_code(405);
             exit;
