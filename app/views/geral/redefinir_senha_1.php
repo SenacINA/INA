@@ -14,8 +14,10 @@
   <!-- Caminho de Icon Correto -->
 
   <?php
+    $PATH_COMPONENTS = __DIR__ . '/../../components';
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
+
   
   <main>
     <div class="redefinir_senha_1_container">

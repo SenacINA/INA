@@ -20,6 +20,7 @@
 
 <body>
   <?php
+    $PATH_COMPONENTS = __DIR__ . '/../../components';
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
 
