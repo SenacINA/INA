@@ -23,7 +23,8 @@ $stmt = $pdo->prepare("INSERT INTO redefinicao_senha (id_cliente, token, expira_
 $stmt->execute([$cliente['id_cliente'], $token, $expira]);
 
 // ⚡ Em vez de enviar e-mail, vamos gerar o link
-$link = "http://localhost/INA/app/views/geral/redefinir_senha_2.php?token=$token";
+$link = "redefinir-senha-confirmar";
+$_SESSION['redefinir_senha_token'] = $token;
 
 // Agora enviamos o link junto no JSON
 echo json_encode([

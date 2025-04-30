@@ -22,7 +22,7 @@
         '/redefinir-email' => 'auth/AuthController@requestEmailReset',
         '/redefinir-email/confirmar' => 'auth/AuthController@confirmEmailReset',
         '/redefinir-senha' => 'auth/AuthController@requestPasswordReset',
-        '/redefinir-senha/confirmar'=> 'auth/AuthController@confirmPasswordReset',
+        '/redefinir-senha-confirmar'=> 'auth/AuthController@confirmPasswordReset',
         '/sobre-nos' => 'geral/GeralController@sobreNos',
 
         // Vendedor - Cadastro e Perfil

@@ -3,7 +3,7 @@
   <?php
     $titulo = "Redefinir Senha - E ao Quadrado";
     $css = ["/css/geral/redefinir_senha_1.css"];
-    require_once('../../../utils/head.php');
+    require_once('./utils/head.php');
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -14,7 +14,6 @@
   <!-- Caminho de Icon Correto -->
 
   <?php
-    $PATH_COMPONENTS = __DIR__ . '/../../components';
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
 

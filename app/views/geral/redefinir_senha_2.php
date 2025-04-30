@@ -3,15 +3,15 @@
 <?php
   $titulo = "Redefinir Senha - E ao Quadrado";
   $css = ["/css/geral/redefinir_senha_2.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 
   // Pega o token da URL
-  $token = $_GET['token'] ?? '';
+  $token = $_SESSION['redefinir_senha_token'] ?? '';
   if (!$token) {
     echo '
       <div class="mensagem-erro">
         <p>Token inválido ou expirado.</p>
-        <a href="../../../index.php" class="botao-voltar">Voltar para a Página Inicial</a>
+        <a onclick="pag(\'\')" class="botao-voltar">Voltar para a Página Inicial</a>
       </div>
     ';
     die();
@@ -20,7 +20,6 @@
 
 <body>
   <?php
-    $PATH_COMPONENTS = __DIR__ . '/../../components';
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
 
