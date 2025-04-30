@@ -22,6 +22,8 @@
         '/redefinir-email' => 'auth/AuthController@requestEmailReset',
         '/redefinir-email/confirmar' => 'auth/AuthController@confirmEmailReset',
         '/redefinir-senha' => 'auth/AuthController@requestPasswordReset',
+        '/redefinir-senha-api' => 'geral/EnviarTokenController@gerarToken',
+        '/redefinir-senha-api-salvar' => 'geral/EnviarTokenController@salvarSenha',
         '/redefinir-senha-confirmar'=> 'auth/AuthController@confirmPasswordReset',
         '/sobre-nos' => 'geral/GeralController@sobreNos',
 

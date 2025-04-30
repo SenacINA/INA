@@ -14,10 +14,13 @@ btn.addEventListener("click", async () => {
   formData.append("email", email);
 
   try {
-    const res = await fetch("http://localhost/INA/app/controllers/geral/enviar_token.php", {
+    const res = await fetch("redefinir-senha-api", {
       method: "POST",
-      body: formData
+      headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      body: formData,
+      credentials: 'include' // 🔥 Obrigatório para sessão funcionar corretamente
     });
+    
 
     const data = await res.json();
 
