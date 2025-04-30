@@ -27,8 +27,8 @@ main {
 
 .cadastro_quadrado {
   max-width: 670px;
+  height: 740px;
   width: 100%;
-  height: fit-content;
   background: #dce5eb;
   margin: 0px 1.5% 1.5% 1.5%;
   border-radius: 5px;

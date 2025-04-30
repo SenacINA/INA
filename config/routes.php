@@ -19,10 +19,11 @@
         '/logout' => 'auth/AuthController@logout',
 
         // Geral
-        '/redefinir-email' => 'auth/AuthController@requestEmailReset',
-        '/redefinir-email/confirmar' => 'auth/AuthController@confirmEmailReset',
+        '/trocar-email' => 'auth/AuthController@requestEmailReset',
+        '/trocar-email-php' => 'geral/TrocarEmail1Controller@TrocarEmail',
+        '/trocar-email-confirmar' => 'auth/AuthController@confirmEmailReset',
         '/redefinir-senha' => 'auth/AuthController@requestPasswordReset',
-        '/redefinir-senha/confirmar'=> 'auth/AuthController@confirmPasswordReset',
+        '/redefinir-senha-confirmar'=> 'auth/AuthController@confirmPasswordReset',
         '/sobre-nos' => 'geral/GeralController@sobreNos',
 
         // Vendedor - Cadastro e Perfil

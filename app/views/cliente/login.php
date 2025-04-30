@@ -52,7 +52,7 @@
               </div>
 
               <div class="login_links">
-                  <div class="login_fit_content" onclick="pag('geral/redefinir_senha_1')">
+                  <div class="login_fit_content" onclick="pag('redefinir-senha')">
                     <p><u>Redefinir Senha</u></p>
                   </div>        
                   <div class="login_fit_content" >

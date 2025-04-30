@@ -5,10 +5,10 @@ require_once __DIR__.'/../../models/cliente/ClienteModel.php';
 
 class AuthController extends RenderView {
     public function requestEmailReset() {
-      $this->loadView('geral/redefinir_email_1', []);
+      $this->loadView('geral/trocar_email_1', []);
     }
     public function confirmEmailReset() {
-      $this->loadView('geral/redefinir_email_2', []);
+      $this->loadView('geral/trocar_email_2', []);
     }
     public function requestPasswordReset() {
       $this->loadView('geral/redefinir_senha_1', []);
@@ -19,8 +19,6 @@ class AuthController extends RenderView {
 
     public function loginForm()
     {
-        session_start();
-
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             http_response_code(405);
             exit;
