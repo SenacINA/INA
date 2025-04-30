@@ -41,4 +41,12 @@ class AdminController extends RenderView {
     public function adminCarrossel() {
         $this->loadView('admin/admin_carrossel', []);
     }
+
+    public function searchUser() {
+        
+    }
+
+    public function updateUser() {
+
+    }
 }
