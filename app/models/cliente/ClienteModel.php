@@ -30,18 +30,51 @@ class ClienteModel
         return $result ?: null;
     }
 
-    public function createUser(string $nome, string $email, string $senha): bool
-    {
-        $sql = "INSERT INTO cliente
-                  (nome_cliente, email_cliente, senha_cliente,
-                   data_registro_cliente, tipo_conta_cliente, status_conta_cliente)
-                VALUES
-                  (:nome, :email, :senha, CURDATE(), 2, 1)";
+    public function createUser(string $nome, string $email, string $senha): bool {
+        try {
+            $this->db->connect();
+            $conn = $this->db->getConnection();
 
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':nome',  $nome);
-        $stmt->bindValue(':email', $email);
-        $stmt->bindValue(':senha', $senha);
-        return $stmt->execute();
+            $conn->beginTransaction();
+
+            $sqlCliente = "INSERT INTO cliente
+                            (nome_cliente, email_cliente, senha_cliente,
+                            data_registro_cliente, tipo_conta_cliente, status_conta_cliente)
+                        VALUES
+                            (:nome, :email, :senha, CURDATE(), 2, 1)";
+            
+            $paramsCliente = [
+                ':nome'  => $nome,
+                ':email' => $email,
+                ':senha' => $senha
+            ];
+
+            $this->db->executeQuery($sqlCliente, $paramsCliente);
+
+            $idCliente = $conn->lastInsertId();
+
+            $sqlPerfil = "INSERT INTO perfil
+                            (id_cliente, foto_perfil, banner_perfil)
+                        VALUES
+                            (:id_cliente, :foto_perfil, :banner_perfil)";
+            
+            $paramsPerfil = [
+                ':id_cliente'    => $idCliente,
+                ':foto_perfil'   => '/image/cliente/perfil_cliente/foto_user.png',
+                ':banner_perfil' => '/image/cliente/perfil_cliente/banner_user.png'
+            ];
+
+            $this->db->executeQuery($sqlPerfil, $paramsPerfil);
+
+            $conn->commit();
+            return true;
+
+        } catch (PDOException $e) {
+            if ($conn->inTransaction()) {
+                $conn->rollBack();
+            }
+            die('Erro ao criar usuário: ' . $e->getMessage());
+        }
     }
+
 }
