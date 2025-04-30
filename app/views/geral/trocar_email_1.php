@@ -21,7 +21,7 @@
           <form class="trocar_email_1_form" id="form_trocar_email" method="POST" action="trocar-email-php" autocomplete="on">
             <label for="senha-email">Senha:</label>
             <div class="trocar_email_1_input">
-                <input class="base_input" type="password" name="senha_cliente" id="senha-email" required>
+                <input class="base_input" type="password" name="senha_cliente" id="senha-email">
                 <a href="javascript:void(0);" id="eye-icon-email">
                     <img class="base_icon" id="eye-img-email" src="<?=$PATH_PUBLIC?>/image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
                 </a>
