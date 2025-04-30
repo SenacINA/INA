@@ -3,7 +3,7 @@
 
 <?php
   $css = ["/css/cliente/carrinho_pagamentos.css"];
-  require_once("../../../utils/head.php")
+  require_once("./utils/head.php")
 ?>
 <body>
   <?php
@@ -46,7 +46,7 @@
               VOLTAR
           </button>
 
-          <button class="base_botao btn_blue" onclick="pag('../../index')">
+          <button class="base_botao btn_blue" onclick="pag('')">
               <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
               FINALIZAR
           </button>

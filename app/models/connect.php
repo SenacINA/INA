@@ -2,7 +2,6 @@
 
 require __DIR__ . '/../../config/database.php';
 
-
 class Database {
     private $host;
     private $dbName;

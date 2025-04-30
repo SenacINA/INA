@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   if (eyeIconNovaSenha) {
-    eyeIconNovaSenha.addEventListener('click', () => toggleSenha('nova_senha', 'eye-img-nova-senha'));
+    eyeIconNovaSenha.addEventListener('click', () => toggleSenha('confirmaSenha', 'eye-img-nova-senha'));
   }
 
   if (eyeIconEmail) {

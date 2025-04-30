@@ -3,7 +3,7 @@
 <?php
   $titulo = "Histórico de Acesso - E ao Quadrado";
   $css = ["/css/admin/historico_acesso.css"];
-  require_once('../../../utils/head.php');
+  require_once('./utils/head.php');
 ?>
 <body>
   <?php
