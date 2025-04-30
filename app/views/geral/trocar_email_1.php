@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <?php
@@ -20,7 +18,7 @@
             <h1>Trocar E-mail</h1>
           </div>
 
-          <form class="trocar_email_1_form" id="form_trocar_email" method="POST" action="trocar-email" autocomplete="on">
+          <form class="trocar_email_1_form" id="form_trocar_email" method="POST" action="trocar-email-php" autocomplete="on">
             <label for="senha-email">Senha:</label>
             <div class="trocar_email_1_input">
                 <input class="base_input" type="password" name="senha_cliente" id="senha-email" required>
@@ -52,5 +50,3 @@
     <script src="<?=$PATH_PUBLIC?>/js/geral/trocar_email_1.js"></script>
   </body>
 </html>
-
-

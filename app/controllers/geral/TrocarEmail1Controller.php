@@ -2,9 +2,7 @@
 
 require_once __DIR__ . '../../../models/geral/TrocarEmail1Model.php';
 
-class TrocarEmail1Controller
-{
-
+class TrocarEmail1Controller {
   public function TrocarEmail()
   {
     if (!isset($_SESSION['cliente_id'])) {
@@ -12,10 +10,10 @@ class TrocarEmail1Controller
       exit();
     }
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       header('Content-Type: application/json');
 
-      $senha = $_POST['senha_cliente'] ?? '';
+      $senha = $_POST['senha-email'] ?? '';
       $cliente_id = $_SESSION['cliente_id'];
 
       if (empty($senha)) {
@@ -27,18 +25,17 @@ class TrocarEmail1Controller
       }
 
       $model = new TrocarEmailModel;
-
-      $result = $model->VerificarCLiente($_SESSION['cliente_id']);
+      $result = $model->VerificarCLiente($cliente_id);
 
       if (!$result) {
         echo json_encode([
           'status' => 'error',
           'messagem' => 'Cliente não encontrado.'
         ]);
-        exit;
+        exit();
       }
 
-      $storedHash = $result[0]['senha_cliente'];
+      $storedHash = $result['senha_cliente'];
 
       if (password_verify($senha, $storedHash)) {
         echo json_encode(['status' => 'success']);
@@ -48,7 +45,6 @@ class TrocarEmail1Controller
           'messagem' => 'Senha incorreta.'
         ]);
       }
-
       exit();
     }
   }

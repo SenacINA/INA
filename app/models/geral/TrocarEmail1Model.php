@@ -20,6 +20,7 @@ class TrocarEmailModel
 
     $stmt->bindValue(':id', $cliente_id);
 
-    return $stmt->execute();
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 }
