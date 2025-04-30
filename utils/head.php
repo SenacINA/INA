@@ -3,35 +3,34 @@
 // session_start();
 // $current_url = $_SERVER['REQUEST_URI']; URL atual do site
 
-/**
- * Lista de stylesheets para carregar na página
- * @var string $titulo
- */
-if (!isset($titulo)) {
-  $titulo = "E ao Quadrado";
-}
+   * Lista de stylesheets para carregar na página
+   * @var string $titulo
+   */
+  if(!isset($titulo)) {
+    $titulo = "E ao Quadrado";
+  }
 
-/**
- * Lista de stylesheets para carregar na página
- * @var string[] $css
- */
-if (!isset($css)) {
-  $css = [];
-}
+  /**
+   * Lista de stylesheets para carregar na página
+   * @var string[] $css
+   */
+  if(!isset($css)) {
+    $css = [];
+  }
 
-/**
- * Lista de scripts para carregar na página
- * @var string[] $js
- */
-if (!isset($js)) {
-  $js = [];
-}
+  /**
+   * Lista de scripts para carregar na página
+   * @var string[] $js
+   */
+  if(!isset($js)) {
+    $js = [];
+  }
 
-$PATH_PUBLIC = "./public";
-$PATH_COMPONENTS = "./app/components";
-$PATH_CONTROLLER = './app/controllers';
+  $PATH_PUBLIC = "./public";
+  $PATH_COMPONENTS = "./app/components";
+  $PATH_CONTROLLER = './app/controllers';
 
-$head = "
+  $head = "
   <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
