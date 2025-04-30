@@ -18,7 +18,6 @@
   }
 ?>
 
-
 <body>
   <?php
     include_once("$PATH_COMPONENTS/php/navbar.php");
@@ -72,7 +71,7 @@
   </main>
 
   <!-- Pop-Up -->
-  <div class="popup_container" id="popup">
+  <div class="popup_container" id="popup" style="display: none;">
     <div class="popup">
       <div class="text_popup">
         <img src="<?=$PATH_PUBLIC?>/image/geral/icons/check_carolina_icon.svg" width="200px" height="200px">
@@ -112,7 +111,8 @@
         alert(data.mensagem);
 
         if (data.mensagem.includes("sucesso")) {
-          window.location.href = "/INA/app/views/geral/redefinir_senha_3.php";
+          // Exibe o pop-up
+          document.getElementById('popup').style.display = 'flex';
         }
       }
     } catch (error) {

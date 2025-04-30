@@ -7,7 +7,7 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-
+    
   ?>
 <body>
   <!-- Até 375px -->
@@ -57,7 +57,7 @@
         </p>
       </div>
       <button class="base_botao btn_blue" id="close_btn">
-        <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
+        <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt=""> 
         Ok
       </button>
     </div>
