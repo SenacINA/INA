@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Jost";
-  user-select: none;
 }
 
 /* NAVBAR */
@@ -303,13 +302,14 @@ transform: translateX(24px);
 
 /* Botão Confirmar */
 .atualizar_usuario_botao_salvar {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 
   top: 660px;
   right: 250px;
+  z-index: 1;
 }
 
 .atualizar_usuario_salvar {
@@ -350,6 +350,8 @@ transform: translateX(24px);
 }
 
 .atualizar_usuario_pesquisar_usuario {
+  position: relative;
+  z-index: 2;
   grid-column: 1;
   grid-row: 2 / 4;
 }

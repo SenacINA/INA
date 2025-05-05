@@ -43,7 +43,6 @@ class AdminController extends RenderView {
     }
 
     public function searchUser() {
-        
     }
 
     public function updateUser() {
