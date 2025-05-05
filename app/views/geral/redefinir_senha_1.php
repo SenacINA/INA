@@ -24,8 +24,6 @@
         <form class="redefinir_senha_1_form" action="">
           <label for="email">E-mail:</label>
           <input class="base_input" type="email" name="email" id="email-senha">
-
-          <a href="./redefinir_email_1.php">Redefinir E-Mail</a>
         </form>
       </div>
 
