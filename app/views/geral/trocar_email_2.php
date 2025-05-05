@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-  $titulo = "Redefinir E-mail - E ao Quadrado";
-  $css = ["/css/geral/redefinir_email_2.css"];
+  $titulo = "trocar E-mail - E ao Quadrado";
+  $css = ["/css/geral/trocar_email_2.css"];
   require_once('./utils/head.php');
 ?>
 <body>
@@ -14,20 +14,20 @@
   ?>
   
   <main>
-    <div class="redefinir_email_2_container">
-      <div class="redefinir_email_2_main_content">
-        <div class="redefinir_email_2_bem_vindo">
+    <div class="trocar_email_2_container">
+      <div class="trocar_email_2_main_content">
+        <div class="trocar_email_2_bem_vindo">
           <img src="<?=$PATH_PUBLIC?>/image/geral/logo-eaoquadrado.png">
-          <h1>Redefinir E-mail</h1>
+          <h1>trocar E-mail</h1>
         </div>
 
-        <form class="redefinir_email_2_form" action="">
-          <div class="redefinir_email_2_input">
+        <form class="trocar_email_2_form" action="">
+          <div class="trocar_email_2_input">
             <label for="email">Novo E-mail:</label>
             <input class="base_input" type="text" name="email" id="email">
           </div>
 
-          <div class="redefinir_email_2_input">
+          <div class="trocar_email_2_input">
             <label for="email">Confirmar E-mail:</label>
             <input class="base_input" type="text" name="email" id="confirm-email">
           </div>
@@ -35,12 +35,12 @@
         
         
       </div>
-      <div class="redefinir_email_2_botoes">
-        <button class="redefinir_email_2_botao_voltar" onclick="history.back()">
+      <div class="trocar_email_2_botoes">
+        <button class="trocar_email_2_botao_voltar" onclick="history.back()">
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">
           Voltar
         </button>
-        <button class="redefinir_email_2_botao_salvar" id="continuar_button">
+        <button class="trocar_email_2_botao_salvar" id="continuar_button">
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
           Salvar
         </button>
@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <script src="<?=$PATH_PUBLIC?>/js/geral/pop-Up_redefinir.js"></script>
-  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/geral/pop-Up_trocar.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_trocar.js"></script>
 </body>
 </html>
