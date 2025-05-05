@@ -19,13 +19,14 @@
         '/logout' => 'auth/AuthController@logout',
 
         // Geral
-        '/redefinir-email' => 'auth/AuthController@requestEmailReset',
-        '/redefinir-email/confirmar' => 'auth/AuthController@confirmEmailReset',
-        '/redefinir-senha' => 'auth/AuthController@requestPasswordReset',
-        '/redefinir-senha-api' => 'geral/EnviarTokenController@gerarToken',
-        '/redefinir-senha-api-salvar' => 'geral/EnviarTokenController@salvarSenha',
-        '/redefinir-senha-confirmar'=> 'auth/AuthController@confirmPasswordReset',
         '/sobre-nos' => 'geral/GeralController@sobreNos',
+        '/trocar-email' => 'auth/AuthController@requestEmailReset',
+        '/trocar-email-php' => 'geral/TrocarEmail1Controller@TrocarEmail',
+        '/trocar-email-confirmar' => 'auth/AuthController@confirmEmailReset',
+        '/redefinir-senha' => 'auth/AuthController@requestPasswordReset',
+        '/redefinir-senha-confirmar'=> 'auth/AuthController@confirmPasswordReset',
+        '/redefinir-senha-api'        => 'geral/EnviarTokenController@gerarToken',
+        '/redefinir-senha-api-salvar' => 'geral/EnviarTokenController@salvarSenha',
 
         // Vendedor - Cadastro e Perfil
         '/cadastro-vendedor-info' => 'vendedor/VendedorController@showInfo',
@@ -39,6 +40,7 @@
         '/produto-registrar' => 'vendedor/VendedorProductController@create',
         '/produto-editar' => 'vendedor/VendedorProductController@edit',
         '/relatorio-vendas' => 'vendedor/VendedorProductController@report',
+        '/cadastro-produto' => 'vendedor/ProdutoController@produto',
 
         // Admin
         '/admin-dashboard' => 'admin/AdminController@dashboard',

@@ -20,7 +20,7 @@ function handlePerfil()
 
 }
 
-function title($user){
+function gerarTitle($user){
   $content = '<a class="menu-item">
                     <img class="icon" style="max-width:24px" src="./public/image/index/Logo.svg" alt="">
                     <span>EaoQuadrado</span>
@@ -230,7 +230,7 @@ function generateModalContent($user) {
 <div id="modal-container" class="modal-container" hidden>
   <div id="modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
     <div class="modal-header">
-      <h2 id="modal-title"><?php echo title($_SESSION["user_type"] ?? '');?></h2>
+      <h2 id="modal-title"><?php echo gerarTitle($_SESSION["user_type"] ?? '');?></h2>
       <button id="close-modal" class="close-button" aria-label="Fechar menu">
         <span aria-hidden="true">&times;</span>
       </button>
