@@ -39,10 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     : editor.isActive(command)
                 
                 button.classList.toggle('active', isActive)
+                const descricao_input = document.querySelector("#descricao");
+                descricao_input.value = editor.getText();
             })
         },
     })
 
+    
     const commands = {
         bold: () => editor.chain().focus().toggleBold().run(),
         underline: () => editor.chain().focus().toggleUnderline().run(),
