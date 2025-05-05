@@ -43,6 +43,15 @@ class AdminController extends RenderView {
     }
 
     public function searchUser() {
+        if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+            http_response_code(405);
+            exit;
+        }
+        header('Content-Type: application/json; charset=utf-8');
+
+        $id = trim($_GET['idUsuario'] ?? '')
+        $email = trim($_GET['emailUsuario'] ?? '');
+
     }
 
     public function updateUser() {

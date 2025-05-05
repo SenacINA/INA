@@ -35,7 +35,7 @@
           <h2>Digite o ID ou o E-mail do usuário para encontrá-lo, deixe em branco para cadastrar um usuário.</h2>
 
           <!-- FORM SEARCH -->
-          <form action="" method="post" class="atualizar_usuario_forms">
+          <form action="" method="get" class="atualizar_usuario_forms">
             <div class="atualizar_usuario_pesquisar_usuario_item" id="atualizar_usuario_pesquisar_usuario_item_1">
               <label>ID Do Usuário</label>
               <input type="text" class="base_input" name="idUsuario">
@@ -55,8 +55,6 @@
         </div>
 
         <!-- FORM UPDATE -->
-
-
         <form action="" method="post" class="corpo_form">
           <div class="atualizar_usuario_dados_pessoais_grid">
             <!-- Dados Pessoais -->
