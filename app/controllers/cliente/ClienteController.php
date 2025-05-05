@@ -4,9 +4,6 @@ require_once __DIR__.'/../../models/cliente/ClienteModel.php';
 
 class ClienteController extends RenderView {
     public function perfil() {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
         $this->loadView('cliente/perfil_cliente', []);
     }
 

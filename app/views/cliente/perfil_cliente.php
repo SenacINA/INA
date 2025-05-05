@@ -26,9 +26,9 @@ $array = getPerfil($_SESSION['cliente_id']);
         <form action="">
           <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
             <option selected disabled value="">Menu</option>
-            <option value="cliente/editar_perfil_cliente">Editar Perfil</option>
-            <option value="vendedor/cadastro_vendedor_1">Cadastro de vendedor</option>
-            <option value="cliente/login">Sair</option>
+            <option value="editar-perfil-cliente">Editar Perfil</option>
+            <option value="cadastro-vendedor">Cadastro de vendedor</option>
+            <option value="login-cliente">Sair</option>
           </select>
         </form>
       </div>
