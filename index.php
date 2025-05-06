@@ -1,16 +1,11 @@
 <?php
 
     require_once __DIR__ . '/core/Core.php';
-    require_once __DIR__ . '/config/routes.php';
-
-    $url = $_GET['url'] ?? '/'; // retorna "/" se não houver parâmetro
-    
+    require_once __DIR__ . '/config/routes.php';    
 
     if (! isset($_SESSION)) {
         session_start();
     }
-
-    
 
     spl_autoload_register(function($className) {
         $paths = [

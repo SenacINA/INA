@@ -32,8 +32,6 @@
   $PATH_PUBLIC = "./public";
   $PATH_COMPONENTS = "./app/components";
   $PATH_CONTROLLER = './app/controllers';
-
-  $baseUrl = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
   
 
   $head = "
@@ -44,9 +42,6 @@
       <link rel='icon' type='image/x-icon' href='$PATH_PUBLIC/image/geral/icone_eaoquadrado.ico'>
       <title>$titulo</title>
       <link rel='stylesheet' href='$PATH_PUBLIC/css/style.css'>
-      <script>
-        const BASE_URL = '$baseUrl';
-      </script>
       <script src='$PATH_PUBLIC/js/geral/base.js'></script>";
   
 
