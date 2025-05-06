@@ -32,6 +32,15 @@ tipo_conta_cliente tinyint not null,
 status_conta_cliente tinyint
 );
 
+CREATE table if not exists  redefinicao_senha (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  id_cliente INT NOT NULL,
+  token VARCHAR(255) NOT NULL UNIQUE,
+  expira_em DATETIME NOT NULL,
+  usado BOOLEAN DEFAULT FALSE,
+  FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
+);
+
 create table if not exists endereco( -- 14
 id_endereco int auto_increment primary key,
 rua_endereco varchar(100) not null,

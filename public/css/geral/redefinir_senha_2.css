@@ -25,6 +25,39 @@ main {
   height: 100%;
 }
 
+/* Estilo para a mensagem de erro */
+.mensagem-erro {
+  background-color: #ffe5e5;
+  color: #d8000c;
+  padding: 20px;
+  border: 1px solid #d8000c;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 50px auto;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Estilo para o botão de voltar */
+.botao-voltar {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #d8000c;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.botao-voltar:hover {
+  background-color: #a60008;
+}
+
+
+
 /* start Pop-Up */
 .popup_container {
   width: 100vw;
