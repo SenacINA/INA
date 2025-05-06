@@ -46,6 +46,7 @@ class ClienteModel
             perfil.linkedin_perfil, 
             perfil.youtube_perfil, 
             perfil.tiktok_perfil,
+            perfil.x_perfil,
             endereco.rua_endereco, 
             endereco.bairro_endereco, 
             endereco.numero_endereco, 

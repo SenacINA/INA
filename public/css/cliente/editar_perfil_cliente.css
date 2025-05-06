@@ -342,7 +342,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: center;
-  justify-items: start;
+  justify-items: center;
   row-gap: 16px;
   column-gap: 16px;
   margin: 0 24px;
@@ -509,8 +509,7 @@ body {
   display: grid;
   column-gap: 16px;
   row-gap: 24px;
-  grid-template-columns: min-content min-content;
-  grid-template-rows: min-content min-content;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
 }
 

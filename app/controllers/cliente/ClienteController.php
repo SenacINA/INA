@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__.'/../../models/cliente/ClienteModel.php';
+require_once __DIR__.'/../../models/geral/GeralModel.php';
+
 
 class ClienteController extends RenderView {
     public function perfil() {
@@ -27,6 +29,13 @@ class ClienteController extends RenderView {
       {
           $this->loadView('cliente/cadastro', []);
       }
+    
+    public function editarRedes() {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            http_response_code(405);
+            exit;
+        }
+    }
 
     public function register() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -89,6 +98,61 @@ class ClienteController extends RenderView {
             echo json_encode([
             'success' => false,
             'errors'  => ['Erro interno, tente novamente mais tarde.']
+            ], JSON_UNESCAPED_UNICODE);
+        }
+        exit;
+    }
+
+    public function updateSocial()
+    {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            http_response_code(405);
+            exit;
+        }
+        header('Content-Type: application/json; charset=utf-8');
+
+        $clienteId = $_SESSION['cliente_id'] ?? null;
+        if (!$clienteId) {
+            http_response_code(401);
+            echo json_encode([
+                'success' => false,
+                'errors'  => ['Não autenticado.']
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        $data = [
+            'descricao' => trim($_POST['descricao'] ?? ''),
+            'instagram' => trim($_POST['instagram'] ?? ''),
+            'facebook' => trim($_POST['facebook'] ?? ''),
+            'linkedin' => trim($_POST['linkedin'] ?? ''),
+            'youtube' => trim($_POST['youtube'] ?? ''),
+            'tiktok' => trim($_POST['tiktok'] ?? ''),
+            'x' => trim($_POST['x'] ?? ''),
+        ];
+
+        $errors = [];
+
+        if (!empty($errors)) {
+            echo json_encode([
+                'success' => false,
+                'errors'  => $errors
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        $model = new GeralModel();
+        $ok = $model->updateSocial((int)$clienteId, $data);
+
+        if ($ok) {
+            echo json_encode([
+                'success' => true,
+                'message' => 'Redes sociais atualizadas com sucesso!'
+            ], JSON_UNESCAPED_UNICODE);
+        } else {
+            echo json_encode([
+                'success' => true,
+                'message' => 'Nenhuma mudança detectada.'
             ], JSON_UNESCAPED_UNICODE);
         }
         exit;

@@ -149,10 +149,10 @@
               </div>
           <?php endif; ?>
 
-          <?php if (!empty($user['x_twitter_perfil'])): ?>
+          <?php if (!empty($user['x_perfil'])): ?>
               <div class='redes_div'>
                   <img src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg" alt="x.com">
-                  <a href="https://x.com/<?= htmlspecialchars($user['x_twitter_perfil']) ?>" class="link_x"><?= htmlspecialchars($user['x_twitter_perfil']) ?></a>
+                  <a href="https://x.com/<?= htmlspecialchars($user['x_perfil']) ?>" class="link_rede">@<?= htmlspecialchars($user['x_perfil']) ?></a>
               </div>
           <?php endif; ?>
 
@@ -166,7 +166,7 @@
           <?php if (!empty($user['youtube_perfil'])): ?>
               <div class='redes_div'>
                   <img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" alt="youtube">
-                  <a href="https://youtube.com/<?= htmlspecialchars($user['youtube_perfil']) ?>" class="link_rede"><?= htmlspecialchars($user['youtube_perfil']) ?></a>
+                  <a href="https://youtube.com/@<?= htmlspecialchars($user['youtube_perfil']) ?>" class="link_rede">@<?= htmlspecialchars($user['youtube_perfil']) ?></a>
               </div>
           <?php endif; ?>
 
@@ -226,7 +226,7 @@
       </div>
     </div>
     <div class="botoes">
-      <button class="base_botao btn_blue salvar">
+      <button id=salvarEdit class="base_botao btn_blue salvar">
         <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar
       </button>
       <button class="base_botao btn_outline_red cancelar">
@@ -240,33 +240,39 @@
             <hr class="linha_vertical">
             <h1 class="font_titulo">Redes Sociais</h1>
             <div>
-                <button class="fechar" id="close_btn">X</button>
+                <button class="fechar" id="close_btn">
+                  <img class='base_icon' src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_azul_icon.svg" alt="">
+                </button>
             </div>
         </div>
         <!-- FORM POPUP ALTERAR REDE -->
-        <form action="#" method="get" class="forms_redes_sociais">
+        <form id='redesForm' class="forms_redes_sociais">
             <div>
                 <label for="instagram"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg">Instagram *</label>
-                <input class="base_input" type="text" name="instagram" value="<?= isset($user['instagram_perfil']) ? htmlspecialchars($user['instagram_perfil']) : '' ?>" placeholder="my.Cliente10">
+                <input class="base_input" type="text" name="instagram" value="<?= isset($user['instagram_perfil']) ? htmlspecialchars($user['instagram_perfil']) : '' ?>" placeholder="Username">
                 
                 <label for="facebook"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg">Facebook *</label>
-                <input class="base_input" type="text" name="facebook" value="<?= isset($user['facebook_perfil']) ? htmlspecialchars($user['facebook_perfil']) : '' ?>" placeholder="Cliente10">
+                <input class="base_input" type="text" name="facebook" value="<?= isset($user['facebook_perfil']) ? htmlspecialchars($user['facebook_perfil']) : '' ?>" placeholder="Username">
                 
                 <label for="x"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg">X.com *</label>
-                <input class="base_input" type="text" name="x" value="<?= isset($user['x_twitter_perfil']) ? htmlspecialchars($user['x_twitter_perfil']) : '' ?>">
+                <input class="base_input" type="text" name="x" value="<?= isset($user['x_perfil']) ? htmlspecialchars($user['x_perfil']) : '' ?>"
+                placeholder="Username">
             </div>
             <div>
                 <label for="linkedin"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg">Linkedin *</label>
-                <input class="base_input" type="text" name="linkedin" value="<?= isset($user['linkedin_perfil']) ? htmlspecialchars($user['linkedin_perfil']) : '' ?>">
+                <input class="base_input" type="text" name="linkedin" value="<?= isset($user['linkedin_perfil']) ? htmlspecialchars($user['linkedin_perfil']) : '' ?>"
+                placeholder="Username">
                 
                 <label for="youtube"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg">Youtube *</label>
-                <input class="base_input" type="text" name="youtube" value="<?= isset($user['youtube_perfil']) ? htmlspecialchars($user['youtube_perfil']) : '' ?>">
+                <input class="base_input" type="text" name="youtube" value="<?= isset($user['youtube_perfil']) ? htmlspecialchars($user['youtube_perfil']) : '' ?>"
+                placeholder="Username">
                 
                 <label for="tiktok"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg">Tiktok *</label>
-                <input class="base_input" type="text" name="tiktok" value="<?= isset($user['tiktok_perfil']) ? htmlspecialchars($user['tiktok_perfil']) : '' ?>">
+                <input class="base_input" type="text" name="tiktok" value="<?= isset($user['tiktok_perfil']) ? htmlspecialchars($user['tiktok_perfil']) : '' ?>"
+                placeholder="Username">
             </div>
             <p>* Opcional</p>
-            <button class="base_botao btn_blue"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
+            <button class="base_botao btn_blue" type='submit'><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
         </form>
     </div>
   </div>
@@ -276,6 +282,8 @@
 
 </body>
 <script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
+<script src="<?=$PATH_PUBLIC?>/js/cliente/updateSocial.js"></script>
 <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
+<script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
 
 </html>

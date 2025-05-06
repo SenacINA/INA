@@ -168,6 +168,7 @@ linkedin_perfil varchar(50),
 facebook_perfil varchar(50),
 youtube_perfil varchar(50),
 instagram_perfil varchar(50),
+x_perfil varchar(50),
 foreign key (id_cliente) references cliente(id_cliente)
 );
 
