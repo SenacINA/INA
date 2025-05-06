@@ -7,6 +7,7 @@ class GeralController extends RenderView {
         $this->loadView('geral/sobre_nos', []);
     }
 
+    
     public function editarPerfil() {
         if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
             $this->loadView('cliente/login', []);
@@ -17,27 +18,26 @@ class GeralController extends RenderView {
         $userType = $_SESSION['user_type'];
     
         $clienteModel = new ClienteModel();
-        $clienteData = $clienteModel->findById($clienteId); 
-        if (!$clienteData) {
-            $this->loadView('cliente/login', []);
-            exit;
-        }
     
         switch ($userType) {
             case 'admin':
-                $this->loadView('admin/dashboard', ['user' => $clienteData]);
+                $adminData = ['nome' => 'Admin', 'email' => 'admin@admin.com']; 
+                $this->loadView('admin/dashboard', ['user' => $adminData]);
                 break;
     
             case 'vendedor':
-                $this->loadView('vendedor/editar_perfil_vendedor', [
-                    'user' => $clienteData
-                ]);
-                break;
-    
             case 'cliente':
-                $this->loadView('cliente/editar_perfil', [
-                    'user' => $clienteData
-                ]);
+                $clienteData = $clienteModel->findById($clienteId); 
+                if (!$clienteData) {
+                    $this->loadView('cliente/login', []);
+                    exit;
+                }
+    
+                $viewPath = $userType === 'vendedor'
+                    ? 'vendedor/editar_perfil_vendedor'
+                    : 'cliente/editar_perfil';
+    
+                $this->loadView($viewPath, ['user' => $clienteData]);
                 break;
     
             default:
@@ -45,6 +45,7 @@ class GeralController extends RenderView {
                 break;
         }
     }
+    
     
     
 }

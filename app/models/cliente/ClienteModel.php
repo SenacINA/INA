@@ -11,6 +11,16 @@ class ClienteModel
         $this->db->connect();
     }
 
+    public function getTipoContaById(string $id): ?int {
+        $sql = "SELECT tipo_conta_cliente FROM cliente WHERE id_cliente = :id LIMIT 1";
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ? (int)$result['tipo_conta_cliente'] : null;
+    }
+    
+
     public function findById(string $id): ?array {
         $sql = "
         SELECT 

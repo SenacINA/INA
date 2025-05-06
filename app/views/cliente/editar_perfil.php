@@ -105,6 +105,7 @@
     </div>
     </div>
     <div class="forms">
+      <!-- FORM NOME, LOC -->
       <form action="" class="forms_container">
         <div class="forms_inner_container">
           <label for="nomeVendedor" class="inner">Nome:</label>
@@ -205,8 +206,10 @@
           <hr class="linha_vertical">
           <p class="text_pfp">Imagem de Perfil:</p>
         </div>
-        <button class="img_container">
-          <img src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/perfil_usuario.svg">
+        <!-- Foto de perfil -->
+        <button class="img_container" type="button" onclick="document.getElementById('fileInputFoto').click();">
+          <input type="file" id="fileInputFoto" name="foto" style="display: none;" accept="image/*" />
+          <img id="imgPreviewFoto" src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/perfil_usuario.svg">
         </button>
         <p class="warn">As dimensões recomendadas são: 400 x 400 pixels.</p>
       </div>
@@ -215,8 +218,9 @@
           <hr class="linha_vertical">
           <p class="text_banner">Imagem de Banner:</p>
         </div>
-        <button class="img_container">
-          <img src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/mini_banner_perfil_cliente.png" class="banner_cliente_forms">
+        <button class="img_container" type="button" onclick="document.getElementById('fileInputBanner').click();">
+          <input type="file" id="fileInputBanner" name="banner" style="display: none;" accept="image/*" />
+          <img id="imgPreviewBanner" src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/mini_banner_perfil_cliente.png" class="banner_cliente_forms">
         </button>
         <p class="warn">As dimensões recomendadas são: 1500 x 500 pixels.</p>
       </div>
@@ -239,6 +243,7 @@
                 <button class="fechar" id="close_btn">X</button>
             </div>
         </div>
+        <!-- FORM POPUP ALTERAR REDE -->
         <form action="#" method="get" class="forms_redes_sociais">
             <div>
                 <label for="instagram"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg">Instagram *</label>
@@ -264,47 +269,13 @@
             <button class="base_botao btn_blue"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
         </form>
     </div>
-</div>
-  <div class="popup_container" id="popup">
-      <div class="popup">
-          <div class="text_popup">
-              <hr class="linha_vertical">
-              <h1 class="font_titulo">Redes Sociais</h1>
-              <div>
-                  <button class="fechar" id="close_btn">X</button>
-              </div>
-          </div>
-          <form action="#" method="get" class="forms_redes_sociais">
-              <div>
-                  <label for="instagram"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg">Instagram *</label>
-                  <input class="base_input" type="text" name="instagram" value="<?= isset($user['instagram_perfil']) ? htmlspecialchars($user['instagram_perfil']) : '' ?>" placeholder="my.Cliente10">
-                  
-                  <label for="facebook"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg">Facebook *</label>
-                  <input class="base_input" type="text" name="facebook" value="<?= isset($user['facebook_perfil']) ? htmlspecialchars($user['facebook_perfil']) : '' ?>" placeholder="Cliente10">
-                  
-                  <label for="x"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg">X.com *</label>
-                  <input class="base_input" type="text" name="x" value="<?= isset($user['x_twitter_perfil']) ? htmlspecialchars($user['x_twitter_perfil']) : '' ?>">
-              </div>
-              <div>
-                  <label for="linkedin"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg">Linkedin *</label>
-                  <input class="base_input" type="text" name="linkedin" value="<?= isset($user['linkedin_perfil']) ? htmlspecialchars($user['linkedin_perfil']) : '' ?>">
-                  
-                  <label for="youtube"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg">Youtube *</label>
-                  <input class="base_input" type="text" name="youtube" value="<?= isset($user['youtube_perfil']) ? htmlspecialchars($user['youtube_perfil']) : '' ?>">
-                  
-                  <label for="tiktok"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg">Tiktok *</label>
-                  <input class="base_input" type="text" name="tiktok" value="<?= isset($user['tiktok_perfil']) ? htmlspecialchars($user['tiktok_perfil']) : '' ?>">
-              </div>
-              <p>* Opcional</p>
-              <button class="base_botao btn_blue"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
-          </form>
-      </div>
   </div>
-
   <?php
         include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
-<script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
+
 </body>
+<script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
+<script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
 
 </html>
