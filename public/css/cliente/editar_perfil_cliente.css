@@ -198,10 +198,9 @@ body {
 .infos_container {
   position: relative;
   top: calc(15%);
-  left: calc(4%);
   display: grid;
-  grid-template-columns: auto 190px auto;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
   align-items: center;
   justify-content: center;
   justify-items: center;
@@ -339,13 +338,14 @@ body {
 
 .contatos_cliente {
   display: grid;
-  width: 100%;
-  grid-template-columns: auto auto min-content auto auto;
+  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: center;
-  justify-items: center;
-  row-gap: 10%;
-  column-gap: 1%;
+  justify-items: start;
+  row-gap: 16px;
+  column-gap: 16px;
+  margin: 0 24px;
 }
 
 .icon_instagram_cliente {
@@ -386,7 +386,7 @@ body {
 .forms {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   grid-column: 2;
   grid-row: 2/3;
 
@@ -488,6 +488,16 @@ body {
   background-color: var(--carolina);
 }
 
+.redes_div {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: flex-end;
+  img {
+    height: 24px;
+  }
+}
+
 .redes_sociais_cliente {
   display: flex;
   flex-direction: column;
@@ -495,23 +505,31 @@ body {
   width: 100%;
 }
 
+.rede_social {
+  max-width: 100%;
+  display: flex;
+  gap: 4px;
+  img {
+    height: 24px;
+  }
+}
+
 .redes_edit {
   display: grid;
-  column-gap: 4px;
-  row-gap: 18px;
+  column-gap: 16px;
+  row-gap: 24px;
   grid-template-columns: min-content min-content;
   grid-template-rows: min-content min-content;
   align-items: center;
 }
 
-.link_instagram {
+.link_rede {
   color: var(--carolina);
   font-family: Jost;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: none;
   text-decoration-thickness: auto;

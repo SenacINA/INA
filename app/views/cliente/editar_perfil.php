@@ -7,7 +7,7 @@
 ?>
 
 <body>
-  <!-- Atá 375px -->  
+  <!-- Até 375px -->  
 
   <?php
     include_once("$PATH_COMPONENTS/php/navbar.php");
@@ -31,58 +31,90 @@
       <img src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/perfil_usuario.svg" alt="pfp_cliente" class="pfp_cliente">
       <div class="infos_container">
         <div class="nome_cliente">
-          <h1 class="nome_cliente">Cliente10</h1>
+          <h1 class="nome_cliente"><?= htmlspecialchars($user['nome_cliente']) ?></h1>
         </div>
         <div class="produtos_cliente_container">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/loja_icon.svg" class="icon_produtos_cliente">
-          <p class="produtos_cliente">Produtos: 8</p>
+          <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/balao_exclamacao_icon.svg">
+          <p class="avaliacao_cliente">Ativo há: Agora</p>
         </div>
         <div class="avaliacao_cliente_container">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/estela_icon.svg">
-          <p class="avaliacao_cliente">Avaliação geral: 4.5</p>
+          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg" class="icon_produtos_cliente">
+          <p class="produtos_cliente">
+            <?= isset($user['nome_cidade']) && isset($user['nome_estado']) ? 
+                htmlspecialchars($user['nome_cidade']) . ", " . htmlspecialchars($user['nome_estado']) : 
+                "Localização não disponível" ?>
+          </p>
         </div>
         <div class="tempo_cliente_container">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_membros_icon.svg">
-          <p class="tempo_cliente">Cliente há: 4 Meses</p>
-        </div>
-        <div class="localizacao_cliente_container">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg">
-          <p class="localizacao_cliente">São Paulo, São Paulo</p>
+          <p class="tempo_cliente">
+            <?php
+              $dataRegistro = $user['data_registro_cliente'];
+              $diasCliente = (strtotime(date('Y-m-d')) - strtotime($dataRegistro)) / 86400;
+              echo "Cliente há: " . round($diasCliente) . " Dias";
+            ?>
+        </p>
         </div>
       </div>
       <hr class="separador_mini_perfil">
-      <div class="about_container">
-        <img src="<?=$PATH_PUBLIC?>/image/geral/icons/texto_icon.svg" class="icon_about_us">
-        <h1 class="sobre_nos_cliente">Sobre:</h1>
-        <p class="text_about">Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio. In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis. Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus. At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae. At dolorum quos non omnis internos et quos quis.</p>
-      </div>
       <div class="contatos_container">
         <div class="contatos_cliente">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" class="icon_instagram_cliente">
-          <a href="#" class="instagram_cliente">my.Cliente10</a>
-          <hr class="linha_vertical_mini">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" class="icon_facebook_cliente">
-          <a href="#" class="facebook_cliente">Cliente10</a>
+            <?php if (!empty($user['instagram_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" class="icon_instagram_cliente">
+                    <span class="instagram_cliente"><?= htmlspecialchars($user['instagram_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($user['facebook_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" class="icon_facebook_cliente">
+                    <span class="facebook_cliente"><?= htmlspecialchars($user['facebook_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($user['x_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg" class="icon_x_cliente">
+                    <span class="x_cliente"><?= htmlspecialchars($user['x_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($user['linkedin_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg" class="icon_linkedin_cliente">
+                    <span class="linkedin_cliente"><?= htmlspecialchars($user['linkedin_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($user['youtube_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" class="icon_youtube_cliente">
+                    <span class="youtube_cliente"><?= htmlspecialchars($user['youtube_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($user['tiktok_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg" class="icon_tiktok_cliente">
+                    <span class="tiktok_cliente"><?= htmlspecialchars($user['tiktok_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
         </div>
       </div>
+    </div>
     </div>
     <div class="forms">
       <form action="" class="forms_container">
         <div class="forms_inner_container">
           <label for="nomeVendedor" class="inner">Nome:</label>
-          <input type="text" name="nomeVendedor" id="nomeVendedor" class="base_input nome_cliente_forms">
-        </div>
-        <div class="forms_inner_container">
-          <label for="descricao">Descrição:</label>
-          <textarea name="descricao" id="descricao" cols="90" rows="10" class="base_input"></textarea>
+          <input type="text" name="nomeVendedor" id="nomeVendedor" class="base_input nome_cliente_forms" value='<?= htmlspecialchars($user['nome_cliente']) ?>'>
         </div>
         <div class="forms_inner_container">
           <label for="localizacaoVendedor">Localização:</label>
-          <input type="text" name="localizacaoVendedor" id="localizacaoVendedor" class="base_input">
-        </div>
-        <div class="forms_inner_container">
-          <label for="email_cliente">Email:</label>
-          <input type="email" name="email_cliente" id="email_cliente" class="base_input">
+          <input type="text" name="localizacaoVendedor" id="localizacaoVendedor" class="base_input" value='<?= isset($user['nome_cidade']) && isset($user['nome_estado']) ? 
+                htmlspecialchars($user['nome_cidade']) . ", " . htmlspecialchars($user['nome_estado']) : 
+                "Localização não disponível" ?>'>
         </div>
       </form>
       <div class="botoes_redefinir">
@@ -102,9 +134,65 @@
           <p class="main_text_redes">Redes Sociais:</p>
         </div>
         <div class="redes_edit">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" alt="instagram"> <a href="#" class="link_instagram">my.Cliente10 </a>
-          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" alt="facebook"> <a href="#" class="link_facebook">Cliente10</a>
+          <?php if (!empty($user['instagram_perfil'])): ?>
+              <div class='redes_div'>
+                  <img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" alt="instagram">
+                  <a href="https://instagram.com/<?= htmlspecialchars($user['instagram_perfil']) ?>" class="link_rede">@<?= htmlspecialchars($user['instagram_perfil']) ?></a>
+              </div>
+          <?php endif; ?>
+
+          <?php if (!empty($user['facebook_perfil'])): ?>
+              <div class='redes_div'>
+                  <img src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" alt="facebook">
+                  <a href="https://facebook.com/<?= htmlspecialchars($user['facebook_perfil']) ?>" class="link_rede"><?= htmlspecialchars($user['facebook_perfil']) ?></a>
+              </div>
+          <?php endif; ?>
+
+          <?php if (!empty($user['x_twitter_perfil'])): ?>
+              <div class='redes_div'>
+                  <img src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg" alt="x.com">
+                  <a href="https://x.com/<?= htmlspecialchars($user['x_twitter_perfil']) ?>" class="link_x"><?= htmlspecialchars($user['x_twitter_perfil']) ?></a>
+              </div>
+          <?php endif; ?>
+
+          <?php if (!empty($user['linkedin_perfil'])): ?>
+              <div class='redes_div'>
+                  <img src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg" alt="linkedin">
+                  <a href="https://linkedin.com/in/<?= htmlspecialchars($user['linkedin_perfil']) ?>" class="link_rede"><?= htmlspecialchars($user['linkedin_perfil']) ?></a>
+              </div>
+          <?php endif; ?>
+
+          <?php if (!empty($user['youtube_perfil'])): ?>
+              <div class='redes_div'>
+                  <img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" alt="youtube">
+                  <a href="https://youtube.com/<?= htmlspecialchars($user['youtube_perfil']) ?>" class="link_rede"><?= htmlspecialchars($user['youtube_perfil']) ?></a>
+              </div>
+          <?php endif; ?>
+
+          <?php if (!empty($user['tiktok_perfil'])): ?>
+              <div class='redes_div'>
+                  <img src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg" alt="tiktok">
+                  <a href="https://tiktok.com/@<?= htmlspecialchars($user['tiktok_perfil']) ?>" class="link_rede">@<?= htmlspecialchars($user['tiktok_perfil']) ?></a>
+              </div>
+          <?php endif; ?>
+      </div>
+
+
+          <?php if (!empty($user['youtube'])): ?>
+            <div>
+              <img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" alt="youtube">
+              <a href="https://youtube.com/<?= htmlspecialchars($user['youtube']) ?>" class="link_rede"><?= htmlspecialchars($user['youtube']) ?></a>
+            </div>
+          <?php endif; ?>
+
+          <?php if (!empty($user['tiktok'])): ?>
+            <div>
+              <img src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg" alt="tiktok">
+              <a href="https://tiktok.com/@<?= htmlspecialchars($user['tiktok']) ?>" class="link_rede">@<?= htmlspecialchars($user['tiktok']) ?></a>
+            </div>
+          <?php endif; ?>
         </div>
+
         <button class="base_botao btn_blue botao_edit" id="botao_editar">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/caneta_branca_icon.svg" alt="">
           Editar
@@ -144,35 +232,75 @@
   </main>
   <div class="popup_container" id="popup">
     <div class="popup">
-      <div class="text_popup">
-        <hr class="linha_vertical">
-        <h1 class="font_titulo">Redes Sociais</h1>
-        <div>
-          <button class="fechar" id="close_btn">X</button>
+        <div class="text_popup">
+            <hr class="linha_vertical">
+            <h1 class="font_titulo">Redes Sociais</h1>
+            <div>
+                <button class="fechar" id="close_btn">X</button>
+            </div>
         </div>
-      </div>
-      <form action="#" method="get" class="forms_redes_sociais">
-        <div>
-          <label for="instagram"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg">Instagram *</label>
-          <input class="base_input" type="text" name="instagram" placeholder="my.Cliente10">
-          <label for="facebook"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg">Facebook *</label>
-          <input class="base_input" type="text" name="facebook" placeholder="Cliente10">
-          <label for="x"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg">X.com *</label>
-          <input class="base_input" type="text" name="x">
-        </div>
-        <div>
-          <label for="linkedin"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg">Linkedin *</label>
-          <input class="base_input" type="text" name="linkedin">
-          <label for="youtube"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg">Youtube *</label>
-          <input class="base_input" type="text" name="youtube">
-          <label for="tiktok"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg">Tiktok *</label>
-          <input class="base_input" type="text" name="tiktok">
-        </div>
-        <p>* Opcional</p>
-        <button class="base_botao btn_blue"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
-      </form>
+        <form action="#" method="get" class="forms_redes_sociais">
+            <div>
+                <label for="instagram"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg">Instagram *</label>
+                <input class="base_input" type="text" name="instagram" value="<?= isset($user['instagram_perfil']) ? htmlspecialchars($user['instagram_perfil']) : '' ?>" placeholder="my.Cliente10">
+                
+                <label for="facebook"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg">Facebook *</label>
+                <input class="base_input" type="text" name="facebook" value="<?= isset($user['facebook_perfil']) ? htmlspecialchars($user['facebook_perfil']) : '' ?>" placeholder="Cliente10">
+                
+                <label for="x"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg">X.com *</label>
+                <input class="base_input" type="text" name="x" value="<?= isset($user['x_twitter_perfil']) ? htmlspecialchars($user['x_twitter_perfil']) : '' ?>">
+            </div>
+            <div>
+                <label for="linkedin"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg">Linkedin *</label>
+                <input class="base_input" type="text" name="linkedin" value="<?= isset($user['linkedin_perfil']) ? htmlspecialchars($user['linkedin_perfil']) : '' ?>">
+                
+                <label for="youtube"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg">Youtube *</label>
+                <input class="base_input" type="text" name="youtube" value="<?= isset($user['youtube_perfil']) ? htmlspecialchars($user['youtube_perfil']) : '' ?>">
+                
+                <label for="tiktok"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg">Tiktok *</label>
+                <input class="base_input" type="text" name="tiktok" value="<?= isset($user['tiktok_perfil']) ? htmlspecialchars($user['tiktok_perfil']) : '' ?>">
+            </div>
+            <p>* Opcional</p>
+            <button class="base_botao btn_blue"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
+        </form>
     </div>
+</div>
+  <div class="popup_container" id="popup">
+      <div class="popup">
+          <div class="text_popup">
+              <hr class="linha_vertical">
+              <h1 class="font_titulo">Redes Sociais</h1>
+              <div>
+                  <button class="fechar" id="close_btn">X</button>
+              </div>
+          </div>
+          <form action="#" method="get" class="forms_redes_sociais">
+              <div>
+                  <label for="instagram"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg">Instagram *</label>
+                  <input class="base_input" type="text" name="instagram" value="<?= isset($user['instagram_perfil']) ? htmlspecialchars($user['instagram_perfil']) : '' ?>" placeholder="my.Cliente10">
+                  
+                  <label for="facebook"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg">Facebook *</label>
+                  <input class="base_input" type="text" name="facebook" value="<?= isset($user['facebook_perfil']) ? htmlspecialchars($user['facebook_perfil']) : '' ?>" placeholder="Cliente10">
+                  
+                  <label for="x"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg">X.com *</label>
+                  <input class="base_input" type="text" name="x" value="<?= isset($user['x_twitter_perfil']) ? htmlspecialchars($user['x_twitter_perfil']) : '' ?>">
+              </div>
+              <div>
+                  <label for="linkedin"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg">Linkedin *</label>
+                  <input class="base_input" type="text" name="linkedin" value="<?= isset($user['linkedin_perfil']) ? htmlspecialchars($user['linkedin_perfil']) : '' ?>">
+                  
+                  <label for="youtube"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg">Youtube *</label>
+                  <input class="base_input" type="text" name="youtube" value="<?= isset($user['youtube_perfil']) ? htmlspecialchars($user['youtube_perfil']) : '' ?>">
+                  
+                  <label for="tiktok"><img src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg">Tiktok *</label>
+                  <input class="base_input" type="text" name="tiktok" value="<?= isset($user['tiktok_perfil']) ? htmlspecialchars($user['tiktok_perfil']) : '' ?>">
+              </div>
+              <p>* Opcional</p>
+              <button class="base_botao btn_blue"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
+          </form>
+      </div>
   </div>
+
   <?php
         include_once("$PATH_COMPONENTS/php/footer.php");
   ?>

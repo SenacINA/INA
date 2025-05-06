@@ -84,11 +84,12 @@ class AuthController extends RenderView {
 
   public function logout()
   {
-    session_start();
+    // session_start();
     session_destroy();
     http_response_code(200);
     // echo json_encode(['status' => 'success', 'message' => 'Sesssão destruida']);
-    $this->loadView('geral/home', []);
+    // $this->loadView('geral/home', []);
+    header('Location: index.php');
     exit();
   }
 }

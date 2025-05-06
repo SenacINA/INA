@@ -6,6 +6,7 @@ $css = ["/css/cliente/perfil_cliente.css"];
 require_once("./utils/head.php");
 require_once("./app/models/cliente/perfil_cliente_model.php");
 $array = getPerfil($_SESSION['cliente_id']);
+$cliente = $array[0] ?? []; 
 ?>
 
 <body>
@@ -13,20 +14,18 @@ $array = getPerfil($_SESSION['cliente_id']);
   include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main>
-    <img src="<?= $PATH_PUBLIC;
-              echo $array[0]['banner_perfil'] ?>" alt="banner" class="perfil_cliente_banner">
+    <img src="<?= $PATH_PUBLIC . '/' . ($cliente['banner_perfil'] ?? 'image/cliente/default_banner.png') ?>" alt="banner" class="perfil_cliente_banner">
 
     <div class="perfil_cliente_content_pfp">
       <div class="perfil_cliente_pfp">
-        <img src="<?= $PATH_PUBLIC;
-                  echo $array[0]['foto_perfil'] ?>" alt="pfp_cliente">
-        <h1><?=$array[0]['nome_cliente'] ?></h1>
+        <img src="<?= $PATH_PUBLIC . '/' . ($cliente['foto_perfil'] ?? 'image/cliente/default_pfp.png') ?>" alt="pfp_cliente">
+        <h1><?= htmlspecialchars($cliente['nome_cliente'] ?? 'Cliente Anônimo') ?></h1>
       </div>
       <div class="perfil_cliente_btn_menu base_input_select">
         <form action="">
           <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
             <option selected disabled value="">Menu</option>
-            <option value="editar-perfil-cliente">Editar Perfil</option>
+            <option value="editar-perfil">Editar Perfil</option>
             <option value="cadastro-vendedor">Cadastro de vendedor</option>
             <option value="login-cliente">Sair</option>
           </select>
@@ -38,7 +37,7 @@ $array = getPerfil($_SESSION['cliente_id']);
       <div class="perfil_cliente_infos_container">
         <div class="perfil_cliente_infos_item1">
           <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/localizacao_icon.svg">
-          <p>São Paulo, São Paulo</p>
+          <p><?= htmlspecialchars($cliente['localizacao'] ?? 'Localização não informada') ?></p>
         </div>
         <div class="perfil_cliente_infos_item2">
           <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/balao_exclamacao_icon.svg">
@@ -46,17 +45,17 @@ $array = getPerfil($_SESSION['cliente_id']);
         </div>
         <div class="perfil_cliente_infos_item3">
           <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/perfil_membros_icon.svg">
-          <p>Cliente há: 6 Meses</p>
+          <p><?= htmlspecialchars($cliente['tempo_cliente'] ?? 'Cliente há: ---') ?></p>
         </div>
         <div class="perfil_cliente_contatos_cliente">
           <div class="instagram_cliente">
-            <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/instagram_icon.svg" class="perfil_cliente_icon_instagram_cliente">
-            <a href="#" class="perfil_cliente_instagram_cliente"><?php echo $array[0]['instagram_perfil']; ?></a>
+            <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/instagram_icon.svg">
+            <a href="#" class="perfil_cliente_instagram_cliente"><?= htmlspecialchars($cliente['instagram_perfil'] ?? '@instagram') ?></a>
           </div>
           <hr class="linha_vertical">
           <div class="facebook_cliente">
-            <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/facebook_icon.svg" class="perfil_cliente_icon_facebook_cliente">
-            <a href="#" class="perfil_cliente_facebook_cliente"><?php echo $array[0]['facebook_perfil']; ?></a>
+            <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/facebook_icon.svg">
+            <a href="#" class="perfil_cliente_facebook_cliente"><?= htmlspecialchars($cliente['facebook_perfil'] ?? 'facebook.com') ?></a>
           </div>
         </div>
       </div>
@@ -88,5 +87,4 @@ $array = getPerfil($_SESSION['cliente_id']);
   ?>
 
 </body>
-
 </html>

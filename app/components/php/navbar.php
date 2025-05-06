@@ -167,6 +167,7 @@ function generateModalContent($user) {
               </li>
           '; // Se não houver usuário, o modal fica vazio
           break;
+    }
 
   // Adiciona o botão de logout para todos os tipos de usuário
   if (!empty($user)) {
@@ -181,7 +182,6 @@ function generateModalContent($user) {
           </li>
       ';
   }
-
   return $content;
 }
 // Função para gerar o valor do onclick com base na variável $isIndex

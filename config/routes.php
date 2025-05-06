@@ -11,7 +11,6 @@
         '/login-cliente'             => 'cliente/ClienteController@login',
         '/carrinho-dados'            => 'cliente/ClienteController@dados',
         '/carrinho-pagamentos'       => 'cliente/ClienteController@pagamentos',
-        '/editar-perfil-cliente'     => 'cliente/ClienteController@editarPerfil',
         '/auth'                      => 'auth/AuthController@loginForm',
         '/logout'                    => 'auth/AuthController@logout',
         '/cadastro-cliente'          => 'cliente/ClienteController@cadastro',
@@ -26,12 +25,12 @@
         '/redefinir-senha-confirmar' => 'auth/AuthController@confirmPasswordReset',
         '/redefinir-senha-api'       => 'geral/EnviarTokenController@gerarToken',
         '/redefinir-senha-api-salvar'=> 'geral/EnviarTokenController@salvarSenha',
+        '/editar-perfil' => 'geral/GeralController@editarPerfil',
 
         // Vendedor - Cadastro e Perfil
         '/cadastro-vendedor-info'    => 'vendedor/VendedorController@showInfo',
         '/cadastro-vendedor'         => 'vendedor/VendedorController@showFormCadastro',
         '/perfil-vendedor'           => 'vendedor/VendedorController@perfil',
-        '/editar-perfil-vendedor'    => 'vendedor/VendedorController@editarPerfil',
 
         // Vendedor - Produtos e Pedidos
         '/pedidos-vendedor'          => 'vendedor/VendedorProductController@pedidos',
