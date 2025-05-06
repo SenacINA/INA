@@ -11,12 +11,35 @@ class AdminModel
         $this->db->connect();
     }
 
-    public function pesquisarUsuario(string $email): bool
+    public function pesquisarUsuario(?string $id, ?string $email): ?array
     {
-        $sql  = "SELECT COUNT(*) FROM cliente WHERE email_cliente = :email";
-        // $stmt = $this->db->getConnection()->prepare($sql);
-        // $stmt->bindValue(':email', $email);
-        // $stmt->execute();
-        // return (int)$stmt->fetchColumn() > 0;
+    $sql = "SELECT * FROM cliente WHERE ";
+    $params = [];
+
+    if ($id && $email) {
+        $sql .= "id_cliente = :id OR email_cliente = :email";
+        $params[':id'] = $id;
+        $params[':email'] = $email;
+    } elseif ($id) {
+        $sql .= "id_cliente = :id";
+        $params[':id'] = $id;
+    } elseif ($email) {
+        $sql .= "email_cliente = :email";
+        $params[':email'] = $email;
     }
+
+    $sql .= " LIMIT 1";
+
+    $stmt = $this->db->getConnection()->prepare($sql);
+
+    foreach ($params as $key => $value) {
+        $stmt->bindValue($key, $value);
+    }
+
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result ?: null;
+}
+
 }

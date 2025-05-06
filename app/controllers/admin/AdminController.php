@@ -43,16 +43,41 @@ class AdminController extends RenderView {
     }
 
     public function searchUser() {
-        if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-            http_response_code(405);
+
+            if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+                http_response_code(405);
+                exit;
+            }
+        
+            header('Content-Type: application/json; charset=utf-8');
+        
+            $id = trim($_GET['idUsuario'] ?? '');
+            $email = trim($_GET['emailUsuario'] ?? '');
+        
+            if (!$id && !$email) {
+                echo json_encode([
+                    'success' => false,
+                    'errors'  => ['Informe o ID ou o e-mail para realizar a busca.']
+                ], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+        
+            $model = new ClienteModel();
+            $result = $model->pesquisarUsuario($id, $email);
+        
+            if ($result) {
+                echo json_encode([
+                    'success' => true,
+                    'data'    => $result
+                ], JSON_UNESCAPED_UNICODE);
+            } else {
+                echo json_encode([
+                    'success' => false,
+                    'errors'  => ['Nenhum cliente encontrado com os dados informados.']
+                ], JSON_UNESCAPED_UNICODE);
+            }
             exit;
         }
-        header('Content-Type: application/json; charset=utf-8');
-
-        $id = trim($_GET['idUsuario'] ?? '')
-        $email = trim($_GET['emailUsuario'] ?? '');
-
-    }
 
     public function updateUser() {
 
