@@ -38,7 +38,6 @@ class VendedorModel {
         // filtro de mês
         if (!empty($filtros['mes'])) {
             $where[] = 'MONTH(v.data_requisicao) = :mes';
-            // converte nome do mês para número
             $mesNum = date('n', strtotime("1 {$filtros['mes']}"));
             $params[':mes'] = $mesNum;
         }
@@ -59,5 +58,20 @@ class VendedorModel {
         $this->db->disconnect();
 
         return $result;
+    }
+
+    public function atualizarStatus(int $id, string $novoStatus): bool {
+        $this->db->connect();
+
+        $sql = "UPDATE vendedor SET status = :status WHERE id_vendedor = :id";
+        $params = [
+            ':status' => $novoStatus,
+            ':id' => $id
+        ];
+
+        $rowCount = $this->db->executeQuery($sql, $params);
+        $this->db->disconnect();
+
+        return $rowCount > 0;
     }
 }

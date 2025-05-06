@@ -6,7 +6,20 @@
     require_once('./utils/head.php');
     require_once('./app/models/admin/aprovar_vendedor_model.php');
 
-    // Captura filtros do POST
+    // Processa ações de aprovação/reprovação
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao'], $_POST['vendedor_id'])) {
+        $acao = $_POST['acao'];
+        $id   = (int)$_POST['vendedor_id'];
+        $model = new VendedorModel();
+
+        if ($acao === 'aprovar') {
+            $model->atualizarStatus($id, 'Aprovado');
+        } elseif ($acao === 'reprovar') {
+            $model->atualizarStatus($id, 'Reprovado');
+        }
+    }
+
+    // Filtros do formulário
     $filtros = [
         'search' => $_POST['search'] ?? '',
         'status' => $_POST['status'] ?? '',
@@ -21,7 +34,6 @@
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
 
   <main class="aprovar_vendedor_body_container">
-    <!-- Formulário de busca -->
     <form action="" method="post" class="aprovar_vendedor_forms_pesquisa_pedidos">
       <input type="text" name="search" class="base_input"
              placeholder="Código / Nome" value="<?= htmlspecialchars($filtros['search']) ?>">
@@ -58,6 +70,7 @@
             </option>
         <?php endforeach; ?>
       </select>
+
       <select name="ano" class="aprovar_vendedor_ano_select base_input">
         <option value="" disabled <?= $filtros['ano']==='' ? 'selected':'' ?>>Ano</option>
         <?php for ($y = date('Y'); $y >= date('Y')-5; $y--): ?>
@@ -90,8 +103,16 @@
               <td><?= htmlspecialchars($v['declaracao']) ?></td>
               <td class="aprovar_vendedor_coluna_botoes">
                 <?php if ($v['status'] === 'Pendente'): ?>
-                  <button class="aprovar_vendedor_btn_aprovar">APROVAR</button>
-                  <button class="aprovar_vendedor_btn_recusar">RECUSAR</button>
+                  <form method="post" style="display:inline;">
+                    <input type="hidden" name="acao" value="aprovar">
+                    <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
+                    <button type="submit" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
+                  </form>
+                  <form method="post" style="display:inline;">
+                    <input type="hidden" name="acao" value="reprovar">
+                    <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
+                    <button type="submit" class="aprovar_vendedor_btn_recusar">RECUSAR</button>
+                  </form>
                 <?php else: ?>
                   <button class="aprovar_vendedor_btn_inativar">INATIVAR</button>
                 <?php endif; ?>
