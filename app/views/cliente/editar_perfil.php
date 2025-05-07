@@ -27,8 +27,8 @@
       <hr class="linha_title">
     </div>
     <div class="mini_perfil_cliente">
-      <img src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/mini_banner_perfil_cliente.png" alt="banner" class="banner_cliente">
-      <img src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/perfil_usuario.svg" alt="pfp_cliente" class="pfp_cliente">
+      <img src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/mini_banner_perfil_cliente.png" id='miniBanner' alt="banner" class="banner_cliente">
+      <img src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/perfil_usuario.svg" id='miniPfp' alt="pfp_cliente" class="pfp_cliente">
       <div class="infos_container">
         <div class="nome_cliente">
           <h1 class="nome_cliente"><?= htmlspecialchars($user['nome_cliente']) ?></h1>
@@ -56,7 +56,6 @@
         </p>
         </div>
       </div>
-      <hr class="separador_mini_perfil">
       <div class="contatos_container">
         <div class="contatos_cliente">
             <?php if (!empty($user['instagram_perfil'])): ?>
@@ -101,6 +100,8 @@
                 </div>
             <?php endif; ?>
         </div>
+        <hr class="separador_mini_perfil">
+
       </div>
     </div>
     </div>

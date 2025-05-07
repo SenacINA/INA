@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const reader = new FileReader();
             reader.onload = function (event) {
                 document.getElementById('imgPreviewFoto').src = event.target.result;
+                document.getElementById('miniPfp').src = event.target.result;
             };
             reader.readAsDataURL(file);
         }
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const reader = new FileReader();
             reader.onload = function (event) {
                 document.getElementById('imgPreviewBanner').src = event.target.result;
+                document.getElementById('miniBanner').src = event.target.result;
             };
             reader.readAsDataURL(file);
         }
