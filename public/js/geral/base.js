@@ -6,7 +6,7 @@
  * @param {string} params SearchParams
  */
 function pag(url = "", params = "") {
-    const base = window.location.origin + "/INA/";
+    const base = window.location.origin + "/ina/";
     window.location.href = base + url + params;
 }
 
