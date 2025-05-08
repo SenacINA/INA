@@ -11,9 +11,9 @@ function handlePerfil()
     case 'admin':
       return "admin-dashboard";
     case 'cliente':
-      return "perfil-cliente";
+      return "perfil";
     case 'vendedor':
-      return "perfil-vendedor";
+      return "perfil";
     default:
       return "login-cliente";
   }

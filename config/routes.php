@@ -7,7 +7,6 @@
         '/produto'                   => 'cliente/ProdutoController@index',
         '/carrinho'                  => 'cliente/CarrinhoController@index',
         '/categoria'                 => 'cliente/CategoriaController@index',
-        '/perfil-cliente'            => 'cliente/ClienteController@perfil',
         '/login-cliente'             => 'cliente/ClienteController@login',
         '/carrinho-dados'            => 'cliente/ClienteController@dados',
         '/carrinho-pagamentos'       => 'cliente/ClienteController@pagamentos',
@@ -28,11 +27,11 @@
         '/redefinir-senha-api'       => 'geral/EnviarTokenController@gerarToken',
         '/redefinir-senha-api-salvar'=> 'geral/EnviarTokenController@salvarSenha',
         '/editar-perfil' => 'geral/GeralController@editarPerfil',
+        '/perfil' => 'geral/GeralController@perfil',
 
         // Vendedor - Cadastro e Perfil
         '/cadastro-vendedor-info'    => 'vendedor/VendedorController@showInfo',
         '/cadastro-vendedor'         => 'vendedor/VendedorController@showFormCadastro',
-        '/perfil-vendedor'           => 'vendedor/VendedorController@perfil',
 
         // Vendedor - Produtos e Pedidos
         '/pedidos-vendedor'          => 'vendedor/VendedorProductController@pedidos',

@@ -6,12 +6,6 @@
   require_once("./utils/head.php")
 ?>
 
-<?php
-
-  $mime  = 'image/png'; 
-?>
-
-
 <body>
   <!-- Até 375px -->  
 
@@ -34,7 +28,7 @@
     </div>
     <div class="mini_perfil_cliente">
       <img src="<?= $user['banner_perfil'] ?>" id='miniBanner' alt="banner" class="banner_cliente">
-      <img src="<?= $user['foto_perfil'] ?>"id='miniPfp' alt="pfp_cliente" class="pfp_cliente">
+      <img src="<?= $user['foto_perfil'] ?>" id='miniPfp' alt="pfp_cliente" class="pfp_cliente">
       <div class="infos_container">
         <div class="nome_cliente">
           <h1 class="nome_cliente"><?= htmlspecialchars($user['nome_cliente']) ?></h1>
@@ -232,7 +226,7 @@
         <!-- Foto de perfil -->
         <button class="img_container" type="button" onclick="document.getElementById('fileInputFoto').click();">
           <input type="file" id="fileInputFoto" name="foto" style="display: none;" accept="image/*" />
-          <img id="imgPreviewFoto" src="<?= (!empty($user['foto_perfil']) ? $user['foto_perfil'] : './public/image/cliente/editar_perfil/perfil_usuario.svg') ?>">
+          <img id="imgPreviewFoto" src="<?= $user['foto_perfil'] ?>">
         </button>
         <p class="warn">As dimensões recomendadas são: 400 x 400 pixels.</p>
       </div>
@@ -243,7 +237,7 @@
         </div>
         <button class="img_container" type="button" onclick="document.getElementById('fileInputBanner').click();">
           <input type="file" id="fileInputBanner" name="banner" style="display: none;" accept="image/*" />
-          <img id="imgPreviewBanner" src="<?= (!empty($user['banner_perfil']) ? $user['banner_perfil'] : './public/image/cliente/editar_perfil/mini_banner_perfil_cliente.png') ?>" class="banner_cliente_forms">
+          <img id="imgPreviewBanner" src="<?= $user['banner_perfil'] ?>" class="banner_cliente_forms">
         </button>
         <p class="warn">As dimensões recomendadas são: 1500 x 500 pixels.</p>
       </div>
@@ -252,7 +246,7 @@
       <button id=salvarEdit class="base_botao btn_blue salvar">
         <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar
       </button>
-      <button class="base_botao btn_outline_red cancelar">
+      <button class="base_botao btn_outline_red cancelar" onclick='pag("perfil")'>
         <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_vermelho_icon.svg">Cancelar
       </button>
     </div>

@@ -5,8 +5,6 @@
 $css = ["/css/cliente/perfil_cliente.css"];
 require_once("./utils/head.php");
 require_once("./app/models/cliente/perfil_cliente_model.php");
-$array = getPerfil($_SESSION['cliente_id']);
-$cliente = $array[0] ?? []; 
 ?>
 
 <body>
@@ -14,11 +12,11 @@ $cliente = $array[0] ?? [];
   include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main>
-    <img src="<?= (!empty($cliente['banner_perfil']) ? $PATH_PUBLIC . $cliente['banner_perfil'] : './public/image/cliente/editar_perfil/mini_banner_perfil_cliente.png') ?>" alt="banner" class="perfil_cliente_banner">
+    <img src="<?= $user['banner_perfil'] ?>" alt="banner" class="perfil_cliente_banner">
     <div class="perfil_cliente_content_pfp">
       <div class="perfil_cliente_pfp">
-        <img src="<?=(!empty($cliente['foto_perfil']) ? $PATH_PUBLIC . $cliente['foto_perfil'] : './public/image/cliente/editar_perfil/perfil_usuario.svg') ?>" alt="pfp_cliente">
-        <h1><?= htmlspecialchars($cliente['nome_cliente'] ?? 'Cliente Anônimo') ?></h1>
+        <img src="<?= $user['foto_perfil'] ?>" alt="pfp_cliente">
+        <h1><?= htmlspecialchars($user['nome_cliente'] ?? 'Cliente Anônimo') ?></h1>
       </div>
       <div class="perfil_cliente_btn_menu base_input_select">
         <form action="">
@@ -36,7 +34,7 @@ $cliente = $array[0] ?? [];
       <div class="perfil_cliente_infos_container">
         <div class="perfil_cliente_infos_item1">
           <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/localizacao_icon.svg">
-          <p><?= htmlspecialchars($cliente['localizacao'] ?? 'Localização não informada') ?></p>
+          <p><?= htmlspecialchars($user['localizacao'] ?? 'Localização não informada') ?></p>
         </div>
         <div class="perfil_cliente_infos_item2">
           <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/balao_exclamacao_icon.svg">
@@ -44,7 +42,13 @@ $cliente = $array[0] ?? [];
         </div>
         <div class="perfil_cliente_infos_item3">
           <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/perfil_membros_icon.svg">
-          <p><?= htmlspecialchars($cliente['tempo_cliente'] ?? 'Cliente há: ---') ?></p>
+          <p>
+            <?php
+                $dataRegistro = $user['data_registro_cliente'];
+                $diasCliente = (strtotime(date('Y-m-d')) - strtotime($dataRegistro)) / 86400;
+                echo "Cliente há: " . round($diasCliente) . " Dias";
+            ?>  
+          </p>
         </div>
         <div class="perfil_cliente_contatos_cliente">
           <div class="instagram_cliente">
