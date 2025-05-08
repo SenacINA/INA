@@ -160,8 +160,8 @@ foreign key (id_carrossel) references carrossel(id_carrossel)
 create table if not exists perfil( -- 17
 id_perfil int PRIMARY KEY AUTO_INCREMENT,
 id_cliente int,
-foto_perfil varchar not null default 'default_profile_picture.jpg',
-banner_perfil varchar not null default 'default_banner_picture.jpg',
+foto_perfil mediumblob not null default 'default_profile_picture.jpg',
+banner_perfil mediumblob not null default 'default_banner_picture.jpg',
 descricao_perfil varchar(500),
 tiktok_perfil varchar(50),
 linkedin_perfil varchar(50),

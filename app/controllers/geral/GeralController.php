@@ -40,7 +40,16 @@ class GeralController extends RenderView {
                 $viewPath = $userType === 'vendedor'
                     ? 'vendedor/editar_perfil_vendedor'
                     : 'cliente/editar_perfil';
-    
+                
+
+                if (!empty($clienteData['foto_perfil'])) {
+                    $clienteData['foto_perfil']  = "data:image/png;base64," . base64_encode($clienteData['foto_perfil']);
+                }
+
+                if (!empty($clienteData['foto_banner'])) {
+                    $clienteData['banner_perfil'] = "data:image/png;base64," . base64_encode($clienteData['banner_perfil']);
+                }
+                
                 $this->loadView($viewPath, ['user' => $clienteData, 'localizacoes' => $localizacoes]);
                 break;
     

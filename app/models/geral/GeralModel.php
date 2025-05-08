@@ -88,25 +88,25 @@ class GeralModel
         $rows = $this->db->executeQuery($sql, $params);
         return $rows !== false;
     }
-    
 
-    public function updateFotoPerfil(int $id, string $path): bool {
+    public function updateFotoBlob(int $id, string $bin): bool {
         $sql = "UPDATE perfil 
-                  SET foto_perfil = :path 
+                  SET foto_perfil = :blob 
                 WHERE id_cliente = :id";
         $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':path', $path);
-        $stmt->bindValue(':id',   $id, PDO::PARAM_INT);
+        $stmt->bindParam(':blob', $bin, PDO::PARAM_LOB);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
 
-    public function updateBannerPerfil(int $id, string $path): bool {
+    public function updateBannerBlob(int $id, string $bin): bool {
         $sql = "UPDATE perfil 
-                  SET banner_perfil = :path 
+                  SET banner_perfil = :blob 
                 WHERE id_cliente = :id";
         $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':path', $path);
-        $stmt->bindValue(':id',   $id, PDO::PARAM_INT);
+        $stmt->bindParam(':blob', $bin, PDO::PARAM_LOB);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
+
 }

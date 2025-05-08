@@ -179,60 +179,57 @@ class ClienteController extends RenderView {
         if ($nome === '')     $errors[] = 'O nome não pode ficar em branco.';
         if ($cidadeId === '') $errors[] = 'Selecione uma localização.';
 
+        // valida Base64
+        if ($rawFoto && !preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawFoto)) {
+            $errors[] = 'Formato de foto inválido.';
+            $rawFoto = null;
+        }
+        if ($rawBanner && !preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawBanner)) {
+            $errors[] = 'Formato de banner inválido.';
+            $rawBanner = null;
+        }
+
         $geral = new GeralModel();
-        $perfil = $geral->getPerfil($clienteId);
-        $defaultFoto   = './public/image/cliente/editar_perfil/perfil_usuario.svg';
-        $defaultBanner = './public/image/cliente/editar_perfil/mini_banner_perfil_cliente.png';
+        // 4 MB máximo
+        $maxSize = 4 * 1024 * 1024;
 
-        $currentFoto   = $perfil['foto_perfil']   ?? '';
-        $currentBanner = $perfil['banner_perfil'] ?? '';
+        $binFoto   = null;
+        $binBanner = null;
 
-        if (!is_string($rawFoto)   || !preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawFoto))   $rawFoto = null;
-        if (!is_string($rawBanner) || !preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawBanner)) $rawBanner = null;
-
-        $uploadDir = __DIR__ . '/../../../public/image/cliente/perfil_cliente/';
-        $novoFoto   = null;
-        $novoBanner = null;
-
+        // decodifica e checa tamanho
         if (empty($errors) && $rawFoto) {
-            preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawFoto, $m);
-            $ext = $m[1] === 'jpeg' ? 'jpg' : $m[1];
-            $bin = base64_decode(substr($rawFoto, strpos($rawFoto, ',') + 1));
-            $fn  = "pfp_{$clienteId}_" . time() . ".{$ext}";
-            if (file_put_contents($uploadDir . $fn, $bin) !== false) {
-                $novoFoto = "/image/cliente/perfil_cliente/{$fn}";
+            $raw  = substr($rawFoto, strpos($rawFoto, ',') + 1);
+            $bin  = base64_decode($raw);
+            if ($bin === false || strlen($bin) > $maxSize) {
+                $errors[] = 'Foto muito grande (máx 4 MB).';
             } else {
-                $errors[] = 'Falha ao salvar imagem de perfil.';
+                $binFoto = $bin;
             }
         }
 
         if (empty($errors) && $rawBanner) {
-            preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawBanner, $m);
-            $ext = $m[1] === 'jpeg' ? 'jpg' : $m[1];
-            $bin = base64_decode(substr($rawBanner, strpos($rawBanner, ',') + 1));
-            $fn  = "ban_{$clienteId}_" . time() . ".{$ext}";
-            if (file_put_contents($uploadDir . $fn, $bin) !== false) {
-                $novoBanner = "/image/cliente/perfil_cliente/{$fn}";
+            $raw  = substr($rawBanner, strpos($rawBanner, ',') + 1);
+            $bin  = base64_decode($raw);
+            if ($bin === false || strlen($bin) > $maxSize) {
+                $errors[] = 'Banner muito grande (máx 4 MB).';
             } else {
-                $errors[] = 'Falha ao salvar imagem de banner.';
+                $binBanner = $bin;
             }
         }
 
         if (empty($errors)) {
             $ok1 = $geral->updateNome($clienteId, $nome);
             $ok2 = $geral->updateLocalizacao($clienteId, (int)$cidadeId);
-            $ok3 = $novoFoto   ? $geral->updateFotoPerfil  ($clienteId, $novoFoto)   : true;
-            $ok4 = $novoBanner ? $geral->updateBannerPerfil($clienteId, $novoBanner) : true;
+            $ok3 = true;
+            $ok4 = true;
+
+            if ($binFoto)   $ok3 = $geral->updateFotoBlob($clienteId, $binFoto);
+            if ($binBanner) $ok4 = $geral->updateBannerBlob($clienteId, $binBanner);
 
             if ($ok1 && $ok2 && $ok3 && $ok4) {
-                $fotoRetorna   = $novoFoto   ?: ('./public/'. $currentFoto   ?: $defaultFoto);
-                $bannerRetorna = $novoBanner ?: ('./public/'. $currentBanner ?: $defaultBanner);
-
                 echo json_encode([
                     'success' => true,
-                    'message' => 'Perfil atualizado com sucesso!',
-                    'foto'    => $fotoRetorna,
-                    'banner'  => $bannerRetorna,
+                    'message' => 'Perfil atualizado com sucesso!'
                 ], JSON_UNESCAPED_UNICODE);
                 exit;
             }
@@ -245,6 +242,7 @@ class ClienteController extends RenderView {
         ], JSON_UNESCAPED_UNICODE);
         exit;
     }
+
 
 
 }
