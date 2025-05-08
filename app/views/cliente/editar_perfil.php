@@ -9,8 +9,8 @@
 <?php
   $errors  = $errors  ?? [];
   $success = $success ?? null;
-  $bannerDefault = "$PATH_PUBLIC/image/cliente/editar_perfil/mini_banner_perfil_cliente.png";
-  $fotoDefault   = "$PATH_PUBLIC/image/cliente/editar_perfil/perfil_usuario.svg";
+  $bannerDefault = "/image/cliente/editar_perfil/mini_banner_perfil_cliente.png";
+  $fotoDefault   = "/image/cliente/editar_perfil/perfil_usuario.svg";
   $bannerSrc = !empty($user['banner_perfil'])
     ? $user['banner_perfil']
     : $bannerDefault;

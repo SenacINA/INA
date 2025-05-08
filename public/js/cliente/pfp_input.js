@@ -42,13 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!nome) errors.push('O nome não pode ficar em branco.');
         if (!cidade) errors.push('Selecione uma localização.');
 
+        // Função para validar o tipo de arquivo
         const isValidImage = file => {
             return file && ['image/jpeg', 'image/png', 'image/webp'].includes(file.type);
         };
 
-        if (fotoFile && !isValidImage(fotoFile)) errors.push('O arquivo de foto deve ser uma imagem válida');
-        if (bannerFile && !isValidImage(bannerFile)) errors.push('O arquivo de banner deve ser uma imagem válida');
+        if (fotoFile && !isValidImage(fotoFile)) errors.push('O arquivo de foto deve ser uma imagem válida (JPEG, PNG ou WEBP). GIF não é permitido.');
+        if (bannerFile && !isValidImage(bannerFile)) errors.push('O arquivo de banner deve ser uma imagem válida (JPEG, PNG ou WEBP). GIF não é permitido.');
 
+        // Função para converter arquivo em Base64
         const toDataURL = file => new Promise((resolve, reject) => {
             const reader = new FileReader();
             reader.onload = () => resolve(reader.result);
@@ -74,6 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!fotoData) fotoData = document.getElementById('miniPfp').src;
         if (!bannerData) bannerData = document.getElementById('miniBanner').src;
 
+        if (fotoData === './public/') {
+            return;
+        }
+        if (bannerData === './public/') {
+            return;
+        }
+
         try {
             const resp = await fetch('/INA/api/cliente/editarDadosCliente', {
                 method: 'POST',
@@ -88,11 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const json = await resp.json();
 
-            if (json.success && json.foto && json.banner) {
+            if (json.success && json.foto && json.banner && json.foto !== './public/' && json.banner !== './public/') {
                 gerarToast('Perfil atualizado com sucesso!', 'sucesso');
 
-                if (json.foto !== './public/') document.getElementById('miniPfp').src = json.foto;
-                if (json.banner !== './public/') document.getElementById('miniBanner').src = json.banner;
+                document.getElementById('miniPfp').src = json.foto;
+                document.getElementById('miniBanner').src = json.banner;
             } else {
                 gerarToast('Falha ao atualizar perfil. Verifique os arquivos enviados.', 'erro');
             }
