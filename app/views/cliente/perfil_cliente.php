@@ -14,11 +14,10 @@ $cliente = $array[0] ?? [];
   include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main>
-    <img src="<?= $PATH_PUBLIC . '/' . ($cliente['banner_perfil'] ?? 'image/cliente/default_banner.png') ?>" alt="banner" class="perfil_cliente_banner">
-
+    <img src="<?= (!empty($cliente['banner_perfil']) ? $PATH_PUBLIC . $cliente['banner_perfil'] : './public/image/cliente/editar_perfil/mini_banner_perfil_cliente.png') ?>" alt="banner" class="perfil_cliente_banner">
     <div class="perfil_cliente_content_pfp">
       <div class="perfil_cliente_pfp">
-        <img src="<?= $PATH_PUBLIC . '/' . ($cliente['foto_perfil'] ?? 'image/cliente/default_pfp.png') ?>" alt="pfp_cliente">
+        <img src="<?=(!empty($cliente['foto_perfil']) ? $PATH_PUBLIC . $cliente['foto_perfil'] : './public/image/cliente/editar_perfil/perfil_usuario.svg') ?>" alt="pfp_cliente">
         <h1><?= htmlspecialchars($cliente['nome_cliente'] ?? 'Cliente Anônimo') ?></h1>
       </div>
       <div class="perfil_cliente_btn_menu base_input_select">

@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__.'/../../models/cliente/ClienteModel.php';
+require_once __DIR__.'/../../models/geral/GeralModel.php';
+
 
 class GeralController extends RenderView {
     public function sobreNos() {
@@ -18,6 +20,7 @@ class GeralController extends RenderView {
         $userType = $_SESSION['user_type'];
     
         $clienteModel = new ClienteModel();
+        $geralModel = new GeralModel();
     
         switch ($userType) {
             case 'admin':
@@ -28,6 +31,7 @@ class GeralController extends RenderView {
             case 'vendedor':
             case 'cliente':
                 $clienteData = $clienteModel->findById($clienteId); 
+                $localizacoes = $geralModel->getLocalizacoes();
                 if (!$clienteData) {
                     $this->loadView('cliente/login', []);
                     exit;
@@ -37,7 +41,7 @@ class GeralController extends RenderView {
                     ? 'vendedor/editar_perfil_vendedor'
                     : 'cliente/editar_perfil';
     
-                $this->loadView($viewPath, ['user' => $clienteData]);
+                $this->loadView($viewPath, ['user' => $clienteData, 'localizacoes' => $localizacoes]);
                 break;
     
             default:

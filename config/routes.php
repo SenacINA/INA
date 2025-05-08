@@ -16,6 +16,7 @@
         '/cadastro-cliente'          => 'cliente/ClienteController@cadastro',
         '/api/cliente/register'      => 'cliente/ClienteController@register',
         '/api/cliente/editar-perfil/redes' => 'cliente/ClienteController@updateSocial',
+        '/api/cliente/editarDadosCliente' => 'cliente/ClienteCOntroller@editarDadosCliente',
 
         // Geral
         '/sobre-nos'                 => 'geral/GeralController@sobreNos',

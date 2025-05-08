@@ -21,7 +21,8 @@ hr {
 
 .perfil_cliente_banner {
   width: 100%;
-  height: 300px;
+  aspect-ratio: 3 / 1;
+  max-width: 100%;
 }
 
 .perfil_cliente_content_pfp {
@@ -32,7 +33,7 @@ hr {
   justify-content: center;
   align-items: center;
 
-  top: -120px;
+  top: -148px;
 }
 
 .perfil_cliente_pfp {
@@ -50,6 +51,8 @@ hr {
     align-self: center;
     width: 300px;
     height: 300px;
+    border-radius: 50%;
+    background-color: var(--branco_gelo);
   }
 
   h1 {

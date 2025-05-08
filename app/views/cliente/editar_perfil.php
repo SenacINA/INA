@@ -6,6 +6,19 @@
   require_once("./utils/head.php")
 ?>
 
+<?php
+  $errors  = $errors  ?? [];
+  $success = $success ?? null;
+  $bannerDefault = "$PATH_PUBLIC/image/cliente/editar_perfil/mini_banner_perfil_cliente.png";
+  $fotoDefault   = "$PATH_PUBLIC/image/cliente/editar_perfil/perfil_usuario.svg";
+  $bannerSrc = !empty($user['banner_perfil'])
+    ? $user['banner_perfil']
+    : $bannerDefault;
+  $fotoSrc   = !empty($user['foto_perfil'])
+    ? $user['foto_perfil']
+    : $fotoDefault;
+?>
+
 <body>
   <!-- Até 375px -->  
 
@@ -27,8 +40,8 @@
       <hr class="linha_title">
     </div>
     <div class="mini_perfil_cliente">
-      <img src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/mini_banner_perfil_cliente.png" id='miniBanner' alt="banner" class="banner_cliente">
-      <img src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/perfil_usuario.svg" id='miniPfp' alt="pfp_cliente" class="pfp_cliente">
+      <img src="<?=$PATH_PUBLIC . $bannerSrc ?>" id='miniBanner' alt="banner" class="banner_cliente">
+      <img src="<?= $PATH_PUBLIC . $fotoSrc ?>" id='miniPfp' alt="pfp_cliente" class="pfp_cliente">
       <div class="infos_container">
         <div class="nome_cliente">
           <h1 class="nome_cliente"><?= htmlspecialchars($user['nome_cliente']) ?></h1>
@@ -107,16 +120,32 @@
     </div>
     <div class="forms">
       <!-- FORM NOME, LOC -->
-      <form action="" class="forms_container">
+      <form method="POST" action='editar-perfil-cliente' class="forms_container">
         <div class="forms_inner_container">
-          <label for="nomeVendedor" class="inner">Nome:</label>
-          <input type="text" name="nomeVendedor" id="nomeVendedor" class="base_input nome_cliente_forms" value='<?= htmlspecialchars($user['nome_cliente']) ?>'>
+          <label for="nomeCliente" class="inner">Nome:</label>
+          <input type="text" name="nomeCliente" id="nomeCliente" class="base_input nome_cliente_forms" value='<?= htmlspecialchars($user['nome_cliente']) ?>'>
         </div>
         <div class="forms_inner_container">
-          <label for="localizacaoVendedor">Localização:</label>
-          <input type="text" name="localizacaoVendedor" id="localizacaoVendedor" class="base_input" value='<?= isset($user['nome_cidade']) && isset($user['nome_estado']) ? 
-                htmlspecialchars($user['nome_cidade']) . ", " . htmlspecialchars($user['nome_estado']) : 
-                "Localização não disponível" ?>'>
+          <label for="localizacaoCliente">Localização:</label>
+          <select name="localizacaoCliente" id="localizacaoCliente" class="base_input">
+            <option value="">Selecione uma localização</option>
+            <?php foreach ($localizacoes as $loc): 
+                $cidadeId = $loc['id_cidade'];
+                $nomeCidade = $loc['nome_cidade'];
+                $siglaEstado = $loc['sigla_estado'];
+                $valor = "$siglaEstado - $nomeCidade";
+                
+                $selected = (isset($user['nome_cidade']) && isset($user['sigla_estado']) &&
+                            $user['nome_cidade'] === $nomeCidade &&
+                            $user['sigla_estado'] === $siglaEstado) ? 'selected' : '';
+            ?>
+              <option value="<?= htmlspecialchars($cidadeId) ?>" <?= $selected ?>>
+                <?= htmlspecialchars($valor) ?>
+              </option>
+            <?php endforeach; ?>
+          </select>
+
+
         </div>
       </form>
       <div class="botoes_redefinir">
@@ -210,7 +239,7 @@
         <!-- Foto de perfil -->
         <button class="img_container" type="button" onclick="document.getElementById('fileInputFoto').click();">
           <input type="file" id="fileInputFoto" name="foto" style="display: none;" accept="image/*" />
-          <img id="imgPreviewFoto" src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/perfil_usuario.svg">
+          <img id="imgPreviewFoto" src="<?=$PATH_PUBLIC . $fotoSrc ?>">
         </button>
         <p class="warn">As dimensões recomendadas são: 400 x 400 pixels.</p>
       </div>
@@ -221,7 +250,7 @@
         </div>
         <button class="img_container" type="button" onclick="document.getElementById('fileInputBanner').click();">
           <input type="file" id="fileInputBanner" name="banner" style="display: none;" accept="image/*" />
-          <img id="imgPreviewBanner" src="<?=$PATH_PUBLIC?>/image/cliente/editar_perfil/mini_banner_perfil_cliente.png" class="banner_cliente_forms">
+          <img id="imgPreviewBanner" src="<?= $PATH_PUBLIC . $bannerSrc ?>" class="banner_cliente_forms">
         </button>
         <p class="warn">As dimensões recomendadas são: 1500 x 500 pixels.</p>
       </div>
@@ -282,9 +311,21 @@
   ?>
 
 </body>
+
 <script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
 <script src="<?=$PATH_PUBLIC?>/js/cliente/updateSocial.js"></script>
 <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
 <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    <?php foreach($errors as $e): ?>
+      gerarToast("<?= addslashes($e) ?>", "erro");
+    <?php endforeach; ?>
+
+    <?php if ($success): ?>
+      gerarToast("<?= addslashes($success) ?>", "sucesso");
+    <?php endif; ?>
+  });
+</script>
 
 </html>

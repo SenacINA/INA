@@ -30,12 +30,6 @@ class ClienteController extends RenderView {
           $this->loadView('cliente/cadastro', []);
       }
     
-    public function editarRedes() {
-        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            http_response_code(405);
-            exit;
-        }
-    }
 
     public function register() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -102,6 +96,7 @@ class ClienteController extends RenderView {
         }
         exit;
     }
+    
 
     public function updateSocial()
     {
@@ -157,5 +152,99 @@ class ClienteController extends RenderView {
         }
         exit;
     }
+
+    public function editarDadosCliente()
+    {
+        header('Content-Type: application/json; charset=utf-8');
+
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            http_response_code(405);
+            echo json_encode(['success'=>false,'errors'=>['Método não permitido.']], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+        $clienteId = $_SESSION['cliente_id'] ?? null;
+        if (!$clienteId) {
+            http_response_code(401);
+            echo json_encode(['success'=>false,'errors'=>['Usuário não autenticado.']], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        $input     = json_decode(file_get_contents('php://input'), true) ?? [];
+        $nome      = trim($input['nomeCliente']        ?? '');
+        $cidadeId  = trim($input['localizacaoCliente'] ?? '');
+        $rawFoto   = $input['foto']                    ?? null;
+        $rawBanner = $input['banner']                  ?? null;
+
+        $errors = [];
+        if ($nome === '')     $errors[] = 'O nome não pode ficar em branco.';
+        if ($cidadeId === '') $errors[] = 'Selecione uma localização.';
+
+        $geral = new GeralModel();
+        $perfil = $geral->getPerfil($clienteId);
+        $defaultFoto   = './public/image/cliente/editar_perfil/perfil_usuario.svg';
+        $defaultBanner = './public/image/cliente/editar_perfil/mini_banner_perfil_cliente.png';
+
+        $currentFoto   = $perfil['foto_perfil']   ?? '';
+        $currentBanner = $perfil['banner_perfil'] ?? '';
+
+        if (!is_string($rawFoto)   || !preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawFoto))   $rawFoto = null;
+        if (!is_string($rawBanner) || !preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawBanner)) $rawBanner = null;
+
+        $uploadDir = __DIR__ . '/../../../public/image/cliente/perfil_cliente/';
+        $novoFoto   = null;
+        $novoBanner = null;
+
+        if (empty($errors) && $rawFoto) {
+            preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawFoto, $m);
+            $ext = $m[1] === 'jpeg' ? 'jpg' : $m[1];
+            $bin = base64_decode(substr($rawFoto, strpos($rawFoto, ',') + 1));
+            $fn  = "pfp_{$clienteId}_" . time() . ".{$ext}";
+            if (file_put_contents($uploadDir . $fn, $bin) !== false) {
+                $novoFoto = "/image/cliente/perfil_cliente/{$fn}";
+            } else {
+                $errors[] = 'Falha ao salvar imagem de perfil.';
+            }
+        }
+
+        if (empty($errors) && $rawBanner) {
+            preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawBanner, $m);
+            $ext = $m[1] === 'jpeg' ? 'jpg' : $m[1];
+            $bin = base64_decode(substr($rawBanner, strpos($rawBanner, ',') + 1));
+            $fn  = "ban_{$clienteId}_" . time() . ".{$ext}";
+            if (file_put_contents($uploadDir . $fn, $bin) !== false) {
+                $novoBanner = "/image/cliente/perfil_cliente/{$fn}";
+            } else {
+                $errors[] = 'Falha ao salvar imagem de banner.';
+            }
+        }
+
+        if (empty($errors)) {
+            $ok1 = $geral->updateNome($clienteId, $nome);
+            $ok2 = $geral->updateLocalizacao($clienteId, (int)$cidadeId);
+            $ok3 = $novoFoto   ? $geral->updateFotoPerfil  ($clienteId, $novoFoto)   : true;
+            $ok4 = $novoBanner ? $geral->updateBannerPerfil($clienteId, $novoBanner) : true;
+
+            if ($ok1 && $ok2 && $ok3 && $ok4) {
+                $fotoRetorna   = $novoFoto   ?: ('./public/'. $currentFoto   ?: $defaultFoto);
+                $bannerRetorna = $novoBanner ?: ('./public/'. $currentBanner ?: $defaultBanner);
+
+                echo json_encode([
+                    'success' => true,
+                    'message' => 'Perfil atualizado com sucesso!',
+                    'foto'    => $fotoRetorna,
+                    'banner'  => $bannerRetorna,
+                ], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+            $errors[] = 'Erro ao salvar no banco. Tente novamente.';
+        }
+
+        echo json_encode([
+            'success' => false,
+            'errors'  => $errors
+        ], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+
 
 }
