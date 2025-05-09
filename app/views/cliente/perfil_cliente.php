@@ -20,14 +20,14 @@ $array = getPerfil($_SESSION['cliente_id']);
       <div class="perfil_cliente_pfp">
         <img src="<?= $PATH_PUBLIC;
                   echo $array[0]['foto_perfil'] ?>" alt="pfp_cliente">
-        <h1><?=$array[0]['nome_cliente'] ?></h1>
+        <h1><?= $array[0]['nome_cliente'] ?></h1>
       </div>
       <div class="perfil_cliente_btn_menu base_input_select">
         <form action="">
           <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
             <option selected disabled value="">Menu</option>
             <option value="editar-perfil-cliente">Editar Perfil</option>
-            <option value="cadastro-vendedor">Cadastro de vendedor</option>
+            <option value="cadastro-vendedor-info">Cadastro de vendedor</option>
             <option value="login-cliente">Sair</option>
           </select>
         </form>
