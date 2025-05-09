@@ -130,42 +130,46 @@
               <th>Plano</th>
             </tr>
             <tbody>
+              
+            <?php foreach ($anuncios as $anuncio): ?>
               <tr>
-                <td>192.168.0.1</td>
-                <td>Info@nvidia</td>
-                <td>Hardware</td>
-                <td>Vendedor</td>
-                <td>01/01/2001</td>
-                <td>01/01/2001</td>
-                <td>Mensal</td>
+                <td><?= $anuncio['ip'] ?></td>
+                <td><?= $anuncio['email'] ?></td>
+                <td><?= $anuncio['categoria'] ?></td>
+                <td><?= $anuncio['cargo'] ?></td>
+                <td><?= $anuncio['data_inicio'] ?></td>
+                <td><?= $anuncio['data_expiracao'] ?></td>
+                <td><?= $anuncio['tipo_plano'] ?></td>
               </tr>
               <tr>
-                <td>192.168.0.1</td>
-                <td>Info@nvidia </td>
-                <td>Periféricos</td>
-                <td>Vendedor</td>
-                <td>01/01/2001</td>
-                <td>01/01/2001</td>
-                <td>Bimestral</td>
+                <td><?= $anuncio['ip'] ?></td>
+                <td><?= $anuncio['email'] ?></td>
+                <td><?= $anuncio['categoria'] ?></td>
+                <td><?= $anuncio['cargo'] ?></td>
+                <td><?= $anuncio['data_inicio'] ?></td>
+                <td><?= $anuncio['data_expiracao'] ?></td>
+                <td><?= $anuncio['tipo_plano'] ?></td>
               </tr>
               <tr>
-                <td>192.168.0.1</td>
-                <td>Info@nvidia</td>
-                <td>Periféricos</td>
-                <td>Vendedor</td>
-                <td>01/01/2001</td>
-                <td>01/01/2001</td>
-                <td>Semanal</td>
+                <td><?= $anuncio['ip'] ?></td>
+                <td><?= $anuncio['email'] ?></td>
+                <td><?= $anuncio['categoria'] ?></td>
+                <td><?= $anuncio['cargo'] ?></td>
+                <td><?= $anuncio['data_inicio'] ?></td>
+                <td><?= $anuncio['data_expiracao'] ?></td>
+                <td><?= $anuncio['tipo_plano'] ?></td>
               </tr>
               <tr>
-                <td>192.168.0.1</td>
-                <td>Info@nvidia</td>
-                <td>Celulares</td>
-                <td>Vendedor</td>
-                <td>01/01/2001</td>
-                <td>01/01/2001</td>
-                <td>Semanal</td>
+                <td><?= $anuncio['ip'] ?></td>
+                <td><?= $anuncio['email'] ?></td>
+                <td><?= $anuncio['categoria'] ?></td>
+                <td><?= $anuncio['cargo'] ?></td>
+                <td><?= $anuncio['data_inicio'] ?></td>
+                <td><?= $anuncio['data_expiracao'] ?></td>
+                <td><?= $anuncio['tipo_plano'] ?></td>
               </tr>
+              <?php endforeach; ?>
+
             </tbody>
           </thead>
         </table>

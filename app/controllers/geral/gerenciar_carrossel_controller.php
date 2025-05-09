@@ -7,38 +7,9 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
     exit();
 }
 
-// Configuração do banco de dados
-class Database {
-    private $pdo;
-    
-    public function connect() {
-        try {
-            $this->pdo = new PDO('mysql:host=localhost;dbname=e2_database', 'usuario', 'senha');
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            die("Erro na conexão: " . $e->getMessage());
-        }
-    }
-    
-    public function executeQuery($sql, $params = []) {
-        try {
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute($params);
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            error_log("Erro na query: " . $e->getMessage());
-            return false;
-        }
-    }
-    
-    public function disconnect() {
-        $this->pdo = null;
-    }
-}
 
 class GerenciadorCarrossel {
-    private $db;
-    
+
     public function __construct() {
         $this->db = new Database();
         $this->db->connect();
@@ -161,7 +132,7 @@ try {
             'foi_pago_esse_mes_carrossel' => $_POST['foi_pago_esse_mes_carrossel'] ?? false
         ];
         
-        if (empty($dados['link_carrossel']) {
+        if empty($dados['link_carrossel']) {
             throw new Exception("O link do carrossel é obrigatório");
         }
         
