@@ -44,9 +44,7 @@
         <div class="avaliacao_cliente_container">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg" class="icon_produtos_cliente">
           <p class="produtos_cliente">
-            <?= isset($user['nome_cidade']) && isset($user['nome_estado']) ? 
-                htmlspecialchars($user['nome_cidade']) . ", " . htmlspecialchars($user['nome_estado']) : 
-                "Localização não disponível" ?>
+            <?= $user['uf'] && $user['cidade'] ? $user['uf'] . ' - ' . $user['cidade'] : 'Localização não disponível' ?>
           </p>
         </div>
         <div class="tempo_cliente_container">
@@ -118,25 +116,11 @@
         </div>
         <div class="forms_inner_container">
           <label for="localizacaoCliente">Localização:</label>
-          <select name="localizacaoCliente" id="localizacaoCliente" class="base_input">
-            <option value="">Selecione uma localização</option>
-            <?php foreach ($localizacoes as $loc): 
-                $cidadeId = $loc['id_cidade'];
-                $nomeCidade = $loc['nome_cidade'];
-                $siglaEstado = $loc['sigla_estado'];
-                $valor = "$siglaEstado - $nomeCidade";
-                
-                $selected = (isset($user['nome_cidade']) && isset($user['sigla_estado']) &&
-                            $user['nome_cidade'] === $nomeCidade &&
-                            $user['sigla_estado'] === $siglaEstado) ? 'selected' : '';
-            ?>
-              <option value="<?= htmlspecialchars($cidadeId) ?>" <?= $selected ?>>
-                <?= htmlspecialchars($valor) ?>
-              </option>
-            <?php endforeach; ?>
-          </select>
-
-
+          <select name="localizacaoCliente" id="localizacaoSelect" class="base_input">
+            <option value="<?= isset($user['localizacao']) ? $user['localizacao'] : '' ?>">
+                <?= isset($user['localizacao'])? $user['localizacao'] : 'Selecione uma localização' ?>
+            </option>
+        </select>
         </div>
       </form>
       <div class="botoes_redefinir">
@@ -306,6 +290,7 @@
 <script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
 <script src="<?=$PATH_PUBLIC?>/js/cliente/updateSocial.js"></script>
 <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
+<script type="module" src="<?=$PATH_PUBLIC?>/js/geral/selectUfCidade.js"></script>
 <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {

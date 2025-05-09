@@ -41,17 +41,14 @@ class ClienteModel
             perfil.youtube_perfil, 
             perfil.tiktok_perfil,
             perfil.x_perfil,
-            perfil.foto_perfil,
-            perfil.banner_perfil,
-            cidade.nome_cidade, 
-            estado.nome_estado, 
-            estado.sigla_estado
+            endereco.uf_endereco as uf,            
+            endereco.cidade_endereco as cidade     
         FROM 
             cliente
-        JOIN perfil ON cliente.id_cliente = perfil.id_cliente
-        LEFT JOIN endereco ON cliente.id_cliente = endereco.id_cliente
-        LEFT JOIN cidade ON endereco.id_cidade = cidade.id_cidade
-        LEFT JOIN estado ON cidade.id_estado = estado.id_estado
+        JOIN perfil 
+            ON cliente.id_cliente = perfil.id_cliente
+        LEFT JOIN endereco 
+            ON cliente.id_cliente = endereco.id_cliente
         WHERE cliente.id_cliente = :id 
         LIMIT 1";
         

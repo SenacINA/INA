@@ -1,19 +1,6 @@
 create database if not exists e2_database;
 use e2_database;
 
-create table if not exists estado( -- 18
-id_estado tinyint primary key auto_increment,
-nome_estado varchar(50) not null,
-sigla_estado varchar(2) not null
-);
-
-create table if not exists cidade ( -- 19
-id_cidade int auto_increment primary key, 
-nome_cidade varchar(50) not null, 
-id_estado tinyint not null,  
-foreign key (id_estado) references estado(id_estado)  
-);
-
 create table if not exists cliente(
 id_cliente int auto_increment primary key,
 nome_cliente varchar(70) not null,
@@ -41,16 +28,18 @@ CREATE table if not exists  redefinicao_senha (
   FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
 );
 
-create table if not exists endereco( -- 14
-id_endereco int auto_increment primary key,
-rua_endereco varchar(100) not null,
-bairro_endereco varchar(100) not null,
-numero_endereco smallint,
-referencia_endereco varchar(200),
-id_cidade int,
-id_cliente int not null,
-foreign key (id_cliente) references cliente(id_cliente),
-foreign key (id_cidade) references cidade(id_cidade) 
+
+
+CREATE TABLE IF NOT EXISTS endereco (
+    id_endereco INT AUTO_INCREMENT PRIMARY KEY,
+    rua_endereco VARCHAR(100) NOT NULL,
+    bairro_endereco VARCHAR(100) NOT NULL,
+    numero_endereco SMALLINT,
+    referencia_endereco VARCHAR(200),
+    uf_endereco VARCHAR(2) NOT NULL,     
+    cidade_endereco VARCHAR(50) NOT NULL,  
+    id_cliente INT NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
 );
 
 
@@ -68,11 +57,22 @@ categoria_subcategoria int, -- a ser revisado
 foreign key (categoria_subcategoria) references categoria(id_categoria)
 );
 
-create table if not exists vendedor( -- 3
-id_vendedor int auto_increment primary key,
-cnpj_vendedor varchar(30) unique not null,
-requerimento_10_vendas boolean
-);
+CREATE TABLE if not exists vendedor (
+  id_vendedor        INT (11)      NOT NULL AUTO_INCREMENT,
+  nome_fantasia     VARCHAR(255)      NOT NULL,
+  cnpj_vendedor      VARCHAR(30)       NOT NULL,
+  requisitos_completos TINYINT(1)      NOT NULL DEFAULT 0,
+  documento_entregue TINYINT(1)        NOT NULL DEFAULT 0,
+  status           ENUM('Pendente','Aprovado','Reprovado') NOT NULL DEFAULT 'Pendente',
+  data_requisicao   DATETIME          NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id_vendedor),
+  UNIQUE KEY cnpj_vendedor (cnpj_vendedor),
+  KEY idx_vendedor_status   (status),
+  KEY idx_vendedor_data     (data_requisicao)
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_general_ci;
+ 
 
 create table if not exists produto( -- 2
 id_produto int auto_increment primary key,
@@ -160,8 +160,8 @@ foreign key (id_carrossel) references carrossel(id_carrossel)
 create table if not exists perfil( -- 17
 id_perfil int PRIMARY KEY AUTO_INCREMENT,
 id_cliente int,
-foto_perfil VARCHAR not null default 'default_profile_picture.jpg',
-banner_perfil VARCHAR not null default 'default_banner_picture.jpg',
+foto_perfil VARCHAR(500)not null default 'default_profile_picture.jpg',
+banner_perfil VARCHAR(500) not null default 'default_banner_picture.jpg',
 descricao_perfil varchar(500),
 tiktok_perfil varchar(50),
 linkedin_perfil varchar(50),

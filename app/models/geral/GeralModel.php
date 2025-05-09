@@ -12,14 +12,6 @@ class GeralModel
         $this->db->connect();
     }
 
-    public function getLocalizacoes(): array {
-        $sql = "SELECT c.id_cidade, c.nome_cidade, e.sigla_estado
-                FROM cidade c
-                JOIN estado e ON c.id_estado = e.id_estado
-                ORDER BY e.sigla_estado, c.nome_cidade";
-        return $this->db->executeQuery($sql);
-    }
-
     public function getPerfil(int $id): array {
         $sql = "SELECT foto_perfil, banner_perfil
                 FROM perfil
@@ -71,16 +63,36 @@ class GeralModel
         return $stmt->execute([':nome' => $nome, ':id' => $id]);
     }    
 
-    public function updateLocalizacao(int $clienteId, int $cidadeId): bool {
-        $sql = "INSERT INTO endereco (id_cliente, id_cidade)
-                VALUES (:id, :cidade)
-                ON DUPLICATE KEY UPDATE id_cidade = VALUES(id_cidade)";
+    public function updateLocalizacao(int $clienteId, string $uf, string $cidade): bool {
+        // Tenta atualizar o endereço existente
+        $sqlUpdate = "
+            UPDATE endereco 
+            SET uf_endereco = :uf, cidade_endereco = :cidade 
+            WHERE id_cliente = :id
+        ";
+        
         $params = [
             ':id'     => $clienteId,
-            ':cidade' => $cidadeId
+            ':uf'     => $uf,
+            ':cidade' => $cidade
         ];
-        $res = $this->db->executeQuery($sql, $params);
-        return $res !== false;
+    
+        // Executa o UPDATE
+        $stmt = $this->db->getConnection()->prepare($sqlUpdate);
+        $stmt->execute($params);
+        $rowsUpdated = $stmt->rowCount();
+    
+        // Se nenhuma linha foi atualizada, insere um novo registro
+        if ($rowsUpdated === 0) {
+            $sqlInsert = "
+                INSERT INTO endereco (id_cliente, uf_endereco, cidade_endereco)
+                VALUES (:id, :uf, :cidade)
+            ";
+            $stmt = $this->db->getConnection()->prepare($sqlInsert);
+            return $stmt->execute($params); // Retorna true/false diretamente
+        }
+    
+        return true; // Update foi bem-sucedido
     }
 
     public function updateFotoPerfil(int $id, string $path): bool {

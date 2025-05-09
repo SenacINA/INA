@@ -28,7 +28,6 @@ class GeralController extends RenderView {
         // Lógica para vendedor e cliente
         if ($userType === 'vendedor' || $userType === 'cliente') {
             $clienteData  = $clienteModel->findById($clienteId);
-            $localizacoes = $geralModel->getLocalizacoes();
     
             if (!$clienteData) {
                 $this->loadView('cliente/login', []);
@@ -47,16 +46,19 @@ class GeralController extends RenderView {
     
             // Configura imagens padrão se os campos estiverem vazios
             if (empty($clienteData['banner_perfil'])) {
-                $clienteData['banner_perfil'] = './public/image/cliente/editar_perfil/mini_banner_perfil_cliente.png';
+                $clienteData['banner_perfil'] = '/image/cliente/editar_perfil/mini_banner_perfil_cliente.png';
             }
     
             if (empty($clienteData['foto_perfil'])) {
-                $clienteData['foto_perfil'] = './public/image/cliente/editar_perfil/perfil_usuario.svg';
+                $clienteData['foto_perfil'] = '/image/cliente/editar_perfil/perfil_usuario.svg';
             }
+
+            $localizacao = $clienteData['uf'] . ' - ' . $clienteData['cidade'];
+            $clienteData['localizacao'] = $localizacao;
     
             $this->loadView($viewPath, [
                 'user'          => $clienteData,
-                'localizacoes'  => $localizacoes
+
             ]);
         } else {
             $this->loadView('cliente/login', []);

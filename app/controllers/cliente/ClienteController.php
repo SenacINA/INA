@@ -116,13 +116,19 @@ class ClienteController extends RenderView {
 
         $input     = json_decode(file_get_contents('php://input'), true) ?: [];
         $nome      = trim($input['nomeCliente']        ?? '');
-        $cidadeId  = trim($input['localizacaoCliente'] ?? '');
         $rawFoto   = $input['foto']    ?? null;   
         $rawBanner = $input['banner']  ?? null;
+        $uf = trim($input['ufCliente'] ?? '');     
+        $cidade = trim($input['cidadeCliente'] ?? '');
+
+        if (empty($uf) || empty($cidade)) {
+            $errors[] = 'Selecione uma localização válida.';
+}
 
         $errors = [];
-        if ($nome === '')     $errors[] = 'O nome não pode ficar em branco.';
-        if ($cidadeId === '') $errors[] = 'Selecione uma localização.';
+        if ($nome === '') {
+            $errors[] = 'O nome não pode ficar em branco.';
+        }
 
         if ($rawFoto   && !preg_match('#^data:image/webp;base64,#', $rawFoto))   { $errors[] = 'Formato de foto inválido.';   $rawFoto   = null; }
         if ($rawBanner && !preg_match('#^data:image/webp;base64,#', $rawBanner)) { $errors[] = 'Formato de banner inválido.'; $rawBanner = null; }
@@ -153,7 +159,11 @@ class ClienteController extends RenderView {
         if (empty($errors)) {
             $geral = new GeralModel();
             $ok1   = $geral->updateNome($clienteId, $nome);
-            $ok2   = $geral->updateLocalizacao($clienteId, (int)$cidadeId);
+            $ok2 = $geral->updateLocalizacao(
+                $clienteId, 
+                $uf, 
+                $cidade
+            );
 
             // Prepara pasta upload/clientes/{id}/
             $baseDir = __DIR__ . '/../../../public/upload/clientes/' . $clienteId . '/';

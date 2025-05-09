@@ -46,13 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
 
     const nome       = document.getElementById('nomeCliente').value.trim();
-    const cidade     = document.getElementById('localizacaoCliente').value;
     const fotoFile   = document.getElementById('fileInputFoto').files[0];
     const bannerFile = document.getElementById('fileInputBanner').files[0];
+    const localizacao = document.getElementById('localizacaoSelect').value;
+    const [uf, cidade] = localizacao.split('-').map(s => s.trim());
     const errors     = [];
 
     if (!nome)   errors.push('O nome não pode ficar em branco.');
-    if (!cidade) errors.push('Selecione uma localização.');
+
+    if (!nome)   errors.push('O nome não pode ficar em branco.');
+    if (!localizacao || !uf || !cidade) errors.push('Selecione uma localização válida.');
+
 
     const isValidImage = f => f && ['image/jpeg','image/png','image/webp'].includes(f.type);
     if (fotoFile   && !isValidImage(fotoFile))   errors.push('Foto deve ser JPG/PNG/WebP.');
@@ -81,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: {'Content-Type':'application/json'},
         body:    JSON.stringify({
           nomeCliente:        nome,
-          localizacaoCliente: cidade,
+          ufCliente:          uf,
+          cidadeCliente:      cidade,
           foto:               fotoData,
           banner:             bannerData
         })
@@ -98,6 +103,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-  
-
