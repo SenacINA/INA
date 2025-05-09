@@ -13,100 +13,91 @@ class GeralModel
     }
 
     public function getLocalizacoes(): array {
-        $sql = "SELECT cidade.id_cidade, cidade.nome_cidade, estado.sigla_estado 
-                FROM cidade
-                JOIN estado ON cidade.id_estado = estado.id_estado
-                ORDER BY estado.sigla_estado, cidade.nome_cidade";
-        
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $sql = "SELECT c.id_cidade, c.nome_cidade, e.sigla_estado
+                FROM cidade c
+                JOIN estado e ON c.id_estado = e.id_estado
+                ORDER BY e.sigla_estado, c.nome_cidade";
+        return $this->db->executeQuery($sql);
     }
 
     public function getPerfil(int $id): array {
-        $sql = "SELECT foto_perfil, banner_perfil FROM perfil WHERE id_cliente = :id";
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+        $sql = "SELECT foto_perfil, banner_perfil
+                FROM perfil
+                WHERE id_cliente = :id
+                LIMIT 1";
+        $params = [':id' => $id];
+        $res = $this->db->executeQuery($sql, $params);
+        return $res[0] ?? [];
     }
-    
 
     public function updateSocial(int $clienteId, array $data): bool {
-        $dados = [
+        $map = [
             'descricao' => 'descricao_perfil',
-            'tiktok' => 'tiktok_perfil',
-            'linkedin' => 'linkedin_perfil',
-            'facebook' => 'facebook_perfil',
-            'youtube' => 'youtube_perfil',
+            'tiktok'    => 'tiktok_perfil',
+            'linkedin'  => 'linkedin_perfil',
+            'facebook'  => 'facebook_perfil',
+            'youtube'   => 'youtube_perfil',
             'instagram' => 'instagram_perfil',
-            'x' => 'x_perfil'
+            'x'         => 'x_perfil',
         ];
-
         $sets   = [];
         $params = [':id_cliente' => $clienteId];
-
-        foreach ($dados as $key => $column) {
-            if (isset($data[$key])) {
-                $sets[] = "`$column` = :$key";
-                $params[":$key"] = $data[$key];
+        foreach ($map as $field => $col) {
+            if (isset($data[$field])) {
+                $sets[] = "`{$col}` = :{$field}";
+                $params[":{$field}"] = $data[$field];
             }
         }
-
         if (empty($sets)) {
             return false;
         }
-
         $sql = "UPDATE perfil
                 SET " . implode(', ', $sets) . "
                 WHERE id_cliente = :id_cliente";
-
         return $this->db->executeQuery($sql, $params) > 0;
     }
 
+
     public function updateNome(int $id, string $nome): bool {
-        $sql = "UPDATE cliente 
-                  SET nome_cliente = :nome 
-                WHERE id_cliente = :id";
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':nome', $nome);
-        $stmt->bindValue(':id',   $id, PDO::PARAM_INT);
-        return $stmt->execute();
-    }
+        $conn = $this->db->getConnection();
+    
+        $check = $conn->prepare("SELECT nome_cliente FROM cliente WHERE id_cliente = :id");
+        $check->execute([':id' => $id]);
+        $atual = $check->fetchColumn();
+    
+        if ($atual === $nome) return true; 
+    
+        $stmt = $conn->prepare("UPDATE cliente SET nome_cliente = :nome WHERE id_cliente = :id");
+        return $stmt->execute([':nome' => $nome, ':id' => $id]);
+    }    
 
     public function updateLocalizacao(int $clienteId, int $cidadeId): bool {
-        $sql = "
-          INSERT INTO endereco (id_cliente, id_cidade)
-          VALUES (:id, :cidade)
-          ON DUPLICATE KEY
-          UPDATE id_cidade = :cidade
-        ";
+        $sql = "INSERT INTO endereco (id_cliente, id_cidade)
+                VALUES (:id, :cidade)
+                ON DUPLICATE KEY UPDATE id_cidade = VALUES(id_cidade)";
         $params = [
-          ':id'      => $clienteId,
-          ':cidade'  => $cidadeId
+            ':id'     => $clienteId,
+            ':cidade' => $cidadeId
         ];
-        $rows = $this->db->executeQuery($sql, $params);
-        return $rows !== false;
+        $res = $this->db->executeQuery($sql, $params);
+        return $res !== false;
     }
 
-    public function updateFotoBlob(int $id, string $bin): bool {
-        $sql = "UPDATE perfil 
-                  SET foto_perfil = :blob 
-                WHERE id_cliente = :id";
+    public function updateFotoPerfil(int $id, string $path): bool {
+        $sql = "UPDATE perfil SET foto_perfil = :path WHERE id_cliente = :id";
         $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindParam(':blob', $bin, PDO::PARAM_LOB);
+        $stmt->bindValue(':path', $path);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
-
-    public function updateBannerBlob(int $id, string $bin): bool {
-        $sql = "UPDATE perfil 
-                  SET banner_perfil = :blob 
-                WHERE id_cliente = :id";
+    
+    public function updateBannerPerfil(int $id, string $path): bool {
+        $sql = "UPDATE perfil SET banner_perfil = :path WHERE id_cliente = :id";
         $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindParam(':blob', $bin, PDO::PARAM_LOB);
+        $stmt->bindValue(':path', $path);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
-
+    
+   
 }

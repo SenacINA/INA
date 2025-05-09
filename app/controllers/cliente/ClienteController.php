@@ -98,118 +98,51 @@ class ClienteController extends RenderView {
     }
     
 
-    public function updateSocial()
-    {
-        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            http_response_code(405);
-            exit;
-        }
-        header('Content-Type: application/json; charset=utf-8');
-
-        $clienteId = $_SESSION['cliente_id'] ?? null;
-        if (!$clienteId) {
-            http_response_code(401);
-            echo json_encode([
-                'success' => false,
-                'errors'  => ['Não autenticado.']
-            ], JSON_UNESCAPED_UNICODE);
-            exit;
-        }
-
-        $data = [
-            'descricao' => trim($_POST['descricao'] ?? ''),
-            'instagram' => trim($_POST['instagram'] ?? ''),
-            'facebook' => trim($_POST['facebook'] ?? ''),
-            'linkedin' => trim($_POST['linkedin'] ?? ''),
-            'youtube' => trim($_POST['youtube'] ?? ''),
-            'tiktok' => trim($_POST['tiktok'] ?? ''),
-            'x' => trim($_POST['x'] ?? ''),
-        ];
-
-        $errors = [];
-
-        if (!empty($errors)) {
-            echo json_encode([
-                'success' => false,
-                'errors'  => $errors
-            ], JSON_UNESCAPED_UNICODE);
-            exit;
-        }
-
-        $model = new GeralModel();
-        $ok = $model->updateSocial((int)$clienteId, $data);
-
-        if ($ok) {
-            echo json_encode([
-                'success' => true,
-                'message' => 'Redes sociais atualizadas com sucesso!'
-            ], JSON_UNESCAPED_UNICODE);
-        } else {
-            echo json_encode([
-                'success' => true,
-                'message' => 'Nenhuma mudança detectada.'
-            ], JSON_UNESCAPED_UNICODE);
-        }
-        exit;
-    }
-
     public function editarDadosCliente()
     {
         header('Content-Type: application/json; charset=utf-8');
 
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             http_response_code(405);
-            echo json_encode(['success'=>false,'errors'=>['Método não permitido.']], JSON_UNESCAPED_UNICODE);
+            echo json_encode(['success' => false, 'errors' => ['Método não permitido.']], JSON_UNESCAPED_UNICODE);
             exit;
         }
         $clienteId = $_SESSION['cliente_id'] ?? null;
         if (!$clienteId) {
             http_response_code(401);
-            echo json_encode(['success'=>false,'errors'=>['Usuário não autenticado.']], JSON_UNESCAPED_UNICODE);
+            echo json_encode(['success' => false, 'errors' => ['Usuário não autenticado.']], JSON_UNESCAPED_UNICODE);
             exit;
         }
 
-        $input     = json_decode(file_get_contents('php://input'), true) ?? [];
+        $input     = json_decode(file_get_contents('php://input'), true) ?: [];
         $nome      = trim($input['nomeCliente']        ?? '');
         $cidadeId  = trim($input['localizacaoCliente'] ?? '');
-        $rawFoto   = $input['foto']                    ?? null;
-        $rawBanner = $input['banner']                  ?? null;
+        $rawFoto   = $input['foto']    ?? null;   
+        $rawBanner = $input['banner']  ?? null;
 
         $errors = [];
         if ($nome === '')     $errors[] = 'O nome não pode ficar em branco.';
         if ($cidadeId === '') $errors[] = 'Selecione uma localização.';
 
-        // valida Base64
-        if ($rawFoto && !preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawFoto)) {
-            $errors[] = 'Formato de foto inválido.';
-            $rawFoto = null;
-        }
-        if ($rawBanner && !preg_match('#^data:image/(jpeg|jpg|png);base64,#', $rawBanner)) {
-            $errors[] = 'Formato de banner inválido.';
-            $rawBanner = null;
-        }
+        if ($rawFoto   && !preg_match('#^data:image/webp;base64,#', $rawFoto))   { $errors[] = 'Formato de foto inválido.';   $rawFoto   = null; }
+        if ($rawBanner && !preg_match('#^data:image/webp;base64,#', $rawBanner)) { $errors[] = 'Formato de banner inválido.'; $rawBanner = null; }
 
-        $geral = new GeralModel();
-        // 4 MB máximo
-        $maxSize = 4 * 1024 * 1024;
-
+        // Decodifica e verifica tamanho (máx 4 MB)
         $binFoto   = null;
         $binBanner = null;
-
-        // decodifica e checa tamanho
+        $maxSize   = 4 * 1024 * 1024;
         if (empty($errors) && $rawFoto) {
-            $raw  = substr($rawFoto, strpos($rawFoto, ',') + 1);
-            $bin  = base64_decode($raw);
+            $base64 = substr($rawFoto, strpos($rawFoto, ',') + 1);
+            $bin    = base64_decode($base64);
             if ($bin === false || strlen($bin) > $maxSize) {
                 $errors[] = 'Foto muito grande (máx 4 MB).';
             } else {
                 $binFoto = $bin;
             }
         }
-
         if (empty($errors) && $rawBanner) {
-            $raw  = substr($rawBanner, strpos($rawBanner, ',') + 1);
-            $bin  = base64_decode($raw);
+            $base64 = substr($rawBanner, strpos($rawBanner, ',') + 1);
+            $bin    = base64_decode($base64);
             if ($bin === false || strlen($bin) > $maxSize) {
                 $errors[] = 'Banner muito grande (máx 4 MB).';
             } else {
@@ -218,22 +151,64 @@ class ClienteController extends RenderView {
         }
 
         if (empty($errors)) {
-            $ok1 = $geral->updateNome($clienteId, $nome);
-            $ok2 = $geral->updateLocalizacao($clienteId, (int)$cidadeId);
-            $ok3 = true;
-            $ok4 = true;
+            $geral = new GeralModel();
+            $ok1   = $geral->updateNome($clienteId, $nome);
+            $ok2   = $geral->updateLocalizacao($clienteId, (int)$cidadeId);
 
-            if ($binFoto)   $ok3 = $geral->updateFotoBlob($clienteId, $binFoto);
-            if ($binBanner) $ok4 = $geral->updateBannerBlob($clienteId, $binBanner);
+            // Prepara pasta upload/clientes/{id}/
+            $baseDir = __DIR__ . '/../../../public/upload/clientes/' . $clienteId . '/';
+            if (!is_dir($baseDir)) {
+                mkdir($baseDir, 0755, true);
+            }
 
-            if ($ok1 && $ok2 && $ok3 && $ok4) {
+            $ok3     = true;
+            $relFoto = null;
+            if ($binFoto) {
+                $fn      = 'foto.webp';
+                $absPath = $baseDir . $fn;
+                // remove antiga, se existir
+                if (file_exists($absPath)) {
+                    @unlink($absPath);
+                }
+                if (file_put_contents($absPath, $binFoto) === false) {
+                    $errors[] = 'Falha ao salvar imagem de perfil.';
+                    $ok3 = false;
+                } else {
+                    $relFoto = '/upload/clientes/' . $clienteId . '/' . $fn;
+                    $ok3     = $geral->updateFotoPerfil($clienteId, $relFoto);
+                }
+            }
+
+            $ok4      = true;
+            $relBanner = null;
+            if ($binBanner) {
+                $fn       = 'banner.webp';
+                $absPath  = $baseDir . $fn;
+                // remove antigo, se existir
+                if (file_exists($absPath)) {
+                    @unlink($absPath);
+                }
+                if (file_put_contents($absPath, $binBanner) === false) {
+                    $errors[] = 'Falha ao salvar imagem de banner.';
+                    $ok4 = false;
+                } else {
+                    $relBanner = '/upload/clientes/' . $clienteId . '/' . $fn;
+                    $ok4       = $geral->updateBannerPerfil($clienteId, $relBanner);
+                }
+            }
+
+            if (empty($errors) && $ok1 && $ok2 && $ok3 && $ok4) {
                 echo json_encode([
                     'success' => true,
-                    'message' => 'Perfil atualizado com sucesso!'
+                    'message' => 'Perfil atualizado com sucesso!',
+                    'foto'    => $relFoto,
+                    'banner'  => $relBanner,
                 ], JSON_UNESCAPED_UNICODE);
                 exit;
             }
-            $errors[] = 'Erro ao salvar no banco. Tente novamente.';
+            if (empty($errors)) {
+                $errors[] = 'Erro ao salvar no banco. Tente novamente.';
+            }
         }
 
         echo json_encode([

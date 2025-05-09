@@ -3,119 +3,71 @@
 require_once __DIR__.'/../../models/cliente/ClienteModel.php';
 require_once __DIR__.'/../../models/geral/GeralModel.php';
 
-
 class GeralController extends RenderView {
-    public function sobreNos() {
-        $this->loadView('geral/sobre_nos', []);
-    }
 
-    public function perfil() {
+    // Função que verifiaa a sessão
+    private function renderPerfil(string $action) {
         if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
-            $this->loadView('cliente/login', []);
+            header('Location: login');
             exit;
         }
     
         $clienteId = $_SESSION['cliente_id'];
-        $userType = $_SESSION['user_type'];
+        $userType  = $_SESSION['user_type'];
     
         $clienteModel = new ClienteModel();
-        $geralModel = new GeralModel();
+        $geralModel   = new GeralModel();
     
-        switch ($userType) {
-            case 'admin':
-                $adminData = ['nome' => 'Admin', 'email' => 'admin@admin.com']; 
-                $this->loadView('admin/dashboard', ['user' => $adminData]);
-                break;
+        // Caso o usuário seja admin, direciona para o dashboard
+        if ($userType === 'admin') {
+            $adminData = ['nome' => 'Admin', 'email' => 'admin@admin.com'];
+            $this->loadView('admin/dashboard', ['user' => $adminData]);
+            return;
+        }
     
-            case 'vendedor':
-            case 'cliente':
-                $clienteData = $clienteModel->findById($clienteId); 
-                $localizacoes = $geralModel->getLocalizacoes();
-                if (!$clienteData) {
-                    $this->loadView('cliente/login', []);
-                    exit;
-                }
+        // Lógica para vendedor e cliente
+        if ($userType === 'vendedor' || $userType === 'cliente') {
+            $clienteData  = $clienteModel->findById($clienteId);
+            $localizacoes = $geralModel->getLocalizacoes();
     
-                $viewPath = $userType === 'vendedor'
-                    ? 'vendedor/perfil_vendedor'
-                    : 'cliente/perfil_cliente';
-                
-
-                if (empty($clienteData['banner_perfil'])) {
-                    $clienteData['banner_perfil'] = './public/image/cliente/editar_perfil/mini_banner_perfil_cliente.png';
-                } else {
-                    $clienteData['banner_perfil'] = "data:image/png;base64," . base64_encode($clienteData['banner_perfil']);
-                }
-
-                if (empty($clienteData['foto_perfil'])) {
-                    $clienteData['foto_perfil'] = './public/image/cliente/editar_perfil/perfil_usuario.svg';
-                } else {
-                    $clienteData['foto_perfil']  = "data:image/png;base64," . base64_encode($clienteData['foto_perfil']);
-                }
-                
-                $this->loadView($viewPath, ['user' => $clienteData, 'localizacoes' => $localizacoes]);
-                break;
-    
-            default:
+            if (!$clienteData) {
                 $this->loadView('cliente/login', []);
-                break;
+                exit;
+            }
+    
+            if ($userType === 'vendedor') {
+                $viewPath = $action === 'perfil'
+                    ? 'vendedor/perfil_vendedor'
+                    : 'vendedor/editar_perfil_vendedor';
+            } else { 
+                $viewPath = $action === 'perfil'
+                    ? 'cliente/perfil_cliente'
+                    : 'cliente/editar_perfil';
+            }
+    
+            // Configura imagens padrão se os campos estiverem vazios
+            if (empty($clienteData['banner_perfil'])) {
+                $clienteData['banner_perfil'] = './public/image/cliente/editar_perfil/mini_banner_perfil_cliente.png';
+            }
+    
+            if (empty($clienteData['foto_perfil'])) {
+                $clienteData['foto_perfil'] = './public/image/cliente/editar_perfil/perfil_usuario.svg';
+            }
+    
+            $this->loadView($viewPath, [
+                'user'          => $clienteData,
+                'localizacoes'  => $localizacoes
+            ]);
+        } else {
+            $this->loadView('cliente/login', []);
         }
     }
-
+    
+    public function perfil() {
+        $this->renderPerfil('perfil');
+    }
     
     public function editarPerfil() {
-        if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
-            $this->loadView('cliente/login', []);
-            exit;
-        }
-    
-        $clienteId = $_SESSION['cliente_id'];
-        $userType = $_SESSION['user_type'];
-    
-        $clienteModel = new ClienteModel();
-        $geralModel = new GeralModel();
-    
-        switch ($userType) {
-            case 'admin':
-                $adminData = ['nome' => 'Admin', 'email' => 'admin@admin.com']; 
-                $this->loadView('admin/dashboard', ['user' => $adminData]);
-                break;
-    
-            case 'vendedor':
-            case 'cliente':
-                $clienteData = $clienteModel->findById($clienteId); 
-                $localizacoes = $geralModel->getLocalizacoes();
-                if (!$clienteData) {
-                    $this->loadView('cliente/login', []);
-                    exit;
-                }
-    
-                $viewPath = $userType === 'vendedor'
-                    ? 'vendedor/editar_perfil_vendedor'
-                    : 'cliente/editar_perfil';
-                
-
-                if (empty($clienteData['banner_perfil'])) {
-                    $clienteData['banner_perfil'] = './public/image/cliente/editar_perfil/mini_banner_perfil_cliente.png';
-                } else {
-                    $clienteData['banner_perfil'] = "data:image/png;base64," . base64_encode($clienteData['banner_perfil']);
-                }
-
-                if (empty($clienteData['foto_perfil'])) {
-                    $clienteData['foto_perfil'] = './public/image/cliente/editar_perfil/perfil_usuario.svg';
-                } else {
-                    $clienteData['foto_perfil']  = "data:image/png;base64," . base64_encode($clienteData['foto_perfil']);
-                }
-                
-                $this->loadView($viewPath, ['user' => $clienteData, 'localizacoes' => $localizacoes]);
-                break;
-    
-            default:
-                $this->loadView('cliente/login', []);
-                break;
-        }
+        $this->renderPerfil('editar_perfil');
     }
-    
-    
-    
 }

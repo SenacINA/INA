@@ -7,7 +7,7 @@
         '/produto'                   => 'cliente/ProdutoController@index',
         '/carrinho'                  => 'cliente/CarrinhoController@index',
         '/categoria'                 => 'cliente/CategoriaController@index',
-        '/login-cliente'             => 'cliente/ClienteController@login',
+        '/login'             => 'cliente/ClienteController@login',
         '/carrinho-dados'            => 'cliente/ClienteController@dados',
         '/carrinho-pagamentos'       => 'cliente/ClienteController@pagamentos',
         '/auth'                      => 'auth/AuthController@loginForm',

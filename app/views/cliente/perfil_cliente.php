@@ -12,10 +12,10 @@ require_once("./app/models/cliente/perfil_cliente_model.php");
   include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main>
-    <img src="<?= $user['banner_perfil'] ?>" alt="banner" class="perfil_cliente_banner">
+    <img src="<?= $PATH_PUBLIC . $user['banner_perfil'] ?>" alt="banner" class="perfil_cliente_banner">
     <div class="perfil_cliente_content_pfp">
       <div class="perfil_cliente_pfp">
-        <img src="<?= $user['foto_perfil'] ?>" alt="pfp_cliente">
+        <img src="<?= $PATH_PUBLIC . $user['foto_perfil'] ?>" alt="pfp_cliente">
         <h1><?= htmlspecialchars($user['nome_cliente'] ?? 'Cliente Anônimo') ?></h1>
       </div>
       <div class="perfil_cliente_btn_menu base_input_select">
