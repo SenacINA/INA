@@ -46,7 +46,7 @@
       </select>
 
       <select name="mes" class="aprovar_vendedor_mes_select base_input">
-        <option value="" disabled <?= $filtros['mes'] === '' ? 'selected' : '' ?>>Mês</option>
+        <option value="" <?= $filtros['mes'] === '' ? 'selected' : '' ?>>Todos</option>
         <?php
           $meses = [
             'Janeiro' => 'January',
@@ -72,9 +72,11 @@
       </select>
 
       <select name="ano" class="aprovar_vendedor_ano_select base_input">
-        <option value="" disabled <?= $filtros['ano']==='' ? 'selected':'' ?>>Ano</option>
-        <?php for ($y = date('Y'); $y >= date('Y')-5; $y--): ?>
-          <option value="<?= $y ?>" <?= $filtros['ano']===$y ? 'selected':'' ?>><?= $y ?></option>
+        <option value="" <?= $filtros['ano'] === '' ? 'selected' : '' ?>>Todos</option>
+        <?php for ($y = date('Y'); $y >= date('Y') - 5; $y--): ?>
+          <option value="<?= $y ?>" <?= $filtros['ano'] === (string)$y ? 'selected' : '' ?>>
+            <?= $y ?>
+          </option>
         <?php endfor; ?>
       </select>
 
