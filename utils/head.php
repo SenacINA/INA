@@ -3,7 +3,7 @@
 // session_start();
 // $current_url = $_SERVER['REQUEST_URI']; URL atual do site
 
-   * Lista de stylesheets para carregar na página
+   /* Lista de stylesheets para carregar na página
    * @var string $titulo
    */
   if(!isset($titulo)) {
