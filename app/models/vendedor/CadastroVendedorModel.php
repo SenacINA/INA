@@ -13,12 +13,13 @@ class CadastroVendedorModel {
 
   public function createVendedor(int $id, string $localEmpresa, string $cep, string $locradouro, int $numero, string $nome, string $cpfcnpj, string $rg, string $email, string $categoria, string $telefone1, string $telefone2) :bool {
     $sql = "UPDATE cliente SET rg_cliente = :rg, cep_cliente = :cep, tipo_conta_cliente = 1 WHERE id_cliente = :id;
-    INSERT INTO vendedor(id_vendedor, cnpj_vendedor, requerimento_10_vendas) VALUES (:id, :cpfcnpj, 0);";
+    INSERT INTO `vendedor`(`nome_fantasia`, `cnpj_vendedor`) VALUES (:nome, :cpfcnpj);";
 
     $stmt = $this->db->getConnection()->prepare($sql);
     $stmt->bindValue(':rg', $rg);
     $stmt->bindValue(':cep', $cep);
     $stmt->bindValue(':id', $id);
+    $stmt->bindValue(':nome', $nome);
     $stmt->bindValue(':cpfcnpj', $cpfcnpj);
 
     return $stmt->execute();

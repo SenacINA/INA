@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../../models/vendedor/CadastroVendedorModel.php';
-require_once __DIR__ . '/../../models/vendedor/CidadeVendedorModel.php';
 
 class VendedorController extends RenderView
 {
@@ -23,12 +22,6 @@ class VendedorController extends RenderView
     public function editarPerfil()
     {
         $this->loadView('vendedor/editar_perfil_vendedor', []);
-    }
-
-    public function getCidade()
-    {
-        $model = new CidadeVendedorModel;
-        return $model->getCidade();
     }
 
     public function cadastro()

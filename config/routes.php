@@ -30,7 +30,7 @@
         // Vendedor - Cadastro e Perfil
         '/cadastro-vendedor-info'    => 'vendedor/VendedorController@showInfo',
         '/cadastro-vendedor'         => 'vendedor/VendedorController@showFormCadastro',
-        '/cadastro-vendedor-forms'   => 'vendedor/VendedorController@Cadastro',
+        '/cadastro-vendedor-forms'   => 'vendedor/VendedorController@cadastro',
         '/perfil-vendedor'           => 'vendedor/VendedorController@perfil',
         '/editar-perfil-vendedor'    => 'vendedor/VendedorController@editarPerfil',
 

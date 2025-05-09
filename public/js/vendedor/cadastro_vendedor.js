@@ -1,5 +1,4 @@
 function limpa_formulário_cep() {
-  //Limpa valores do formulário de cep.
   document.getElementById("logradouro").value = "";
   document.getElementById("local_da_empresa").value = "";
 }
@@ -7,7 +6,8 @@ function limpa_formulário_cep() {
 function cepApi(conteudo) {
   if (!("erro" in conteudo)) {
     document.getElementById("logradouro").value = (conteudo.logradouro);
-    document.getElementById("local_da_empresa").value = conteudo.localidade.replace(" ", "_");
+    document.getElementById("localizacaoSelect").value =
+      conteudo.uf + "-" + conteudo.ibge
   } else {
     limpa_formulário_cep();
   }

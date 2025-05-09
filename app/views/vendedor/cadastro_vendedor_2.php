@@ -6,8 +6,6 @@ $titulo = "Cadastro Vendedor - E ao Quadrado";
 $css = ["/css/vendedor/cadastro_vendedor_2.css"];
 require_once('./utils/head.php');
 require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
-$modelCidade = new VendedorController();
-$cidades = $modelCidade->getCidade();
 ?>
 
 <body>
@@ -35,14 +33,8 @@ $cidades = $modelCidade->getCidade();
             <div class="">
               <label for="local_da_empresa">Local da Empresa</label>
               <div class="base_input_select">
-                <select name="local_da_empresa" id="local_da_empresa" class="base_input">
+                <select name="local_da_empresa" id="localizacaoSelect" class="base_input">
                   <option value="" disabled selected>Selecione a cidade</option>
-                  <?php
-                  foreach ($cidades as $key => $value) {
-                    echo "<option value='". str_replace(" ", "_", $value['nome_cidade']) . "'>" . $value['nome_cidade'] . "</option>";
-                  }
-                  ?>
-                  
                 </select>
                 <h2>Se você não tiver uma empresa, informe o estado de sua residência.</h2>
               </div>
@@ -103,20 +95,6 @@ $cidades = $modelCidade->getCidade();
             <input type="email" name="email" id="email" class="base_input">
             <h2>O código de confirmação será enviado para esse E-mail. </h2>
           </div>
-
-          <!-- Senha -->
-          <div>
-            <label for="senha">Senha</label> <br>
-            <input type="password" name="senha" id="senha" class="base_input">
-            <br>
-          </div>
-
-          <!-- Confirmar Senha -->
-          <div>
-            <label for="confirmar_senha">Confirmar Senha</label> <br>
-            <input type="password" name="confirmar_senha" id="confirmar_senha" class="base_input">
-            <br>
-          </div>
           <!-- Categoria de Produtos -->
           <div>
             <label for="categoria_produtos">Categoria de Produtos</label> <br>
@@ -162,6 +140,7 @@ $cidades = $modelCidade->getCidade();
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
   <script src="<?= $PATH_PUBLIC ?>/js/vendedor/cadastro_vendedor.js"></script>
+  <script type='module' src="<?= $PATH_PUBLIC ?>/js/geral/selectUfCidade.js"></script>
 </body>
 
 </html>
