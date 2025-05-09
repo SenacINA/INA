@@ -1,10 +1,9 @@
 <?php
 
-  session_start();
-  // $current_url = $_SERVER['REQUEST_URI']; URL atual do site
+// session_start();
+// $current_url = $_SERVER['REQUEST_URI']; URL atual do site
 
-/**
-   * Lista de stylesheets para carregar na página
+   /* Lista de stylesheets para carregar na página
    * @var string $titulo
    */
   if(!isset($titulo)) {
@@ -27,9 +26,9 @@
     $js = [];
   }
 
-  $PATH_PUBLIC = "../../../public";
-  $PATH_COMPONENTS = "../../../app/components";
-  $PATH_CONTROLLER = '../../../app/controllers';
+  $PATH_PUBLIC = "./public";
+  $PATH_COMPONENTS = "./app/components";
+  $PATH_CONTROLLER = './app/controllers';
 
   $head = "
   <head>
@@ -41,9 +40,9 @@
     <link rel='stylesheet' href='$PATH_PUBLIC/css/style.css'>
     <script src='$PATH_PUBLIC/js/geral/base.js'></script>";
 
-  //concatena os CSSs e Scripts
-  $str_css = implode('' , array_map(fn($item): string => "<link rel='stylesheet' href='$PATH_PUBLIC$item'>", $css));
-  $str_js = implode('' , array_map(fn($item): string => "<script src='$PATH_PUBLIC$item'></script>", $js));
+//concatena os CSSs e Scripts
+$str_css = implode('', array_map(fn($item): string => "<link rel='stylesheet' href='$PATH_PUBLIC$item'>", $css));
+$str_js = implode('', array_map(fn($item): string => "<script src='$PATH_PUBLIC$item'></script>", $js));
 
-  //Valor final injetado na tela
-  echo $head . $str_css . $str_js . "</head>";
+//Valor final injetado na tela
+echo $head . $str_css . $str_js . "</head>";
