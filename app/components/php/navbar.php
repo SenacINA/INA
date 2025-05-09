@@ -41,13 +41,13 @@ function gerarTitle($user){
 
 function generateModalContent($user) {
 
-  $content = '';
+$content = '';
 
   switch ($user) {
     case 'admin':
       $content = '
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'cliente/carrinho_pagamentos\')">
+                  <a href="#" class="menu-item" onclick="pag(\'admin-perfil\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
@@ -55,7 +55,7 @@ function generateModalContent($user) {
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item">
+                  <a href="#" class="menu-item" onclick="pag(\'relatorio-vendedor\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
                       </svg>
@@ -63,7 +63,7 @@ function generateModalContent($user) {
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item">
+                  <a href="#" class="menu-item" onclick="pag(\'gerenciar-usuarios\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
                       </svg>
@@ -71,7 +71,7 @@ function generateModalContent($user) {
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item">
+                   <a href="#" class="menu-item" onclick="pag(\'gerenciar-produtos\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
                       </svg>
@@ -79,7 +79,7 @@ function generateModalContent($user) {
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item">
+                  <a href="#" class="menu-item" onclick="pag(\'gerenciar-carrossel\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M10 8v8l5-4-5-4zm9-5H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
                       </svg>
@@ -87,7 +87,7 @@ function generateModalContent($user) {
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item">
+                  <a href="#" class="menu-item" onclick="pag(\'redefinir-senha\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
                       </svg>
@@ -95,7 +95,7 @@ function generateModalContent($user) {
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item">
+                  <a href="#" class="menu-item" onclick="pag(\'aprovar-vendedor\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                       </svg>
@@ -108,7 +108,7 @@ function generateModalContent($user) {
     case 'cliente':
       $content = '
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'cliente/carrinho_pagamentos\')">
+                  <a href="#" class="menu-item" onclick="pag(\'perfil-cliente\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
@@ -129,7 +129,7 @@ function generateModalContent($user) {
     case 'vendedor':
       $content = '
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'vendedor/perfil_vendedor\')">
+                  <a href="#" class="menu-item" onclick="pag(\'perfil-vendedor\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
@@ -137,7 +137,7 @@ function generateModalContent($user) {
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'vendedor/relatorio_vendas\')">
+                  <a href="#" class="menu-item" onclick="pag(\'relatorio-vendas\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
                       </svg>
@@ -145,7 +145,7 @@ function generateModalContent($user) {
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'produto-registrar\')">
+                  <a href="#" class="menu-item" onclick="pag(\'gerenciar-produtos\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
                       </svg>
@@ -167,6 +167,7 @@ function generateModalContent($user) {
               </li>
           '; // Se não houver usuário, o modal fica vazio
           break;
+
   }
   // Adiciona o botão de logout para todos os tipos de usuário
   if (!empty($user)) {
@@ -183,6 +184,7 @@ function generateModalContent($user) {
   }
   return $content;
 }
+
 // Função para gerar o valor do onclick com base na variável $isIndex
 
 ?>
