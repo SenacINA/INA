@@ -84,6 +84,49 @@
       <button type="reset" class="base_botao btn_red">Limpar</button>
     </form>
 
+    <!-- Estatísticas de Aprovação (fake data) -->
+    <div class="aprovar_vendedor_estatisticas">
+      <div class="aprovar_vendedor_subtitulo_generico">
+        <div class="aprovar_vendedor_linha_vertical"></div>
+        <div class="aprovar_vendedor_subtitle_holder">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/grafico_icon.svg" />
+          <h2 class="font_subtitulo font_celadon">Estatísticas de Aprovação</h2>
+        </div>
+      </div>
+
+      <div class="aprovar_vendedor_estatistica_holder">
+        <div class="aprovar_vendedor_card">
+          <div class="aprovar_vendedor_titulo">Requisições Aprovadas / Mês</div>
+          <div class="aprovar_vendedor_estatistica_descricao">25</div>
+        </div>
+
+        <div class="aprovar_vendedor_card">
+          <div class="aprovar_vendedor_titulo">Pedidos Reprovados</div>
+          <div class="aprovar_vendedor_estatistica_descricao">3</div>
+        </div>
+
+        <div class="aprovar_vendedor_card">
+          <div class="aprovar_vendedor_titulo">Pedidos Inativados</div>
+          <div class="aprovar_vendedor_estatistica_descricao">1</div>
+        </div>
+
+        <div class="aprovar_vendedor_card">
+          <div class="aprovar_vendedor_titulo">Pedidos Pendentes de Aprovação</div>
+          <div class="aprovar_vendedor_estatistica_descricao">5</div>
+        </div>
+
+        <div class="aprovar_vendedor_card">
+          <div class="aprovar_vendedor_titulo">Pedidos / Doc. Pendente</div>
+          <div class="aprovar_vendedor_estatistica_descricao">2</div>
+        </div>
+
+        <div class="aprovar_vendedor_card">
+          <div class="aprovar_vendedor_titulo">Vendedores Inativados</div>
+          <div class="aprovar_vendedor_estatistica_descricao">4</div>
+        </div>
+      </div>
+    </div>
+
     <!-- Tabela de resultados -->
     <div class="base_tabela">
       <table>
