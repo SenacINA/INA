@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         select.add(
           new Option(
             `${estado.uf} - ${cidade.nome}`,
-            `${estado.uf}-${cidade.id}` // Sugestão: valor combinando UF + ID
+            `${estado.uf}-${cidade.nome}` // Valor enviado ao backend
           )
         );
       });

@@ -24,12 +24,14 @@ class CadastroVendedorModel {
     $stmt->bindValue(':cpfcnpj', $cpfcnpj);
     $stmt->execute();
     
-    $sqlInsertEndereco = "INSERT INTO `endereco`(`rua_endereco`, `numero_endereco`, `uf_endereco`, `id_cliente`) VALUES (:locradouro, :numero, :uf, :id);";
+    $sqlInsertEndereco = "INSERT INTO `endereco`(`rua_endereco`, `numero_endereco`, `uf_endereco`,`cidade_endereco`, `id_cliente`) VALUES (:locradouro, :numero, :uf, :cidade, :id);";
     $stmt = $this->db->getConnection()->prepare($sqlInsertEndereco);
     $stmt->bindValue(':locradouro', $locradouro);
     $stmt->bindValue(':numero', $numero);
     $uf = substr($localEmpresa, 0, 3);
+    $cidade = substr($localEmpresa, 3);
     $stmt->bindValue(':uf', $uf);
+    $stmt->bindValue(':cidade', $cidade);
     $stmt->bindValue(':id', $id);
     return $stmt->execute();
 
