@@ -195,7 +195,9 @@ body {
   position: absolute;
   justify-self: center;
   align-self: center;
-  top: 208px;
+  transform: translateY(-100%);
+  left: 50%;
+  right: 50%;
   width: 148px;
   max-width: 148px;
   aspect-ratio: 1 / 1;
@@ -906,10 +908,23 @@ body {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-@media (max-width: 1024px) {
-  body {
-    margin-top: 150px !important;
+@media (max-width: 1400px) {
+  .botoes_redefinir {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
+
+  .base_input, option.base_input {
+    width: 100%;
+  }
+
+  .redes_edit {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1124px) {
 
   .popup {
     padding: 2.5%;
@@ -935,13 +950,13 @@ body {
   .forms_container {
     justify-self: center;
     max-width: none;
-    width: 95%;
+    width: 100%;
   }
 
   .forms {
-    margin-top: 5%;
-    margin-left: 9%;
+    padding: 0;
     width: 100%;
+    margin: 0;
   }
 
   .forms_container input,
@@ -952,17 +967,12 @@ body {
 
   .botoes_redefinir {
     flex-direction: column;
-    width: 96%;
+    width: 100%;
     row-gap: 8px;
   }
 
   .redes_sociais_cliente {
-    width: 95%;
-  }
-
-  .pfp_cliente {
-    left: calc(48% - (826px / 2));
-    top: calc(100% - (300px / 2));
+    width: 100%;
   }
 
   .redes_text,
@@ -988,9 +998,9 @@ body {
 
   .edit_foto {
     width: 100%;
-    grid-template-columns: 96%;
+    grid-template-columns: 1fr;
     grid-template-rows: max-content max-content;
-    margin-left: 0;
+    margin: 0;
   }
 
   .foto_container,
@@ -1013,7 +1023,7 @@ body {
 
   .salvar,
   .cancelar {
-    width: 90%;
+    width: 100%;
   }
 
   .destaques_container {
@@ -1026,9 +1036,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
-    margin-top: 150px !important;
-  }
 
   .text_popup>div {
     width: 64%;
@@ -1040,8 +1047,9 @@ body {
 
   .title_mobile {
     display: flex;
-    margin-bottom: 20px;
-    margin-left: 25px;
+    margin: 0;
+    margin-left: 16px;
+
   }
 
   .title_text {
@@ -1049,28 +1057,9 @@ body {
     justify-content: left;
   }
 
-  .title_mobile {
-    margin-left: 20px;
-    margin-bottom: 25px;
-  }
-
-  .pfp_cliente {
-    left: 0;
-  }
-
   .mini_perfil_cliente {
     grid-template-rows: repeat(5, min-content);
-    height: 720px;
-  }
-
-  .pfp_cliente {
-    top: 50%;
-    width: 140px;
-  }
-
-  .pfp_cliente {
-    left: calc(63.5% - (826px / 2));
-    top: calc(130% - (300px / 2));
+    height: fit-content;
   }
 
   .infos_container {
@@ -1126,10 +1115,6 @@ body {
 }
 
 @media (max-width: 425px) {
-  body {
-    margin-top: 150px !important;
-  }
-
   .popup {
     max-height: none;
     height: 70%;
@@ -1168,22 +1153,17 @@ body {
 
   .mini_perfil_cliente {
     grid-template-rows: repeat(5, min-content);
-    height: 650px;
+    height: fit-content;
   }
 
   .pfp_cliente {
-    top: 50%;
     width: 100px;
   }
 
-  .pfp_cliente {
-    left: calc(110% - (826px / 2));
-    top: calc(210% - (300px / 2));
-  }
-
   .infos_container {
-    column-gap: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
   }
 
   .nome_cliente {
@@ -1209,7 +1189,7 @@ body {
   }
 
   .contatos_container {
-    margin-top: 10%;
+    margin-top: 16px;
   }
 
   .tempo_cliente_container {
@@ -1228,5 +1208,9 @@ body {
 
   .destaques_container {
     grid-template-columns: 1fr 1fr;
+  }
+  .contatos_cliente {
+    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

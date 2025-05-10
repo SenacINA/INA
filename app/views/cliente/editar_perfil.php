@@ -32,8 +32,9 @@
     </div>
     <div class="mini_perfil_cliente">
       <img src="<?= $PATH_PUBLIC . $user['banner_perfil'] ?>" id='miniBanner' alt="banner" class="banner_cliente">
-      <img src="<?= $PATH_PUBLIC . $user['foto_perfil'] ?>" id='miniPfp' alt="pfp_cliente" class="pfp_cliente">
-      <div class="infos_container">
+      <div class="pfp_cliente_info">
+        <img src="<?= $PATH_PUBLIC . $user['foto_perfil'] ?>" id='miniPfp' alt="pfp_cliente" class="pfp_cliente">
+        <div class="infos_container">
         <div class="nome_cliente">
           <h1 class="nome_cliente"><?= htmlspecialchars($user['nome_cliente']) ?></h1>
         </div>
@@ -55,8 +56,10 @@
               $diasCliente = (strtotime(date('Y-m-d')) - strtotime($dataRegistro)) / 86400;
               echo "Cliente há: " . round($diasCliente) . " Dias";
             ?>
-        </p>
+          </p>
         </div>
+      </div>
+      
       </div>
       <div class="contatos_container">
         <div class="contatos_cliente">
@@ -125,12 +128,12 @@
       </form>
       <div class="botoes_redefinir">
         <button type="button" onclick="pag('redefinir-senha')" class='base_botao btn_blue redefinir_senha_cliente'>
-          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/sair_branco_icon.svg" alt="">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/cadeado_branco_icon.svg" alt="">
           Redefinir senha
         </button>
 
         <button type="button" onclick="pag('trocar-email')" class="base_botao btn_blue trocar_email_cliente">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/sair_branco_icon.svg" alt="">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/email_branco_icon.svg" alt="">
           Trocar email
         </button>
       </div>
@@ -181,24 +184,7 @@
                   <a href="https://tiktok.com/@<?= htmlspecialchars($user['tiktok_perfil']) ?>" class="link_rede">@<?= htmlspecialchars($user['tiktok_perfil']) ?></a>
               </div>
           <?php endif; ?>
-      </div>
-
-
-          <?php if (!empty($user['youtube'])): ?>
-            <div>
-              <img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" alt="youtube">
-              <a href="https://youtube.com/<?= htmlspecialchars($user['youtube']) ?>" class="link_rede"><?= htmlspecialchars($user['youtube']) ?></a>
-            </div>
-          <?php endif; ?>
-
-          <?php if (!empty($user['tiktok'])): ?>
-            <div>
-              <img src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg" alt="tiktok">
-              <a href="https://tiktok.com/@<?= htmlspecialchars($user['tiktok']) ?>" class="link_rede">@<?= htmlspecialchars($user['tiktok']) ?></a>
-            </div>
-          <?php endif; ?>
         </div>
-
         <button class="base_botao btn_blue botao_edit" id="botao_editar">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/caneta_branca_icon.svg" alt="">
           Editar
