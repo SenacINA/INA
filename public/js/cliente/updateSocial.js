@@ -32,5 +32,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-// MUDAR SUBMIT -> BTN SALVAR
