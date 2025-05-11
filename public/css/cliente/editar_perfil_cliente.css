@@ -230,6 +230,12 @@ body {
   line-height: 90%;
   /* 18px */
   justify-content: center;
+  h1 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+  }
 }
 
 .produtos_cliente,
@@ -1067,10 +1073,8 @@ body {
   }
 
   .nome_cliente {
-    margin-top: 10%;
     grid-column: 1 / 4;
     position: relative;
-    right: 4%;
   }
 
   .about_container {
@@ -1167,7 +1171,6 @@ body {
   }
 
   .nome_cliente {
-    margin-top: 10%;
     grid-column: 1 / 3;
   }
 

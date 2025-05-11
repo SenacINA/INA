@@ -130,6 +130,11 @@ class ClienteController extends RenderView {
             $errors[] = 'O nome não pode ficar em branco.';
         }
 
+        $maxLength = 50; // Define o limite de caracteres
+        if (strlen($nome) > $maxLength) {
+            $errors[] = "O nome não pode ter mais de $maxLength caracteres.";    
+        }
+    
         if ($rawFoto   && !preg_match('#^data:image/webp;base64,#', $rawFoto))   { $errors[] = 'Formato de foto inválido.';   $rawFoto   = null; }
         if ($rawBanner && !preg_match('#^data:image/webp;base64,#', $rawBanner)) { $errors[] = 'Formato de banner inválido.'; $rawBanner = null; }
 
@@ -257,6 +262,13 @@ class ClienteController extends RenderView {
         ];
 
         $errors = [];
+
+        $maxSocialLength = 50;
+        foreach (['instagram', 'facebook', 'linkedin', 'youtube', 'tiktok', 'x'] as $rede) {
+            if (strlen($data[$rede]) > $maxSocialLength) {
+                $errors[] = ucfirst($rede) . " não pode ter mais de $maxSocialLength caracteres.";
+            }
+        }
 
         if (!empty($errors)) {
             echo json_encode([

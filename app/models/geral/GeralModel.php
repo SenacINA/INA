@@ -51,17 +51,23 @@ class GeralModel
 
 
     public function updateNome(int $id, string $nome): bool {
+        $maxLength = 50; 
+        if (strlen($nome) > $maxLength) {
+            return false; 
+        }
+
         $conn = $this->db->getConnection();
-    
+
         $check = $conn->prepare("SELECT nome_cliente FROM cliente WHERE id_cliente = :id");
         $check->execute([':id' => $id]);
         $atual = $check->fetchColumn();
-    
+
         if ($atual === $nome) return true; 
-    
+
         $stmt = $conn->prepare("UPDATE cliente SET nome_cliente = :nome WHERE id_cliente = :id");
         return $stmt->execute([':nome' => $nome, ':id' => $id]);
-    }    
+    }
+
 
     public function updateLocalizacao(int $clienteId, string $uf, string $cidade): bool {
         // Tenta atualizar o endereço existente
