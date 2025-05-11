@@ -51,7 +51,7 @@ class GeralModel
 
 
     public function updateNome(int $id, string $nome): bool {
-        $maxLength = 50; 
+        $maxLength = 100; 
         if (strlen($nome) > $maxLength) {
             return false; 
         }
