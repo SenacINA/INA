@@ -11,6 +11,56 @@ class ClienteModel
         $this->db->connect();
     }
 
+    public function getTipoContaById(string $id): ?int {
+        $sql = "SELECT tipo_conta_cliente FROM cliente WHERE id_cliente = :id LIMIT 1";
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ? (int)$result['tipo_conta_cliente'] : null;
+    }
+    
+
+    public function findById(string $id): ?array {
+        $sql = "
+        SELECT 
+            cliente.id_cliente, 
+            cliente.nome_cliente, 
+            cliente.genero_cliente, 
+            cliente.foto_perfil_cliente, 
+            cliente.banner_perfil_cliente, 
+            cliente.tipo_conta_cliente, 
+            cliente.status_conta_cliente,
+            cliente.data_registro_cliente,
+            perfil.foto_perfil, 
+            perfil.banner_perfil, 
+            perfil.descricao_perfil, 
+            perfil.instagram_perfil, 
+            perfil.facebook_perfil, 
+            perfil.linkedin_perfil, 
+            perfil.youtube_perfil, 
+            perfil.tiktok_perfil,
+            perfil.x_perfil,
+            endereco.uf_endereco as uf,            
+            endereco.cidade_endereco as cidade     
+        FROM 
+            cliente
+        JOIN perfil 
+            ON cliente.id_cliente = perfil.id_cliente
+        LEFT JOIN endereco 
+            ON cliente.id_cliente = endereco.id_cliente
+        WHERE cliente.id_cliente = :id 
+        LIMIT 1";
+        
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        return $result ?: null;
+    }
+    
+
     public function emailExists(string $email): bool
     {
         $sql  = "SELECT COUNT(*) FROM cliente WHERE email_cliente = :email";
