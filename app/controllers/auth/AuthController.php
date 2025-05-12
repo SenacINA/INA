@@ -84,7 +84,9 @@ class AuthController extends RenderView {
 
   public function logout()
   {
-    // session_start();
+    if (! isset($_SESSION)) {
+      session_start();
+  }
     session_destroy();
     http_response_code(200);
     // echo json_encode(['status' => 'success', 'message' => 'Sesssão destruida']);
