@@ -123,7 +123,7 @@ class ClienteController extends RenderView {
 
         if (empty($uf) || empty($cidade)) {
             $errors[] = 'Selecione uma localização válida.';
-}
+        }
 
         $errors = [];
         if ($nome === '') {
@@ -216,8 +216,8 @@ class ClienteController extends RenderView {
                 echo json_encode([
                     'success' => true,
                     'message' => 'Perfil atualizado com sucesso!',
-                    'foto'    => $relFoto,
-                    'banner'  => $relBanner,
+                    'foto'    => $relFoto . '?t=' . time(),
+                    'banner'  => $relBanner . '?t=' . time(),
                 ], JSON_UNESCAPED_UNICODE);
                 exit;
             }
