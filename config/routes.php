@@ -7,15 +7,15 @@
         '/produto'                   => 'cliente/ProdutoController@index',
         '/carrinho'                  => 'cliente/CarrinhoController@index',
         '/categoria'                 => 'cliente/CategoriaController@index',
-        '/perfil-cliente'            => 'cliente/ClienteController@perfil',
-        '/login-cliente'             => 'cliente/ClienteController@login',
+        '/login'             => 'cliente/ClienteController@login',
         '/carrinho-dados'            => 'cliente/ClienteController@dados',
         '/carrinho-pagamentos'       => 'cliente/ClienteController@pagamentos',
-        '/editar-perfil-cliente'     => 'cliente/ClienteController@editarPerfil',
         '/auth'                      => 'auth/AuthController@loginForm',
         '/logout'                    => 'auth/AuthController@logout',
         '/cadastro-cliente'          => 'cliente/ClienteController@cadastro',
         '/api/cliente/register'      => 'cliente/ClienteController@register',
+        '/api/cliente/editar-perfil/redes' => 'cliente/ClienteController@updateSocial',
+        '/api/cliente/editarDadosCliente' => 'cliente/ClienteCOntroller@editarDadosCliente',
 
         // Geral
         '/sobre-nos'                 => 'geral/GeralController@sobreNos',
@@ -26,13 +26,12 @@
         '/redefinir-senha-confirmar' => 'auth/AuthController@confirmPasswordReset',
         '/redefinir-senha-api'       => 'geral/EnviarTokenController@gerarToken',
         '/redefinir-senha-api-salvar'=> 'geral/EnviarTokenController@salvarSenha',
+        '/editar-perfil' => 'geral/GeralController@editarPerfil',
+        '/perfil' => 'geral/GeralController@perfil',
 
         // Vendedor - Cadastro e Perfil
         '/cadastro-vendedor-info'    => 'vendedor/VendedorController@showInfo',
         '/cadastro-vendedor'         => 'vendedor/VendedorController@showFormCadastro',
-        '/cadastro-vendedor-forms'   => 'vendedor/VendedorController@cadastro',
-        '/perfil-vendedor'           => 'vendedor/VendedorController@perfil',
-        '/editar-perfil-vendedor'    => 'vendedor/VendedorController@editarPerfil',
 
         // Vendedor - Produtos e Pedidos
         '/pedidos-vendedor'          => 'vendedor/VendedorProductController@pedidos',
