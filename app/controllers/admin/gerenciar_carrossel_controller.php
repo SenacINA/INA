@@ -1,162 +1,108 @@
 <?php
-session_start();
+require_once __DIR__ . '/models/admin/gerenciar_carrossel_models.php';
 
-// Verificação de autenticação do administrador
-if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
-    header("Location: /INA/INA/app/views/cliente/login.php?error=restrictedaccess");
-    exit();
-}
-
-
-class GerenciadorCarrossel {
+class CarrosselController {
+    private $model;
 
     public function __construct() {
-        $this->db = new Database();
-        $this->db->connect();
+        $this->model = new CarrosselModel();
+        $this->verificarAutenticacao();
     }
-    
-    public function listarCarrosseis($filtro = null) {
-        $sql = "SELECT 
-                    c.id_carrossel,
-                    c.link_carrossel,
-                    c.proxima_cobranca_carrossel,
-                    c.foi_pago_esse_mes_carrossel,
-                    v.id_vendedor,
-                    v.cnpj_vendedor,
-                    cl.nome_cliente,
-                    cl.email_cliente,
-                    GROUP_CONCAT(ic.endereco_imagem_carrossel) as imagens
-                FROM carrossel c
-                JOIN vendedor v ON c.id_vendedor = v.id_vendedor
-                JOIN cliente cl ON v.id_vendedor = cl.id_cliente
-                LEFT JOIN imagem_carrossel ic ON c.id_carrossel = ic.id_carrossel";
-        
-        $params = [];
-        if ($filtro) {
-            $where = [];
-            if (!empty($filtro['status_pagamento'])) {
-                $where[] = "c.foi_pago_esse_mes_carrossel = :status_pagamento";
-                $params[':status_pagamento'] = $filtro['status_pagamento'];
-            }
-            if (!empty($filtro['data_inicio'])) {
-                $where[] = "c.proxima_cobranca_carrossel >= :data_inicio";
-                $params[':data_inicio'] = $filtro['data_inicio'];
-            }
-            if (!empty($filtro['nome_vendedor'])) {
-                $where[] = "cl.nome_cliente LIKE :nome_vendedor";
-                $params[':nome_vendedor'] = '%' . $filtro['nome_vendedor'] . '%';
-            }
-            if (!empty($where)) {
-                $sql .= " WHERE " . implode(" AND ", $where);
-            }
+
+    /**
+     * Verifica se o usuário está autenticado como admin
+     */
+    private function verificarAutenticacao() {
+        session_start();
+        if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
+            header("Location: /login.php?error=acesso_negado");
+            exit();
         }
-        
-        $sql .= " GROUP BY c.id_carrossel";
-        
-        // Ordenação
-        $ordenacao = $filtro['ordenacao'] ?? 'proxima_cobranca_carrossel';
-        $direcao = 'ASC';
-        if (strpos($ordenacao, '-') === 0) {
-            $ordenacao = substr($ordenacao, 1);
-            $direcao = 'DESC';
-        }
-        
-        $ordenacoesPermitidas = ['id_vendedor', 'proxima_cobranca_carrossel', 'foi_pago_esse_mes_carrossel', 'nome_cliente'];
-        if (in_array($ordenacao, $ordenacoesPermitidas)) {
-            $sql .= " ORDER BY {$ordenacao} {$direcao}";
-        }
-        
-        return $this->db->executeQuery($sql, $params);
     }
-    
-    public function atualizarCarrossel($idCarrossel, $dados) {
-        $sql = "UPDATE carrossel SET 
-                    link_carrossel = :link,
-                    proxima_cobranca_carrossel = :proxima_cobranca,
-                    foi_pago_esse_mes_carrossel = :pago
-                WHERE id_carrossel = :id";
-        
-        $params = [
-            ':link' => $dados['link_carrossel'],
-            ':proxima_cobranca' => $dados['proxima_cobranca_carrossel'],
-            ':pago' => $dados['foi_pago_esse_mes_carrossel'] ?? false,
-            ':id' => $idCarrossel
+
+    /**
+     * Lista os anúncios com filtros
+     */
+    public function listarAnuncios() {
+        $filtros = [
+            'nome' => $_GET['nome'] ?? null,
+            'email' => $_GET['email'] ?? null,
+            'plano' => $_GET['plano'] ?? null,
+            'ordenar_por' => $_GET['ordenar_por'] ?? 'data_expiracao',
+            'direcao' => $_GET['direcao'] ?? 'ASC'
         ];
-        
-        return $this->db->executeQuery($sql, $params);
-    }
-    
-    public function atualizarImagensCarrossel($idCarrossel, $imagens) {
-        $this->db->executeQuery("DELETE FROM imagem_carrossel WHERE id_carrossel = :id", [':id' => $idCarrossel]);
-        
-        $sql = "INSERT INTO imagem_carrossel (id_carrossel, endereco_imagem_carrossel) VALUES ";
-        $values = [];
-        $params = [];
-        
-        foreach ($imagens as $index => $imagem) {
-            $values[] = "(:id, :imagem{$index})";
-            $params[":imagem{$index}"] = $imagem;
+
+        try {
+            $anuncios = $this->model->listarAnuncios($filtros);
+            
+            // Formata os dados para a view
+            foreach ($anuncios as &$anuncio) {
+                $anuncio['data_inicio'] = date('d/m/Y', strtotime($anuncio['data_inicio']));
+                $anuncio['data_expiracao'] = date('d/m/Y', strtotime($anuncio['data_expiracao']));
+                $anuncio['imagens'] = explode(',', $anuncio['imagens']);
+            }
+            
+            return $anuncios;
+        } catch (Exception $e) {
+            // Log do erro
+            error_log("Erro ao listar anúncios: " . $e->getMessage());
+            return [];
         }
-        
-        $params[':id'] = $idCarrossel;
-        $sql .= implode(", ", $values);
-        
-        return $this->db->executeQuery($sql, $params);
     }
-    
-    public function __destruct() {
-        $this->db->disconnect();
+
+    /**
+     * Busca usuário por ID ou e-mail
+     */
+    public function buscarUsuario($id = null, $email = null) {
+        try {
+            $usuario = $this->model->buscarUsuario($id, $email);
+            
+            if ($usuario) {
+                // Formata os dados para a view
+                $usuario['data_expiracao'] = date('Y-m-d', strtotime($usuario['data_expiracao']));
+                return $usuario;
+            }
+            
+            return null;
+        } catch (Exception $e) {
+            error_log("Erro ao buscar usuário: " . $e->getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * Atualiza dados do anúncio e usuário
+     */
+    public function atualizarAnuncio($dados) {
+        try {
+            // Validação dos dados
+            if (empty($dados['nome']) || empty($dados['cargo']) || empty($dados['data_expiracao']) || empty($dados['plano'])) {
+                throw new Exception("Todos os campos são obrigatórios");
+            }
+
+            if (!in_array($dados['plano'], ['Semanal', 'Mensal', 'Bimestral'])) {
+                throw new Exception("Tipo de plano inválido");
+            }
+
+            // Atualiza usuário
+            $dadosUsuario = [
+                'nome' => $dados['nome'],
+                'cargo' => $dados['cargo']
+            ];
+            $this->model->atualizarUsuario($dados['id_cliente'], $dadosUsuario);
+
+            // Atualiza anúncio
+            $dadosAnuncio = [
+                'data_expiracao' => $dados['data_expiracao'],
+                'plano' => $dados['plano']
+            ];
+            $this->model->atualizarAnuncio($dados['id_carrossel'], $dadosAnuncio);
+
+            return true;
+        } catch (Exception $e) {
+            error_log("Erro ao atualizar anúncio: " . $e->getMessage());
+            throw $e;
+        }
     }
 }
-
-// Processamento das requisições
-$gerenciador = new GerenciadorCarrossel();
-$response = [];
-
-try {
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $filtro = [
-            'status_pagamento' => $_GET['status_pagamento'] ?? null,
-            'data_inicio' => $_GET['data_inicio'] ?? null,
-            'nome_vendedor' => $_GET['nome_vendedor'] ?? null,
-            'ordenacao' => $_GET['ordenacao'] ?? 'proxima_cobranca_carrossel'
-        ];
-        
-        $carrosseis = $gerenciador->listarCarrosseis($filtro);
-        $response = ['success' => true, 'data' => $carrosseis];
-    } 
-    elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $dados = [
-            'link_carrossel' => $_POST['link_carrossel'],
-            'proxima_cobranca_carrossel' => $_POST['proxima_cobranca_carrossel'],
-            'foi_pago_esse_mes_carrossel' => $_POST['foi_pago_esse_mes_carrossel'] ?? false
-        ];
-        
-        if empty($dados['link_carrossel']) {
-            throw new Exception("O link do carrossel é obrigatório");
-        }
-        
-        $sucesso = $gerenciador->atualizarCarrossel($_POST['id_carrossel'], $dados);
-        
-        if ($sucesso && !empty($_FILES['imagens'])) {
-            $imagens = [];
-            foreach ($_FILES['imagens']['tmp_name'] as $key => $tmp_name) {
-                $target_dir = "../../uploads/carrossel/";
-                $target_file = $target_dir . basename($_FILES['imagens']['name'][$key]);
-                if (move_uploaded_file($tmp_name, $target_file)) {
-                    $imagens[] = $target_file;
-                }
-            }
-            $gerenciador->atualizarImagensCarrossel($_POST['id_carrossel'], $imagens);
-        }
-        
-        $response = ['success' => true, 'message' => 'Carrossel atualizado com sucesso!'];
-    }
-} catch (Exception $e) {
-    http_response_code(400);
-    $response = ['success' => false, 'error' => $e->getMessage()];
-}
-
-header('Content-Type: application/json');
-echo json_encode($response);
 ?>
