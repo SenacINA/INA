@@ -35,7 +35,8 @@
           <h2>Digite o ID ou o E-mail do usuário para encontrá-lo, deixe em branco para cadastrar um usuário.</h2>
 
           <!-- FORM SEARCH -->
-          <form action="" method="get" class="atualizar_usuario_forms">
+          <form id='formPesquisa' class="atualizar_usuario_forms">
+
             <div class="atualizar_usuario_pesquisar_usuario_item" id="atualizar_usuario_pesquisar_usuario_item_1">
               <label>ID Do Usuário</label>
               <input type="text" class="base_input" name="idUsuario">
@@ -45,10 +46,11 @@
               <input type="text" class="base_input" name="emailUsuario">
             </div>
 
-            <button type="submit" name="pesquisar" class="btn_blue base_botao">
+            <button type="submit" name="btnPesquisar" class="btn_blue base_botao">
               <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
               PESQUISAR
             </button>
+
           </form>
           <!-- FORM SEARCH -->
 
@@ -216,5 +218,7 @@
       </div>
     </div>
   </main>
+  <script type='module' src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/admin/atualizar_usuario.js"></script>
 </body>
 </html>

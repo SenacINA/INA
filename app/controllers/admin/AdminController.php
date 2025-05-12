@@ -1,4 +1,5 @@
 <?php    
+require_once __DIR__.'/../../models/admin/AdminModel.php';
 
 class AdminController extends RenderView {
 
@@ -44,15 +45,15 @@ class AdminController extends RenderView {
 
     public function searchUser() {
 
-            if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+            if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
                 http_response_code(405);
                 exit;
             }
         
             header('Content-Type: application/json; charset=utf-8');
         
-            $id = trim($_GET['idUsuario'] ?? '');
-            $email = trim($_GET['emailUsuario'] ?? '');
+            $id = trim($_POST['idUsuario'] ?? '');
+            $email = trim($_POST['emailUsuario'] ?? '');
         
             if (!$id && !$email) {
                 echo json_encode([
@@ -62,7 +63,7 @@ class AdminController extends RenderView {
                 exit;
             }
         
-            $model = new ClienteModel();
+            $model = new AdminModel();
             $result = $model->pesquisarUsuario($id, $email);
         
             if ($result) {
