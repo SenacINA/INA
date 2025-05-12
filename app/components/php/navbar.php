@@ -184,7 +184,7 @@ $content = '';
   }
   return $content;
 }
-}
+
 // Função para gerar o valor do onclick com base na variável $isIndex
 
 ?>
