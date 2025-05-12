@@ -53,16 +53,16 @@ class AuthController extends RenderView {
 
                 if ($tipoConta == 0) {
                     $_SESSION['user_type'] = 'admin';
-                    $this->loadView('admin/dashboard', []);
+                    header('Location: perfil');
                 } elseif ($tipoConta == 1) {
                     $_SESSION['user_type'] = 'vendedor';
-                    $this->loadView('vendedor/perfil_vendedor', []);
+                    header('Location: perfil');
                 } elseif ($tipoConta == 2) {
                     $_SESSION['user_type'] = 'cliente';
-                    $this->loadView('cliente/perfil_cliente', []);
+                    header('Location: perfil');
                 } else {
                     $_SESSION['user_type'] = 'desconhecido';
-                    $this->loadView('cliente/perfil_cliente', []);
+                    header('Location: perfil');
                 }
 
                 exit;
@@ -90,7 +90,8 @@ class AuthController extends RenderView {
     session_destroy();
     http_response_code(200);
     // echo json_encode(['status' => 'success', 'message' => 'Sesssão destruida']);
-    $this->loadView('geral/home', []);
+    // $this->loadView('geral/home', []);
+    header('Location: index.php');
     exit();
   }
 }
