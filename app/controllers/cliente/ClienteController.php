@@ -179,11 +179,11 @@ class ClienteController extends RenderView {
             $ok3     = true;
             $relFoto = null;
             if ($binFoto) {
-                $fn      = 'foto.webp';
+                $fn = 'foto_' . time() . '.webp';
                 $absPath = $baseDir . $fn;
-                // remove antiga, se existir
-                if (file_exists($absPath)) {
-                    @unlink($absPath);
+
+                foreach (glob($baseDir . 'foto_*') as $oldFoto) {
+                    @unlink($oldFoto);
                 }
                 if (file_put_contents($absPath, $binFoto) === false) {
                     $errors[] = 'Falha ao salvar imagem de perfil.';
@@ -197,12 +197,13 @@ class ClienteController extends RenderView {
             $ok4      = true;
             $relBanner = null;
             if ($binBanner) {
-                $fn       = 'banner.webp';
-                $absPath  = $baseDir . $fn;
-                // remove antigo, se existir
-                if (file_exists($absPath)) {
-                    @unlink($absPath);
+                $fn = 'banner_' . time() . '.webp';
+                $absPath = $baseDir . $fn;
+
+                foreach (glob($baseDir . 'banner_*') as $oldBanner) {
+                    @unlink($oldBanner);
                 }
+
                 if (file_put_contents($absPath, $binBanner) === false) {
                     $errors[] = 'Falha ao salvar imagem de banner.';
                     $ok4 = false;
@@ -216,8 +217,8 @@ class ClienteController extends RenderView {
                 echo json_encode([
                     'success' => true,
                     'message' => 'Perfil atualizado com sucesso!',
-                    'foto'    => $relFoto . '?t=' . time(),
-                    'banner'  => $relBanner . '?t=' . time(),
+                    'foto'    => $relFoto,
+                    'banner'  => $relBanner,
                 ], JSON_UNESCAPED_UNICODE);
                 exit;
             }

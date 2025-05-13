@@ -53,8 +53,14 @@ class GeralController extends RenderView {
                 $clienteData['foto_perfil'] = '/image/cliente/editar_perfil/perfil_usuario.svg';
             }
 
-            $localizacao = $clienteData['uf'] . ' - ' . $clienteData['cidade'];
-            $clienteData['localizacao'] = $localizacao;
+            if ($clienteData['uf'] && $clienteData['cidade']) {
+                $localizacao = $clienteData['uf'] . ' - ' . $clienteData['cidade'];
+                $clienteData['localizacao'] = $localizacao;
+            } else {
+                $clienteData['localizacao'] = null;
+            }
+
+            
     
             $this->loadView($viewPath, [
                 'user'          => $clienteData,

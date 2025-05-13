@@ -34,7 +34,9 @@ require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
               <label for="local_da_empresa">Local da Empresa</label>
               <div class="base_input_select">
                 <select name="local_da_empresa" id="localizacaoSelect" class="base_input">
-                  <option value="" disabled selected>Selecione a cidade</option>
+                  <option value="<?= isset($user['localizacao']) ? $user['localizacao'] : '' ?>">
+                    <?= isset($user['localizacao'])? $user['localizacao'] : 'Selecione uma localização' ?>
+                  </option>
                 </select>
                 <h2>Se você não tiver uma empresa, informe o estado de sua residência.</h2>
               </div>
@@ -136,11 +138,24 @@ require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
       </form>
     </div>
   </div>
+  <script type='module' src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let errors = <?php echo json_encode($errors ?? []); ?>;
+        
+        if (errors.length > 0) {
+            errors.forEach(error => {
+                gerarToast(error, "erro");
+            });
+        }
+    });
+  </script>
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
   <script src="<?= $PATH_PUBLIC ?>/js/vendedor/cadastro_vendedor.js"></script>
   <script type='module' src="<?= $PATH_PUBLIC ?>/js/geral/selectUfCidade.js"></script>
+
 </body>
 
 </html>

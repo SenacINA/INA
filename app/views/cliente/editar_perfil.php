@@ -45,7 +45,7 @@
         <div class="avaliacao_cliente_container">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg" class="icon_produtos_cliente">
           <p class="produtos_cliente">
-            <?= $user['uf'] && $user['cidade'] ? $user['uf'] . ' - ' . $user['cidade'] : 'Localização não disponível' ?>
+            <?= $user['uf'] && $user['cidade'] ? $user['uf'] . ' - ' . $user['cidade'] : 'Localização não definida' ?>
           </p>
         </div>
         <div class="tempo_cliente_container">
@@ -263,7 +263,7 @@
                 placeholder="Username">
             </div>
             <p>* Opcional</p>
-            <button class="base_botao btn_blue" type='submit'><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar</button>
+            <button class="base_botao btn_blue" type='submit'><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">SALVAR</button>
         </form>
     </div>
   </div>
