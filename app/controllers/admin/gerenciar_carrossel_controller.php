@@ -13,7 +13,6 @@ class CarrosselController {
      * Verifica se o usuário está autenticado como admin
      */
     private function verificarAutenticacao() {
-        session_start();
         if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
             header("Location: /login.php?error=acesso_negado");
             exit();

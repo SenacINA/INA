@@ -67,7 +67,7 @@
             </div>
           </a>
 
-          <a href="./gerenciar_carrossel.php">
+          <a href="gerenciar-carrossel">
             <div class="dashboard_body_container_botoes_base">
               <img src="<?=$PATH_PUBLIC?>/image/admin/dashboard/gerenciar_carrossel.svg" alt="">
               <h2>Gerenciar Carrossel</h2>
