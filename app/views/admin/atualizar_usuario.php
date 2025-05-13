@@ -69,30 +69,30 @@
             <div class="atualizar_usuario_dados_pessoais">
               <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_1">
                 <label>Nome</label>
-                <input type="text" class="base_input">
+                <input type="text" class="base_input" name="nomeInput">
               </div>
               <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_2">
                 <label>Senha</label>
-                <input type="text" class="base_input">
+                <input type="text" class="base_input" name="senhaInput">
               </div>
               <div class="atualizar_usuario_dados_pessoais_conjunto">
                 <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_3">
                   <label>E-mail</label>
-                  <input type="text" class="base_input">
+                  <input type="text" class="base_input" name="emailInput">
                 </div>
                 <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_4">
                   <label>Telefone</label>
-                  <input type="text" class="base_input">
+                  <input type="text" class="base_input" name="telefoneInput">
                 </div>
               </div>
               <div class="atualizar_usuario_dados_pessoais_conjunto">
                 <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_5">
                   <label>CPF</label>
-                  <input type="text" class="base_input">
+                  <input type="text" class="base_input" name="cpfInput">
                 </div>
                 <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_6">
                   <label>Telefone 2</label>
-                  <input type="text" class="base_input">
+                  <input type="text" class="base_input" name="telefone2Input">
                 </div>
               </div>
             </div>
@@ -109,31 +109,31 @@
               <div class="atualizar_usuario_localizacao_conjunto">
                 <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_1">
                   <label>CEP</label>
-                  <input type="text" class="base_input">
+                  <input type="text" class="base_input" name="cepInput">
                 </div>
                 <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_2">
                   <label>Estado</label>
-                  <input type="text" class="base_input">
+                  <input type="text" class="base_input" name="estadoInput">
                 </div>
               </div>
               <div class="atualizar_usuario_localizacao_conjunto">
                 <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_3">
                   <label>Cidade</label>
-                  <input type="text" class="base_input">
+                  <input type="text" class="base_input" name="cidadeInput">
                 </div>
                 <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_4">
                   <label>Bairro</label>
-                  <input type="text" class="base_input">
+                  <input type="text" class="base_input" name="bairroInput">
                 </div>
               </div>
               <div class="atualizar_usuario_localizacao_conjunto">
                 <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_5">
                   <label>Endereço</label>
-                  <input type="text" class="base_input">
+                  <input type="text" class="base_input" name="enderecoInput">
                 </div>
                 <div class="atualizar_usuario_localizacao_item" id="atualizar_usuario_localizacao_item_6">
                   <label>Número</label>
-                  <input type="text" class="base_input">
+                  <input type="text" class="base_input" name="numeroInput">
                 </div>
               </div>
             </div>    
@@ -158,7 +158,7 @@
                 <div class="atualizar_usuario_forms_item_permissoes">
                   <div class="toggle_container">
                     <label class="toggle">
-                      <input type="checkbox" id="atualizar_usuario_gerenciar_carrossel">
+                      <input type="checkbox" id="atualizar_usuario_gerenciar_carrossel" name="statusCheckbox">
                       <span class="toggle_slider"></span>
                     </label>
                   </div>
@@ -169,7 +169,7 @@
                 <div class="atualizar_usuario_forms_item_permissoes">
                   <div class="toggle_container">
                     <label class="toggle">
-                      <input type="checkbox" id="atualizar_usuario_gerenciar_usuarios">
+                      <input type="checkbox" id="atualizar_usuario_gerenciar_usuarios" name="clienteCheckbox">
                       <span class="toggle_slider"></span>
                     </label>
                   </div>
@@ -183,7 +183,7 @@
                 <div class="atualizar_usuario_forms_item_permissoes">
                   <div class="toggle_container">
                     <label class="toggle">
-                      <input type="checkbox" id="atualizar_usuario_gerenciar_produtos">
+                      <input type="checkbox" id="atualizar_usuario_gerenciar_produtos" name="vendedorCheckbox">
                       <span class="toggle_slider"></span>
                     </label>
                   </div>
@@ -194,7 +194,7 @@
                 <div class="atualizar_usuario_forms_item_permissoes">
                   <div class="toggle_container">
                     <label class="toggle">
-                      <input type="checkbox" id="atualizar_usuario_historico_acessos">
+                      <input type="checkbox" id="atualizar_usuario_historico_acessos" name="adminCheckbox">
                       <span class="toggle_slider"></span>
                     </label>
                   </div>

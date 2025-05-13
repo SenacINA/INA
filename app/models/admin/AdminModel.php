@@ -12,19 +12,32 @@ class AdminModel
     }
 
     public function pesquisarUsuario(?string $id, ?string $email): ?array
-    {
-    $sql = "SELECT * FROM cliente WHERE ";
+{
+    $sql = "
+        SELECT 
+            c.*, 
+            e.rua_endereco AS endereco, 
+            e.bairro_endereco AS bairro, 
+            e.numero_endereco AS numero, 
+            e.referencia_endereco AS referencia,
+            e.uf_endereco AS estado, 
+            e.cidade_endereco AS cidade
+        FROM cliente c
+        LEFT JOIN endereco e ON e.id_cliente = c.id_cliente
+        WHERE 
+    ";
+
     $params = [];
 
     if ($id && $email) {
-        $sql .= "id_cliente = :id OR email_cliente = :email";
+        $sql .= "c.id_cliente = :id OR c.email_cliente = :email";
         $params[':id'] = $id;
         $params[':email'] = $email;
     } elseif ($id) {
-        $sql .= "id_cliente = :id";
+        $sql .= "c.id_cliente = :id";
         $params[':id'] = $id;
     } elseif ($email) {
-        $sql .= "email_cliente = :email";
+        $sql .= "c.email_cliente = :email";
         $params[':email'] = $email;
     }
 
@@ -41,5 +54,6 @@ class AdminModel
 
     return $result ?: null;
 }
+
 
 }
