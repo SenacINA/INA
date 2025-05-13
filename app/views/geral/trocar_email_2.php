@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-$titulo = "trocar E-mail - E ao Quadrado";
+$titulo = "Trocar E-mail - E ao Quadrado";
 $css = ["/css/geral/trocar_email_2.css"];
 require_once('./utils/head.php');
 ?>
@@ -29,8 +29,8 @@ require_once('./utils/head.php');
             <label for="email">Confirmar E-mail:</label>
             <input class="base_input" type="text" name="email" id="confirm-email">
           </div>
+          <p>Esse e-mail será vinculado à sua conta atual.</p>
         </form>
-        <p>Esse e-mail será vinculado à sua conta atual.</p>
       </div>
 
       <div class="trocar_email_2_botoes">
@@ -59,7 +59,9 @@ require_once('./utils/head.php');
     </div>
   </div>
 
-  <script src="<?= $PATH_PUBLIC ?>/js/geral/pop-Up_trocar.js"></script>
-  <script type="module" src="<?= $PATH_PUBLIC ?>/js/admin/toggle_trocar.js"></script>
+  <script src="<?= $PATH_PUBLIC ?>/js/geral/popUpTrocarEmail.js"></script>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  
+
 </body>
 </html>

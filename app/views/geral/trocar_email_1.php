@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <?php
-    $titulo = "trocar E-mail - E ao Quadrado";
+    $titulo = "Trocar E-mail - E ao Quadrado";
     $css = ["/css/geral/trocar_email_1.css"];
     require_once('./utils/head.php');
   ?>
@@ -45,8 +45,8 @@
       </div>
     </main>
 
-    <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
+    <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_eyeSenha.js"></script>
     <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
-    <script src="<?=$PATH_PUBLIC?>/js/geral/trocar_email_1.js"></script>
+    <script src="<?=$PATH_PUBLIC?>/js/geral/trocarEmail1Toast.js"></script>
   </body>
 </html>

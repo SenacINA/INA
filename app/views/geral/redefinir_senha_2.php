@@ -70,7 +70,6 @@
     </div>
   </main>
 
-  <!-- Pop-Up -->
   <div class="popup_container" id="popup" style="display: none;">
     <div class="popup">
       <div class="text_popup">
@@ -84,9 +83,8 @@
     </div>
   </div>
 
-  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_eyeSenha.js"></script>
   <script type='module' src="./app/components/js/toast.js"></script>
-
 
   <!-- Script para enviar senha -->
   <script>
@@ -111,7 +109,7 @@
                 gerarToast(data.message, 'sucesso');
                 setTimeout(() => {
                   pag('');
-              }, 5000);
+              }, 3000);
             } else if (data.errors && Array.isArray(data.errors)) {
                 data.errors.forEach(error => gerarToast(error, 'erro'));
             } else {
@@ -123,6 +121,5 @@
         }
     });
   </script>
-
 </body>
 </html>

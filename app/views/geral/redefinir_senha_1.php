@@ -10,14 +10,10 @@
     
   ?>
 <body>
-  <!-- Até 375px -->
-  <!-- Caminho de Icon Correto -->
-
   <?php
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
 
-  
   <main>
     <div class="redefinir_senha_1_container">
       <div class="redefinir_senha_1_main_content">
@@ -62,7 +58,8 @@
     </div>
   </div>
 
-  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
-  <script src="<?=$PATH_PUBLIC?>/js/geral/pop-Up_redefinir.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_eyeSenha.js"></script>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/geral/popUpRedefinirSenha.js"></script>
 </body>
 </html>

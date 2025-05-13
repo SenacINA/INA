@@ -76,9 +76,19 @@ main {
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  text-align: start;
   margin: 16px 2% 0px 2%;
   max-height: 600px;
   height: 100%;
+
+  p {
+    align-self: self-start;
+    font-family: Jost;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+  }
 }
 
 .trocar_email_2_bem_vindo {
