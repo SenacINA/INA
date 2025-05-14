@@ -33,6 +33,13 @@ class CadastroVendedorModel {
             if ($stmtCheckCliente->rowCount() === 0) {
                 return [false, 'Usuário não encontrado'];
             }
+
+            $sqlCheckEmail = "SELECT email_cliente FROM cliente WHERE email_cliente = :email AND id_cliente = :id";
+            $stmtCheckEmail = $db->prepare($sqlCheckEmail);
+            $stmtCheckEmail->execute([':email' => $email, ':id' => $id]);
+            if ($stmtCheckEmail->rowCount() > 0) {
+                return [false, 'E-mail já cadastrado'];
+            }
     
             $sqlUpdateCliente = "UPDATE cliente 
                                 SET rg_cliente = :rg, cep_cliente = :cep, tipo_conta_cliente = 1 

@@ -28,6 +28,7 @@
         '/redefinir-senha-api-salvar'=> 'geral/EnviarTokenController@salvarSenha',
         '/editar-perfil' => 'geral/GeralController@editarPerfil',
         '/perfil' => 'geral/GeralController@perfil',
+        '/error/404' => 'gerral/GeralController@error',
 
         // Vendedor - Cadastro e Perfil
         '/cadastro-vendedor-info'    => 'vendedor/VendedorController@showInfo',

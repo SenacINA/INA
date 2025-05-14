@@ -167,9 +167,11 @@
         <?php endforeach; ?>
       <?php endif; ?>
 
-      <?php if (!empty($success)): ?>
-        gerarToast("<?= addslashes($success) ?>", "sucesso");
+      <?php if (!empty($_SESSION['successMessage'])): ?>
+        gerarToast("<?= addslashes($_SESSION['successMessage']) ?>", "sucesso");
+        <?php unset($_SESSION['successMessage']); ?>
       <?php endif; ?>
+      
     });
   </script>
 

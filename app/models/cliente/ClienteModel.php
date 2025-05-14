@@ -59,7 +59,27 @@ class ClienteModel
         
         return $result ?: null;
     }
-    
+
+    public function tipoCliente(string $id) : string {
+        $sql  = "SELECT tipo_conta_Cliente FROM cliente WHERE id_cliente = :id";
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+        
+        $tipoConta = $stmt->fetchColumn();
+
+        switch ($tipoConta) {
+            case 0:
+                return "admin";
+            case 1:
+                return "vendedor";
+            case 2:
+                return "cliente";
+            default:
+                return "Tipo desconhecido";
+        }
+    }
+
 
     public function emailExists(string $email): bool
     {

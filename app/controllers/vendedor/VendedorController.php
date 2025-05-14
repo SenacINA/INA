@@ -18,7 +18,8 @@ class VendedorController extends RenderView
 
         $clienteModel = new ClienteModel();
         $this->clienteData  = $clienteModel->findById($clienteId);
-
+        $this->userType = $clienteModel->tipoCliente($_SESSION['cliente_id']);
+        
         if ($this->clienteData['uf'] && $this->clienteData['cidade']) {
             $localizacao = $this->clienteData['uf'] . ' - ' . $this->clienteData['cidade'];
             $this->clienteData['localizacao'] = $localizacao;
@@ -39,7 +40,11 @@ class VendedorController extends RenderView
 
     public function showFormCadastro()
     {   
-        $this->loadView('vendedor/cadastro_vendedor_2', ['user' => $this->clienteData]);
+        if ($this->userType != 'cliente') {
+            header("Location: page-not-found");
+        } else {
+            $this->loadView('vendedor/cadastro_vendedor_2', ['user' => $this->clienteData]);
+        }
     }
 
     public function editarPerfil()
@@ -72,6 +77,10 @@ class VendedorController extends RenderView
             $errors[] = 'Preencha todos os campos obrigatórios.';
         }
 
+        if($this->userType != 'cliente') {
+            header("Location: page-not-found");
+        }
+
         if (!empty($errors)) {
             $this->loadView('vendedor/cadastro_vendedor_2', ['errors' => $errors, 'user' => $this->clienteData]);
             exit;
@@ -81,8 +90,9 @@ class VendedorController extends RenderView
         $success = $model->createVendedor($_SESSION['cliente_id'], $localEmpresa, $cep, $logradouro, $numero, $nome, $cpfcnpj, $rg, $email, $categoria, $telefone1, $telefone2);
 
         if ($success[0]) {
-            $this->loadView('vendedor/perfil_vendedor', ['success' => $success[1], 'user' => $this->clienteData]);
-            exit;
+            $_SESSION['successMessage'] = $success[1];
+            header("Location: perfil");
+            exit();
         } else {
             $errors[] = 'Erro ao cadastrar usuário.';
             $errors[] = $success[1];
