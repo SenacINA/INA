@@ -1,8 +1,9 @@
 <?php
 
-require_once __DIR__ . '../../../models/geral/TrocarEmail1Model.php';
+require_once __DIR__ . '../../../models/geral/TrocarEmailModel.php';
 
-class TrocarEmail1Controller {
+class TrocarEmailController
+{
   public function TrocarEmail()
   {
     if (!isset($_SESSION['cliente_id'])) {
@@ -49,3 +50,5 @@ class TrocarEmail1Controller {
     }
   }
 }
+
+
