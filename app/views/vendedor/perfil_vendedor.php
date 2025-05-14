@@ -158,6 +158,21 @@
       </div>
     </div>
   </main>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      <?php if (!empty($errors)): ?>
+        <?php foreach($errors as $e): ?>
+          gerarToast("<?= addslashes($e) ?>", "erro");
+        <?php endforeach; ?>
+      <?php endif; ?>
+
+      <?php if (!empty($success)): ?>
+        gerarToast("<?= addslashes($success) ?>", "sucesso");
+      <?php endif; ?>
+    });
+  </script>
+
 
   <?php
     include_once("$PATH_COMPONENTS/php/footer.php");

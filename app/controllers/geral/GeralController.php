@@ -63,7 +63,7 @@ class GeralController extends RenderView {
             
     
             $this->loadView($viewPath, [
-                'user'          => $clienteData,
+                'user' => $clienteData,
 
             ]);
         } else {

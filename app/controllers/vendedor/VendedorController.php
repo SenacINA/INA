@@ -72,7 +72,6 @@ class VendedorController extends RenderView
             $errors[] = 'Preencha todos os campos obrigatórios.';
         }
 
-        // Se houver erros, renderiza a view com os erros
         if (!empty($errors)) {
             $this->loadView('vendedor/cadastro_vendedor_2', ['errors' => $errors, 'user' => $this->clienteData]);
             exit;
@@ -81,13 +80,12 @@ class VendedorController extends RenderView
         $model = new CadastroVendedorModel();
         $success = $model->createVendedor($_SESSION['cliente_id'], $localEmpresa, $cep, $logradouro, $numero, $nome, $cpfcnpj, $rg, $email, $categoria, $telefone1, $telefone2);
 
-        if ($success) {
-            session_destroy();
-            http_response_code(200);
-            header('Location: perfil');
+        if ($success[0]) {
+            $this->loadView('vendedor/perfil_vendedor', ['success' => $success[1], 'user' => $this->clienteData]);
             exit;
         } else {
             $errors[] = 'Erro ao cadastrar usuário.';
+            $errors[] = $success[1];
             $this->loadView('vendedor/cadastro_vendedor_2', ['errors' => $errors, 'user' => $this->clienteData]);
         }
 
