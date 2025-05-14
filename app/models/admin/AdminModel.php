@@ -30,7 +30,7 @@ class AdminModel
     $params = [];
 
     if ($id && $email) {
-        $sql .= "c.id_cliente = :id OR c.email_cliente = :email";
+        $sql .= "c.id_cliente = :id AND c.email_cliente = :email";
         $params[':id'] = $id;
         $params[':email'] = $email;
     } elseif ($id) {
@@ -53,6 +53,55 @@ class AdminModel
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $result ?: null;
+}
+
+    public function atualizarUsuario(array $dados): bool {
+        $conn = $this->db->getConnection();
+
+
+        $sqlCliente = "UPDATE cliente SET 
+            nome_cliente = :nome,
+            senha_cliente = :senha,
+            email_cliente = :email,
+            cpf_cliente = :cpf,
+            numero_celular_cliente = :telefone,
+            ddd_cliente = :ddd,
+            cep_cliente = :cep,
+            tipo_conta_cliente = :tipoConta,
+            status_conta_cliente = :status
+            WHERE id_cliente = :id";
+
+        $stmtCliente = $conn->prepare($sqlCliente);
+        $stmtCliente->execute([
+            ':nome' => $dados['nomeInput'],
+            ':senha' => $dados['senhaInput'],
+            ':email' => $dados['emailInput'],
+            ':cpf' => $dados['cpfInput'],
+            ':telefone' => $dados['telefoneInput'],
+            ':ddd' => substr($dados['telefoneInput'], 0, 2), // ou calcule de outra forma
+            ':cep' => $dados['cepInput'],
+            ':tipoConta' => $dados['tipoConta'],
+            ':status' => $dados['status'],
+            ':id' => $dados['id']
+        ]);
+
+        $sqlEndereco = "UPDATE endereco SET
+            rua_endereco = :endereco,
+            bairro_endereco = :bairro,
+            numero_endereco = :numero,
+            uf_endereco = :estado,
+            cidade_endereco = :cidade
+            WHERE id_cliente = :id";
+
+        $stmtEndereco = $conn->prepare($sqlEndereco);
+        return $stmtEndereco->execute([
+            ':endereco' => $dados['enderecoInput'],
+            ':bairro' => $dados['bairroInput'],
+            ':numero' => $dados['numeroInput'],
+            ':estado' => $dados['estadoInput'],
+            ':cidade' => $dados['cidadeInput'],
+            ':id' => $dados['id']
+    ]);
 }
 
 

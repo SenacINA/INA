@@ -80,7 +80,36 @@ class AdminController extends RenderView {
             exit;
         }
 
-    public function updateUser() {
-
-    }
+        public function updateUser() {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $model = new AdminModel();
+        
+                $dados = [
+                    'id' => $_POST['id'] ?? null,
+                    'nomeInput' => $_POST['nomeInput'] ?? '',
+                    'senhaInput' => $_POST['senhaInput'] ?? '',
+                    'emailInput' => $_POST['emailInput'] ?? '',
+                    'cpfInput' => $_POST['cpfInput'] ?? '',
+                    'telefoneInput' => $_POST['telefoneInput'] ?? '',
+                    'cepInput' => $_POST['cepInput'] ?? '',
+                    'estadoInput' => $_POST['estadoInput'] ?? '',
+                    'cidadeInput' => $_POST['cidadeInput'] ?? '',
+                    'bairroInput' => $_POST['bairroInput'] ?? '',
+                    'enderecoInput' => $_POST['enderecoInput'] ?? '',
+                    'numeroInput' => $_POST['numeroInput'] ?? '',
+                    'tipoConta' => isset($_POST['adminCheckbox']) ? 0 : (isset($_POST['clienteCheckbox']) ? 1 : 2),
+                    'status' => isset($_POST['statusCheckbox']) ? 1 : 0
+                ];
+        
+                $sucesso = $model->atualizarUsuario($dados);
+        
+                header('Content-Type: application/json');
+                echo json_encode([
+                    'success' => $sucesso,
+                    'message' => $sucesso ? 'Dados atualizados com sucesso!' : 'Erro ao atualizar dados.'
+                ]);
+                exit;
+            }
+        }
+        
 }

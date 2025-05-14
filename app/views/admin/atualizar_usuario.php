@@ -57,7 +57,7 @@
         </div>
 
         <!-- FORM UPDATE -->
-        <form action="" method="post" class="corpo_form">
+        <form id="formAtualizarUsuario" method="post" class="corpo_form">
           <div class="atualizar_usuario_dados_pessoais_grid">
             <!-- Dados Pessoais -->
             <div class="atualizar_usuario_text" id="atualizar_usuario_text_2">

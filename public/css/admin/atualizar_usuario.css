@@ -362,6 +362,7 @@ transform: translateX(24px);
 }
 
 .atualizar_usuario_localizacao_grid {
+  z-index: 2;
   grid-column: 1;
   grid-row: 2;
 }
@@ -594,6 +595,10 @@ transform: translateX(24px);
   .atualizar_usuario_permissoes_conjunto button {
     width: 100%;
   }
+}
+
+.atualizar_usuario_forms{
+  z-index: 0;
 }
 
 
