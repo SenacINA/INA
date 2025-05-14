@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/models/admin/gerenciar_carrossel_models.php';
+require_once './app/models/admin/GerenciarCarrosselModel.php';
 
 class CarrosselController {
     private $model;

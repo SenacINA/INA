@@ -1,17 +1,20 @@
 <?php
-require_once __DIR__ . '/../connect.php';
+require_once( './app/models/connect.php');
 
-class CarrosselModel {
+class CarrosselModel
+{
     private $db;
 
-    public function __construct() {
-        $this->db = $database->getConnection();
+    public function __construct()
+    {
+        $this->db ->getConnection();
     }
 
     /**
      * Lista todos os anúncios do carrossel com filtros
      */
-    public function listarAnuncios($filtros = []) {
+    public function listarAnuncios($filtros = [])
+    {
         $query = "SELECT 
                     c.id_carrossel,
                     cl.nome_cliente as nome,
@@ -88,7 +91,8 @@ class CarrosselModel {
     /**
      * Busca usuário por ID ou e-mail
      */
-    public function buscarUsuario($id = null, $email = null) {
+    public function buscarUsuario($id = null, $email = null)
+    {
         $query = "SELECT 
                     cl.id_cliente,
                     cl.nome_cliente as nome,
@@ -118,7 +122,8 @@ class CarrosselModel {
     /**
      * Atualiza dados do anúncio no carrossel
      */
-    public function atualizarAnuncio($idCarrossel, $dados) {
+    public function atualizarAnuncio($idCarrossel, $dados)
+    {
         $query = "UPDATE carrossel SET
                     proxima_cobranca_carrossel = :data_expiracao,
                     foi_pago_esse_mes_carrossel = :plano_pago
@@ -138,7 +143,8 @@ class CarrosselModel {
     /**
      * Atualiza dados do usuário
      */
-    public function atualizarUsuario($idCliente, $dados) {
+    public function atualizarUsuario($idCliente, $dados)
+    {
         $query = "UPDATE cliente SET
                     nome_cliente = :nome,
                     cargo = :cargo
@@ -152,4 +158,3 @@ class CarrosselModel {
         return $stmt->execute();
     }
 }
-?>
