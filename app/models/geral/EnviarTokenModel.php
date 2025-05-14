@@ -45,3 +45,34 @@ class RedefinicaoSenhaModel
         return $stmt->execute([$token]);
     }
 }
+
+class SalvarNovaSenhaModel
+{
+    private $pdo;
+
+    public function __construct()
+    {
+        $db = new Database();
+        $db->connect();
+        $this->pdo = $db->getConnection();
+    }
+
+    public function validarToken($token)
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM redefinicao_senha WHERE token = ? AND usado = 0 AND expira_em > NOW()");
+        $stmt->execute([$token]);
+        return $stmt->fetch();
+    }
+
+    public function atualizarSenhaCliente($clienteId, $novaSenhaHash)
+    {
+        $stmt = $this->pdo->prepare("UPDATE cliente SET senha_cliente = ? WHERE id_cliente = ?");
+        return $stmt->execute([$novaSenhaHash, $clienteId]);
+    }
+
+    public function marcarTokenComoUsado($token)
+    {
+        $stmt = $this->pdo->prepare("UPDATE redefinicao_senha SET usado = 1 WHERE token = ?");
+        return $stmt->execute([$token]);
+    }
+}

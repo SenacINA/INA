@@ -48,7 +48,7 @@ require_once('./utils/head.php');
 
   <script type="module" src="<?= $PATH_PUBLIC ?>/js/admin/toggle_eyeSenha.js"></script>
   <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
-  <script src="<?= $PATH_PUBLIC ?>/js/geral/trocarEmail1Verify.js"></script>
+  <script src="<?= $PATH_PUBLIC ?>/js/geral/trocarEmail.js"></script>
 </body>
 
 </html>

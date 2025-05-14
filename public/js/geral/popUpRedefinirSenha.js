@@ -1,4 +1,4 @@
-const btn = document.getElementById('continuar_button');
+const btn = document.getElementById('continuar_button_senha');
 const popup = document.getElementById('popup');
 const PATH_PUBLIC = './public';
 

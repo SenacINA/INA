@@ -30,7 +30,7 @@ require_once('./utils/head.php');
           <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">
           Voltar
         </button>
-        <button class="redefinir_senha_1_botao_avancar" id="continuar_button">
+        <button class="redefinir_senha_1_botao_avancar" id="continuar_button_senha">
           <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="">
           Enviar
         </button>

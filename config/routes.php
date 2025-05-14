@@ -23,7 +23,9 @@
         // Geral - Trocar Email
         '/trocar-email'              => 'auth/AuthController@requestEmailReset',
         '/trocar-email-api'          => 'geral/TrocarEmailController@TrocarEmail',
+
         '/trocar-email-confirmar'    => 'auth/AuthController@confirmEmailReset',
+        '/trocar-email-api-confirmar'=> 'geral/salvarNovoEmailController@salvarEmail',
         
         // Geral - Redefinir Senha
         '/redefinir-senha'           => 'auth/AuthController@requestPasswordReset',
