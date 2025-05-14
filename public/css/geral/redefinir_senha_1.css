@@ -51,7 +51,11 @@ main {
   padding: 1.5%;
   display: flex;
   flex-direction: column;
-  row-gap: 15%;
+  row-gap: 16px;
+  
+  img {
+    align-self: center;
+  }
 }
 
 .text_popup {
@@ -59,6 +63,20 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 100%;
+  gap: 32px;
+
+  p {
+    color: #6F6F6F;
+    font-style: normal;
+    font-size: 24px;
+  }
+}
+
+#close_btn {
+  display: flex;
+  width: 100%;
+  justify-self: end;
 }
 /* End Pop-Up */
 

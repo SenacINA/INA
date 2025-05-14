@@ -69,7 +69,7 @@
         </div>
     </div>
 
-    <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
+    <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_eyeSenha.js"></script>
     <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
   </main>
 

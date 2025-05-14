@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
           gerarToast('Senha verificada com sucesso.', 'sucesso');
           setTimeout(() => {
             window.location.href = 'trocar-email-confirmar';
-          }, 4000);
+          }, 3000);
         } else {
           gerarToast(data.messagem || 'Erro ao verificar senha.', 'erro');
         }

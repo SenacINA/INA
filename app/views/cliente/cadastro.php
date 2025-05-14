@@ -63,7 +63,7 @@
   </main>
 
   <!-- Scripts -->
-  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_eyeSenha.js"></script>
   <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/cadastro.js"></script>
 
