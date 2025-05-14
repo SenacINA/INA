@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS endereco (
     referencia_endereco VARCHAR(200),
     uf_endereco VARCHAR(2) NOT NULL,     
     cidade_endereco VARCHAR(50) NOT NULL,  
-    id_cliente INT NOT NULL,
+    id_cliente INT NOT NULL UNIQUE,
     FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
 );
 
