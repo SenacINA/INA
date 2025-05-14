@@ -1,6 +1,6 @@
 const btn = document.getElementById('continuar_button');
-const close_btn = document.getElementById('close_btn');
 const popup = document.getElementById('popup');
+const PATH_PUBLIC = './public';
 
 btn.addEventListener("click", async () => {
   const email = document.getElementById("email-senha").value;
@@ -18,18 +18,24 @@ btn.addEventListener("click", async () => {
       method: "POST",
       headers: { 'X-Requested-With': 'XMLHttpRequest' },
       body: formData,
-      credentials: 'include' // 🔥 Obrigatório para sessão funcionar corretamente
+      credentials: 'include'
     });
-    
 
     const data = await res.json();
 
-    // Aqui corrigido: Se veio um link, mostra o link
     if (data.link) {
       document.querySelector(".text_popup p").innerHTML = `
         ${data.mensagem}<br><br>
-        <a href="${data.link}" class="base_botao btn_blue" id="close_btn" >Redefinir Senha</a>
+        <a href="${data.link}" class="base_botao btn_blue" id="close_btn">
+          <img src="${PATH_PUBLIC}/image/geral/botoes/v_branco_icon.svg" alt="">
+          Ok
+        </a>
       `;
+
+      // Re-adiciona o event listener porque o botão foi recriado
+      document.getElementById('close_btn').addEventListener('click', function () {
+        popup.style.display = 'none';
+      });
     } else {
       document.querySelector(".text_popup p").innerText = data.mensagem;
     }
@@ -40,8 +46,4 @@ btn.addEventListener("click", async () => {
     alert("Erro ao enviar solicitação.");
     console.error(error);
   }
-});
-
-close_btn.addEventListener('click', function () {
-  popup.style.display = 'none';
 });

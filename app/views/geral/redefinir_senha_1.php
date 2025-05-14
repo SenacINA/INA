@@ -55,10 +55,7 @@
           Por favor, verifique sua caixa de entrada (ou spam) para continuar o processo.
         </p>
       </div>
-      <button class="base_botao btn_blue" id="close_btn">
-        <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt=""> 
-        Ok
-      </button>
+
     </div>
   </div>
 
