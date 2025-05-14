@@ -3,26 +3,28 @@ require_once __DIR__ . '/../connect.php';
 
 class ClienteModel
 {
-    private Database $db;
+  private Database $db;
 
-    public function __construct()
-    {
-        $this->db = new Database();
-        $this->db->connect();
-    }
+  public function __construct()
+  {
+    $this->db = new Database();
+    $this->db->connect();
+  }
 
-    public function getTipoContaById(string $id): ?int {
-        $sql = "SELECT tipo_conta_cliente FROM cliente WHERE id_cliente = :id LIMIT 1";
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result ? (int)$result['tipo_conta_cliente'] : null;
-    }
-    
+  public function getTipoContaById(string $id): ?int
+  {
+    $sql = "SELECT tipo_conta_cliente FROM cliente WHERE id_cliente = :id LIMIT 1";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result ? (int)$result['tipo_conta_cliente'] : null;
+  }
 
-    public function findById(string $id): ?array {
-        $sql = "
+
+  public function findById(string $id): ?array
+  {
+    $sql = "
         SELECT 
             cliente.id_cliente, 
             cliente.nome_cliente, 
@@ -81,70 +83,78 @@ class ClienteModel
     }
 
 
-    public function emailExists(string $email): bool
-    {
-        $sql  = "SELECT COUNT(*) FROM cliente WHERE email_cliente = :email";
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':email', $email);
-        $stmt->execute();
-        return (int)$stmt->fetchColumn() > 0;
-    }
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    public function findByEmail(string $email): ?array
-    {
-        $sql = "SELECT * FROM cliente WHERE email_cliente = :email LIMIT 1";
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':email', $email);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result ?: null;
-    }
+    return $result ?: null;
+  }
 
-    public function createUser(string $nome, string $email, string $senha): bool {
-        try {
-            $this->db->connect();
-            $conn = $this->db->getConnection();
 
-            $conn->beginTransaction();
+  public function emailExists(string $email): bool
+  {
+    $sql  = "SELECT COUNT(*) FROM cliente WHERE email_cliente = :email";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':email', $email);
+    $stmt->execute();
+    return (int)$stmt->fetchColumn() > 0;
+  }
 
-            $sqlCliente = "INSERT INTO cliente
+  public function findByEmail(string $email): ?array
+  {
+    $sql = "SELECT * FROM cliente WHERE email_cliente = :email LIMIT 1";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':email', $email);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result ?: null;
+  }
+
+  public function createUser(string $nome, string $email, string $senha): bool
+  {
+    try {
+      $this->db->connect();
+      $conn = $this->db->getConnection();
+
+      $conn->beginTransaction();
+
+      $sqlCliente = "INSERT INTO cliente
                             (nome_cliente, email_cliente, senha_cliente,
                             data_registro_cliente, tipo_conta_cliente, status_conta_cliente)
                         VALUES
                             (:nome, :email, :senha, CURDATE(), 2, 1)";
-            
-            $paramsCliente = [
-                ':nome'  => $nome,
-                ':email' => $email,
-                ':senha' => $senha
-            ];
 
-            $this->db->executeQuery($sqlCliente, $paramsCliente);
+      $paramsCliente = [
+        ':nome'  => $nome,
+        ':email' => $email,
+        ':senha' => $senha
+      ];
 
-            $idCliente = $conn->lastInsertId();
+      $this->db->executeQuery($sqlCliente, $paramsCliente);
 
-            $sqlPerfil = "INSERT INTO perfil
+      $idCliente = $conn->lastInsertId();
+
+      $sqlPerfil = "INSERT INTO perfil
                             (id_cliente, foto_perfil, banner_perfil)
                         VALUES
                             (:id_cliente, :foto_perfil, :banner_perfil)";
-            
-            $paramsPerfil = [
-                ':id_cliente'    => $idCliente,
-                ':foto_perfil'   => '/image/cliente/perfil_cliente/foto_user.png',
-                ':banner_perfil' => '/image/cliente/perfil_cliente/banner_user.png'
-            ];
 
-            $this->db->executeQuery($sqlPerfil, $paramsPerfil);
+      $paramsPerfil = [
+        ':id_cliente'    => $idCliente,
+        ':foto_perfil'   => '/image/cliente/perfil_cliente/foto_user.png',
+        ':banner_perfil' => '/image/cliente/perfil_cliente/banner_user.png'
+      ];
 
-            $conn->commit();
-            return true;
+      $this->db->executeQuery($sqlPerfil, $paramsPerfil);
 
-        } catch (PDOException $e) {
-            if ($conn->inTransaction()) {
-                $conn->rollBack();
-            }
-            die('Erro ao criar usuário: ' . $e->getMessage());
-        }
+      $conn->commit();
+      return true;
+    } catch (PDOException $e) {
+      if ($conn->inTransaction()) {
+        $conn->rollBack();
+      }
+      die('Erro ao criar usuário: ' . $e->getMessage());
     }
-
+  }
 }

@@ -7,7 +7,7 @@
         '/produto'                   => 'cliente/ProdutoController@index',
         '/carrinho'                  => 'cliente/CarrinhoController@index',
         '/categoria'                 => 'cliente/CategoriaController@index',
-        '/login'             => 'cliente/ClienteController@login',
+        '/login'                     => 'cliente/ClienteController@login',
         '/carrinho-dados'            => 'cliente/ClienteController@dados',
         '/carrinho-pagamentos'       => 'cliente/ClienteController@pagamentos',
         '/auth'                      => 'auth/AuthController@loginForm',
@@ -19,13 +19,22 @@
 
         // Geral
         '/sobre-nos'                 => 'geral/GeralController@sobreNos',
+
+        // Geral - Trocar Email
         '/trocar-email'              => 'auth/AuthController@requestEmailReset',
-        '/trocar-email-php'          => 'geral/TrocarEmail1Controller@TrocarEmail',
+        '/trocar-email-api'          => 'geral/TrocarEmailController@TrocarEmail',
+
         '/trocar-email-confirmar'    => 'auth/AuthController@confirmEmailReset',
+        '/trocar-email-api-confirmar'=> 'geral/salvarNovoEmailController@salvarEmail',
+        
+        // Geral - Redefinir Senha
         '/redefinir-senha'           => 'auth/AuthController@requestPasswordReset',
         '/redefinir-senha-confirmar' => 'auth/AuthController@confirmPasswordReset',
+
         '/redefinir-senha-api'       => 'geral/EnviarTokenController@gerarToken',
         '/redefinir-senha-api-salvar'=> 'geral/EnviarTokenController@salvarSenha',
+
+        // Geral - Perfil
         '/editar-perfil' => 'geral/GeralController@editarPerfil',
         '/perfil' => 'geral/GeralController@perfil',
         '/error/404' => 'gerral/GeralController@error',
