@@ -21,6 +21,25 @@ class ClienteModel
     return $result ? (int)$result['tipo_conta_cliente'] : null;
   }
 
+  public function tipoCliente(string $id) : string {
+        $sql  = "SELECT tipo_conta_Cliente FROM cliente WHERE id_cliente = :id";
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+        
+        $tipoConta = $stmt->fetchColumn();
+
+        switch ($tipoConta) {
+            case 0:
+                return "admin";
+            case 1:
+                return "vendedor";
+            case 2:
+                return "cliente";
+            default:
+                return "Tipo desconhecido";
+        }
+    }
 
   public function findById(string $id): ?array
   {
@@ -53,35 +72,6 @@ class ClienteModel
             ON cliente.id_cliente = endereco.id_cliente
         WHERE cliente.id_cliente = :id 
         LIMIT 1";
-        
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-        return $result ?: null;
-    }
-
-    public function tipoCliente(string $id) : string {
-        $sql  = "SELECT tipo_conta_Cliente FROM cliente WHERE id_cliente = :id";
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':id', $id);
-        $stmt->execute();
-        
-        $tipoConta = $stmt->fetchColumn();
-
-        switch ($tipoConta) {
-            case 0:
-                return "admin";
-            case 1:
-                return "vendedor";
-            case 2:
-                return "cliente";
-            default:
-                return "Tipo desconhecido";
-        }
-    }
-
 
     $stmt = $this->db->getConnection()->prepare($sql);
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
