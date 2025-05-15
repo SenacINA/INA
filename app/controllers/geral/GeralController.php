@@ -38,6 +38,35 @@ class GeralController extends RenderView {
             }
     
             if ($userType === 'vendedor') {
+                $vendedorData = $clienteModel->dadosVendedor($clienteId);
+                $vendedorAvaliacoes = $clienteModel->getEstrelasPorVendedor($vendedorData['id_vendedor']);
+                $total = 0;
+
+                foreach ($vendedorAvaliacoes as $avaliacao) {
+                    $total += $avaliacao;
+                };
+
+                $vendedorData['mediaEstrelas'] = count($vendedorAvaliacoes) > 0 
+                ? round($total / count($vendedorAvaliacoes) * 2) / 2 
+                : 0;
+
+                $dataRequisicao = strtotime($vendedorData['data_requisicao']);
+                $agora = time();
+                $diferencaDias = floor(($agora - $dataRequisicao) / (60 * 60 * 24));
+
+                if ($diferencaDias >= 365) {
+                    $anos = floor($diferencaDias / 365);
+                    $mesesRestantes = floor(($diferencaDias % 365) / 30);
+                    $vendedorData['tempo'] = ($anos > 1 ? "{$anos} anos" : "{$anos} ano") . 
+                        ($mesesRestantes > 0 ? " e " . ($mesesRestantes > 1 ? "{$mesesRestantes} meses" : "{$mesesRestantes} mês") : "");
+                } elseif ($diferencaDias >= 30) {
+                    $meses = floor($diferencaDias / 30);
+                    $vendedorData['tempo'] = $meses > 1 ? "{$meses} meses" : "{$meses} mês";
+                } else {
+                    $vendedorData['tempo'] = $diferencaDias > 1 ? "{$diferencaDias} dias" : "{$diferencaDias} dia";
+                }
+                
+
                 $viewPath = $action === 'perfil'
                     ? 'vendedor/perfil_vendedor'
                     : 'vendedor/editar_perfil_vendedor';
@@ -62,9 +91,12 @@ class GeralController extends RenderView {
             } else {
                 $clienteData['localizacao'] = null;
             }
+
+            $vendedorData = $vendedorData ?? [];
+
             $this->loadView($viewPath, [
                 'user' => $clienteData,
-
+                'vendedor' => $vendedorData
             ]);
         } else {
             $this->loadView('cliente/login', []);

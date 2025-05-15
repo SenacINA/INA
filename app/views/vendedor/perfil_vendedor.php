@@ -5,7 +5,6 @@
   $css = ["/css/vendedor/perfil_vendedor.css"];
   require_once('./utils/head.php');
   require_once("./app/models/vendedor/perfil_vendedor_model.php");
-  $array = getPerfil($_SESSION['cliente_id']);
  
 ?>
 
@@ -18,14 +17,12 @@
   ?>
 
   <main>
-    <img src="<?= $PATH_PUBLIC . '/';
-              echo $array[0]['banner_perfil'] ?>" alt="banner" class="perfil_vendedor_banner">
+    <img src="<?= $PATH_PUBLIC . $user['banner_perfil'] ?>">
 
     <div class="perfil_vendedor_content_pfp">
       <div class="perfil_vendedor_pfp">
-        <img src="<?= $PATH_PUBLIC . '/';
-              echo $array[0]['foto_perfil'] ?>" alt="pfp_vendedor">
-        <h1><?=$array[0]['nome_cliente'] ?></h1>
+        <img src="<?= $PATH_PUBLIC . $user['foto_perfil'] ?>" alt="pfp_vendedor">
+        <h1><?= $vendedor['nome_fantasia'] ?></h1>
       </div>
       <div class="perfil_vendedor_btn_menu base_input_select">
         <form action="">
@@ -45,7 +42,7 @@
       <div class="perfil_vendedor_infos_container">
         <div class="perfil_vendedor_infos_item1">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg">
-          <p>São Paulo, São Paulo</p>
+          <p><?= htmlspecialchars($user['localizacao'] ?? 'Localização não definida') ?></p>
         </div>
         <div class="perfil_vendedor_infos_item2">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/loja_icon.svg">
@@ -53,11 +50,11 @@
         </div>
         <div class="perfil_vendedor_infos_item3">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_membros_icon.svg">
-          <p>Vendedor há: 6 Meses</p>
+          <p>Vendedor há: <?=$vendedor['tempo']?></p>
         </div>
         <div class="perfil_vendedor_infos_item4">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/estela_icon.svg" class="base_icon">
-          <p>Avaliação geral: 4.5</p>
+          <p>Avaliação geral: <?= $vendedor['mediaEstrelas']?></p>
         </div>
       </div>
       <hr>
