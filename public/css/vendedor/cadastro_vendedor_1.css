@@ -9,7 +9,6 @@
 
 body {
     margin: 0%;
-    background-color: #F9F9FC;
     font-family: 'Jost';
 }
 
@@ -118,7 +117,6 @@ body {
     margin-top: 5%;
     margin-bottom: 90px;
     border: none;
-    cursor: pointer;
   }
 
   .cadastro_vendedor1_salvar img {
