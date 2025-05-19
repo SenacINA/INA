@@ -13,9 +13,12 @@ class GeralController extends RenderView {
         }
     
         $clienteId = $_SESSION['cliente_id'];
-        $userType  = $_SESSION['user_type'];
     
         $clienteModel = new ClienteModel();
+
+        $userType = $clienteModel->tipoCliente($_SESSION['cliente_id']);
+        $_SESSION['user_type'] = $userType;
+
         $geralModel   = new GeralModel();
     
         // Caso o usuário seja admin, direciona para o dashboard
@@ -53,11 +56,14 @@ class GeralController extends RenderView {
                 $clienteData['foto_perfil'] = '/image/cliente/editar_perfil/perfil_usuario.svg';
             }
 
-            $localizacao = $clienteData['uf'] . ' - ' . $clienteData['cidade'];
-            $clienteData['localizacao'] = $localizacao;
-    
+            if ($clienteData['uf'] && $clienteData['cidade']) {
+                $localizacao = $clienteData['uf'] . ' - ' . $clienteData['cidade'];
+                $clienteData['localizacao'] = $localizacao;
+            } else {
+                $clienteData['localizacao'] = null;
+            }
             $this->loadView($viewPath, [
-                'user'          => $clienteData,
+                'user' => $clienteData,
 
             ]);
         } else {
@@ -71,5 +77,9 @@ class GeralController extends RenderView {
     
     public function editarPerfil() {
         $this->renderPerfil('editar_perfil');
+    }
+
+    public function error() {
+        $this->loadView('geral/error', []);
     }
 }

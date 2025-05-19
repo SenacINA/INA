@@ -19,6 +19,10 @@ hr {
 
 }
 
+.base_icon {
+  height: 24px;
+}
+
 .perfil_cliente_banner {
   width: 100%;
   aspect-ratio: 3 / 1;
@@ -43,7 +47,7 @@ hr {
   grid-template-rows: min-content min-content;
   justify-content: center;
 
-  gap: 16px;
+  gap: 24px;
   grid-column: 2;
 
   h1 {
@@ -90,7 +94,7 @@ hr {
 
   p {
     color: var(--sappire);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 90%;
   }
@@ -315,6 +319,10 @@ hr {
 
 }
 @media (max-width: 432px) {
+  .perfil_cliente_pfp_pic {
+    width: 200px;
+    height: 200px;
+  }
   
   .perfil_cliente_pfp h1 {
     font-size: 22px;

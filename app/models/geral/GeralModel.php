@@ -70,11 +70,12 @@ class GeralModel
 
 
     public function updateLocalizacao(int $clienteId, string $uf, string $cidade): bool {
-        // Tenta atualizar o endereço existente
-        $sqlUpdate = "
-            UPDATE endereco 
-            SET uf_endereco = :uf, cidade_endereco = :cidade 
-            WHERE id_cliente = :id
+        $sql = "
+            INSERT INTO endereco (id_cliente, uf_endereco, cidade_endereco)
+            VALUES (:id, :uf, :cidade)
+            ON DUPLICATE KEY UPDATE
+                uf_endereco = VALUES(uf_endereco),
+                cidade_endereco = VALUES(cidade_endereco)
         ";
         
         $params = [
@@ -82,23 +83,9 @@ class GeralModel
             ':uf'     => $uf,
             ':cidade' => $cidade
         ];
-    
-        // Executa o UPDATE
-        $stmt = $this->db->getConnection()->prepare($sqlUpdate);
-        $stmt->execute($params);
-        $rowsUpdated = $stmt->rowCount();
-    
-        // Se nenhuma linha foi atualizada, insere um novo registro
-        if ($rowsUpdated === 0) {
-            $sqlInsert = "
-                INSERT INTO endereco (id_cliente, uf_endereco, cidade_endereco)
-                VALUES (:id, :uf, :cidade)
-            ";
-            $stmt = $this->db->getConnection()->prepare($sqlInsert);
-            return $stmt->execute($params); // Retorna true/false diretamente
-        }
-    
-        return true; // Update foi bem-sucedido
+        
+        $stmt = $this->db->getConnection()->prepare($sql);
+        return $stmt->execute($params);
     }
 
     public function updateFotoPerfil(int $id, string $path): bool {

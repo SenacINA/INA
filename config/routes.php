@@ -37,11 +37,13 @@
         // Geral - Perfil
         '/editar-perfil' => 'geral/GeralController@editarPerfil',
         '/perfil' => 'geral/GeralController@perfil',
+        '/error/404' => 'gerral/GeralController@error',
 
         // Vendedor - Cadastro e Perfil
         '/cadastro-vendedor-info'    => 'vendedor/VendedorController@showInfo',
         '/cadastro-vendedor'         => 'vendedor/VendedorController@showFormCadastro',
-
+        '/cadastro-vendedor-forms'   => 'vendedor/VendedorController@cadastroForm',
+        
         // Vendedor - Produtos e Pedidos
         '/pedidos-vendedor'          => 'vendedor/VendedorProductController@pedidos',
         '/pedido-confirmar'          => 'vendedor/VendedorProductController@confirm',

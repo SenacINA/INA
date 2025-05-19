@@ -20,7 +20,7 @@ require_once("./app/models/cliente/perfil_cliente_model.php");
         <div class="perfil_cliente_infos_container">
         <div class="perfil_cliente_infos_item1">
           <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/localizacao_icon.svg">
-          <p><?= htmlspecialchars($user['localizacao'] ?? 'Localização não informada') ?></p>
+          <p><?= htmlspecialchars($user['localizacao'] ?? 'Localização não definida') ?></p>
         </div>
         <div class="perfil_cliente_infos_item2">
           <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/balao_exclamacao_icon.svg">
@@ -86,8 +86,8 @@ require_once("./app/models/cliente/perfil_cliente_model.php");
           <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
             <option selected disabled value="">Menu</option>
             <option value="editar-perfil">Editar Perfil</option>
-            <option value="cadastro-vendedor">Cadastro de vendedor</option>
-            <option value="login-cliente">Sair</option>
+            <option value="cadastro-vendedor-info">Cadastro de vendedor</option>
+            <option value="logout">Sair</option>
           </select>
         </form>
       </div>

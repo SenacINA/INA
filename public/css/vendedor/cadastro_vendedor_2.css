@@ -50,21 +50,25 @@
 
 .cadastro_vendedor_2_grid_bg {
   justify-self: center;
-  width: 95%;
+  width: 90%;
   height: 780px;
   background-color: #eff3f5;
   border-radius: 10px;
-  margin: 0% 1.5%;
+  margin: 32px 1.5%;
 }
 
 .cadastro_vendedor2_content {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
+  height: 100%;
 
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
+  row-gap: 24px;
+
 }
 
 /* info */
@@ -159,17 +163,17 @@
 
 /* botão finalizar */
 .cadastro_vendedor_2_botao_finalizar {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-
-  top: 660px;
-  right: 250px;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
+  padding: 16px;
 }
 
 .cadastro_vendedor_2_finalizar {
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;

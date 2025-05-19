@@ -49,7 +49,7 @@
           </div>
 
           <div class="cadastro_botoes">
-            <button type="button" class="cadastro_botao_voltar" onclick="pag('login-cliente')">
+            <button type="button" class="cadastro_botao_voltar" onclick="pag('login')">
               <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">Voltar
             </button>
             <button type="submit" class="cadastro_botao_cadastrar">
