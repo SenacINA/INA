@@ -6,28 +6,28 @@ require_once __DIR__.'/../../models/geral/GeralModel.php';
 
 class ClienteController extends RenderView {
     public function perfil() {
-        $this->loadView('cliente/perfil_cliente', []);
+        $this->loadView('cliente/PerfilCliente', []);
     }
 
     public function editarPerfil() {
-        $this->loadView('cliente/editar_perfil', []);
+        $this->loadView('cliente/EditarPerfil', []);
     }
 
     public function dados( ) {
-        $this->loadView('cliente/carrinho_dados', []);
+        $this->loadView('cliente/CarrinhoDados', []);
     }
 
     public function pagamentos( ) {
-        $this->loadView('cliente/carrinho_pagamentos', []);
+        $this->loadView('cliente/CarrinhoPagamentos', []);
     }
 
     public function login() {
-        $this->loadView('cliente/login', []);
+        $this->loadView('cliente/Login', []);
     }
 
     public function cadastro()
       {
-          $this->loadView('cliente/cadastro', []);
+          $this->loadView('cliente/Cadastro', []);
       }
     
 

@@ -130,7 +130,7 @@ require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
       </div>
 
       <div class="cadastro_vendedor_2_botao_finalizar">
-        <button class="cadastro_vendedor_2_finalizar" onclick="pag('vendedor/perfil_vendedor')">
+        <button class="cadastro_vendedor_2_finalizar" onclick="pag('vendedor/PerfilVendedor')">
           <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="">
           <label>FINALIZAR</label>
         </button>
