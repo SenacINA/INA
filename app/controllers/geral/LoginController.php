@@ -50,11 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             exit();
         } else {
-            header("Location: /INA/INA/app/views/cliente/login.php?error=invalidpassword");
+            header("Location: /INA/INA/app/views/cliente/Login.php?error=invalidpassword");
             exit();
         }
     } else {
-        header("Location: /INA/INA/app/views/cliente/login.php?error=notfound");
+        header("Location: /INA/INA/app/views/cliente/Login.php?error=notfound");
         exit();
     }
 
