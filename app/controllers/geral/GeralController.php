@@ -1,11 +1,12 @@
 <?php
 
 require_once __DIR__.'/../../models/cliente/ClienteModel.php';
+require_once __DIR__.'/../../models/vendedor/VendedorModel.php';
 require_once __DIR__.'/../../models/geral/GeralModel.php';
 
 class GeralController extends RenderView {
 
-    // Função que verifiaa a sessão
+    // Função que verifiaca a sessão
     private function renderPerfil(string $action) {
         if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
             header('Location: login');
@@ -15,6 +16,7 @@ class GeralController extends RenderView {
         $clienteId = $_SESSION['cliente_id'];
     
         $clienteModel = new ClienteModel();
+        $vendedorModel = new VendedorModel();
 
         $userType = $clienteModel->tipoCliente($_SESSION['cliente_id']);
         $_SESSION['user_type'] = $userType;
@@ -30,7 +32,7 @@ class GeralController extends RenderView {
     
         // Lógica para vendedor e cliente
         if ($userType === 'vendedor' || $userType === 'cliente') {
-            $clienteData  = $clienteModel->findById($clienteId);
+            $clienteData = $clienteModel->findById($clienteId);
     
             if (!$clienteData) {
                 $this->loadView('cliente/login', []);
@@ -38,8 +40,8 @@ class GeralController extends RenderView {
             }
     
             if ($userType === 'vendedor') {
-                $vendedorData = $clienteModel->dadosVendedor($clienteId);
-                $vendedorAvaliacoes = $clienteModel->getEstrelasPorVendedor($vendedorData['id_vendedor']);
+                $vendedorData = $vendedorModel->dadosVendedor($clienteId);
+                $vendedorAvaliacoes = $vendedorModel->getEstrelasPorVendedor($vendedorData['id_vendedor']);
                 $total = 0;
 
                 foreach ($vendedorAvaliacoes as $avaliacao) {
@@ -65,7 +67,9 @@ class GeralController extends RenderView {
                 } else {
                     $vendedorData['tempo'] = $diferencaDias > 1 ? "{$diferencaDias} dias" : "{$diferencaDias} dia";
                 }
-                
+
+                $vendedorData['quantidadeProdutos'] = $vendedorModel->getQuantidadeProdutos($vendedorData['id_vendedor']);
+                // $vendedorData['quantidadeProdutos'] > 0 ?? $vendedorData['quantidadeProdutos'] = 0;
 
                 $viewPath = $action === 'perfil'
                     ? 'vendedor/perfil_vendedor'

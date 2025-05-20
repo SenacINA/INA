@@ -46,7 +46,7 @@ hr {
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content;
   justify-content: center;
-
+  max-width: 632px;
   gap: 24px;
   grid-column: 2;
 
@@ -103,10 +103,13 @@ hr {
 .perfil_cliente_infos_item1,
 .perfil_cliente_infos_item2,
 .perfil_cliente_infos_item3 {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   column-gap: 8px;
+  width: 100%;
+  justify-content: center;
 }
 
 .perfil_cliente_infos_item1 {
