@@ -11,15 +11,16 @@ function handlePerfil()
     case 'admin':
       return "AdminDashboard";
     case 'cliente':
-      return "perfil";
+      return "Perfil";
     case 'vendedor':
-      return "perfil";
+      return "Perfil";
     default:
-      return "login";
+      return "Login";
   }
 }
 
-function gerarTitle($user){
+function gerarTitle($user)
+{
   $content = '<a class="menu-item">
                     <img class="icon" style="max-width:24px" src="./public/image/index/Logo.svg" alt="">
                     <span>EaoQuadrado</span>
@@ -28,7 +29,7 @@ function gerarTitle($user){
     case 'admin':
       $content = 'Gestão Geral';
       break;
-    case 'vendedor': 
+    case 'vendedor':
       $content = 'Gestão Geral';
       break;
     default:
@@ -39,9 +40,10 @@ function gerarTitle($user){
   return $content;
 }
 
-function generateModalContent($user) {
+function generateModalContent($user)
+{
 
-$content = '';
+  $content = '';
 
   switch ($user) {
     case 'admin':
@@ -71,7 +73,7 @@ $content = '';
                   </a>
               </li>
               <li>
-                   <a href="#" class="menu-item" onclick="pag(\'GerenciarProdutos\')">
+                  <a href="#" class="menu-item" onclick="pag(\'GerenciarProdutos\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
                       </svg>
@@ -155,8 +157,8 @@ $content = '';
           ';
       break;
 
-      default:
-          $content = '
+    default:
+      $content = '
             <li>
                 <a href="#" class="menu-item" onclick="pag(\'Login\')">
                     <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
@@ -166,8 +168,8 @@ $content = '';
                 </a>
               </li>
           '; // Se não houver usuário, o modal fica vazio
-          break;
-    }
+      break;
+  }
 
   // Adiciona o botão de logout para todos os tipos de usuário
   if (!empty($user)) {
@@ -230,7 +232,7 @@ $content = '';
 <div id="modal-container" class="modal-container" hidden>
   <div id="modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
     <div class="modal-header">
-      <h2 id="modal-title"><?php echo gerarTitle($_SESSION["user_type"] ?? '');?></h2>
+      <h2 id="modal-title"><?php echo gerarTitle($_SESSION["user_type"] ?? ''); ?></h2>
       <button id="close-modal" class="close-button" aria-label="Fechar menu">
         <span aria-hidden="true">&times;</span>
       </button>
