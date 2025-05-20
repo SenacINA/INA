@@ -4,7 +4,8 @@
   $titulo = "Perfil - E ao Quadrado";
   $css = ["/css/vendedor/perfil_vendedor.css"];
   require_once('./utils/head.php');
-  require_once("./app/models/vendedor/perfil_vendedor_model.php");
+  require_once("./app/models/vendedor/PerfilVendedorModel.php");
+  $array = getPerfil($_SESSION['cliente_id']);
  
 ?>
 
@@ -17,30 +18,14 @@
   ?>
 
   <main>
-    <img class='perfil_vendedor_banner' src="<?= $PATH_PUBLIC . $user['banner_perfil'] ?>">
+    <img src="<?= $PATH_PUBLIC . '/';
+              echo $array[0]['banner_perfil'] ?>" alt="banner" class="perfil_vendedor_banner">
 
     <div class="perfil_vendedor_content_pfp">
       <div class="perfil_vendedor_pfp">
-        <img class='pfp_img' src="<?= $PATH_PUBLIC . $user['foto_perfil'] ?>" alt="pfp_vendedor">
-        <h1><?= $vendedor['nome_fantasia'] ?></h1>
-        <div class="perfil_vendedor_infos_container">
-          <div class="perfil_vendedor_infos_item1">
-            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg">
-            <p><?= htmlspecialchars($user['localizacao'] ?? 'Localização não definida') ?></p>
-          </div>
-          <div class="perfil_vendedor_infos_item2">
-            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/loja_icon.svg">
-            <p>Produtos: <?=$vendedor['quantidadeProdutos']?></p>
-          </div>
-          <div class="perfil_vendedor_infos_item3">
-            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_membros_icon.svg">
-            <p>Vendedor há: <?=$vendedor['tempo']?></p>
-          </div>
-          <div class="perfil_vendedor_infos_item4">
-            <img src="<?=$PATH_PUBLIC?>/image/geral/icons/estela_icon.svg" class="base_icon">
-            <p>Avaliação geral: <?= $vendedor['mediaEstrelas']?></p>
-          </div>
-        </div>
+        <img src="<?= $PATH_PUBLIC . '/';
+              echo $array[0]['foto_perfil'] ?>" alt="pfp_vendedor">
+        <h1><?=$array[0]['nome_cliente'] ?></h1>
       </div>
       <div class="perfil_vendedor_btn_menu base_input_select">
         <form action="">
@@ -57,7 +42,24 @@
     </div>
 
     <div class="perfil_vendedor_grid_principal">
-      
+      <div class="perfil_vendedor_infos_container">
+        <div class="perfil_vendedor_infos_item1">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg">
+          <p>São Paulo, São Paulo</p>
+        </div>
+        <div class="perfil_vendedor_infos_item2">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/loja_icon.svg">
+          <p>Produtos: 8</p>
+        </div>
+        <div class="perfil_vendedor_infos_item3">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_membros_icon.svg">
+          <p>Vendedor há: 6 Meses</p>
+        </div>
+        <div class="perfil_vendedor_infos_item4">
+          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/estela_icon.svg" class="base_icon">
+          <p>Avaliação geral: 4.5</p>
+        </div>
+      </div>
       <hr>
 
       <div class="info_container">
@@ -74,7 +76,7 @@
           </p>
         </div>
 
-        <!-- <div class="contatos_vendedor">
+        <div class="contatos_vendedor">
           <div class="contatos_vendedor_column">
             <div class="item_contatos_vendedor">
               <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" class="icon_instagram_vendedor">
@@ -112,7 +114,7 @@
           </div>
         </div>
       </div>
-      <hr> -->
+      <hr>
 
       <div class="perfil_vendedor_grid_destaques">
         <div class="perfil_vendedor_about_container_2">

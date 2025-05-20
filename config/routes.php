@@ -4,15 +4,15 @@
         '/user/{id}'                 => 'cliente/ClienteController@show',
 
         // Cliente
-        '/produto'                   => 'cliente/ProdutoController@index',
-        '/carrinho'                  => 'cliente/CarrinhoController@index',
-        '/categoria'                 => 'cliente/CategoriaController@index',
-        '/login'                     => 'cliente/ClienteController@login',
-        '/carrinho-dados'            => 'cliente/ClienteController@dados',
-        '/carrinho-pagamentos'       => 'cliente/ClienteController@pagamentos',
+        '/Produto'                   => 'cliente/ProdutoController@index',
+        '/Carrinho'                  => 'cliente/CarrinhoController@index',
+        '/Categoria'                 => 'cliente/CategoriaController@index',
+        '/Login'                     => 'cliente/ClienteController@login',
+        '/CarrinhoDados'            => 'cliente/ClienteController@dados',
+        '/CarrinhoPagamentos'       => 'cliente/ClienteController@pagamentos',
         '/auth'                      => 'auth/AuthController@loginForm',
-        '/logout'                    => 'auth/AuthController@logout',
-        '/cadastro-cliente'          => 'cliente/ClienteController@cadastro',
+        '/Logout'                    => 'auth/AuthController@logout',
+        '/CadastroCliente'          => 'cliente/ClienteController@cadastro',
         '/api/cliente/register'      => 'cliente/ClienteController@register',
         '/api/cliente/editar-perfil/redes' => 'cliente/ClienteController@updateSocial',
         '/api/cliente/editarDadosCliente' => 'cliente/ClienteCOntroller@editarDadosCliente',
@@ -21,48 +21,48 @@
         '/sobre-nos'                 => 'geral/GeralController@sobreNos',
 
         // Geral - Trocar Email
-        '/trocar-email'              => 'auth/AuthController@requestEmailReset',
-        '/trocar-email-api'          => 'geral/TrocarEmailController@TrocarEmail',
+        '/TrocarEmail'              => 'auth/AuthController@requestEmailReset',
+        '/TrocarEmail-api'          => 'geral/TrocarEmailController@TrocarEmail',
 
-        '/trocar-email-confirmar'    => 'auth/AuthController@confirmEmailReset',
-        '/trocar-email-api-confirmar'=> 'geral/salvarNovoEmailController@salvarEmail',
+        '/TrocarEmailConfirmar'    => 'auth/AuthController@confirmEmailReset',
+        '/TrocarEmail-api-confirmar'=> 'geral/salvarNovoEmailController@salvarEmail',
         
         // Geral - Redefinir Senha
-        '/redefinir-senha'           => 'auth/AuthController@requestPasswordReset',
-        '/redefinir-senha-confirmar' => 'auth/AuthController@confirmPasswordReset',
+        '/RedefinirSenha'           => 'auth/AuthController@requestPasswordReset',
+        '/RedefinirSenhaConfirmar' => 'auth/AuthController@confirmPasswordReset',
 
-        '/redefinir-senha-api'       => 'geral/EnviarTokenController@gerarToken',
-        '/redefinir-senha-api-salvar'=> 'geral/EnviarTokenController@salvarSenha',
+        '/RedefinirSenha-api'       => 'geral/EnviarTokenController@gerarToken',
+        '/RedefinirSenha-api-salvar'=> 'geral/EnviarTokenController@salvarSenha',
 
         // Geral - Perfil
-        '/editar-perfil' => 'geral/GeralController@editarPerfil',
-        '/perfil' => 'geral/GeralController@perfil',
+        '/EditarPerfil' => 'geral/GeralController@editarPerfil',
+        '/Perfil' => 'geral/GeralController@perfil',
         '/error/404' => 'gerral/GeralController@error',
 
         // Vendedor - Cadastro e Perfil
-        '/cadastro-vendedor-info'    => 'vendedor/VendedorController@showInfo',
-        '/cadastro-vendedor'         => 'vendedor/VendedorController@showFormCadastro',
-        '/cadastro-vendedor-forms'   => 'vendedor/VendedorController@cadastroForm',
+        '/CadastroVendedorInfo'    => 'vendedor/VendedorController@showInfo',
+        '/CadastroVendedor'         => 'vendedor/VendedorController@showFormCadastro',
+        '/CadastroVendedorForms'   => 'vendedor/VendedorController@cadastroForm',
         
         // Vendedor - Produtos e Pedidos
-        '/pedidos-vendedor'          => 'vendedor/VendedorProductController@pedidos',
-        '/pedido-confirmar'          => 'vendedor/VendedorProductController@confirm',
-        '/produto-registrar'         => 'vendedor/VendedorProductController@create',
-        '/produto-editar'            => 'vendedor/VendedorProductController@edit',
-        '/relatorio-vendas'          => 'vendedor/VendedorProductController@report',
-        '/cadastro-produto'          => 'vendedor/ProdutoController@produto',
+        '/PedidosVendedor'          => 'vendedor/VendedorProductController@pedidos',
+        '/PedidoConfirmar'          => 'vendedor/VendedorProductController@confirm',
+        '/ProdutoRegistrar'         => 'vendedor/VendedorProductController@create',
+        '/ProdutoEditar'            => 'vendedor/VendedorProductController@edit',
+        '/RelatorioVendas'          => 'vendedor/VendedorProductController@report',
+        '/CadastroProduto'          => 'vendedor/ProdutoController@produto',
 
         // Admin
-        '/admin-dashboard'           => 'admin/AdminController@dashboard',
-        '/admin-perfil'              => 'admin/AdminController@perfil',
-        '/aprovar-vendedor'          => 'admin/AdminController@aprovarVendedor',
-        '/atualizar-usuario'         => 'admin/AdminController@atualizarUsuario',
-        '/gerenciar-usuarios'        => 'admin/AdminController@gerenciarUsuarios',
-        '/gerenciar-produtos'        => 'admin/AdminController@gerenciarProdutos',
-        '/gerenciar-carrossel'       => 'admin/AdminController@gerenciarCarrossel',
-        '/relatorio-vendedor'        => 'admin/AdminController@relatorioVendedor',
-        '/historico-acesso'          => 'admin/AdminController@historicoAcesso',
-        '/admin-carrossel'           => 'admin/AdminController@adminCarrossel',
+        '/AdminDashboard'           => 'admin/AdminController@dashboard',
+        '/AdminPerfil'              => 'admin/AdminController@perfil',
+        '/AprovarVendedor'          => 'admin/AdminController@aprovarVendedor',
+        '/AtualizarUsuario'         => 'admin/AdminController@atualizarUsuario',
+        '/GerenciarUsuarios'        => 'admin/AdminController@gerenciarUsuarios',
+        '/GerenciarProdutos'        => 'admin/AdminController@gerenciarProdutos',
+        '/GerenciarCarrossel'       => 'admin/AdminController@gerenciarCarrossel',
+        '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
+        '/HistoricoAcesso'          => 'admin/AdminController@historicoAcesso',
+        '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
     ];
 
     // Join DIRECTOR SEPARETOR

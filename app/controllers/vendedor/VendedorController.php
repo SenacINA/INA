@@ -10,7 +10,7 @@ class VendedorController extends RenderView
     public function __construct()
     {
         if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
-            header('Location: login');
+            header('Location: Login');
             exit;
         }
 
@@ -30,12 +30,12 @@ class VendedorController extends RenderView
 
     public function perfil()
     {
-        $this->loadView('vendedor/perfil_vendedor', []);
+        $this->loadView('vendedor/PerfilVendedor', []);
     }
 
     public function showInfo()
     {
-        $this->loadView('vendedor/cadastro_vendedor_1', []);
+        $this->loadView('vendedor/CadastroVendedor_1', []);
     }
 
     public function showFormCadastro()
@@ -43,13 +43,13 @@ class VendedorController extends RenderView
         if ($this->userType != 'cliente') {
             header("Location: page-not-found");
         } else {
-            $this->loadView('vendedor/cadastro_vendedor_2', ['user' => $this->clienteData]);
+            $this->loadView('vendedor/CadastroVendedor_2', ['user' => $this->clienteData]);
         }
     }
 
     public function editarPerfil()
     {
-        $this->loadView('vendedor/editar_perfil_vendedor', []);
+        $this->loadView('vendedor/EditarPerfilVendedor', []);
     }
 
     public function cadastroForm()
@@ -82,7 +82,7 @@ class VendedorController extends RenderView
         }
 
         if (!empty($errors)) {
-            $this->loadView('vendedor/cadastro_vendedor_2', ['errors' => $errors, 'user' => $this->clienteData]);
+            $this->loadView('vendedor/CadastroVendedor_2', ['errors' => $errors, 'user' => $this->clienteData]);
             exit;
         }
 
@@ -96,7 +96,7 @@ class VendedorController extends RenderView
         } else {
             $errors[] = 'Erro ao cadastrar usuário.';
             $errors[] = $success[1];
-            $this->loadView('vendedor/cadastro_vendedor_2', ['errors' => $errors, 'user' => $this->clienteData]);
+            $this->loadView('vendedor/CadastroVendedor_2', ['errors' => $errors, 'user' => $this->clienteData]);
         }
 
     }
