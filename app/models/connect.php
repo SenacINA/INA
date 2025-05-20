@@ -32,9 +32,9 @@ class Database {
     public function disconnect() {
         if ($this->pdo) {
             $this->pdo = null; 
-            echo "Conexão encerrada com sucesso!<br>";
+            // echo "Conexão encerrada com sucesso!<br>";
         } else {
-            echo "Não há conexão ativa para encerrar.<br>";
+            // echo "Não há conexão ativa para encerrar.<br>";
         }
     }
 

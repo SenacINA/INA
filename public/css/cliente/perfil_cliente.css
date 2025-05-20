@@ -62,15 +62,17 @@ hr {
 .perfil_cliente_pfp_pic {
   justify-self: center;
   align-self: center;
-  width: 300px;
-  height: 300px;
+  width: 248px;
+  height: 248px;
   border-radius: 50%;
   background-color: var(--branco_gelo);
 }
 
 .perfil_cliente_btn_menu {
   justify-self: end;
-  margin-right: 15%;
+  margin-right: 24px;
+  position: absolute;
+  top: 164px;
 
   select {
     cursor: pointer;
@@ -96,7 +98,7 @@ hr {
     color: var(--sappire);
     font-size: 16px;
     font-weight: 600;
-    line-height: 90%;
+    line-height: 100%;
   }
 }
 

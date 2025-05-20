@@ -9,7 +9,7 @@ class GeralController extends RenderView {
     // Função que verifiaca a sessão
     private function renderPerfil(string $action) {
         if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
-            header('Location: Login');
+            header('Location: login');
             exit;
         }
     
@@ -26,7 +26,7 @@ class GeralController extends RenderView {
         // Caso o usuário seja admin, direciona para o dashboard
         if ($userType === 'admin') {
             $adminData = ['nome' => 'Admin', 'email' => 'admin@admin.com'];
-            $this->loadView('admin/Dashboard', ['user' => $adminData]);
+            $this->loadView('admin/dashboard', ['user' => $adminData]);
             return;
         }
     
@@ -35,7 +35,7 @@ class GeralController extends RenderView {
             $clienteData = $clienteModel->findById($clienteId);
     
             if (!$clienteData) {
-                $this->loadView('cliente/Login', []);
+                $this->loadView('cliente/login', []);
                 exit;
             }
     
@@ -103,12 +103,12 @@ class GeralController extends RenderView {
                 'vendedor' => $vendedorData
             ]);
         } else {
-            $this->loadView('cliente/Login', []);
+            $this->loadView('cliente/login', []);
         }
     }
     
     public function perfil() {
-        $this->renderPerfil('Perfil');
+        $this->renderPerfil('perfil');
     }
     
     public function editarPerfil() {
