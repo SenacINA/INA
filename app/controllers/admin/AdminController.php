@@ -3,42 +3,42 @@
 class AdminController extends RenderView {
 
     public function dashboard() {
-        $this->loadView('admin/dashboard', []);
+        $this->loadView('admin/Dashboard', []);
     }
 
     public function perfil() {
-        $this->loadView('admin/perfil_admin', []);
+        $this->loadView('admin/PerfilAdmin', []);
     }
 
     public function aprovarVendedor() {
-        $this->loadView('admin/aprovar_vendedor', []);
+        $this->loadView('admin/AprovarVendedor', []);
     }
 
     public function atualizarUsuario() {
-        $this->loadView('admin/atualizar_usuario', []);
+        $this->loadView('admin/AtualizarUsuario', []);
     }
 
     public function gerenciarUsuarios() {
-        $this->loadView('admin/gerenciar_usuario', []);
+        $this->loadView('admin/GerenciarUsuario', []);
     }
 
     public function gerenciarProdutos() {
-        $this->loadView('admin/gerenciar_produtos', []);
+        $this->loadView('admin/GerenciarProdutos', []);
     }
 
     public function gerenciarCarrossel() {
-        $this->loadView('admin/gerenciar_carrossel', []);
+        $this->loadView('admin/GerenciarCarrossel', []);
     }
 
     public function relatorioVendedor() {
-        $this->loadView('admin/relatorio_vendedor', []);
+        $this->loadView('admin/RelatorioVendedor', []);
     }
 
     public function historicoAcesso() {
-        $this->loadView('admin/historico_acesso', []);
+        $this->loadView('admin/HistoricoAcesso', []);
     }
 
     public function adminCarrossel() {
-        $this->loadView('admin/admin_carrossel', []);
+        $this->loadView('admin/AdminCarrossel', []);
     }
 }

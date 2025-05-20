@@ -22,7 +22,7 @@
         </div>
         <div class="dashboard_body_container_botoes_linha">
 
-        <a href="./perfil_admin.php">
+        <a href="./PerfilAdmin.php">
           <div class="dashboard_body_container_botoes_base_linha">
             <div class="dashboard_body_container_botoes_base_linha_div">
               <img src="<?=$PATH_PUBLIC?>/image/admin/dashboard/linha.svg" alt="">
@@ -33,7 +33,7 @@
           </div>
         </a>
 
-        <a href="./relatorio_vendedor.php">
+        <a href="./RelatorioVendedor.php">
           <div class="dashboard_body_container_botoes_base_linha">
             <div class="dashboard_body_container_botoes_base_linha_div">
               <img src="<?=$PATH_PUBLIC?>/image/admin/dashboard/linha.svg" alt="">
@@ -44,7 +44,7 @@
           </div>
         </a>
 
-        <a href="./gerenciar_usuario.php">
+        <a href="./GerenciarUsuario.php">
           <div class="dashboard_body_container_botoes_base_linha">
             <div class="dashboard_body_container_botoes_base_linha_div">
               <img src="<?=$PATH_PUBLIC?>/image/admin/dashboard/linha.svg" alt="">
@@ -59,7 +59,7 @@
         <div class="dashboard_body_container_botoes">
 
         <!-- linha 1 -->
-          <a href="./gerenciar_produtos.php">
+          <a href="./GerenciarProdutos.php">
             <div class="dashboard_body_container_botoes_base">
               <img src="<?=$PATH_PUBLIC?>/image/admin/dashboard/gerenciar_produtos.svg" alt="">
               <h2>Gerenciar Produtos</h2>
@@ -67,7 +67,7 @@
             </div>
           </a>
 
-          <a href="./gerenciar_carrossel.php">
+          <a href="./GerenciarCarrossel.php">
             <div class="dashboard_body_container_botoes_base">
               <img src="<?=$PATH_PUBLIC?>/image/admin/dashboard/gerenciar_carrossel.svg" alt="">
               <h2>Gerenciar Carrossel</h2>

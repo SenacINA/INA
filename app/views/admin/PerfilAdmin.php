@@ -119,7 +119,7 @@
       </div>
 
         <div class="perfil_admin_botao_salvar">
-          <button class="perfil_admin_salvar" onclick="pag('admin/dashboard')">
+          <button class="perfil_admin_salvar" onclick="pag('admin/Dashboard')">
             <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
             <label>SALVAR</label>
           </button>

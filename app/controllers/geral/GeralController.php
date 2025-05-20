@@ -24,7 +24,7 @@ class GeralController extends RenderView {
         // Caso o usuário seja admin, direciona para o dashboard
         if ($userType === 'admin') {
             $adminData = ['nome' => 'Admin', 'email' => 'admin@admin.com'];
-            $this->loadView('admin/dashboard', ['user' => $adminData]);
+            $this->loadView('admin/Dashboard', ['user' => $adminData]);
             return;
         }
     

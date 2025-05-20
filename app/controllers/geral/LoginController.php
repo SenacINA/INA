@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user_type'] = 'admin';
                 $_SESSION['cliente_id'] = $result[0]['id_cliente'];
 
-                header("Location: ../../views/admin/dashboard.php");
+                header("Location: ../../views/admin/Dashboard.php");
             } elseif ($tipoConta == 1) {
                 $_SESSION['user_type'] = 'vendedor';
                 $_SESSION['cliente_id'] = $result[0]['id_cliente'];
