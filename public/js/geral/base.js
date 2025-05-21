@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modalContainer && modalContainer.addEventListener('click', handleOutsideClick);
     logout && logout.addEventListener('click', (e) => {
         e.preventDefault()
-        fetch(`../../controllers/geral/logout_model.php`, { method: 'POST' })
+        fetch(`../../controllers/geral/LogoutModel.php`, { method: 'POST' })
         .then(response => {
             if(!response.ok)return
 

@@ -6,28 +6,28 @@ require_once __DIR__.'/../../models/geral/GeralModel.php';
 
 class ClienteController extends RenderView {
     public function perfil() {
-        $this->loadView('cliente/perfil_cliente', []);
+        $this->loadView('cliente/PerfilCliente', []);
     }
 
     public function editarPerfil() {
-        $this->loadView('cliente/editar_perfil', []);
+        $this->loadView('cliente/EditarPerfil', []);
     }
 
     public function dados( ) {
-        $this->loadView('cliente/carrinho_dados', []);
+        $this->loadView('cliente/CarrinhoDados', []);
     }
 
     public function pagamentos( ) {
-        $this->loadView('cliente/carrinho_pagamentos', []);
+        $this->loadView('cliente/CarrinhoPagamentos', []);
     }
 
     public function login() {
-        $this->loadView('cliente/login', []);
+        $this->loadView('cliente/Login', []);
     }
 
     public function cadastro()
       {
-          $this->loadView('cliente/cadastro', []);
+          $this->loadView('cliente/Cadastro', []);
       }
     
 
@@ -123,7 +123,7 @@ class ClienteController extends RenderView {
 
         if (empty($uf) || empty($cidade)) {
             $errors[] = 'Selecione uma localização válida.';
-}
+        }
 
         $errors = [];
         if ($nome === '') {
@@ -179,11 +179,11 @@ class ClienteController extends RenderView {
             $ok3     = true;
             $relFoto = null;
             if ($binFoto) {
-                $fn      = 'foto.webp';
+                $fn = 'foto_' . time() . '.webp';
                 $absPath = $baseDir . $fn;
-                // remove antiga, se existir
-                if (file_exists($absPath)) {
-                    @unlink($absPath);
+
+                foreach (glob($baseDir . 'foto_*') as $oldFoto) {
+                    @unlink($oldFoto);
                 }
                 if (file_put_contents($absPath, $binFoto) === false) {
                     $errors[] = 'Falha ao salvar imagem de perfil.';
@@ -197,12 +197,13 @@ class ClienteController extends RenderView {
             $ok4      = true;
             $relBanner = null;
             if ($binBanner) {
-                $fn       = 'banner.webp';
-                $absPath  = $baseDir . $fn;
-                // remove antigo, se existir
-                if (file_exists($absPath)) {
-                    @unlink($absPath);
+                $fn = 'banner_' . time() . '.webp';
+                $absPath = $baseDir . $fn;
+
+                foreach (glob($baseDir . 'banner_*') as $oldBanner) {
+                    @unlink($oldBanner);
                 }
+
                 if (file_put_contents($absPath, $binBanner) === false) {
                     $errors[] = 'Falha ao salvar imagem de banner.';
                     $ok4 = false;

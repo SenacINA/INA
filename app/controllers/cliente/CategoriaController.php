@@ -2,6 +2,6 @@
 
 class CategoriaController extends RenderView {
     public function index() {
-        $this->loadView('cliente/categoria', []);
+        $this->loadView('cliente/Categoria', []);
     }
 }

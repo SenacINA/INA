@@ -150,9 +150,6 @@ font-weight: 600;
   flex-direction: column;
 }
 
-.atualizar_usuario_pesquisar_usuario_item input {
-  max-width: 600px;
-}
 
 .atualizar_usuario_pesquisar_usuario button{
   border-color: transparent;
@@ -185,11 +182,11 @@ column-gap: 2%;
 }
 
 .atualizar_usuario_dados_pessoais_conjunto {
-display: grid;
-grid-template-columns: 1fr 1fr;
+/* display: grid; */
+/* grid-template-columns: 1fr 1fr; */
 justify-content: start;
 align-items: center;
-column-gap: 2%;
+/* column-gap: 2%; */
 
 }
 
@@ -362,12 +359,14 @@ transform: translateX(24px);
 }
 
 .atualizar_usuario_localizacao_grid {
+  margin-top: 38px;
   z-index: 2;
   grid-column: 1;
   grid-row: 2;
 }
 
 .atualizar_usuario_alterar_permissoes_grid {
+  margin-top: 38px;
   grid-column: 2;
   grid-row: 2;
 }

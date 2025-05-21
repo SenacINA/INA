@@ -7,7 +7,7 @@ class TrocarEmailController
   public function TrocarEmail()
   {
     if (!isset($_SESSION['cliente_id'])) {
-      header("Location: login-cliente");
+      header("Location: LoginCliente");
       exit();
     }
 
