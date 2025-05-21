@@ -83,6 +83,7 @@ body {
   border-radius: 20px;
   background: #4a4a4a;
   border: 0;
+  margin: 8px 0;
 }
 
 .banner_vendedor {
@@ -199,9 +200,8 @@ body {
   grid-template-columns: auto;
   grid-template-rows: auto auto;
   position: relative;
-  padding: 2%;
   text-justify: auto;
-  row-gap: 5%;
+  row-gap: 8px;
 }
 
 .icon_about_us {
@@ -248,12 +248,23 @@ body {
 .contatos_vendedor {
   display: grid;
   width: 100%;
-  grid-template-columns: auto auto min-content auto auto;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: center;
   justify-items: center;
-  row-gap: 10%;
-  column-gap: 1%;
+  row-gap: 8px;
+  column-gap: 24px;
+  width: fit-content;
+  justify-self: center;
+}
+
+.rede_social {
+  max-width: 100%;
+  display: flex;
+  gap: 4px;
+  img {
+    height: 24px;
+  }
 }
 
 .icon_instagram_vendedor {

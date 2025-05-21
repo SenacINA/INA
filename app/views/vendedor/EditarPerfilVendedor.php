@@ -27,23 +27,23 @@
       <img src="<?=$PATH_PUBLIC?>/image/vendedor/editar_perfil_vendedor/pfp_vendedor.png" alt="pfp_vendedor" class="pfp_vendedor">
       <div class="infos_container">
         <div class="nome_vendedor">
-          <h1 class="nome_vendedor"><?= htmlspecialchars($user['nome_cliente']) ?></h1>
+          <h1 class="nome_vendedor"><?= htmlspecialchars($vendedor['nome_fantasia']) ?></h1>
         </div>
         <div class="produtos_vendedor_container">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/loja_icon.svg" class="icon_produtos_vendedor">
-          <p class="produtos_vendedor">Produtos: <?= htmlspecialchars($user['quantidade_produtos'] ?? '0') ?></p>
+          <p class="produtos_vendedor">Produtos: <?= htmlspecialchars($vendedor['quantidadeProdutos'] ?? '0') ?></p>
         </div>
         <div class="avaliacao_vendedor_container">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/estela_icon.svg">
-          <p class="avaliacao_vendedor">Avaliação geral: <?= htmlspecialchars($user['avaliacao'] ?? '0') ?></p>
+          <p class="avaliacao_vendedor">Avaliação geral: <?= htmlspecialchars($vendedor['mediaEstrelas'] ?? '0') ?></p>
         </div>
         <div class="tempo_vendedor_container">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_membros_icon.svg">
-          <p class="tempo_vendedor">Cliente há: <?= htmlspecialchars($user['tempo_cliente'] ?? '0 meses') ?></p>
+          <p class="tempo_vendedor">Vendedor há: <?= htmlspecialchars($vendedor['tempo'] ?? '0 meses') ?></p>
         </div>
         <div class="localizacao_vendedor_container">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg">
-          <p class="localizacao_vendedor"><?= htmlspecialchars($user['cidade']) ?>, <?= htmlspecialchars($user['estado']) ?></p>
+          <p class="localizacao_vendedor"><?= $user['localizacao'] ?></p>
         </div>
       </div>
       <hr class="separador_mini_perfil">
@@ -54,15 +54,47 @@
       </div>
       <div class="contatos_container">
         <div class="contatos_vendedor">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg">
-          <a href="https://instagram.com/<?= htmlspecialchars($user['instagram_perfil']) ?>" class="instagram_vendedor">
-            <?= htmlspecialchars($user['instagram_perfil']) ?>
-          </a>
-          <hr class="linha_vertical_mini">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg">
-          <a href="https://facebook.com/<?= htmlspecialchars($user['facebook_perfil']) ?>" class="facebook_vendedor">
-            <?= htmlspecialchars($user['facebook_perfil']) ?>
-          </a>
+            <?php if (!empty($user['instagram_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" class="icon_instagram_cliente">
+                    <span class="instagram_cliente"><?= htmlspecialchars($user['instagram_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($user['facebook_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" class="icon_facebook_cliente">
+                    <span class="facebook_cliente"><?= htmlspecialchars($user['facebook_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($user['x_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg" class="icon_x_cliente">
+                    <span class="x_cliente"><?= htmlspecialchars($user['x_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($user['linkedin_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg" class="icon_linkedin_cliente">
+                    <span class="linkedin_cliente"><?= htmlspecialchars($user['linkedin_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($user['youtube_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" class="icon_youtube_cliente">
+                    <span class="youtube_cliente"><?= htmlspecialchars($user['youtube_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($user['tiktok_perfil'])): ?>
+                <div class="rede_social">
+                    <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg" class="icon_tiktok_cliente">
+                    <span class="tiktok_cliente"><?= htmlspecialchars($user['tiktok_perfil']) ?></span>
+                </div>
+            <?php endif; ?>
         </div>
       </div>
     </div>
