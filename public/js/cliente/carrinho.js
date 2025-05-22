@@ -39,7 +39,6 @@ const removerTudoFun = () => {
 }
 
 const toggleMostarServicos = () => {
-    console.log('aaaaaaaaaaaaaaaaaaak')
     const freteContainer1 = document.getElementById("frete_container_1");
     const freteContainer2 = document.getElementById("frete_container_2");
 
@@ -66,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     if(toggleBotao){
-        console.log('boooooooooooota')
         toggleBotao.addEventListener('click', () => toggleMostarServicos() )
     }
 
