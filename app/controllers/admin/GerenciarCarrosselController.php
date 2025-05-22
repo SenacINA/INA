@@ -12,7 +12,7 @@ class CarrosselController {
     /**
      * Verifica se o usuário está autenticado como admin
      */
-    private function verificarAutenticacao() {
+    private function verificarAutenticacao(): void {
         if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
             header("Location: /login.php?error=acesso_negado");
             exit();
@@ -22,7 +22,7 @@ class CarrosselController {
     /**
      * Lista os anúncios com filtros
      */
-    public function listarAnuncios() {
+    public function listarAnuncios(): mixed {
         $filtros = [
             'nome' => $_GET['nome'] ?? null,
             'email' => $_GET['email'] ?? null,
@@ -32,13 +32,13 @@ class CarrosselController {
         ];
 
         try {
-            $anuncios = $this->model->listarAnuncios($filtros);
+            $anuncios = $this->model->listarAnuncios(filtros: $filtros);
             
             // Formata os dados para a view
             foreach ($anuncios as &$anuncio) {
-                $anuncio['data_inicio'] = date('d/m/Y', strtotime($anuncio['data_inicio']));
-                $anuncio['data_expiracao'] = date('d/m/Y', strtotime($anuncio['data_expiracao']));
-                $anuncio['imagens'] = explode(',', $anuncio['imagens']);
+                $anuncio['data_inicio'] = date(format: 'd/m/Y', timestamp: strtotime(datetime: $anuncio['data_inicio']));
+                $anuncio['data_expiracao'] = date(format: 'd/m/Y', timestamp: strtotime(datetime: $anuncio['data_expiracao']));
+                $anuncio['imagens'] = explode(separator: ',', string: $anuncio['imagens']);
             }
             
             return $anuncios;
@@ -52,13 +52,13 @@ class CarrosselController {
     /**
      * Busca usuário por ID ou e-mail
      */
-    public function buscarUsuario($id = null, $email = null) {
+    public function buscarUsuario($id = null, $email = null): mixed {
         try {
-            $usuario = $this->model->buscarUsuario($id, $email);
+            $usuario = $this->model->buscarUsuario($id, email: $email);
             
             if ($usuario) {
                 // Formata os dados para a view
-                $usuario['data_expiracao'] = date('Y-m-d', strtotime($usuario['data_expiracao']));
+                $usuario['data_expiracao'] = date(format: 'Y-m-d', timestamp: strtotime(datetime: $usuario['data_expiracao']));
                 return $usuario;
             }
             
@@ -72,15 +72,15 @@ class CarrosselController {
     /**
      * Atualiza dados do anúncio e usuário
      */
-    public function atualizarAnuncio($dados) {
+    public function atualizarAnuncio($dados): bool {
         try {
             // Validação dos dados
             if (empty($dados['nome']) || empty($dados['cargo']) || empty($dados['data_expiracao']) || empty($dados['plano'])) {
                 throw new Exception("Todos os campos são obrigatórios");
             }
 
-            if (!in_array($dados['plano'], ['Semanal', 'Mensal', 'Bimestral'])) {
-                throw new Exception("Tipo de plano inválido");
+            if (!in_array($dados['plano'], haystack: ['Semanal', 'Mensal', 'Bimestral'])) {
+                throw new Exception(message: "Tipo de plano inválido");
             }
 
             // Atualiza usuário
@@ -88,18 +88,18 @@ class CarrosselController {
                 'nome' => $dados['nome'],
                 'cargo' => $dados['cargo']
             ];
-            $this->model->atualizarUsuario($dados['id_cliente'], $dadosUsuario);
+            $this->model->atualizarUsuario(idCliente: $dados['id_cliente'], dados: $dadosUsuario);
 
             // Atualiza anúncio
             $dadosAnuncio = [
                 'data_expiracao' => $dados['data_expiracao'],
                 'plano' => $dados['plano']
             ];
-            $this->model->atualizarAnuncio($dados['id_carrossel'], $dadosAnuncio);
+            $this->model->atualizarAnuncio(idCarrossel: $dados['id_carrossel'], dados: $dadosAnuncio);
 
             return true;
         } catch (Exception $e) {
-            error_log("Erro ao atualizar anúncio: " . $e->getMessage());
+            error_log(message: "Erro ao atualizar anúncio: " . $e->getMessage());
             throw $e;
         }
     }

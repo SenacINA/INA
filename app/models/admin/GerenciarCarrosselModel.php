@@ -13,7 +13,7 @@ class CarrosselModel
     /**
      * Lista todos os anúncios do carrossel com filtros
      */
-    public function listarAnuncios($filtros = [])
+    public function listarAnuncios($filtros = []): mixed
     {
         $query = "SELECT 
                     c.id_carrossel,
@@ -61,7 +61,7 @@ class CarrosselModel
         }
 
         if (!empty($where)) {
-            $query .= " WHERE " . implode(" AND ", $where);
+            $query .= " WHERE " . implode(separator: " AND ", array: $where);
         }
 
         $query .= " GROUP BY c.id_carrossel";
@@ -78,7 +78,7 @@ class CarrosselModel
         ];
 
         if (!empty($filtros['ordenar_por']) && isset($ordenacoesPermitidas[$filtros['ordenar_por']])) {
-            $direcao = (!empty($filtros['direcao']) && strtoupper($filtros['direcao']) === 'DESC') ? 'DESC' : 'ASC';
+            $direcao = (!empty($filtros['direcao']) && strtoupper(string: $filtros['direcao']) === 'DESC') ? 'DESC' : 'ASC';
             $query .= " ORDER BY " . $ordenacoesPermitidas[$filtros['ordenar_por']] . " " . $direcao;
         }
 
@@ -91,7 +91,7 @@ class CarrosselModel
     /**
      * Busca usuário por ID ou e-mail
      */
-    public function buscarUsuario($id = null, $email = null)
+    public function buscarUsuario($id = null, $email = null): mixed
     {
         $query = "SELECT 
                     cl.id_cliente,
@@ -122,7 +122,7 @@ class CarrosselModel
     /**
      * Atualiza dados do anúncio no carrossel
      */
-    public function atualizarAnuncio($idCarrossel, $dados)
+    public function atualizarAnuncio($idCarrossel, $dados): mixed
     {
         $query = "UPDATE carrossel SET
                     proxima_cobranca_carrossel = :data_expiracao,
@@ -143,7 +143,7 @@ class CarrosselModel
     /**
      * Atualiza dados do usuário
      */
-    public function atualizarUsuario($idCliente, $dados)
+    public function atualizarUsuario($idCliente, $dados): mixed
     {
         $query = "UPDATE cliente SET
                     nome_cliente = :nome,

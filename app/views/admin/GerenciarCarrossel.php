@@ -15,10 +15,10 @@ require_once './app/controllers/admin/GerenciarCarrosselController.php';
   <main class="gerenciar_carrossel_body_container">
     <!-- Mensagens de feedback -->
     <?php if (!empty($mensagemSucesso)): ?>
-      <div class="mensagem-sucesso"><?= htmlspecialchars($mensagemSucesso) ?></div>
+      <div class="mensagem-sucesso"><?= htmlspecialchars(string: $mensagemSucesso) ?></div>
     <?php endif; ?>
     <?php if (!empty($mensagemErro)): ?>
-      <div class="mensagem-erro"><?= htmlspecialchars($mensagemErro) ?></div>
+      <div class="mensagem-erro"><?= htmlspecialchars(string: $mensagemErro) ?></div>
     <?php endif; ?>
 
     <div class="gerenciar_pedidor_firula_holder">
@@ -48,14 +48,14 @@ require_once './app/controllers/admin/GerenciarCarrosselController.php';
                   <h2>Digite o ID e o E-mail do usuário para encontrá-lo.</h2>
                   <label class="font_subtitulo font_celadon">ID do Usuário</label>
                   <input type="text" name="id_usuario" spellcheck="false" class="base_input"
-                    value="<?= htmlspecialchars($usuario['id_cliente'] ?? '') ?>">
+                    value="<?= htmlspecialchars(string: $usuario['id_cliente'] ?? '') ?>">
                 </div>
                 <div class="gerenciar_carrossel_inputs_esquerda">
                   <div class="gerenciar_carrossel_input_status">
                     <label for="select_cod" class="font_subtitulo font_celadon">Email</label>
                     <input class="gerenciar_carrossel_select_status base_input"
                       type="text" name="email_usuario"
-                      value="<?= htmlspecialchars($usuario['email'] ?? '') ?>">
+                      value="<?= htmlspecialchars(string: $usuario['email'] ?? '') ?>">
                   </div>
                 </div>
                 <button type="submit" name="pesquisar" class="base_button">Pesquisar</button>
@@ -71,11 +71,7 @@ require_once './app/controllers/admin/GerenciarCarrosselController.php';
                   <h2 class="font_subtitulo font_celadon">Informações Do usuário</h2>
                 </div>
               </div>
-
-              <div class="gerenciar_carrossel_perfil">
-                <img src="<?= $PATH_PUBLIC ?>/image/admin/gerenciar_carrossel/perfil_img.svg">
-              </div>
-
+              
               <?php if ($usuario): ?>
                 <form method="post" class="gerenciar_carrossel_forms_pesquisa_pedidos">
                   <input type="hidden" name="id_cliente" value="<?= $usuario['id_cliente'] ?>">
@@ -84,7 +80,7 @@ require_once './app/controllers/admin/GerenciarCarrosselController.php';
                   <div class="gerenciar_carrossel_form_cliente">
                     <label class="font_subtitulo font_celadon">Nome</label>
                     <input type="text" name="nome" class="base_input"
-                      value="<?= htmlspecialchars($usuario['nome'] ?? '') ?>">
+                      value="<?= htmlspecialchars(string: $usuario['nome'] ?? '') ?>">
                   </div>
 
                   <div class="gerenciar_carrossel_input_status base_input_select">
@@ -100,14 +96,14 @@ require_once './app/controllers/admin/GerenciarCarrosselController.php';
                     <div class="gerenciar_carrossel_input_mes">
                       <label class="font_subtitulo font_celadon">Data de Expiração</label>
                       <input type="date" name="data_expiracao" class="gerenciar_carrossel_mes_select base_input"
-                        value="<?= htmlspecialchars($usuario['data_expiracao'] ?? '') ?>">
+                        value="<?= htmlspecialchars(string: $usuario['data_expiracao'] ?? '') ?>">
                     </div>
                   </div>
 
                   <div class="gerenciar_carrossel_form_cliente">
                     <label class="font_subtitulo font_celadon">Cargo</label>
                     <input type="text" name="cargo" class="base_input"
-                      value="<?= htmlspecialchars($usuario['cargo'] ?? '') ?>">
+                      value="<?= htmlspecialchars(string: $usuario['cargo'] ?? '') ?>">
                   </div>
 
                   <button type="submit" name="atualizar" class="base_button">Atualizar</button>
@@ -172,13 +168,13 @@ require_once './app/controllers/admin/GerenciarCarrosselController.php';
             <?php if (!empty($anuncios)): ?>
               <?php foreach ($anuncios as $anuncio): ?>
                 <tr>
-                  <td><?= htmlspecialchars($anuncio['ip'] ?? 'N/A') ?></td>
-                  <td><?= htmlspecialchars($anuncio['nome'] ?? 'N/A') ?></td>
-                  <td><?= htmlspecialchars($anuncio['categoria'] ?? 'N/A') ?></td>
-                  <td><?= htmlspecialchars($anuncio['cargo'] ?? 'N/A') ?></td>
-                  <td><?= htmlspecialchars($anuncio['data_inicio'] ?? 'N/A') ?></td>
-                  <td><?= htmlspecialchars($anuncio['data_expiracao'] ?? 'N/A') ?></td>
-                  <td><?= htmlspecialchars($anuncio['plano'] ?? 'N/A') ?></td>
+                  <td><?= htmlspecialchars(string: $anuncio['ip'] ?? 'N/A') ?></td>
+                  <td><?= htmlspecialchars(string: $anuncio['nome'] ?? 'N/A') ?></td>
+                  <td><?= htmlspecialchars(string: $anuncio['categoria'] ?? 'N/A') ?></td>
+                  <td><?= htmlspecialchars(string: $anuncio['cargo'] ?? 'N/A') ?></td>
+                  <td><?= htmlspecialchars(string: $anuncio['data_inicio'] ?? 'N/A') ?></td>
+                  <td><?= htmlspecialchars(string: $anuncio['data_expiracao'] ?? 'N/A') ?></td>
+                  <td><?= htmlspecialchars(string: $anuncio['plano'] ?? 'N/A') ?></td>
                 </tr>
               <?php endforeach; ?>
             <?php else: ?>
