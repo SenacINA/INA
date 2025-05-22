@@ -189,7 +189,7 @@ class VendedorController extends RenderView
             $ok2 = $geral->updateLocalizacao($clienteId, $uf, $cidade);
             $ok5 = $geral->updateDescricaoPerfil($clienteId, $descricao); // Chamando a atualização da descrição
 
-            // Prepara pasta upload/clientes/{id}/
+            // Prepara pasta upload/vendedores/{id}/
             $baseDir = __DIR__ . '/../../../public/upload/vendedores/' . $clienteId . '/';
             if (!is_dir($baseDir)) {
                 mkdir($baseDir, 0755, true);
