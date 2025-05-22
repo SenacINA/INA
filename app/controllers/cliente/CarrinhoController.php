@@ -2,6 +2,6 @@
 
 class CarrinhoController extends RenderView {
     public function index() {
-        $this->loadView('cliente/carrinho', []);
+        $this->loadView('cliente/Carrinho', []);
     }
 }

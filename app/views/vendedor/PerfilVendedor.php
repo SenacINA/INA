@@ -4,7 +4,7 @@
   $titulo = "Perfil - E ao Quadrado";
   $css = ["/css/vendedor/perfil_vendedor.css"];
   require_once('./utils/head.php');
-  require_once("./app/models/vendedor/perfil_vendedor_model.php");
+  require_once("./app/models/vendedor/PerfilVendedorModel.php");
   $array = getPerfil($_SESSION['cliente_id']);
  
 ?>

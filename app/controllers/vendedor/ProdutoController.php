@@ -35,7 +35,7 @@ class ProdutoController extends RenderView
 
     $model = new ProdutoModel;
     if ($model->createProduto($_SESSION['cliente_id'], $nome, $valor, 1, 1, $origem, $unidade, $peso, $pesoBruto, $largura, $altura, $comprimento, $descricao, 'ativo')) {
-      $this->loadView('geral/home', []);
+      $this->loadView('geral/Home', []);
     }
   }
   

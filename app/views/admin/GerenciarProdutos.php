@@ -221,6 +221,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['atualizar'])) {
           </tbody>
         </table>
       </div>
+      <a href="./Dashboard.php">
+        <div class="voltar">
+          <button type="reset" class="base_botao btn_outline_blue">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_carolina_icon.svg">
+              VOLTAR
+            </button>
+        </div>
+      </a>
     </div>
   </main>
 </body>

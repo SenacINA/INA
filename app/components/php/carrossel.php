@@ -28,23 +28,23 @@ function Carrossel($path) {
             <button onclick="currentSlide(3)"></button>
         </div>
         <div class="categorias_nav">
-            <div class="categorias_block" onclick="pag('categoria')">
+            <div class="categorias_block" onclick="pag('Categoria')">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselHardware.png" alt="">
                 <p>Hardware</p>
             </div>
-            <div class="categorias_block" onclick="pag('categoria')">
+            <div class="categorias_block" onclick="pag('Categoria')">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselPerifericos.png" alt="">
                 <p>Periféricos</p>
             </div>
-            <div class="categorias_block" onclick="pag('categoria')">
+            <div class="categorias_block" onclick="pag('Categoria')">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselEscritorio.png" alt="">
                 <p>Escritório</p>
             </div>
-            <div class="categorias_block" onclick="pag('categoria')">
+            <div class="categorias_block" onclick="pag('Categoria')">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselCelulares.png" alt="">
                 <p>Celulares</p>
             </div>
-            <div class="categorias_block" onclick="pag('categoria')">
+            <div class="categorias_block" onclick="pag('Categoria')">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselEletro.png" alt="">
                 <p>Eletrodomésticos</p>
             </div>

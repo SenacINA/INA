@@ -4,7 +4,7 @@
     $titulo = "Aprovar Vendedores - E ao Quadrado";
     $css = ["/css/admin/aprovar_vendedor.css"];
     require_once('./utils/head.php');
-    require_once('./app/models/admin/aprovar_vendedor_model.php');
+    require_once('./app/models/admin/AprovarVendedorModel.php');
 
     // Processa ações de aprovação/reprovação
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao'], $_POST['vendedor_id'])) {

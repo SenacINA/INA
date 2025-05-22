@@ -73,7 +73,7 @@
             VOLTAR
           </button>
 
-          <button class="carrinho_dados_salvar_carrinho base_botao" onclick="pag('cliente/carrinho_pagamentos')">
+          <button class="carrinho_dados_salvar_carrinho base_botao" onclick="pag('cliente/CarrinhoPagamentos')">
             <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/enviar_branco_icon.svg">
             Salvar
           </button>
@@ -226,7 +226,7 @@
           </forms>
         </div>
 
-        <button class="carrinho_dados_avançar_carrinho base_botao" onclick="pag('cliente/carrinho_pagamentos')">
+        <button class="carrinho_dados_avançar_carrinho base_botao" onclick="pag('cliente/CarrinhoPagamentos')">
           <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">
           AVANÇAR
         </button>

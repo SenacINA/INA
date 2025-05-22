@@ -42,7 +42,7 @@ class SalvarNovoEmailController
       echo json_encode([
         "success" => true,
         "mensagem" => "E-mail atualizado com sucesso.",
-        "redirect" => "editar-perfil"
+        "redirect" => "EditarPerfil"
       ]);
     } else {
       $this->responderErro("Erro ao atualizar e-mail.");

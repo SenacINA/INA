@@ -127,12 +127,12 @@
         </div>
       </form>
       <div class="botoes_redefinir">
-        <button type="button" onclick="pag('redefinir-senha')" class='base_botao btn_blue redefinir_senha_cliente'>
+        <button type="button" onclick="pag('RedefinirSenha')" class='base_botao btn_blue redefinir_senha_cliente'>
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/cadeado_branco_icon.svg" alt="">
           Redefinir senha
         </button>
 
-        <button type="button" onclick="pag('trocar-email')" class="base_botao btn_blue trocar_email_cliente">
+        <button type="button" onclick="pag('TrocarEmail')" class="base_botao btn_blue trocar_email_cliente">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/email_branco_icon.svg" alt="">
           Trocar email
         </button>
@@ -220,7 +220,7 @@
       <button id=salvarEdit class="base_botao btn_blue salvar">
         <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">Salvar
       </button>
-      <button class="base_botao btn_outline_red cancelar" onclick='pag("perfil")'>
+      <button class="base_botao btn_outline_red cancelar" onclick='pag("Perfil")'>
         <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_vermelho_icon.svg">Cancelar
       </button>
     </div>

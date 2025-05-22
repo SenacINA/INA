@@ -48,7 +48,7 @@ require_once('./utils/head.php');
         </div>
 
         <div class="cadastro_vendedor1_botao_salvar">
-          <button class="cadastro_vendedor1_salvar" onclick="pag('cadastro-vendedor')">
+          <button class="cadastro_vendedor1_salvar" onclick="pag('CadastroVendedor')">
             <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="">
             <label>CONTINUAR</label>
           </button>

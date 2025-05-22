@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } else {
         $_SESSION['erro_login'] = "Credenciais inválidas!";
-        header('Location: /login');
+        header('Location: /Login');
         exit();
     }
 }

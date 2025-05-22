@@ -8,7 +8,7 @@ class GeralController extends RenderView {
     // Função que verifiaa a sessão
     private function renderPerfil(string $action) {
         if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
-            header('Location: login');
+            header('Location: Login');
             exit;
         }
     
@@ -24,7 +24,7 @@ class GeralController extends RenderView {
         // Caso o usuário seja admin, direciona para o dashboard
         if ($userType === 'admin') {
             $adminData = ['nome' => 'Admin', 'email' => 'admin@admin.com'];
-            $this->loadView('admin/dashboard', ['user' => $adminData]);
+            $this->loadView('admin/Dashboard', ['user' => $adminData]);
             return;
         }
     
@@ -33,18 +33,18 @@ class GeralController extends RenderView {
             $clienteData  = $clienteModel->findById($clienteId);
     
             if (!$clienteData) {
-                $this->loadView('cliente/login', []);
+                $this->loadView('cliente/Login', []);
                 exit;
             }
     
             if ($userType === 'vendedor') {
                 $viewPath = $action === 'perfil'
-                    ? 'vendedor/perfil_vendedor'
-                    : 'vendedor/editar_perfil_vendedor';
+                    ? 'vendedor/PerfilVendedor'
+                    : 'vendedor/EditarPerfilVendedor';
             } else { 
                 $viewPath = $action === 'perfil'
-                    ? 'cliente/perfil_cliente'
-                    : 'cliente/editar_perfil';
+                    ? 'cliente/PerfilCliente'
+                    : 'cliente/EditarPerfil';
             }
     
             // Configura imagens padrão se os campos estiverem vazios
@@ -67,16 +67,16 @@ class GeralController extends RenderView {
 
             ]);
         } else {
-            $this->loadView('cliente/login', []);
+            $this->loadView('cliente/Login', []);
         }
     }
     
     public function perfil() {
-        $this->renderPerfil('perfil');
+        $this->renderPerfil('Perfil');
     }
     
     public function editarPerfil() {
-        $this->renderPerfil('editar_perfil');
+        $this->renderPerfil('EditarPerfil');
     }
 
     public function error() {

@@ -4,7 +4,7 @@
 <?php
 $css = ["/css/cliente/perfil_cliente.css"];
 require_once("./utils/head.php");
-require_once("./app/models/cliente/perfil_cliente_model.php");
+require_once("./app/models/cliente/PerfilClienteModel.php");
 ?>
 
 <body>

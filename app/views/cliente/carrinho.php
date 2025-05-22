@@ -99,7 +99,7 @@
             REMOVER TUDO
           </button>
 
-          <button class="base_botao btn_blue" onclick="pag('cliente/carrinho_dados')">
+          <button class="base_botao btn_blue" onclick="pag('cliente/CarrinhoDados')">
             <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">
             SALVAR
           </button>

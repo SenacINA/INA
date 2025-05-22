@@ -47,7 +47,7 @@
                         gerarProdutoCards(6, 1);
                     ?>                
                 </div>
-                <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
+                <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
                     <p>Ver Mais</p>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@
                 <div class="index_body_produtos_content">
                     <?php gerarProdutoCards(6, 1); ?>
                 </div>
-                <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
+                <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
                     <p>Ver Mais</p>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@
                 <div class="index_body_produtos_content">
                     <?php gerarProdutoCards(6, 1); ?>
                 </div>
-                <div class="index_body_ver_mais" onclick="pag('cliente/categoria',0)">
+                <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
                     <p>Ver Mais</p>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
