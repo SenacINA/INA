@@ -86,8 +86,8 @@ require_once("./app/models/cliente/PerfilClienteModel.php");
           <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
             <option selected disabled value="">Menu</option>
             <option value="EditarPerfil">Editar Perfil</option>
-            <option value="cadastro-vendedor-info">Cadastro de vendedor</option>
-            <option value="logout">Sair</option>
+            <option value="CadastroVendedorInfo">Cadastro de vendedor</option>
+            <option value="Logout">Sair</option>
           </select>
         </form>
       </div>

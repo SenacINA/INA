@@ -141,6 +141,7 @@
         <div class="forms_inner_container">
           <label for="descricao">Descrição:</label>
           <textarea name="descricao" id="descricao" cols="90" rows="10" class="base_input"><?= htmlspecialchars($user['descricao_perfil']) ?></textarea>
+          <div class="counter"><span id="charCount">0</span> / 500</div>
         </div>
         <div class="forms_inner_container">
           <label for="localizacaoVendedor">Localização:</label>
@@ -288,6 +289,18 @@
   <script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
   <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/vendedor/profile_edit_vendedor.js"></script>
+  <script>
+    const textArea = document.getElementById('descricao');
+    const charCount = document.getElementById('charCount');
+
+    function updateCharCount() {
+        charCount.textContent = textArea.value.length;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateCharCount);
+
+    textArea.addEventListener('input', updateCharCount);
+  </script>
 
 
 

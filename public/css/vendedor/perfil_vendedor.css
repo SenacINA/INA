@@ -46,12 +46,13 @@ hr {
   grid-column: 2;
   max-width: 632px;
 
-
   .pfp_img {
     justify-self: center;
     align-self: center;
     width: 248px;
     height: 248px;
+    border-radius: 50%;
+    background-color: var(--branco_gelo);
   }
 
   h1 {
@@ -217,6 +218,12 @@ hr {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
+  p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+  }
 }
 
 .perfil_vendedor_about_container_2 {

@@ -50,7 +50,7 @@
         <form action="" method="post" class="perfil_admin_forms">
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_1">
             <label>Nome</label>
-            <input type="text" class="base_input">
+            <input type="text" class="base_input" value="<?=$user['nome_cliente']?>">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_2">
             <label>E-mail</label>

@@ -100,6 +100,8 @@ class GeralModel
         $atual = $check->fetchColumn();
     
         if ($atual === $descricao) return true; 
+
+        $descricao = htmlspecialchars($descricao, ENT_QUOTES, 'UTF-8');
     
         $stmt = $conn->prepare("UPDATE perfil SET descricao_perfil = :descricao WHERE id_cliente = :id_cliente");
         return $stmt->execute([':descricao' => $descricao, ':id_cliente' => $id_cliente]);
