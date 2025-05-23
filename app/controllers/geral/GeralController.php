@@ -72,7 +72,7 @@ class GeralController extends RenderView {
     }
     
     public function perfil() {
-        $this->renderPerfil('Perfil');
+        $this->renderPerfil('perfil');
     }
     
     public function editarPerfil() {

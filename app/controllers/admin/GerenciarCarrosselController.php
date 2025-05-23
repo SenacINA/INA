@@ -1,12 +1,18 @@
 <?php
+
+use Dba\Connection;
 require_once './app/models/admin/GerenciarCarrosselModel.php';
 
-class CarrosselController {
+class GerenciarCarrosselController extends RenderView {
     private $model;
 
     public function __construct() {
-        $this->model = new CarrosselModel();
+        // $this->model = new GerenciarCarrosselModel();
         $this->verificarAutenticacao();
+    }
+
+    public function gerenciarCarrossel() {
+        $this->loadView('admin/GerenciarCarrossel', []);
     }
 
     /**
@@ -52,14 +58,21 @@ class CarrosselController {
     /**
      * Busca usuário por ID ou e-mail
      */
-    public function buscarUsuario($id = null, $email = null): mixed {
+    public function buscarUsuario($id = null, $email = null) {
         try {
-            $usuario = $this->model->buscarUsuario($id, email: $email);
-            
+            // Validação dos parâmetros recebidos
+            $id = $_POST['id_usuario'] ?? null; 
+            $email = $_POST['email_usuario'] ?? null;
+    
+            // Instanciando modelo caso necessário (dependendo da estrutura)
+            $model = new GerenciarCarrosselModel();
+            $usuario = $model->buscarUsuario($id, $email);
+    
             if ($usuario) {
-                // Formata os dados para a view
-                $usuario['data_expiracao'] = date(format: 'Y-m-d', timestamp: strtotime(datetime: $usuario['data_expiracao']));
-                return $usuario;
+                // Formatando a data corretamente
+                $usuario['data_expiracao'] = date('Y-m-d', strtotime($usuario['data_expiracao']));
+    
+                return $this->loadView('admin/GerenciarCarrossel', ['usuario' => $usuario]);
             }
             
             return null;
@@ -68,6 +81,7 @@ class CarrosselController {
             return null;
         }
     }
+    
 
     /**
      * Atualiza dados do anúncio e usuário

@@ -11,7 +11,6 @@ require_once './app/controllers/admin/GerenciarCarrosselController.php';
 
 <body>
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
-
   <main class="gerenciar_carrossel_body_container">
     <!-- Mensagens de feedback -->
     <?php if (!empty($mensagemSucesso)): ?>
@@ -43,7 +42,7 @@ require_once './app/controllers/admin/GerenciarCarrosselController.php';
                 </div>
               </div>
 
-              <form method="post" class="gerenciar_carrossel_forms_pesquisa_pedidos">
+              <form method="post" class="gerenciar_carrossel_forms_pesquisa_pedidos" action="buscarUsuario">
                 <div class="gerenciar_carrossel_form_cliente">
                   <h2>Digite o ID e o E-mail do usuário para encontrá-lo.</h2>
                   <label class="font_subtitulo font_celadon">ID do Usuário</label>
