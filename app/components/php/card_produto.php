@@ -1,5 +1,6 @@
 <?php
-function gerarProdutoCards($quantidade, $path) {
+function gerarProdutoCards($quantidade, $path)
+{
     $PATH_ROOT = $path ? '.' : '..';
     $PATH_PUBLIC = "$PATH_ROOT/public";
 
@@ -21,10 +22,11 @@ function gerarProdutoCards($quantidade, $path) {
     for ($i = 0; $i < $quantidade; $i++) {
         $id = $i + 1;
         $nome = "Produto $id";
-        $preco = 800; // Preço do produto
+        $preco = 800; 
+
         $imageSrc = $i == 0
             ? "$PATH_PUBLIC/image/cliente/produto/cadeira_gamer_size_big.png"
-            : $imageUrls[array_rand($imageUrls)]; // Seleção aleatória de imagem
+            : $imageUrls[array_rand($imageUrls)];
 
         echo "
         <div class='index_body_produto_card'>
@@ -46,7 +48,7 @@ function gerarProdutoCards($quantidade, $path) {
                 </div>
             </div>
             <div class='index_body_botoes_produto'>
-                <form method='POST' action='/CarrinhoAdicionar-api' style='display:inline-block;'>
+                <form method='POST' action='/Carrinho-api' style='display:inline-block;'>
                     <input type='hidden' name='produto_id' value='$id'>
                     <input type='hidden' name='nome' value='$nome'>
                     <input type='hidden' name='preco' value='$preco'>
@@ -57,9 +59,9 @@ function gerarProdutoCards($quantidade, $path) {
                         </svg>
                     </button>
                 </form>
-                <button class='base_botao btn_blue' onclick=\"pag('Produto')\">Comprar</button>
+                <button class='base_botao btn_blue' onclick=\"pag('Produto?id=$id')\">Comprar</button>
             </div>
         </div>";
     }
 }
-?>
+

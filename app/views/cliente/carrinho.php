@@ -5,16 +5,14 @@ $css = ["/css/cliente/carrinho_vazio.css"];
 $js = ["/js/cliente/carrinho.js"];
 require_once("./utils/head.php");
 
-// Verifica se o carrinho existe na sessão
+
 if (!isset($_SESSION['carrinho'])) {
-  $_SESSION['carrinho'] = [];  // Cria o carrinho vazio se não existir
+  $_SESSION['carrinho'] = [];  
 }
 
-// Pega os itens do carrinho e o total
 $itensCarrinho = $_SESSION['carrinho'];
 $totalCarrinho = 0;
 
-// Calcula o total do carrinho
 foreach ($itensCarrinho as $item) {
   $totalCarrinho += $item['preco'] * $item['quantidade'];
 }
@@ -120,10 +118,12 @@ foreach ($itensCarrinho as $item) {
           VOLTAR
         </button>
         <div class="carrinho_vazio_holder_final">
-          <button id="carrinhoVazioRemoverTudo" class="base_botao btn_red">
-            <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/lixo_branco_icon.svg">
-            REMOVER TUDO
-          </button>
+          <form method="post" action="/Carrinho/RemoverTudo">
+            <button class="base_botao btn_red" type="submit">
+              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/lixo_branco_icon.svg">
+              REMOVER TUDO
+            </button>
+          </form>
 
           <button class="base_botao btn_blue" onclick="pag('cliente/CarrinhoDados')">
             <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">

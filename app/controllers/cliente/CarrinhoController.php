@@ -5,34 +5,40 @@ require_once __DIR__ . '/../../models/CarrinhoModel.php';
 
 class CarrinhoController
 {
-  public function adicionarItem()
+  private $model;
+
+  public function __construct()
   {
-    if (session_status() === PHP_SESSION_NONE) {
-      session_start();
+    $this->model = new CarrinhoModel();
+  }
+
+  public function addItem()
+  {
+    var_dump($_POST);
+    exit; 
+
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+      header("Location: /Produto");
+      exit;
     }
 
     $id = $_POST['produto_id'] ?? null;
     $nome = $_POST['nome'] ?? '';
     $preco = $_POST['preco'] ?? 0;
     $imagem = $_POST['imagem'] ?? '';
-    $quantidade = 1;
+    $quantidade = isset($_POST['quantidade']) ? intval($_POST['quantidade']) : 1;
 
     if ($id) {
-      if (!isset($_SESSION['carrinho'][$id])) {
-        $_SESSION['carrinho'][$id] = [
-          'nome' => $nome,
-          'preco' => $preco,
-          'imagem' => $imagem,
-          'quantidade' => $quantidade
-        ];
+      $sucesso = $this->model->adicionarItem($id, $nome, $preco, $imagem, $quantidade);
+
+      if ($sucesso) {
+        header("Location: /Carrinho");
       } else {
-        $_SESSION['carrinho'][$id]['quantidade'] += $quantidade;
+        header("Location: /Produto?error=invalid_data");
       }
-      
-      header("Location: /Carrinho"); // Redireciona para a página do carrinho
       exit;
     } else {
-      header("Location: /Produto"); // Caso algo falhe
+      header("Location: /Produto");
       exit;
     }
   }
@@ -51,6 +57,15 @@ class CarrinhoController
     exit;
   }
 
+  public function removerTudo()
+  {
+    if (session_status() === PHP_SESSION_NONE) {
+      session_start();
+    }
+    unset($_SESSION['carrinho']);
+    header("Location: /Carrinho");
+    exit;
+  }
 
   public function exibirItens()
   {
