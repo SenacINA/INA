@@ -64,6 +64,8 @@
         '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
         '/HistoricoAcesso'          => 'admin/AdminController@historicoAcesso',
         '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
+        '/api/admin/pesquisar-cliente' => 'admin/AdminController@searchUser',
+        '/api/admin/atualizar-cliente' => 'admin/AdminController@updateUser',
     ];
 
     // Join DIRECTOR SEPARETOR
