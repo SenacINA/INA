@@ -1,64 +1,96 @@
 <?php
 
-require_once __DIR__ . '/../connect.php';
+require_once('./app/models/connect.php');
 
 class CarrinhoModel
 {
+  private $pdo;
 
-  public function __construct()
+  public function __construct(PDO $pdo)
   {
-    if (session_status() === PHP_SESSION_NONE) {
-      session_start();
-    }
-
-    if (!isset($_SESSION['carrinho'])) {
-      $_SESSION['carrinho'] = [];
-    }
+    $this->pdo = $pdo;
   }
 
-  public function removerItem($id)
+  public function getItensCarrinho(int $idCliente): array
   {
-    unset($_SESSION['carrinho'][$id]);
+    $sql = "SELECT c.id_produto, c.quantidade_produto, p.nome, p.preco, p.imagem
+                FROM carrinho c
+                JOIN produto p ON c.id_produto = p.id_produto
+                WHERE c.id_cliente = :idCliente";
+
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute(['idCliente' => $idCliente]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function limparCarrinho()
+  public function adicionarItem(int $idCliente, int $idProduto, int $quantidade = 1)
   {
-    $_SESSION['carrinho'] = [];
-  }
+    $sql = "SELECT quantidade_produto FROM carrinho WHERE id_cliente = :idCliente AND id_produto = :idProduto";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute(['idCliente' => $idCliente, 'idProduto' => $idProduto]);
+    $item = $stmt->fetch(PDO::FETCH_ASSOC);
 
-
-  public function adicionarItem($id, $nome, $preco, $imagem, $quantidade)
-  {
-    if (!$id || $quantidade <= 0 || $preco < 0) {
-      return false; 
-    }
-
-    if (isset($_SESSION['carrinho'][$id])) {
-      $_SESSION['carrinho'][$id]['quantidade'] += $quantidade;
+    if ($item) {
+      $novaQuantidade = $item['quantidade_produto'] + $quantidade;
+      $sqlUpdate = "UPDATE carrinho SET quantidade_produto = :quantidade WHERE id_cliente = :idCliente AND id_produto = :idProduto";
+      $stmtUpdate = $this->pdo->prepare($sqlUpdate);
+      $stmtUpdate->execute([
+        'quantidade' => $novaQuantidade,
+        'idCliente' => $idCliente,
+        'idProduto' => $idProduto
+      ]);
     } else {
-      $_SESSION['carrinho'][$id] = [
-        'nome' => $nome,
-        'preco' => $preco,
-        'imagem' => $imagem,
+      $sqlInsert = "INSERT INTO carrinho (id_cliente, id_produto, quantidade_produto) VALUES (:idCliente, :idProduto, :quantidade)";
+      $stmtInsert = $this->pdo->prepare($sqlInsert);
+      $stmtInsert->execute([
+        'idCliente' => $idCliente,
+        'idProduto' => $idProduto,
         'quantidade' => $quantidade
-      ];
+      ]);
     }
-
-    return true;
   }
 
-
-  public function getItensCarrinho()
+  public function removerItem(int $idCliente, int $idProduto)
   {
-    return $_SESSION['carrinho'];
+    $sql = "DELETE FROM carrinho WHERE id_cliente = :idCliente AND id_produto = :idProduto";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute([
+      'idCliente' => $idCliente,
+      'idProduto' => $idProduto
+    ]);
   }
 
-  public function calcularTotal()
+  public function atualizarQuantidade(int $idCliente, int $idProduto, int $quantidade)
   {
-    $total = 0;
-    foreach ($_SESSION['carrinho'] as $item) {
-      $total += $item['preco'] * $item['quantidade'];
+    if ($quantidade <= 0) {
+      $this->removerItem($idCliente, $idProduto);
+    } else {
+      $sql = "UPDATE carrinho SET quantidade_produto = :quantidade WHERE id_cliente = :idCliente AND id_produto = :idProduto";
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->execute([
+        'quantidade' => $quantidade,
+        'idCliente' => $idCliente,
+        'idProduto' => $idProduto
+      ]);
     }
-    return $total;
+  }
+
+  public function limparCarrinho(int $idCliente)
+  {
+    $sql = "DELETE FROM carrinho WHERE id_cliente = :idCliente";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute(['idCliente' => $idCliente]);
+  }
+
+  public function calcularTotal(int $idCliente): float
+  {
+    $sql = "SELECT SUM(p.preco * c.quantidade_produto) as total
+                FROM carrinho c
+                JOIN produto p ON c.id_produto = p.id_produto
+                WHERE c.id_cliente = :idCliente";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute(['idCliente' => $idCliente]);
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $resultado['total'] ?? 0;
   }
 }

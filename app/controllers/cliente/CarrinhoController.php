@@ -1,90 +1,50 @@
 <?php
 
 require_once __DIR__ . '/../../views/cliente/Carrinho.php';
-require_once __DIR__ . '/../../models/CarrinhoModel.php';
+require_once __DIR__ . '/../../models/cliente/CarrinhoModel.php';
 
 class CarrinhoController
 {
   private $model;
+  private $idCliente;
 
-  public function __construct()
+  public function __construct(PDO $pdo, int $idCliente)
   {
-    $this->model = new CarrinhoModel();
+    $this->model = new CarrinhoModel($pdo);
+    $this->idCliente = $idCliente; 
   }
 
-  public function addItem()
+  public function adicionarItem()
   {
-    var_dump($_POST);
-    exit; 
+    $idProduto = $_POST['produto_id'] ?? null;
+    $quantidade = $_POST['quantidade'] ?? 1;
 
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-      header("Location: /Produto");
-      exit;
+    if ($idProduto) {
+      $this->model->adicionarItem($this->idCliente, (int)$idProduto, (int)$quantidade);
     }
-
-    $id = $_POST['produto_id'] ?? null;
-    $nome = $_POST['nome'] ?? '';
-    $preco = $_POST['preco'] ?? 0;
-    $imagem = $_POST['imagem'] ?? '';
-    $quantidade = isset($_POST['quantidade']) ? intval($_POST['quantidade']) : 1;
-
-    if ($id) {
-      $sucesso = $this->model->adicionarItem($id, $nome, $preco, $imagem, $quantidade);
-
-      if ($sucesso) {
-        header("Location: /Carrinho");
-      } else {
-        header("Location: /Produto?error=invalid_data");
-      }
-      exit;
-    } else {
-      header("Location: /Produto");
-      exit;
-    }
-  }
-
-  public function removerItem($id)
-  {
-    if (session_status() === PHP_SESSION_NONE) {
-      session_start();
-    }
-
-    if (isset($_SESSION['carrinho'][$id])) {
-      unset($_SESSION['carrinho'][$id]);
-    }
-
     header("Location: /Carrinho");
     exit;
   }
 
-  public function removerTudo()
+  public function removerItem($idProduto)
   {
-    if (session_status() === PHP_SESSION_NONE) {
-      session_start();
-    }
-    unset($_SESSION['carrinho']);
+    $this->model->removerItem($this->idCliente, (int)$idProduto);
+    header("Location: /Carrinho");
+    exit;
+  }
+
+  public function limparCarrinho()
+  {
+    $this->model->limparCarrinho($this->idCliente);
     header("Location: /Carrinho");
     exit;
   }
 
   public function exibirItens()
   {
-    if (session_status() === PHP_SESSION_NONE) {
-      session_start();
-    }
+    $itensCarrinho = $this->model->getItensCarrinho($this->idCliente);
+    $totalCarrinho = $this->model->calcularTotal($this->idCliente);
 
-    if (!isset($_SESSION['carrinho'])) {
-      $_SESSION['carrinho'] = [];
-    }
-
-    $itensCarrinho = $_SESSION['carrinho'];
-    $totalCarrinho = 0;
-
-    foreach ($itensCarrinho as $item) {
-      $totalCarrinho += $item['preco'] * $item['quantidade'];
-    }
-
-    // Aqui você poderia retornar ou renderizar uma view
     return [
       'itensCarrinho' => $itensCarrinho,
       'totalCarrinho' => $totalCarrinho

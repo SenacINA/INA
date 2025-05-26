@@ -3,12 +3,8 @@
 <?php
 $css = ["/css/cliente/carrinho_vazio.css"];
 $js = ["/js/cliente/carrinho.js"];
+
 require_once("./utils/head.php");
-
-
-if (!isset($_SESSION['carrinho'])) {
-  $_SESSION['carrinho'] = [];  
-}
 
 $itensCarrinho = $_SESSION['carrinho'];
 $totalCarrinho = 0;
