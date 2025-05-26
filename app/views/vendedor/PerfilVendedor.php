@@ -49,7 +49,7 @@
             <option value="EditarPerfil">Editar Perfil</option>
             <option value="ConfirmarPedido">Pedidos</option>
             <option value="RelatorioVendas">Relatório</option>
-            <option value="EditarProduto">Editar Produtos</option>
+            <option value="ProdutoEditar">Editar Produtos</option>
             <option value="Logout">Sair</option>
           </select>
         </form>

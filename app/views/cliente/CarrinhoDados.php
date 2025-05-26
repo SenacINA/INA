@@ -228,7 +228,7 @@
 
         <button class="carrinho_dados_avançar_carrinho base_botao" onclick="pag('CarrinhoPagamentos')">
           <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">
-          AVANÇARF
+          AVANÇAR
         </button>
       </div>
     </div>
