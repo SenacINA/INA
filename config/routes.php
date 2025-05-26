@@ -37,7 +37,7 @@
         // Geral - Perfil
         '/EditarPerfil' => 'geral/GeralController@editarPerfil',
         '/Perfil' => 'geral/GeralController@perfil',
-        '/error/404' => 'gerral/GeralController@error',
+        '/Error/404' => 'gerral/GeralController@error',
 
         // Vendedor - Cadastro e Perfil
         '/CadastroVendedorInfo'    => 'vendedor/VendedorController@showInfo',
