@@ -1,30 +1,32 @@
 <?php
 
-require_once __DIR__ . '/../../../models/admin/HistoricoAcessoModel.php';
-require_once __DIR__ . '/../../../utils/RenderView.php';
+class HistoricoAcessoController extends RenderView{
 
-session_start();
+    public function renderHistoricoAcesso() {
 
-class HistoricoAcessoController {
-    public function index() {
-        $model = new HistoricoAcessoModel();
+        // Se a sessão com resultados existir, carrega para a view
+        $dados = $_SESSION['historico_resultados'] ?? [];
+        unset($_SESSION['historico_resultados']);
+        $this->loadView('admin/HistoricoAcesso', []);
 
-        // Salva e carrega filtros da sessão
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $_SESSION['filtro_ip'] = $_POST['ip'] ?? '';
-            $_SESSION['filtro_data'] = $_POST['data'] ?? '';
-            $_SESSION['filtro_hora'] = $_POST['hora'] ?? '';
-        }
+    }
 
-        $ip = $_SESSION['filtro_ip'] ?? '';
-        $data = $_SESSION['filtro_data'] ?? '';
-        $hora = $_SESSION['filtro_hora'] ?? '';
+    public function buscarHistoricoAcesso() {
+        session_start();
+        require_once __DIR__ . '/../../../models/connect.php';
+        require_once __DIR__ . '/../../../models/admin/HistoricoAcessoModel.php';
 
-        $resultados = $model->buscarAcessos($ip, $data, $hora);
+        $pdo = connect();
+        $model = new HistoricoAcessoModel($pdo);
 
-        RenderView::render('admin/HistoricoAcesso', [
-            'resultados' => $resultados,
-            'filtros' => compact('ip', 'data', 'hora')
-        ]);
+        $ip = $_POST['ip'] ?? '';
+        $data = $_POST['data'] ?? '';
+        $horario = $_POST['horario'] ?? '';
+
+        $resultados = $model->buscarHistoricoAcesso($ip, $data, $horario);
+        $_SESSION['historico_resultados'] = $resultados;
+
+        header('Location: HistoricoAcesso');
+        exit;
     }
 }

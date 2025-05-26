@@ -61,9 +61,10 @@
         '/GerenciarProdutos'        => 'admin/AdminController@gerenciarProdutos',
         '/GerenciarCarrossel'       => 'admin/AdminController@gerenciarCarrossel',
         '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
-        '/HistoricoAcesso'          => 'admin/AdminController@historicoAcesso',
+        '/HistoricoAcesso'          => 'admin/HistoricoAcessoController@renderHistoricoAcesso',
         '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
-        
+        '/HistoricoAcessoBuscar'    => 'admin/AdminController@buscarHistoricoAcesso',
+
     ];
 
     // Join DIRECTOR SEPARETOR

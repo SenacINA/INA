@@ -29,7 +29,7 @@
                   <h2 class="font_subtitulo font_celadon">Relátório Geral</p>
                 </div>
               </div>
-              <form action="" method="post" class="historico_acesso_forms_pesquisa_pedidos">
+              <form action="/HistoricoAcessoBuscar" method="post" class="historico_acesso_forms_pesquisa_pedidos">
                 <div class="historico_acesso_form_cliente">
                   <label class="font_subtitulo font_celadon">IP Do Usuário</label>
                   <input type="text" spellcheck="false" class="base_input">
@@ -126,39 +126,23 @@
               <th>HORÁRIO</th>
               <th>NAVEGADOR</th>
             </tr>
-            <tbody>
-              <tr>
-                <td>192.168.0.1</td>
-                <td>Cliente</td>
-                <td>22/03/2024</td>
-                <td>08:32:34</td>
-                <td>...</td>
-              </tr>
-              <tr>
-                <td>221.121.2.2</td>
-                <td>Cliente</td>
-                <td>01/01/2001</td>
-                <td>12:34:10</td>
-                <td>...</td>
-
-              </tr>
-              <tr>
-                <td>112.212.0.2</td>
-                <td>Vendedor</td>
-                <td>01/01/2001</td>
-                <td>13:40:11</td>
-                <td>...</td>
-
-              </tr>
-              <tr>
-                <td>112.212.0.2</td>
-                <td>Vendedor</td>
-                <td>01/01/2001</td>
-                <td>13:49:11</td>
-                <td>...</td>
-
-              </tr>
-            </tbody>
+              <tbody>
+              <?php
+                if (isset($dados) && count($dados) > 0) {
+                  foreach ($dados as $linha) {
+                    echo "<tr>";
+                    echo "<td>{$linha['ip']}</td>";
+                    echo "<td>{$linha['cargo']}</td>";
+                    echo "<td>" . date('d/m/Y', strtotime($linha['data'])) . "</td>";
+                    echo "<td>" . substr($linha['horario'], 0, 5) . "</td>";
+                    echo "<td>{$linha['navegador']}</td>";
+                    echo "</tr>";
+                  }
+                } else {
+                  echo "<tr><td colspan='5'>Nenhum registro encontrado com os filtros informados.</td></tr>";
+                }
+              ?>
+              </tbody>
           </thead>
         </table>
       </div>
