@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Jost";
-  user-select: none;
 }
 
 /* NAVBAR */
@@ -22,9 +21,10 @@ align-self: center;
 
   background-color: #EFF3F5;
   width: 90%;
-  height: 779px;
+  height: fit-content;
   border-radius: 10px;
-  margin: 0px 1.5%;
+  margin: 0px 1.5%  1.5% 0px;
+  row-gap: 8px;
 }
 
 /* header */
@@ -72,9 +72,8 @@ align-self: center;
 .atualizar_usuario_grid_conteudo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, auto);
   gap: 8px 3%;
-  margin: 8px 5% 0px 5%;
+  margin: 8px 5% -1.5% 5%;
 }
 
 /* info */
@@ -84,6 +83,7 @@ grid-row: 1;
 }
 
 #atualizar_usuario_text_2 {
+margin: 0px 0px 8px 0px;
 grid-column: 2;
 grid-row: 1;
 }
@@ -91,11 +91,13 @@ grid-row: 1;
 #atualizar_usuario_text_3 {
 grid-column: 1;
 grid-row: 3;
+margin: 24px 0 16px 0;
 }
 
 #atualizar_usuario_text_4 {
 grid-column: 2;
 grid-row: 3;
+margin: 24px 0 16px 0;
 }
 
 .atualizar_usuario_text{
@@ -152,15 +154,20 @@ font-weight: 600;
   max-width: 600px;
 }
 
+.atualizar_usuario_pesquisar_usuario button{
+  border-color: transparent;
+  margin-top: 16px;
+  width: 30%;
+}
+
 /* Localização */
 .atualizar_usuario_localizacao_conjunto {
-display: grid;
+display: flex;
 grid-template-columns: 1fr 1fr;
-justify-content: start;
+justify-content: space-between;
 align-items: center;
 column-gap: 2%;
 
-  max-width: 600px;
 }
 
 .atualizar_usuario_dados_pessoais_item,
@@ -169,10 +176,12 @@ column-gap: 2%;
   .atualizar_usuario_localizacao_item  {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .atualizar_usuario_dados_pessoais_item input {
-  max-width: 600px;
+  /* max-width: 600px; */
+  width: 100%;
 }
 
 .atualizar_usuario_dados_pessoais_conjunto {
@@ -182,7 +191,6 @@ justify-content: start;
 align-items: center;
 column-gap: 2%;
 
-  max-width: 600px;
 }
 
 /* Permissões */
@@ -191,11 +199,16 @@ column-gap: 2%;
   flex-direction: column;
   width: 100%;
   max-width: 600px;
+  row-gap: 16px;
 }
 
 .atualizar_usuario_permissoes_conjunto {
 display: grid;
 grid-template-columns: 1fr 1fr;
+}
+
+.atualizar_usuario_permissoes_conjunto button {
+  width: 80%;
 }
 
 .label_container {
@@ -262,6 +275,11 @@ font-weight: 500;
   border-radius: 25px;
   }
 
+  .form_localizacao {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
 .toggle_slider::before {
 position: absolute;
 content: "";
@@ -284,13 +302,14 @@ transform: translateX(24px);
 
 /* Botão Confirmar */
 .atualizar_usuario_botao_salvar {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 
   top: 660px;
   right: 250px;
+  z-index: 1;
 }
 
 .atualizar_usuario_salvar {
@@ -320,6 +339,41 @@ transform: translateX(24px);
   display: none;
 }
 
+.corpo_form {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  gap: 8px 3%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.atualizar_usuario_pesquisar_usuario {
+  position: relative;
+  z-index: 2;
+  grid-column: 1;
+  grid-row: 2 / 4;
+}
+
+.atualizar_usuario_dados_pessoais_grid {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.atualizar_usuario_localizacao_grid {
+  z-index: 2;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.atualizar_usuario_alterar_permissoes_grid {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+
+
 @media (max-width: 1024px) {
   /* CORPO PRINCIPAL */
   .atualizar_usuario_body {
@@ -336,7 +390,7 @@ transform: translateX(24px);
     margin: 0px 2%;
   }
   
-  #atualizar_usuario_text_titulo_mobile {
+  .atualizar_usuario_grid_conteudo_titulo_mobile {
     position: absolute;
     display: block;
     display: flex;
@@ -348,7 +402,7 @@ transform: translateX(24px);
     margin-top: 290px;
   }
   
-  .atualizar_usuario_text_titulo h1 {
+  .atualizar_usuario_grid_conteudo_titulo h1 {
     justify-self: center;
     font-weight: 500;
     color: #255e7e;
@@ -389,7 +443,7 @@ transform: translateX(24px);
     margin-top: 445px;
   }
 
-  #atualizar_usuario_text_1 {
+  .atualizar_usuario_grid_conteudo_1 {
     grid-row: 1;
   }
 
@@ -397,7 +451,7 @@ transform: translateX(24px);
     grid-row: 2;
   }
 
-  #atualizar_usuario_text_2 {
+  .atualizar_usuario_grid_conteudo_2 {
     grid-row: 3;
     grid-column: 1;
     margin-top: 100px;
@@ -407,7 +461,7 @@ transform: translateX(24px);
     grid-row: 4;
   }
 
-  #atualizar_usuario_text_3 {
+  .atualizar_usuario_grid_conteudo_3 {
     grid-row: 5;
   }
 
@@ -415,7 +469,8 @@ transform: translateX(24px);
     grid-row: 6;
   }
 
-  #atualizar_usuario_text_4 {
+
+  .atualizar_usuario_grid_conteudo_4 {
     grid-row: 7;
     grid-column: 1;
   }
@@ -429,7 +484,7 @@ transform: translateX(24px);
   .atualizar_usuario_dados_pessoais_item input,
   .atualizar_usuario_dados_pessoais_conjunto,
   .atualizar_usuario_localizacao_conjunto {
-    max-width: 100%;
+    width: 100%;
   }
 
   .atualizar_usuario_dados_pessoais_conjunto {
@@ -437,6 +492,7 @@ transform: translateX(24px);
   }
 
   .atualizar_usuario_permissoes_conjunto {
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -471,6 +527,7 @@ transform: translateX(24px);
 }
 
 @media (max-width: 768px) {
+
   .atualizar_usuario_titulo {
     position: absolute;
   
@@ -510,7 +567,7 @@ transform: translateX(24px);
   .bg_mobile_2 {
     position: absolute;
     background-color: #EFF3F5;
-    height: 950px;
+    height: 1200px;
     width: 100%;
 
     z-index: -1;
@@ -522,10 +579,29 @@ transform: translateX(24px);
     margin-top: 140px;
   }
 
+
   .atualizar_usuario_botao_salvar {
     top: 190px;
   }
+
+  .atualizar_usuario_forms_item_permissoes{
+    margin-bottom: 16px;
+  }
+
+  .atualizar_usuario_forms_permissoes {
+    row-gap: 0px;
+  }
+
+  .atualizar_usuario_permissoes_conjunto button {
+    width: 100%;
+  }
 }
+
+.atualizar_usuario_forms{
+  z-index: 0;
+}
+
+
 
 @media (max-width: 425px) {
   #atualizar_usuario_text_2 {

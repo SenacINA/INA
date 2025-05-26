@@ -244,3 +244,5 @@ foreign key (id_tag) references tag(id_tag),
 foreign key (id_categoria) references categoria(id_categoria),
 foreign key (id_subcategoria) references subcategoria(id_subcategoria)
 );
+
+select * from cliente;
