@@ -50,7 +50,7 @@ function gerarProdutoCards($quantidade, $path)
                 </div>
             </div>
             <div class='index_body_botoes_produto'>
-                <form method='POST' action='/Carrinho-api-add'>
+                <form method='POST' action='Carrinho-api-add'>
                     <input type='hidden' name='produto_id' value='" . $id . "'>
                     <input type='hidden' name='nome' value='" . htmlspecialchars($nome) . "'>
                     <input type='hidden' name='preco' value='" . $preco . "'>

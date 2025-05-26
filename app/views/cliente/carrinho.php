@@ -6,9 +6,6 @@ $js = ["/js/cliente/carrinho.js"];
 
 require_once("./utils/head.php");
 
-$itensCarrinho = $_SESSION['carrinho'];
-$totalCarrinho = 0;
-
 foreach ($itensCarrinho as $item) {
   $totalCarrinho += $item['preco'] * $item['quantidade'];
 }

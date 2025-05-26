@@ -15,8 +15,8 @@ $routes = [
     '/api/cliente/editarDadosCliente'   => 'cliente/ClienteCOntroller@editarDadosCliente',
 
     // Cliente - Carrinho
-
-    '/Carrinho'                  => 'cliente/CarrinhoController@exibirItens',
+    '/Carrinho'                  => 'cliente/CarrinhoController@index',
+    '/Carrinho-comitem'          => 'cliente/CarrinhoController@exibirItens',
     '/Carrinho-api-add'          => 'cliente/CarrinhoController@adicionarItem',
     '/Carrinho-api-remove'       => 'cliente/CarrinhoController@removerItem',
     '/Carrinho-api-limpar'       => 'cliente/CarrinhoController@limparCarrinho',

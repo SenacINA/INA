@@ -1,17 +1,14 @@
 <?php
 
-require_once __DIR__ . '/../../views/cliente/Carrinho.php';
 require_once __DIR__ . '/../../models/cliente/CarrinhoModel.php';
 
-class CarrinhoController
+class CarrinhoController extends RenderView
 {
-  private $model;
-  private $idCliente;
+  public CarrinhoModel $model;
 
-  public function __construct(PDO $pdo, int $idCliente)
+  public function __construct()
   {
-    $this->model = new CarrinhoModel($pdo);
-    $this->idCliente = $idCliente; 
+    $this->model = new CarrinhoModel;
   }
 
   public function adicionarItem()
@@ -20,34 +17,43 @@ class CarrinhoController
     $quantidade = $_POST['quantidade'] ?? 1;
 
     if ($idProduto) {
-      $this->model->adicionarItem($this->idCliente, (int)$idProduto, (int)$quantidade);
+      $this->model->adicionarItem((int)$idProduto, (int)$quantidade);
     }
-    header("Location: /Carrinho");
+    header("Location: /Carrinho-comitem");
     exit;
   }
 
   public function removerItem($idProduto)
   {
-    $this->model->removerItem($this->idCliente, (int)$idProduto);
+    $this->model->removerItem($_SESSION['cliente_id'], (int)$idProduto);
     header("Location: /Carrinho");
     exit;
   }
 
   public function limparCarrinho()
   {
-    $this->model->limparCarrinho($this->idCliente);
+    $this->model->limparCarrinho($_SESSION['cliente_id']);
     header("Location: /Carrinho");
     exit;
   }
 
   public function exibirItens()
   {
-    $itensCarrinho = $this->model->getItensCarrinho($this->idCliente);
-    $totalCarrinho = $this->model->calcularTotal($this->idCliente);
+    $itensCarrinho = $this->model->getItensCarrinho($_SESSION['cliente_id']);
+    if (!empty($itensCarrinho)) {
+      $totalCarrinho = $this->model->calcularTotal($_SESSION['cliente_id']);
+      return [
+        'itensCarrinho' => $itensCarrinho,
+        'totalCarrinho' => $totalCarrinho
+      ];
+    }
+    else {
+      $this->index();
+    }
 
-    return [
-      'itensCarrinho' => $itensCarrinho,
-      'totalCarrinho' => $totalCarrinho
-    ];
+  }
+
+  public function index() {
+    $this->loadView('cliente/Carrinho', []);
   }
 }
