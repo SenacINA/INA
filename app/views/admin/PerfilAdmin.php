@@ -36,10 +36,10 @@
         
         <div class="perfil_admin_foto">
           <label for="perfil_admin_foto">
-            <img  src="<?=$PATH_PUBLIC?>/image/admin/perfil_admin/perfil_img.svg" alt="" id="img_admin_perfil">
+            <img class="perfil_admin_pfp" src="<?=$PATH_PUBLIC . $user['foto_perfil'] ?? '/image/admin/perfil_admin/perfil_img.svg' ?>" alt="" id="imgPreviewFoto">
           </label>
 
-          <form action="" method="post" class="">
+          <form action="" method="post" class="form">
             <button class="base_botao  btn_blue" type="button" onclick="document.getElementById('fileInputFoto').click();">
               <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/enviar_branco_icon.svg" class="base_icon" alt="">
               <input type="file" id="fileInputFoto" name="foto" style="display: none;" accept="image/*" />
@@ -55,7 +55,7 @@
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_2">
             <label>E-mail</label>
-            <input type="text" class="base_input" value="<?=$user['email_cliente'] ?? 'Não informado'?>">
+            <input type="text" class="base_input" value="<?=$user['email_cliente'] ?? 'Não informado'?>" readonly disabled>
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_3">
             <label>CPF</label>
