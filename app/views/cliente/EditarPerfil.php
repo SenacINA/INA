@@ -276,6 +276,7 @@
 <script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
 <script src="<?=$PATH_PUBLIC?>/js/cliente/updateSocial.js"></script>
 <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
+<script src="<?=$PATH_PUBLIC?>/js/cliente/profile_edit.js"></script>
 <script type="module" src="<?=$PATH_PUBLIC?>/js/geral/selectUfCidade.js"></script>
 <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
 <script>
