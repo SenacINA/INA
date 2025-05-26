@@ -53,7 +53,7 @@ class AuthController extends RenderView {
 
                 if ($tipoConta == 0) {
                     $_SESSION['user_type'] = 'admin';
-                    header('Location: Perfil');
+                    header('Location: AdminDashboard');
                 } elseif ($tipoConta == 1) {
                     $_SESSION['user_type'] = 'vendedor';
                     header('Location: Perfil');

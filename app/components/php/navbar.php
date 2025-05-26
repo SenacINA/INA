@@ -9,7 +9,7 @@ function handlePerfil()
 
   switch ($user) {
     case 'admin':
-      return "AdminDashboard";
+      return "Perfil";
     case 'cliente':
       return "Perfil";
     case 'vendedor':

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 popup.style.display = 'none';
 
                 setTimeout(() => {
-                    window.location.href = 'editar-perfil';
+                    window.location.href = 'EditarPerfil';
                 }, 5000);
             } else {
                 (json.errors || []).forEach(err => gerarToast(err, 'erro'));

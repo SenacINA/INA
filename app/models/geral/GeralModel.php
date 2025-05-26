@@ -24,7 +24,6 @@ class GeralModel
 
     public function updateSocial(int $clienteId, array $data): bool {
         $map = [
-            'descricao' => 'descricao_perfil',
             'tiktok'    => 'tiktok_perfil',
             'linkedin'  => 'linkedin_perfil',
             'facebook'  => 'facebook_perfil',
@@ -86,6 +85,26 @@ class GeralModel
         
         $stmt = $this->db->getConnection()->prepare($sql);
         return $stmt->execute($params);
+    }
+
+    public function updateDescricaoPerfil(int $id_cliente, string $descricao): bool {
+        $maxLength = 500; 
+        if (strlen($descricao) > $maxLength) {
+            return false; 
+        }
+    
+        $conn = $this->db->getConnection();
+    
+        $check = $conn->prepare("SELECT descricao_perfil FROM perfil WHERE id_cliente = :id_cliente");
+        $check->execute([':id_cliente' => $id_cliente]);
+        $atual = $check->fetchColumn();
+    
+        if ($atual === $descricao) return true; 
+
+        $descricao = htmlspecialchars($descricao, ENT_QUOTES, 'UTF-8');
+    
+        $stmt = $conn->prepare("UPDATE perfil SET descricao_perfil = :descricao WHERE id_cliente = :id_cliente");
+        return $stmt->execute([':descricao' => $descricao, ':id_cliente' => $id_cliente]);
     }
 
     public function updateFotoPerfil(int $id, string $path): bool {

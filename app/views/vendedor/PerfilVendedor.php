@@ -5,7 +5,6 @@
   $css = ["/css/vendedor/perfil_vendedor.css"];
   require_once('./utils/head.php');
   require_once("./app/models/vendedor/PerfilVendedorModel.php");
-  $array = getPerfil($_SESSION['cliente_id']);
  
 ?>
 
@@ -18,48 +17,47 @@
   ?>
 
   <main>
-    <img src="<?= $PATH_PUBLIC . '/';
-              echo $array[0]['banner_perfil'] ?>" alt="banner" class="perfil_vendedor_banner">
+    <img class='perfil_vendedor_banner' src="<?= $PATH_PUBLIC . $user['banner_perfil'] ?>">
 
     <div class="perfil_vendedor_content_pfp">
       <div class="perfil_vendedor_pfp">
-        <img src="<?= $PATH_PUBLIC . '/';
-              echo $array[0]['foto_perfil'] ?>" alt="pfp_vendedor">
-        <h1><?=$array[0]['nome_cliente'] ?></h1>
+        <img class='pfp_img' src="<?= $PATH_PUBLIC . $user['foto_perfil'] ?>" alt="pfp_vendedor">
+        <h1><?= $vendedor['nome_fantasia'] ?></h1>
+        <div class="perfil_vendedor_infos_container">
+          <div class="perfil_vendedor_infos_item1">
+            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg">
+            <p><?= htmlspecialchars($user['localizacao'] ?? 'Localização não definida') ?></p>
+          </div>
+          <div class="perfil_vendedor_infos_item2">
+            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/loja_icon.svg">
+            <p>Produtos: <?=$vendedor['quantidadeProdutos']?></p>
+          </div>
+          <div class="perfil_vendedor_infos_item3">
+            <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_membros_icon.svg">
+            <p>Vendedor há: <?=$vendedor['tempo']?></p>
+          </div>
+          <div class="perfil_vendedor_infos_item4">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/icons/estela_icon.svg" class="base_icon">
+            <p>Avaliação geral: <?= $vendedor['mediaEstrelas']?></p>
+          </div>
+        </div>
       </div>
       <div class="perfil_vendedor_btn_menu base_input_select">
         <form action="">
           <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
             <option selected disabled value="">Menu</option>
-            <option value="vendedor/editar-perfil">Editar Perfil</option>
+            <option value="EditarPerfil">Editar Perfil</option>
             <option value="vendedor/confirmar_pedido">Pedidos</option>
             <option value="vendedor/relatorio_vendas">Relatório</option>
             <option value="vendedor/editar_produto">Editar Produtos</option>
-            <option value="cliente/login">Sair</option>
+            <option value="Logout">Sair</option>
           </select>
         </form>
       </div>
     </div>
 
     <div class="perfil_vendedor_grid_principal">
-      <div class="perfil_vendedor_infos_container">
-        <div class="perfil_vendedor_infos_item1">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/localizacao_icon.svg">
-          <p>São Paulo, São Paulo</p>
-        </div>
-        <div class="perfil_vendedor_infos_item2">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/loja_icon.svg">
-          <p>Produtos: 8</p>
-        </div>
-        <div class="perfil_vendedor_infos_item3">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_membros_icon.svg">
-          <p>Vendedor há: 6 Meses</p>
-        </div>
-        <div class="perfil_vendedor_infos_item4">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/icons/estela_icon.svg" class="base_icon">
-          <p>Avaliação geral: 4.5</p>
-        </div>
-      </div>
+      
       <hr>
 
       <div class="info_container">
@@ -68,50 +66,51 @@
             <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/texto_icon.svg">
             <h1>Sobre nós:</h1>
           </div>
-          <p>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium et error distinctio.
-            In doloremque minus et harum ducimus hic omnis sapiente ut perferendis perferendis.
-            Quo distinctio consequatur est consequuntur repellendus eos fugiat accusantium quo quod eius et nesciunt temporibus.
-            At recusandae asperiores et nisi laborum id sint suscipit et asperiores consequatur est molestiae Quis qui dolorem vitae.
-            At dolorum quos non omnis internos et quos quis.
-          </p>
+          <p><?=$user['descricao_perfil'] ?? 'Sem descrição' ?></p>
         </div>
 
         <div class="contatos_vendedor">
-          <div class="contatos_vendedor_column">
-            <div class="item_contatos_vendedor">
-              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" class="icon_instagram_vendedor">
-              <a href="#"><?php echo $array[0]['instagram_perfil']; ?></a>
-            </div>
+          <?php if (!empty($user['instagram_perfil'])): ?>
+                <div class='redes_div'>
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/instagram_icon.svg" alt="instagram" class='base_icon'>
+                    <a href="https://instagram.com/<?= htmlspecialchars($user['instagram_perfil']) ?>">@<?= htmlspecialchars($user['instagram_perfil']) ?></a>
+                </div>
+            <?php endif; ?>
 
-            <div class="item_contatos_vendedor">
-              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" class="icon_facebook_vendedor">
-              <a href="#"><?php echo $array[0]['facebook_perfil']; ?></a>
-            </div>
+            <?php if (!empty($user['facebook_perfil'])): ?>
+                <div class='redes_div'>
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/facebook_icon.svg" alt="facebook" class='base_icon'>
+                    <a href="https://facebook.com/<?= htmlspecialchars($user['facebook_perfil']) ?>"><?= htmlspecialchars($user['facebook_perfil']) ?></a>
+                </div>
+            <?php endif; ?>
 
-            <div class="item_contatos_vendedor">
-              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg" class="icon_x_vendedor">
-              <a href="#">tu dudududud udududud</a>
-            </div>
-          </div>
+            <?php if (!empty($user['x_perfil'])): ?>
+                <div class='redes_div'>
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/x_twitter_icon.svg" alt="x.com" class='base_icon'>
+                    <a href="https://x.com/<?= htmlspecialchars($user['x_perfil']) ?>">@<?= htmlspecialchars($user['x_perfil']) ?></a>
+                </div>
+            <?php endif; ?>
 
-          <hr>
+            <?php if (!empty($user['linkedin_perfil'])): ?>
+                <div class='redes_div'>
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg" alt="linkedin" class='base_icon'>
+                    <a href="https://linkedin.com/in/<?= htmlspecialchars($user['linkedin_perfil']) ?>"><?= htmlspecialchars($user['linkedin_perfil']) ?></a>
+                </div>
+            <?php endif; ?>
 
-          <div class="contatos_vendedor_column">
-            <div class="item_contatos_vendedor">
-              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/linkedin_icon.svg" class="icon_linkedin_vendedor">
-              <a href="#"><?php echo $array[0]['linkedin_perfil']; ?></a>
-            </div>
+            <?php if (!empty($user['youtube_perfil'])): ?>
+                <div class='redes_div'>
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" alt="youtube" class='base_icon'>
+                    <a href="https://youtube.com/@<?= htmlspecialchars($user['youtube_perfil']) ?>">@<?= htmlspecialchars($user['youtube_perfil']) ?></a>
+                </div>
+            <?php endif; ?>
 
-            <div class="item_contatos_vendedor">
-              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/youtube_icon.svg" class="icon_youtube_vendedor">
-              <a href="#"><?php echo $array[0]['youtube_perfil']; ?></a>
-            </div>
-
-            <div class="item_contatos_vendedor">
-              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg" class="icon_tiktok_vendedor">
-              <a href="#"><?php echo $array[0]['tiktok_perfil']; ?></a>
-            </div>
-          </div>
+            <?php if (!empty($user['tiktok_perfil'])): ?>
+                <div class='redes_div'>
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/icons/tiktok_icon.svg" alt="tiktok" class='base_icon'>
+                    <a href="https://tiktok.com/@<?= htmlspecialchars($user['tiktok_perfil']) ?>">@<?= htmlspecialchars($user['tiktok_perfil']) ?></a>
+                </div>
+            <?php endif; ?>
         </div>
       </div>
       <hr>
