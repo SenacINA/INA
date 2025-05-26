@@ -6,7 +6,7 @@
   require_once('./utils/head.php');
 ?>
 
-<!-- FAZER A RESPONSIVIDADE -->
+<!-- FAZER A RESPONSIVIDADE DA TELA -->
 
 <body> 
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
