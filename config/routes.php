@@ -46,18 +46,19 @@ $routes = [
     '/Perfil'                    => 'geral/GeralController@perfil',
     '/error/404'                 => 'gerral/GeralController@error',
 
-    // Vendedor - Cadastro e Perfil
-    '/CadastroVendedorInfo'      => 'vendedor/VendedorController@showInfo',
-    '/CadastroVendedor'          => 'vendedor/VendedorController@showFormCadastro',
-    '/CadastroVendedorForms'     => 'vendedor/VendedorController@cadastroForm',
-
-    // Vendedor - Produtos e Pedidos
-    '/PedidosVendedor'           => 'vendedor/VendedorProductController@pedidos',
-    '/PedidoConfirmar'           => 'vendedor/VendedorProductController@confirm',
-    '/ProdutoRegistrar'          => 'vendedor/VendedorProductController@create',
-    '/ProdutoEditar'             => 'vendedor/VendedorProductController@edit',
-    '/RelatorioVendas'           => 'vendedor/VendedorProductController@report',
-    '/CadastroProduto'           => 'vendedor/ProdutoController@produto',
+        // Vendedor - Cadastro e Perfil
+        '/CadastroVendedorInfo'    => 'vendedor/VendedorController@showInfo',
+        '/CadastroVendedor'         => 'vendedor/VendedorController@showFormCadastro',
+        '/CadastroVendedorForms'   => 'vendedor/VendedorController@cadastroForm',
+        '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
+        
+        // Vendedor - Produtos e Pedidos
+        '/PedidosVendedor'          => 'vendedor/VendedorProductController@pedidos',
+        '/PedidoConfirmar'          => 'vendedor/VendedorProductController@confirm',
+        '/ProdutoRegistrar'         => 'vendedor/VendedorProductController@create',
+        '/ProdutoEditar'            => 'vendedor/VendedorProductController@edit',
+        '/RelatorioVendas'          => 'vendedor/VendedorProductController@report',
+        '/CadastroProduto'          => 'vendedor/ProdutoController@produto',
 
     // Admin
     '/AdminDashboard'            => 'admin/AdminController@dashboard',
