@@ -6,7 +6,7 @@
   require_once('./utils/head.php');
 ?>
 
-<!-- FAZER A RESPONSIVIDADE -->
+<!-- FAZER A RESPONSIVIDADE DA TELA -->
 
 <body> 
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
@@ -38,7 +38,7 @@
           <form id='formPesquisa' class="atualizar_usuario_forms">
 
             <div class="atualizar_usuario_pesquisar_usuario_item" id="atualizar_usuario_pesquisar_usuario_item_1">
-              <label>ID Do Usuário</label>
+              <label style="margin-top: 12px" >ID Do Usuário</label>
               <input type="text" class="base_input" name="idUsuario">
             </div>
             <div class="atualizar_usuario_pesquisar_usuario_item" id="atualizar_usuario_pesquisar_usuario_item_2">
@@ -80,12 +80,17 @@
                   <label>E-mail</label>
                   <input type="text" class="base_input" name="emailInput">
                 </div>
-                <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_4">
+                <!-- Não tem telefone no banco :( -->
+                
+                <!-- <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_4">
                   <label>Telefone</label>
                   <input type="text" class="base_input" name="telefoneInput">
-                </div>
+                </div> -->
               </div>
-              <div class="atualizar_usuario_dados_pessoais_conjunto">
+
+              <!-- Não tem telefone no banco :( -->
+
+              <!-- <div class="atualizar_usuario_dados_pessoais_conjunto">
                 <div class="atualizar_usuario_dados_pessoais_item" id="atualizar_usuario_dados_pessoais_item_5">
                   <label>CPF</label>
                   <input type="text" class="base_input" name="cpfInput">
@@ -94,7 +99,7 @@
                   <label>Telefone 2</label>
                   <input type="text" class="base_input" name="telefone2Input">
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
 

@@ -24,7 +24,6 @@ class GeralModel
 
     public function updateSocial(int $clienteId, array $data): bool {
         $map = [
-            'descricao' => 'descricao_perfil',
             'tiktok'    => 'tiktok_perfil',
             'linkedin'  => 'linkedin_perfil',
             'facebook'  => 'facebook_perfil',
@@ -70,11 +69,12 @@ class GeralModel
 
 
     public function updateLocalizacao(int $clienteId, string $uf, string $cidade): bool {
-        // Tenta atualizar o endereço existente
-        $sqlUpdate = "
-            UPDATE endereco 
-            SET uf_endereco = :uf, cidade_endereco = :cidade 
-            WHERE id_cliente = :id
+        $sql = "
+            INSERT INTO endereco (id_cliente, uf_endereco, cidade_endereco)
+            VALUES (:id, :uf, :cidade)
+            ON DUPLICATE KEY UPDATE
+                uf_endereco = VALUES(uf_endereco),
+                cidade_endereco = VALUES(cidade_endereco)
         ";
         
         $params = [
@@ -82,23 +82,29 @@ class GeralModel
             ':uf'     => $uf,
             ':cidade' => $cidade
         ];
-    
-        // Executa o UPDATE
-        $stmt = $this->db->getConnection()->prepare($sqlUpdate);
-        $stmt->execute($params);
-        $rowsUpdated = $stmt->rowCount();
-    
-        // Se nenhuma linha foi atualizada, insere um novo registro
-        if ($rowsUpdated === 0) {
-            $sqlInsert = "
-                INSERT INTO endereco (id_cliente, uf_endereco, cidade_endereco)
-                VALUES (:id, :uf, :cidade)
-            ";
-            $stmt = $this->db->getConnection()->prepare($sqlInsert);
-            return $stmt->execute($params); // Retorna true/false diretamente
+        
+        $stmt = $this->db->getConnection()->prepare($sql);
+        return $stmt->execute($params);
+    }
+
+    public function updateDescricaoPerfil(int $id_cliente, string $descricao): bool {
+        $maxLength = 500; 
+        if (strlen($descricao) > $maxLength) {
+            return false; 
         }
     
-        return true; // Update foi bem-sucedido
+        $conn = $this->db->getConnection();
+    
+        $check = $conn->prepare("SELECT descricao_perfil FROM perfil WHERE id_cliente = :id_cliente");
+        $check->execute([':id_cliente' => $id_cliente]);
+        $atual = $check->fetchColumn();
+    
+        if ($atual === $descricao) return true; 
+
+        $descricao = htmlspecialchars($descricao, ENT_QUOTES, 'UTF-8');
+    
+        $stmt = $conn->prepare("UPDATE perfil SET descricao_perfil = :descricao WHERE id_cliente = :id_cliente");
+        return $stmt->execute([':descricao' => $descricao, ':id_cliente' => $id_cliente]);
     }
 
     public function updateFotoPerfil(int $id, string $path): bool {

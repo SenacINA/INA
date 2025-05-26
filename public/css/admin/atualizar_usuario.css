@@ -150,9 +150,6 @@ font-weight: 600;
   flex-direction: column;
 }
 
-.atualizar_usuario_pesquisar_usuario_item input {
-  max-width: 600px;
-}
 
 .atualizar_usuario_pesquisar_usuario button{
   border-color: transparent;
@@ -185,11 +182,11 @@ column-gap: 2%;
 }
 
 .atualizar_usuario_dados_pessoais_conjunto {
-display: grid;
-grid-template-columns: 1fr 1fr;
+/* display: grid; */
+/* grid-template-columns: 1fr 1fr; */
 justify-content: start;
 align-items: center;
-column-gap: 2%;
+/* column-gap: 2%; */
 
 }
 
@@ -362,12 +359,14 @@ transform: translateX(24px);
 }
 
 .atualizar_usuario_localizacao_grid {
+  margin-top: 38px;
   z-index: 2;
   grid-column: 1;
   grid-row: 2;
 }
 
 .atualizar_usuario_alterar_permissoes_grid {
+  margin-top: 38px;
   grid-column: 2;
   grid-row: 2;
 }
@@ -375,6 +374,56 @@ transform: translateX(24px);
 
 
 @media (max-width: 1024px) {
+
+  .corpo_form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+    row-gap: 48px;
+  }
+
+  .atualizar_usuario_forms{
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .atualizar_usuario_dados_pessoais_grid{
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .atualizar_usuario_localizacao_grid{
+    grid-column: 1;
+    grid-row: 3;
+    
+  }
+
+  .atualizar_usuario_forms_permissoes{
+    row-gap: 0;
+  }
+
+  
+  .atualizar_usuario_pesquisar_usuario {
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 64px;
+    width: 103%;
+
+    & button{
+      width: 100%;
+    }
+  }
+
+  #atualizar_usuario_text_1{
+    height: fit-content;
+  }
+
+  .atualizar_usuario_alterar_permissoes_grid{
+    grid-column: 1;
+    grid-row: 4;
+  }
+
   /* CORPO PRINCIPAL */
   .atualizar_usuario_body {
     position: relative;
@@ -382,10 +431,9 @@ transform: translateX(24px);
     flex-direction: column;
     justify-self: center;
     align-self: center;
-    
-    background-color: transparent;
+
     width: 95%;
-    height: 1435px;
+    height: 1680px;
     border-radius: 10px;
     margin: 0px 2%;
   }
@@ -447,9 +495,6 @@ transform: translateX(24px);
     grid-row: 1;
   }
 
-  .atualizar_usuario_pesquisar_usuario {
-    grid-row: 2;
-  }
 
   .atualizar_usuario_grid_conteudo_2 {
     grid-row: 3;
@@ -498,7 +543,11 @@ transform: translateX(24px);
   }
 
   .atualizar_usuario_forms_item_permissoes {
-    margin-bottom: 4%;
+    margin-bottom: 2%;
+
+    & button{
+      width: 100%;
+    }
   }
 
   /* botão */
@@ -523,6 +572,8 @@ transform: translateX(24px);
     width: 100%;
     height: 40px;
   }
+
+
   
 }
 
@@ -556,7 +607,79 @@ transform: translateX(24px);
   .atualizar_usuario_botao_salvar {
     top: 210px;
   }
+
+  .atualizar_usuario_grid_conteudo {
+    display: grid;
+    grid-template-columns: 1fr;
+
+  }
+
+  .corpo_form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+    row-gap: 48px;
+  }
+
+  .atualizar_usuario_forms{
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .atualizar_usuario_dados_pessoais_grid{
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .atualizar_usuario_localizacao_grid{
+    grid-column: 1;
+    grid-row: 3;
+    
+  }
+
+  .atualizar_usuario_forms_permissoes{
+    row-gap: 0;
+  }
+
+  
+  .atualizar_usuario_pesquisar_usuario {
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 64px;
+    width: 103%;
+
+    & button{
+      width: 100%;
+    }
+  }
+
+  #atualizar_usuario_text_1{
+    height: fit-content;
+  }
+
+  .atualizar_usuario_alterar_permissoes_grid{
+    grid-column: 1;
+    grid-row: 4;
+  }
+  
+  /* .atualizar_usuario_localizacao_grid{
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .atualizar_usuario_alterar_permissoes_grid {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .atualizar_usuario_dados_pessoais_grid{
+    grid-column: 1;
+    grid-row: 1;
+  } */
 }
+
+
 
 
 @media (max-width: 425px) {

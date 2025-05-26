@@ -19,6 +19,10 @@ hr {
 
 }
 
+.base_icon {
+  height: 24px;
+}
+
 .perfil_cliente_banner {
   width: 100%;
   aspect-ratio: 3 / 1;
@@ -42,8 +46,8 @@ hr {
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content;
   justify-content: center;
-
-  gap: 16px;
+  max-width: 632px;
+  gap: 24px;
   grid-column: 2;
 
   h1 {
@@ -58,15 +62,17 @@ hr {
 .perfil_cliente_pfp_pic {
   justify-self: center;
   align-self: center;
-  width: 300px;
-  height: 300px;
+  width: 248px;
+  height: 248px;
   border-radius: 50%;
   background-color: var(--branco_gelo);
 }
 
 .perfil_cliente_btn_menu {
   justify-self: end;
-  margin-right: 15%;
+  margin-right: 24px;
+  position: absolute;
+  top: 164px;
 
   select {
     cursor: pointer;
@@ -90,19 +96,22 @@ hr {
 
   p {
     color: var(--sappire);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 90%;
+    line-height: 100%;
   }
 }
 
 .perfil_cliente_infos_item1,
 .perfil_cliente_infos_item2,
 .perfil_cliente_infos_item3 {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   column-gap: 8px;
+  width: 100%;
+  justify-content: center;
 }
 
 .perfil_cliente_infos_item1 {
@@ -315,6 +324,10 @@ hr {
 
 }
 @media (max-width: 432px) {
+  .perfil_cliente_pfp_pic {
+    width: 200px;
+    height: 200px;
+  }
   
   .perfil_cliente_pfp h1 {
     font-size: 22px;

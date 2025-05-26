@@ -96,7 +96,7 @@
                     
                     <div class="grid_produto_info_button">
                         <button class="base_botao btn_blue"><img src="<?=$PATH_PUBLIC?>/image/geral/botoes/cesta_branca_icon.svg" alt="">CARRINHO</button>
-                        <button class="base_botao btn_outline_blue" onclick="pag('carrinho')">
+                        <button class="base_botao btn_outline_blue" onclick="pag('Carrinho')">
                             <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/+_carolina_icon.svg" alt="">
                             COMPRAR
                         </button>
