@@ -1,10 +1,15 @@
 <?php
+require_once __DIR__ . '/../connect.php';
+
 
 class HistoricoAcessoModel {
-    private $pdo;
 
-    public function __construct($pdo) {
-        $this->pdo = $pdo;
+    private Database $db;
+
+    public function __construct()
+    {
+        $this->db = new Database();
+        $this->db->connect();
     }
 
     public function buscarHistoricoAcesso($ip = '', $data = '', $horario = '') {
@@ -21,7 +26,8 @@ class HistoricoAcessoModel {
             $params[':data'] = $data;
         }
 
-        if (!empty($horario)) {
+       if (!empty($horario)) {
+            $horario = date('H:i:s', strtotime($horario)); // Garante formato correto
             $where[] = "ha.horario_historico_acesso = :horario";
             $params[':horario'] = $horario;
         }
@@ -48,8 +54,10 @@ class HistoricoAcessoModel {
 
         $sql .= ' ORDER BY ha.data_historico_acesso DESC, ha.horario_historico_acesso DESC';
 
-        $stmt = $this->pdo->prepare($sql);
+        $stmt = $this->db->getConnection()->prepare($sql);
         $stmt->execute($params);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+                
+        return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
     }
+
 }

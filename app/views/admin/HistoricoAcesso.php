@@ -29,7 +29,7 @@
                   <h2 class="font_subtitulo font_celadon">Relátório Geral</p>
                 </div>
               </div>
-              <form action="/HistoricoAcessoBuscar" method="post" class="historico_acesso_forms_pesquisa_pedidos">
+              <form action="HistoricoAcessoBuscar" method="post" class="historico_acesso_forms_pesquisa_pedidos">
                 <div class="historico_acesso_form_cliente">
                   <label class="font_subtitulo font_celadon">IP Do Usuário</label>
                   <input type="text" spellcheck="false" class="base_input">
@@ -46,6 +46,10 @@
                   </div>
                 </div>
                 <div class="historico_acesso_holder_botao">
+                  <button type="reset" class="base_botao btn_outline_red historico_acesso_base_botao" onclick="pag('HistoricoAcesso')">
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_vermelho_icon.svg" alt="">
+                    Limpar
+                  </button>
                   <button type="reset" class="base_botao btn_red historico_acesso_base_botao">
                     <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_branco_icon.svg" alt="">
                     CANCELAR
@@ -54,6 +58,7 @@
                     <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
                     CONFIRMAR
                   </button>
+ 
                 </div>
               </form>
             </div>
@@ -128,8 +133,10 @@
             </tr>
               <tbody>
               <?php
-                if (isset($dados) && count($dados) > 0) {
-                  foreach ($dados as $linha) {
+
+                $resultados = isset($resultados) ? $resultados : [];
+                if (isset($resultados) && count($resultados) > 0) {
+                  foreach ($resultados as $linha) {
                     echo "<tr>";
                     echo "<td>{$linha['ip']}</td>";
                     echo "<td>{$linha['cargo']}</td>";
@@ -147,6 +154,7 @@
         </table>
       </div>
     </div>
+
   </main>
 </body>
 

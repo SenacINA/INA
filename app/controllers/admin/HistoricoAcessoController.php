@@ -3,30 +3,26 @@
 class HistoricoAcessoController extends RenderView{
 
     public function renderHistoricoAcesso() {
-
+        $resultados = [];
         // Se a sessão com resultados existir, carrega para a view
-        $dados = $_SESSION['historico_resultados'] ?? [];
-        unset($_SESSION['historico_resultados']);
-        $this->loadView('admin/HistoricoAcesso', []);
+        $this->loadView('admin/HistoricoAcesso', ['resultados' => $resultados]);
 
     }
 
     public function buscarHistoricoAcesso() {
-        session_start();
-        require_once __DIR__ . '/../../../models/connect.php';
-        require_once __DIR__ . '/../../../models/admin/HistoricoAcessoModel.php';
+        require_once __DIR__.'/../../models/admin/HistoricoAcessoModel.php';
 
-        $pdo = connect();
-        $model = new HistoricoAcessoModel($pdo);
+        $model = new HistoricoAcessoModel();
 
         $ip = $_POST['ip'] ?? '';
         $data = $_POST['data'] ?? '';
         $horario = $_POST['horario'] ?? '';
 
-        $resultados = $model->buscarHistoricoAcesso($ip, $data, $horario);
-        $_SESSION['historico_resultados'] = $resultados;
+        $resultados = [];
 
-        header('Location: HistoricoAcesso');
+        $resultados = $model->buscarHistoricoAcesso($ip, $data, $horario) ?: [];
+
+        $this->loadView('admin/HistoricoAcesso', ['resultados' => $resultados]);
         exit;
     }
 }

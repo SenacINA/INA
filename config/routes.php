@@ -63,7 +63,7 @@
         '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
         '/HistoricoAcesso'          => 'admin/HistoricoAcessoController@renderHistoricoAcesso',
         '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
-        '/HistoricoAcessoBuscar'    => 'admin/AdminController@buscarHistoricoAcesso',
+        '/HistoricoAcessoBuscar'    => 'admin/HistoricoAcessoController@buscarHistoricoAcesso',
 
     ];
 
