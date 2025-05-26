@@ -93,7 +93,7 @@ class VendedorController extends RenderView
 
         if ($success[0]) {
             $_SESSION['successMessage'] = $success[1];
-            header("Location: perfil");
+            header("Location: Perfil");
             exit();
         } else {
             $errors[] = 'Erro ao cadastrar usuário.';
