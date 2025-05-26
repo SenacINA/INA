@@ -1,12 +1,13 @@
 <?php
 
-class HistoricoAcessoController extends RenderView{
-
+class HistoricoAcessoController extends RenderView {
+    
     public function renderHistoricoAcesso() {
+        // Inicializa a variável como um array vazio para garantir limpeza
         $resultados = [];
-        // Se a sessão com resultados existir, carrega para a view
-        $this->loadView('admin/HistoricoAcesso', ['resultados' => $resultados]);
 
+        // Carrega a view sem resultados pré-existentes
+        $this->loadView('admin/HistoricoAcesso', ['resultados' => $resultados]);
     }
 
     public function buscarHistoricoAcesso() {
@@ -14,14 +15,15 @@ class HistoricoAcessoController extends RenderView{
 
         $model = new HistoricoAcessoModel();
 
-        $ip = $_POST['ip'] ?? '';
-        $data = $_POST['data'] ?? '';
-        $horario = $_POST['horario'] ?? '';
+        // Captura os filtros da requisição e assegura que estão no formato correto
+        $ip = $_POST['ip'] ?? null;
+        $data = $_POST['data'] ?? null;
+        $horario = $_POST['horario'] ?? null;
 
-        $resultados = [];
+        // Garante que os filtros vazios sejam tratados corretamente no model
+        $resultados = $model->buscarHistoricoAcesso($ip, $data, $horario);
 
-        $resultados = $model->buscarHistoricoAcesso($ip, $data, $horario) ?: [];
-
+        // Carrega a view apenas com os resultados filtrados
         $this->loadView('admin/HistoricoAcesso', ['resultados' => $resultados]);
         exit;
     }
