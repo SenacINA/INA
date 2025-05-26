@@ -240,4 +240,13 @@ foreign key (id_categoria) references categoria(id_categoria),
 foreign key (id_subcategoria) references subcategoria(id_subcategoria)
 );
 
-select * from cliente;
+CREATE TABLE IF NOT EXISTS permissao_admin (
+    id_permissao INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    gerenciar_carrossel BOOLEAN DEFAULT FALSE,
+    gerenciar_usuarios BOOLEAN DEFAULT FALSE,
+    gerenciar_produtos BOOLEAN DEFAULT FALSE,
+    acessar_historico_acesso BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente) ON DELETE CASCADE
+);
+

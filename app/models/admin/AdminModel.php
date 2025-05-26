@@ -7,8 +7,25 @@ class AdminModel
 
     public function __construct()
     {
-        $this->db = new Database();
+        $this->db = new Database;
         $this->db->connect();
+    }
+
+    public function getInfoAdmin($id) {
+        $sql = "
+            SELECT * 
+            FROM cliente 
+            JOIN permissao_admin 
+            ON cliente.id_cliente = permissao_admin.id_cliente
+            WHERE cliente.id_cliente = :id;
+        ";
+
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result ?: null;
     }
 
     public function pesquisarUsuario(?string $id, ?string $email): ?array
@@ -103,6 +120,4 @@ class AdminModel
             ':id' => $dados['id']
     ]);
 }
-
-
 }
