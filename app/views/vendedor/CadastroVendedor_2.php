@@ -29,7 +29,7 @@ require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
             <h1 class="cadastro_vendedor_2_text">Loja</h1>
           </div>
           <!-- Local da Empresa -->
-          <form action="cadastro-vendedor-forms" method="post">
+          <form action="CadastroVendedorForms" method="post">
             <div class="">
               <label for="local_da_empresa">Local da Empresa</label>
               <div class="base_input_select">

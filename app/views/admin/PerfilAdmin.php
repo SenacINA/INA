@@ -39,82 +39,88 @@
             <img  src="<?=$PATH_PUBLIC?>/image/admin/perfil_admin/perfil_img.svg" alt="" id="img_admin_perfil">
           </label>
 
-          <form action="" method="post" class="perfil_admin_foto_pfp">
-            <label for="perfil_admin_foto" class="perfil_admin_foto_label">
-              <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/admin/perfil_admin/enviar_arquivo.svg" alt="Enviar Arquivo" class="perfil_admin_foto">
-            </label>
-            <input type="file" name="pfp" id="perfil_admin_foto" class="base_input" style="display: none;">
+          <form action="" method="post" class="">
+            <button class="base_botao  btn_blue" type="button" onclick="document.getElementById('fileInputFoto').click();">
+              <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/enviar_branco_icon.svg" class="base_icon" alt="">
+              <input type="file" id="fileInputFoto" name="foto" style="display: none;" accept="image/*" />
+              Enviar arquivo
+            </button>
           </form>
         </div>
 
         <form action="" method="post" class="perfil_admin_forms">
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_1">
             <label>Nome</label>
-            <input type="text" class="base_input">
+            <input type="text" class="base_input" value="<?=$user['nome_cliente']?>">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_2">
             <label>E-mail</label>
-            <input type="text" class="base_input">
+            <input type="text" class="base_input" value="<?=$user['email_cliente'] ?? 'Não informado'?>">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_3">
             <label>CPF</label>
-            <input type="text" class="base_input">
+            <input type="text" class="base_input" value="<?= $user['cpf_cliente'] ?? 'Não informado'?>">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_4">
             <label>Telefone</label>
-            <input type="text" class="base_input">
+            <input type="text" class="base_input" value="<?= $user['numero_celular_cliente'] ?? 'Não informado'?>">
           </div>
         </form>
 
         <form action="" method="post" class="perfil_admin_forms_permissoes">
           <div class="perfil_admin_forms_item_permissoes">
-            <div class="toggle_container">
-              <label class="toggle">
-                <input type="checkbox" id="perfil_admin_gerenciar_carrossel" class="base_input">
-                <span class="toggle_slider"></span>
-              </label>
-            </div>
-            <div class="label_container">
-              <label for="perfil_admin_gerenciar_carrossel">Gerenciar carrossel</label>
-            </div>
+              <div class="toggle_container">
+                  <label class="toggle">
+                      <input type="checkbox" id="perfil_admin_gerenciar_carrossel" class="base_input" disabled
+                          <?= $user['gerenciar_carrossel'] ? 'checked' : '' ?>>
+                      <span class="toggle_slider"></span>
+                  </label>
+              </div>
+              <div class="label_container">
+                  <label for="perfil_admin_gerenciar_carrossel">Gerenciar carrossel</label>
+              </div>
           </div>
 
           <div class="perfil_admin_forms_item_permissoes">
-            <div class="toggle_container">
-              <label class="toggle">
-                <input type="checkbox" id="perfil_admin_gerenciar_usuarios" class="base_input">
-                <span class="toggle_slider"></span>
-              </label>
-            </div>
-            <div class="label_container">
-              <label for="perfil_admin_gerenciar_usuarios">Gerenciar usuários</label>
-            </div>
+              <div class="toggle_container">
+                  <label class="toggle">
+                      <input type="checkbox" id="perfil_admin_gerenciar_usuarios" class="base_input" disabled
+                          <?= $user['gerenciar_usuarios'] ? 'checked' : '' ?>>
+                      <span class="toggle_slider"></span>
+                  </label>
+              </div>
+              <div class="label_container">
+                  <label for="perfil_admin_gerenciar_usuarios">Gerenciar usuários</label>
+              </div>
           </div>
 
           <div class="perfil_admin_forms_item_permissoes">
-            <div class="toggle_container">
-              <label class="toggle">
-                <input type="checkbox" id="perfil_admin_gerenciar_produtos" class="base_input">
-                <span class="toggle_slider"></span>
-              </label>
-            </div>
-            <div class="label_container">
-              <label for="perfil_admin_gerenciar_produtos">Gerenciar produtos</label>
-            </div>
+              <div class="toggle_container">
+                  <label class="toggle">
+                      <input type="checkbox" id="perfil_admin_gerenciar_produtos" class="base_input" disabled
+                          <?= $user['gerenciar_produtos'] ? 'checked' : '' ?>>
+                      <span class="toggle_slider"></span>
+                  </label>
+              </div>
+              <div class="label_container">
+                  <label for="perfil_admin_gerenciar_produtos">Gerenciar produtos</label>
+              </div>
           </div>
 
           <div class="perfil_admin_forms_item_permissoes">
-            <div class="toggle_container">
-              <label class="toggle">
-                <input type="checkbox" id="perfil_admin_historico_acessos" class="base_input">
-                <span class="toggle_slider"></span>
-              </label>
-            </div>
-            <div class="label_container">
-              <label for="perfil_admin_historico_acessos">Acessar histórico de acessos</label>
-            </div>
+              <div class="toggle_container">
+                  <label class="toggle">
+                      <input type="checkbox" id="perfil_admin_historico_acessos" class="base_input" disabled
+                          <?= $user['acessar_historico_acesso'] ? 'checked' : '' ?>>
+                      <span class="toggle_slider"></span>
+                  </label>
+              </div>
+              <div class="label_container">
+                  <label for="perfil_admin_historico_acessos">Acessar histórico de acessos</label>
+              </div>
           </div>
-        </form>
+      </form>
+
         
       </div>
 
@@ -125,10 +131,8 @@
           </button>
         </div>
       </div>
-
     </div>
-    
-    <!-- Falta footer -->
   </main>
+  <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
 </body>
 </html>

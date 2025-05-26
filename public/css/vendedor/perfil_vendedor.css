@@ -9,20 +9,20 @@ main {
 }
 
 hr {
-  width: 95%;
+  width: 100%;
   height: 4px;
   background: #d9d9d9;
   border: none;
   border-radius: 10px;
   justify-self: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin: 24px 0;
+
 }
 
 .perfil_vendedor_banner {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  aspect-ratio: 3 / 1;
+  max-width: 100%;
 }
 
 .perfil_vendedor_content_pfp {
@@ -33,7 +33,7 @@ hr {
   justify-content: center;
   align-items: center;
 
-  top: -120px;
+  top: -148px;
 }
 
 .perfil_vendedor_pfp {
@@ -42,15 +42,17 @@ hr {
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content;
   justify-content: center;
-
-  gap: 16px;
+  gap: 24px;
   grid-column: 2;
+  max-width: 632px;
 
-  img {
+  .pfp_img {
     justify-self: center;
     align-self: center;
-    width: 250px;
-    height: 250px;
+    width: 248px;
+    height: 248px;
+    border-radius: 50%;
+    background-color: var(--branco_gelo);
   }
 
   h1 {
@@ -64,7 +66,9 @@ hr {
 
 .perfil_vendedor_btn_menu {
   justify-self: end;
-  margin-right: 15%;
+  margin-right: 24px;
+  position: absolute;
+  top: 164px;
 
   select {
     cursor: pointer;
@@ -74,19 +78,25 @@ hr {
 
 /* start infos_container */
 .perfil_vendedor_infos_container {
+  position: relative;
   display: grid;
-  grid-template-columns: max-content max-content max-content;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
   justify-items: center;
   justify-self: center;
-  gap: 25% 5%;
-  margin-left: 5%;
+  gap: 24px;
+  row-gap: 16px;
+  word-break: break-word;
+
   p {
     color: var(--sappire);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 90%;
+    line-height: 100%;
+  }
+  .base_icon {
+    height: 24px;
   }
 }
 
@@ -94,10 +104,12 @@ hr {
 .perfil_vendedor_infos_item2,
 .perfil_vendedor_infos_item3,
 .perfil_vendedor_infos_item4 {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+  display: flex;
+  flex-direction: row;
   align-items: center;
   column-gap: 8px;
+  width: 100%;
+  justify-content: center;
 }
 
 .perfil_vendedor_infos_item1 {
@@ -163,13 +175,18 @@ hr {
   grid-column: 3;
 }
 
+.perfil_vendedor_grid_principal {
+  padding: 0 64px;
+}
+
 .about_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-self: center;
   align-items: center;
-  width: 80%;
+  width: 100%;
+  row-gap: 16px;
 
   h1 {
     color: var(--sappire);
@@ -184,7 +201,7 @@ hr {
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 90%;
+    line-height:100%;
   }
 }
 
@@ -197,9 +214,21 @@ hr {
   margin-bottom: 8px;
 }
 
+.info_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+  }
+}
+
 .perfil_vendedor_about_container_2 {
   display: flex;
-  width: 95%;
+  width:100%;
   justify-self: center;
 
   column-gap: 8px;
@@ -223,14 +252,14 @@ hr {
 /* start contatos_vendedor */
 .contatos_vendedor {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
   justify-self: center;
-
-  margin-top: 64px;
-  width: max-content;
+  width: fit-content;
   gap: 32px;
+  align-self: center;
+
 
   hr {
     width: 5px;
@@ -244,6 +273,16 @@ hr {
     font-family: Jost;
     font-size: 1.25rem;
     font-weight: 600;
+  }
+}
+
+.redes_div {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: flex-end;
+  img {
+    height: 24px;
   }
 }
 
