@@ -41,10 +41,10 @@ $routes = [
   '/RedefinirSenha-api'        => 'geral/EnviarTokenController@gerarToken',
   '/RedefinirSenha-api-salvar' => 'geral/EnviarTokenController@salvarSenha',
 
-  // Geral - Perfil
-  '/EditarPerfil'              => 'geral/GeralController@editarPerfil',
-  '/Perfil'                    => 'geral/GeralController@perfil',
-  '/error/404'                 => 'gerral/GeralController@error',
+        // Geral - Perfil
+        '/EditarPerfil' => 'geral/GeralController@editarPerfil',
+        '/Perfil' => 'geral/GeralController@perfil',
+        '/Error/404' => 'gerral/GeralController@error',
 
   // Vendedor - Cadastro e Perfil
   '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
@@ -60,17 +60,21 @@ $routes = [
   '/RelatorioVendas'          => 'vendedor/VendedorProductController@report',
   '/CadastroProduto'          => 'vendedor/ProdutoController@produto',
 
-  // Admin
-  '/AdminDashboard'            => 'admin/AdminController@dashboard',
-  '/AdminPerfil'               => 'admin/AdminController@perfil',
-  '/AprovarVendedor'           => 'admin/AdminController@aprovarVendedor',
-  '/AtualizarUsuario'          => 'admin/AdminController@atualizarUsuario',
-  '/GerenciarUsuarios'         => 'admin/AdminController@gerenciarUsuarios',
-  '/GerenciarProdutos'         => 'admin/AdminController@gerenciarProdutos',
-  '/GerenciarCarrossel'        => 'admin/AdminController@gerenciarCarrossel',
-  '/RelatorioVendedor'         => 'admin/AdminController@relatorioVendedor',
-  '/HistoricoAcesso'           => 'admin/AdminController@historicoAcesso',
-  '/AdminCarrossel'            => 'admin/AdminController@adminCarrossel',
-];
+        // Admin
+        '/AdminDashboard'           => 'admin/AdminController@dashboard',
+        '/AdminPerfil'              => 'admin/AdminController@perfil',
+        '/AprovarVendedor'          => 'admin/AdminController@aprovarVendedor',
+        '/AtualizarUsuario'         => 'admin/AdminController@atualizarUsuario',
+        '/GerenciarUsuarios'        => 'admin/AdminController@gerenciarUsuarios',
+        '/GerenciarProdutos'        => 'admin/AdminController@gerenciarProdutos',
+        '/GerenciarCarrossel'       => 'admin/AdminController@gerenciarCarrossel',
+        '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
+        '/HistoricoAcesso'          => 'admin/AdminController@historicoAcesso',
+        '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
+        '/searchDesativarUser'      => 'admin/AdminController@searchDesativarUser',
+        '/DesativarUser'            => 'admin/AdminController@desativarUser',
+        '/api/admin/pesquisar-cliente' => 'admin/AdminController@searchUser',
+        '/api/admin/atualizar-cliente' => 'admin/AdminController@updateUser',
+    ];
 
 // Join DIRECTOR SEPARETOR
