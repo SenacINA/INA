@@ -67,10 +67,11 @@
         <p class="gerenciar_pedidos_filtro_titulo font_subtitulo">Organizar por:</p>
         <select class="base_input">
           <option value="" selected disable style="display: none;"></option>
-          <option value="">Opa1</option>
-          <option value="">Opa2</option>
-          <option value="">Opa3</option>
-          <option value="">Opa4</option>
+          <option value="">ID</option>
+          <option value="">Produto</option>
+          <option value="">Preço</option>
+          <option value="">Quantidade</option>
+          <option value="">Entregue</option>
         </select>
       </div>
       <div class="gerenciar_pedidos_table_holder">
@@ -86,39 +87,35 @@
           </colgroup>
           <thead>
             <tr>
-              <th>Cód.</th>
+              <th>ID</th>
               <th>Produto</th>
               <th>Preço</th>
               <th>Qtn.</th>
-              <th>Previsão de Entrega</th>
               <th>Status</th>
               <th>Cliente</th>
             </tr>
             <tbody>
               <tr>
-                <td># 1001</td>
+                <td>0</td>
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
                 <td>Entregue</td>
                 <td>Roberto Carlos</td>
               </tr>
               <tr>
-                <td># 1001</td>
+                <td>1</td>
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
                 <td>Entregue</td>
                 <td>Roberto Carlos</td>
               </tr>
               <tr>
-                <td># 1001</td>
+                <td>2</td>
                 <td>Cadeira Gamer Throne - RGB </td>
                 <td>R$ 1.400,00</td>
                 <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
                 <td>Entregue</td>
                 <td>Roberto Carlos</td>
               </tr>

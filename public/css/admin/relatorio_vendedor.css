@@ -261,11 +261,11 @@ color: #2888b1;
   /*Individual para cada tabela */
   .gerenciar_pedidos_table_col-1,
   .gerenciar_pedidos_table_col-4{
-    width: 4%;
+    width: 19%;
   }
   .gerenciar_pedidos_table_col-3,
   .gerenciar_pedidos_table_col-6{
-    width: 8%;
+    width: 11%;
   }
 
   .gerenciar_pedidos_table_col-2,
