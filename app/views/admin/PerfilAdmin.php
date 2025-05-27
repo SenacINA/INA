@@ -51,19 +51,19 @@
         <form action="" method="post" class="perfil_admin_forms">
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_1">
             <label>Nome</label>
-            <input type="text" class="base_input" value="<?=$user['nome_cliente']?>">
+            <input type="text" class="base_input" id='nomeAdmin' value="<?=$user['nome_cliente']?>">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_2">
             <label>E-mail</label>
-            <input type="text" class="base_input" value="<?=$user['email_cliente'] ?? 'Não informado'?>" readonly disabled>
+            <input type="text" id="emailAdmin" class="base_input" value="<?=$user['email_cliente'] ?? 'Não informado'?>">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_3">
             <label>CPF</label>
-            <input type="text" class="base_input" value="<?= $user['cpf_cliente'] ?? 'Não informado'?>">
+            <input type="text" class="base_input" value="<?= $user['cpf_cliente'] ?? 'Não informado'?>" readonly disabled>
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_4">
             <label>Telefone</label>
-            <input type="text" class="base_input" value="<?= $user['numero_celular_cliente'] ?? 'Não informado'?>">
+            <input id="telefoneAdmin" type="text" class="base_input" value="<?='(' . $user['ddd_cliente'] . ') ' . $user['numero_celular_cliente'] ?? 'Não informado'?>">
           </div>
         </form>
 
@@ -125,7 +125,7 @@
       </div>
 
         <div class="perfil_admin_botao_salvar">
-          <button class="perfil_admin_salvar" onclick="pag('AdminDashboard')">
+          <button id='salvarEdit' class="perfil_admin_salvar">
             <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
             <label>SALVAR</label>
           </button>
@@ -134,5 +134,7 @@
     </div>
   </main>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/admin/update_profile.js"></script>
 </body>
 </html>

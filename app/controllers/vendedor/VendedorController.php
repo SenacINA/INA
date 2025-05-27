@@ -62,46 +62,55 @@ class VendedorController extends RenderView
         }
         
         $localEmpresa = $_POST['local_da_empresa'] ?? '';
-        $cep = trim($_POST['cep'] ?? '');
-        $logradouro = trim($_POST['logradouro'] ?? '');
-        $numero = trim($_POST['numero'] ?? '');
-        $nome = trim($_POST['nome_razao_social'] ?? '');
-        $cpfcnpj = trim($_POST['cpf_cnpj'] ?? '');
-        $rg = trim($_POST['rg'] ?? '');
-        $email = trim($_POST['email'] ?? '');
-        $categoria = trim($_POST['categoria_produtos'] ?? '');
-        $telefone1 = trim($_POST['telefone1'] ?? '');
-        $telefone2 = trim($_POST['telefone2'] ?? '');
+        $cep          = trim($_POST['cep'] ?? '');
+        $nome         = trim($_POST['nome_razao_social'] ?? '');
+        $cpfcnpj      = trim($_POST['cpf_cnpj'] ?? '');
+        $rg           = trim($_POST['rg'] ?? '');
+        $email        = trim($_POST['email'] ?? '');
+        $errors       = [];
 
-        $errors = [];
-
-        if (empty($localEmpresa) || empty($cep) || empty($logradouro) || empty($numero) || empty($nome) || empty($cpfcnpj) || empty($email) || empty($categoria) || empty($telefone1)) {
+        // campos obrigatórios
+        if (empty($localEmpresa) || empty($cep) || empty($nome) || empty($cpfcnpj) || empty($rg) || empty($email)) {
             $errors[] = 'Preencha todos os campos obrigatórios.';
         }
 
-        if($this->userType != 'cliente') {
+        if ($this->userType !== 'cliente') {
             header("Location: page-not-found");
+            exit;
         }
 
         if (!empty($errors)) {
-            $this->loadView('vendedor/CadastroVendedor_2', ['errors' => $errors, 'user' => $this->clienteData]);
+            $this->loadView('vendedor/CadastroVendedor_2', [
+                'errors' => $errors,
+                'user'   => $this->clienteData
+            ]);
             exit;
         }
 
         $model = new CadastroVendedorModel();
-        $success = $model->createVendedor($_SESSION['cliente_id'], $localEmpresa, $cep, $logradouro, $numero, $nome, $cpfcnpj, $rg, $email, $categoria, $telefone1, $telefone2);
+        [$ok, $msg] = $model->createVendedor(
+            $_SESSION['cliente_id'],
+            $localEmpresa,
+            $cep,
+            $nome,
+            $cpfcnpj,
+            $rg,
+            $email
+        );
 
-        if ($success[0]) {
-            $_SESSION['successMessage'] = $success[1];
+        if ($ok) {
+            $_SESSION['successMessage'] = $msg;
             header("Location: Perfil");
-            exit();
+            exit;
         } else {
-            $errors[] = 'Erro ao cadastrar usuário.';
-            $errors[] = $success[1];
-            $this->loadView('vendedor/CadastroVendedor_2', ['errors' => $errors, 'user' => $this->clienteData]);
+            $errors[] = $msg;
+            $this->loadView('vendedor/CadastroVendedor_2', [
+                'errors' => $errors,
+                'user'   => $this->clienteData
+            ]);
         }
-
     }
+
 
     public function editarDadosVendedor()
     {

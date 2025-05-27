@@ -1,5 +1,7 @@
 <?php    
 require_once __DIR__.'/../../models/admin/AdminModel.php';
+require_once __DIR__.'/../../models/geral/GeralModel.php';
+
 
 class AdminController extends RenderView {
 
@@ -111,5 +113,123 @@ class AdminController extends RenderView {
                 exit;
             }
         }
+
+        public function editarDadosAdmin()
+{
+    header('Content-Type: application/json; charset=utf-8');
+
+    // 1) Método e autenticação
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        http_response_code(405);
+        echo json_encode(['success' => false, 'errors' => ['Método não permitido.']], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    $adminId = $_SESSION['cliente_id'] ?? null;
+    if (!$adminId) {
+        http_response_code(401);
+        echo json_encode(['success' => false, 'errors' => ['Usuário não autenticado.']], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+
+    // 2) Lê JSON
+    $input      = json_decode(file_get_contents('php://input'), true) ?: [];
+    $nome       = trim($input['nomeAdmin']  ?? '');
+    $email      = trim($input['email']      ?? '');
+    $telefone   = trim($input['telefone']   ?? '');
+    $rawFoto    = $input['foto']            ?? null;   // data:image/webp;base64,...
+
+    $errors = [];
+    if ($nome === '')     $errors[] = 'O nome não pode ficar em branco.';
+    if ($email === '')    $errors[] = 'O e-mail não pode ficar em branco.';
+    if ($telefone === '') $errors[] = 'O telefone não pode ficar em branco.';
+
+    // nome máximo
+    if (strlen($nome) > 50) {
+        $errors[] = 'O nome não pode ter mais de 50 caracteres.';
+    }
+
+    // só WebP
+    if ($rawFoto && !preg_match('#^data:image/webp;base64,#', $rawFoto)) {
+        $errors[]  = 'Formato de foto inválido.';
+        $rawFoto   = null;
+    }
+
+    // 3) decodifica e checa tamanho (4MB)
+    $binFoto = null;
+    if (empty($errors) && $rawFoto) {
+        $b64  = substr($rawFoto, strpos($rawFoto, ',') + 1);
+        $bin  = base64_decode($b64);
+        if ($bin === false || strlen($bin) > 4 * 1024 * 1024) {
+            $errors[] = 'Foto muito grande (máx 4 MB).';
+        } else {
+            $binFoto = $bin;
+        }
+    }
+
+    // 4) se ok até aqui, tenta as atualizações
+    if (empty($errors)) {
+        $geral    = new GeralModel();
+        $okNome   = $geral->updateNome($adminId, $nome);
+        $okEmail  = $geral->updateEmail($adminId, $email);
+
+        // telefone: tira não dígitos, separa DDD+número
+        $cleanTel = preg_replace('/\D+/', '', $telefone);
+        if (strlen($cleanTel) >= 10) {
+            $ddd     = substr($cleanTel, 0, 2);
+            $num     = substr($cleanTel, 2);
+            $okTel   = $geral->updateTelefone($adminId, $ddd, $num);
+        } else {
+            $okTel = false;
+            $errors[] = 'Telefone inválido.';
+        }
+
+        // 5) foto
+        $okFoto = true;
+        $relFoto = null;
+        if ($binFoto) {
+            // pasta user
+            $baseDir = __DIR__ . '/../../../public/upload/clientes/' . $adminId . '/';
+            if (!is_dir($baseDir)) {
+                mkdir($baseDir, 0755, true);
+            }
+            // remove anteriores
+            foreach (glob($baseDir . 'foto_*.webp') as $f) {
+                @unlink($f);
+            }
+            // grava sempre com nome fixo
+            $fn      = 'foto_' . $adminId . '.webp';
+            $absPath = $baseDir . $fn;
+            if (file_put_contents($absPath, $binFoto) === false) {
+                $okFoto = false;
+                $errors[] = 'Falha ao salvar a foto.';
+            } else {
+                $relFoto = '/upload/clientes/' . $adminId . '/' . $fn;
+                $okFoto  = $geral->updateFotoPerfil($adminId, $relFoto);
+            }
+        }
+
+        // 6) retorna
+        if ($okNome && $okEmail && $okTel && $okFoto && empty($errors)) {
+            echo json_encode([
+                'success' => true,
+                'message' => 'Perfil de administrador atualizado!',
+                'foto'    => $relFoto
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        // se chegou aqui com tudo executado mas alguma flag falhou
+        if (empty($errors)) {
+            $errors[] = 'Erro ao salvar no banco. Tente novamente.';
+        }
+    }
+
+    echo json_encode([
+        'success' => false,
+        'errors'  => $errors
+    ], JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
         
 }

@@ -55,7 +55,6 @@
 
         // Admin
         '/AdminDashboard'           => 'admin/AdminController@dashboard',
-        '/AdminPerfil'              => 'admin/AdminController@perfil',
         '/AprovarVendedor'          => 'admin/AdminController@aprovarVendedor',
         '/AtualizarUsuario'         => 'admin/AdminController@atualizarUsuario',
         '/GerenciarUsuarios'        => 'admin/AdminController@gerenciarUsuarios',
@@ -66,6 +65,7 @@
         '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
         '/api/admin/pesquisar-cliente' => 'admin/AdminController@searchUser',
         '/api/admin/atualizar-cliente' => 'admin/AdminController@updateUser',
+        '/api/admin/editarDadosAdmin' => 'admin/AdminController@editarDadosAdmin',
     ];
 
     // Join DIRECTOR SEPARETOR

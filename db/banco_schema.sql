@@ -60,6 +60,7 @@ foreign key (categoria_subcategoria) references categoria(id_categoria)
 
 CREATE TABLE if not exists vendedor (
   id_vendedor        INT (11)      NOT NULL AUTO_INCREMENT,
+  id_cliente       INT NOT NULL UNIQUE,  
   nome_fantasia     VARCHAR(255)      NOT NULL,
   cnpj_vendedor      VARCHAR(30)       NOT NULL,
   requisitos_completos TINYINT(1)      NOT NULL DEFAULT 0,
