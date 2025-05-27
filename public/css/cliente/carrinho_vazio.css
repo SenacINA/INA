@@ -268,9 +268,29 @@ main {
 }
 
 .carrinho_quantidade {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: min-content min-content auto;
+
+  justify-self: end;
   align-items: end;
+  text-align: end;
+
+  div {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    gap: 2px;
+  }
+
+  img {
+    justify-self: center;
+    align-self: center;
+
+    width: 18px;
+    height: 18px;
+    border: none;
+  }
 }
 
 .carrinho_vazio_resumo {

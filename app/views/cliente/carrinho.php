@@ -61,6 +61,10 @@ foreach ($itensCarrinho as $item) {
                     <div class="carrinho_quantidade">
                       <span>R$ <?= number_format($item['preco_produto'], 2, ',', '.') ?></span>
                       <span><?= (int)$item['quantidade_produto'] ?></span>
+                      <div method="post" action="/Carrinho-api-remove">
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
+                        <span>Limpar</span>
+                      </div>
                     </div>
                   </div>
                   <hr>
