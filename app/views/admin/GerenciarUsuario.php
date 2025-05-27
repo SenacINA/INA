@@ -44,7 +44,7 @@ $disativar = $estaAtivo ? '' : 'disabled';
                   <h2 class="font_subtitulo font_celadon">Pesquisar Usuários</p>
                 </div>
               </div>
-              <form action="searchUser" method="post" class="gerenciar_usuario_forms_pesquisa_usuario">
+              <form action="searchDesativarUser" method="post" class="gerenciar_usuario_forms_pesquisa_usuario">
                 <div class="gerenciar_usuario_form_cliente">
                   <label class="font_subtitulo font_celadon">Código Do Usuário / Nome Usuário</label>
                   <input type="text" spellcheck="false" class="base_input" name="nomeUsuario">
