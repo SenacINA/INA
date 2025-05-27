@@ -37,7 +37,7 @@
         // Geral - Perfil
         '/EditarPerfil' => 'geral/GeralController@editarPerfil',
         '/Perfil' => 'geral/GeralController@perfil',
-        '/error/404' => 'gerral/GeralController@error',
+        '/Error/404' => 'gerral/GeralController@error',
 
         // Vendedor - Cadastro e Perfil
         '/CadastroVendedorInfo'    => 'vendedor/VendedorController@showInfo',
@@ -63,6 +63,8 @@
         '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
         '/HistoricoAcesso'          => 'admin/AdminController@historicoAcesso',
         '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
+        '/searchDesativarUser'      => 'admin/AdminController@searchDesativarUser',
+        '/DesativarUser'            => 'admin/AdminController@desativarUser',
         '/api/admin/pesquisar-cliente' => 'admin/AdminController@searchUser',
         '/api/admin/atualizar-cliente' => 'admin/AdminController@updateUser',
         '/api/admin/editarDadosAdmin' => 'admin/AdminController@editarDadosAdmin',
