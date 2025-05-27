@@ -64,6 +64,8 @@
         '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
         '/HistoricoAcesso'          => 'admin/AdminController@historicoAcesso',
         '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
+        '/searchDesativarUser'      => 'admin/AdminController@searchDesativarUser',
+        '/DesativarUser'            => 'admin/AdminController@desativarUser',
         '/api/admin/pesquisar-cliente' => 'admin/AdminController@searchUser',
         '/api/admin/atualizar-cliente' => 'admin/AdminController@updateUser',
     ];
