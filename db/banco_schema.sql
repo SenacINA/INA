@@ -1,3 +1,4 @@
+-- Active: 1733486036307@@127.0.0.1@3306@e2_database
 create database if not exists e2_database;
 use e2_database;
  
