@@ -73,7 +73,7 @@
             VOLTAR
           </button>
 
-          <button class="carrinho_dados_salvar_carrinho base_botao" onclick="pag('cliente/CarrinhoPagamentos')">
+          <button class="carrinho_dados_salvar_carrinho base_botao" onclick="pag('CarrinhoPagamentos')">
             <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/enviar_branco_icon.svg">
             Salvar
           </button>
