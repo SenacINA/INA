@@ -8,7 +8,7 @@ class CarrinhoController extends RenderView
 
   public function __construct()
   {
-    $this->model = new CarrinhoModel;
+    $this->model = new CarrinhoModel();
   }
 
   public function adicionarItem()
@@ -19,41 +19,39 @@ class CarrinhoController extends RenderView
     if ($idProduto) {
       $this->model->adicionarItem((int)$idProduto, (int)$quantidade);
     }
-    header("Location: /Carrinho-comitem");
+
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
   }
 
   public function removerItem($idProduto)
   {
-    $this->model->removerItem($_SESSION['cliente_id'], (int)$idProduto);
+    $this->model->removerItem((int)$idProduto);
     header("Location: /Carrinho");
     exit;
   }
 
   public function limparCarrinho()
   {
-    $this->model->limparCarrinho($_SESSION['cliente_id']);
-    header("Location: /Carrinho");
+    $this->model->limparCarrinho();
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
   }
 
   public function exibirItens()
   {
-    $itensCarrinho = $this->model->getItensCarrinho($_SESSION['cliente_id']);
-    if (!empty($itensCarrinho)) {
-      $totalCarrinho = $this->model->calcularTotal($_SESSION['cliente_id']);
-      return [
-        'itensCarrinho' => $itensCarrinho,
-        'totalCarrinho' => $totalCarrinho
-      ];
-    }
-    else {
-      $this->index();
-    }
+    $itensCarrinho = $this->model->getItensCarrinho();
+    $totalCarrinho = $this->model->calcularTotal();
 
+    return [
+      'itensCarrinho' => $itensCarrinho,
+      'totalCarrinho' => $totalCarrinho
+    ];
   }
 
-  public function index() {
-    $this->loadView('cliente/Carrinho', []);
+  public function index()
+  {
+    $dados = $this->exibirItens();
+    $this->loadView('cliente/Carrinho', $dados);
   }
 }

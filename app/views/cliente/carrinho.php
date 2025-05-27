@@ -6,8 +6,12 @@ $js = ["/js/cliente/carrinho.js"];
 
 require_once("./utils/head.php");
 
+// Inicializa total do carrinho para somar os produtos
+$totalCarrinho = 0;
+
 foreach ($itensCarrinho as $item) {
-  $totalCarrinho += $item['preco'] * $item['quantidade'];
+  // Soma o total corretamente usando as chaves certas
+  $totalCarrinho += $item['preco_produto'] * $item['quantidade_produto'];
 }
 ?>
 
@@ -19,17 +23,17 @@ foreach ($itensCarrinho as $item) {
   <main>
     <div class="carrinho_vazio_nav">
       <div class="carrinho_vazio_nav_item carrinho_vazio_nav_selected">
-        <img src="<?= $PATH_PUBLIC ?>/image/carrinho/carrinho_icon.svg">
+        <img src="<?= $PATH_PUBLIC ?>/image/carrinho/carrinho_icon.svg" alt="Ícone do carrinho">
         <span>Carrinho</span>
       </div>
       <hr>
       <div class="carrinho_vazio_nav_item">
-        <img src="<?= $PATH_PUBLIC ?>/image/carrinho/identificacao_cinza_icon.svg">
+        <img src="<?= $PATH_PUBLIC ?>/image/carrinho/identificacao_cinza_icon.svg" alt="Ícone de identificação">
         <span>Identificação</span>
       </div>
       <hr>
       <div class="carrinho_vazio_nav_item">
-        <img src="<?= $PATH_PUBLIC ?>/image/carrinho/pagamento_cinza_icon.svg">
+        <img src="<?= $PATH_PUBLIC ?>/image/carrinho/pagamento_cinza_icon.svg" alt="Ícone de pagamento">
         <span>Pagamento</span>
       </div>
     </div>
@@ -51,33 +55,35 @@ foreach ($itensCarrinho as $item) {
                 <p>Seu carrinho está vazio.</p>
               <?php else: ?>
                 <?php foreach ($itensCarrinho as $item): ?>
-                  <div class="produto_item">
-                    <img src="<?= $item['imagem'] ?>" alt="<?= $item['nome'] ?>">
-                    <span><?= $item['nome'] ?></span>
-                    <span><?= $item['quantidade'] ?></span>
-                    <span><?= number_format($item['preco'], 2, ',', '.') ?></span>
+                  <div class="carrrinho_produto_item">
+                    <img src="<?= $PATH_PUBLIC . '/' . $item['endereco_imagem_produto'] ?>" alt="<?= $item['nome_produto'] ?>">
+                    <span><?= htmlspecialchars($item['nome_produto']) ?></span>
+                    <div class="carrinho_quantidade">
+                      <span>R$ <?= number_format($item['preco_produto'], 2, ',', '.') ?></span>
+                      <span><?= (int)$item['quantidade_produto'] ?></span>
+                    </div>
                   </div>
+                  <hr>
                 <?php endforeach; ?>
-                <p>Total: R$ <?= number_format($totalCarrinho, 2, ',', '.') ?></p>
               <?php endif; ?>
             </div>
 
             <div class="carrinho_vazio_conteudo_servicos">
               <div class="servicos_container_1">
                 <div class="text_servicos">
-                  <img src="<?= $PATH_PUBLIC ?>/image/carrinho/servico.svg" class="base_icon">
+                  <img src="<?= $PATH_PUBLIC ?>/image/carrinho/servico.svg" class="base_icon" alt="Serviço de frete">
                   <p class="font_subtitulo font_celadon">FRETE</p>
                 </div>
 
-                <button id="btn_mostrar_servicos" class="btn_mostrar_servicos">
-                  <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/seta_baixo.svg" class="base_icon">
+                <button id="btn_mostrar_servicos" class="btn_mostrar_servicos" aria-label="Mostrar serviços de frete">
+                  <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/seta_baixo.svg" class="base_icon" alt="Seta para baixo">
                 </button>
 
                 <div id="frete_container_1" class="frete_container_1 visible_servicos">
                   <div class="consultar_frete">
                     <h1>CONSULTAR FRETE</h1>
                     <div class="consultar_input">
-                      <input class="base_input" type="text">
+                      <input class="base_input" type="text" aria-label="CEP para consultar frete">
                       <button class='base_botao btn_blue btn_consulta'>Ok</button>
                     </div>
                   </div>
@@ -85,7 +91,7 @@ foreach ($itensCarrinho as $item) {
 
                 <div id="frete_container_2" class="frete_container_2 visible_servicos">
                   <p class="font_descricao font_celadon font_bold">Total de Itens: <?= count($itensCarrinho) ?></p>
-                  <p class="font_descricao font_celadon font_bold">Frete Total: R$ 10,00</p>
+                  <p class="font_descricao font_celadon font_bold">Frete Total: N/A</p>
                 </div>
               </div>
             </div>
@@ -107,19 +113,19 @@ foreach ($itensCarrinho as $item) {
 
       <div class="carrinho_vazio_botoes_holder">
         <button class="carrinho_vazio_start base_botao btn_outline_blue" onclick="history.back()">
-          <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/seta_esquerda_carolina_icon.svg">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/seta_esquerda_carolina_icon.svg" alt="Voltar">
           VOLTAR
         </button>
         <div class="carrinho_vazio_holder_final">
-          <form method="post" action="/Carrinho/RemoverTudo">
+          <form method="post" action="/Carrinho-api-limpar">
             <button class="base_botao btn_red" type="submit">
-              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/lixo_branco_icon.svg">
+              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/lixo_branco_icon.svg" alt="Remover tudo">
               REMOVER TUDO
             </button>
           </form>
 
-          <button class="base_botao btn_blue" onclick="pag('cliente/CarrinhoDados')">
-            <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">
+          <button class="base_botao btn_blue" onclick="pag('/CarrinhoDados')">
+            <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="Salvar">
             SALVAR
           </button>
         </div>
