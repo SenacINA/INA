@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . '/../controllers/RelatorioVendasController.php';
+$controller = new RelatorioVendasController();
+$dados = $controller->index();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
@@ -6,146 +11,138 @@
   require_once('./utils/head.php');
 ?>
 <body>
-  <?php
-    include_once("$PATH_COMPONENTS/php/navbar.php");
-  ?>
+  <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
+  
   <main class="relatorio_vendas_body_container">
     <div class="gerenciar_pedidor_firula_holder">
+      <!-- Cabeçalho -->
       <div class="relatorio_vendas_header_holder">
         <div class="relatorio_vendas_text_titulo">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_relatorio_icon.svg" alt="">
-          <h1 class="relatorio_vendas_header_holder font_titulo">RELATÓRIO DE VENDAS</h1>
+          <h1 class="font_titulo">RELATÓRIO DE VENDAS</h1>
         </div>
         <hr class="relatorio_vendas_linha_sublinhado">
       </div>
       
+      <!-- Corpo principal -->
       <div class="relatorio_vendas_body_holder"> 
         <div class="relatorio_vendas_main_content">
           <div class="relatorio_vendas_quadrado_container">
+            <!-- Formulário de pesquisa -->
             <div class="relatorio_vendas_pesquisar_pedidos">
               <div class="relatorio_vendas_subtitulo_generico">
                 <div class="relatorio_vendas_linha_vertical"></div>
                 <div class="relatorio_vendas_subtitle_holder">
                   <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/produto_lupa_icon.svg" />
-                  <h2 class="font_subtitulo font_celadon">Pesquisar Pedidos</p>
+                  <h2 class="font_subtitulo font_celadon">Pesquisar Pedidos</h2>
                 </div>
               </div>
-              <form action="" method="post" class="relatorio_vendas_forms_pesquisa_pedidos">
+              <form method="post" class="relatorio_vendas_forms_pesquisa_pedidos">
+                <!-- Campos do formulário -->
                 <div class="relatorio_vendas_form_cliente">
                   <label class="font_subtitulo font_celadon">Código Do Produto / Nome Cliente</label>
-                  <input type="text" spellcheck="false" class="base_input">
+                  <input type="text" name="codigo_nome" value="<?= htmlspecialchars($dados['filtros']['codigo_nome']) ?>" class="base_input">
                 </div>
                 <div class="relatorio_vendas_inputs_esquerda">
+                  <!-- Status -->
                   <div class="relatorio_vendas_input_status base_input_select">
-                    <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
-                    <select name="select_cod" class="relatorio_vendas_select_status base_input">
-                      <option value="Entregue">Entregue</option>
-                      <option value="Em transporte">Em transporte</option>
+                    <label class="font_subtitulo font_celadon">Status</label>
+                    <select name="status" class="base_input">
+                      <option value="">Todos</option>
+                      <option value="Entregue" <?= $dados['filtros']['status'] === 'Entregue' ? 'selected' : '' ?>>Entregue</option>
+                      <option value="Em transporte" <?= $dados['filtros']['status'] === 'Em transporte' ? 'selected' : '' ?>>Em transporte</option>
+                      <option value="Reembolsado" <?= $dados['filtros']['status'] === 'Reembolsado' ? 'selected' : '' ?>>Reembolsado</option>
                     </select>
                   </div>
+                  
+                  <!-- Mês -->
                   <div class="relatorio_vendas_input_mes base_input_select">
-                    <label for="mes" class="font_subtitulo font_celadon">Mês</label>
-                    <select name="mes" id="mes" class="relatorio_vendas_mes_select base_input">
-                      <option value="" selected disabled style="display: none;">Selecione</option>
-                      <option value="janeiro">Janeiro</option>
-                      <option value="fevereiro">Fevereiro</option>
-                      <option value="marco">Março</option>
-                      <option value="abril">Abril</option>
-                      <option value="maio">Maio</option>
-                      <option value="junho">Junho</option>
-                      <option value="julho">Julho</option>
-                      <option value="agosto">Agosto</option>
-                      <option value="setembro">Setembro</option>
-                      <option value="outubro">Outubro</option>
-                      <option value="novembro">Novembro</option>
-                      <option value="dezembro">Dezembro</option>
+                    <label class="font_subtitulo font_celadon">Mês</label>
+                    <select name="mes" class="base_input">
+                      <option value="">Todos</option>
+                      <?php for ($i = 1; $i <= 12; $i++): ?>
+                        <option value="<?= $i ?>" <?= $dados['filtros']['mes'] == $i ? 'selected' : '' ?>>
+                          <?= DateTime::createFromFormat('!m', $i)->format('F') ?>
+                        </option>
+                      <?php endfor; ?>
                     </select>
                   </div>
+                  
+                  <!-- Ano -->
                   <div class="relatorio_vendas_input_ano base_input_select">
-                    <label for="ano" class="font_subtitulo font_celadon">Ano</label>
-                    <select name="ano" id="ano" class="relatorio_vendas_ano_select base_input">
-                      <option value="" selected disabled style="display: none;">Selecione</option>
-                      <option value=" 2020">2020</option>
-                      <option value="2021">2021</option>
-                      <option value="2022">2022</option>
-                      <option value="2023">2023</option>
-                      <option value="2024">2024</option>
-                      <option value="2025">2025</option>
-                      <option value="2026">2026</option>
-                      <option value="2027">2027</option>
-                      <option value="2028">2028</option>
-                      <option value="2029">2029</option>
-                      <option value="2030">2030</option>
+                    <label class="font_subtitulo font_celadon">Ano</label>
+                    <select name="ano" class="base_input">
+                      <option value="">Todos</option>
+                      <?php for ($ano = date('Y'); $ano >= 2020; $ano--): ?>
+                        <option value="<?= $ano ?>" <?= $dados['filtros']['ano'] == $ano ? 'selected' : '' ?>><?= $ano ?></option>
+                      <?php endfor; ?>
                     </select>
                   </div>
                 </div>
+                
+                <!-- Botões -->
                 <div class="relatorio_vendas_holder_botao">
                   <button type="reset" class="base_botao btn_red">
-                    <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_branco_icon.svg">
-                    CANCELAR
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_branco_icon.svg"> CANCELAR
                   </button>
-
                   <button type="submit" class="base_botao btn_blue">
-                    <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">
-                    CONFIRMAR
+                    <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg"> CONFIRMAR
                   </button>
                 </div>
               </form>
             </div>
+            
+            <!-- Estatísticas -->
             <div class="relatorio_vendas_estatisticas">
               <div class="relatorio_vendas_subtitulo_generico">
                 <div class="relatorio_vendas_linha_vertical"></div>
                 <div class="relatorio_vendas_subtitle_holder">
                   <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/grafico_icon.svg" />
-                  <h2 class="font_subtitulo font_celadon">Estatísticas</p>
+                  <h2 class="font_subtitulo font_celadon">Estatísticas</h2>
                 </div>
               </div>
               <div class="relatorio_vendas_estatistica_holder">
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Valor Total</span>
-                  <span class="relatorio_vendas_estatistica_descricao">R$14.145,35</span>
-                </div>
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Total De Vendas</span>
-                  <span class="relatorio_vendas_estatistica_descricao">14 UNI</span>
-                </div>
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Tempo Medio De Entrega</span>
-                  <span class="relatorio_vendas_estatistica_descricao">9 Dias</span>
-                </div>
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Pedidos Recebidos</span>
-                  <span class="relatorio_vendas_estatistica_descricao">4 - 100%</span>
-                </div>
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Total De Pedidos</span>
-                  <span class="relatorio_vendas_estatistica_descricao">4</span>
-                </div>
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Pedidos Reembolsados</span>
-                  <span class="relatorio_vendas_estatistica_descricao">0 - 0%</span>
-                </div>
+                <!-- Cards de estatísticas -->
+                <?php
+                $cards = [
+                    ['Valor Total', 'R$' . $dados['estatisticas']['valor_total']],
+                    ['Total De Vendas', $dados['estatisticas']['total_vendas'] . ' UNI'],
+                    ['Tempo Medio De Entrega', $dados['estatisticas']['tempo_medio_entrega'] . ' Dias'],
+                    ['Pedidos Recebidos', $dados['estatisticas']['pedidos_entregues']],
+                    ['Total De Pedidos', $dados['estatisticas']['total_pedidos']],
+                    ['Pedidos Reembolsados', $dados['estatisticas']['pedidos_reembolsados']]
+                ];
+                
+                foreach ($cards as $card): ?>
+                  <div class="relatorio_vendas_card">
+                    <span class="relatorio_vendas_titulo"><?= $card[0] ?></span>
+                    <span class="relatorio_vendas_estatistica_descricao"><?= $card[1] ?></span>
+                  </div>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- Tabela de histórico -->
     <div class="relatorio_vendas_header_title">
       <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/pasta_clock_icon.svg"/>
-      <h1 class="relatorio_vendas_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
+      <h1 class="font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
+    
     <div class="relatorio_vendas_table">
       <div class="relatorio_vendas_table_filtro bg_carolina">
         <p class="relatorio_vendas_filtro_titulo font_subtitulo">Organizar por:</p>
         <select>
-          <option value="" selected disable style="display: none;"></option>
-          <option value="">Opa1</option>
-          <option value="">Opa2</option>
-          <option value="">Opa3</option>
-          <option value="">Opa4</option>
+          <option value="">Mais recentes</option>
+          <option value="">Mais antigos</option>
+          <option value="">Maior valor</option>
+          <option value="">Menor valor</option>
         </select>
       </div>
+      
       <div class="base_tabela">
         <table>
           <colgroup>
@@ -167,64 +164,34 @@
               <th>Status</th>
               <th>Cliente</th>
             </tr>
-            <tbody>
-              <tr>
-                <td># 1001</td>
-                <td>
-                  <span>
-                    Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB
-                  </span>
-                </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>
-                  <span>
-                    25/03/2024 - 06/04/2024
-                  </span>
-                </td>
-                <td>Entregue</td>
-                <td>
-                  <span>
-                    Roberto Carlos
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td># 1001</td>
-                <td>Cadeira Gamer Throne - RGB </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
-                <td>Roberto Carlos</td>
-              </tr>
-              <tr>
-                <td># 1001</td>
-                <td>Cadeira Gamer Throne - RGB </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
-                <td>Roberto Carlos</td>
-              </tr>
-              <tr>
-                <td># 1001</td>
-                <td>Cadeira Gamer Throne - RGB </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>Entregue</td>
-                <td>Roberto Carlos</td>
-              </tr>
-            </tbody>
           </thead>
+          <tbody>
+            <?php if (!empty($dados['pedidos'])): ?>
+              <?php foreach ($dados['pedidos'] as $pedido): ?>
+                <tr>
+                  <td>#<?= $pedido['codigo'] ?></td>
+                  <td><?= htmlspecialchars($pedido['produtos']) ?></td>
+                  <td>R$ <?= number_format($pedido['preco'], 2, ',', '.') ?></td>
+                  <td><?= $pedido['quantidade'] ?></td>
+                  <td>
+                    <?= date('d/m/Y', strtotime($pedido['data_pedido'])) ?> - 
+                    <?= date('d/m/Y', strtotime($pedido['data_entrega_prevista'])) ?>
+                  </td>
+                  <td><?= $pedido['status'] ?></td>
+                  <td><?= htmlspecialchars($pedido['cliente']) ?></td>
+                </tr>
+              <?php endforeach; ?>
+            <?php else: ?>
+              <tr>
+                <td colspan="7" class="text-center">Nenhum pedido encontrado</td>
+              </tr>
+            <?php endif; ?>
+          </tbody>
         </table>
       </div>
     </div>
   </main>
-  <?php 
-    include_once("$PATH_COMPONENTS/php/footer.php");
-  ?>
+  
+  <?php include_once("$PATH_COMPONENTS/php/footer.php"); ?>
 </body>
-
 </html>
