@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <?php
-  $css = ["/css/cliente/produto.css"];
+  $css = ["/css/cliente/Produto.css"];
   require_once("./utils/head.php")
 ?>
 

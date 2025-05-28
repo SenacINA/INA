@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <?php
-$css = ["/css/cliente/perfil_cliente.css"];
+$css = ["/css/cliente/PerfilCliente.css"];
 require_once("./utils/head.php");
 require_once("./app/models/cliente/PerfilClienteModel.php");
 ?>

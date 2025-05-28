@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Confirmar Pedido - E ao Quadrado";
-  $css = ["/css/vendedor/confirmar_pedido.css"];
+  $css = ["/css/vendedor/ConfirmarPedido.css"];
   require_once('./utils/head.php');
 ?>
 <body>

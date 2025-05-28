@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Editar Produto - E ao Quadrado";
-  $css = ["/css/vendedor/editar_produto.css"];
+  $css = ["/css/vendedor/EditarProduto.css"];
   require_once('./utils/head.php');
 ?>
 <body>

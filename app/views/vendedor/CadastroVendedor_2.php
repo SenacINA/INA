@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <?php
 $titulo = "Cadastro Vendedor - E ao Quadrado";
-$css = ["/css/vendedor/cadastro_vendedor_2.css"];
+$css = ["/css/vendedor/CadastroVendedor_2.css"];
 require_once('./utils/head.php');
 require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
 ?>
@@ -138,7 +138,7 @@ require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
       </form>
     </div>
   </div>
-  <script type='module' src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
+  <script type='module' src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
         let errors = <?php echo json_encode($errors ?? []); ?>;
