@@ -15,10 +15,10 @@ class CarrinhoModel
   public function getItensCarrinho(): array
   {
     $sql = "SELECT c.id_produto, c.quantidade_produto, p.nome_produto, p.preco_produto, i.endereco_imagem_produto
-                FROM carrinho c
-                JOIN produto p ON c.id_produto = p.id_produto
-                LEFT JOIN imagem_produto i ON p.id_produto = i.id_produto AND i.index_imagem_produto = 0
-                WHERE c.id_cliente = :idCliente";
+            FROM carrinho c
+            JOIN produto p ON c.id_produto = p.id_produto
+            LEFT JOIN imagem_produto i ON p.id_produto = i.id_produto AND i.index_imagem_produto = 0
+            WHERE c.id_cliente = :idCliente";
 
     $stmt = $this->db->getConnection()->prepare($sql);
     $stmt->bindValue(':idCliente', $_SESSION['cliente_id']);
@@ -67,6 +67,17 @@ class CarrinhoModel
     }
   }
 
+  public function atualizarQuantidade(int $idProduto, int $quantidade)
+  {
+      $sql = "UPDATE carrinho SET quantidade_produto = :quantidade WHERE id_cliente = :idCliente AND id_produto = :idProduto";
+      $stmt = $this->db->getConnection()->prepare($sql);
+      $stmt->execute([
+        ':quantidade' => $quantidade,
+        ':idCliente' => $_SESSION['cliente_id'],
+        ':idProduto' => $idProduto
+      ]);
+  }
+
   public function removerItem(int $idProduto)
   {
     $sql = "DELETE FROM carrinho WHERE id_cliente = :idCliente AND id_produto = :idProduto";
@@ -77,34 +88,23 @@ class CarrinhoModel
     ]);
   }
 
-  public function atualizarQuantidade(int $idProduto, int $quantidade)
-  {
-    if ($quantidade <= 0) {
-      $this->removerItem($idProduto);
-    } else {
-      $sql = "UPDATE carrinho SET quantidade_produto = :quantidade WHERE id_cliente = :idCliente AND id_produto = :idProduto";
-      $stmt = $this->db->getConnection()->prepare($sql);
-      $stmt->execute([
-        'quantidade' => $quantidade,
-        'idCliente' => $_SESSION['cliente_id'],
-        'idProduto' => $idProduto
-      ]);
-    }
-  }
-
   public function limparCarrinho()
   {
-    $sql = "DELETE FROM carrinho WHERE id_cliente = :idCliente";
+    $sql = "DELETE FROM carrinho 
+        WHERE id_cliente = :idCliente";
+
     $stmt = $this->db->getConnection()->prepare($sql);
-    $stmt->execute(['idCliente' => $_SESSION['cliente_id']]);
+    $stmt->execute([
+      'idCliente' => $_SESSION['cliente_id']
+    ]);
   }
-  
+
   public function calcularTotal(): float
   {
     $sql = "SELECT SUM(p.preco_produto * c.quantidade_produto) as total
-                FROM carrinho c
-                JOIN produto p ON c.id_produto = p.id_produto
-                WHERE c.id_cliente = :idCliente";
+            FROM carrinho c
+            JOIN produto p ON c.id_produto = p.id_produto
+            WHERE c.id_cliente = :idCliente";
     $stmt = $this->db->getConnection()->prepare($sql);
     $stmt->execute(['idCliente' => $_SESSION['cliente_id']]);
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);

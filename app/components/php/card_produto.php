@@ -1,5 +1,4 @@
-
-<?php 
+<?php
 
 function gerarProdutoCards($quantidade, $path)
 {
@@ -50,7 +49,7 @@ function gerarProdutoCards($quantidade, $path)
                 </div>
             </div>
             <div class='index_body_botoes_produto'>
-                <form method='POST' action='Carrinho-api-add'>
+                <form method='POST' action='Carrinho-api-add' class='form_adicionar_carrinho'>
                     <input type='hidden' name='produto_id' value='" . $id . "'>
                     <input type='hidden' name='nome' value='" . htmlspecialchars($nome) . "'>
                     <input type='hidden' name='preco' value='" . $preco . "'>
@@ -67,6 +66,22 @@ function gerarProdutoCards($quantidade, $path)
             </div>
         </div>";
     }
-}
-?>
 
+    echo "
+    <script>
+      document.querySelectorAll('.form_adicionar_carrinho').forEach(form => {
+        form.addEventListener('submit', () => {
+          localStorage.setItem('scrollY', window.scrollY);
+        });
+      });
+
+      window.addEventListener('load', () => {
+        const scrollY = localStorage.getItem('scrollY');
+        if (scrollY !== null) {
+          window.scrollTo(0, parseInt(scrollY));
+          localStorage.removeItem('scrollY');
+        }
+      });
+    </script>
+    ";
+}

@@ -24,16 +24,19 @@ class CarrinhoController extends RenderView
     exit;
   }
 
-  public function removerItem($idProduto)
+  public function removerItem()
   {
-    $this->model->removerItem((int)$idProduto);
-    header("Location: /Carrinho");
+    $this->model->removerItem($_POST['id_produto']);
+
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
   }
 
   public function limparCarrinho()
   {
-    $this->model->limparCarrinho();
+    $idProduto = (int)$_POST['idProduto'];
+    $this->model->limparCarrinho($idProduto);
+
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
   }
@@ -47,6 +50,13 @@ class CarrinhoController extends RenderView
       'itensCarrinho' => $itensCarrinho,
       'totalCarrinho' => $totalCarrinho
     ];
+  }
+
+  public function atualizar() {
+    $itemId = $_POST['id'];
+    $itemQuantidade = $_POST['quantidade'];
+
+    $this->model->atualizarQuantidade($itemId, $itemQuantidade);
   }
 
   public function index()
