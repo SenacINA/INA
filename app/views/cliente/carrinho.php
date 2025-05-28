@@ -6,11 +6,9 @@ $js = ["/js/cliente/carrinho.js"];
 
 require_once("./utils/head.php");
 
-// Inicializa total do carrinho para somar os produtos
 $totalCarrinho = 0;
 
 foreach ($itensCarrinho as $item) {
-  // Soma o total corretamente usando as chaves certas
   $totalCarrinho += $item['preco_produto'] * $item['quantidade_produto'];
 }
 
