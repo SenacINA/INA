@@ -13,10 +13,10 @@ class AdminModel
 
     public function getInfoAdmin($id) {
         $sql = "
-            SELECT * 
-            FROM cliente 
-            JOIN permissao_admin 
-            ON cliente.id_cliente = permissao_admin.id_cliente
+            SELECT cliente.*, permissao_admin.*, perfil.foto_perfil
+            FROM cliente
+            JOIN permissao_admin ON cliente.id_cliente = permissao_admin.id_cliente
+            JOIN perfil ON cliente.id_cliente = perfil.id_cliente
             WHERE cliente.id_cliente = :id;
         ";
 

@@ -94,7 +94,7 @@ require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
           <!-- E-mail -->
           <div class="cadastro_vendedor_2_content_email">
             <label for="email">E-mail</label> <br>
-            <input type="email" name="email" id="email" class="base_input">
+            <input value="<?= $user['email_cliente'] ?>" type="email" name="email" id="email" class="base_input">
             <h2>O código de confirmação será enviado para esse E-mail. </h2>
           </div>
           <!-- Categoria de Produtos -->
@@ -130,7 +130,7 @@ require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
       </div>
 
       <div class="cadastro_vendedor_2_botao_finalizar">
-        <button class="cadastro_vendedor_2_finalizar" onclick="pag('vendedor/PerfilVendedor')">
+        <button class="cadastro_vendedor_2_finalizar" type='submit'>
           <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="">
           <label>FINALIZAR</label>
         </button>

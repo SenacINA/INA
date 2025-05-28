@@ -23,7 +23,7 @@ require_once('./utils/head.php');
       </div>
       <div class="dashboard_body_container_botoes_linha">
 
-        <a href="AdminPerfil">
+        <a href="Perfil">
           <div class="dashboard_body_container_botoes_base_linha">
             <div class="dashboard_body_container_botoes_base_linha_div">
               <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/linha.svg" alt="">
