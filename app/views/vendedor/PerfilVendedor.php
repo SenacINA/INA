@@ -50,6 +50,7 @@
             <option value="ConfirmarPedido">Pedidos</option>
             <option value="RelatorioVendas">Relatório</option>
             <option value="ProdutoEditar">Editar Produtos</option>
+            <option value="ProdutoRegistrar">Registrar Produto</option>
             <option value="Logout">Sair</option>
           </select>
         </form>

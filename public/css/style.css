@@ -1552,7 +1552,7 @@ main{
   align-items: center;
   flex-direction: row;
   gap: 1em;
-  max-height: 80px;
+  max-height: fit-content;
   min-height: 40px;
   overflow: hidden;
   padding: 8px;

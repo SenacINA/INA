@@ -22,7 +22,7 @@ require_once('./utils/head.php');
         <hr class="registro_produto_linha_titulo">
       </div>
       <div class='registro_produto_container'>
-        <form action="cadastro-produto" method="post" class='registro_produto_form_grid'>
+        <form action="CadastroProduto" method="post" class='registro_produto_form_grid'>
           <div class='registro_produto_form'>
             <div class='registro_produto_form_title'>
               <div class='registro_produto_line'></div>
@@ -258,10 +258,6 @@ require_once('./utils/head.php');
             </div>
           </div>
           <div class='registro_produto_form_buttons'>
-            <button class="base_botao btn_red">
-              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_branco_icon.svg">
-              INATIVAR PRODUTO
-            </button>
             <button class="base_botao btn_outline_red" type='reset'>
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_vermelho_icon.svg">
               CANCELAR
@@ -275,6 +271,22 @@ require_once('./utils/head.php');
       </div>
     </div>
   </main>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      <?php if (!empty($errors)): ?>
+        <?php foreach($errors as $e): ?>
+          gerarToast("<?= addslashes($e) ?>", "erro");
+        <?php endforeach; ?>
+      <?php endif; ?>
+
+      <?php if (!empty($_SESSION['successMessage'])): ?>
+        gerarToast("<?= addslashes($_SESSION['successMessage']) ?>", "sucesso");
+        <?php unset($_SESSION['successMessage']); ?>
+      <?php endif; ?>
+      
+    });
+  </script>
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
