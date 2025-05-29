@@ -137,12 +137,13 @@ foreign key (id_vendedor) references vendedor(id_vendedor)
 );
 
 create table if not exists carrinho( -- 10
-id_cliente int,
-id_produto int,
-quantidade_produto smallint not null,
-foreign key (id_cliente) references cliente(id_cliente),
-foreign key (id_produto) references produto(id_produto)
+  id_cliente int,
+  id_produto int,
+  quantidade_produto smallint not null,
+  foreign key (id_cliente) references cliente(id_cliente) on delete cascade,
+  foreign key (id_produto) references produto(id_produto) on delete cascade
 );
+
 
 create table if not exists imagem_produto( -- 11
 id_imagem_produto int auto_increment primary key,
