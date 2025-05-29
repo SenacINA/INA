@@ -1,24 +1,10 @@
-<?php
+<?php    
 
-require_once __DIR__ . '/../../models/cliente/CarrinhoModel.php';
-
-class CarrinhoController extends RenderView
-{
-  public CarrinhoModel $model;
-
-  public function __construct()
-  {
-    $this->model = new CarrinhoModel();
-  }
-
-  public function adicionarItem()
-  {
-    $idProduto = $_POST['produto_id'] ?? null;
-    $quantidade = $_POST['quantidade'] ?? 1;
-
-    if ($idProduto) {
-      $this->model->adicionarItem((int)$idProduto, (int)$quantidade);
+class CarrinhoController extends RenderView {
+    public function index() {
+        $this->loadView('cliente/Carrinho', []);
     }
+<<<<<<< HEAD
 
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
@@ -70,4 +56,6 @@ class CarrinhoController extends RenderView
     $dados = $this->exibirItens();
     $this->loadView('cliente/Carrinho', $dados);
   }
+=======
+>>>>>>> main
 }

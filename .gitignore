@@ -15,7 +15,6 @@ ENV/
 env.bak/
 venv.bak/
 insert.php
-insertItens.php
 public/upload/clientes/**/
 
 # Rope project settings
