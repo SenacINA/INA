@@ -4,15 +4,21 @@
 $css = ["/css/cliente/carrinho_vazio.css"];
 $js = ["/js/cliente/carrinho.js"];
 
-require_once("./utils/head.php");
+require_once "./utils/head.php";
 
 $totalCarrinho = 0;
 
-foreach ($itensCarrinho as $item) {
-  $totalCarrinho += $item['preco_produto'] * $item['quantidade_produto'];
+if(isset($itensCarrinho)) {
+  foreach ($itensCarrinho as $item) {
+    $totalCarrinho += $item['preco_produto'] * $item['quantidade_produto'];
+  }
+  $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
 }
 
-$carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
+else {
+  $carrinhoVazio = 'disabled';
+}
+
 ?>
 
 <body>
