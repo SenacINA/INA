@@ -729,6 +729,52 @@ main{
   margin: 24px 0;
 }
 
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 22px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 25px;
+}
+
+.toggle_slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle_slider {
+  background-color: #2196F3;
+}
+
+input:checked + .toggle_slider::before {
+  transform: translateX(24px);
+}
+
+
 
 .footer_whatsapp {
   width: 100%;

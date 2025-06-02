@@ -99,7 +99,7 @@ class GeralModel
     public function updateTelefone(int $id, string $ddd, string $numero): bool
     {
         $ddd    = trim($ddd);
-        $numero = trim($numero);
+        $numero = trim($numero); 
 
         // only digits
         if (!ctype_digit($ddd) || !ctype_digit($numero)) {

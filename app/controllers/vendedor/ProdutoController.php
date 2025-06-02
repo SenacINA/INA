@@ -15,6 +15,7 @@ class ProdutoController extends RenderView
         $unidade = $_POST['estoqueProduto'] ?? '';
         $origem = $_POST['origemProduto'] ?? '';
         $descricao = $_POST['descricao'] ?? '';
+    
 
         // Validação básica dos campos obrigatórios
         if (empty($nome)) {
@@ -54,8 +55,10 @@ class ProdutoController extends RenderView
         $largura = $_POST['larguraProduto'] ?? '';
         $altura = $_POST['alturaProduto'] ?? '';
         $comprimento = $_POST['comprimentoProduto'] ?? '';
-        $categoria = $_POST['categoriaProduto'] ?? '';
         $produtoImagem = $_POST['produtoImagem'] ?? '';
+        $categoria = isset($_POST['categoriaProduto']) ? (int)$_POST['categoriaProduto'] : 1;
+        $subCategoria = isset($_POST['subCategoriaProduto']) ? (int)$_POST['subCategoriaProduto'] : 1;
+
 
         // Promoção opcional
         if (isset($_POST['toggle-group'])) {
@@ -69,10 +72,25 @@ class ProdutoController extends RenderView
 
         // Criação do produto
         $model = new ProdutoModel();
-        $sucesso = $model->createProduto($_SESSION['cliente_id'], $nome, $valor, $marca, $codigo, $origem, $unidade, $peso, $pesoBruto, $largura, $altura, $comprimento, $descricao, 'ativo');
-
+        $sucesso = $model->createProduto(
+            (int)$_SESSION['cliente_id'],  // ID do vendedor
+            (string)$nome,                 // Nome do produto
+            (string)$valor,                // Preço (mantido como string para compatibilidade)
+            (int)$categoria,               // Categoria como INT
+            (int)$subCategoria,            // Subcategoria como INT
+            (string)$origem,               // Origem do produto
+            (int)$unidade,                 // Unidade em estoque
+            (float)$peso,                  // Peso líquido
+            (float)$pesoBruto,             // Peso bruto
+            (float)$largura,               // Largura
+            (float)$altura,                // Altura
+            (float)$comprimento,           // Comprimento
+            (string)$descricao,            // Descrição do produto
+            (string)'ativo'                // Status do produto
+        );
+        
         if ($sucesso) {
-            $this->loadView('geral/Home', []);
+            $this->loadView('vendedor/EditarProduto', ['dadosProduto' => $sucesso]);
         } else {
             $errors[] = "Erro ao cadastrar o produto. Tente novamente.";
             $this->loadView('vendedor/RegistroProduto', ['errors' => $errors]);

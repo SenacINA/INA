@@ -199,7 +199,7 @@ class VendedorController extends RenderView
             $ok5 = $geral->updateDescricaoPerfil($clienteId, $descricao); // Chamando a atualização da descrição
 
             // Prepara pasta upload/vendedores/{id}/
-            $baseDir = __DIR__ . '/../../../public/upload/vendedores/' . $clienteId . '/';
+            $baseDir = __DIR__ . '/../../../public/upload/clientes/' . $clienteId . '/';
             if (!is_dir($baseDir)) {
                 mkdir($baseDir, 0755, true);
             }
@@ -218,7 +218,7 @@ class VendedorController extends RenderView
                     $errors[] = 'Falha ao salvar imagem de perfil.';
                     $ok3 = false;
                 } else {
-                    $relFoto = '/upload/vendedores/' . $clienteId . '/' . $fn;
+                    $relFoto = '/upload/clientes/' . $clienteId . '/' . $fn;
                     $ok3 = $geral->updateFotoPerfil($clienteId, $relFoto);
                 }
             }
@@ -237,7 +237,7 @@ class VendedorController extends RenderView
                     $errors[] = 'Falha ao salvar imagem de banner.';
                     $ok4 = false;
                 } else {
-                    $relBanner = '/upload/vendedores/' . $clienteId . '/' . $fn;
+                    $relBanner = '/upload/clientes/' . $clienteId . '/' . $fn;
                     $ok4 = $geral->updateBannerPerfil($clienteId, $relBanner);
                 }
             }

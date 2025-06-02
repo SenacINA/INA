@@ -67,14 +67,14 @@ require_once('./utils/head.php');
                 <select class='base_input' id='categoriaProduto' name='categoriaProduto'>
                   <option value="" disabled selected>Selecione</option>
                   <option value="1">Categoria 1</option>
-                </select>
+              </select>
               </div>
 
               <div class='base_input_select'>
                 <label for="categoriaProduto">Sub-Categoria</label>
-                <select class='base_input' id='categoriaProduto' name='categoriaProduto'>
-                  <option value="" disabled selected>Selecione</option>
-                  <option value="1">Sub-Categoria 1</option>
+                <select class='base_input' id='subCategoriaProduto' name='subCategoriaProduto'>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">Sub-Categoria 1</option>
                 </select>
               </div>
 
@@ -174,11 +174,14 @@ require_once('./utils/head.php');
                 Promoção
               </h3>
             </div>
-            <label class="toggle">
-              <input type="checkbox" name="toggle-group" id="toggle-promotion">
-              <span class="slider"></span>
-              <h4>Ativar Promoção</h4>
-            </label>
+            <div class='toggle_container'>
+              <label class="toggle">
+                <input type="checkbox" name="toggle-group" id="toggle-promotion" class='base_input'>
+                <span class="toggle_slider"></span>
+              </label>
+              <label for='toggle-promotion'>Ativar Promoção</label>
+            </div>
+            
 
             <div class='registro_produto_promocao'>
               <h4>Tipos de Promoção</h4>
