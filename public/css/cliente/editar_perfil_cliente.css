@@ -474,6 +474,12 @@ body {
   cursor: pointer;
 }
 
+.trocar_email_cliente {
+  background-color: #006494;
+  border-color: #006494;
+}
+
+
 .main_text_redes {
   color: var(--celadon);
   font-family: Jost;

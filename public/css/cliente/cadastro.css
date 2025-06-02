@@ -102,6 +102,21 @@ main {
   font-weight: 300;
 }
 
+.cadastro_lista li {
+  color: #888;
+  transition: 0.3s;
+}
+
+.cadastro_lista li.valida {
+  color: var(--carolina);
+  font-weight: bold;
+}
+
+.cadastro_lista li.invalida {
+  color: red;
+}
+
+
 .cadastro_botoes {
   margin-top: 25px;
   display: grid;

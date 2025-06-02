@@ -53,6 +53,7 @@ class ClienteModel
             cliente.tipo_conta_cliente, 
             cliente.status_conta_cliente,
             cliente.data_registro_cliente,
+            cliente.email_cliente,
             perfil.foto_perfil, 
             perfil.banner_perfil, 
             perfil.descricao_perfil, 

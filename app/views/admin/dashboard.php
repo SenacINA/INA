@@ -23,7 +23,7 @@ require_once('./utils/head.php');
       </div>
       <div class="dashboard_body_container_botoes_linha">
 
-        <a href="AdminPerfil">
+        <a href="Perfil">
           <div class="dashboard_body_container_botoes_base_linha">
             <div class="dashboard_body_container_botoes_base_linha_div">
               <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/linha.svg" alt="">
@@ -90,6 +90,14 @@ require_once('./utils/head.php');
           <div class="dashboard_body_container_botoes_base">
             <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/aprovar_vendedor.svg" alt="">
             <h2>Aprovar Vendedor</h2>
+            <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/seta_baixo.svg" alt="">
+          </div>
+        </a>
+
+        <a href="AtualizarUsuario">
+          <div class="dashboard_body_container_botoes_base">
+            <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/atualizar_usuario.svg" alt="">
+            <h2>Atualizar Usuario</h2>
             <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/seta_baixo.svg" alt="">
           </div>
         </a>

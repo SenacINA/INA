@@ -1075,22 +1075,6 @@ main{
   margin: 10px;
 }
 
-.index_body_desconto {
-  position: absolute;
-  top: 8px;
-  right: 0;
-  width: 80px;
-  height: 20px;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="20" viewBox="0 0 80 20" fill="none"><path d="M0 0H80V20H0L17.3359 10L0 0Z" fill="%23006494"/></svg>') no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  color: white;
-  font-weight: bold;
-  font-size: 12px;
-  padding-right: 4px;
-}
-
 .index_body_imagem_produto {
   row-gap: 0;
   display: flex;
@@ -1130,13 +1114,6 @@ main{
       }
     }
 
-#indexBodyValorAntigo {
-    color: #00000080;
-    filter: opacity(50%);
-    font-size: 12px;
-    text-decoration-line: line-through;
-}
-
 #indexBodyValorProduto {
   color: #FF7A00;
   font-size: 16px;
@@ -1146,6 +1123,7 @@ main{
       p {
           background: linear-gradient(90deg, #FFD600 80%, #989898 81%);
           -webkit-background-clip: text;
+          background-clip: text;
           color: transparent;
       }
       h4 {
@@ -1161,9 +1139,9 @@ main{
   }
 }
 
-@media (max-width: 1664px) {
-  .index_body_produto_card {
-  }
+.form_adicionar_carrinho {
+  min-width: 0;
+  width: 100%;
 }
 
 @media (max-width: 1024px) {

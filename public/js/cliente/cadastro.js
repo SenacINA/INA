@@ -26,3 +26,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+
+
+  /*Js para a validação visual*/
+  
+document.addEventListener("DOMContentLoaded", () => {
+  const senhaInput = document.getElementById("senha");
+  const confirmaInput = document.getElementById("confirmaSenha");
+
+  const regraCaracteres = document.getElementById("regra-caracteres");
+  const regraMinuscula = document.getElementById("regra-minuscula");
+  const regraNumero = document.getElementById("regra-numero");
+  const regraCoincidir = document.getElementById("regra-senha-coicidir");
+
+  function validarSenha() {
+    const senha = senhaInput.value;
+    const confirmar = confirmaInput.value;
+
+    toggleClasse(regraCaracteres, senha.length >= 6);
+    toggleClasse(regraMinuscula, /[a-z]/.test(senha));
+    toggleClasse(regraNumero, /\d/.test(senha));
+    toggleClasse(regraCoincidir, senha !== "" && senha === confirmar);
+  }
+
+  function toggleClasse(elemento, valido) {
+    if (valido) {
+      elemento.classList.add("valida");
+      elemento.classList.remove("invalida");
+    } else {
+      elemento.classList.remove("valida");
+      elemento.classList.add("invalida");
+    }
+  }
+
+  senhaInput.addEventListener("input", validarSenha);
+  confirmaInput.addEventListener("input", validarSenha);
+});

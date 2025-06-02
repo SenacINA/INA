@@ -21,6 +21,20 @@
   margin: 0px 1.5%;
 }
 
+.perfil_admin_pfp {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  width: 100%;
+  background-color: var(--branco_gelo);
+  img {
+    width: 100%;
+  }
+}
+
+.form, .btn_blue {
+  width: 100%;
+}
+
 .perfil_admin_titulo {
   position: relative;
 
