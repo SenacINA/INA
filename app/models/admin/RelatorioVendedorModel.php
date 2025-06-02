@@ -23,9 +23,9 @@ class RelatorioVendedorModel {
                 FROM relatorio_vendedor rv
                 JOIN produto p ON p.id_produto = rv.produto_id
                 JOIN cliente c ON c.id_cliente = rv.cliente_id
-                WHERE rv.cliente_id = :id_cliente";
+                WHERE rv.vendedor_id = :id_vendedor";
 
-        $params = [':id_cliente' => $vendedor_id];
+        $params = [':id_vendedor' => $vendedor_id];
 
         $result = $this->db->executeQuery($sql, $params);
         $this->db->disconnect(); // Close connection
