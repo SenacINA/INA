@@ -41,10 +41,10 @@
 
           <div class="cadastro_regras">
             <ul class="cadastro_lista">
-              <li>Deve conter ao menos 6 caracteres;</li>
-              <li>Deve conter ao menos uma letra minúscula;</li>
-              <li>Deve conter ao menos um número;</li>
-              <li>Não pode ser uma de suas senhas antigas.</li>
+              <li id="regra-caracteres">Deve conter ao menos 6 caracteres;</li>
+              <li id="regra-minuscula">Deve conter ao menos uma letra minúscula;</li>
+              <li id="regra-numero">Deve conter ao menos um número;</li>
+              <li id="regra-senha-coicidir">As senhas precisam coincidirem;</li>
             </ul>
           </div>
 

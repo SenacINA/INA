@@ -62,6 +62,12 @@ function generateModalContent($user)
     case 'admin':
       $content = '
               <li>
+                <a href="#" class="menu-item" onclick="pag(\'AdminDashboard\')">
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db"><path fill="#3498db" d="M12 3s-6.186 5.34-9.643 8.232A1.04 1.04 0 0 0 2 12a1 1 0 0 0 1 1h2v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4h4v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7h2a1 1 0 0 0 1-1a.98.98 0 0 0-.383-.768C18.184 8.34 12 3 12 3"/></svg>
+                    <span>Home</span>
+                </a>
+              </li>
+              <li>
                   <a href="#" class="menu-item" onclick="pag(\'AdminPerfil\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
@@ -115,6 +121,13 @@ function generateModalContent($user)
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                       </svg>
                       <span>Aprovar Vendedor</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="menu-item" onclick="pag(\'AtualizarUsuario\')">
+                      <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
+                      <path fill="#3498db" d="M5.7 9c.4-2 2.2-3.5 4.3-3.5c1.5 0 2.7.7 3.5 1.8l1.7-2C14 3.9 12.1 3 10 3C6.5 3 3.6 5.6 3.1 9H1l3.5 4L8 9zm9.8-2L12 11h2.3c-.5 2-2.2 3.5-4.3 3.5c-1.5 0-2.7-.7-3.5-1.8l-1.7 1.9C6 16.1 7.9 17 10 17c3.5 0 6.4-2.6 6.9-6H19z"/></svg>
+                      <span>Atualizar Usuário</span>
                   </a>
               </li>
           ';

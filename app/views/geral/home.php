@@ -44,7 +44,12 @@
                 <div class="index_body_produtos_content">
                     <?php 
                         include ("$PATH_COMPONENTS/php/card_produto.php");
-                        gerarProdutoCards(6, 1);
+                        include ("$PATH_CONTROLLER/geral/CardController.php");
+                        $card = new cardProduto;
+                        $controller = new CardController;
+
+                        $info = $controller->sendProdutos();
+                        $card->gerarProdutoCards(6, $info);
                     ?>                
                 </div>
                 <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
@@ -64,7 +69,7 @@
                     <h2>Descontos</h2>
                 </div>
                 <div class="index_body_produtos_content">
-                    <?php gerarProdutoCards(6, 1); ?>
+                    <?php $card->gerarProdutoCards(6, $info); ?>
                 </div>
                 <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
                     <p>Ver Mais</p>
@@ -84,7 +89,7 @@
                     <h2>Mais Vendidos</h2>
                 </div>
                 <div class="index_body_produtos_content">
-                    <?php gerarProdutoCards(6, 1); ?>
+                    <?php $card->gerarProdutoCards(6, $info); ?>
                 </div>
                 <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
                     <p>Ver Mais</p>

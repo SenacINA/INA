@@ -69,7 +69,6 @@ $routes = [
       '/GerenciarProdutos'        => 'admin/AdminController@gerenciarProdutos',
       '/GerenciarCarrossel'       => 'admin/AdminController@gerenciarCarrossel',
       '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
-      '/HistoricoAcesso'          => 'admin/AdminController@historicoAcesso',
       '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
       '/searchDesativarUser'      => 'admin/AdminController@searchDesativarUser',
       '/DesativarUser'            => 'admin/AdminController@desativarUser',
