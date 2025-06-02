@@ -1,57 +1,65 @@
 <?php
-    $routes = [
-        '/'                          => 'geral/HomeController@index',
-        '/user/{id}'                 => 'cliente/ClienteController@show',
+$routes = [
+      '/'                          => 'geral/HomeController@index',
+      '/user/{id}'                 => 'cliente/ClienteController@show',
 
-        // Cliente
-        '/Produto'                   => 'cliente/ProdutoController@index',
-        '/Carrinho'                  => 'cliente/CarrinhoController@index',
-        '/Categoria'                 => 'cliente/CategoriaController@index',
-        '/Login'                     => 'cliente/ClienteController@login',
-        '/CarrinhoDados'            => 'cliente/ClienteController@dados',
-        '/CarrinhoPagamentos'       => 'cliente/ClienteController@pagamentos',
-        '/auth'                      => 'auth/AuthController@loginForm',
-        '/Logout'                    => 'auth/AuthController@logout',
-        '/CadastroCliente'          => 'cliente/ClienteController@cadastro',
-        '/api/cliente/register'      => 'cliente/ClienteController@register',
-        '/api/cliente/editar-perfil/redes' => 'cliente/ClienteController@updateSocial',
-        '/api/cliente/editarDadosCliente' => 'cliente/ClienteCOntroller@editarDadosCliente',
+      // Cliente
+      '/Produto'                   => 'cliente/ProdutoController@index',
+      '/Categoria'                 => 'cliente/CategoriaController@index',
+      '/Login'                     => 'cliente/ClienteController@login',
+      '/auth'                      => 'auth/AuthController@loginForm',
+      '/Logout'                    => 'auth/AuthController@logout',
+      '/CadastroCliente'           => 'cliente/ClienteController@cadastro',
+      '/api/cliente/register'      => 'cliente/ClienteController@register',
+      '/api/cliente/editar-perfil/redes'  => 'cliente/ClienteController@updateSocial',
+      '/api/cliente/editarDadosCliente'   => 'cliente/ClienteCOntroller@editarDadosCliente',
 
-        // Geral
-        '/sobre-nos'                 => 'geral/GeralController@sobreNos',
+      // Cliente - Carrinho
+      '/Carrinho'                  => 'cliente/CarrinhoController@index',
+      '/Carrinho-api-exibir'       => 'cliente/CarrinhoController@exibirItens',
+      '/Carrinho-api-add'          => 'cliente/CarrinhoController@adicionarItem',
+      '/Carrinho-api-remove'       => 'cliente/CarrinhoController@removerItem',
+      '/Carrinho-api-limpar'       => 'cliente/CarrinhoController@limparCarrinho',
+      '/Carrinho-api-update'       => 'cliente/CarrinhoController@atualizar',
 
-        // Geral - Trocar Email
-        '/TrocarEmail'              => 'auth/AuthController@requestEmailReset',
-        '/TrocarEmail-api'          => 'geral/TrocarEmailController@TrocarEmail',
+      '/CarrinhoDados'             => 'cliente/ClienteController@dados',
+      '/CarrinhoPagamentos'        => 'cliente/ClienteController@pagamentos',
 
-        '/TrocarEmailConfirmar'    => 'auth/AuthController@confirmEmailReset',
-        '/TrocarEmail-api-confirmar'=> 'geral/salvarNovoEmailController@salvarEmail',
-        
-        // Geral - Redefinir Senha
-        '/RedefinirSenha'           => 'auth/AuthController@requestPasswordReset',
-        '/RedefinirSenhaConfirmar' => 'auth/AuthController@confirmPasswordReset',
+      // Geral
+      '/sobre-nos'                 => 'geral/GeralController@sobreNos',
 
-        '/RedefinirSenha-api'       => 'geral/EnviarTokenController@gerarToken',
-        '/RedefinirSenha-api-salvar'=> 'geral/EnviarTokenController@salvarSenha',
+      // Geral - Trocar Email
+      '/TrocarEmail'               => 'auth/AuthController@requestEmailReset',
+      '/TrocarEmail-api'           => 'geral/TrocarEmailController@TrocarEmail',
 
-        // Geral - Perfil
-        '/EditarPerfil' => 'geral/GeralController@editarPerfil',
-        '/Perfil' => 'geral/GeralController@perfil',
-        '/error/404' => 'gerral/GeralController@error',
+      '/TrocarEmailConfirmar'      => 'auth/AuthController@confirmEmailReset',
+      '/TrocarEmail-api-confirmar' => 'geral/salvarNovoEmailController@salvarEmail',
 
-        // Vendedor - Cadastro e Perfil
-        '/CadastroVendedorInfo'    => 'vendedor/VendedorController@showInfo',
-        '/CadastroVendedor'         => 'vendedor/VendedorController@showFormCadastro',
-        '/CadastroVendedorForms'   => 'vendedor/VendedorController@cadastroForm',
-        '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
-        
-        // Vendedor - Produtos e Pedidos
-        '/PedidosVendedor'          => 'vendedor/VendedorProductController@pedidos',
-        '/PedidoConfirmar'          => 'vendedor/VendedorProductController@confirm',
-        '/ProdutoRegistrar'         => 'vendedor/VendedorProductController@create',
-        '/ProdutoEditar'            => 'vendedor/VendedorProductController@edit',
-        '/RelatorioVendas'          => 'vendedor/VendedorProductController@report',
-        '/CadastroProduto'          => 'vendedor/ProdutoController@produto',
+      // Geral - Redefinir Senha
+      '/RedefinirSenha'            => 'auth/AuthController@requestPasswordReset',
+      '/RedefinirSenhaConfirmar'   => 'auth/AuthController@confirmPasswordReset',
+
+      '/RedefinirSenha-api'        => 'geral/EnviarTokenController@gerarToken',
+      '/RedefinirSenha-api-salvar' => 'geral/EnviarTokenController@salvarSenha',
+
+      // Geral - Perfil
+      '/EditarPerfil' => 'geral/GeralController@editarPerfil',
+      '/Perfil' => 'geral/GeralController@perfil',
+      '/Error/404' => 'gerral/GeralController@error',
+
+      // Vendedor - Cadastro e Perfil
+      '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
+      '/CadastroVendedor'                 => 'vendedor/VendedorController@showFormCadastro',
+      '/CadastroVendedorForms'            => 'vendedor/VendedorController@cadastroForm',
+      '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
+
+      // Vendedor - Produtos e Pedidos
+      '/PedidosVendedor'          => 'vendedor/VendedorProductController@pedidos',
+      '/PedidoConfirmar'          => 'vendedor/VendedorProductController@confirm',
+      '/ProdutoRegistrar'         => 'vendedor/VendedorProductController@create',
+      '/ProdutoEditar'            => 'vendedor/VendedorProductController@edit',
+      '/RelatorioVendas'          => 'vendedor/VendedorProductController@report',
+      '/CadastroProduto'          => 'vendedor/ProdutoController@produto',
 
         // Admin
         '/AdminDashboard'           => 'admin/AdminController@dashboard',
@@ -73,5 +81,4 @@
 >>>>>>> c81ec249327caa9a0141f5dfde71c58ce3344165
     ];
 
-    // Join DIRECTOR SEPARETOR
-?>
+// Join DIRECTOR SEPARETOR

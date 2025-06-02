@@ -58,15 +58,22 @@ categoria_subcategoria int, -- a ser revisado
 foreign key (categoria_subcategoria) references categoria(id_categoria)
 );
 
-CREATE TABLE IF NOT EXISTS vendedor (
-    id_vendedor      INT AUTO_INCREMENT PRIMARY KEY,
-    id_cliente       INT NOT NULL UNIQUE,  
-    nome_fantasia    VARCHAR(255) NOT NULL,
-    cnpj_vendedor    VARCHAR(30) UNIQUE NOT NULL,
-    status           ENUM('Pendente', 'Aprovado', 'Reprovado') DEFAULT 'Pendente',
-    data_requisicao  DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente) ON DELETE CASCADE
-);
+CREATE TABLE if not exists vendedor (
+  id_vendedor        INT (11)      NOT NULL AUTO_INCREMENT,
+  id_cliente       INT NOT NULL UNIQUE,  
+  nome_fantasia     VARCHAR(255)      NOT NULL,
+  cnpj_vendedor      VARCHAR(30)       NOT NULL,
+  requisitos_completos TINYINT(1)      NOT NULL DEFAULT 0,
+  documento_entregue TINYINT(1)        NOT NULL DEFAULT 0,
+  status           ENUM('Pendente','Aprovado','Reprovado') NOT NULL DEFAULT 'Pendente',
+  data_requisicao   DATETIME          NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id_vendedor),
+  UNIQUE KEY cnpj_vendedor (cnpj_vendedor),
+  KEY idx_vendedor_status   (status),
+  KEY idx_vendedor_data     (data_requisicao)
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_general_ci;
  
 
 create table if not exists produto( -- 2
@@ -130,12 +137,13 @@ foreign key (id_vendedor) references vendedor(id_vendedor)
 );
 
 create table if not exists carrinho( -- 10
-id_cliente int,
-id_produto int,
-quantidade_produto smallint not null,
-foreign key (id_cliente) references cliente(id_cliente),
-foreign key (id_produto) references produto(id_produto)
+  id_cliente int,
+  id_produto int,
+  quantidade_produto smallint not null,
+  foreign key (id_cliente) references cliente(id_cliente) on delete cascade,
+  foreign key (id_produto) references produto(id_produto) on delete cascade
 );
+
 
 create table if not exists imagem_produto( -- 11
 id_imagem_produto int auto_increment primary key,
