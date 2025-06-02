@@ -72,13 +72,9 @@ $routes = [
         '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
         '/HistoricoAcesso'          => 'admin/HistoricoAcessoController@renderHistoricoAcesso',
         '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
-<<<<<<< HEAD
         '/HistoricoAcessoBuscar'    => 'admin/HistoricoAcessoController@buscarHistoricoAcesso',
-
-=======
         '/api/admin/pesquisar-cliente' => 'admin/AdminController@searchUser',
         '/api/admin/atualizar-cliente' => 'admin/AdminController@updateUser',
->>>>>>> c81ec249327caa9a0141f5dfde71c58ce3344165
     ];
 
 // Join DIRECTOR SEPARETOR
