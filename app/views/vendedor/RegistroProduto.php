@@ -246,7 +246,7 @@ require_once('./utils/head.php');
             <button class="base_botao btn_blue" name="produtoImagem">
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
               ENVIAR ARQUIVO
-              <input type="file" id="input-file" name="produto_imagens[]" accept="image/*" multiple>
+              <input type="file" id="input-file" name="produto-imagens" accept="image/*" multiple>
             </button>
             <h4 id='info-image'>
               O tamanho do arquivo não pode ultrapassar 2mb

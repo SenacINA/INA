@@ -27,7 +27,7 @@ class ProdutoModel
       float $comprimento,
       string $descricao,
       bool $status
-  ): bool {
+  ): int|any {
       $sql = "INSERT INTO produto(
           id_vendedor, nome_produto, preco_produto, categoria_produto, subcategoria_produto,
           origem_produto, unidade_produto, peso_liquido_produto, peso_bruto_produto,
@@ -39,29 +39,61 @@ class ProdutoModel
       )";
 
       try {
-          $stmt = $this->db->getConnection()->prepare($sql);
+            $stmt = $this->db->getConnection()->prepare($sql);
 
-          $stmt->bindValue(':id_vendedor', $idVendedor, PDO::PARAM_INT);
-          $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
-          $stmt->bindValue(':preco', number_format($preco, 2, '.', ''), PDO::PARAM_STR);
-          $stmt->bindValue(':categoria', $categoria, PDO::PARAM_INT);
-          $stmt->bindValue(':subCategoria', $subCategoria, PDO::PARAM_INT);
-          $stmt->bindValue(':origem', $origem, PDO::PARAM_STR);
-          $stmt->bindValue(':unidade', $unidade, PDO::PARAM_INT);
-          $stmt->bindValue(':peso', $peso, PDO::PARAM_STR);
-          $stmt->bindValue(':pesoBruto', $pesoBruto, PDO::PARAM_STR);
-          $stmt->bindValue(':largura', $largura, PDO::PARAM_STR);
-          $stmt->bindValue(':altura', $altura, PDO::PARAM_STR);
-          $stmt->bindValue(':comprimento', $comprimento, PDO::PARAM_STR);
-          $stmt->bindValue(':descricao', $descricao, PDO::PARAM_STR);
-          $stmt->bindValue(':status', $status, PDO::PARAM_BOOL);
+            $stmt->bindValue(':id_vendedor', $idVendedor, PDO::PARAM_INT);
+            $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
+            $stmt->bindValue(':preco', number_format($preco, 2, '.', ''), PDO::PARAM_STR);
+            $stmt->bindValue(':categoria', $categoria, PDO::PARAM_INT);
+            $stmt->bindValue(':subCategoria', $subCategoria, PDO::PARAM_INT);
+            $stmt->bindValue(':origem', $origem, PDO::PARAM_STR);
+            $stmt->bindValue(':unidade', $unidade, PDO::PARAM_INT);
+            $stmt->bindValue(':peso', $peso, PDO::PARAM_STR);
+            $stmt->bindValue(':pesoBruto', $pesoBruto, PDO::PARAM_STR);
+            $stmt->bindValue(':largura', $largura, PDO::PARAM_STR);
+            $stmt->bindValue(':altura', $altura, PDO::PARAM_STR);
+            $stmt->bindValue(':comprimento', $comprimento, PDO::PARAM_STR);
+            $stmt->bindValue(':descricao', $descricao, PDO::PARAM_STR);
+            $stmt->bindValue(':status', $status, PDO::PARAM_BOOL);
 
-          return $stmt->execute();
+            $stmt->execute();
+            return $this->db->getConnection()->lastInsertId();
       } catch (PDOException $e) {
-          error_log("Erro ao inserir produto: " . $e->getMessage());
-          return false;
+         return error_log("Erro ao inserir produto: " . $e->getMessage());
       }
   }
+
+  public function adicionarImagemProduto(int $produtoId, string $caminhoImagem, int $ordem): bool
+{
+    $sql = "INSERT INTO imagem_produto 
+            (id_produto, endereco_imagem_produto, index_imagem_produto) 
+            VALUES (:produto_id, :caminho, :ordem)";
+    
+    try {
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':produto_id', $produtoId, PDO::PARAM_INT);
+        $stmt->bindValue(':caminho', $caminhoImagem, PDO::PARAM_STR);
+        $stmt->bindValue(':ordem', $ordem, PDO::PARAM_INT);
+        return $stmt->execute();
+    } catch (PDOException $e) {
+        error_log("Erro ao inserir imagem do produto: " . $e->getMessage());
+        return false;
+    }
+}
+
+public function deletarProduto(int $produtoId): bool
+{
+    $sql = "DELETE FROM produto WHERE id_produto = :id";
+    
+    try {
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id', $produtoId, PDO::PARAM_INT);
+        return $stmt->execute();
+    } catch (PDOException $e) {
+        error_log("Erro ao deletar produto: " . $e->getMessage());
+        return false;
+    }
+}
 
   
 }
