@@ -94,6 +94,14 @@ require_once('./utils/head.php');
           </div>
         </a>
 
+        <a href="AtualizarUsuario">
+          <div class="dashboard_body_container_botoes_base">
+            <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/atualizar_usuario.svg" alt="">
+            <h2>Atualizar Usuario</h2>
+            <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/seta_baixo.svg" alt="">
+          </div>
+        </a>
+
         <a href="Logout">
           <div class="dashboard_body_container_botoes_base">
             <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/logout.svg" alt="">
