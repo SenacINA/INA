@@ -238,6 +238,7 @@ require_once('./utils/head.php');
               </h3>
             </div>
             <div class="registro_produto_imagens"></div>
+            <input type="hidden" name="produto_imagens" id="produto-imagens">
             <div class="contador">
               <span id="contador-total">0</span>
               <span id="contador-restante"> / 1</span>
@@ -245,7 +246,7 @@ require_once('./utils/head.php');
             <button class="base_botao btn_blue" name="produtoImagem">
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
               ENVIAR ARQUIVO
-              <input type="file" id="input-file" name="produtoImagem" accept="image/*" multiple>
+              <input type="file" id="input-file" name="produto_imagens[]" accept="image/*" multiple>
             </button>
             <h4 id='info-image'>
               O tamanho do arquivo não pode ultrapassar 2mb

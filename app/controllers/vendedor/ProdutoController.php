@@ -15,9 +15,21 @@ class ProdutoController extends RenderView
         $unidade = $_POST['estoqueProduto'] ?? '';
         $origem = $_POST['origemProduto'] ?? '';
         $descricao = $_POST['descricao'] ?? '';
-    
+        $imagesBase64 = $_POST['produto_imagens'] ?? [];
 
-        // Validação básica dos campos obrigatórios
+        
+
+        if (!is_array($imagesBase64)) {
+            $imagesBase64 = [];
+        }
+
+        var_dump($imagesBase64);
+        exit;
+
+        if (sizeof($imagesBase64) < 1) {
+            $errors[] = 'Pelo menos uma imagem deve ser adicionada.';
+        }
+
         if (empty($nome)) {
             $errors[] = "O nome do produto é obrigatório.";
         }
