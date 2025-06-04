@@ -42,7 +42,7 @@
               <label>ID</label>
               <input type="text" name="vendedor_id" class="base_input">
             <button type="submit" class="base_botao  btn_blue">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/procura_lupa.svg" alt=""/>PROCURAR</button>
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt=""/>PROCURAR</button>
             </div>
           </form>
         </div>
