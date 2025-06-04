@@ -79,7 +79,7 @@
           <option value="" selected disabled style="display: none;"></option>
           <option value="">ID</option>
           <option value="">Produto</option>
-          <option value="">Preço</option>
+          <option value="">Preço Uni.</option>
           <option value="">Quantidade</option>
           <option value="">Entregue</option>
         </select>
@@ -98,7 +98,7 @@
             <tr>
               <th>ID</th>
               <th>Produto</th>
-              <th>Preço</th>
+              <th>Preço Uni.</th>
               <th>Qtn.</th>
               <th>Status</th>
               <th>Cliente</th>
