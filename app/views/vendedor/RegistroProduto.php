@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <?php
 $titulo = "Cadastrar Produto- E ao Quadrado";
-$css = ["/css/vendedor/registro_produto.css"];
+$css = ["/css/vendedor/RegistroProduto.css"];
 require_once('./utils/head.php');
 
 ?>

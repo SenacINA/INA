@@ -68,7 +68,7 @@ function generateModalContent($user)
                 </a>
               </li>
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'AdminPerfil\')">
+                  <a href="#" class="menu-item" onclick="pag(\'Perfil\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
@@ -149,6 +149,22 @@ function generateModalContent($user)
                           <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
                       </svg>
                       <span>Redefinir Senha</span>
+                  </a>
+              </li>
+              <li>
+                  <a onclick="pag(\'EditarPerfil\')" class="menu-item">
+                      <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
+                          <path fill="#3498db" d="m21.7 13.35l-1 1l-2.05-2.05l1-1a.55.55 0 0 1 .77 0l1.28 1.28c.21.21.21.56 0 .77M12 18.94l6.06-6.06l2.05 2.05L14.06 21H12zM12 14c-4.42 0-8 1.79-8 4v2h6v-1.89l4-4c-.66-.08-1.33-.11-2-.11m0-10a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4"/>
+                      </svg>
+                      <span>Editar Perfil</span>
+                  </a>
+              </li>
+              <li>
+                  <a onclick="pag(\'CadastroVendedorInfo\')" class="menu-item">
+                  <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
+                    <path fill="#3498db" d="m21.41 11.58l-9-9C12.04 2.21 11.53 2 11 2H4a2 2 0 0 0-2 2v7c0 .53.21 1.04.59 1.41l.41.4c.9-.54 1.94-.81 3-.81a6 6 0 0 1 6 6c0 1.06-.28 2.09-.82 3l.4.4c.37.38.89.6 1.42.6s1.04-.21 1.41-.59l7-7c.38-.37.59-.88.59-1.41s-.21-1.04-.59-1.42M5.5 7A1.5 1.5 0 0 1 4 5.5A1.5 1.5 0 0 1 5.5 4A1.5 1.5 0 0 1 7 5.5A1.5 1.5 0 0 1 5.5 7M10 19H7v3H5v-3H2v-2h3v-3h2v3h3z"/>
+                    </svg>
+                      <span>Cadastro Vendedor</span>
                   </a>
               </li>
           ';

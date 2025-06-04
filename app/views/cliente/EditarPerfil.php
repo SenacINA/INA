@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <?php
-  $css = ["/css/cliente/editar_perfil_cliente.css"];
+  $css = ["/css/cliente/EditarPerfilCliente.css"];
   require_once("./utils/head.php");
   $errors = $errors ?? [];
   $success = $success ?? [];
@@ -278,7 +278,7 @@
 <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
 <script src="<?=$PATH_PUBLIC?>/js/cliente/profile_edit.js"></script>
 <script type="module" src="<?=$PATH_PUBLIC?>/js/geral/selectUfCidade.js"></script>
-<script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+<script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     <?php foreach($errors as $e): ?>
