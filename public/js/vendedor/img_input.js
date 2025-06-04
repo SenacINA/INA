@@ -1,5 +1,10 @@
 let totalImagens = 0;
 
+// Função para validar tipos de imagem
+function isValidImage(file) {
+  return file && ['image/jpeg', 'image/png', 'image/webp'].includes(file.type);
+}
+
 // Função para converter imagens para WebP
 function convertImageToWebP(file) {
   return new Promise((resolve) => {
@@ -28,6 +33,13 @@ async function convertUrlToWebP(url) {
   try {
     const response = await fetch(url);
     const blob = await response.blob();
+    
+    // Verifica se o tipo de imagem é válido
+    if (!isValidImage(blob)) {
+      gerarToast("Formato de imagem inválido. Use JPG, PNG, WebP, GIF ou SVG.", "erro");
+      return null;
+    }
+    
     return await convertImageToWebP(blob);
   } catch (e) {
     console.error("Erro ao converter imagem:", e);
@@ -41,6 +53,12 @@ document.getElementById("input-file").addEventListener("change", async function(
   
   for (const file of files) {
     if (file) {
+      // Valida o tipo do arquivo
+      if (!isValidImage(file)) {
+        gerarToast("Formato de imagem inválido. Use JPG, PNG, WebP", "erro");
+        continue; // Pula para o próximo arquivo
+      }
+      
       try {
         const webpData = await convertImageToWebP(file);
         const img = document.createElement("img");
@@ -50,9 +68,12 @@ document.getElementById("input-file").addEventListener("change", async function(
         atualizarContadores();
       } catch (e) {
         console.error("Erro ao processar imagem:", e);
+        gerarToast("Erro ao processar imagem. Tente novamente.", "erro");
       }
     }
   }
+  
+  event.target.value = '';
 });
 
 async function adicionarImagemPorURL(event) {
