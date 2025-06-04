@@ -43,7 +43,7 @@ class ProdutoModel
 
             $stmt->bindValue(':id_vendedor', $idVendedor, PDO::PARAM_INT);
             $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
-            $stmt->bindValue(':preco', number_format($preco, 2, '.', ''), PDO::PARAM_STR);
+            $stmt->bindValue(':preco', $preco, PDO::PARAM_STR);            
             $stmt->bindValue(':categoria', $categoria, PDO::PARAM_INT);
             $stmt->bindValue(':subCategoria', $subCategoria, PDO::PARAM_INT);
             $stmt->bindValue(':origem', $origem, PDO::PARAM_STR);
@@ -59,41 +59,73 @@ class ProdutoModel
             $stmt->execute();
             return $this->db->getConnection()->lastInsertId();
       } catch (PDOException $e) {
-         return error_log("Erro ao inserir produto: " . $e->getMessage());
+            error_log("Erro ao inserir produto: " . $e->getMessage());
+            return false;
       }
   }
 
   public function adicionarImagemProduto(int $produtoId, string $caminhoImagem, int $ordem): bool
-{
-    $sql = "INSERT INTO imagem_produto 
-            (id_produto, endereco_imagem_produto, index_imagem_produto) 
-            VALUES (:produto_id, :caminho, :ordem)";
-    
-    try {
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':produto_id', $produtoId, PDO::PARAM_INT);
-        $stmt->bindValue(':caminho', $caminhoImagem, PDO::PARAM_STR);
-        $stmt->bindValue(':ordem', $ordem, PDO::PARAM_INT);
-        return $stmt->execute();
-    } catch (PDOException $e) {
-        error_log("Erro ao inserir imagem do produto: " . $e->getMessage());
-        return false;
+    {
+        $sql = "INSERT INTO imagem_produto 
+                (id_produto, endereco_imagem_produto, index_imagem_produto) 
+                VALUES (:produto_id, :caminho, :ordem)";
+        
+        try {
+            $stmt = $this->db->getConnection()->prepare($sql);
+            $stmt->bindValue(':produto_id', $produtoId, PDO::PARAM_INT);
+            $stmt->bindValue(':caminho', $caminhoImagem, PDO::PARAM_STR);
+            $stmt->bindValue(':ordem', $ordem, PDO::PARAM_INT);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            error_log("Erro ao inserir imagem do produto: " . $e->getMessage());
+            return false;
+        }
     }
-}
 
-public function deletarProduto(int $produtoId): bool
-{
-    $sql = "DELETE FROM produto WHERE id_produto = :id";
-    
-    try {
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':id', $produtoId, PDO::PARAM_INT);
-        return $stmt->execute();
-    } catch (PDOException $e) {
-        error_log("Erro ao deletar produto: " . $e->getMessage());
-        return false;
+    public function deletarProduto(int $produtoId): bool
+    {
+        $sql = "DELETE FROM produto WHERE id_produto = :id";
+        
+        try {
+            $stmt = $this->db->getConnection()->prepare($sql);
+            $stmt->bindValue(':id', $produtoId, PDO::PARAM_INT);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            error_log("Erro ao deletar produto: " . $e->getMessage());
+            return false;
+        }
     }
-}
+
+    public function categoriaExiste(int $id): bool
+    {
+        $sql = "SELECT COUNT(*) FROM categoria WHERE id_categoria = :id";
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchColumn() > 0;
+    }
+
+    public function subcategoriaExiste(int $id): bool
+    {
+        $sql = "SELECT COUNT(*) FROM subcategoria WHERE id_subcategoria = :id";
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchColumn() > 0;
+    }
+
+    public function subcategoriaPertenceACategoria(int $subId, int $catId): bool
+    {
+        $sql = "SELECT COUNT(*) FROM subcategoria 
+                WHERE id_subcategoria = :subId 
+                AND categoria_subcategoria = :catId";
+        
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':subId', $subId, PDO::PARAM_INT);
+        $stmt->bindValue(':catId', $catId, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchColumn() > 0;
+    }
 
   
 }

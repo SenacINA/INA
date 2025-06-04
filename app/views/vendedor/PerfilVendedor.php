@@ -123,8 +123,8 @@
         </div>
         <div class="destaques_itens">
           <?php
-          include("$PATH_COMPONENTS/php/card_produto.php");
-          gerarProdutoCards(6, 1);
+          // include("$PATH_COMPONENTS/php/card_produto.php");
+          // gerarProdutoCards(6, 1);
           ?>
         </div>
         <div class="ver_mais_container">
@@ -144,7 +144,7 @@
         </div>
         <div class="produtos_itens">
           <?php
-          gerarProdutoCards(6, 1);
+          // gerarProdutoCards(6, 1);
           ?>
         </div>
         <div class="ver_mais_container">

@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__ . '/../../models/vendedor/ProdutoModel.php';
+require_once __DIR__ . '/../../models/vendedor/VendedorModel.php';
+
 
 class ProdutoController extends RenderView
 {
@@ -21,7 +23,7 @@ class ProdutoController extends RenderView
             $imagensBase64 = [];
         }
 
-        $imagensSalvas = [];
+        $imagensSalvas = []; // Armazena os caminhos das imagens salvas
 
         if (count($imagensBase64) < 1) {
             $errors[] = 'Pelo menos uma imagem deve ser adicionada.';
@@ -77,10 +79,48 @@ class ProdutoController extends RenderView
             $fim_horario = $_POST['promoHoraFim'] ?? '';
         }
 
+        $vendedorModel = new VendedorModel();
+
+        $vendedorId = $vendedorModel->getVendedorId($_SESSION['cliente_id']);
+        if (!$vendedorId) {
+            $errors[] = "Cliente não possui cadastro de vendedor";
+            $this->loadView('vendedor/RegistroProduto', ['errors' => $errors]);
+            return;
+        }
+
+        // Após obter $categoria e $subCategoria
+        $modelTemp = new ProdutoModel();
+
+        // Garanta que os valores são numéricos
+        $categoria = is_numeric($categoria) ? (int)$categoria : 1;
+        $subCategoria = is_numeric($subCategoria) ? (int)$subCategoria : 1;
+
+        // Validação da categoria
+        if (!$modelTemp->categoriaExiste($categoria)) {
+            $errors[] = "Categoria inválida. A categoria selecionada não existe no sistema.";
+            $categoria = 1; // Usar categoria padrão
+        }
+
+        // Validação da subcategoria
+        if (!$modelTemp->subcategoriaExiste($subCategoria)) {
+            $errors[] = "Subcategoria inválida. A subcategoria selecionada não existe no sistema.";
+            $subCategoria = 1; // Usar subcategoria padrão
+        }
+
+        // Validação da relação entre categoria e subcategoria
+        if (!$modelTemp->subcategoriaPertenceACategoria($subCategoria, $categoria)) {
+            $errors[] = "A subcategoria selecionada não pertence à categoria escolhida.";
+            $subCategoria = 1; // Usar subcategoria padrão
+        }
+
+        if (!empty($errors)) {
+            $errors[] = "O produto foi cadastrado usando a categoria/subcategoria padrão 'Geral'.";
+        }
+
         // Criação do produto
         $model = new ProdutoModel();
         $produtoId = $model->createProduto(
-            (int)$_SESSION['cliente_id'],  // ID do vendedor
+            $vendedorId,
             (string)$nome,                 // Nome do produto
             (float)$valor,                 // Preço
             (int)$categoria,               // Categoria
@@ -104,83 +144,83 @@ class ProdutoController extends RenderView
 
         // Processamento das imagens
         if (!empty($imagensBase64)) {
-            $uploadDir = __DIR__ . '/../../../public/upload/produtos/';
+            $baseDir = __DIR__ . '/../../../public/upload/produtos/' . $produtoId . '/';
             
             // Verifica/Cria diretório
-            if (!is_dir($uploadDir)) {
-                mkdir($uploadDir, 0755, true);
-            }
-            
-            foreach ($imagensBase64 as $index => $base64) {
-                if (preg_match('/^data:image\/(\w+);base64,/', $base64, $matches)) {
-                    $extensao = strtolower($matches[1]);
-                    $dadosBinarios = base64_decode(substr($base64, strpos($base64, ',') + 1));
-                    
-                    // Valida tamanho máximo (4MB)
-                    $maxSize = 4 * 1024 * 1024;
-                    if (strlen($dadosBinarios) > $maxSize) {
-                        continue; // Ignora imagem muito grande
-                    }
-                    
-                    // Gera nome único para o arquivo
-                    $nomeArquivo = 'produto_' . time() . '_' . $index . '.webp';
-                    $caminhoCompleto = $uploadDir . $nomeArquivo;
-                    
-                    // Converte e salva como WebP
-                    if ($this->converterParaWebP($dadosBinarios, $caminhoCompleto, $extensao)) {
-                        $imagensSalvas[] = '/upload/produtos/' . $nomeArquivo;
-                    }
+            if (!is_dir($baseDir)) {
+                if (!mkdir($baseDir, 0755, true)) {
+                    error_log("Falha ao criar diretório: " . $baseDir);
                 }
             }
             
-            // Salva caminhos das imagens no banco
-            $this->salvarImagensProduto($produtoId, $imagensSalvas);
-        }
-
-        // Limpeza em caso de erro nas imagens
-        if (empty($imagensSalvas)) {
-            $model->deletarProduto($produtoId);
-            $errors[] = "Falha ao processar imagens do produto";
-            $this->loadView('vendedor/RegistroProduto', ['errors' => $errors]);
-            return;
-        }
-
-        $this->loadView('vendedor/EditarProduto', [
-            'dadosProduto' => $produtoId,
-            'imagens' => $imagensSalvas
-        ]);
-    }
-
-    private function converterParaWebP($dadosBinarios, $caminhoDestino, $formatoOriginal)
-    {
-        try {
-            // Se já for WebP, salva diretamente
-            if ($formatoOriginal === 'webp') {
-                return file_put_contents($caminhoDestino, $dadosBinarios) !== false;
+            // Verifica permissão de escrita
+            if (!is_writable($baseDir)) {
+                error_log("Diretório não tem permissão de escrita: " . $baseDir);
             }
-
-            // Cria imagem a partir dos dados binários
-            // erro aqui
-            $imagem = imagecreatefromstring($dadosBinarios);
-            if ($imagem === false) {
-                return false;
+            
+            foreach ($imagensBase64 as $index => $base64) {
+                if (preg_match('/^data:image\/webp;base64,/', $base64)) {
+                    // Extrai apenas os dados binários
+                    $dataPart = substr($base64, strpos($base64, ',') + 1);
+                    $dadosBinarios = base64_decode($dataPart);
+                    
+                    // Verifica se decodificou corretamente
+                    if ($dadosBinarios === false) {
+                        error_log("Falha ao decodificar base64 na imagem: " . $index);
+                        continue;
+                    }
+                    
+                    // Verifica tamanho dos dados
+                    if (strlen($dadosBinarios) === 0) {
+                        error_log("Dados binários vazios para a imagem: " . $index);
+                        continue;
+                    }
+                    
+                    // Gera nome único para o arquivo
+                    $nomeArquivo = 'imagem_' . ($index+1) . '_' . time() . '.webp';
+                    $absPath = $baseDir . $nomeArquivo;
+                    
+                    // Salva a imagem
+                    $bytesEscritos = file_put_contents($absPath, $dadosBinarios);
+                    
+                    if ($bytesEscritos !== false) {
+                        $caminhoRelativo = '/upload/produtos/' . $produtoId . '/' . $nomeArquivo;
+                        $imagensSalvas[] = $caminhoRelativo;
+                        
+                        // Salva no banco de dados
+                        $model->adicionarImagemProduto(
+                            $produtoId,
+                            $caminhoRelativo,
+                            $index + 1
+                        );
+                        
+                        error_log("Imagem salva com sucesso: " . $absPath . " (" . $bytesEscritos . " bytes)");
+                    } else {
+                        error_log("Falha ao salvar imagem: " . $absPath);
+                    }
+                } else {
+                    error_log("Formato de imagem inválido: " . substr($base64, 0, 50) . "...");
+                }
             }
-
-            // Salva como WebP (qualidade 80%)
-            $result = imagewebp($imagem, $caminhoDestino, 80);
-            imagedestroy($imagem);
-            return $result;
-        } catch (Exception $e) {
-            error_log("Erro conversão imagem: " . $e->getMessage());
-            return false;
         }
+
+        $_SESSION['successMessage'] = "Produto cadastrado com sucesso!";
+        header('Location: Perfil');
+        exit;
     }
 
-    private function salvarImagensProduto($produtoId, $caminhosImagens)
+    private function getVendedorId(int $clienteId): ?int
     {
-        $model = new ProdutoModel();
-        foreach ($caminhosImagens as $index => $caminho) {
-            $model->adicionarImagemProduto($produtoId, $caminho, $index + 1);
-        }
+        $db = new Database();
+        $db->connect();
+        
+        $sql = "SELECT id_vendedor FROM vendedor WHERE id_cliente = :id_cliente";
+        $stmt = $db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id_cliente', $clienteId, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ? (int)$result['id_vendedor'] : null;
     }
+
 }
