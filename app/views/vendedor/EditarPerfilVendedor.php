@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Editar Perfil - E ao Quadrado";
-  $css = ["/css/vendedor/editar_perfil_vendedor.css"];
+  $css = ["/css/vendedor/EditarPerfilVendedor.css"];
   require_once('./utils/head.php');
   include ("$PATH_COMPONENTS/php/card_produto.php");
 ?>
@@ -287,7 +287,7 @@
   <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/updateSocial.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
-  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/vendedor/profile_edit_vendedor.js"></script>
   <script>
     const textArea = document.getElementById('descricao');

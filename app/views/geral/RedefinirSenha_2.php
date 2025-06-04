@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
 $titulo = "Redefinir Senha - E ao Quadrado";
-$css = ["/css/geral/redefinir_senha_2.css"];
+$css = ["/css/geral/RedefinirSenha_2.css"];
 require_once('./utils/head.php');
 
 // Pega o token da URL
@@ -71,7 +71,7 @@ if (!$token) {
   </main>
 
   <script type="module" src="<?= $PATH_PUBLIC ?>/js/admin/toggle_eyeSenha.js"></script>
-  <script type='module' src="./app/components/js/toast.js"></script>
+  <script type='module' src="./app/components/js/Toast.js"></script>
   <script src="<?= $PATH_PUBLIC ?>/js/geral/redefinirSenha.js"></script>
 
 </body>

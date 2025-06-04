@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Perfil - E ao Quadrado";
-  $css = ["/css/vendedor/perfil_vendedor.css"];
+  $css = ["/css/vendedor/PerfilVendedor.css"];
   require_once('./utils/head.php');
   require_once("./app/models/vendedor/PerfilVendedorModel.php");
  
@@ -157,7 +157,7 @@
       </div>
     </div>
   </main>
-  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       <?php if (!empty($errors)): ?>

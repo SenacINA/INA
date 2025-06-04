@@ -3,7 +3,7 @@
 
 <?php
    // Parte 1: Configurações iniciais
-   $css = ["/css/cliente/login.css"];
+   $css = ["/css/cliente/Login.css"];
    require_once("./utils/head.php");
 
    
@@ -70,7 +70,7 @@
     </div>
 
     <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_eyeSenha.js"></script>
-    <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+    <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
   </main>
 
   <script>

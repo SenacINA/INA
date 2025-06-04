@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <?php
 $titulo = "Cadastro Vendedor - E ao Quadrado";
-$css = ["/css/vendedor/cadastro_vendedor_1.css"];
+$css = ["/css/vendedor/CadastroVendedor_1.css"];
 require_once('./utils/head.php');
 ?>
 

@@ -2,7 +2,7 @@
 <html lang="en">    
 <?php
   $titulo = "Sobre Nós - E ao Quadrado";
-  $css = ["/css/geral/sobre_nos.css"];
+  $css = ["/css/geral/SobreNos.css"];
   require_once('./utils/head.php');
 ?>
 <body>
