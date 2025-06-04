@@ -55,24 +55,26 @@ document.getElementById("input-file").addEventListener("change", async function(
   }
 });
 
-async function adicionarImagemPorURL() {
+async function adicionarImagemPorURL(event) {
+  if(event) event.preventDefault();
+  
   const url = document.getElementById("input-url").value;
-  if (url) {
-    try {
-      const webpData = await convertUrlToWebP(url);
-      if (webpData) {
-        const img = document.createElement("img");
-        img.src = webpData;
-        const div = document.querySelector(".registro_produto_imagens");
-        div.appendChild(img);
-        totalImagens++;
-        atualizarContadores();
-        document.getElementById("input-url").value = "";
-      }
-    } catch (e) {
-      console.error("Erro ao carregar imagem por URL:", e);
-      alert("Não foi possível carregar a imagem. Use um link direto para uma imagem.");
-    }
+  if (!url) return;
+  
+  try {
+    const webpData = await convertUrlToWebP(url);
+    if (!webpData) return;
+    
+    const img = document.createElement("img");
+    img.src = webpData;
+    document.querySelector(".registro_produto_imagens").appendChild(img);
+    totalImagens++;
+    atualizarContadores();
+    document.getElementById("input-url").value = "";
+    
+  } catch (e) {
+    console.error("Erro ao carregar imagem por URL:", e);
+    gerarToast("Erro ao carregar imagem. Use um link direto para uma imagem.", "erro");
   }
 }
 
@@ -103,4 +105,15 @@ document.querySelector('form').addEventListener('submit', function(e) {
   
   // Adiciona pequeno delay para garantir o processamento
   setTimeout(() => true, 100);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  document.querySelector('.url-add-button')?.addEventListener('click', adicionarImagemPorURL);
+  
+  document.getElementById('input-url')?.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter') {
+      adicionarImagemPorURL(e);
+    }
+  });
 });

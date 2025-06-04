@@ -256,7 +256,7 @@ require_once('./utils/head.php');
                 adicionar link URL
                 <div class="dropdown-content">
                   <input class='base_input' type="text" id="input-url" placeholder="Insira a URL da imagem">
-                  <button onclick="adicionarImagemPorURL()">Adicionar</button>
+                  <button type="button" class="url-add-button">Adicionar</button>
                 </div>
               </span>
             </div>
