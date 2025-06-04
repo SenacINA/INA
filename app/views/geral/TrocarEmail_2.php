@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
 $titulo = "Trocar E-mail - E ao Quadrado";
-$css = ["/css/geral/trocar_email_2.css"];
+$css = ["/css/geral/TrocarEmail_2.css"];
 require_once('./utils/head.php');
 ?>
 
@@ -47,7 +47,7 @@ require_once('./utils/head.php');
   </main>
 
   <script src="<?= $PATH_PUBLIC ?>/js/geral/TrocarEmailConfirmar.js"></script>
-  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
+  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
 
 </body>
 

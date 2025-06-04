@@ -1,24 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-$css = ["/css/cliente/carrinho_vazio.css"];
-$js = ["/js/cliente/carrinho.js"];
-
-require_once "./utils/head.php";
-
-$totalCarrinho = 0;
-
-if(isset($itensCarrinho)) {
-  foreach ($itensCarrinho as $item) {
-    $totalCarrinho += $item['preco_produto'] * $item['quantidade_produto'];
-  }
-  $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
-}
-
-else {
-  $carrinhoVazio = 'disabled';
-}
-
+  $css = ["/css/cliente/CarrinhoVazio.css"];
+  $js = ["/js/cliente/carrinho.js"];
+  require_once("./utils/head.php");
+  include_once("$PATH_COMPONENTS/php/produto_carrinho.php");
 ?>
 
 <body>

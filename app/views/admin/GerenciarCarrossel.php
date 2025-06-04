@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Gerenciar Carrossel- E ao Quadrado";
-  $css = ["/css/admin/gerenciar_carrossel.css"];
+  $css = ["/css/admin/GerenciarCarrossel.css"];
   require_once('./utils/head.php');
 ?>
   <!-- Até 768px -->
