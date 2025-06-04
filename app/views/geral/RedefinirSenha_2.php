@@ -70,7 +70,7 @@ if (!$token) {
     </div>
   </main>
 
-  <script type="module" src="<?= $PATH_PUBLIC ?>/js/admin/toggle_eyeSenha.js"></script>
+  <script type="module" src="<?= $PATH_PUBLIC ?>/js/admin/ToggleEyeSenha.js"></script>
   <script type='module' src="./app/components/js/Toast.js"></script>
   <script src="<?= $PATH_PUBLIC ?>/js/geral/redefinirSenha.js"></script>
 

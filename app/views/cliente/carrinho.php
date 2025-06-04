@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $css = ["/css/cliente/CarrinhoVazio.css"];
-  $js = ["/js/cliente/carrinho.js"];
+  $js = ["/js/cliente/Carrinhos.js"];
   require_once("./utils/head.php");
   include_once("$PATH_COMPONENTS/php/produto_carrinho.php");
 ?>

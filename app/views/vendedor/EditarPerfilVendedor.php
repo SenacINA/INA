@@ -283,10 +283,10 @@
         </form>
     </div>
   </div>
-  <script type="module" src="<?=$PATH_PUBLIC?>/js/geral/selectUfCidade.js"></script>
-  <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/geral/SelectUfCidades.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/cliente/PfpInput.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/updateSocial.js"></script>
-  <script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/cliente/EditarPerfilCliente.js"></script>
   <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/vendedor/profile_edit_vendedor.js"></script>
   <script>

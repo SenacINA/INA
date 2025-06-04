@@ -133,8 +133,8 @@
       </div>
     </div>
   </main>
-  <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/cliente/PfpInput.js"></script>
   <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
-  <script src="<?=$PATH_PUBLIC?>/js/admin/update_profile.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/admin/UpdateProfile.js"></script>
 </body>
 </html>
