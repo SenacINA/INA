@@ -52,11 +52,11 @@
               </div>
 
               <div class="login_links">
-                  <div class="login_fit_content" onclick="pag('redefinir-senha')">
+                  <div class="login_fit_content" onclick="pag('RedefinirSenha')">
                     <p><u>Redefinir Senha</u></p>
                   </div>        
                   <div class="login_fit_content" >
-                    <p>Não tem login? <u onclick="pag('cadastro-cliente')">Clique aqui</u></p>
+                    <p>Não tem login? <u onclick="pag('CadastroCliente')">Clique aqui</u></p>
                   </div>
               </div>
           </div>
@@ -69,26 +69,22 @@
         </div>
     </div>
 
-    <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
+    <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_eyeSenha.js"></script>
+    <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
   </main>
 
-  <?php if (isset($_GET['error'])): ?>
-    <script>
-        <?php
-        switch ($_GET['error']) {
-            case 'emptyfields':
-                echo "console.error('Erro: Campos de email ou senha vazios');";
-                break;
-            case 'invalidpassword':
-                echo "console.error('Erro: Senha inválida');";
-                break;
-            case 'notfound':
-                echo "console.error('Erro: Usuário não encontrado');";
-                break;
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let errors = <?php echo json_encode($errors ?? []); ?>;
+        
+        if (errors.length > 0) {
+            errors.forEach(error => {
+                gerarToast(error, "erro");
+            });
         }
-        ?>
-    </script>
-<?php endif; ?>
+    });
+  </script>
+
 
 </body>
 </html>

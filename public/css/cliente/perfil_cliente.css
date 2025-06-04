@@ -15,13 +15,18 @@ hr {
   border: none;
   border-radius: 10px;
   justify-self: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin: 24px 0;
+
+}
+
+.base_icon {
+  height: 24px;
 }
 
 .perfil_cliente_banner {
   width: 100%;
-  height: 300px;
+  aspect-ratio: 3 / 1;
+  max-width: 100%;
 }
 
 .perfil_cliente_content_pfp {
@@ -32,7 +37,7 @@ hr {
   justify-content: center;
   align-items: center;
 
-  top: -120px;
+  top: -148px;
 }
 
 .perfil_cliente_pfp {
@@ -41,16 +46,9 @@ hr {
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content;
   justify-content: center;
-
-  gap: 16px;
+  max-width: 632px;
+  gap: 24px;
   grid-column: 2;
-
-  img {
-    justify-self: center;
-    align-self: center;
-    width: 300px;
-    height: 300px;
-  }
 
   h1 {
     color: var(--cinza);
@@ -61,9 +59,20 @@ hr {
   }
 }
 
+.perfil_cliente_pfp_pic {
+  justify-self: center;
+  align-self: center;
+  width: 248px;
+  height: 248px;
+  border-radius: 50%;
+  background-color: var(--branco_gelo);
+}
+
 .perfil_cliente_btn_menu {
   justify-self: end;
-  margin-right: 15%;
+  margin-right: 24px;
+  position: absolute;
+  top: 164px;
 
   select {
     cursor: pointer;
@@ -80,28 +89,29 @@ hr {
   justify-content: center;
   justify-items: center;
   justify-self: center;
+  row-gap: 24px;
 
-  gap: 25% 5%;
 
-  max-width: 800px;
   width: 100%;
-  height: 80px;
 
   p {
     color: var(--sappire);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 90%;
+    line-height: 100%;
   }
 }
 
 .perfil_cliente_infos_item1,
 .perfil_cliente_infos_item2,
 .perfil_cliente_infos_item3 {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   column-gap: 8px;
+  width: 100%;
+  justify-content: center;
 }
 
 .perfil_cliente_infos_item1 {
@@ -156,21 +166,41 @@ hr {
 /* start contatos_cliente */
 .perfil_cliente_contatos_cliente {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: center;
-  justify-items: center;
-  column-gap: 10%;
+  justify-items: start;
+  column-gap: 64px;
   grid-row: 2;
-  grid-column: 1/4;
+  grid-column: 1 / 4;
+  width: fit-content;
+  row-gap: 4px;
 }
+
+.redes_div {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: flex-end;
+  img {
+    height: 24px;
+  }
+}
+
 
 .perfil_cliente_contatos_cliente a {
   justify-self: left;
-  color: var(--sappire);
+  color: var(--carolina);
   text-align: center;
   font-size: 20px;
-  padding-left: 7px;
-  font-weight: 600;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: all .3s ease;
+  &:hover {
+    filter: brightness(1.2);
+    transform: translateX(4px);
+    cursor: pointer;
+  }
 }
 .instagram_cliente {
   display: flex;
@@ -244,8 +274,9 @@ hr {
 
 @media (max-width: 1440px) {
   .historico_itens {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin-left: 0;
+    justify-items: center;
   }
   .perfil_cliente_about_container_2 {
     margin-left: 2%;
@@ -257,10 +288,6 @@ hr {
 }
 
 @media (max-width: 1024px) {
-  .perfil_cliente_pfp img {
-    width: 200px;
-    height: 200px;
-  }
   .perfil_cliente_content_pfp {
     top: -90px;
   }
@@ -271,9 +298,8 @@ hr {
     font-size: 18px;
   }
   .historico_itens {
-    grid-template-columns: repeat(4, 1fr);
     margin-left: 3%;
-    row-gap: 25px;
+    row-gap: 24px;
   }
   .perfil_cliente_btn_menu {
     width: 200px;
@@ -286,11 +312,23 @@ hr {
     margin-left: 2%;
   }
   .historico_itens {
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 5%;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
   }
+
+  .perfil_cliente_btn_menu {
+    position: absolute;
+    top: 0;
+    margin-right: 8px;
+  }
+
 }
-@media (max-width: 425px) {
+@media (max-width: 432px) {
+  .perfil_cliente_pfp_pic {
+    width: 200px;
+    height: 200px;
+  }
+  
   .perfil_cliente_pfp h1 {
     font-size: 22px;
   }
@@ -313,16 +351,14 @@ hr {
   .perfil_cliente_about_container_2 {
     margin-bottom: 5%;
   }
-  .perfil_cliente_pfp img {
-    width: 150px;
-    height: 150px;
-  }
+
   .perfil_cliente_infos_container {
     grid-template-columns: max-content max-content;
-    left: 2%;
+    margin: 0;
   }
   .perfil_cliente_btn_menu {
     width: 100px;
+    left: 4px;
   }
   hr {
     margin-top: 20%;
@@ -335,8 +371,7 @@ hr {
     grid-row: 3;
   }
   .historico_itens {
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: 2%;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

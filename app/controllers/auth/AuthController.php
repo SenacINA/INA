@@ -5,16 +5,16 @@ require_once __DIR__.'/../../models/cliente/ClienteModel.php';
 
 class AuthController extends RenderView {
     public function requestEmailReset() {
-      $this->loadView('geral/trocar_email_1', []);
+      $this->loadView('geral/TrocarEmail_1', []);
     }
     public function confirmEmailReset() {
-      $this->loadView('geral/trocar_email_2', []);
+      $this->loadView('geral/TrocarEmail_2', []);
     }
     public function requestPasswordReset() {
-      $this->loadView('geral/redefinir_senha_1', []);
+      $this->loadView('geral/RedefinirSenha_1', []);
     }
     public function confirmPasswordReset() {
-      $this->loadView('geral/redefinir_senha_2', []);
+      $this->loadView('geral/RedefinirSenha_2', []);
     }
 
     public function loginForm()
@@ -31,7 +31,7 @@ class AuthController extends RenderView {
 
         if (empty($email) || empty($password)) {
             $errors[] = 'Preencha todos os campos.';
-            $this->loadView('cliente/login', ['errors' => $errors]);
+            $this->loadView('cliente/Login', ['errors' => $errors]);
             exit;
         }
 
@@ -53,27 +53,27 @@ class AuthController extends RenderView {
 
                 if ($tipoConta == 0) {
                     $_SESSION['user_type'] = 'admin';
-                    $this->loadView('admin/dashboard', []);
+                    header('Location: AdminDashboard');
                 } elseif ($tipoConta == 1) {
                     $_SESSION['user_type'] = 'vendedor';
-                    $this->loadView('vendedor/perfil_vendedor', []);
+                    header('Location: Perfil');
                 } elseif ($tipoConta == 2) {
                     $_SESSION['user_type'] = 'cliente';
-                    $this->loadView('cliente/perfil_cliente', []);
+                    header('Location: Perfil');
                 } else {
                     $_SESSION['user_type'] = 'desconhecido';
-                    $this->loadView('cliente/perfil_cliente', []);
+                    header('Location: Perfil');
                 }
 
                 exit;
             } else {
                 $errors[] = 'Senha inválida.';
-                $this->loadView('cliente/login', ['errors' => $errors]);
+                $this->loadView('cliente/Login', ['errors' => $errors]);
                 exit;
             }
         } else {
             $errors[] = 'Usuário não encontrado.';
-            $this->loadView('cliente/login', ['errors' => $errors]);
+            $this->loadView('cliente/Login', ['errors' => $errors]);
             exit;
         }
 
@@ -84,11 +84,14 @@ class AuthController extends RenderView {
 
   public function logout()
   {
-    // session_start();
+    if (! isset($_SESSION)) {
+      session_start();
+  }
     session_destroy();
     http_response_code(200);
     // echo json_encode(['status' => 'success', 'message' => 'Sesssão destruida']);
-    $this->loadView('geral/home', []);
+    // $this->loadView('geral/home', []);
+    header('Location: index.php');
     exit();
   }
 }

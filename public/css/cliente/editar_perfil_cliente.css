@@ -109,9 +109,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 95%;
+  gap: 24px;
   justify-self: center;
   background-color: #eff3f5;
   border-radius: 10px;
+  padding: 0 16px;
 }
 
 .title_mobile {
@@ -124,7 +126,7 @@ body {
   align-items: center;
   justify-self: center;
   flex-direction: column;
-  width: 95%;
+  width: 100%;
   padding-top: 1%;
 }
 
@@ -142,29 +144,27 @@ body {
 }
 
 .linha_title {
-  width: 95%;
-  height: 5px;
+  width: 100%;
+  height: 4px;
   border-radius: 20px;
   background-color: #2888b1;
   border: 0;
+  margin-bottom: 32px;
 }
 
 .mini_perfil_cliente {
   grid-column: 1;
   grid-row: 2;
   position: relative;
-  left: 7%;
-  top: 8%;
-  width: 90%;
-  height: 750px;
   background: var(--azul_leve);
   border-radius: 5px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   justify-items: center;
-
-  grid-template-rows: 200px 193px 4px 150px min-content;
+  position: relative;
+  grid-template-rows: repeat(4, min-content);
   grid-template-columns: 100%;
 }
 
@@ -172,41 +172,52 @@ body {
   width: 95%;
   height: 4px;
   border-radius: 20px;
-  background: #4a4a4a;
+  background: var(--cinza);
   border: 0;
+  justify-self: center;
+  margin-bottom: 16px
 }
 
 .banner_cliente {
   grid-column: 1;
   grid-row: 1;
   z-index: 0;
-
+  margin-bottom: 64px;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 1;
+  background-color: var(--branco_gelo);
+
 }
 
 .pfp_cliente {
   grid-row: 1;
   grid-column: 1;
   z-index: 1;
-  position: relative;
-  top: 90px;
+  position: absolute;
   justify-self: center;
   align-self: center;
+  transform: translateY(-100%);
+  left: 50%;
+  right: 50%;
+  width: 148px;
+  max-width: 148px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--branco_gelo);
 }
 
 .infos_container {
   position: relative;
-  top: calc(15%);
-  left: calc(4%);
   display: grid;
-  grid-template-columns: auto 190px auto;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
   align-items: center;
   justify-content: center;
   justify-items: center;
   row-gap: 16px;
   column-gap: 20px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .nome_cliente {
@@ -220,6 +231,12 @@ body {
   line-height: 90%;
   /* 18px */
   justify-content: center;
+  h1 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+  }
 }
 
 .produtos_cliente,
@@ -339,13 +356,14 @@ body {
 
 .contatos_cliente {
   display: grid;
-  width: 100%;
-  grid-template-columns: auto auto min-content auto auto;
+  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: center;
   justify-items: center;
-  row-gap: 10%;
-  column-gap: 1%;
+  row-gap: 16px;
+  column-gap: 16px;
+  margin: 24px;
 }
 
 .icon_instagram_cliente {
@@ -386,13 +404,13 @@ body {
 .forms {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   grid-column: 2;
-  grid-row: 2/3;
-
-  width: 85%;
-  margin: 8% 5% 0 5%;
-  row-gap: 25px;
+  grid-row: 2 / 3;
+  width: 100%;
+  margin: 0;
+  row-gap: 24px;
+  height: 100%;
 }
 
 .forms input,
@@ -442,7 +460,7 @@ body {
 .botoes_redefinir {
   display: flex;
   width: 100%;
-  column-gap: 5%;
+  column-gap: 24px;
 }
 
 .redefinir_senha_cliente,
@@ -451,19 +469,16 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 40px;
-  padding: 10px;
   color: #fff;
-  font-family: Jost;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  border-radius: 5px;
-  border: 0;
-  background-color: #1b98e0;
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.trocar_email_cliente {
+  background-color: #006494;
+  border-color: #006494;
+}
+
 
 .main_text_redes {
   color: var(--celadon);
@@ -488,6 +503,16 @@ body {
   background-color: var(--carolina);
 }
 
+.redes_div {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: flex-end;
+  img {
+    height: 24px;
+  }
+}
+
 .redes_sociais_cliente {
   display: flex;
   flex-direction: column;
@@ -495,23 +520,30 @@ body {
   width: 100%;
 }
 
+.rede_social {
+  max-width: 100%;
+  display: flex;
+  gap: 4px;
+  img {
+    height: 24px;
+  }
+}
+
 .redes_edit {
   display: grid;
-  column-gap: 4px;
-  row-gap: 18px;
-  grid-template-columns: min-content min-content;
-  grid-template-rows: min-content min-content;
+  column-gap: 16px;
+  row-gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
 }
 
-.link_instagram {
+.link_rede {
   color: var(--carolina);
   font-family: Jost;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: none;
   text-decoration-thickness: auto;
@@ -573,10 +605,11 @@ body {
   grid-template-columns: max-content max-content;
   grid-template-rows: max-content;
   align-items: center;
-  justify-content: center;
   column-gap: 8px;
   justify-self: center;
-  margin-left: 5%;
+  margin: 16px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .text_pfp {
@@ -596,6 +629,36 @@ body {
   grid-row: 2;
 }
 
+#imgPreviewFoto {
+  width: 148px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: var(--branco_gelo);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    border-radius: 50%;
+    
+  }
+  transition: all .3s ease;
+    :hover {
+      filter: brightness(1.1);
+    }
+  
+}
+
+
+
+
 .text_banner {
   color: var(--celadon);
   text-align: center;
@@ -614,6 +677,7 @@ body {
   border: 0;
   cursor: pointer;
   border-radius: 5px;
+  position: relative;
 }
 
 .warn {
@@ -634,10 +698,20 @@ body {
   justify-items: center;
 }
 
+#imgPreviewBanner {
+  transition: all .3s ease;
+  background-color: var(--branco_gelo);
+}
+
+#imgPreviewBanner:hover, #imgPreviewFoto:hover {
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+
 .banner_cliente_forms {
-  max-width: 300px;
   width: 100%;
-  height: 150px;
+  max-width: 300px;
+  aspect-ratio: 3 / 1;
 }
 
 .banner_text,
@@ -699,12 +773,10 @@ body {
 
 .botoes {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-column: 1/3;
-  column-gap: 5%;
-  margin-top: 3%;
-  margin-bottom: 3%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  column-gap: 24px;
 }
 
 .salvar {
@@ -713,6 +785,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 40px;
+  width: 100%;
   min-width: 300px;
   font-size: 1.25rem;
   /* 20px */
@@ -734,6 +807,7 @@ body {
   align-items: center;
   height: 40px;
   min-width: 300px;
+  width: 100%;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 500;
@@ -847,10 +921,23 @@ body {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-@media (max-width: 1024px) {
-  body {
-    margin-top: 150px !important;
+@media (max-width: 1400px) {
+  .botoes_redefinir {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
+
+  .base_input, option.base_input {
+    width: 100%;
+  }
+
+  .redes_edit {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1124px) {
 
   .popup {
     padding: 2.5%;
@@ -863,7 +950,7 @@ body {
     justify-content: center;
     justify-items: center;
     width: 95%;
-    row-gap: 25px;
+    gap: 24px;
   }
 
   .mini_perfil_cliente {
@@ -876,13 +963,13 @@ body {
   .forms_container {
     justify-self: center;
     max-width: none;
-    width: 95%;
+    width: 100%;
   }
 
   .forms {
-    margin-top: 5%;
-    margin-left: 9%;
+    padding: 0;
     width: 100%;
+    margin: 0;
   }
 
   .forms_container input,
@@ -893,17 +980,12 @@ body {
 
   .botoes_redefinir {
     flex-direction: column;
-    width: 96%;
+    width: 100%;
     row-gap: 8px;
   }
 
   .redes_sociais_cliente {
-    width: 95%;
-  }
-
-  .pfp_cliente {
-    left: calc(48% - (826px / 2));
-    top: calc(100% - (300px / 2));
+    width: 100%;
   }
 
   .redes_text,
@@ -929,9 +1011,9 @@ body {
 
   .edit_foto {
     width: 100%;
-    grid-template-columns: 96%;
+    grid-template-columns: 1fr;
     grid-template-rows: max-content max-content;
-    margin-left: 0;
+    margin: 0;
   }
 
   .foto_container,
@@ -954,7 +1036,7 @@ body {
 
   .salvar,
   .cancelar {
-    width: 90%;
+    width: 100%;
   }
 
   .destaques_container {
@@ -967,9 +1049,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
-    margin-top: 150px !important;
-  }
 
   .text_popup>div {
     width: 64%;
@@ -981,8 +1060,9 @@ body {
 
   .title_mobile {
     display: flex;
-    margin-bottom: 20px;
-    margin-left: 25px;
+    margin: 0;
+    margin-left: 16px;
+
   }
 
   .title_text {
@@ -990,28 +1070,9 @@ body {
     justify-content: left;
   }
 
-  .title_mobile {
-    margin-left: 20px;
-    margin-bottom: 25px;
-  }
-
-  .pfp_cliente {
-    left: 0;
-  }
-
   .mini_perfil_cliente {
     grid-template-rows: repeat(5, min-content);
-    height: 720px;
-  }
-
-  .pfp_cliente {
-    top: 50%;
-    width: 140px;
-  }
-
-  .pfp_cliente {
-    left: calc(63.5% - (826px / 2));
-    top: calc(130% - (300px / 2));
+    height: fit-content;
   }
 
   .infos_container {
@@ -1019,10 +1080,8 @@ body {
   }
 
   .nome_cliente {
-    margin-top: 10%;
     grid-column: 1 / 4;
     position: relative;
-    right: 4%;
   }
 
   .about_container {
@@ -1067,10 +1126,6 @@ body {
 }
 
 @media (max-width: 425px) {
-  body {
-    margin-top: 150px !important;
-  }
-
   .popup {
     max-height: none;
     height: 70%;
@@ -1109,26 +1164,20 @@ body {
 
   .mini_perfil_cliente {
     grid-template-rows: repeat(5, min-content);
-    height: 650px;
+    height: fit-content;
   }
 
   .pfp_cliente {
-    top: 50%;
     width: 100px;
   }
 
-  .pfp_cliente {
-    left: calc(110% - (826px / 2));
-    top: calc(210% - (300px / 2));
-  }
-
   .infos_container {
-    column-gap: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
   }
 
   .nome_cliente {
-    margin-top: 10%;
     grid-column: 1 / 3;
   }
 
@@ -1150,7 +1199,7 @@ body {
   }
 
   .contatos_container {
-    margin-top: 10%;
+    margin-top: 16px;
   }
 
   .tempo_cliente_container {
@@ -1169,5 +1218,9 @@ body {
 
   .destaques_container {
     grid-template-columns: 1fr 1fr;
+  }
+  .contatos_cliente {
+    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

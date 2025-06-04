@@ -4,15 +4,15 @@
     <div class='footer_info'>
         <div class='footer_coluna'>
             <h2>Categorias</h2>
-            <a href="#" onclick="pag('categoria')" class="base_link">Hardware</a>
-            <a href="#" onclick="pag('categoria')" class="base_link">Periféricos</a>
-            <a href="#" onclick="pag('categoria')" class="base_link">Escritório</a>
-            <a href="#" onclick="pag('categoria')" class="base_link">Celulares</a>
-            <a href="#" onclick="pag('categoria')" class="base_link">Eletrodomésticos</a>
-            <a href="#" onclick="pag('categoria')" class="base_link">Games</a>
-            <a href="#" onclick="pag('categoria')" class="base_link">Livros</a>
-            <a href="#" onclick="pag('categoria')" class="base_link">Áudio</a>
-            <a href="#" onclick="pag('categoria')" class="base_link">Geek</a>
+            <a href="#" onclick="pag('Categoria')" class="base_link">Hardware</a>
+            <a href="#" onclick="pag('Categoria')" class="base_link">Periféricos</a>
+            <a href="#" onclick="pag('Categoria')" class="base_link">Escritório</a>
+            <a href="#" onclick="pag('Categoria')" class="base_link">Celulares</a>
+            <a href="#" onclick="pag('Categoria')" class="base_link">Eletrodomésticos</a>
+            <a href="#" onclick="pag('Categoria')" class="base_link">Games</a>
+            <a href="#" onclick="pag('Categoria')" class="base_link">Livros</a>
+            <a href="#" onclick="pag('Categoria')" class="base_link">Áudio</a>
+            <a href="#" onclick="pag('Categoria')" class="base_link">Geek</a>
         </div>
         <div class='footer_coluna'>
             <h2>Termos e Condições</h2>
@@ -22,7 +22,7 @@
             <a href="./geral/faq.php" class="base_link underline">Informações de venda</a>
             <a href="./geral/faq.php" class="base_link underline">Trabalhe conosco</a>
             <h3>I.N.A.</h3>
-            <a href="#" onclick="pag('geral/sobre_nos')" class="base_link underline">
+            <a href="#" onclick="pag('SobreNos')" class="base_link underline">
                 Sobre nós
             </a>
         </div>

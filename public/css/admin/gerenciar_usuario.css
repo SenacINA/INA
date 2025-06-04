@@ -23,6 +23,7 @@
   gap: 8px;
 }
 
+
 .gerenciar_usuario_linha_vertical{
   width: 8px;
   height: 48px;
@@ -45,7 +46,6 @@
   justify-items: center;
 
   width: 100%;
-  margin-top: 8px;
 }
 
 .gerenciar_usuario_text_titulo,

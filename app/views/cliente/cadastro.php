@@ -41,15 +41,15 @@
 
           <div class="cadastro_regras">
             <ul class="cadastro_lista">
-              <li>Deve conter ao menos 6 caracteres;</li>
-              <li>Deve conter ao menos uma letra minúscula;</li>
-              <li>Deve conter ao menos um número;</li>
-              <li>Não pode ser uma de suas senhas antigas.</li>
+              <li id="regra-caracteres">Deve conter ao menos 6 caracteres;</li>
+              <li id="regra-minuscula">Deve conter ao menos uma letra minúscula;</li>
+              <li id="regra-numero">Deve conter ao menos um número;</li>
+              <li id="regra-senha-coicidir">As senhas precisam coincidirem;</li>
             </ul>
           </div>
 
           <div class="cadastro_botoes">
-            <button type="button" class="cadastro_botao_voltar" onclick="pag('login-cliente')">
+            <button type="button" class="cadastro_botao_voltar" onclick="pag('Login')">
               <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/seta_esquerda_branco_icon.svg" alt="">Voltar
             </button>
             <button type="submit" class="cadastro_botao_cadastrar">
@@ -63,7 +63,7 @@
   </main>
 
   <!-- Scripts -->
-  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_redefinir.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_eyeSenha.js"></script>
   <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/cadastro.js"></script>
 
