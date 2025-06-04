@@ -69,13 +69,13 @@ class CarrinhoModel
 
   public function atualizarQuantidade(int $idProduto, int $quantidade)
   {
-      $sql = "UPDATE carrinho SET quantidade_produto = :quantidade WHERE id_cliente = :idCliente AND id_produto = :idProduto";
-      $stmt = $this->db->getConnection()->prepare($sql);
-      $stmt->execute([
-        ':quantidade' => $quantidade,
-        ':idCliente' => $_SESSION['cliente_id'],
-        ':idProduto' => $idProduto
-      ]);
+    $sql = "UPDATE carrinho SET quantidade_produto = :quantidade WHERE id_cliente = :idCliente AND id_produto = :idProduto";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->execute([
+      ':quantidade' => $quantidade,
+      ':idCliente' => $_SESSION['cliente_id'],
+      ':idProduto' => $idProduto
+    ]);
   }
 
   public function removerItem(int $idProduto)
