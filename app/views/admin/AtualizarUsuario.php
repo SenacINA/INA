@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Atualizar Vendedores - E ao Quadrado";
-  $css = ["/css/admin/atualizar_usuario.css"];
+  $css = ["/css/admin/AtualizarUsuario.css"];
   require_once('./utils/head.php');
 ?>
 
@@ -223,7 +223,7 @@
       </div>
     </div>
   </main>
-  <script type='module' src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script type='module' src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/admin/atualizar_usuario.js"></script>
 </body>
 </html>

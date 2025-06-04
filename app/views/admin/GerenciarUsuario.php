@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
 $titulo = "Gerenciar Usuários - E ao Quadrado";
-$css = ["/css/admin/gerenciar_usuario.css"];
+$css = ["/css/admin/GerenciarUsuario.css"];
 require_once('./utils/head.php');
 
 if (!$usuarioSelecionado) {

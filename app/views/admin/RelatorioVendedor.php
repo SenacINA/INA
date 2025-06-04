@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-  $titulo = "Relatório de Vendedor - E ao Quadrado";
-  $css = ["/css/admin/relatorio_vendedor.css"];
+  $titulo = "Perfil - E ao Quadrado";
+  $css = ["/css/admin/RelatorioVendedor.css"];
   require_once('./utils/head.php');
   require_once './app/controllers/admin/AdminRelatorioVendedorController.php';
 
