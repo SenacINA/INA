@@ -1,17 +1,15 @@
 <?php
-require_once('./app/models/connect.php'); // Include Database class
+require_once('./app/models/connect.php');
 
 class RelatorioVendedorModel {
     private $db;
 
     public function __construct() {
-        $this->db = new Database(); // Create Database instance
+        $this->db = new Database();
     }
 
     public function buscarPorVendedor($vendedor_id) {
-        $this->db->connect(); // Establish connection
-
-        // SQL sem quebra de linha ou espaços antes de SELECT
+        $this->db->connect();
         $sql = "SELECT 
                     rv.id AS id,
                     rv.produto_id,
@@ -28,8 +26,29 @@ class RelatorioVendedorModel {
         $params = [':id_vendedor' => $vendedor_id];
 
         $result = $this->db->executeQuery($sql, $params);
-        $this->db->disconnect(); // Close connection
+        $this->db->disconnect();
 
-        return $result; // sempre será array (mesmo vazio) pois o SQL começa com "SELECT"
+        return $result;
     }
+
+    public function buscarPerfilVendedor($vendedor_id) {
+        $this->db->connect();
+
+        $sql = "SELECT 
+                    c.nome_cliente AS nome,
+                    p.foto_perfil,
+                    p.descricao_perfil
+                FROM vendedor v
+                JOIN cliente c ON v.id_cliente = c.id_cliente
+                JOIN perfil p ON p.id_cliente = c.id_cliente
+                WHERE v.id_vendedor = :vendedor_id";
+
+        $params = [':vendedor_id' => $vendedor_id];
+        $result = $this->db->executeQuery($sql, $params);
+        
+        $this->db->disconnect();
+
+        return $result[0] ?? null; // return the first row or null
+    }
+
 }

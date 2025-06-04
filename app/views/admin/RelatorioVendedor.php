@@ -7,7 +7,9 @@
   require_once './app/controllers/admin/AdminRelatorioVendedorController.php';
 
   $controller = new RelatorioVendedorController();
-  $vendas = $controller->handle();
+  $dados = $controller->handle();
+  $vendas = $dados['vendas'];
+  $perfil = $dados['perfil'];
 ?>
 <body>
   <?php
@@ -26,7 +28,7 @@
       <div class="bg_mobile_1"></div>
      
       <div class="relatorio_vendedor_grid_conteudo">
-        
+        <div>
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_1"> 
           <hr class="relatorio_vendedor_vertical">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_icon.svg" alt=""/>
@@ -39,20 +41,26 @@
             <div class="relatorio_vendedor_pesquisar_usuario_item" id="relatorio_vendedor_pesquisar_usuario_item_1">
               <label>ID</label>
               <input type="text" name="vendedor_id" class="base_input">
-            <button type="submit" class="base_botao">Procurar</button>
+            <button type="submit" class="base_botao  btn_blue">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/procura_lupa.svg" alt=""/>PROCURAR</button>
             </div>
           </form>
         </div>
+</div>
+<div>
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_4">
           <hr class="relatorio_vendedor_vertical">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Perfil Do Vendedor</h1>
         </div>        
 
-        <div class="relatorio_vendedor_perfil_usuario">
-          <img src="<?=$PATH_PUBLIC?>/image/admin/relatorio_vendedor/imagem_perfil_vendedor.png" alt=""/>
-          <h1>THUNDER GAMES</h1>
-          <h2>Lorem ipsum dolor sit amet. Non quidem earum ut facilis deserunt et voluptatem praesentium...</h2>
+        <?php if ($perfil): ?>
+          <div class="relatorio_vendedor_perfil_usuario">
+            <img src="<?=$PATH_PUBLIC?><?= htmlspecialchars($perfil['foto_perfil']) ?>" alt="Foto do vendedor" class="base_icon" />
+            <h1><?= htmlspecialchars($perfil['nome']) ?></h1>
+            <h2><?= !empty($perfil['descricao_perfil']) ? htmlspecialchars($perfil['descricao_perfil']) : 'Descrição não informada.' ?></h2>
+          </div>
+        <?php endif; ?>
         </div>
       </div>
     </div>

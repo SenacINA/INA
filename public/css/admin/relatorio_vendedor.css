@@ -16,7 +16,7 @@
   background-color: #EFF3F5;
   max-width: 90%;
   width: 100%;
-  height: 720px;
+  height: 500px;
   border-radius: 10px;
   margin: auto;
 }
@@ -57,15 +57,14 @@
   justify-self: center;
 }
 
-/* grid principal */
 .relatorio_vendedor_grid_conteudo {
-  display: flex;
-  flex-direction: column; /* Stacks children vertically */
-  align-items: center; /* Centers horizontally */
-  gap: 8px; /* Adds space between stacked items */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+  gap: 8px; /* Space between items */
   margin: 8px 64px 0 64px;
   height: 100%;
 }
+
 
 .relatorio_vendedor_perfil_usuario h1 {
   color: #1B98E0;
@@ -164,6 +163,7 @@ color: #2888b1;
  .relatorio_vendedor_pesquisar_usuario_item  {
   display: flex;
   flex-direction: column;
+  width: 573px;
 }
 
 .relatorio_vendedor_dados_pessoais_item input,

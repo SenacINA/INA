@@ -11,12 +11,15 @@ class RelatorioVendedorController {
 
     public function handle(): array {
         $vendas = [];
+        $perfil = null;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vendedor_id'])) {
             $vendedorId = intval($_POST['vendedor_id']);
             $vendas = $this->model->buscarPorVendedor($vendedorId);
+            $perfil = $this->model->buscarPerfilVendedor($vendedorId);
         }
 
-        return $vendas;
+        return ['vendas' => $vendas, 'perfil' => $perfil];
     }
+
 }
