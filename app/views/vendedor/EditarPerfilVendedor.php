@@ -289,7 +289,7 @@
   <script src="<?=$PATH_PUBLIC?>/js/cliente/updateSocial.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/EditarPerfilCliente.js"></script>
   <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
-  <script src="<?=$PATH_PUBLIC?>/js/vendedor/profile_edit_vendedor.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/vendedor/ProfileEditVendedor.js"></script>
   <script>
     const textArea = document.getElementById('descricao');
     const charCount = document.getElementById('charCount');

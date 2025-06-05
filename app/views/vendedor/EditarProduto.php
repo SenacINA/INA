@@ -329,9 +329,9 @@
   <?php
     include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
-  <script src="<?=$PATH_PUBLIC?>/js/vendedor/img_input.js"></script>
-  <script type="module" src="<?=$PATH_PUBLIC?>/js/vendedor/text_editor.js"></script>
-  <script src="<?=$PATH_PUBLIC?>/js/vendedor/promocao_toggle.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/vendedor/ImgInput.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/vendedor/TextEditor.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/vendedor/PromocaoToggle.js"></script>
 </body>
 
 </html>

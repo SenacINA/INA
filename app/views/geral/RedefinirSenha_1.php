@@ -49,7 +49,7 @@ require_once('./utils/head.php');
 
   <script type="module" src="<?= $PATH_PUBLIC ?>/js/admin/ToggleEyeSenha.js"></script>
   <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
-  <script src="<?= $PATH_PUBLIC ?>/js/geral/popUpRedefinirSenha.js"></script>
+  <script src="<?= $PATH_PUBLIC ?>/js/geral/popUpRedefinirSenhas.js"></script>
 </body>
 
 </html>
