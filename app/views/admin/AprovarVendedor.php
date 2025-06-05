@@ -34,82 +34,114 @@
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
 
   <main class="aprovar_vendedor_body_container">
-    <form action="" method="post" class="aprovar_vendedor_forms_pesquisa_pedidos">
-      <input type="text" name="search" class="base_input"
-             placeholder="Código / Nome" value="<?= htmlspecialchars($filtros['search']) ?>">
-      
-      <select name="status" class="aprovar_vendedor_select_status base_input">
-        <option value="">Todos</option>
-        <option value="Aprovado" <?= $filtros['status']==='Aprovado' ? 'selected':'' ?>>Aprovado</option>
-        <option value="Pendente" <?= $filtros['status']==='Pendente' ? 'selected':'' ?>>Pendente</option>
-        <option value="Reprovado"<?= $filtros['status']==='Reprovado'? 'selected':'' ?>>Reprovado</option>
-      </select>
-
-      <select name="mes" class="aprovar_vendedor_mes_select base_input">
-        <option value="" <?= $filtros['mes'] === '' ? 'selected' : '' ?>>Todos</option>
-        <?php
-          $meses = [
-            'Janeiro' => 'January',
-            'Fevereiro' => 'February',
-            'Março' => 'March',
-            'Abril' => 'April',
-            'Maio' => 'May',
-            'Junho' => 'June',
-            'Julho' => 'July',
-            'Agosto' => 'August',
-            'Setembro' => 'September',
-            'Outubro' => 'October',
-            'Novembro' => 'November',
-            'Dezembro' => 'December'
-          ];
-
-          foreach ($meses as $m_pt => $m_en): ?>
-            <option value="<?= $m_en ?>"
-              <?= $filtros['mes'] === $m_en ? 'selected' : '' ?>>
-              <?= $m_pt ?>
-            </option>
-        <?php endforeach; ?>
-      </select>
-
-      <select name="ano" class="aprovar_vendedor_ano_select base_input">
-        <option value="" <?= $filtros['ano'] === '' ? 'selected' : '' ?>>Todos</option>
-        <?php for ($y = date('Y'); $y >= date('Y') - 5; $y--): ?>
-          <option value="<?= $y ?>" <?= $filtros['ano'] === (string)$y ? 'selected' : '' ?>>
-            <?= $y ?>
-          </option>
-        <?php endfor; ?>
-      </select>
-
-      <button type="submit" class="base_botao btn_blue">Buscar</button>
-      <button type="reset" class="base_botao btn_red">Limpar</button>
-    </form>
-
-    <!-- Estatísticas de Aprovação (fake data) -->
-    <div class="aprovar_vendedor_estatisticas">
-      <div class="aprovar_vendedor_subtitulo_generico">
-        <div class="aprovar_vendedor_linha_vertical"></div>
-        <div class="aprovar_vendedor_subtitle_holder">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/grafico_icon.svg" />
-          <h2 class="font_subtitulo font_celadon">Estatísticas de Aprovação</h2>
+    <div class="aprovar_vendedor_firula_holder">
+      <div class="aprovar_vendedor_header_holder">
+        <div class="aprovar_vendedor_text_titulo">
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/admin/dashboard/aprovar_vendedor2.svg" alt="">
+          <h1 class="aprovar_vendedor_header_holder font_titulo">APROVAR VENDEDOR</h1>
         </div>
-      </div>
-      <div class="aprovar_vendedor_estatistica_holder">
-        <div class="aprovar_vendedor_card">
-          <div class="aprovar_vendedor_titulo">Vendedores Aprovados</div>
-          <div class="aprovar_vendedor_estatistica_descricao">25</div>
-        </div>
+        <hr class="aprovar_vendedor_linha_sublinhado">
+      <div>
 
-        <div class="aprovar_vendedor_card">
-          <div class="aprovar_vendedor_titulo">Vendedores Reprovados</div>
-          <div class="aprovar_vendedor_estatistica_descricao">3</div>
-        </div>
+      <div class="aprovar_vendedor_main_content">
+        <div class="aprovar_vendedor_quadrado_container">
+          <div class="aprovar_vendedor_pesquisar_pedidos">
+            <div class="aprovar_vendedor_subtitulo_generico">
+              <div class="aprovar_vendedor_linha_vertical"></div>
+                <div class="aprovar_vendedor_subtitle_holder">
+                  <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/produto_lupa_icon.svg"/>
+                  <h2 class="font_subtitulo font_celadon">Pesquisar Produtos</p>
+                </div>
+            </div>
+            <form action="" method="post" class="aprovar_vendedor_forms_pesquisa_pedidos">
+              <input type="text" name="search" class="base_input"
+                    placeholder="Código / Nome" value="<?= htmlspecialchars($filtros['search']) ?>">
+              
+              <select name="status" class="aprovar_vendedor_select_status base_input" >
+                <option value="">Todos</option>
+                <option value="Aprovado" <?= $filtros['status']==='Aprovado' ? 'selected':'' ?>>Aprovado</option>
+                <option value="Pendente" <?= $filtros['status']==='Pendente' ? 'selected':'' ?>>Pendente</option>
+                <option value="Reprovado"<?= $filtros['status']==='Reprovado'? 'selected':'' ?>>Reprovado</option>
+              </select>
 
-        <div class="aprovar_vendedor_card">
-          <div class="aprovar_vendedor_titulo">Vendedores Inativados</div>
-          <div class="aprovar_vendedor_estatistica_descricao">1</div>
-        </div>
+              <select name="mes" class="aprovar_vendedor_mes_select base_input">
+                <option value="" <?= $filtros['mes'] === '' ? 'selected' : '' ?>>Todos</option>
+                <?php
+                  $meses = [
+                    'Janeiro' => 'January',
+                    'Fevereiro' => 'February',
+                    'Março' => 'March',
+                    'Abril' => 'April',
+                    'Maio' => 'May',
+                    'Junho' => 'June',
+                    'Julho' => 'July',
+                    'Agosto' => 'August',
+                    'Setembro' => 'September',
+                    'Outubro' => 'October',
+                    'Novembro' => 'November',
+                    'Dezembro' => 'December'
+                  ];
+
+                  foreach ($meses as $m_pt => $m_en): ?>
+                    <option value="<?= $m_en ?>"
+                      <?= $filtros['mes'] === $m_en ? 'selected' : '' ?>>
+                      <?= $m_pt ?>
+                    </option>
+                <?php endforeach; ?>
+              </select>
+
+              <select name="ano" class="aprovar_vendedor_ano_select base_input">
+                <option value="" <?= $filtros['ano'] === '' ? 'selected' : '' ?>>Todos</option>
+                <?php for ($y = date('Y'); $y >= date('Y') - 5; $y--): ?>
+                  <option value="<?= $y ?>" <?= $filtros['ano'] === (string)$y ? 'selected' : '' ?>>
+                    <?= $y ?>
+                  </option>
+                <?php endfor; ?>
+              </select>
+              <div class="aprovar_vendedor_holder_botao">
+              <button type="submit" class="btn_blue base_botao">
+              <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
+              PESQUISAR
+              </button>
+              <button type="submit" name="btnPesquisar" class="btn_red base_botao">
+              <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
+              LIMPAR
+            </button>
+              </div>
+            </form>
+          </div>
+          <!-- Estatísticas de Aprovação (fake data) -->
+          <div class="aprovar_vendedor_estatisticas">
+            <div class="aprovar_vendedor_subtitulo_generico">
+              <div class="aprovar_vendedor_linha_vertical"></div>
+              <div class="aprovar_vendedor_subtitle_holder">
+                <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/grafico_icon.svg" />
+                <h2 class="font_subtitulo font_celadon">Estatísticas de Aprovação</h2>
+              </div>
+            </div>
+            <div class="aprovar_vendedor_estatistica_holder">
+              <div class="aprovar_vendedor_card">
+                <div class="aprovar_vendedor_titulo">Vendedores Aprovados</div>
+                <div class="aprovar_vendedor_estatistica_descricao">25</div>
+              </div>
+
+              <div class="aprovar_vendedor_card">
+                <div class="aprovar_vendedor_titulo">Vendedores Reprovados</div>
+                <div class="aprovar_vendedor_estatistica_descricao">3</div>
+              </div>
+
+              <div class="aprovar_vendedor_card">
+                <div class="aprovar_vendedor_titulo">Vendedores Inativados</div>
+                <div class="aprovar_vendedor_estatistica_descricao">1</div>
+              </div>
+            </div>
+          </div>
+        <!-- CONTAINER PRINCIPAL -->
+        <div>
       </div>
     </div>
+
+    
 
     <!-- Tabela de resultados -->
     <div class="base_tabela">
