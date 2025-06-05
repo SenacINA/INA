@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
               })
             });
             const json = await resp.json();
+          
             if (json.success) {
               gerarToast(json.message, 'sucesso');
               setTimeout(() => location.reload(), 800);

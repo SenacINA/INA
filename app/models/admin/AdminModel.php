@@ -13,20 +13,31 @@ class AdminModel
 
     public function getInfoAdmin($id) {
         $sql = "
-            SELECT cliente.*, permissao_admin.*, perfil.foto_perfil
+            SELECT 
+                cliente.id_cliente, 
+                cliente.nome_cliente, 
+                cliente.email_cliente, 
+                cliente.ddd_cliente,
+                cliente.numero_celular_cliente,
+                perfil.foto_perfil, 
+                permissao_admin.gerenciar_carrossel, 
+                permissao_admin.gerenciar_usuarios, 
+                permissao_admin.gerenciar_produtos, 
+                permissao_admin.acessar_historico_acesso
             FROM cliente
-            JOIN permissao_admin ON cliente.id_cliente = permissao_admin.id_cliente
-            JOIN perfil ON cliente.id_cliente = perfil.id_cliente
+            LEFT JOIN permissao_admin ON cliente.id_cliente = permissao_admin.id_cliente
+            LEFT JOIN perfil ON cliente.id_cliente = perfil.id_cliente
             WHERE cliente.id_cliente = :id;
         ";
-
+    
         $stmt = $this->db->getConnection()->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    
         return $result ?: null;
     }
+    
 
     public function pesquisarUsuario(?string $id, ?string $email): ?array
 {

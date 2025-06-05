@@ -63,7 +63,7 @@
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_4">
             <label>Telefone</label>
-            <input id="telefoneAdmin" type="text" class="base_input" value="<?='(' . $user['ddd_cliente'] . ') ' . $user['numero_celular_cliente'] ?? 'Não informado'?>">
+            <input id="telefoneAdmin" type="text" class="base_input" value="<?= empty($user['numero_celular_cliente']) ? 'Não informado' : '(' . $user['ddd_cliente'] . ') ' . $user['numero_celular_cliente'] ?>">
           </div>
         </form>
 
