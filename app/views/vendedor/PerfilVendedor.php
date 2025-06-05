@@ -47,7 +47,7 @@
           <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
             <option selected disabled value="">Menu</option>
             <option value="EditarPerfil">Editar Perfil</option>
-            <option value="ConfirmarPedido">Pedidos</option>
+            <option value="PedidoConfirmar">Pedidos</option>
             <option value="RelatorioVendas">Relatório</option>
             <option value="ProdutoEditar">Editar Produtos</option>
             <option value="Logout">Sair</option>
