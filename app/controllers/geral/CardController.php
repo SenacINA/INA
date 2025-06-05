@@ -12,8 +12,9 @@ class CardController extends RenderView {
     $model = new CardModel;
     $produtos = $model->getProdutoInfoComSubcategoria($subcategoria);
     $this->loadView('cliente/Categoria', [
+      'subcategoriaChecked'      => $subcategoria,
       'produtosFiltrados' => $produtos
-    ]);
+    ]); 
   }
   public function filtrarProdutosCategoria($categoria) {
     $model = new CardModel;

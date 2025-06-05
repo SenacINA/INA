@@ -28,7 +28,7 @@ $routes = [
       // Geral
       '/sobre-nos'                 => 'geral/GeralController@sobreNos',
       '/FiltroSubcategoria'        => 'geral/CardController@filtrarProdutosSubcategoria',
-
+      
       // Geral - Trocar Email
       '/TrocarEmail'               => 'auth/AuthController@requestEmailReset',
       '/TrocarEmail-api'           => 'geral/TrocarEmailController@TrocarEmail',

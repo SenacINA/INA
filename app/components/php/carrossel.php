@@ -1,5 +1,6 @@
 <?php
-function Carrossel($path) {
+function Carrossel($path)
+{
     $PATH_PUBLIC = $path . '/public';
 
     echo <<<HTML
@@ -27,30 +28,28 @@ function Carrossel($path) {
             <button onclick="currentSlide(2)"></button>
             <button onclick="currentSlide(3)"></button>
         </div>
-        <div class="categorias_nav">
-            <div class="categorias_block" onclick="pag('Categoria')">
+        <form method="GET" action="Categoria" class="categorias_nav">
+            <button value="1" name="categoria" class="categorias_block">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselHardware.png" alt="">
                 <p>Hardware</p>
-            </div>
-            <div class="categorias_block" onclick="pag('Categoria')">
+            </button>
+            <button value="2" name="categoria" class="categorias_block">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselPerifericos.png" alt="">
                 <p>Periféricos</p>
-            </div>
-            <div class="categorias_block" onclick="pag('Categoria')">
+            </button>
+            <button value="3" name="categoria" class="categorias_block">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselEscritorio.png" alt="">
                 <p>Escritório</p>
-            </div>
-            <div class="categorias_block" onclick="pag('Categoria')">
+            </button>
+            <button value="4" name="categoria" class="categorias_block">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselCelulares.png" alt="">
                 <p>Celulares</p>
-            </div>
-            <div class="categorias_block" onclick="pag('Categoria')">
+            </button>
+            <button value="5" name="categoria" class="categorias_block">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselEletro.png" alt="">
                 <p>Eletrodomésticos</p>
-            </div>
-        </div>
+            </button>
+        </form>
     </div>
 HTML;
 }
-
-?>

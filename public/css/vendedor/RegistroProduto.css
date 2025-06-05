@@ -43,6 +43,14 @@ body {
     }
 }
 
+.toggle_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 16px;
+}
+
 .registro_produto_linha_titulo {
     width: 95%;
     height: 5px;

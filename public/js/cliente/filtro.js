@@ -31,15 +31,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-const filtroCheckboxes = document.querySelectorAll('input[id="categoria-checkbox"]');
-filtroCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('click', async () => {
-        const formData = new FormData();
-        formData.append('subcategoria', checkbox.value);
-        await fetch('FiltroSubcategoria', {
-            method: "post",
-            body: formData
-        }).then(window.location.reload())
-    })
-});
