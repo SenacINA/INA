@@ -22,7 +22,7 @@ require_once('./utils/head.php');
         <hr class="registro_produto_linha_titulo">
       </div>
       <div class='registro_produto_container'>
-        <form action="cadastro-produto" method="post" class='registro_produto_form_grid'>
+        <form action="CadastroProduto" method="post" class='registro_produto_form_grid'>
           <div class='registro_produto_form'>
             <div class='registro_produto_form_title'>
               <div class='registro_produto_line'></div>
@@ -67,14 +67,14 @@ require_once('./utils/head.php');
                 <select class='base_input' id='categoriaProduto' name='categoriaProduto'>
                   <option value="" disabled selected>Selecione</option>
                   <option value="1">Categoria 1</option>
-                </select>
+              </select>
               </div>
 
               <div class='base_input_select'>
                 <label for="categoriaProduto">Sub-Categoria</label>
-                <select class='base_input' id='categoriaProduto' name='categoriaProduto'>
-                  <option value="" disabled selected>Selecione</option>
-                  <option value="1">Sub-Categoria 1</option>
+                <select class='base_input' id='subCategoriaProduto' name='subCategoriaProduto'>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">Sub-Categoria 1</option>
                 </select>
               </div>
 
@@ -174,11 +174,14 @@ require_once('./utils/head.php');
                 Promoção
               </h3>
             </div>
-            <label class="toggle">
-              <input type="checkbox" name="toggle-group" id="toggle-promotion">
-              <span class="slider"></span>
-              <h4>Ativar Promoção</h4>
-            </label>
+            <div class='toggle_container'>
+              <label class="toggle">
+                <input type="checkbox" name="toggle-group" id="toggle-promotion" class='base_input'>
+                <span class="toggle_slider"></span>
+              </label>
+              <label for='toggle-promotion'>Ativar Promoção</label>
+            </div>
+            
 
             <div class='registro_produto_promocao'>
               <h4>Tipos de Promoção</h4>
@@ -235,6 +238,7 @@ require_once('./utils/head.php');
               </h3>
             </div>
             <div class="registro_produto_imagens"></div>
+            <input type="hidden" name="produto_imagens" id="produto-imagens">
             <div class="contador">
               <span id="contador-total">0</span>
               <span id="contador-restante"> / 1</span>
@@ -242,7 +246,7 @@ require_once('./utils/head.php');
             <button class="base_botao btn_blue" name="produtoImagem">
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
               ENVIAR ARQUIVO
-              <input type="file" id="input-file" name="produtoImagem" accept="image/*" multiple>
+              <input type="file" id="input-file" name="produto-imagens" accept="image/*" multiple>
             </button>
             <h4 id='info-image'>
               O tamanho do arquivo não pode ultrapassar 2mb
@@ -252,16 +256,12 @@ require_once('./utils/head.php');
                 adicionar link URL
                 <div class="dropdown-content">
                   <input class='base_input' type="text" id="input-url" placeholder="Insira a URL da imagem">
-                  <button onclick="adicionarImagemPorURL()">Adicionar</button>
+                  <button type="button" class="url-add-button">Adicionar</button>
                 </div>
               </span>
             </div>
           </div>
           <div class='registro_produto_form_buttons'>
-            <button class="base_botao btn_red">
-              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_branco_icon.svg">
-              INATIVAR PRODUTO
-            </button>
             <button class="base_botao btn_outline_red" type='reset'>
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_vermelho_icon.svg">
               CANCELAR
@@ -275,6 +275,22 @@ require_once('./utils/head.php');
       </div>
     </div>
   </main>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      <?php if (!empty($errors)): ?>
+        <?php foreach($errors as $e): ?>
+          gerarToast("<?= addslashes($e) ?>", "erro");
+        <?php endforeach; ?>
+      <?php endif; ?>
+
+      <?php if (!empty($_SESSION['successMessage'])): ?>
+        gerarToast("<?= addslashes($_SESSION['successMessage']) ?>", "sucesso");
+        <?php unset($_SESSION['successMessage']); ?>
+      <?php endif; ?>
+      
+    });
+  </script>
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>

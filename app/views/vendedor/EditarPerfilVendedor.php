@@ -225,7 +225,7 @@
         <p class="destaques_main_text">Destaques</p>
       </div>
       <div class="destaques_container">
-        <?php gerarProdutoCards(3, 1); ?>
+        <?php #gerarProdutoCards(3, 1); ?>
         <button class="add">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/add_icon.svg">
         </button>
@@ -240,6 +240,7 @@
         <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_vermelho_icon.svg">Cancelar
       </button>
     </div>
+
   </main>
   <div class="popup_container" id="popup">
     <div class="popup">
