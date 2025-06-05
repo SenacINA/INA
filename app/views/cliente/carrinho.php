@@ -5,7 +5,8 @@
   $js = ["/js/cliente/carrinho.js"];
   require_once("./utils/head.php");
   include_once("$PATH_COMPONENTS/php/produto_carrinho.php");
-?>
+  $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
+  ?>
 
 <body>
   <?php
@@ -48,7 +49,7 @@
               <?php else: ?>
                 <?php foreach ($itensCarrinho as $item): ?>
                   <div class="carrrinho_produto_item" data-id="<?= $item['id_produto'] ?>">
-                    <img src="<?= $PATH_PUBLIC . '/' . $item['endereco_imagem_produto'] ?>" alt="<?= $item['nome_produto'] ?>">
+                    <img src="<?= (empty($produto['endereco_imagem_produto']) ? 'https://placehold.co/400x400' : ".//public/" . $produto['endereco_imagem_produto']) ?>" alt="<?= $item['nome_produto'] ?>">
                     <span><?= htmlspecialchars($item['nome_produto']) ?></span>
                     <div class="carrinho_quantidade">
                       <span id="preco_produto">R$ <?= number_format($item['preco_produto'], 2, ',', '.') ?></span>

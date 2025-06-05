@@ -46,19 +46,18 @@ class CarrinhoController extends RenderView
     if (isset($_SESSION['cliente_id'])) {
       $itensCarrinho = $this->model->getItensCarrinho();
       $totalCarrinho = $this->model->calcularTotal();
-    }
-    else {
+    } else {
       $itensCarrinho = [];
       $totalCarrinho = 0;
     }
-
     return [
       'itensCarrinho' => $itensCarrinho,
       'totalCarrinho' => $totalCarrinho
     ];
   }
 
-  public function atualizar() {
+  public function atualizar()
+  {
     $itemId = $_POST['id'];
     $itemQuantidade = $_POST['quantidade'];
 
