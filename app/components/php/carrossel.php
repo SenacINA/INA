@@ -28,7 +28,7 @@ function Carrossel($path)
             <button onclick="currentSlide(2)"></button>
             <button onclick="currentSlide(3)"></button>
         </div>
-        <form method="GET" action="Categoria" class="categorias_nav">
+        <form method="POST" action="Categoria" class="categorias_nav">
             <button value="1" name="categoria" class="categorias_block">
                 <img src="{$PATH_PUBLIC}/image/index/carrosselHardware.png" alt="">
                 <p>Hardware</p>

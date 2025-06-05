@@ -36,7 +36,7 @@
                         <h2 class="font_cinza font_subtitulo">Categorias</h2>
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/seta_filtro.svg" alt="Setinha">
                     </div>
-                    <form method='POST' action='FiltroSubcategoria' class='grid_filtro'>
+                    <form method='POST' action='Subcategoria' class='grid_filtro'>
                         <?php
                         $categoriaController = new CategoriaController;
                         $subcategorias = $categoriaController->sendSubcategoria();
@@ -75,7 +75,7 @@
                         $card->gerarProdutoCards(12, $produtosFiltrados);
                     } else {
                         $card->gerarProdutoCards(12, $info);
-                    }?>
+                    } ?>
                 </div>
             </div>
         </main>

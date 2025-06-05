@@ -19,9 +19,6 @@ class CarrinhoController extends RenderView
     if ($idProduto) {
       $this->model->adicionarItem((int)$idProduto, (int)$quantidade);
     }
-
-    header("Location: " . $_SERVER['HTTP_REFERER']);
-    exit;
   }
 
   public function removerItem()
