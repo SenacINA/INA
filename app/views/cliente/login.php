@@ -2,30 +2,30 @@
 <html lang="pt-br">
 
 <?php
-   // Parte 1: Configurações iniciais
-   $css = ["/css/cliente/Login.css"];
-   require_once("./utils/head.php");
+// Parte 1: Configurações iniciais
+$css = ["/css/cliente/Login.css"];
+require_once("./utils/head.php");
 
-   
-   // Parte 2: Sessão (deve ser iniciada ANTES de qualquer output)
-   if (isset($_SESSION['erro_login'])) {
-       echo '<div class="erro">' . $_SESSION['erro_login'] . '</div>';
-       unset($_SESSION['erro_login']);
-   }
+
+// Parte 2: Sessão (deve ser iniciada ANTES de qualquer output)
+if (isset($_SESSION['erro_login'])) {
+  echo '<div class="erro">' . $_SESSION['erro_login'] . '</div>';
+  unset($_SESSION['erro_login']);
+}
 ?>
 
 <body>
   <!-- Até 375px -->
 
   <?php
-    include_once("$PATH_COMPONENTS/php/navbar.php");
+  include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
-    
+
   <main>
     <div class="login_quadrado">
       <div class="login_container">
         <div class="login_bem_vindo">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/logo-eaoquadrado.png">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/logo-eaoquadrado.png">
           <h1>Login de usuário</h1>
           <h2>Bem-vindo de volta!</h2>
         </div>
@@ -36,37 +36,37 @@
           </div>
 
           <div class="login_redefinir_senha_2_form">
-              <label for="senha">Senha:</label>
-              <div class="login_redefinir_senha_2">
-                <input type="password" name="senha" id="senha" class="base_input">
-                <a href="javascript:void(0);" id="eye-icon-senha">
-                  <img class="base_icon" id="eye-img-senha" src="<?=$PATH_PUBLIC?>/image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
-                </a>
-              </div>
-              
-              <div class="login_links_conatiner">
-                <div class="login_checkbox_container">
-                  <input type="checkbox" class="base_input">
-                  <p>Manter Conectado</p>
-                </div>
-              </div>
+            <label for="senha">Senha:</label>
+            <div class="login_redefinir_senha_2">
+              <input type="password" name="senha" id="senha" class="base_input">
+              <a href="javascript:void(0);" id="eye-icon-senha">
+                <img class="base_icon" id="eye-img-senha" src="<?= $PATH_PUBLIC ?>/image/geral/icons/olho_fechado_icon.svg" alt="Olho Fechado">
+              </a>
+            </div>
 
-              <div class="login_links">
-                  <div class="login_fit_content" onclick="pag('RedefinirSenha')">
-                    <p><u>Redefinir Senha</u></p>
-                  </div>        
-                  <div class="login_fit_content" >
-                    <p>Não tem login? <u onclick="pag('CadastroCliente')">Clique aqui</u></p>
-                  </div>
+            <div class="login_links_conatiner">
+              <div class="login_checkbox_container">
+                <input type="checkbox" class="base_input">
+                <p>Manter Conectado</p>
               </div>
+            </div>
+
+            <div class="login_links">
+              <div class="login_fit_content" onclick="pag('RedefinirSenha')">
+                <p><u>Redefinir Senha</u></p>
+              </div>
+              <div class="login_fit_content">
+                <p>Não tem login? <u onclick="pag('CadastroCliente')">Clique aqui</u></p>
+              </div>
+            </div>
           </div>
         </form>
       </div>
       <div class="login_botoes">
-          <button class="login_botao_entrar" type="submit" form="loginForm">
-              <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">Entrar
-          </button>
-        </div>
+        <button class="login_botao_entrar" type="submit" form="loginForm">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="">Entrar
+        </button>
+      </div>
     </div>
 
     <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/ToggleEyeSenha.js"></script>
@@ -74,17 +74,16 @@
   </main>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let errors = <?php echo json_encode($errors ?? []); ?>;
-        
-        if (errors.length > 0) {
-            errors.forEach(error => {
-                gerarToast(error, "erro");
-            });
-        }
+    document.addEventListener("DOMContentLoaded", function() {
+      let errors = <?php echo json_encode($errors ?? []); ?>;
+
+      if (errors.length > 0) {
+        errors.forEach(error => {
+          gerarToast(error, "erro");
+        });
+      }
     });
   </script>
-
-
 </body>
+
 </html>

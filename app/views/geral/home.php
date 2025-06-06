@@ -69,7 +69,7 @@
                     <h2>Descontos</h2>
                 </div>
                 <div class="index_body_produtos_content">
-                    <?php $card->gerarProdutoCards(6, $info); ?>
+                    <?php $card->gerarProdutoCards(6, $info, 6); ?>
                 </div>
                 <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
                     <p>Ver Mais</p>
@@ -89,7 +89,7 @@
                     <h2>Mais Vendidos</h2>
                 </div>
                 <div class="index_body_produtos_content">
-                    <?php $card->gerarProdutoCards(6, $info); ?>
+                    <?php $card->gerarProdutoCards(6, $info, 12); ?>
                 </div>
                 <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
                     <p>Ver Mais</p>
@@ -106,15 +106,11 @@
         include_once("$PATH_COMPONENTS/php/footer.php");
     ?>
 </div>
-<!-- ButtonTop -->
 <button id="btnTopo" class="btn-topo" title="Voltar ao topo">
     <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_cima.svg" alt="">
 </button>
-
-<!-- ButtonTop -->
 <script src='<?=$PATH_PUBLIC?>/js/geral/carrossel.js' data-isindex="1"></script>
-
-<!-- Import do buttonTop -->
 <script src='<?=$PATH_PUBLIC?>/js/geral/BtnTopo.js' data-isindex="1"></script>
+<script type='module' src='<?=$PATH_PUBLIC?>/js/geral/card.js'></script>
 </body>
 </html>

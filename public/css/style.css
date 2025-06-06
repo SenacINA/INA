@@ -1385,6 +1385,7 @@ input:checked + .toggle_slider::before {
 }
 
 .categorias_block {
+  border: 0;
   z-index: 2;
   padding: 16px;
   display: flex;
