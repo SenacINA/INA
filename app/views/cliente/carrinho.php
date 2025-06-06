@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-  $css = ["/css/cliente/CarrinhoVazio.css"];
-  $js = ["/js/cliente/carrinho.js"];
-  require_once("./utils/head.php");
-  include_once("$PATH_COMPONENTS/php/produto_carrinho.php");
-  $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
-  ?>
+$css = ["/css/cliente/CarrinhoVazio.css"];
+$js = ["/js/cliente/carrinho.js"];
+require_once("./utils/head.php");
+include_once("$PATH_COMPONENTS/php/produto_carrinho.php");
+$carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
+?>
 
 <body>
   <?php
@@ -118,7 +118,7 @@
         </button>
         <div class="carrinho_vazio_holder_final">
           <form action="Carrinho-api-limpar">
-            <button class="base_botao btn_red" id="remover_tudo" <?= $carrinhoVazio ?> >
+            <button class="base_botao btn_red" id="remover_tudo" <?= $carrinhoVazio ?>>
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/lixo_branco_icon.svg" alt="Remover tudo">
               REMOVER TUDO
             </button>

@@ -53,6 +53,16 @@ class CarrinhoController extends RenderView
     ];
   }
 
+  public function exibirBadge()
+  {
+    $produtos = $this->exibirItens();
+    header('Content-Type: application/json');
+
+    $quantidade = count($produtos['itensCarrinho']);
+
+    echo json_encode(['quantidade' => $quantidade]);
+  }
+
   public function atualizar()
   {
     $itemId = $_POST['id'];

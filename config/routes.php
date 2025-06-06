@@ -21,6 +21,7 @@ $routes = [
       '/Carrinho-api-remove'       => 'cliente/CarrinhoController@removerItem',
       '/Carrinho-api-limpar'       => 'cliente/CarrinhoController@limparCarrinho',
       '/Carrinho-api-update'       => 'cliente/CarrinhoController@atualizar',
+      '/Carrinho-api-badge'        => 'cliente/CarrinhoController@exibirBadge',
 
       '/CarrinhoDados'             => 'cliente/ClienteController@dados',
       '/CarrinhoPagamentos'        => 'cliente/ClienteController@pagamentos',

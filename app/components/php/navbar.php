@@ -3,19 +3,6 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 
-if (isset($_SESSION['cliente_id'])) {
-  require_once __DIR__ . "/../../controllers/cliente/CarrinhoController.php";
-  $carrinho = new CarrinhoController();
-  
-  $quantidadeItensCarrinho = 0;
-  $info = $carrinho->exibirItens();
-  
-  if (is_array($info)) {
-      $quantidadeItensCarrinho = count($info['itensCarrinho']);
-  }
-}
-
-
 function handlePerfil()
 {
   $user = $_SESSION["user_type"] ?? '';
@@ -263,10 +250,7 @@ function generateModalContent($user)
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="currentColor" d="M17 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2M1 2v2h2l3.6 7.59l-1.36 2.45c-.15.28-.24.61-.24.96a2 2 0 0 0 2 2h12v-2H7.42a.25.25 0 0 1-.25-.25q0-.075.03-.12L8.1 13h7.45c.75 0 1.41-.42 1.75-1.03l3.58-6.47c.07-.16.12-.33.12-.5a1 1 0 0 0-1-1H5.21l-.94-2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2" />
       </svg>
-      <?php if (isset($quantidadeItensCarrinho)) { if ($quantidadeItensCarrinho > 0): ?>
-        <span class="carrinho_badge"><?= $quantidadeItensCarrinho ?></span>
-      <?php endif;
-      }?>
+          <span id="carrinho-badge" class="carrinho_badge"></span>
     </button>
 
     <button class="base_nav_square_button" id="baseNavSideBar">
@@ -276,10 +260,6 @@ function generateModalContent($user)
     </button>
   </div>
 </div>
-
-<?php
-
-?>
 
 <div id="modal-container" class="modal-container" hidden>
   <div id="modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">

@@ -1,4 +1,4 @@
-const toggleMostarServicos = () => {
+const toggleMostrarServicos = () => {
   const freteContainer1 = document.getElementById("frete_container_1");
   const freteContainer2 = document.getElementById("frete_container_2");
 
@@ -13,19 +13,6 @@ const toggleMostarServicos = () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.form_adicionar_carrinho').forEach(form => {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      localStorage.setItem('scrollY', window.scrollY);
-
-      const formData = new FormData(form);
-
-      await fetch('Carrinho-api-add', {
-        method: 'POST',
-        body: formData
-      });
-    });
-  });
   const toggleBotao = document.getElementById("btn_mostrar_servicos")
 
 
@@ -53,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelectorAll('.botao_adicionar_ao_carrinho').forEach(botao => {
   botao.addEventListener('click', () => {
     const produtoId = botao.dataset.id;
-    const quantidade = 1; // ou você pode pegar de um input
+    const quantidade = 1;
 
     fetch('Carrinho/adicionarItem', {
       method: 'POST',
@@ -65,7 +52,6 @@ document.querySelectorAll('.botao_adicionar_ao_carrinho').forEach(botao => {
       .then(res => {
         if (res.ok) {
           console.log('Produto adicionado!');
-          // Atualize visualmente o carrinho, exiba notificação, etc.
         }
       });
   });
