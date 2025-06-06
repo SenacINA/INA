@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   if (toggleBotao) {
-    toggleBotao.addEventListener('click', () => toggleMostarServicos())
+    toggleBotao.addEventListener('click', () => toggleMostrarServicos())
   }
 
   document.querySelectorAll('input#quantidade_produto').forEach(input => {
