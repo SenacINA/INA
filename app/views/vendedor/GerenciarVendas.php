@@ -35,7 +35,7 @@
               </div>
               <form action="" method="post" class="gerenciar_produtos_forms_pesquisa_pedidos">
                 <div class="gerenciar_produtos_form_cliente">
-                  <label class="font_subtitulo font_celadon">Código Do Produto / Nome Vendedor</label>
+                  <label class="font_subtitulo font_celadon">Nome do Cliente</label>
                   <input type="text" spellcheck="false" class="base_input">
                 </div>
                 <div class="gerenciar_produtos_inputs_esquerda">
@@ -62,29 +62,15 @@
                     <label for="ano" class="font_subtitulo font_celadon">Ano</label>
                     <select name="ano" id="ano" class="gerenciar_produtos_ano_select base_input">
                       <option value="" selected disabled style="display: none;">Selecione</option>
-                      <option value="2020">2020</option>
-                      <option value="2021">2021</option>
-                      <option value="2022">2022</option>
-                      <option value="2023">2023</option>
-                      <option value="2024">2024</option>
                       <option value="2025">2025</option>
-                      <option value="2026">2026</option>
-                      <option value="2027">2027</option>
-                      <option value="2028">2028</option>
-                      <option value="2029">2029</option>
-                      <option value="2030">2030</option>
                     </select>
                   </div>
                 </div>
                 <div class="gerenciar_produtos_holder_botao">
-                  <button type="reset" class="base_botao btn_red">
-                    <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_branco_icon.svg">
-                    CANCELAR
-                  </button>
 
                   <button type="submit" class="base_botao btn_blue">
                     <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg">
-                    CONFIRMAR
+                    PROCURAR
                   </button>
                 </div>
               </form>
@@ -99,7 +85,7 @@
               </div>
               <div class="gerenciar_produtos_estatistica_holder">
                 <div class="gerenciar_produtos_card">
-                  <span class="gerenciar_produtos_titulo">Valor Total</span>
+                  <span class="gerenciar_produtos_titulo">Lucro total</span>
                   <span class="gerenciar_produtos_estatistica_descricao">R$14.145,35</span>
                 </div>
                 <div class="gerenciar_produtos_card">
@@ -107,20 +93,8 @@
                   <span class="gerenciar_produtos_estatistica_descricao">14 UNI</span>
                 </div>
                 <div class="gerenciar_produtos_card">
-                  <span class="gerenciar_produtos_titulo">Tempo Medio De Entrega</span>
+                  <span class="gerenciar_produtos_titulo">Tempo </span>
                   <span class="gerenciar_produtos_estatistica_descricao">9 Dias</span>
-                </div>
-                <div class="gerenciar_produtos_card">
-                  <span class="gerenciar_produtos_titulo">Pedidos Recebidos</span>
-                  <span class="gerenciar_produtos_estatistica_descricao">4 - 100%</span>
-                </div>
-                <div class="gerenciar_produtos_card">
-                  <span class="gerenciar_produtos_titulo">Total De Pedidos</span>
-                  <span class="gerenciar_produtos_estatistica_descricao">4</span>
-                </div>
-                <div class="gerenciar_produtos_card">
-                  <span class="gerenciar_produtos_titulo">Pedidos Reembolsados</span>
-                  <span class="gerenciar_produtos_estatistica_descricao">0 - 0%</span>
                 </div>
               </div>
             </div>
@@ -130,7 +104,7 @@
     </div>
     <div class="gerenciar_produtos_header_title">
       <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/pasta_clock_icon.svg"/>
-      <h1 class="gerenciar_produtos_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
+      <h1 class="gerenciar_produtos_text_header font_titulo">HISTÓRICO DE VENDAS</h1>
     </div>
     <div class="gerenciar_produtos_table">
       <div class="gerenciar_produtos_table_filtro bg_carolina">
@@ -145,71 +119,43 @@
       </div>
       <div class="base_tabela">
         <table>
-          <colgroup>
-            <col class="gerenciar_produtos_table_col-1">
-            <col class="gerenciar_produtos_table_col-2">
-            <col class="gerenciar_produtos_table_col-3">
-            <col class="gerenciar_produtos_table_col-4">
-            <col class="gerenciar_produtos_table_col-5">
-            <col class="gerenciar_produtos_table_col-6">
-            
-          </colgroup>
-          <thead>
+        <thead>
+          <tr>
+            <th>ID</th><th>Cliente</th><th>Preço</th>
+            <th>Gerenciamento</th><th>Data de Compra</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php if (empty($lista)): ?>
+          <tr><td colspan="6">Nenhum resultado encontrado</td></tr>
+        <?php else: ?>
+          <?php foreach ($lista as $v): ?>
             <tr>
-              <th>Cód.</th>
-              <th>Produto</th>
-              <th>Preço</th>
-              <th>Qtn.</th>
-              <th>Preview da Entrega</th>
-              <th>Vendedor</th>
-             
+              <td># <?= htmlspecialchars($v['id']) ?></td>
+              <td><?= htmlspecialchars($v['cliente']) ?></td>
+              <td><?= htmlspecialchars($v['preco']) ?></td>
+              <td class="aprovar_vendedor_coluna_botoes">
+                <?php if ($v['status'] === 'Pendente'): ?>
+                  <form method="post" style="display:inline;">
+                    <input type="hidden" name="acao" value="aprovar">
+                    <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
+                    <button type="submit" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
+                  </form>
+                  <form method="post" style="display:inline;">
+                    <input type="hidden" name="acao" value="reprovar">
+                    <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
+                    <button type="submit" class="aprovar_vendedor_btn_recusar">RECUSAR</button>
+                  </form>
+                <?php else: ?>
+                  <button class="aprovar_vendedor_btn_inativar">INATIVAR</button>
+                <?php endif; ?>
+              </td>
+              <td><?= htmlspecialchars($v['dataDeCompra']) ?></td>
             </tr>
-            <tbody>
-              <tr>
-                <td># 1001</td>
-                <td>
-                  <span>
-                    Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB
-                  </span>
-                </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>
-                  <span>
-                    25/03/2024 - 06/04/2024
-                  </span>
-                </td>
-                <td>THUNDER GAMES</td>
-              </tr>
-              <tr>
-                <td># 1001</td>
-                <td>Cadeira Gamer Throne - RGB </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>THUNDER GAMES</td>
-              </tr>
-              <tr>
-                <td># 1001</td>
-                <td>Cadeira Gamer Throne - RGB </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>THUNDER GAMES</td>
-                
-              </tr>
-              <tr>
-                <td># 1001</td>
-                <td>Cadeira Gamer Throne - RGB </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>25/03/2024 - 06/04/2024</td>
-                <td>THUNDER GAMES</td>
-                
-              </tr>
-            </tbody>
-          </thead>
-        </table>
+          <?php endforeach; ?>
+        <?php endif; ?>
+        </tbody>
+      </table>
       </div>
       <a href="./Dashboard.php">
         <div class="voltar">
