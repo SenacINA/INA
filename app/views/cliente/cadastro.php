@@ -63,9 +63,9 @@
   </main>
 
   <!-- Scripts -->
-  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_eyeSenha.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/ToggleEyeSenha.js"></script>
   <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
-  <script src="<?=$PATH_PUBLIC?>/js/cliente/cadastro.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/cliente/Cadastros.js"></script>
 
 </body>
 </html>

@@ -189,9 +189,9 @@
     <?php 
       include_once("$PATH_COMPONENTS/php/footer.php");
     ?>
-    <!-- <script type="text/javascript" src="../../js/cliente/categoria.js"></script> -->
+    <!-- <script type="text/javascript" src="../../js/cliente/Categorias.js"></script> -->
 </body>
-<script src='<?=$PATH_PUBLIC?>/js/geral/btn_topo.js'></script>
+<script src='<?=$PATH_PUBLIC?>/js/geral/BtnTopo.js'></script>
 <script src="<?=$PATH_PUBLIC?>/js/geral/carrossel.js"></script>
-<script src='<?=$PATH_PUBLIC?>/js/cliente/filtro.js'></script>
+<script src='<?=$PATH_PUBLIC?>/js/cliente/Filtros.js'></script>
 </html>

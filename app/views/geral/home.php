@@ -115,6 +115,6 @@
 <script src='<?=$PATH_PUBLIC?>/js/geral/carrossel.js' data-isindex="1"></script>
 
 <!-- Import do buttonTop -->
-<script src='<?=$PATH_PUBLIC?>/js/geral/btn_topo.js' data-isindex="1"></script>
+<script src='<?=$PATH_PUBLIC?>/js/geral/BtnTopo.js' data-isindex="1"></script>
 </body>
 </html>
