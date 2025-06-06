@@ -60,13 +60,13 @@ $routes = [
       '/ProdutoEditar'            => 'vendedor/VendedorProductController@edit',
       '/RelatorioVendas'          => 'vendedor/VendedorProductController@report',
       '/CadastroProduto'          => 'vendedor/ProdutoController@produto',
+      '/GerenciarVendas'        => 'vendedor/VendedorProductController@manageSales',
 
       // Admin
       '/AdminDashboard'           => 'admin/AdminController@dashboard',
       '/AprovarVendedor'          => 'admin/AdminController@aprovarVendedor',
       '/AtualizarUsuario'         => 'admin/AdminController@atualizarUsuario',
       '/GerenciarUsuarios'        => 'admin/AdminController@gerenciarUsuarios',
-      '/GerenciarProdutos'        => 'admin/AdminController@gerenciarProdutos',
       '/GerenciarCarrossel'       => 'admin/AdminController@gerenciarCarrossel',
       '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
       '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',

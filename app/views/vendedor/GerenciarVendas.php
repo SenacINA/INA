@@ -17,7 +17,7 @@
       <div class="gerenciar_produtos_header_holder">
         <div class="gerenciar_produtos_text_titulo">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/produto_icon.svg" alt="">
-          <h1 class="gerenciar_produtos_header_holder font_titulo">GERENCIAR PRODUTOS</h1>
+          <h1 class="gerenciar_produtos_header_holder font_titulo">GERENCIAR VENDAS</h1>
         </div>
         <hr class="gerenciar_produtos_linha_sublinhado">
       </div>

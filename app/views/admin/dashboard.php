@@ -59,16 +59,7 @@ require_once('./utils/head.php');
 
       </div>
       <div class="dashboard_body_container_botoes">
-
         <!-- linha 1 -->
-        <a href="GerenciarProdutos">
-          <div class="dashboard_body_container_botoes_base">
-            <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/gerenciar_produtos.svg" alt="">
-            <h2>Gerenciar Produtos</h2>
-            <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/seta_baixo.svg" alt="">
-          </div>
-        </a>
-
         <a href="GerenciarCarrossel">
           <div class="dashboard_body_container_botoes_base">
             <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/gerenciar_carrossel.svg" alt="">
@@ -77,7 +68,6 @@ require_once('./utils/head.php');
           </div>
         </a>
 
-        <!-- linha 2 -->
         <a href="RedefinirSenha">
           <div class="dashboard_body_container_botoes_base">
             <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/redefinir_senha.svg" alt="">
@@ -94,6 +84,7 @@ require_once('./utils/head.php');
           </div>
         </a>
 
+        <!-- linha 2 -->
         <a href="AtualizarUsuario">
           <div class="dashboard_body_container_botoes_base">
             <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/atualizar_usuario.svg" alt="">
