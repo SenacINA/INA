@@ -23,6 +23,10 @@
   gap: 8px;
 }
 
+.aprovar_vendedor_container_botao{
+  margin-top: 16px;
+}
+
 .aprovar_vendedor_linha_vertical{
   width: 8px;
   height: 48px;
@@ -120,7 +124,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 16px;
+  gap: 0px;
   margin: 16px 0 0;
 }
 
@@ -129,6 +133,10 @@
   display: flex;
   justify-content: flex-end;
   gap: 16px;
+}
+
+.aprovar_vendedor_container_ano, .aprovar_vendedor_container_mes, .aprovar_vendedor_container_status{
+  margin-top: 8px;
 }
 
 .aprovar_vendedor_input_ano,
@@ -168,7 +176,7 @@
 .aprovar_vendedor_estatistica_holder {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 8px;
   height: 100%;
 }
