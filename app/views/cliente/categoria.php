@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <?php
-  $css = ["/css/cliente/categoria.css"];
+  $css = ["/css/cliente/Categoria.css"];
   require_once("./utils/head.php")
 ?>
 

@@ -6,7 +6,7 @@ class VendedorProductController extends RenderView {
     }
 
     public function confirm() {
-        $this->loadView('vendedor/ConfirmarPedido', []);
+        $this->loadView('vendedor/PedidoConfirmar', []);
     }
 
     public function create() {

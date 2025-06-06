@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Editar Perfil - E ao Quadrado";
-  $css = ["/css/vendedor/editar_perfil_vendedor.css"];
+  $css = ["/css/vendedor/EditarPerfilVendedor.css"];
   require_once('./utils/head.php');
   include ("$PATH_COMPONENTS/php/card_produto.php");
 ?>
@@ -225,7 +225,7 @@
         <p class="destaques_main_text">Destaques</p>
       </div>
       <div class="destaques_container">
-        <?php gerarProdutoCards(3, 1); ?>
+        <?php #gerarProdutoCards(3, 1); ?>
         <button class="add">
           <img src="<?=$PATH_PUBLIC?>/image/geral/icons/add_icon.svg">
         </button>
@@ -240,6 +240,7 @@
         <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_vermelho_icon.svg">Cancelar
       </button>
     </div>
+
   </main>
   <div class="popup_container" id="popup">
     <div class="popup">
@@ -287,7 +288,7 @@
   <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/updateSocial.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/editar_perfil_cliente.js"></script>
-  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/vendedor/profile_edit_vendedor.js"></script>
   <script>
     const textArea = document.getElementById('descricao');

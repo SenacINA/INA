@@ -68,7 +68,7 @@ function generateModalContent($user)
                 </a>
               </li>
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'AdminPerfil\')">
+                  <a href="#" class="menu-item" onclick="pag(\'Perfil\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
@@ -151,6 +151,22 @@ function generateModalContent($user)
                       <span>Redefinir Senha</span>
                   </a>
               </li>
+              <li>
+                  <a onclick="pag(\'EditarPerfil\')" class="menu-item">
+                      <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
+                          <path fill="#3498db" d="m21.7 13.35l-1 1l-2.05-2.05l1-1a.55.55 0 0 1 .77 0l1.28 1.28c.21.21.21.56 0 .77M12 18.94l6.06-6.06l2.05 2.05L14.06 21H12zM12 14c-4.42 0-8 1.79-8 4v2h6v-1.89l4-4c-.66-.08-1.33-.11-2-.11m0-10a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4"/>
+                      </svg>
+                      <span>Editar Perfil</span>
+                  </a>
+              </li>
+              <li>
+                  <a onclick="pag(\'CadastroVendedorInfo\')" class="menu-item">
+                  <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
+                    <path fill="#3498db" d="m21.41 11.58l-9-9C12.04 2.21 11.53 2 11 2H4a2 2 0 0 0-2 2v7c0 .53.21 1.04.59 1.41l.41.4c.9-.54 1.94-.81 3-.81a6 6 0 0 1 6 6c0 1.06-.28 2.09-.82 3l.4.4c.37.38.89.6 1.42.6s1.04-.21 1.41-.59l7-7c.38-.37.59-.88.59-1.41s-.21-1.04-.59-1.42M5.5 7A1.5 1.5 0 0 1 4 5.5A1.5 1.5 0 0 1 5.5 4A1.5 1.5 0 0 1 7 5.5A1.5 1.5 0 0 1 5.5 7M10 19H7v3H5v-3H2v-2h3v-3h2v3h3z"/>
+                    </svg>
+                      <span>Cadastro Vendedor</span>
+                  </a>
+              </li>
           ';
       break;
 
@@ -178,6 +194,14 @@ function generateModalContent($user)
                           <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
                       </svg>
                       <span>Gerenciar Produtos</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="menu-item" onclick="pag(\'ProdutoRegistrar\')">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="#3498db" d="M5 21q-.825 0-1.412-.587T3 19V6.525q0-.35.113-.675t.337-.6L4.7 3.725q.275-.35.687-.538T6.25 3h11.5q.45 0 .863.188t.687.537l1.25 1.525q.225.275.338.6t.112.675V10.2q0 .45-.363.725t-.812.175q-.65-.125-1.338-.075t-1.312.25q-.425.125-.8-.112T16 10.5V8H8v6.375q0 .575.475.863t.975.037L12 14l.775.375q.3.15.413.45t.012.625q-.125.35-.162.738t-.038.787q0 .725.175 1.45T13.7 19.8q.225.425.025.813T13.1 21zm13-3h-2q-.425 0-.712-.288T15 17t.288-.712T16 16h2v-2q0-.425.288-.712T19 13t.713.288T20 14v2h2q.425 0 .713.288T23 17t-.288.713T22 18h-2v2q0 .425-.288.713T19 21t-.712-.288T18 20zM5.4 6h13.2l-.85-1H6.25z"/>
+                  </svg>
+                      <span>Registrar Produto</span>
                   </a>
               </li>
           ';

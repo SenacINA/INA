@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-  $css = ["/css/cliente/cadastro.css"];
+  $css = ["/css/cliente/Cadastro.css"];
   require_once './utils/head.php';
 ?>
 <body>
@@ -64,7 +64,7 @@
 
   <!-- Scripts -->
   <script type="module" src="<?=$PATH_PUBLIC?>/js/admin/toggle_eyeSenha.js"></script>
-  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/cadastro.js"></script>
 
 </body>

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
     $titulo = "Aprovar Vendedores - E ao Quadrado";
-    $css = ["/css/admin/aprovar_vendedor.css"];
+    $css = ["/css/admin/AprovarVendedor.css"];
     require_once('./utils/head.php');
     require_once('./app/models/admin/AprovarVendedorModel.php');
 

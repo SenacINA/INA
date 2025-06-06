@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
 $titulo = "Dashboard - E ao Quadrado";
-$css = ["/css/admin/dashboard.css"];
+$css = ["/css/admin/Dashboard.css"];
 require_once('./utils/head.php');
 ?>
 

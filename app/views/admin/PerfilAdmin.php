@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Perfil - E ao Quadrado";
-  $css = ["/css/admin/perfil_admin.css"];
+  $css = ["/css/admin/PerfilAdmin.css"];
   require_once('./utils/head.php');
 ?>
 <body>
@@ -63,7 +63,7 @@
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_4">
             <label>Telefone</label>
-            <input id="telefoneAdmin" type="text" class="base_input" value="<?='(' . $user['ddd_cliente'] . ') ' . $user['numero_celular_cliente'] ?? 'Não informado'?>">
+            <input id="telefoneAdmin" type="text" class="base_input" value="<?= empty($user['numero_celular_cliente']) ? 'Não informado' : '(' . $user['ddd_cliente'] . ') ' . $user['numero_celular_cliente'] ?>">
           </div>
         </form>
 
@@ -134,7 +134,7 @@
     </div>
   </main>
   <script src="<?=$PATH_PUBLIC?>/js/cliente/pfp_input.js"></script>
-  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/admin/update_profile.js"></script>
 </body>
 </html>

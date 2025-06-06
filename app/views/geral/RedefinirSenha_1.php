@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
 $titulo = "Redefinir Senha - E ao Quadrado";
-$css = ["/css/geral/redefinir_senha_1.css"];
+$css = ["/css/geral/RedefinirSenha_1.css"];
 require_once('./utils/head.php');
 ?>
 
@@ -48,7 +48,7 @@ require_once('./utils/head.php');
   </div>
 
   <script type="module" src="<?= $PATH_PUBLIC ?>/js/admin/toggle_eyeSenha.js"></script>
-  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
+  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
   <script src="<?= $PATH_PUBLIC ?>/js/geral/popUpRedefinirSenha.js"></script>
 </body>
 

@@ -2,11 +2,9 @@
 <html lang="pt-br">
 
 <?php
-$titulo = "Gerenciar Carrossel- E ao Quadrado";
-$css = ["/css/admin/gerenciar_carrossel.css"];
-require_once './utils/head.php';
-require_once './app/controllers/admin/GerenciarCarrosselController.php';
-
+  $titulo = "Gerenciar Carrossel- E ao Quadrado";
+  $css = ["/css/admin/GerenciarCarrossel.css"];
+  require_once('./utils/head.php');
 ?>
 
 <body>

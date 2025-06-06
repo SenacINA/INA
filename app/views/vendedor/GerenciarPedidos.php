@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Gerenciar Pedidos- E ao Quadrado";
-  $css = ["/css/vendedor/gerenciar_pedidos.css"];
+  $css = ["/css/vendedor/GerenciarPedidos.css"];
   require_once('./utils/head.php');
 ?>
 <body>

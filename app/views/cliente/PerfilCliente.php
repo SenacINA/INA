@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <?php
-$css = ["/css/cliente/perfil_cliente.css"];
+$css = ["/css/cliente/PerfilCliente.css"];
 require_once("./utils/head.php");
 require_once("./app/models/cliente/PerfilClienteModel.php");
 ?>
@@ -87,6 +87,7 @@ require_once("./app/models/cliente/PerfilClienteModel.php");
             <option selected disabled value="">Menu</option>
             <option value="EditarPerfil">Editar Perfil</option>
             <option value="CadastroVendedorInfo">Cadastro de vendedor</option>
+            <option value="RedefinirSenha">Redefinir Senha</option>
             <option value="Logout">Sair</option>
           </select>
         </form>

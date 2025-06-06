@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['atualizar'])) {
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-  $titulo = "Gerenciar Carrossel- E ao Quadrado";
-  $css = ["/css/admin/gerenciar_carrossel.css"];
+  $titulo = "Gerenciar Produtos - E ao Quadrado";
+  $css = ["/css/admin/GerenciarProdutos.css"];
   require_once('./utils/head.php');
 ?>
 <body>

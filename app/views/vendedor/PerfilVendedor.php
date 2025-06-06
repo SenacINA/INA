@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Perfil - E ao Quadrado";
-  $css = ["/css/vendedor/perfil_vendedor.css"];
+  $css = ["/css/vendedor/PerfilVendedor.css"];
   require_once('./utils/head.php');
   require_once("./app/models/vendedor/PerfilVendedorModel.php");
  
@@ -47,9 +47,10 @@
           <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
             <option selected disabled value="">Menu</option>
             <option value="EditarPerfil">Editar Perfil</option>
-            <option value="ConfirmarPedido">Pedidos</option>
+            <option value="PedidoConfirmar">Pedidos</option>
             <option value="RelatorioVendas">Relatório</option>
             <option value="ProdutoEditar">Editar Produtos</option>
+            <option value="ProdutoRegistrar">Registrar Produto</option>
             <option value="Logout">Sair</option>
           </select>
         </form>
@@ -122,8 +123,8 @@
         </div>
         <div class="destaques_itens">
           <?php
-          include("$PATH_COMPONENTS/php/card_produto.php");
-          gerarProdutoCards(6, 1);
+          // include("$PATH_COMPONENTS/php/card_produto.php");
+          // gerarProdutoCards(6, 1);
           ?>
         </div>
         <div class="ver_mais_container">
@@ -143,7 +144,7 @@
         </div>
         <div class="produtos_itens">
           <?php
-          gerarProdutoCards(6, 1);
+          // gerarProdutoCards(6, 1);
           ?>
         </div>
         <div class="ver_mais_container">
@@ -157,7 +158,7 @@
       </div>
     </div>
   </main>
-  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       <?php if (!empty($errors)): ?>

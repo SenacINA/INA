@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-    $css = ["/css/geral/error.css"];
+    $css = ["/css/geral/Error.css"];
     require_once('./utils/head.php')
 ?>
 

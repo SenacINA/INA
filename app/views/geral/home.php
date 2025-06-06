@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <?php
-        $css = ["/css/geral/home.css", "/css/geral/parallax.css"];
+        $css = ["/css/geral/home.css", "/css/geral/Parallax.css"];
         $js = ["/js/geral/parallax.js"];
         require_once('./utils/head.php')
     ?>

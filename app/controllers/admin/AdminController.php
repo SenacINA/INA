@@ -180,6 +180,10 @@ class AdminController extends RenderView {
         if ($email === '')    $errors[] = 'O e-mail não pode ficar em branco.';
         if ($telefone === '') $errors[] = 'O telefone não pode ficar em branco.';
 
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors[] = 'E-mail inválido';
+        }
+
         // nome máximo
         if (strlen($nome) > 50) {
             $errors[] = 'O nome não pode ter mais de 50 caracteres.';
@@ -202,6 +206,7 @@ class AdminController extends RenderView {
                 $binFoto = $bin;
             }
         }
+
 
         // 4) se ok até aqui, tenta as atualizações
         if (empty($errors)) {
@@ -230,12 +235,13 @@ class AdminController extends RenderView {
                     mkdir($baseDir, 0755, true);
                 }
                 // remove anteriores
-                foreach (glob($baseDir . 'foto_*.webp') as $f) {
-                    @unlink($f);
+                $fn = 'foto_' . time() . '.webp';
+                $absPath = $baseDir . $fn;
+
+                foreach (glob($baseDir . 'foto_*') as $oldFoto) {
+                    @unlink($oldFoto);
                 }
                 // grava sempre com nome fixo
-                $fn      = 'foto_' . $adminId . '.webp';
-                $absPath = $baseDir . $fn;
                 if (file_put_contents($absPath, $binFoto) === false) {
                     $okFoto = false;
                     $errors[] = 'Falha ao salvar a foto.';

@@ -25,6 +25,20 @@ class VendedorModel
     return $result ?: null;
   }
 
+   public function getVendedorId(int $clienteId): ?int
+    {
+        $db = new Database();
+        $db->connect();
+        
+        $sql = "SELECT id_vendedor FROM vendedor WHERE id_cliente = :id_cliente";
+        $stmt = $db->getConnection()->prepare($sql);
+        $stmt->bindValue(':id_cliente', $clienteId, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ? (int)$result['id_vendedor'] : null;
+    }
+
   public function getEstrelasPorVendedor(string $idVendedor): array
   {
     $sql = "SELECT estrelas_avaliacao FROM avaliacao WHERE id_vendedor = :idVendedor";

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <?php
-  $css = ["/css/cliente/carrinho_pagamentos.css"];
+  $css = ["/css/cliente/CarrinhoPagamentos.css"];
   require_once("./utils/head.php")
 ?>
 <body>

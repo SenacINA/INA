@@ -8,7 +8,7 @@ class cardProduto
                 echo "
                 <div class='index_body_produto_card'>
                     <div class='index_body_imagem_produto'>
-                        <img id='produto' src='.//public/" . $produto['endereco_imagem_produto'] . "' alt='" . $produto['nome_produto'] . "'>
+                        <img id='produto' src='" . (empty($produto['endereco_imagem_produto']) ? 'https://placehold.co/400x400' : ".//public/" . $produto['endereco_imagem_produto']) . "' alt='" . $produto['nome_produto'] . "'>
                         <p>" . $produto['nome_produto'] . "</p>
                     </div>
                     <div class='index_body_estrela_valor'>
