@@ -110,7 +110,7 @@
     <img src="<?=$PATH_PUBLIC?>/image/geral/icons/seta_cima.svg" alt="">
 </button>
 <script src='<?=$PATH_PUBLIC?>/js/geral/carrossel.js' data-isindex="1"></script>
-<script src='<?=$PATH_PUBLIC?>/js/geral/btn_topo.js' data-isindex="1"></script>
+<script src='<?=$PATH_PUBLIC?>/js/geral/BtnTopo.js' data-isindex="1"></script>
 <script type='module' src='<?=$PATH_PUBLIC?>/js/geral/card.js'></script>
 </body>
 </html>

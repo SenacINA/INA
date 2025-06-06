@@ -298,6 +298,5 @@ require_once("./utils/head.php")
     ?>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/produto_carrossel.js'></script>
 </body>
-
-
+<script type='module' src='<?=$PATH_PUBLIC?>/js/cliente/ProdutoCarrossel.js'></script>
 </html>
