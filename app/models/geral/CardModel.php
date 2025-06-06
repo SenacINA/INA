@@ -28,7 +28,7 @@ FROM
     produto p
 LEFT JOIN 
     imagem_produto ip 
-    ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 0
+    ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 1
 WHERE 
     p.status_produto != 0;";
     $stmt = $this->db->getConnection()->prepare($sql);
