@@ -1,4 +1,4 @@
-import { getUfCidade } from './GetUfCidades.js';
+import { GetUfCidades } from './GetUfCidades.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const select = document.getElementById('localizacaoSelect');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
-    const dados = await getUfCidade();
+    const dados = await GetUfCidades();
     
     // Limpa opções exceto a primeira
     while (select.options.length > 1) select.remove(1);
