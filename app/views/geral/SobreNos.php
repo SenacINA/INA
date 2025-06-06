@@ -44,6 +44,6 @@
         include_once("$PATH_COMPONENTS/php/footer.php");
     ?>
     
-<script src='<?=$PATH_PUBLIC?>/js/geral/sobre_nos.js'></script>
+<script src='<?=$PATH_PUBLIC?>/js/geral/SobreNos.js'></script>
 </body>
 </html>

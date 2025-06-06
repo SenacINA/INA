@@ -1,4 +1,4 @@
-import { getUfCidade } from './getUfCidade.js';
+import { getUfCidade } from './GetUfCidades.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const select = document.getElementById('localizacaoSelect');

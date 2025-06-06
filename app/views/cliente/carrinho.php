@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-  $css = ["/css/cliente/CarrinhoVazio.css"];
-  $js = ["/js/cliente/carrinho.js"];
-  require_once("./utils/head.php");
-  include_once("$PATH_COMPONENTS/php/produto_carrinho.php");
+$css = ["/css/cliente/CarrinhoVazio.css"];
+$js = ["/js/cliente/Carrinhos.js"];
+require_once("./utils/head.php");
+include_once("$PATH_COMPONENTS/php/produto_carrinho.php");
+$carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
 ?>
 
 <body>
@@ -48,7 +49,7 @@
               <?php else: ?>
                 <?php foreach ($itensCarrinho as $item): ?>
                   <div class="carrrinho_produto_item" data-id="<?= $item['id_produto'] ?>">
-                    <img src="<?= $PATH_PUBLIC . '/' . $item['endereco_imagem_produto'] ?>" alt="<?= $item['nome_produto'] ?>">
+                    <img src="<?= (empty($produto['endereco_imagem_produto']) ? 'https://placehold.co/400x400' : ".//public/" . $produto['endereco_imagem_produto']) ?>" alt="<?= $item['nome_produto'] ?>">
                     <span><?= htmlspecialchars($item['nome_produto']) ?></span>
                     <div class="carrinho_quantidade">
                       <span id="preco_produto">R$ <?= number_format($item['preco_produto'], 2, ',', '.') ?></span>
@@ -117,7 +118,7 @@
         </button>
         <div class="carrinho_vazio_holder_final">
           <form action="Carrinho-api-limpar">
-            <button class="base_botao btn_red" id="remover_tudo" <?= $carrinhoVazio ?> >
+            <button class="base_botao btn_red" id="remover_tudo" <?= $carrinhoVazio ?>>
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/lixo_branco_icon.svg" alt="Remover tudo">
               REMOVER TUDO
             </button>

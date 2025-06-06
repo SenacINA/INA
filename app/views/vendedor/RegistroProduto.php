@@ -294,9 +294,9 @@ require_once('./utils/head.php');
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
-  <script src="./public/js/vendedor/img_input.js"></script>
-  <script type="module" src="./public/js/vendedor/text_editor.js"></script>
-  <script src="./public/js/vendedor/promocao_toggle.js"></script>
+  <script src="./public/js/vendedor/ImgInput.js"></script>
+  <script type="module" src="./public/js/vendedor/TextEditor.js"></script>
+  <script src="./public/js/vendedor/PromocaoToggle.js"></script>
 </body>
 
 </html>

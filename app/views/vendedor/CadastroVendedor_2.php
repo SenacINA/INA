@@ -153,8 +153,8 @@ require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
-  <script src="<?= $PATH_PUBLIC ?>/js/vendedor/cadastro_vendedor.js"></script>
-  <script type='module' src="<?= $PATH_PUBLIC ?>/js/geral/selectUfCidade.js"></script>
+  <script src="<?= $PATH_PUBLIC ?>/js/vendedor/CadastroVendedor.js"></script>
+  <script type='module' src="<?= $PATH_PUBLIC ?>/js/geral/SelectUfCidades.js"></script>
 
 </body>
 

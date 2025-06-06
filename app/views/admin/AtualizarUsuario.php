@@ -224,6 +224,6 @@
     </div>
   </main>
   <script type='module' src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
-  <script src="<?=$PATH_PUBLIC?>/js/admin/atualizar_usuario.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/admin/AtualizarUsuario.js"></script>
 </body>
 </html>

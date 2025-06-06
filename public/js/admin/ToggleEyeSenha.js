@@ -1,4 +1,4 @@
-import toggleSenha from './toggleSenha.js'; 
+import toggleSenha from './ToggleSenha.js'; 
 
 document.addEventListener("DOMContentLoaded", function() {
   const eyeIconSenha = document.getElementById('eye-icon-senha');
