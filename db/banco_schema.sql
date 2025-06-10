@@ -114,10 +114,12 @@ CREATE TABLE
         -- 5
         id_compra INT AUTO_INCREMENT PRIMARY KEY,
         id_cliente INT NOT NULL,
+        id_vendedor INT NOT NULL,
         data_compra DATE NOT NULL,
         id_endereço INT NOT NULL,
         id_tipo_frete INT,
         FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente),
+        FOREIGN KEY (id_vendedor) REFERENCES vendedor (id_vendedor),
         FOREIGN KEY (id_endereço) REFERENCES endereco (id_endereco)
     );
 

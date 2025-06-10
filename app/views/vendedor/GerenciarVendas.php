@@ -111,10 +111,10 @@
         <p class="gerenciar_produtos_filtro_titulo font_subtitulo">Organizar por:</p>
         <select>
           <option value="" selected disable style="display: none;"></option>
-          <option value="">Opa1</option>
-          <option value="">Opa2</option>
-          <option value="">Opa3</option>
-          <option value="">Opa4</option>
+          <option value="">ID</option>
+          <option value="">CLIENTE</option>
+          <option value="">PREÇO</option>
+          <option value="">DATA DE COMPRA</option>
         </select>
       </div>
       <div class="base_tabela">
