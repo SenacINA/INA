@@ -55,7 +55,17 @@
                       value="<?= htmlspecialchars(string: $usuario['email'] ?? '') ?>">
                   </div>
                 </div>
-                <button type="submit" name="pesquisar" class="base_button">Pesquisar</button>
+                  <div class="gerenciar_usuario_holder_botao">
+                    <button type="reset" class="base_botao btn_red">
+                      <img src="<?= $PATH_PUBLIC ?>/image\geral\botoes\x_branco_icon.svg">
+                      CANCELAR
+                    </button>
+
+                    <button type="submit" class="base_botao btn_blue">
+                      <img src="<?= $PATH_PUBLIC ?>/image\geral\botoes\v_branco_icon.svg">
+                      CONFIRMAR
+                    </button>
+                  </div>              
               </form>
             </div>
 
