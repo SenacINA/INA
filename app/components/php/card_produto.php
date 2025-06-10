@@ -4,6 +4,10 @@ class cardProduto
 {
     public function gerarProdutoCards($quantidade, $produtos, $inicio = 0)
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8ca978ace185d5c16bb4975cf1e0daca9fa680d7
         $i = 1;
         foreach ($produtos as $produto) {
                 echo "
@@ -44,6 +48,13 @@ class cardProduto
                     $i += 1;
                 }
             }
+<<<<<<< HEAD
+=======
+=======
+        $totalProdutos = count($produtos);
+        $fim = min($inicio + $quantidade, $totalProdutos);
+>>>>>>> 1366f0f03870032d7bfaed6f1074a5cb06ad4e1a
+>>>>>>> 8ca978ace185d5c16bb4975cf1e0daca9fa680d7
 
         for ($i = $inicio; $i < $fim; $i++) {
             $produto = $produtos[$i];
