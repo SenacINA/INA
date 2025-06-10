@@ -17,10 +17,10 @@
         <div class='footer_coluna'>
             <h2>Termos e Condições</h2>
             <h3>FAQ</h3>
-            <a href="./geral/faq.php" class="base_link underline">Acessibilidade</a>
-            <a href="./geral/faq.php" class="base_link underline">Privacidade e Proteção de dados</a>
-            <a href="./geral/faq.php" class="base_link underline">Informações de venda</a>
-            <a href="./geral/faq.php" class="base_link underline">Trabalhe conosco</a>
+            <a href="./error" class="base_link underline">Acessibilidade</a>
+            <a href="./error" class="base_link underline">Privacidade e Proteção de dados</a>
+            <a href="./error" class="base_link underline">Informações de venda</a>
+            <a href="./error" class="base_link underline">Trabalhe conosco</a>
             <h3>I.N.A.</h3>
             <a href="#" onclick="pag('SobreNos')" class="base_link underline">
                 Sobre nós

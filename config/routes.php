@@ -61,7 +61,7 @@ $routes = [
       '/ProdutoRegistrar'         => 'vendedor/VendedorProductController@create',
       '/ProdutoEditar'            => 'vendedor/VendedorProductController@edit',
       '/RelatorioVendas'          => 'vendedor/VendedorProductController@report',
-      '/CadastroProduto'          => 'vendedor/ProdutoController@produto',
+      '/ProdutoRegistro'          => 'vendedor/ProdutoController@produto',
 
       // Admin
       '/AdminDashboard'           => 'admin/AdminController@dashboard',

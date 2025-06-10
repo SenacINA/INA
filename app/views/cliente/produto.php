@@ -296,7 +296,7 @@ require_once("./utils/head.php")
     <?php
     include_once("$PATH_COMPONENTS/php/footer.php");
     ?>
-    <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/produto_carrossel.js'></script>
+    <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
 </body>
-<script type='module' src='<?=$PATH_PUBLIC?>/js/cliente/ProdutoCarrossel.js'></script>
+
 </html>
