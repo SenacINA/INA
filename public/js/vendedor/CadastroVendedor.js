@@ -5,11 +5,9 @@ function limpa_formulário_cep() {
 
 function cepApi(conteudo) {
   if (!("erro" in conteudo)) {
+    console.log(conteudo)
     document.getElementById("logradouro").value = (conteudo.logradouro);
-    document.getElementById("localizacaoSelect").value =
-      conteudo.uf + "-" + conteudo.ibge
-  } else {
-    limpa_formulário_cep();
+    document.getElementById("localizacaoSelect").value = conteudo.uf + "-" + conteudo.localidade;
   }
 }
 
@@ -30,7 +28,5 @@ function pesquisacep(valor) {
     } else {
       limpa_formulário_cep();
     }
-  } else {
-    limpa_formulário_cep();
   }
 }

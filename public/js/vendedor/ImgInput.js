@@ -103,10 +103,6 @@ function atualizarContadores() {
   document.getElementById("contador-total").innerText = `${totalImagens} `;
 }
 
-function toolbarButton(e) {
-  e.preventDefault();
-}
-
 function coletarImagensParaEnvio() {
   const imagens = document.querySelectorAll('.registro_produto_imagens img');
   const imagensBase64 = [];

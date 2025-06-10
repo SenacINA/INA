@@ -105,8 +105,12 @@ require_once("./app/models/cliente/PerfilClienteModel.php");
         <div class="historico_itens">
           <?php
           include("$PATH_COMPONENTS/php/card_produto.php");
-          $card->gerarProdutoCards(6, $info); ?>
+          include("$PATH_CONTROLLER/geral/CardController.php");
+          $card = new cardProduto;
+          $controller = new CardController;
 
+          $info = $controller->sendProdutos();
+          $card->gerarProdutoCards(6, $info); ?>
         </div>
         <div class="ver_mais_container">
           <p class="ver_mais_text">Ver Mais</p>
