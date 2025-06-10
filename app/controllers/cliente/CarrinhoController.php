@@ -19,9 +19,6 @@ class CarrinhoController extends RenderView
     if ($idProduto) {
       $this->model->adicionarItem((int)$idProduto, (int)$quantidade);
     }
-
-    header("Location: " . $_SERVER['HTTP_REFERER']);
-    exit;
   }
 
   public function removerItem()
@@ -46,19 +43,28 @@ class CarrinhoController extends RenderView
     if (isset($_SESSION['cliente_id'])) {
       $itensCarrinho = $this->model->getItensCarrinho();
       $totalCarrinho = $this->model->calcularTotal();
-    }
-    else {
+    } else {
       $itensCarrinho = [];
       $totalCarrinho = 0;
     }
-
     return [
       'itensCarrinho' => $itensCarrinho,
       'totalCarrinho' => $totalCarrinho
     ];
   }
 
-  public function atualizar() {
+  public function exibirBadge()
+  {
+    $produtos = $this->exibirItens();
+    header('Content-Type: application/json');
+
+    $quantidade = count($produtos['itensCarrinho']);
+
+    echo json_encode(['quantidade' => $quantidade]);
+  }
+
+  public function atualizar()
+  {
     $itemId = $_POST['id'];
     $itemQuantidade = $_POST['quantidade'];
 
