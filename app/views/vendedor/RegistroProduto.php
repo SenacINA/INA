@@ -243,7 +243,7 @@ require_once('./utils/head.php');
               <span id="contador-total">0</span>
               <span id="contador-restante"> / 1</span>
             </div>
-            <button class="base_botao btn_blue" name="produtoImagem">
+            <button class="base_botao btn_blue" name="produtoImagem" type='button'>
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
               ENVIAR ARQUIVO
               <input type="file" id="input-file" name="produto-imagens" accept="image/*" multiple>

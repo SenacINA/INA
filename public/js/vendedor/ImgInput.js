@@ -28,6 +28,16 @@ function convertImageToWebP(file) {
   });
 }
 
+function removerImagem(event) {
+  const button = event.target.closest('button');
+  if (button) {
+    button.remove(); 
+    totalImagens--;
+    atualizarContadores();
+  }
+
+  document.getElementById("input-file").value = '';
+}
 // Função para converter URL para WebP
 async function convertUrlToWebP(url) {
   try {
@@ -62,8 +72,15 @@ document.getElementById("input-file").addEventListener("change", async function(
       try {
         const webpData = await convertImageToWebP(file);
         const img = document.createElement("img");
+        const button = document.createElement('button');
+        button.setAttribute('type', 'button');
+        button.setAttribute('onclick', 'removerImagem(event)')
+        const span = document.createElement('span');
+        button.appendChild(span);
         img.src = webpData;
-        div.appendChild(img);
+        button.appendChild(img);
+        button.appendChild(img);
+        div.appendChild(button);
         totalImagens++;
         atualizarContadores();
       } catch (e) {
