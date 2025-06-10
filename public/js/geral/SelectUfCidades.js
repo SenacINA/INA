@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     const dados = await GetUfCidades();
-
+    
     // Limpa opções exceto a primeira
     while (select.options.length > 1) select.remove(1);
 
