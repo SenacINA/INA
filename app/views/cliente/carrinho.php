@@ -63,8 +63,8 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
                     </div>
                   </div>
                   <hr>
-                <?php endforeach; ?>
-              <?php endif; ?>
+                  <?php endforeach; ?>
+                  <?php endif; ?>
             </div>
 
             <div class="carrinho_vazio_conteudo_servicos">
