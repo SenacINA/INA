@@ -103,9 +103,25 @@ async function adicionarImagemPorURL(event) {
     const webpData = await convertUrlToWebP(url);
     if (!webpData) return;
     
+    // Obter o container de imagens
+    const div = document.querySelector(".registro_produto_imagens");
+    
+    // Criar botão para a imagem (igual ao upload normal)
+    const button = document.createElement('button');
+    button.setAttribute('type', 'button');
+    button.setAttribute('onclick', 'removerImagem(event)');
+    button.classList.add('imagem-container'); // Adicione uma classe se necessário
+    
+    // Criar a imagem
     const img = document.createElement("img");
     img.src = webpData;
-    document.querySelector(".registro_produto_imagens").appendChild(img);
+    
+    // Adicionar a imagem ao botão (APENAS UMA VEZ)
+    button.appendChild(img);
+    
+    // Adicionar o botão ao container de imagens
+    div.appendChild(button);
+    
     totalImagens++;
     atualizarContadores();
     document.getElementById("input-url").value = "";
@@ -133,12 +149,19 @@ function coletarImagensParaEnvio() {
   document.getElementById('produto-imagens').value = JSON.stringify(imagensBase64);
 }
 
-// Vincule ao submit do formulário
-document.querySelector('form').addEventListener('submit', function(e) {
+function coletarDadosParaEnvio() {
   coletarImagensParaEnvio();
   
-  // Adiciona pequeno delay para garantir o processamento
-  setTimeout(() => true, 100);
+  // Captura o conteúdo HTML do editor
+  const editor = document.querySelector('.tiptap_editor');
+  if (editor) {
+    const conteudoHTML = editor.innerHTML;
+    document.getElementById('descricao').value = conteudoHTML;
+  }
+}
+
+document.querySelector('form').addEventListener('submit', function(e) {
+  coletarDadosParaEnvio();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
