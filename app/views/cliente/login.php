@@ -44,13 +44,6 @@ if (isset($_SESSION['erro_login'])) {
               </a>
             </div>
 
-            <div class="login_links_conatiner">
-              <div class="login_checkbox_container">
-                <input type="checkbox" class="base_input">
-                <p>Manter Conectado</p>
-              </div>
-            </div>
-
             <div class="login_links">
               <div class="login_fit_content" onclick="pag('RedefinirSenha')">
                 <p><u>Redefinir Senha</u></p>

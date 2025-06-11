@@ -10,7 +10,7 @@ class GeralController extends RenderView
   private function renderPerfil(string $action)
   {
     if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
-      header('Location: login');
+      header('Location: Login');
       exit;
     }
 
@@ -38,7 +38,7 @@ class GeralController extends RenderView
       $clienteData = $clienteModel->findById($clienteId);
 
       if (!$clienteData) {
-        $this->loadView('cliente/login', []);
+        $this->loadView('cliente/Login', []);
         exit;
       }
 
@@ -109,7 +109,7 @@ class GeralController extends RenderView
         'vendedor' => $vendedorData
       ]);
     } else {
-      $this->loadView('cliente/login', []);
+      $this->loadView('cliente/Login', []);
     }
   }
 
