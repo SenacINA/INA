@@ -176,121 +176,38 @@ require_once("./utils/head.php")
     </div>
 
     <div class="grid_comentarios_usuarios">
-        <div class="comentario_usuario_1">
-            <div class="grid_user_1">
-                <div class='cliente_nome_pic'>
-                    <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
-                    <h1>Carlos</h1>
-                </div>
 
-                <div class="estrelas_avaliacao_produto">
-                    <h2 class='nome_vendedor_estrela'>★★★★★</h2>
-                </div>
-            </div>
+        <?php
+            require_once __DIR__ . '/../../components/php/avaliacao.php';
 
-            <div class="grid_comentario_user_1">
-                <div class="avaliacao_user_1_item1">
-                    <h2>Qualidade:</h2>
-                    <h3>Muito boa</h3>
-                </div>
-                <div class="avaliacao_user_1_item2">
-                    <h2>Parecido com o anúncio:</h2>
-                    <h3>Sim</h3>
-                </div>
-                <h2 class='produto_comentario'>
-                    Uma cadeira gamer envolvente e seduzente é muito mais do que um simples móvel. Ela combina conforto ergonômico com um design atraente que promove uma imersão total na experiência de jogo. Com seu encosto alto e ajustes personalizáveis, não só proporciona suporte para longas sessões de jogo, mas também se torna um elemento marcante no ambiente, convidando você a se entregar ao mundo virtual com estilo e conforto.
-                </h2>
-            </div>
+            // Dados de exemplo (normalmente viriam do banco de dados)
+            $comentarios = [
+                [
+                    'nome' => 'Julia',
+                    'foto_perfil' => $PATH_PUBLIC . '/image/cliente/produto/icon_profile.svg',
+                    'estrelas' => 5,
+                    'texto' => 'Uma cadeira gamer que se destaca pela sua envolvência, sedução e incrível conforto...',
+                    'imagens' => [
+                        $PATH_PUBLIC . '/image/cliente/produto/cadeira_gamer_size_big.png',
+                        $PATH_PUBLIC .'/image/cliente/produto/cadeira_gamer_size_big.png'
+                    ],
+                    'data' => '10/05/2025'
+                ],
+                [
+                    'nome' => 'Carlos',
+                    'foto_perfil' => $PATH_PUBLIC . '/image/cliente/produto/icon_profile.svg',
+                    'estrelas' => 4,
+                    'texto' => 'Produto de ótima qualidade, entrega rápida...',
+                    'imagens' => [],
+                    'data' => '08/05/2025'
+                ]
+            ];
 
-            <div class="grid_images_user_1">
-                <div class="image1_user_1">
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                    <div class='div_video'>
-                        <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_camera.svg" alt="">
-                        1:32
-                    </div>
-                </div>
-                <div class='image1_user_1'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-            </div>
-        </div>
-
-        <div class="comentario_usuario_1">
-            <div class="grid_user_1">
-                <div class='cliente_nome_pic'>
-                    <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
-                    <h1>Julia</h1>
-                </div>
-
-                <div class="estrelas_avaliacao_produto">
-                    <h2 class='nome_vendedor_estrela'>★★★★★</h2>
-                </div>
-            </div>
-
-            <div class="grid_comentario_user_1">
-                <div class="avaliacao_user_1_item1">
-                    <h2>Qualidade:</h2>
-                    <h3>Muito boa</h3>
-                </div>
-                <div class="avaliacao_user_1_item2">
-                    <h2>Parecido com o anúncio:</h2>
-                    <h3>Sim</h3>
-                </div>
-                <h2 class='produto_comentario'>
-                    Uma cadeira gamer que se destaca pela sua envolvência, sedução e incrível conforto transcende o conceito tradicional de móvel. Com linhas sofisticadas e um encosto que abraça suavemente, ela não apenas complementa o ambiente com seu design elegante, mas também oferece um suporte ergonômico que se adapta perfeitamente ao corpo.
-                </h2>
-            </div>
-
-            <div class="grid_images_user_1">
-                <div class='image1_user_1'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-                <div class='image1_user_1'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-            </div>
-        </div>
-
-        <div class="comentario_usuario_1">
-            <div class="grid_user_1">
-                <div class='cliente_nome_pic'>
-                    <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
-                    <h1>Alex</h1>
-                </div>
-
-                <div class="estrelas_avaliacao_produto">
-                    <h2 class='nome_vendedor_estrela'>★★★★★</h2>
-                </div>
-            </div>
-
-            <div class="grid_comentario_user_1">
-                <div class="avaliacao_user_1_item1">
-                    <h2>Qualidade:</h2>
-                    <h3>Incrível</h3>
-                </div>
-                <div class="avaliacao_user_1_item2">
-                    <h2>Parecido com o anúncio:</h2>
-                    <h3>Sim</h3>
-                </div>
-                <h2 class='produto_comentario'>
-                    Meu irmao adorou a cadeira 😁
-                </h2>
-            </div>
-
-            <div class="grid_images_user_1">
-                <div class="image1_user_1">
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                    <div class='div_video'>
-                        <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_camera.svg" alt="">
-                        0:45
-                    </div>
-                </div>
-                <div class='image1_user_1'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-            </div>
-        </div>
+            // Renderizar todos os comentários
+            foreach ($comentarios as $comentario) {
+                echo ComentarioAvaliacaoComponent::render($comentario);
+            }
+        ?>
 
     </div>
     <?php
