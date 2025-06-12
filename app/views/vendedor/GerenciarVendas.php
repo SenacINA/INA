@@ -6,8 +6,6 @@
   require_once('./utils/head.php');
 ?>
 <body>
-  <!-- Até 768px -->
-  <!-- Caminho de Icon Correto -->
 
   <?php
     include_once("$PATH_COMPONENTS/php/navbar.php");
@@ -135,20 +133,11 @@
               <td><?= htmlspecialchars($v['cliente']) ?></td>
               <td><?= htmlspecialchars($v['preco']) ?></td>
               <td class="aprovar_vendedor_coluna_botoes">
-                <?php if ($v['status'] === 'Pendente'): ?>
-                  <form method="post" style="display:inline;">
-                    <input type="hidden" name="acao" value="aprovar">
-                    <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
-                    <button type="submit" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
-                  </form>
-                  <form method="post" style="display:inline;">
-                    <input type="hidden" name="acao" value="reprovar">
-                    <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
-                    <button type="submit" class="aprovar_vendedor_btn_recusar">RECUSAR</button>
-                  </form>
-                <?php else: ?>
-                  <button class="aprovar_vendedor_btn_inativar">INATIVAR</button>
-                <?php endif; ?>
+                <form method="post" style="display:inline;">
+                  <input type="hidden" name="acao" value="aprovar">
+                  <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
+                  <button type="submit" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
+                </form>
               </td>
               <td><?= htmlspecialchars($v['dataDeCompra']) ?></td>
             </tr>
