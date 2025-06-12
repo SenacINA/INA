@@ -7,7 +7,6 @@ require_once("./utils/head.php");
 require_once("$PATH_CONTROLLER/cliente/ProdutoController.php");
 $controller = new ProdutoController;
 $info = $controller->exibirProduto($id);
-var_dump($info);
 ?>
 
 <body>
@@ -20,13 +19,13 @@ var_dump($info);
             <div class="grid_nome_vendedor">
                 <div class='produto_img_vendedor'>
                     <div class="imagem_nome_vendedor">
-                        <img src="<?= $PATH_PUBLIC ?> <?= empty($info['foto_perfil_cliente']) ? '/image/cliente/perfil_cliente/foto_user.png' : $info['foto_perfil_cliente'] ?>" alt="foto do vendedor">
+                        <img src="<?= $PATH_PUBLIC ?> <?= empty($info['infoProduto']['foto_perfil_cliente']) ? '/image/cliente/perfil_cliente/foto_user.png' : $info['infoProduto']['foto_perfil_cliente'] ?>" alt="foto do vendedor">
                     </div>
                     <div class="nome_vendedor">
-                        <h1><?= $info['nome_vendedor'] ?></h1>
+                        <h1><?= $info['infoProduto']['nome_vendedor'] ?></h1>
                         <h2>
                             <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/localizacao_icon.svg" alt="">
-                            <?= $info['uf_endereco'] . ' - ' . $info['cidade_endereco'] ?>
+                            <?= $info['infoProduto']['cidade_endereco']  . ' - ' . $info['infoProduto']['uf_endereco'] ?>
                         </h2>
                     </div>
                 </div>
@@ -47,22 +46,20 @@ var_dump($info);
                 </div>
 
                 <div class="images_scroll">
-                    <?php 
-                    for ($i = 1; $i <= $info['id_imagem_produto']; $i++) {
-                        if ($i == 1) {
-                            echo "
-                                <div class='imagem_selecionada'><img src='$PATH_PUBLIC" . $info['endereco_imagem_produto'] . "'></div>
-                            ";
+                    <?php
+                    if (isset($info['imagens'][0]['endereco_imagem_produto']) && !empty($info['imagens'][0]['endereco_imagem_produto'])) {
+                        for ($i = 1; $i <= count($info['imagens']); $i++) {
+                            if ($i == 1) {
+                                echo "<div class='imagem_selecionada'> <img src='$PATH_PUBLIC" . $info['imagens'][0]['endereco_imagem_produto'] . "'></div>";
+                            } else {
+                                echo "<div><img src='$PATH_PUBLIC" . $info['imagens'][$i - 1]['endereco_imagem_produto'] . "'></div>";
+                            }
                         }
-                        else {
-                            echo "
-                                <div><img src='$PATH_PUBLIC" . "/image/cliente/produto/cadeira_gamer_2.jpg'></div>
-                            ";
-                        }
-                    } 
+                    }
+                    else {
+                        echo "<div class='imagem_selecionada'> <img src='https://placehold.co/400x400'></div>";
+                    }
                     ?>
-                    <div><img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_3.jpg" alt=""></div>
-                    <div><img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_4.jpg" alt=""></div>
                 </div>
 
 
@@ -73,7 +70,7 @@ var_dump($info);
 
             <div class="grid_produto_image">
                 <div class="produto_image">
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <img src="<?= isset($info['imagens'][0]['endereco_imagem_produto']) && !empty($info['imagens'][0]['endereco_imagem_produto']) ? $PATH_PUBLIC . $info['imagens'][0]['endereco_imagem_produto'] : 'https://placehold.co/400x400'; ?>" alt=''>
                 </div>
 
             </div>
@@ -82,26 +79,26 @@ var_dump($info);
                 <div class="grid_produto_info">
                     <div class='produto_title'>
                         <div class="produto_info_nome">
-                            <h1><?= $info['nome_produto'] ?></h1>
+                            <h1><?= $info['infoProduto']['nome_produto'] ?></h1>
                         </div>
                         <div class="produto_info_text">
-                            <h2>Vendido e entregue por: <a href=""><b><?= $info['nome_vendedor'] ?></b></a> </h2>
+                            <h2>Vendido e entregue por: <a href=""><b><?= $info['infoProduto']['nome_vendedor'] ?></b></a> </h2>
                             <h3>Em estoque</h3>
                         </div>
                     </div>
                     <div class='div_produto_valor'>
                         <div class="grid_produto_info_valor">
                             <div class="produto_info_valor">
-                                <h1>R$ <?= number_format($info['preco_produto'], 2, ',', '.') ?></h1>
+                                <h1>R$ <?= number_format($info['infoProduto']['preco_produto'], 2, ',', '.') ?></h1>
                             </div>
                         </div>
                         <div class="produto_info_text2">
                             <h2>Peso liquído:
-                                <b><?= $info['peso_liquido_produto'] ?>g</b>
+                                <b><?= $info['infoProduto']['peso_liquido_produto'] ?>g</b>
                                 Altura:
-                                <b><?= $info['altura_produto'] ?>cm</b>
+                                <b><?= $info['infoProduto']['altura_produto'] ?>cm</b>
                                 Largura:
-                                <b><?= $info['largura_produto'] ?>cm</b>
+                                <b><?= $info['infoProduto']['largura_produto'] ?>cm</b>
                             </h2>
                         </div>
                     </div>
@@ -123,17 +120,7 @@ var_dump($info);
             <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>DESCRIÇÃO DO PRODUTO</h1>
         </div>
-        <p><strong>CADEIRA GAMER THRONE RGB</strong></p>
-        <p>A Cadeira Perfeita Ergonômica tem seu design baseado em características que trazem o máximo em conforto para várias horas de jogatina sem prejudicar sua coluna! Foi feita com materiais premium, de alta qualidade, sendo couro sintético e base reforçada para maior vida útil do assento. Possui também ajuste de altura com sistema butterfly e pistão a gás de 4ª geração Airlift, já que suporta até 150 kg, com almofadas para apoio cervical e lombar para uma posição mais confortável!</p>
-        <p>Maciez e conforto com sua base de nylon reforçado. E não podíamos deixar de falar do seu principal diferencial, que é o sistema de iluminação. Acompanha controle remoto para personalização da iluminação. Você poderá escolher a cor que deseja ou navegar através dos efeitos disponíveis!</p>
-        <p><strong>Especificações Técnicas:</strong></p>
-        <ul>
-            <li>● Almofadas para apoio cervical e lombar para uma posição ergonômica e confortável</li>
-            <li>● Ajuste de altura com sistema butterfly</li>
-            <li>● Apoio de braço 3D regulável em PVC de alta resistência</li>
-            <li>● Iluminação em LED RGB</li>
-        </ul>
-        <p>Compre já o seu na E ao Quadrado!</p>
+        <?= $info['infoProduto']['descricao_produto'] ?>
     </div>
 
     <div class="grid_descricao_produto">
