@@ -133,68 +133,44 @@
               </div>
               <div class='text_editor_div'>
                 <div class="toolbar">
-                  <button data-command="bold" title="Negrito"><b>B</b></button>
-                  <button data-command="underline" title="Sublinhado"><u>U</u></button>
-                  <button data-command="italic" title="Itálico">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 21 24" fill="none">
-                      <path d="M20.834 0V1.71429H17.5007L9.16732 22.2857H12.5007V24H0.833984V22.2857H4.16732L12.5007 1.71429H9.16732V0H20.834Z" fill="#F9F9FC" />
-                    </svg>
+                  <button type="button" data-command="bold" title="Negrito"><b>B</b></button>
+                  <button type="button" data-command="underline" title="Sublinhado"><u>U</u></button>
+                  <button type="button" data-command="italic" title="Itálico">
+                    <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/italico_icon.svg">
                   </button>
-                  <button data-command="strike" title="Tachado"><s>S</s></button>
+                  <button type="button" data-command="strike" title="Tachado"><s>S</s></button>
                   <div class="dropdown">
                     <button type="button">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="27" height="24" viewBox="0 0 27 24" fill="none">
-                        <path d="M3.21719 19.5522L4.12865 18.5028C4.31004 18.3005 4.40486 18.0351 4.39271 17.7637V17.5913C4.39271 17.2085 4.19271 17.0002 3.80208 17.0002H0.833333C0.722826 17.0002 0.616846 17.0441 0.538706 17.1222C0.460565 17.2003 0.416667 17.3063 0.416667 17.4168V18.2502C0.416667 18.3607 0.460565 18.4667 0.538706 18.5448C0.616846 18.6229 0.722826 18.6668 0.833333 18.6668H2.0224C1.82034 18.8704 1.62911 19.0844 1.44948 19.308L1.15729 19.6726C0.948958 19.9366 0.883854 20.2002 1.01146 20.4476L1.06615 20.5481C1.2224 20.8481 1.39375 20.9585 1.70417 20.9585H1.95052C2.48854 20.9585 2.78073 21.0856 2.78073 21.4319C2.78073 21.6778 2.56198 21.8601 2.03281 21.8601C1.75632 21.8579 1.48281 21.8027 1.22708 21.6976C0.889062 21.4955 0.615625 21.5153 0.414583 21.8601L0.123438 22.345C-0.0703125 22.6642 -0.0427083 22.9554 0.260417 23.1752C0.661979 23.4194 1.32187 23.6668 2.1875 23.6668C3.96667 23.6668 4.71354 22.4819 4.71354 21.3689C4.71198 20.62 4.23854 19.8189 3.21719 19.5522ZM25.8333 10.3335H9.16667C8.94565 10.3335 8.73369 10.4213 8.57741 10.5776C8.42113 10.7339 8.33333 10.9458 8.33333 11.1668V12.8335C8.33333 13.0545 8.42113 13.2665 8.57741 13.4228C8.73369 13.579 8.94565 13.6668 9.16667 13.6668H25.8333C26.0543 13.6668 26.2663 13.579 26.4226 13.4228C26.5789 13.2665 26.6667 13.0545 26.6667 12.8335V11.1668C26.6667 10.9458 26.5789 10.7339 26.4226 10.5776C26.2663 10.4213 26.0543 10.3335 25.8333 10.3335ZM25.8333 2.00016H9.16667C8.94565 2.00016 8.73369 2.08796 8.57741 2.24424C8.42113 2.40052 8.33333 2.61248 8.33333 2.8335V4.50016C8.33333 4.72118 8.42113 4.93314 8.57741 5.08942C8.73369 5.2457 8.94565 5.3335 9.16667 5.3335H25.8333C26.0543 5.3335 26.2663 5.2457 26.4226 5.08942C26.5789 4.93314 26.6667 4.72118 26.6667 4.50016V2.8335C26.6667 2.61248 26.5789 2.40052 26.4226 2.24424C26.2663 2.08796 26.0543 2.00016 25.8333 2.00016ZM25.8333 18.6668H9.16667C8.94565 18.6668 8.73369 18.7546 8.57741 18.9109C8.42113 19.0672 8.33333 19.2791 8.33333 19.5002V21.1668C8.33333 21.3878 8.42113 21.5998 8.57741 21.7561C8.73369 21.9124 8.94565 22.0002 9.16667 22.0002H25.8333C26.0543 22.0002 26.2663 21.9124 26.4226 21.7561C26.5789 21.5998 26.6667 21.3878 26.6667 21.1668V19.5002C26.6667 19.2791 26.5789 19.0672 26.4226 18.9109C26.2663 18.7546 26.0543 18.6668 25.8333 18.6668ZM0.833333 7.00016H4.16667C4.27717 7.00016 4.38315 6.95626 4.46129 6.87812C4.53943 6.79998 4.58333 6.694 4.58333 6.5835V5.75016C4.58333 5.63966 4.53943 5.53367 4.46129 5.45553C4.38315 5.37739 4.27717 5.3335 4.16667 5.3335H3.33333V0.750163C3.33333 0.639656 3.28943 0.533675 3.21129 0.455535C3.13315 0.377395 3.02717 0.333496 2.91667 0.333496H1.66667C1.58944 0.333634 1.51376 0.355234 1.4481 0.395885C1.38243 0.436536 1.32935 0.494638 1.29479 0.563704L0.878125 1.39704C0.846365 1.46051 0.831343 1.53104 0.834485 1.60194C0.837626 1.67284 0.858826 1.74177 0.896075 1.80218C0.933323 1.86259 0.985386 1.91249 1.04733 1.94713C1.10926 1.98178 1.17903 2.00004 1.25 2.00016H1.66667V5.3335H0.833333C0.722826 5.3335 0.616846 5.37739 0.538706 5.45553C0.460565 5.53367 0.416667 5.63966 0.416667 5.75016V6.5835C0.416667 6.694 0.460565 6.79998 0.538706 6.87812C0.616846 6.95626 0.722826 7.00016 0.833333 7.00016ZM0.629688 15.3335H4.16667C4.27717 15.3335 4.38315 15.2896 4.46129 15.2115C4.53943 15.1333 4.58333 15.0273 4.58333 14.9168V14.0835C4.58333 13.973 4.53943 13.867 4.46129 13.7889C4.38315 13.7107 4.27717 13.6668 4.16667 13.6668H2.15208C2.32344 13.1309 4.66979 12.6939 4.66979 10.7272C4.66979 9.2137 3.36771 8.66683 2.35365 8.66683C1.24115 8.66683 0.593229 9.18766 0.246354 9.64339C0.01875 9.93454 0.0901042 10.208 0.392188 10.4439L0.839063 10.8022C1.13125 11.0397 1.41198 10.9309 1.67865 10.6752C1.81018 10.5463 1.9872 10.4744 2.17135 10.4752C2.34479 10.4752 2.65469 10.5564 2.65469 10.9309C2.65625 11.5934 0 12.0684 0 14.5309V14.7392C0 15.1252 0.264583 15.3335 0.629688 15.3335Z" fill="#F9F9FC" />
-                      </svg>
-                      <svg class='arrow_drop' xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                        <path d="M11.3996 9.53674e-07H0.599332C0.489984 0.000306129 0.3828 0.0271611 0.289317 0.0776744C0.195834 0.128188 0.119594 0.200446 0.0688 0.286673C0.0180054 0.3729 -0.00541687 0.469831 0.00105381 0.567029C0.00752354 0.664228 0.0436401 0.758015 0.105517 0.838296L5.50567 7.78401C5.72948 8.072 6.26829 8.072 6.4927 7.78401L11.8929 0.838296C11.9554 0.758183 11.992 0.664349 11.9988 0.566988C12.0057 0.469627 11.9824 0.372463 11.9315 0.286054C11.8807 0.199644 11.8042 0.127292 11.7105 0.0768609C11.6167 0.0264297 11.5092 -0.000152588 11.3996 9.53674e-07Z" fill="#F9F9FC" />
-                      </svg>
+                      <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/lista_icon.svg">
+                      <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/seta_baixo_icon.svg">
                     </button>
                     <div class="dropdown-content" id='dropdown_list'>
-                      <button class='dropdown_button' data-command="bulletList" title="Lista não ordenada">• Lista</button>
-                      <button class='dropdown_button' data-command="orderedList" title="Lista ordenada">1. Lista</button>
+                      <button class='dropdown_button' type='button' data-command="bulletList" title="Lista não ordenada">• Lista</button>
+                      <button class='dropdown_button' type='button' data-command="orderedList" title="Lista ordenada">1. Lista</button>
                     </div>
                   </div>
                   <div class="dropdown">
-                    <button class='dropdown_button' type="button">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20" fill="none">
-                        <path d="M30 0V3.33333H0V0H30ZM0 20H15V16.6667H0V20ZM0 11.6667H30V8.33333H0V11.6667Z" fill="#F9F9FC" />
-                      </svg>
-                      <svg class='arrow_drop' xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                        <path d="M11.3996 9.53674e-07H0.599332C0.489984 0.000306129 0.3828 0.0271611 0.289317 0.0776744C0.195834 0.128188 0.119594 0.200446 0.0688 0.286673C0.0180054 0.3729 -0.00541687 0.469831 0.00105381 0.567029C0.00752354 0.664228 0.0436401 0.758015 0.105517 0.838296L5.50567 7.78401C5.72948 8.072 6.26829 8.072 6.4927 7.78401L11.8929 0.838296C11.9554 0.758183 11.992 0.664349 11.9988 0.566988C12.0057 0.469627 11.9824 0.372463 11.9315 0.286054C11.8807 0.199644 11.8042 0.127292 11.7105 0.0768609C11.6167 0.0264297 11.5092 -0.000152588 11.3996 9.53674e-07Z" fill="#F9F9FC" />
-                      </svg>
+                    <button type="button" class='dropdown_button' type="button">
+                      <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/alinhamento_icon.svg">
+                      <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/seta_baixo_icon.svg">
                     </button>
                     <div class="dropdown-content">
-                      <button class='dropdown_button' data-command="alignLeft" title="Esquerda">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h22M5 13h14M5 19h22M5 25h14" />
-                        </svg>
+                      <button type="button" class='dropdown_button' data-command="alignLeft" title="Esquerda">
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/alinhamento_esquerda_icon.svg">
                       </button>
-                      <button class='dropdown_button' data-command="alignCenter" title="Centro" style='justify-content: center'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
-                          <path fill="currentColor" d="M30.88 8H5.12a1.1 1.1 0 0 0 0 2.2h25.76a1.1 1.1 0 1 0 0-2.2" class="clr-i-outline clr-i-outline-path-1" />
-                          <path fill="currentColor" d="M25.5 16.2a1.1 1.1 0 1 0 0-2.2h-15a1.1 1.1 0 1 0 0 2.2Z" class="clr-i-outline clr-i-outline-path-2" />
-                          <path fill="currentColor" d="M30.25 20H5.75a1.1 1.1 0 0 0 0 2.2h24.5a1.1 1.1 0 0 0 0-2.2" class="clr-i-outline clr-i-outline-path-3" />
-                          <path fill="currentColor" d="M24.88 26H11.12a1.1 1.1 0 1 0 0 2.2h13.76a1.1 1.1 0 1 0 0-2.2" class="clr-i-outline clr-i-outline-path-4" />
-                          <path fill="none" d="M0 0h36v36H0z" />
-                        </svg>
+                      <button type="button" class='dropdown_button' data-command="alignCenter" title="Centro" style='justify-content: center'>
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/alinhamento_centro_icon.svg">
                       </button>
-                      <button class='dropdown_button' data-command="alignRight" title="Direita" style='transform: scaleX(-1);'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h22M5 13h14M5 19h22M5 25h14" />
-                        </svg>
+                      <button type="button" class='dropdown_button' data-command="alignRight" title="Direita" style='transform: scaleX(-1);'>
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/alinhamento_direita_icon.svg">
                       </button>
-                      <button class='dropdown_button' data-command="alignJustify" title="Justificado" style='justify-content: center'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="feather feather-align-justify">
-                          <line x1="21" y1="10" x2="3" y2="10"></line>
-                          <line x1="21" y1="6" x2="3" y2="6"></line>
-                          <line x1="21" y1="14" x2="3" y2="14"></line>
-                          <line x1="21" y1="18" x2="3" y2="18"></line>
-                        </svg>
+                      <button type="button" class='dropdown_button' data-command="alignJustify" title="Justificado" style='justify-content: center'>
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/alinhamento_justificado_icon.svg">
                       </button>
                     </div>
                   </div>
                 </div>
+                <input type="text" id="descricao" name="descricao" hidden>
                 <div class="editor-content"></div>
               </div>
             </div>
@@ -211,11 +187,13 @@
                 Promoção
               </h3>
             </div>
-            <label class="toggle">
-              <input type="checkbox" name="toggle-group" id="toggle-promotion">
-              <span class="slider"></span>
-              <h4>Ativar Promoção</h4>
-            </label>
+            <div class='toggle_container'>
+              <label class="toggle">
+                <input type="checkbox" name="toggle-group" id="toggle-promotion" class='base_input'>
+                <span class="toggle_slider"></span>
+              </label>
+              <label for='toggle-promotion'>Ativar Promoção</label>
+            </div>
 
             <div class='editar_produto_promocao'>
               <h4>Tipos de Promoção</h4>
@@ -273,10 +251,10 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M0 3.81814C0 2.01302 1.34531 0.54541 3 0.54541H21C22.6547 0.54541 24 2.01302 24 3.81814V20.1818C24 21.9869 22.6547 23.4545 21 23.4545H3C1.34531 23.4545 0 21.9869 0 20.1818V3.81814ZM15.1781 9.26416C14.9672 8.92666 14.6203 8.72723 14.25 8.72723C13.8797 8.72723 13.5281 8.92666 13.3219 9.26416L9.24375 15.7892L8.00156 14.0965C7.78594 13.8051 7.4625 13.6363 7.125 13.6363C6.7875 13.6363 6.45938 13.8051 6.24844 14.0965L3.24844 18.1875C2.97656 18.5556 2.925 19.0619 3.1125 19.4863C3.3 19.9108 3.69375 20.1818 4.125 20.1818H19.875C20.2922 20.1818 20.6766 19.9312 20.8688 19.5272C21.0609 19.1233 21.0375 18.6375 20.8031 18.2642L15.1781 9.26416ZM5.25 8.72723C5.84674 8.72723 6.41903 8.46863 6.84099 8.00831C7.26295 7.54799 7.5 6.92367 7.5 6.27268C7.5 5.6217 7.26295 4.99737 6.84099 4.53706C6.41903 4.07674 5.84674 3.81814 5.25 3.81814C4.65326 3.81814 4.08097 4.07674 3.65901 4.53706C3.23705 4.99737 3 5.6217 3 6.27268C3 6.92367 3.23705 7.54799 3.65901 8.00831C4.08097 8.46863 4.65326 8.72723 5.25 8.72723Z" fill="#247BA0" />
                 </svg>
-                Imagens e Vídeos
+                Imagens
               </h3>
             </div>
-            <div class="editar_produto_imagens"></div>
+            <div class="registro_produto_imagens"></div>
             <div class="contador">
               <span id="contador-total">0</span>
               <span id="contador-restante"> / 1</span>
@@ -297,7 +275,7 @@
                 adicionar link URL
                 <div class="dropdown-content">
                   <input class='base_input' type="text" id="input-url" placeholder="Insira a URL da imagem">
-                  <button onclick="adicionarImagemPorURL()">Adicionar</button>
+                  <button type='button' onclick="adicionarImagemPorURL()">Adicionar</button>
                 </div>
               </span>
             </div>

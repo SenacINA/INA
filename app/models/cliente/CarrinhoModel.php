@@ -17,7 +17,7 @@ class CarrinhoModel
     $sql = "SELECT c.id_produto, c.quantidade_produto, p.nome_produto, p.preco_produto, i.endereco_imagem_produto
             FROM carrinho c
             JOIN produto p ON c.id_produto = p.id_produto
-            LEFT JOIN imagem_produto i ON p.id_produto = i.id_produto AND i.index_imagem_produto = 0
+            LEFT JOIN imagem_produto i ON p.id_produto = i.id_produto AND i.index_imagem_produto = 1
             WHERE c.id_cliente = :idCliente";
 
     $stmt = $this->db->getConnection()->prepare($sql);

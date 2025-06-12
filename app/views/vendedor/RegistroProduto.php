@@ -136,8 +136,8 @@ require_once('./utils/head.php');
                       <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/seta_baixo_icon.svg">
                     </button>
                     <div class="dropdown-content" id='dropdown_list'>
-                      <button class='dropdown_button' data-command="bulletList" title="Lista não ordenada">• Lista</button>
-                      <button class='dropdown_button' data-command="orderedList" title="Lista ordenada">1. Lista</button>
+                      <button class='dropdown_button' type='button' data-command="bulletList" title="Lista não ordenada">• Lista</button>
+                      <button class='dropdown_button' type='button' data-command="orderedList" title="Lista ordenada">1. Lista</button>
                     </div>
                   </div>
                   <div class="dropdown">
@@ -234,7 +234,7 @@ require_once('./utils/head.php');
               <div class='registro_produto_line'></div>
               <h3>
                 <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/imagem_icon.svg">
-                Imagens e Vídeos
+                Imagens
               </h3>
             </div>
             <div class="registro_produto_imagens"></div>
@@ -243,7 +243,7 @@ require_once('./utils/head.php');
               <span id="contador-total">0</span>
               <span id="contador-restante"> / 1</span>
             </div>
-            <button class="base_botao btn_blue" name="produtoImagem">
+            <button class="base_botao btn_blue" name="produtoImagem" type='button'>
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
               ENVIAR ARQUIVO
               <input type="file" id="input-file" name="produto-imagens" accept="image/*" multiple>

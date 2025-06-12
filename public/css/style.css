@@ -1125,6 +1125,9 @@ input:checked + .toggle_slider::before {
   row-gap: 0;
   display: flex;
   flex-direction: column;
+  &>img {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 .index_body_estrela_valor {

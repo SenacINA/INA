@@ -46,6 +46,12 @@ class AuthController extends RenderView {
             $user = $result[0];
             $storedHash = $user['senha_cliente'];
 
+            if ($result[0]['status_conta_cliente'] != 1) {
+                $errors[] = 'Conta suspensa';
+                $this->loadView('cliente/Login', ['errors' => $errors]);
+                exit;
+            }
+
             if (password_verify($password, $storedHash)) {
                 $_SESSION['cliente_id'] = $user['id_cliente'];
 
