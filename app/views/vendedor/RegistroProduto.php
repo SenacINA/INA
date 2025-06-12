@@ -22,7 +22,7 @@ require_once('./utils/head.php');
         <hr class="registro_produto_linha_titulo">
       </div>
       <div class='registro_produto_container'>
-        <form action="CadastroProduto" method="post" class='registro_produto_form_grid'>
+        <form action="ProdutoRegistro" method="post" class='registro_produto_form_grid'>
           <div class='registro_produto_form'>
             <div class='registro_produto_form_title'>
               <div class='registro_produto_line'></div>
@@ -67,14 +67,14 @@ require_once('./utils/head.php');
                 <select class='base_input' id='categoriaProduto' name='categoriaProduto'>
                   <option value="" disabled selected>Selecione</option>
                   <option value="1">Categoria 1</option>
-              </select>
+                </select>
               </div>
 
               <div class='base_input_select'>
                 <label for="categoriaProduto">Sub-Categoria</label>
                 <select class='base_input' id='subCategoriaProduto' name='subCategoriaProduto'>
-                    <option value="" disabled selected>Selecione</option>
-                    <option value="1">Sub-Categoria 1</option>
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="1">Sub-Categoria 1</option>
                 </select>
               </div>
 
@@ -124,38 +124,38 @@ require_once('./utils/head.php');
               </div>
               <div class='text_editor_div'>
                 <div class="toolbar">
-                  <button onclick="toolbarButton(e)" data-command="bold" title="Negrito"><b>B</b></button>
-                  <button onclick="toolbarButton(e)" data-command="underline" title="Sublinhado"><u>U</u></button>
-                  <button onclick="toolbarButton(e)" data-command="italic" title="Itálico">
+                  <button type="button" data-command="bold" title="Negrito"><b>B</b></button>
+                  <button type="button" data-command="underline" title="Sublinhado"><u>U</u></button>
+                  <button type="button" data-command="italic" title="Itálico">
                     <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/italico_icon.svg">
                   </button>
-                  <button onclick="toolbarButton(e)" data-command="strike" title="Tachado"><s>S</s></button>
+                  <button type="button" data-command="strike" title="Tachado"><s>S</s></button>
                   <div class="dropdown">
-                    <button type="button" onclick="toolbarButton(e)">
+                    <button type="button">
                       <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/lista_icon.svg">
                       <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/seta_baixo_icon.svg">
                     </button>
                     <div class="dropdown-content" id='dropdown_list'>
-                      <button class='dropdown_button' onclick="toolbarButton(e)" data-command="bulletList" title="Lista não ordenada">• Lista</button>
-                      <button class='dropdown_button' onclick="toolbarButton(e)" data-command="orderedList" title="Lista ordenada">1. Lista</button>
+                      <button class='dropdown_button' type='button' data-command="bulletList" title="Lista não ordenada">• Lista</button>
+                      <button class='dropdown_button' type='button' data-command="orderedList" title="Lista ordenada">1. Lista</button>
                     </div>
                   </div>
                   <div class="dropdown">
-                    <button class='dropdown_button' onclick="toolbarButton(e)" type="button">
+                    <button type="button" class='dropdown_button' type="button">
                       <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/alinhamento_icon.svg">
                       <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/seta_baixo_icon.svg">
                     </button>
                     <div class="dropdown-content">
-                      <button class='dropdown_button' onclick="toolbarButton(e)" data-command="alignLeft" title="Esquerda">
+                      <button type="button" class='dropdown_button' data-command="alignLeft" title="Esquerda">
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/alinhamento_esquerda_icon.svg">
                       </button>
-                      <button class='dropdown_button' onclick="toolbarButton(e)" data-command="alignCenter" title="Centro" style='justify-content: center'>
+                      <button type="button" class='dropdown_button' data-command="alignCenter" title="Centro" style='justify-content: center'>
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/alinhamento_centro_icon.svg">
                       </button>
-                      <button class='dropdown_button' onclick="toolbarButton(e)" data-command="alignRight" title="Direita" style='transform: scaleX(-1);'>
+                      <button type="button" class='dropdown_button' data-command="alignRight" title="Direita" style='transform: scaleX(-1);'>
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/alinhamento_direita_icon.svg">
                       </button>
-                      <button class='dropdown_button' onclick="toolbarButton(e)" data-command="alignJustify" title="Justificado" style='justify-content: center'>
+                      <button type="button" class='dropdown_button' data-command="alignJustify" title="Justificado" style='justify-content: center'>
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/alinhamento_justificado_icon.svg">
                       </button>
                     </div>
@@ -181,7 +181,7 @@ require_once('./utils/head.php');
               </label>
               <label for='toggle-promotion'>Ativar Promoção</label>
             </div>
-            
+
 
             <div class='registro_produto_promocao'>
               <h4>Tipos de Promoção</h4>
@@ -234,7 +234,7 @@ require_once('./utils/head.php');
               <div class='registro_produto_line'></div>
               <h3>
                 <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/imagem_icon.svg">
-                Imagens e Vídeos
+                Imagens
               </h3>
             </div>
             <div class="registro_produto_imagens"></div>
@@ -243,7 +243,7 @@ require_once('./utils/head.php');
               <span id="contador-total">0</span>
               <span id="contador-restante"> / 1</span>
             </div>
-            <button class="base_botao btn_blue" name="produtoImagem">
+            <button class="base_botao btn_blue" name="produtoImagem" type='button'>
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
               ENVIAR ARQUIVO
               <input type="file" id="input-file" name="produto-imagens" accept="image/*" multiple>
@@ -275,11 +275,12 @@ require_once('./utils/head.php');
       </div>
     </div>
   </main>
-  <script type="module" src="<?=$PATH_COMPONENTS?>/js/toast.js"></script>
+  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+
       <?php if (!empty($errors)): ?>
-        <?php foreach($errors as $e): ?>
+        <?php foreach ($errors as $e): ?>
           gerarToast("<?= addslashes($e) ?>", "erro");
         <?php endforeach; ?>
       <?php endif; ?>
@@ -288,7 +289,7 @@ require_once('./utils/head.php');
         gerarToast("<?= addslashes($_SESSION['successMessage']) ?>", "sucesso");
         <?php unset($_SESSION['successMessage']); ?>
       <?php endif; ?>
-      
+
     });
   </script>
   <?php

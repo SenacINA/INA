@@ -47,7 +47,10 @@ class cardProduto
                             </svg>
                         </button>
                     </form>
-                    <button class='base_botao btn_blue' onclick='pag(\"Produto?id={$id}\")'>Comprar</button>
+                    <form method='POST' action='Produto'>
+                        <input type='hidden' name='produto_id' value='{$id}'>
+                        <button class='base_botao btn_blue'>Comprar</button>
+                    </form>
                 </div>
             </div>";
         }
