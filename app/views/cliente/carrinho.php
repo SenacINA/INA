@@ -48,7 +48,7 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
               <?php else: ?>
                 <?php foreach ($itensCarrinho as $item): ?>
                   <div class="carrrinho_produto_item" data-id="<?= $item['id_produto'] ?>">
-                    <img src="<?= empty($produto['endereco_imagem_produto']) ? 'https://placehold.co/400x400' : $produto['endereco_imagem_produto'] ?>" alt="<?= $item['nome_produto'] ?>">
+                    <img src="<?= empty($item['endereco_imagem_produto']) ? 'https://placehold.co/400x400' : "./public/" . $item['endereco_imagem_produto'] ?>" alt="<?= $item['nome_produto'] ?>">
                     <span><?= htmlspecialchars($item['nome_produto']) ?></span>
                     <div class="carrinho_quantidade">
                       <span id="preco_produto">R$ <?= number_format($item['preco_produto'], 2, ',', '.') ?></span>
@@ -63,8 +63,8 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
                     </div>
                   </div>
                   <hr>
-                <?php endforeach; ?>
-              <?php endif; ?>
+                  <?php endforeach; ?>
+                  <?php endif; ?>
             </div>
 
             <div class="carrinho_vazio_conteudo_servicos">
