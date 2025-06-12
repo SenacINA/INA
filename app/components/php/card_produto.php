@@ -11,7 +11,7 @@ class cardProduto
             $produto = $produtos[$i];
 
             $imagem = empty($produto['endereco_imagem_produto']) ?
-                'https://placehold.co/400x400' : "./public/" . $produto['endereco_imagem_produto'];
+                'https://placehold.co/400x400' : $produto['endereco_imagem_produto'];
             $nome = htmlspecialchars($produto['nome_produto']);
             $preco = number_format($produto['preco_produto'], 2, ',', '.');
             $id = intval($produto['id_produto']);
