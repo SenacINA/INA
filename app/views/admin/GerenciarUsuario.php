@@ -16,13 +16,16 @@ if (!$usuarioSelecionado) {
 $disativar = $estaAtivo ? '' : 'disabled';
 
 ?>
-
+<script src="<?= $PATH_PUBLIC ?>/js/admin/GerenciarUsuario.js"></script>
+<script src="../../../public/js/admin/GerenciarUsuario.js"></script>
+  
 <body>
   <!-- Até 768px -->
 
   <?php
   include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
+
   <main class="gerenciar_usuario_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_usuario_header_holder">
@@ -123,7 +126,15 @@ $disativar = $estaAtivo ? '' : 'disabled';
                     <?=
                     $textoBotao
                     ?>
-                  </button>
+                  </button> 
+                <div class="modal_desativar" id="modal_desativar">
+                    <div class="modal_content">
+                      <button class="modal_fechar" id="modal_fechar">X</button>
+                      <h1>Confirmação</h1>
+                      <p>Você deseja desativar este Usuario?</p>
+                      <button class="modal_confirmar" id="modal_confirmar">CONFIRMAR</button>
+                    </div>
+                </div>
                 </div>
 
                 <div class="gerenciar_usuario_card_column_2">
@@ -222,7 +233,7 @@ $disativar = $estaAtivo ? '' : 'disabled';
       </div>
     </div>
   </main>
-  <script src="<?= $PATH_PUBLIC ?>/js/admin/GerenciarUsuario.js"></script>
+
 </body>
 
 </html>
