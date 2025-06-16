@@ -33,7 +33,7 @@ $info = $controller->exibirProduto($id);
                 <div class="avaliacao_vendedor">
                     <h1>AVALIAÇÃO GERAL</h1>
                     <div class='vendedor_rating'>
-                        <h2 class='nome_vendedor_estrela'>★★★★★</h2>
+                        <h2 class='vendedor_estrelas'>★★★★★</h2>
                         <h2>4.5</h2>
                     </div>
                     <h3>(156mil+)</h3>
@@ -116,7 +116,7 @@ $info = $controller->exibirProduto($id);
     </div>
 
     <div class="grid_descricao_produto">
-        <div class="descricao_produto_item2">
+        <div class="descricao_produto_item ">
             <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>DESCRIÇÃO DO PRODUTO</h1>
         </div>
@@ -125,7 +125,7 @@ $info = $controller->exibirProduto($id);
 
     <div class="grid_descricao_produto">
         <div class="line_top"></div>
-        <div class="descricao_produto_item3">
+        <div class="descricao_produto_item">
             <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>AVALIAÇÕES DO PRODUTO</h1>
         </div>
@@ -136,7 +136,7 @@ $info = $controller->exibirProduto($id);
                     <h1>4.5</h1>
                 </div>
                 <div class="estrelas_avaliacao_produto">
-                    <h2 class='nome_vendedor_estrela'>★★★★★</h2>
+                    <h2 class='vendedor_estrelas'>★★★★★</h2>
                 </div>
             </div>
 
@@ -165,39 +165,180 @@ $info = $controller->exibirProduto($id);
         </div>
     </div>
 
+    <?php
+    $jaComprou = true;
+    if ($jaComprou): ?>
+        <div class="descricao_produto_item avaliar_produto_descricao">
+            <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/etiqueta_icon.svg" alt="">
+            <h1>AVALIAR PRODUTO</h1>
+        </div>
+
+        <div class="form_avaliacao_container">
+            <form id="formAvaliacao">
+                <div class="grid_user">
+                    <div class='cliente_nome_pic'>
+                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
+                        <div>
+                            <h1>Carlos</h1>
+                            <div class="rating">
+                                <input type="radio" id="star5" name="rating" value="5">
+                                <label for="star5"></label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4"></label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3"></label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2"></label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1"></label>
+                            </div>
+                        </div>
+                        <textarea id="comentario" maxlength="255" placeholder="Adicione um comentário..."></textarea>
+                    </div>
+                </div>
+                <div class="avaliacao_container_campos">
+                    <div class="base_select">
+                        <label for="qualidade">Qualidade:</label>
+                        <input class="base_input" type="text" id="qualidade" name="qualidade">
+                    </div>
+                    <div class="base_input_select">
+                        <label for="parecido">Parecido com o anúncio?</label>
+                        <select class="base_input" id="parecido" name="parecido">
+                            <option value selected disabled style="display: none;">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Imagem:</label>
+                        <input type="file" id="imagem" name="imagem[]" accept="image/*" multiple>
+                    </div>
+                    <div>
+                        <label>Vídeo:</label>
+                        <input type="file" id="video" name="video" accept="video/*">
+                    </div>
+                    <button type="submit" class="base_botao btn_blue">
+                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/geral/botoes/+_branco_icon.svg" alt="">
+                        ENVIAR AVALIAÇÃO
+                    </button>
+                </div>
+            </form>
+        </div>
+    <?php endif; ?>
+
     <div class="grid_comentarios_usuarios">
+        <div class="comentario_usuario">
+            <div class="grid_user">
+                <div class='cliente_nome_pic'>
+                    <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
+                    <div>
+                        <h1>Carlos</h1>
+                        <h2 class='vendedor_estrelas'>★★★★★</h2>
+                    </div>
+                </div>
+            </div>
 
-        <?php
-            require_once __DIR__ . '/../../components/php/avaliacao.php';
+            <div class="grid_comentario_user">
+                <div class="avaliacao_user_item1">
+                    <h2>Qualidade:</h2>
+                    <h3>Muito boa</h3>
+                </div>
+                <div class="avaliacao_user_item2">
+                    <h2>Parecido com o anúncio:</h2>
+                    <h3>Sim</h3>
+                </div>
+                <h2 class='produto_comentario'>
+                    Uma cadeira gamer envolvente e seduzente é muito mais do que um simples móvel. Ela combina conforto ergonômico com um design atraente que promove uma imersão total na experiência de jogo. Com seu encosto alto e ajustes personalizáveis, não só proporciona suporte para longas sessões de jogo, mas também se torna um elemento marcante no ambiente, convidando você a se entregar ao mundo virtual com estilo e conforto.
+                </h2>
+            </div>
 
-            // Dados de exemplo (normalmente viriam do banco de dados)
-            $comentarios = [
-                [
-                    'nome' => 'Julia',
-                    'foto_perfil' => $PATH_PUBLIC . '/image/cliente/produto/icon_profile.svg',
-                    'estrelas' => 5,
-                    'texto' => 'Uma cadeira gamer que se destaca pela sua envolvência, sedução e incrível conforto...',
-                    'imagens' => [
-                        $PATH_PUBLIC . '/image/cliente/produto/cadeira_gamer_size_big.png',
-                        $PATH_PUBLIC .'/image/cliente/produto/cadeira_gamer_size_big.png'
-                    ],
-                    'data' => '10/05/2025'
-                ],
-                [
-                    'nome' => 'Carlos',
-                    'foto_perfil' => $PATH_PUBLIC . '/image/cliente/produto/icon_profile.svg',
-                    'estrelas' => 4,
-                    'texto' => 'Produto de ótima qualidade, entrega rápida...',
-                    'imagens' => [],
-                    'data' => '08/05/2025'
-                ]
-            ];
+            <div class="grid_images_user">
+                <div class="image1_user">
+                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <div class='div_video'>
+                        <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_camera.svg" alt="">
+                        1:32
+                    </div>
+                </div>
+                <div class='image1_user'>
+                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                </div>
+            </div>
+        </div>
 
-            // Renderizar todos os comentários
-            foreach ($comentarios as $comentario) {
-                echo ComentarioAvaliacaoComponent::render($comentario);
-            }
-        ?>
+        <div class="comentario_usuario">
+            <div class="grid_user">
+                <div class='cliente_nome_pic'>
+                    <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
+                    <div>
+                        <h1>Julia</h1>
+                        <h2 class='vendedor_estrelas'>★★★★★</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid_comentario_user">
+                <div class="avaliacao_user_item1">
+                    <h2>Qualidade:</h2>
+                    <h3>Muito boa</h3>
+                </div>
+                <div class="avaliacao_user_item2">
+                    <h2>Parecido com o anúncio:</h2>
+                    <h3>Sim</h3>
+                </div>
+                <h2 class='produto_comentario'>
+                    Uma cadeira gamer que se destaca pela sua envolvência, sedução e incrível conforto transcende o conceito tradicional de móvel. Com linhas sofisticadas e um encosto que abraça suavemente, ela não apenas complementa o ambiente com seu design elegante, mas também oferece um suporte ergonômico que se adapta perfeitamente ao corpo.
+                </h2>
+            </div>
+
+            <div class="grid_images_user">
+                <div class='image1_user'>
+                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                </div>
+                <div class='image1_user'>
+                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="comentario_usuario">
+            <div class="grid_user">
+                <div class='cliente_nome_pic'>
+                    <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
+                    <div>
+                        <h1>Alex</h1>
+                        <h2 class='vendedor_estrelas'>★★★★★</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid_comentario_user">
+                <div class="avaliacao_user_item1">
+                    <h2>Qualidade:</h2>
+                    <h3>Incrível</h3>
+                </div>
+                <div class="avaliacao_user_item2">
+                    <h2>Parecido com o anúncio:</h2>
+                    <h3>Sim</h3>
+                </div>
+                <h2 class='produto_comentario'>
+                    Meu irmao adorou a cadeira 😁
+                </h2>
+            </div>
+
+            <div class="grid_images_user">
+                <div class="image1_user">
+                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                    <div class='div_video'>
+                        <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_camera.svg" alt="">
+                        0:45
+                    </div>
+                </div>
+                <div class='image1_user'>
+                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
+                </div>
+            </div>
+        </div>
 
     </div>
     <?php
@@ -205,5 +346,7 @@ $info = $controller->exibirProduto($id);
     ?>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
 </body>
+<script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
+<script type="module" src="<?= $PATH_PUBLIC ?>/js/cliente/AvaliacaoProduto.js"></script>
 
 </html>
