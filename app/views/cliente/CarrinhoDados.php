@@ -36,11 +36,12 @@ require_once("./utils/head.php")
           <hr class="carrinho_dados_separador_carrinho">
         </div>
         <div class="carrinho_dados_container_forms">
-          <form action="" class="carrinho_dados_forms_carrinho">
+            <form action="/CarrinhoDados/salvar" method="POST" class="carrinho_dados_forms_carrinho">
+
             <label for="nome_carrinho">Nome:</label>
-            <input type="text" class="base_input">
+            <input type="text" name="nome" id="nome_carrinho" class="base_input">
             <label for="cpf_carrinho">CPF:</label>
-            <input type="text" class="base_input">
+            <input type="text" name="cpf" id="cpf_carrinho" class="base_input">
             <label for="endereco_carrinho">Endereço:</label>
             <input type="text" class="base_input">
             <div class="carrinho_dados_informacoes_cep">
@@ -105,125 +106,7 @@ require_once("./utils/head.php")
                   </div>
                 </div>
               </div>
-              <div class="carrinho_dados_info_container">
-                <input type="radio" name="endereco" class="base_radio">
-                <div class="carrinho_dados_text_info">
-                  <div class="carrinho_dados_text">
-                    <h3 class="carrinho_dados_endereco_info">Endereço</h3>
-                    <p class="carrinho_dados_endereco_info_adicional">Nome, Número da casa, Cidade, CEP</p>
-                  </div>
-                  <div class="carrinho_dados_botoes_info">
-                    <button class="carrinho_dados_edit_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
-                    </button>
-                    <button class="carrinho_dados_remove_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carrinho_dados_info_container">
-                <input type="radio" name="endereco" class="base_radio">
-                <div class="carrinho_dados_text_info">
-                  <div class="carrinho_dados_text">
-                    <h3 class="carrinho_dados_endereco_info">Endereço</h3>
-                    <p class="carrinho_dados_endereco_info_adicional">Nome, Número da casa, Cidade, CEP</p>
-                  </div>
-                  <div class="carrinho_dados_botoes_info">
-                    <button class="carrinho_dados_edit_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
-                    </button>
-                    <button class="carrinho_dados_remove_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carrinho_dados_info_container">
-                <input type="radio" name="endereco" class="base_radio">
-                <div class="carrinho_dados_text_info">
-                  <div class="carrinho_dados_text">
-                    <h3 class="carrinho_dados_endereco_info">Endereço</h3>
-                    <p class="carrinho_dados_endereco_info_adicional">Nome, Número da casa, Cidade, CEP</p>
-                  </div>
-                  <div class="carrinho_dados_botoes_info">
-                    <button class="carrinho_dados_edit_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
-                    </button>
-                    <button class="carrinho_dados_remove_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carrinho_dados_info_container">
-                <input type="radio" name="endereco" class="base_radio">
-                <div class="carrinho_dados_text_info">
-                  <div class="carrinho_dados_text">
-                    <h3 class="carrinho_dados_endereco_info">Endereço</h3>
-                    <p class="carrinho_dados_endereco_info_adicional">Nome, Número da casa, Cidade, CEP</p>
-                  </div>
-                  <div class="carrinho_dados_botoes_info">
-                    <button class="carrinho_dados_edit_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
-                    </button>
-                    <button class="carrinho_dados_remove_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carrinho_dados_info_container">
-                <input type="radio" name="endereco" class="base_radio">
-                <div class="carrinho_dados_text_info">
-                  <div class="carrinho_dados_text">
-                    <h3 class="carrinho_dados_endereco_info">Endereço</h3>
-                    <p class="carrinho_dados_endereco_info_adicional">Nome, Número da casa, Cidade, CEP</p>
-                  </div>
-                  <div class="carrinho_dados_botoes_info">
-                    <button class="carrinho_dados_edit_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
-                    </button>
-                    <button class="carrinho_dados_remove_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carrinho_dados_info_container">
-                <input type="radio" name="endereco" class="base_radio">
-                <div class="carrinho_dados_text_info">
-                  <div class="carrinho_dados_text">
-                    <h3 class="carrinho_dados_endereco_info">Endereço</h3>
-                    <p class="carrinho_dados_endereco_info_adicional">Nome, Número da casa, Cidade, CEP</p>
-                  </div>
-                  <div class="carrinho_dados_botoes_info">
-                    <button class="carrinho_dados_edit_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
-                    </button>
-                    <button class="carrinho_dados_remove_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carrinho_dados_info_container">
-                <input type="radio" name="endereco" class="base_radio">
-                <div class="carrinho_dados_text_info">
-                  <div class="carrinho_dados_text">
-                    <h3 class="carrinho_dados_endereco_info">Endereço</h3>
-                    <p class="carrinho_dados_endereco_info_adicional">Nome, Número da casa, Cidade, CEP</p>
-                  </div>
-                  <div class="carrinho_dados_botoes_info">
-                    <button class="carrinho_dados_edit_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
-                    </button>
-                    <button class="carrinho_dados_remove_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                    </button>
-                  </div>
-                </div>
-              </div>
+              
             </forms>
           </div>
 
