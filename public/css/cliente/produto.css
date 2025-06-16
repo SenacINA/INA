@@ -43,6 +43,10 @@ body {
   grid-row: 3;
 }
 
+.div_produto_valor {
+  width: 100%;
+}
+
 /* start grid_nome_vendor */
 .grid_nome_vendedor {
   display: flex;
@@ -233,10 +237,9 @@ h3 {
 
 /* start grid_produto_image */
 .grid_produto_image {
-  position: relative;
   width: 100%;
   height: 100%;
-  max-height: 496px;
+  max-height: 420px;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -282,10 +285,10 @@ h3 {
 .grid_produto_info_bg {
   display: flex;
   background-color: white;
-  align-items: flex-start;
+  align-self: baseline;
   width: 100%;
   max-width: 749px;
-  height: 100%;
+  height: 420px;
   padding: 16px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -294,9 +297,8 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 776px;
+  width: 100%;
   height: 100%;
-  width: fit-content;
   justify-content: space-between;
 }
 
