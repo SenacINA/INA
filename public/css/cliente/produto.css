@@ -110,13 +110,13 @@ body {
   border-left: 2px black solid;
 }
 
-.vendedor_rating_avaliacao {
+.vendedor_rating {
   display: flex;
   justify-content: flex-start;
   width: 100%;
 }
 
-.vendedor_estrelas {
+.nome_vendedor_estrela {
   max-width: fit-content;
   font-size: 24px !important;
   background: linear-gradient(90deg,
@@ -159,7 +159,6 @@ h3 {
   font-size: 16px;
   text-align: start;
 }
-
 /* end grid_nome_vendedor */
 
 /* start grid_scroll */
@@ -192,7 +191,6 @@ h3 {
   :hover {
     cursor: pointer;
   }
-
   & img {
     border: 2px var(--carolina) solid !important;
     background-color: white;
@@ -232,7 +230,6 @@ h3 {
   }
 
 }
-
 /* end grid_scroll */
 
 /* start grid_produto_image */
@@ -393,7 +390,6 @@ h3 {
   font-weight: 600;
   font-size: 16px;
   color: var(--cinza);
-
   b {
     text-decoration: underline;
     color: var(--carolina);
@@ -635,16 +631,18 @@ h3 {
   display: flex;
   flex-direction: row;
   gap: 8px;
-  width: auto;
+  width: 100%;
   align-items: center;
 }
 
-.descricao_produto_item img {
+.descricao_produto_item2 img,
+.descricao_produto_item3 img {
   width: auto;
   height: 32px;
 }
 
-.descricao_produto_item h1 {
+.descricao_produto_item2 h1,
+.descricao_produto_item3 h1 {
   font-size: 32px;
   color: var(--sappire);
 }
@@ -715,7 +713,7 @@ h3 {
   top: 50px;
 }
 
-.descricao_produto_item {
+.descricao_produto_item3 {
   grid-column: 1 / span 2;
   grid-row: 1;
   text-align: center;
@@ -753,7 +751,7 @@ h3 {
   margin: 0;
 }
 
-.estrelas_avaliacao_produto .vendedor_estrelas {
+.estrelas_avaliacao_produto .nome_vendedor_estrela {
   font-size: 64px !important;
 }
 
@@ -893,8 +891,6 @@ h3 {
 .grid_comentario_user {
   display: grid;
   grid-template-columns: 1fr;
-
-  text-align: start;
   justify-content: center;
   align-items: center;
 }
@@ -907,18 +903,13 @@ h3 {
   align-items: flex-start;
 }
 
-.grid_user {
+.grid_user_1 {
   display: flex;
   flex-direction: column;
   width: 100%;
-
   img {
-    width: 80px;
+    aspect-ratio: 1 / 1;
     height: 100%;
-  }
-
-  div {
-    align-items: center;
   }
 }
 
@@ -926,10 +917,13 @@ h3 {
   display: flex;
   flex-direction: row;
   gap: 8px;
+}
 
-  h1 {
-    font-size: 24px;
-  }
+.grid_user_1 h1,
+.grid_user_2 h1,
+.grid_user_3 h1 {
+  font-size: 24px;
+}
 
   div {
     width: 140px;
@@ -1089,7 +1083,6 @@ textarea {
 @media (max-width: 880px) {
   .grid_produto {
     grid-template-columns: 1fr;
-
     * {
       grid-area: auto;
     }
@@ -1102,7 +1095,6 @@ textarea {
   .grid_scroll {
     grid-row: 2;
   }
-
   .grid_produto_info_bg {
     width: 100%;
     max-width: none;
@@ -1170,7 +1162,6 @@ textarea {
   .grid_produto_info_button {
     display: flex;
     flex-direction: column;
-
     .base_botao {
       width: 100%;
     }
@@ -1250,12 +1241,12 @@ textarea {
 
   }
 
-  .grid_estrelas_avaliacao_produto>.estrelas_avaliacao_produto {
+  .grid_estrelas_avaliacao_produto > .estrelas_avaliacao_produto {
     h1 {
       font-size: 48px;
     }
 
-    .vendedor_estrelas {
+    .nome_vendedor_estrela {
       font-size: 48px !important;
     }
   }
@@ -1288,18 +1279,17 @@ textarea {
       height: 30px;
       width: auto;
     }
-
     h1 {
       font-size: 30px;
     }
   }
 
-  .grid_estrelas_avaliacao_produto>.estrelas_avaliacao_produto {
+  .grid_estrelas_avaliacao_produto > .estrelas_avaliacao_produto {
     h1 {
       font-size: 32px;
     }
 
-    .vendedor_estrelas {
+    .nome_vendedor_estrela {
       font-size: 32px !important;
     }
   }
@@ -1318,7 +1308,6 @@ textarea {
   .descricao_produto_item {
     gap: 4px;
     align-items: flex-start;
-
     img {
       margin-top: 8px;
     }
@@ -1331,12 +1320,12 @@ textarea {
     gap: 16px;
   }
 
-  .grid_estrelas_avaliacao_produto>.estrelas_avaliacao_produto {
+  .grid_estrelas_avaliacao_produto > .estrelas_avaliacao_produto {
     h1 {
       font-size: 24px;
     }
 
-    .vendedor_estrelas {
+    .nome_vendedor_estrela {
       font-size: 24px !important;
     }
   }
@@ -1364,7 +1353,6 @@ textarea {
 
     h2 {
       font-size: 12px;
-
       img {
         height: 18px;
         width: auto;
