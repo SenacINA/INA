@@ -74,6 +74,7 @@ $routes = [
       '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
       '/searchDesativarUser'      => 'admin/AdminController@searchDesativarUser',
       '/DesativarUser'            => 'admin/AdminController@desativarUser',
+      '/GerenciarVendedor'           => 'admin/AdminController@gerenciarVendedor',
       '/api/admin/pesquisar-cliente' => 'admin/AdminController@searchUser',
       '/api/admin/atualizar-cliente' => 'admin/AdminController@updateUser',
       '/api/admin/editarDadosAdmin' => 'admin/AdminController@editarDadosAdmin',
