@@ -255,10 +255,6 @@ $info = $controller->exibirProduto($id);
             <div class="grid_images_user">
                 <div class="image1_user">
                     <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                    <div class='div_video'>
-                        <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_camera.svg" alt="">
-                        1:32
-                    </div>
                 </div>
                 <div class='image1_user'>
                     <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
@@ -266,79 +262,26 @@ $info = $controller->exibirProduto($id);
             </div>
         </div>
 
-        <div class="comentario_usuario">
-            <div class="grid_user">
-                <div class='cliente_nome_pic'>
-                    <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
-                    <div>
-                        <h1>Julia</h1>
-                        <h2 class='vendedor_estrelas'>★★★★★</h2>
-                    </div>
-                </div>
-            </div>
+        <?php
+            require_once __DIR__ . '/../../components/php/avaliacao.php';
+ 
+            $comentarioData = [
+                'nome' => 'Carlos teste',
+                'estrelas' => 0,
+                'qualidade' => 'Muito boa',
+                'parecido' => 'Sim',
+                'texto' => 'Uma cadeira gamer envolvente e seduzente é muito mais do que um simples móvel...',
+                'imagens' => [
+                    $PATH_PUBLIC . '/image/cliente/produto/cadeira_gamer_size_big.png',
+                    $PATH_PUBLIC . '/image/cliente/produto/cadeira_gamer_size_big.png'
+                ],
+                'foto_perfil' => $PATH_PUBLIC . '/image/cliente/produto/icon_profile.svg'
+            ];
 
-            <div class="grid_comentario_user">
-                <div class="avaliacao_user_item1">
-                    <h2>Qualidade:</h2>
-                    <h3>Muito boa</h3>
-                </div>
-                <div class="avaliacao_user_item2">
-                    <h2>Parecido com o anúncio:</h2>
-                    <h3>Sim</h3>
-                </div>
-                <h2 class='produto_comentario'>
-                    Uma cadeira gamer que se destaca pela sua envolvência, sedução e incrível conforto transcende o conceito tradicional de móvel. Com linhas sofisticadas e um encosto que abraça suavemente, ela não apenas complementa o ambiente com seu design elegante, mas também oferece um suporte ergonômico que se adapta perfeitamente ao corpo.
-                </h2>
-            </div>
+            echo ComentarioAvaliacaoProdutoComponent::render($comentarioData);
+        ?>
 
-            <div class="grid_images_user">
-                <div class='image1_user'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-                <div class='image1_user'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-            </div>
-        </div>
-
-        <div class="comentario_usuario">
-            <div class="grid_user">
-                <div class='cliente_nome_pic'>
-                    <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
-                    <div>
-                        <h1>Alex</h1>
-                        <h2 class='vendedor_estrelas'>★★★★★</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid_comentario_user">
-                <div class="avaliacao_user_item1">
-                    <h2>Qualidade:</h2>
-                    <h3>Incrível</h3>
-                </div>
-                <div class="avaliacao_user_item2">
-                    <h2>Parecido com o anúncio:</h2>
-                    <h3>Sim</h3>
-                </div>
-                <h2 class='produto_comentario'>
-                    Meu irmao adorou a cadeira 😁
-                </h2>
-            </div>
-
-            <div class="grid_images_user">
-                <div class="image1_user">
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                    <div class='div_video'>
-                        <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_camera.svg" alt="">
-                        0:45
-                    </div>
-                </div>
-                <div class='image1_user'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-            </div>
-        </div>
+    </div>
 
     </div>
     <?php

@@ -119,14 +119,35 @@ body {
 .vendedor_estrelas {
   max-width: fit-content;
   font-size: 24px !important;
-  background: linear-gradient(90deg,
-      #247BA0 90%,
-      #989898 90% 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: var(--cinza);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
+.estrelas-0 {
+  background: #989898;
+}
+
+.estrelas-1 {
+  background: linear-gradient(90deg, #247BA0 20%, #989898 20% 100%);
+}
+
+.estrelas-2 {
+  background: linear-gradient(90deg, #247BA0 40%, #989898 40% 100%);
+}
+
+.estrelas-3 {
+  background: linear-gradient(90deg, #247BA0 60%, #989898 60% 100%);
+}
+
+.estrelas-4 {
+  background: linear-gradient(90deg, #247BA0 80%, #989898 80% 100%);
+}
+
+.estrelas-5 {
+  background: linear-gradient(90deg, #247BA0 100%, #989898 0%);
+}
 
 .avaliacao_vendedor img {
   width: 90px;
@@ -172,11 +193,11 @@ h3 {
   align-items: center;
   gap: 16px;
 
-  img {
+  .images_scroll div {
     transition: transform .3s ease;
   }
 
-  img:hover {
+  .images_scroll div:hover {
     transform: scale(1.1);
     cursor: pointer;
   }
@@ -189,12 +210,13 @@ h3 {
 }
 
 .imagem_selecionada {
+  outline: 2px var(--carolina) solid !important;
+  border-radius: 5px;
   :hover {
     cursor: pointer;
   }
 
   & img {
-    border: 2px var(--carolina) solid !important;
     background-color: white;
     scale: 1.1;
   }
@@ -203,15 +225,30 @@ h3 {
 .produto_image {
   width: auto;
   height: 100%;
+  min-height: 420px;
+  max-width: 420px;
   padding: 16px;
   aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
 }
 
 
-.images_scroll img {
+.images_scroll div {
   width: 68px;
   height: 68px;
-  padding: 2px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+
+}
+
+.images_scroll img {
+  height: 100%;
+  max-width: 100%;
   border-radius: 5px;
   background-color: white;
   border: none;
@@ -248,9 +285,10 @@ h3 {
 }
 
 .produto_image img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+
 }
 
 .ultra_blue_produto_image {
@@ -599,6 +637,66 @@ h3 {
   display: flex;
   flex-direction: column;
   padding: 16px 180px;
+  p {
+    margin: 0.75rem 0;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--sappire);
+    margin: 1.5rem 0 1rem;
+    font-weight: 600;
+  }
+
+  *, p {
+    font-size: 24px;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  u {
+    text-decoration: underline;
+  }
+
+  s {
+    text-decoration: line-through;
+  }
+
+  ul > * {
+    list-style: disc outside !important;
+    padding-left: 2rem;
+    margin: 1rem 0;
+
+    li {
+      display: list-item;
+      margin-left: 1rem;
+      padding-left: 0.5rem;
+    }
+  }
+
+  ol > * {
+    list-style: decimal outside !important;
+    padding-left: 2rem;
+    margin: 1rem 0;
+
+    li {
+      display: list-item;
+      margin-left: 1rem;
+      padding-left: 0.5rem;
+    }
+  }
 }
 
 .grid_descricao_produto a {
@@ -610,12 +708,7 @@ h3 {
 
 .grid_descricao_produto {
   p {
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 1.5%;
-    transition: transform 0.3s ease;
-
-
+  
     a {
       text-decoration: none;
       color: #006494;
@@ -1105,6 +1198,7 @@ textarea {
 
   .grid_produto_info_bg {
     width: 100%;
+    height: fit-content;
     max-width: none;
     box-shadow: none;
   }
@@ -1115,8 +1209,9 @@ textarea {
   }
 
   .grid_produto_info {
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
     gap: 16px;
   }
 
@@ -1232,6 +1327,7 @@ textarea {
       width: 24px;
       height: 24px;
       border: none;
+      outline: none !important;
 
       &::after {
         background-color: var(--sappire);

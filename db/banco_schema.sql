@@ -130,6 +130,8 @@ CREATE TABLE
         -- ver float dps
         data_avaliacao DATE NOT NULL,
         descricao_avaliacao VARCHAR(500) NOT NULL,
+        qualidade VARCHAR(50),
+        parecido BOOLEAN NOT NULL,
         id_produto INT,
         id_cliente INT,
         id_vendedor INT,
