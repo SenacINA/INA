@@ -1,63 +1,102 @@
-<?php    
-require_once __DIR__.'/../../models/admin/AdminModel.php';
-require_once __DIR__.'/../../models/admin/GerenciarUsuariosModel.php';
-require_once __DIR__.'/../../models/geral/GeralModel.php';
+<?php
+require_once __DIR__ . '/../../models/admin/AdminModel.php';
+require_once __DIR__ . '/../../models/admin/GerenciarUsuariosModel.php';
+require_once __DIR__ . '/../../models/geral/GeralModel.php';
+require_once('./app/models/admin/AprovarVendedorModel.php');
 
 
-class AdminController extends RenderView {
+class AdminController extends RenderView
+{
 
-    public function dashboard() {
+    public function dashboard()
+    {
         $this->loadView('admin/Dashboard', []);
     }
 
-    public function perfil() {
+    public function perfil()
+    {
         $this->loadView('admin/PerfilAdmin', []);
     }
 
-    public function aprovarVendedor() {
-        $this->loadView('admin/AprovarVendedor', []);
+    public function aprovarVendedor()
+    {
+        $filtros = [
+            'search' => $_POST['search'] ?? '',
+            'status' => $_POST['status'] ?? '',
+            'mes'    => $_POST['mes']    ?? '',
+            'ano'    => $_POST['ano']    ?? '',
+        ];
+
+        $model = new VendedorModel();
+        $lista = $model->getRequisicoes($filtros);
+        $this->loadView('admin/AprovarVendedor', ['lista' => $lista]);
     }
 
-    public function atualizarUsuario() {
+    public function atualizarUsuario()
+    {
         $this->loadView('admin/AtualizarUsuario', []);
     }
 
-    public function gerenciarUsuarios() {
+    public function gerenciarUsuarios()
+    {
         $this->loadView('admin/GerenciarUsuario', ['usuarioSelecionado' => $usuarioSelecionado ?? null, 'info' => $info ?? []]);
     }
 
-    public function gerenciarProdutos() {
+    public function gerenciarProdutos()
+    {
         $this->loadView('admin/GerenciarProdutos', []);
     }
 
-    public function gerenciarCarrossel() {
+    public function gerenciarCarrossel()
+    {
         $this->loadView('admin/GerenciarCarrossel', []);
     }
 
-    public function relatorioVendedor() {
+    public function relatorioVendedor()
+    {
         $this->loadView('admin/RelatorioVendedor', []);
     }
 
-    public function historicoAcesso() {
+    public function historicoAcesso()
+    {
         $this->loadView('admin/HistoricoAcesso', []);
     }
 
-    public function adminCarrossel() {
+    public function adminCarrossel()
+    {
         $this->loadView('admin/AdminCarrossel', []);
     }
 
-    public function showUsers() {
+    public function gerenciarVendedor()
+    {
+        $acao = $_POST['acao'];
+        $id   = (int)$_POST['vendedor_id'];
+        $model = new VendedorModel();
+
+        if ($acao === 'aprovar') {
+            $model->atualizarStatus($id, 'Aprovado');
+        } else if ($acao === 'reprovar') {
+            $model->atualizarStatus($id, 'Reprovado');
+        }
+        
+        $this->aprovarVendedor();
+    }
+
+    public function filtroAprovarUsuario() {}
+
+    public function showUsers()
+    {
         $model = new GerenciarUsuariosModel();
         $user = $model->tipoUser($_SESSION['cliente_id']);
         if ($user != 'admin') {
             header("Location: perfil");
-        }
-        else {
+        } else {
             return $model->getUsers();
         }
     }
 
-    public function searchDesativarUser() {
+    public function searchDesativarUser()
+    {
         $nomeCodigo = $_POST['nomeUsuario'] ?? '';
         $status = $_POST['select_cod'] ?? '';
         $mes = $_POST['mes'] ?? '';
@@ -72,7 +111,8 @@ class AdminController extends RenderView {
         ]);
     }
 
-    public function desativarUser() {
+    public function desativarUser()
+    {
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $cargo = $_POST['cargo'];
@@ -272,5 +312,5 @@ class AdminController extends RenderView {
             'errors'  => $errors
         ], JSON_UNESCAPED_UNICODE);
         exit;
-    }   
+    }
 }
