@@ -13,6 +13,7 @@ class GerenciarVendasController extends RenderView
 
   public function exibirVendas()
   {
+    
     if (isset($_SESSION['cliente_id'])) {
       $vendas = $this->model->getVendas();
     } else {
@@ -21,5 +22,11 @@ class GerenciarVendasController extends RenderView
     return [
       'vendas' => $vendas
     ];
+  }
+
+  public function index()
+  {
+    $dados = $this->exibirVendas();
+    $this->loadView('vendedor/GerenciarVendas', $dados);
   }
 }

@@ -20,10 +20,4 @@ class VendedorProductController extends RenderView {
     public function report() {
         $this->loadView('vendedor/RelatorioVendas', []);
     }
-    
-    public function manageSales()
-    {
-        $this->loadView('vendedor/GerenciarVendas', []);
-    }
-
 }

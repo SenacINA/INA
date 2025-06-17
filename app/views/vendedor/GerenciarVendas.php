@@ -124,25 +124,25 @@
           </tr>
         </thead>
         <tbody>
-        <?php if (empty($lista)): ?>
-          <tr><td colspan="6">Nenhum resultado encontrado</td></tr>
-        <?php else: ?>
-          <?php foreach ($lista as $v): ?>
-            <tr>
-              <td># <?= htmlspecialchars($v['id']) ?></td>
-              <td><?= htmlspecialchars($v['cliente']) ?></td>
-              <td><?= htmlspecialchars($v['preco']) ?></td>
-              <td class="aprovar_vendedor_coluna_botoes">
-                <form method="post" style="display:inline;">
-                  <input type="hidden" name="acao" value="aprovar">
-                  <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
-                  <button type="submit" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
-                </form>
-              </td>
-              <td><?= htmlspecialchars($v['dataDeCompra']) ?></td>
-            </tr>
-          <?php endforeach; ?>
-        <?php endif; ?>
+        <?php if (empty($vendas)): ?>
+            <tr><td colspan="6">Nenhum resultado encontrado</td></tr>
+          <?php else: ?>
+            <?php foreach ($vendas as $v): ?>
+              <tr>
+                <td># <?= htmlspecialchars($v['id_compra']) ?></td>
+                <td><?= htmlspecialchars($v['cliente']) ?></td>
+                <td>R$ <?= number_format($v['valor_total'], 2, ',', '.') ?></td>
+                <td class="aprovar_vendedor_coluna_botoes">
+                  <form method="post" style="display:inline;">
+                    <input type="hidden" name="acao" value="aprovar">
+                    <input type="hidden" name="vendedor_id" value="<?= $v['id_compra'] ?>">
+                    <button type="submit" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
+                  </form>
+                </td>
+                <td><?= htmlspecialchars(date('d/m/Y', strtotime($v['data_compra']))) ?></td>
+              </tr>
+            <?php endforeach; ?>
+          <?php endif; ?>
         </tbody>
       </table>
       </div>
