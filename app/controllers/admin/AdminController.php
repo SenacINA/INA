@@ -74,15 +74,25 @@ class AdminController extends RenderView
         $model = new VendedorModel();
 
         if ($acao === 'aprovar') {
-            $model->atualizarStatus($id, 'Aprovado');
+            $result = $model->atualizarStatus($id, 'Aprovado');
         } else if ($acao === 'reprovar') {
-            $model->atualizarStatus($id, 'Reprovado');
+            $result = $model->atualizarStatus($id, 'Reprovado');
         }
-        
-        $this->aprovarVendedor();
-    }
 
-    public function filtroAprovarUsuario() {}
+        if ($result) {
+            echo json_encode([
+                'success' => true,
+                'message' => 'Dados atualizados com sucesso!'
+            ]);
+            exit;
+        } else {
+            echo json_encode([
+                'success' => false,
+                'message' => 'Erro ao atualizar dados.'
+            ]);
+            exit;
+        }
+    }
 
     public function showUsers()
     {

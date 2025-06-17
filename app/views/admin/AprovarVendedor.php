@@ -165,15 +165,15 @@ require_once('./utils/head.php');
                         <td><?= htmlspecialchars($v['declaracao']) ?></td>
                         <td class="aprovar_vendedor_coluna_botoes">
                           <?php if ($v['status'] === 'Pendente'): ?>
-                            <form method="post" action="GerenciarVendedor" style="display:inline;">
-                              <input type="hidden" name="acao" value="aprovar">
-                              <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
-                              <button type="submit" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
+                            <form id="aprovarVendedorForms" style="display:inline;">
+                              <input type="hidden" id="acaoAprovar" name="acao" value="aprovar">
+                              <input type="hidden" id="vendedor_id" name="vendedor_id" value="<?= $v['codigo'] ?>">
+                              <button type="button" id="btn_aprovar" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
                             </form>
-                            <form method="post" action="GerenciarVendedor" style="display:inline;">
-                              <input type="hidden" name="acao" value="reprovar">
-                              <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
-                              <button type="submit" class="aprovar_vendedor_btn_recusar">RECUSAR</button>
+                            <form id="aprovarVendedorForms" style="display:inline;">
+                              <input type="hidden" id="acaoReprovar" name="acao" value="reprovar">
+                              <input type="hidden" id="vendedor_id" name="vendedor_id" value="<?= $v['codigo'] ?>">
+                              <button type="button" id="btn_reprovar" class="aprovar_vendedor_btn_recusar">RECUSAR</button>
                             </form>
                           <?php else: ?>
                             <button class="aprovar_vendedor_btn_inativar">INATIVAR</button>
@@ -188,5 +188,7 @@ require_once('./utils/head.php');
             </div>
   </main>
 </body>
+<script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
+<script src="<?= $PATH_PUBLIC ?>/js/admin/AprovarVendedor.js"></script>
 
 </html>
