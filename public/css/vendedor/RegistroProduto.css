@@ -165,11 +165,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0;
+  max-width: 510px;
 }
 
 /* Estilos Gerais do Editor */
 .editor-content {
-  width: 535px;
+  max-width: 510px;
+  width: 510px;
   all: initial;
   max-height: 270px;
   height: 270px;

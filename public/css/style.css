@@ -1125,6 +1125,7 @@ input:checked + .toggle_slider::before {
   row-gap: 0;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   &>img {
     aspect-ratio: 1 / 1;
   }

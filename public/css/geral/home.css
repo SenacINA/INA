@@ -302,7 +302,6 @@ body {
     }
 
     .index_body_imagem_produto {
-        row-gap: 0;
         display: flex;
         flex-direction: column;
     }

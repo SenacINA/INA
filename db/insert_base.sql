@@ -1,4 +1,4 @@
--- Inserir cliente
+-- Inserir Cliente -> Vendedor
 INSERT INTO cliente (
     id_cliente,
     nome_cliente,
@@ -30,6 +30,96 @@ INSERT INTO cliente (
     '',
     '',
     1,
+    1
+);
+
+-- Inserir Adm
+
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    cpf_cliente,
+    genero_cliente,
+    cep_cliente,
+    rg_cliente,
+    numero_celular_cliente,
+    ddd_cliente,
+    foto_perfil_cliente,
+    banner_perfil_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    2,
+    'Adm',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-06-16',
+    'adm@email.com',
+    '',
+    '',
+    '79033337',
+    '178272851',
+    '',
+    '',
+    '',
+    '',
+    0,
+    1
+);
+
+-- Inserir permissões Adm
+
+INSERT INTO permissao_admin (
+    id_permissao,
+    id_cliente,
+    gerenciar_carrossel,
+    gerenciar_usuarios,	
+    gerenciar_produtos,	
+    acessar_historico_acesso	
+) VALUES (
+    1,
+    2,
+    TRUE,
+    TRUE,
+    TRUE,
+    TRUE
+)
+
+-- Inserir Cliente 
+
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    cpf_cliente,
+    genero_cliente,
+    cep_cliente,
+    rg_cliente,
+    numero_celular_cliente,
+    ddd_cliente,
+    foto_perfil_cliente,
+    banner_perfil_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    3,
+    'Cliente',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-06-16',
+    'cliente@email.com',
+    '',
+    '',
+    '79033337',
+    '178272851',
+    '',
+    '',
+    '',
+    '',
+    2,
     1
 );
 
