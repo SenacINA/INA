@@ -132,11 +132,9 @@
                 <td># <?= htmlspecialchars($v['id_compra']) ?></td>
                 <td><?= htmlspecialchars($v['cliente']) ?></td>
                 <td>R$ <?= number_format($v['valor_total'], 2, ',', '.') ?></td>
-                <td class="aprovar_vendedor_coluna_botoes">
+                <td>
                   <form method="post" style="display:inline;">
-                    <input type="hidden" name="acao" value="aprovar">
-                    <input type="hidden" name="vendedor_id" value="<?= $v['id_compra'] ?>">
-                    <button type="submit" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
+                    <button type="submit" class="aprovar_vendedor_btn_aprovar btn_blue base_botao">GERENCIAR</button>
                   </form>
                 </td>
                 <td><?= htmlspecialchars(date('d/m/Y', strtotime($v['data_compra']))) ?></td>
