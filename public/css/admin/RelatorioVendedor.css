@@ -71,6 +71,87 @@ main{
     padding: 32px;
 }
 
+.relatorio_vendedor_estatistica_holder {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  height: 100%;
+  padding-top: 8px;
+}
+
+.relatorio_vendedor_card_img_perfil {
+  width: 104px;
+  height: 104px;
+  margin-bottom: 16px;
+}
+
+.relatorio_vendedor_card_column_2 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.relatorio_vendedor_estatisticas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.relatorio_vendedor_card {
+  background: var(--branco_gelo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 8px;
+  height: 100%;
+}
+
+.relatorio_vendedor_card button {
+  width: 90%;
+}
+
+.relatorio_vendedor_titulo {
+  display: flex;
+  padding: 8px;
+  height: 50%;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--carolina);
+  border-radius: 8px 8px 0px 0px;
+  overflow: hidden;
+}
+
+.relatorio_vendedor_titulo2 {
+  display: flex;
+  padding: 8px;
+  margin-bottom: 16px;
+  height: 36px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--carolina);
+  border-radius: 8px 8px 0px 0px;
+  overflow: hidden;
+}
+
+.relatorio_vendedor_estatistica_descricao {
+  display: flex;
+  height: 50%;
+  font-size: 18px;
+  font-weight: 500;
+  align-items: center;
+  color: #255e7e;
+}
 
 .relatorio_vendedor_perfil_usuario h1 {
   color: #1B98E0;

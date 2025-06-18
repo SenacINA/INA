@@ -52,7 +52,14 @@
           <hr class="relatorio_vendedor_vertical">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Perfil Do Vendedor</h1>
-        </div>        
+        </div>
+        
+        <div class="relatorio_vendedor_estatistica_holder">
+          <div class="relatorio_vendedor_card">
+            <span class="relatorio_vendedor_titulo2" id="nome_cliente"></span>
+                  <img src="<?= $PATH_PUBLIC ?>/image/admin/perfil_admin/perfil_img.svg" alt="" class="relatorio_vendedor_card_img_perfil">
+          </div>
+        </div>
 
         <?php if ($perfil): ?>
           <div class="relatorio_vendedor_perfil_usuario">
