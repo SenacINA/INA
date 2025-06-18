@@ -19,7 +19,7 @@ document.getElementById("continuar_button_senha").addEventListener("click", asyn
         if (data.success) {
             gerarToast(data.message, 'sucesso');
             setTimeout(() => {
-                pag('/EditarPerfil');
+                pag('/Login');
             }, 3000);
         } else if (data.errors && Array.isArray(data.errors)) {
             data.errors.forEach(error => gerarToast(error, 'erro'));
