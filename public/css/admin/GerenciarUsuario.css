@@ -4,7 +4,70 @@
   flex-direction: column;
   gap: 16px;
 }
+.modal_h1p{
+  display: flex;
+  align-self: center;
+}
+.modal_desativar{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00000080;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
 
+
+.modal_content{
+  width: 60%;
+  min-width: 350px;
+  min-height: 400px;
+  background-color: #ffffff;
+  backdrop-filter: blur(10px);
+  padding: 50px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.modal_fechar{
+  position: absolute;
+  bottom: 1px;
+  left: 320px;
+  max-width: fit-content;
+  padding: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 10;
+  border-radius: 10%;
+  background-color: rgb(247, 247, 247);
+  border-color: red;
+
+  color: rgb(255, 0, 0);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal_confirmar{
+  position: absolute;
+  bottom: 1px;
+  right: 320px;
+  max-width: fit-content;
+  padding: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #255e7e;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.modal_desativar.abrir{
+  display: flex;
+}
 .gerenciar_usuario_body_holder {
   border-radius: 10px;
 }
@@ -364,3 +427,4 @@
     width: 100%;
   }
 }
+
