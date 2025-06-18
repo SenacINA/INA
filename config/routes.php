@@ -53,7 +53,11 @@ $routes = [
       '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
       '/CadastroVendedor'                 => 'vendedor/VendedorController@showFormCadastro',
       '/CadastroVendedorForms'            => 'vendedor/VendedorController@cadastroForm',
+
+
       '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
+      '/SalvarDestaque-api' => 'vendedor/DestaqueController@salvarDestaque',
+
 
       // Vendedor - Produtos e Pedidos
       '/PedidosVendedor'          => 'vendedor/VendedorProductController@pedidos',

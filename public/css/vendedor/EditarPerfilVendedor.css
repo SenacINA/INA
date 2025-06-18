@@ -4,17 +4,6 @@
   font-family: "Jost";
 }
 
-html {
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  background-color: #fff;
-  height: 100%;
-}
-
-
 .popup_container {
   width: 100vw;
   height: 100vh;
@@ -116,6 +105,7 @@ body {
   background-color: #eff3f5;
   border-radius: 10px;
   padding: 0 16px;
+  margin-bottom: 30px;
 }
 
 .coluna_quadrado {
@@ -228,7 +218,8 @@ body {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 90%; /* 18px */
+  line-height: 90%;
+  /* 18px */
   justify-content: center;
 }
 
@@ -241,7 +232,8 @@ body {
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
-  line-height: 90%; /* 11.7px */
+  line-height: 90%;
+  /* 11.7px */
 }
 
 .tempo_vendedor_container,
@@ -368,6 +360,7 @@ body {
   max-width: 100%;
   display: flex;
   gap: 4px;
+
   img {
     height: 24px;
   }
@@ -527,6 +520,7 @@ body {
   flex-direction: row;
   gap: 8px;
   align-items: flex-end;
+
   img {
     height: 24px;
   }
@@ -681,7 +675,8 @@ body {
   background-color: var(--branco_gelo);
 }
 
-#imgPreviewBanner:hover, #imgPreviewFoto:hover {
+#imgPreviewBanner:hover,
+#imgPreviewFoto:hover {
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
@@ -728,7 +723,8 @@ body {
   background-color: var(--branco_gelo);
 }
 
-.destaques {
+.destaques,
+.produtos {
   display: flex;
   flex-direction: column;
 
@@ -738,35 +734,42 @@ body {
   width: 100%;
 }
 
-.icon_destaques_vendedor {
+.icon_destaques_vendedor,
+.icon_produtos_vendedor {
   width: 24px;
   height: 24px;
 }
 
-.destaques_text {
+.destaques_text,
+.produtos_text {
   display: flex;
   align-items: center;
   column-gap: 1%;
 }
 
-.destaques_main_text {
+.destaques_main_text,
+.produtos_main_text {
   font-size: 24px;
   font-weight: 600;
   color: var(--celadon);
 }
 
+.produtos_container,
 .destaques_container {
   background-color: var(--azul_leve);
   padding: 16px;
   width: 100%;
+  min-height: 200px;
   border-radius: 5px;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(6, 1fr);
   gap: 0;
   justify-content: start;
+  margin-bottom: 30px;
 }
 
+.produtos_num,
 .destaques_num {
   color: var(--cinza);
   font-size: 24px;
@@ -785,26 +788,7 @@ body {
   gap: 24px;
 }
 
-.salvar {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  font-size: 1.25rem;
-  /* 20px */
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 0;
-  background-color: #1b98e0;
-  color: #fff;
-  text-transform: uppercase;
-  width: 100%;
-}
-
+.salvar,
 .cancelar {
   display: flex;
   gap: 8px;
@@ -817,10 +801,19 @@ body {
   line-height: normal;
   border-radius: 5px;
   cursor: pointer;
-  border: 2px solid var(--vermelho);
-  color: var(--vermelho);
+  border: 0;
+  color: #fff;
   text-transform: uppercase;
   width: 100%;
+}
+
+.salvar {
+  background-color: #1b98e0;
+}
+
+.cancelar {
+  border: 2px solid var(--vermelho);
+  color: var(--vermelho);
 }
 
 .index_body_produto_card {
@@ -849,14 +842,14 @@ body {
     text-overflow: ellipsis;
   }
 }
+
 .index_body_desconto {
   position: absolute;
   top: 8px;
   right: 0;
   width: 80px;
   height: 20px;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="20" viewBox="0 0 80 20" fill="none"><path d="M0 0H80V20H0L17.3359 10L0 0Z" fill="%23006494"/></svg>')
-    no-repeat;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="20" viewBox="0 0 80 20" fill="none"><path d="M0 0H80V20H0L17.3359 10L0 0Z" fill="%23006494"/></svg>') no-repeat;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -978,6 +971,7 @@ body {
     width: 100%;
     margin: 0;
   }
+
   .botao_edit {
     width: 100%;
   }
@@ -1037,13 +1031,16 @@ body {
   .infos_container {
     column-gap: 0;
   }
+
   .nome_vendedor {
     grid-column: 1 / 4;
     position: relative;
   }
+
   .about_container {
     margin-top: 5%;
   }
+
   .separador_mini_perfil {
     margin-top: 10%;
     width: 90%;
@@ -1053,12 +1050,15 @@ body {
     margin-right: 10px;
     margin-left: 10px;
   }
+
   .contatos_container {
     margin-top: 5%;
   }
+
   .text_about {
     width: 90%;
   }
+
   .about_container {
     left: 5%;
   }
@@ -1088,7 +1088,8 @@ body {
 
   .infos_container {
     grid-template-columns: 1fr 1fr;
-    > div:not(.nome_vendedor  ) {
+
+    >div:not(.nome_vendedor) {
       width: 100%;
       align-items: start;
     }
@@ -1099,20 +1100,25 @@ body {
     margin-right: 10px;
     margin-left: 10px;
   }
+
   .contatos_container {
     margin-top: 10%;
   }
+
   .tempo_vendedor_container {
     grid-column: 2;
     grid-row: 3;
   }
+
   .localizacao_vendedor_container {
     grid-column: 1;
   }
+
   .redefinir_email_vendedor,
   .redefinir_senha_vendedor {
     font-size: 16px;
   }
+
   .destaques_container {
     grid-template-columns: 1fr 1fr;
   }

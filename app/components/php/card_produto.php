@@ -19,7 +19,7 @@ class cardProduto
             $imagem_raw = htmlspecialchars($produto['endereco_imagem_produto']);
 
             echo "
-            <div class='index_body_produto_card'>
+            <div class='index_body_produto_card' data-id='<?= $id ?>' data-nome='<?= htmlspecialchars($nome) ?>'>
                 <div class='index_body_imagem_produto'>
                     <img id='produto' src='{$imagem}' alt='{$nome}'>
                     <p>{$nome}</p>

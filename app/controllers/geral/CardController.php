@@ -21,4 +21,10 @@ class CardController extends RenderView {
     $produtos = $model->getProdutoInfoComCategoria($categoria);
     return $produtos;
   }
+
+  public function sendProdutosVendedor($idVendedor) {
+    $model = new CardModel;
+    return $model->getProdutoInfoPorVendedor($idVendedor);
+  }
+  
 }
