@@ -4,6 +4,31 @@
 $titulo = "Aprovar Vendedores - E ao Quadrado";
 $css = ["/css/admin/AprovarVendedor.css"];
 require_once('./utils/head.php');
+require_once('./app/models/admin/AprovarVendedorModel.php');
+
+// Processa ações de aprovação/reprovação
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao'], $_POST['vendedor_id'])) {
+  $acao = $_POST['acao'];
+  $id   = (int)$_POST['vendedor_id'];
+  $model = new VendedorModel();
+
+  if ($acao === 'aprovar') {
+    $model->atualizarStatus($id, 'Aprovado');
+  } elseif ($acao === 'reprovar') {
+    $model->atualizarStatus($id, 'Reprovado');
+  }
+}
+
+// Filtros do formulário
+$filtros = [
+  'search' => $_POST['search'] ?? '',
+  'status' => $_POST['status'] ?? '',
+  'mes'    => $_POST['mes']    ?? '',
+  'ano'    => $_POST['ano']    ?? '',
+];
+
+$model = new VendedorModel();
+$lista = $model->getRequisicoes($filtros);
 ?>
 
 <body>
@@ -32,64 +57,60 @@ require_once('./utils/head.php');
                 <form action="" method="post" class="aprovar_vendedor_forms_pesquisa_pedidos">
                   <label class="font_subtitulo font_celadon">Código / Nome Vendedor</label>
                   <input type="text" name="search" class="base_input"
-                    placeholder="Código / Nome">
+                    placeholder="Código / Nome" value="<?= htmlspecialchars($filtros['search']) ?>">
+                  <div class="aprovar_vendedor_filtro">
+                    <div class="aprovar_vendedor_container_status base_input_select">
+                      <label class="font_subtitulo font_celadon">Status</label>
+                      <select name="status" class="aprovar_vendedor_select_status base_input">
+                        <option value="">Todos</option>
+                        <option value="Aprovado" <?= $filtros['status'] === 'Aprovado' ? 'selected' : '' ?>>Aprovado</option>
+                        <option value="Pendente" <?= $filtros['status'] === 'Pendente' ? 'selected' : '' ?>>Pendente</option>
+                        <option value="Reprovado" <?= $filtros['status'] === 'Reprovado' ? 'selected' : '' ?>>Reprovado</option>
+                      </select>
+                    </div>
 
-                  <div class="aprovar_vendedor_container_status">
-                    <label class="font_subtitulo font_celadon">Status</label>
-                    <select name="status" class="aprovar_vendedor_select_status base_input">
-                      <option value="">Todos</option>
-                      <option value="Aprovado">Aprovado</option>
-                      <option value="Pendente">Pendente</option>
-                      <option value="Reprovado">Reprovado</option>
-                    </select>
+                    <div class="aprovar_vendedor_container_mes base_input_select">
+                      <label class="font_subtitulo font_celadon">Mês</label>
+                      <select name="mes" class="aprovar_vendedor_mes_select base_input">
+                        <option value="" <?= $filtros['mes'] === '' ? 'selected' : '' ?>>Todos</option>
+                        <?php
+                        $meses = [
+                          'Janeiro' => 'January',
+                          'Fevereiro' => 'February',
+                          'Março' => 'March',
+                          'Abril' => 'April',
+                          'Maio' => 'May',
+                          'Junho' => 'June',
+                          'Julho' => 'July',
+                          'Agosto' => 'August',
+                          'Setembro' => 'September',
+                          'Outubro' => 'October',
+                          'Novembro' => 'November',
+                          'Dezembro' => 'December'
+                        ];
+
+                        foreach ($meses as $m_pt => $m_en): ?>
+                          <option value="<?= $m_en ?>"
+                            <?= $filtros['mes'] === $m_en ? 'selected' : '' ?>>
+                            <?= $m_pt ?>
+                          </option>
+                        <?php endforeach; ?>
+                      </select>
+                    </div>
+
+                    <div class="aprovar_vendedor_container_ano base_input_select">
+                      <label class="font_subtitulo font_celadon">Ano</label>
+                      <select name="ano" class="aprovar_vendedor_ano_select base_input">
+                        <option value="" <?= $filtros['ano'] === '' ? 'selected' : '' ?>>Todos</option>
+                        <?php for ($y = date('Y'); $y >= date('Y') - 5; $y--): ?>
+                          <option value="<?= $y ?>" <?= $filtros['ano'] === (string)$y ? 'selected' : '' ?>>
+                            <?= $y ?>
+                          </option>
+                        <?php endfor; ?>
+                      </select>
+                    </div>
                   </div>
 
-                  <div class="aprovar_vendedor_container_mes">
-                    <label class="font_subtitulo font_celadon">Mês</label>
-                    <select name="mes" class="aprovar_vendedor_mes_select base_input">
-                      <option value="">Todos</option>
-                      <?php
-                      $meses = [
-                        'Janeiro' => 'January',
-                        'Fevereiro' => 'February',
-                        'Março' => 'March',
-                        'Abril' => 'April',
-                        'Maio' => 'May',
-                        'Junho' => 'June',
-                        'Julho' => 'July',
-                        'Agosto' => 'August',
-                        'Setembro' => 'September',
-                        'Outubro' => 'October',
-                        'Novembro' => 'November',
-                        'Dezembro' => 'December'
-                      ];
-
-                      foreach ($meses as $m_pt => $m_en): ?>
-                        <option value="<?= $m_en ?>">
-                          <?= $m_pt ?>
-                        </option>
-                      <?php endforeach; ?>
-                    </select>
-                  </div>
-
-                  <div class="aprovar_vendedor_container_ano">
-                    <label class="font_subtitulo font_celadon">Ano</label>
-                    <select name="ano" class="aprovar_vendedor_ano_select base_input">
-                      <option value="" selected disabled style="display: none;">Todos</option>
-                      <option value="01">Janeiro</option>
-                      <option value="02">Fevereiro</option>
-                      <option value="03">Março</option>
-                      <option value="04">Abril</option>
-                      <option value="05">Maio</option>
-                      <option value="06">Junho</option>
-                      <option value="07">Julho</option>
-                      <option value="08">Agosto</option>
-                      <option value="09">Setembro</option>
-                      <option value="10">Outubro</option>
-                      <option value="11">Novembro</option>
-                      <option value="12">Dezembro</option>
-                    </select>
-                  </div>
 
                   <div class="aprovar_vendedor_container_botao">
                     <div class="aprovar_vendedor_holder_botao">
@@ -165,15 +186,15 @@ require_once('./utils/head.php');
                         <td><?= htmlspecialchars($v['declaracao']) ?></td>
                         <td class="aprovar_vendedor_coluna_botoes">
                           <?php if ($v['status'] === 'Pendente'): ?>
-                            <form id="aprovarVendedorForms" style="display:inline;">
-                              <input type="hidden" id="acaoAprovar" name="acao" value="aprovar">
-                              <input type="hidden" id="vendedor_id" name="vendedor_id" value="<?= $v['codigo'] ?>">
-                              <button type="button" id="btn_aprovar" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
+                            <form method="post" style="display:inline;">
+                              <input type="hidden" name="acao" value="aprovar">
+                              <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
+                              <button type="submit" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
                             </form>
-                            <form id="aprovarVendedorForms" style="display:inline;">
-                              <input type="hidden" id="acaoReprovar" name="acao" value="reprovar">
-                              <input type="hidden" id="vendedor_id" name="vendedor_id" value="<?= $v['codigo'] ?>">
-                              <button type="button" id="btn_reprovar" class="aprovar_vendedor_btn_recusar">RECUSAR</button>
+                            <form method="post" style="display:inline;">
+                              <input type="hidden" name="acao" value="reprovar">
+                              <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
+                              <button type="submit" class="aprovar_vendedor_btn_recusar">RECUSAR</button>
                             </form>
                           <?php else: ?>
                             <button class="aprovar_vendedor_btn_inativar">INATIVAR</button>
@@ -188,7 +209,5 @@ require_once('./utils/head.php');
             </div>
   </main>
 </body>
-<script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
-<script src="<?= $PATH_PUBLIC ?>/js/admin/AprovarVendedor.js"></script>
 
 </html>

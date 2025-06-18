@@ -1111,14 +1111,21 @@ input:checked + .toggle_slider::before {
   padding: 4px;
   min-width: 200px;
   max-width: 200px;
-  min-height: 362px;
-  max-height: 362px;
+  min-height: 320px;
+  max-height: 320px;
   display: flex;
   flex-direction: column;
   background-color: #F9F9FC;
   border-radius: 5px;
   justify-content: space-between;
   margin: 10px;
+}
+
+.form_produto {
+  width: 100%;
+  button {
+    font-size: 1rem;
+  }
 }
 
 .index_body_imagem_produto {
@@ -1166,6 +1173,7 @@ input:checked + .toggle_slider::before {
 #indexBodyValorProduto {
   color: #FF7A00;
   font-size: 16px;
+  font-weight: 600;
 }
 
 .index_body_estrela_produto {
