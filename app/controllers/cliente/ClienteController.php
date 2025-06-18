@@ -22,7 +22,13 @@ class ClienteController extends RenderView {
     }
 
     public function login() {
-        $this->loadView('cliente/Login', []);
+        if (isset($_SESSION['user_type']) || isset($_SESSION['cliente_id'])) {
+            header('Location: /INA/');
+            exit;
+        }
+        else {
+            $this->loadView('cliente/Login', []);
+        }
     }
 
     public function cadastro()
