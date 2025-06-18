@@ -186,8 +186,8 @@ CREATE TABLE
         -- 17
         id_perfil INT PRIMARY KEY AUTO_INCREMENT,
         id_cliente INT,
-        foto_perfil VARCHAR(500) NOT NULL DEFAULT 'default_profile_picture.jpg',
-        banner_perfil VARCHAR(500) NOT NULL DEFAULT 'default_banner_picture.jpg',
+        foto_perfil VARCHAR(500) NOT NULL DEFAULT '/image/cliente/perfil_cliente/foto_user.png',
+        banner_perfil VARCHAR(500) NOT NULL DEFAULT '/image/cliente/perfil_cliente/banner_user.png',
         descricao_perfil VARCHAR(500),
         tiktok_perfil VARCHAR(50),
         linkedin_perfil VARCHAR(50),

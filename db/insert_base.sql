@@ -85,9 +85,9 @@ INSERT INTO permissao_admin (
     TRUE,
     TRUE,
     TRUE
-)
+);
 
--- Inserir Cliente 
+-- Inserir Cliente id:3
 
 INSERT INTO cliente (
     id_cliente,
@@ -95,14 +95,6 @@ INSERT INTO cliente (
     senha_cliente,
     data_registro_cliente,
     email_cliente,
-    cpf_cliente,
-    genero_cliente,
-    cep_cliente,
-    rg_cliente,
-    numero_celular_cliente,
-    ddd_cliente,
-    foto_perfil_cliente,
-    banner_perfil_cliente,
     tipo_conta_cliente,
     status_conta_cliente
 ) VALUES (
@@ -111,16 +103,125 @@ INSERT INTO cliente (
     '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
     '2025-06-16',
     'cliente@email.com',
-    '',
-    '',
-    '79033337',
-    '178272851',
-    '',
-    '',
-    '',
-    '',
     2,
     1
+);
+
+-- Insert Perfil cliente
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    2,
+    3,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Insert cliente id:4
+
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    4,
+    'Cliente4',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-06-16',
+    'cliente4@email.com',
+    2,
+    1
+);
+
+-- Insert Perfil cliente
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    3,
+    4,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Insert cliente id:5
+
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    5,
+    'Cliente5',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-06-16',
+    'cliente5@email.com',
+    2,
+    1
+);
+
+-- Insert Perfil cliente
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    4,
+    5,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+
+-- Insert cliente id:6
+
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    6,
+    'Cliente6',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-06-16',
+    'cliente6@email.com',
+    2,
+    1
+);
+
+-- Insert Perfil cliente
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    5,
+    6,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
 );
 
 -- Inserir categoria
@@ -433,3 +534,46 @@ INSERT INTO imagem_produto (
     (12, 5, '/upload/produtos/5/imagem_1_1750113375.webp', 1),
     (13, 5, '/upload/produtos/5/imagem_2_1750113375.webp', 2),
     (14, 5, '/upload/produtos/5/imagem_3_1750113375.webp', 3);
+
+-- Avaliações para o produto 1 do vendedor 1 por vários clientes
+
+INSERT INTO avaliacao (
+    id_avaliacao,
+    status_avaliacao,
+    estrelas_avaliacao,
+    data_avaliacao,
+    descricao_avaliacao,
+    qualidade,
+    parecido,
+    id_produto,
+    id_cliente,
+    id_vendedor
+) VALUES
+    (1, TRUE, 5.0, '2025-06-17',
+     'Produto incrível, superou todas as minhas expectativas! Ótima qualidade e entrega rápida.',
+     'Excelente', TRUE, 1, 2, 1),
+    (2, TRUE, 4.5, '2025-06-16',
+     'Ótimo desempenho, só a embalagem chegou um pouco amassada, mas o produto veio intacto.',
+     'Boa', TRUE, 1, 3, 1),
+    (3, TRUE, 3.0, '2025-06-15',
+     'Produto funcional, mas o acabamento poderia ser melhor e alguns detalhes de montagem vieram soltos.',
+     'Regular', FALSE, 1, 4, 1),
+    (4, TRUE, 2.0, '2025-06-14',
+     'Não gostei da durabilidade; após poucos usos já apresentou sinal de desgaste.',
+     'Ruim', FALSE, 1, 5, 1),
+    (5, FALSE, 1.0, '2025-06-18',
+     'Recebi o produto danificado e ainda não consegui contato para troca. Estou aguardando resposta.',
+     'Péssimo', FALSE, 1, 6, 1);
+
+-- Inserir imagens para avaliações do produto 1
+
+INSERT INTO imagem_avaliacao (
+    id_imagem_avaliacao,
+    endereco_imagem_avaliacao,
+    id_avaliacao
+) VALUES
+    (1, '/upload/avaliacoes/1/1/avaliacao_imagem.jpg', 1),
+    (2, '/upload/avaliacoes/1/2/avaliacao_imagem.jpg', 2),
+    (3, '/upload/avaliacoes/1/3/avaliacao_imagem.jpg', 3),
+    (4, '/upload/avaliacoes/1/4/avaliacao_imagem.jpg', 4),
+    (5, '/upload/avaliacoes/1/5/avaliacao_imagem.jpg', 5);
