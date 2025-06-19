@@ -126,13 +126,4 @@ class ProdutoModel
         $stmt->execute();
         return $stmt->fetchColumn() > 0;
     }
-
-    public function getComentarios(int $idVendedor, int $idProduto): bool {
-        $sql = "
-            SELECT * FROM avaliacao
-            WHERE 
-        ";
-    }
-
-  
 }

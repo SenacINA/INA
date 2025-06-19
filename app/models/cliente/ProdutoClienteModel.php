@@ -14,6 +14,7 @@ class ProdutoClienteModel
   public function searchProduto($id)
   {
     $sql = "SELECT
+    p.id_vendedor,
     p.nome_produto,
     p.preco_produto,
     p.status_produto,
@@ -57,5 +58,54 @@ WHERE
       'infoProduto' => $produto,
       'imagens' => $imagens
     ];
+  }
+
+  public function getComentarios(int $idVendedor, int $idProduto, int $limit = 5, int $offset = 0): array
+  {
+      $sql = "
+          SELECT
+              a.id_avaliacao,
+              a.estrelas_avaliacao,
+              a.data_avaliacao,
+              a.descricao_avaliacao,
+              a.qualidade,
+              a.parecido,
+              c.nome_cliente,
+              p.foto_perfil AS foto_perfil_cliente,
+              GROUP_CONCAT(i.endereco_imagem_avaliacao SEPARATOR '||') AS imagens
+          FROM avaliacao a
+          JOIN cliente c
+            ON c.id_cliente = a.id_cliente
+          LEFT JOIN perfil p
+            ON p.id_cliente = c.id_cliente
+          LEFT JOIN imagem_avaliacao i
+            ON i.id_avaliacao = a.id_avaliacao
+          WHERE
+            a.id_vendedor   = :idVendedor
+            AND a.id_produto = :idProduto
+            AND a.status_avaliacao = 1
+          GROUP BY a.id_avaliacao
+          ORDER BY a.data_avaliacao DESC
+          LIMIT :limit OFFSET :offset
+      ";
+
+      // Obter conexão PDO
+      $pdo = $this->db->getConnection();
+      $stmt = $pdo->prepare($sql);
+
+      $stmt->bindValue(':idVendedor', $idVendedor, \PDO::PARAM_INT);
+      $stmt->bindValue(':idProduto',  $idProduto,  \PDO::PARAM_INT);
+      $stmt->bindValue(':limit',      $limit,      \PDO::PARAM_INT);
+      $stmt->bindValue(':offset',     $offset,     \PDO::PARAM_INT);
+      
+      $stmt->execute();
+
+      $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+      foreach ($rows as &$r) {
+          $r['imagens'] = $r['imagens'] ? explode('||', $r['imagens']) : [];
+      }
+
+      return $rows;
   }
 }

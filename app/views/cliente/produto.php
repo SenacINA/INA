@@ -227,58 +227,38 @@ $info = $controller->exibirProduto($id);
     <?php endif; ?>
 
     <div class="grid_comentarios_usuarios">
-        <div class="comentario_usuario">
-            <div class="grid_user">
-                <div class='cliente_nome_pic'>
-                    <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
-                    <div>
-                        <h1>Carlos</h1>
-                        <h2 class='vendedor_estrelas'>★★★★★</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid_comentario_user">
-                <div class="avaliacao_user_item1">
-                    <h2>Qualidade:</h2>
-                    <h3>Muito boa</h3>
-                </div>
-                <div class="avaliacao_user_item2">
-                    <h2>Parecido com o anúncio:</h2>
-                    <h3>Sim</h3>
-                </div>
-                <h2 class='produto_comentario'>
-                    Uma cadeira gamer envolvente e seduzente é muito mais do que um simples móvel. Ela combina conforto ergonômico com um design atraente que promove uma imersão total na experiência de jogo. Com seu encosto alto e ajustes personalizáveis, não só proporciona suporte para longas sessões de jogo, mas também se torna um elemento marcante no ambiente, convidando você a se entregar ao mundo virtual com estilo e conforto.
-                </h2>
-            </div>
-
-            <div class="grid_images_user">
-                <div class="image1_user">
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-                <div class='image1_user'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-            </div>
-        </div>
-
+        
         <?php
-            require_once __DIR__ . '/../../components/php/avaliacao.php';
- 
-            $comentarioData = [
-                'nome' => 'Carlos teste',
-                'estrelas' => 0,
-                'qualidade' => 'Muito boa',
-                'parecido' => 'Sim',
-                'texto' => 'Uma cadeira gamer envolvente e seduzente é muito mais do que um simples móvel...',
-                'imagens' => [
-                    $PATH_PUBLIC . '/image/cliente/produto/cadeira_gamer_size_big.png',
-                    $PATH_PUBLIC . '/image/cliente/produto/cadeira_gamer_size_big.png'
-                ],
-                'foto_perfil' => $PATH_PUBLIC . '/image/cliente/produto/icon_profile.svg'
+            $controller = new ProdutoController();
+            $params = [
+                'idVendedor' => $info['infoProduto']['id_vendedor'],
+                'idProduto'  => $id,
+                'maxRender'  => $_GET['maxRender'] ?? 10,
+                'offset'     => $_GET['offset'] ?? 0
             ];
+            $comentarios = $controller->comentarios($params);
 
-            echo ComentarioAvaliacaoProdutoComponent::render($comentarioData);
+            require_once __DIR__ . '/../../components/php/avaliacao.php';
+
+            foreach ($comentarios as $comentario) {
+                $dadosComponente = [
+                    'nome' => $comentario['nome_cliente'],
+                    'estrelas' => $comentario['estrelas_avaliacao'],
+                    'qualidade' => $comentario['qualidade'],
+                    'parecido' => $comentario['parecido'],
+                    'texto' => $comentario['descricao_avaliacao'],
+                    'imagens' => $comentario['imagens'],
+                    'foto_perfil' => $comentario['foto_perfil_cliente'] ?? null
+                ];
+                
+                echo ComentarioAvaliacaoProdutoComponent::render($dadosComponente);
+            }
+
+            if (count($comentarios) > 0) {
+                echo '<button class="btn-ver-mais">Ver mais avaliações</button>';
+            } else {
+                echo 'Sem avaliações';
+            }
         ?>
 
     </div>

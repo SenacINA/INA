@@ -223,18 +223,4 @@ class ProdutoController extends RenderView
         return $result ? (int)$result['id_vendedor'] : null;
     }
 
-    public function renderComentariosProduto(int $idVendedor, $idProduto) {
-        if (empty($idVendedor) || empty($idProduto)) {
-            header('Location: Error-404')
-            exit;
-        };
-
-        $model = new ProdutoModel();
-        $maxRender = 2;
-
-        $comentarios = $model->getComentarios($idVendedor, $idProduto);
-
-    }
-
-
 }

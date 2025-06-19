@@ -552,7 +552,7 @@ INSERT INTO avaliacao (
     (1, TRUE, 5.0, '2025-06-17',
      'Produto incrível, superou todas as minhas expectativas! Ótima qualidade e entrega rápida.',
      'Excelente', TRUE, 1, 2, 1),
-    (2, TRUE, 4.5, '2025-06-16',
+    (2, TRUE, 4, '2025-06-16',
      'Ótimo desempenho, só a embalagem chegou um pouco amassada, mas o produto veio intacto.',
      'Boa', TRUE, 1, 3, 1),
     (3, TRUE, 3.0, '2025-06-15',
@@ -561,7 +561,7 @@ INSERT INTO avaliacao (
     (4, TRUE, 2.0, '2025-06-14',
      'Não gostei da durabilidade; após poucos usos já apresentou sinal de desgaste.',
      'Ruim', FALSE, 1, 5, 1),
-    (5, FALSE, 1.0, '2025-06-18',
+    (5, TRUE, 0, '2025-06-18',
      'Recebi o produto danificado e ainda não consegui contato para troca. Estou aguardando resposta.',
      'Péssimo', FALSE, 1, 6, 1);
 
@@ -576,4 +576,4 @@ INSERT INTO imagem_avaliacao (
     (2, '/upload/avaliacoes/1/2/avaliacao_imagem.jpg', 2),
     (3, '/upload/avaliacoes/1/3/avaliacao_imagem.jpg', 3),
     (4, '/upload/avaliacoes/1/4/avaliacao_imagem.jpg', 4),
-    (5, '/upload/avaliacoes/1/5/avaliacao_imagem.jpg', 5);
+    (5, '/upload/avaliacoes/1/5/avaliacao_imagem2.jpg', 4);
