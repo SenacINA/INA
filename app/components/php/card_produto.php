@@ -47,9 +47,9 @@ class cardProduto
                             </svg>
                         </button>
                     </form>
-                    <form method='POST' action='Produto'>
+                    <form method='POST' class='form_produto' action='Produto'>
                         <input type='hidden' name='produto_id' value='{$id}'>
-                        <button class='base_botao btn_blue'>Comprar</button>
+                        <button class='base_botao btn_blue btn_comprar'>COMPRAR</button>
                     </form>
                 </div>
             </div>";
