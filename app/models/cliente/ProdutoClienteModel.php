@@ -89,7 +89,6 @@ WHERE
           LIMIT :limit OFFSET :offset
       ";
 
-      // Obter conexão PDO
       $pdo = $this->db->getConnection();
       $stmt = $pdo->prepare($sql);
 
@@ -107,5 +106,104 @@ WHERE
       }
 
       return $rows;
+  }
+
+  public function getMediaAvaliacoes(int $idProduto): float
+  {
+      $sql = "
+          SELECT 
+              AVG(a.estrelas_avaliacao) AS media,
+              COUNT(a.id_avaliacao) AS total_avaliacoes
+          FROM avaliacao a
+          WHERE 
+              a.id_produto = :idProduto
+              AND a.status_avaliacao = 1
+      ";
+
+      $pdo = $this->db->getConnection();
+      $stmt = $pdo->prepare($sql);
+      $stmt->bindValue(':idProduto', $idProduto, \PDO::PARAM_INT);
+      $stmt->execute();
+      
+      $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+      
+      return $result['media'] ? (float) $result['media'] : 0.0;
+  }
+
+  public function clientePodeAvaliar(int $idCliente, int $idProduto): bool
+  {
+    $pdo = $this->db->getConnection();
+
+    $sql = "SELECT 
+            (SELECT COUNT(*) FROM item_compra ic
+            JOIN compra c ON ic.id_compra = c.id_compra
+            WHERE c.id_cliente = :idCliente 
+            AND ic.id_produto = :idProduto
+            AND ic.status_entrega_compra = 1) AS comprou,
+            
+            (SELECT COUNT(*) FROM avaliacao 
+            WHERE id_cliente = :idCliente 
+            AND id_produto = :idProduto) AS avaliou";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([':idCliente' => $idCliente, ':idProduto' => $idProduto]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return ($result['comprou'] > 0) && ($result['avaliou'] == 0);
+  }
+
+  public function getDistribuicaoAvaliacoes(int $idProduto): array
+  {
+    $pdo = $this->db->getConnection();
+    
+    $sql = "
+        SELECT
+            estrelas_avaliacao,
+            COUNT(*) AS total
+        FROM avaliacao
+        WHERE 
+            id_produto = :idProduto
+            AND status_avaliacao = 1
+        GROUP BY estrelas_avaliacao
+        ORDER BY estrelas_avaliacao DESC
+    ";
+    
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':idProduto', $idProduto, \PDO::PARAM_INT);
+    $stmt->execute();
+    
+    $distribuicao = [
+        5 => 0,
+        4 => 0,
+        3 => 0,
+        2 => 0,
+        1 => 0
+    ];
+    
+    while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+        $estrelas = (int) $row['estrelas_avaliacao'];
+        if ($estrelas >= 1 && $estrelas <= 5) {
+            $distribuicao[$estrelas] = (int) $row['total'];
+        }
+    }
+    
+    $sqlMidia = "
+        SELECT COUNT(DISTINCT a.id_avaliacao) AS total
+        FROM avaliacao a
+        JOIN imagem_avaliacao i ON a.id_avaliacao = i.id_avaliacao
+        WHERE 
+            a.id_produto = :idProduto
+            AND a.status_avaliacao = 1
+    ";
+    
+    $stmtMidia = $pdo->prepare($sqlMidia);
+    $stmtMidia->bindValue(':idProduto', $idProduto, \PDO::PARAM_INT);
+    $stmtMidia->execute();
+    $midia = $stmtMidia->fetch(\PDO::FETCH_ASSOC);
+    
+    return [
+        'estrelas' => $distribuicao,
+        'com_midia' => $midia['total'] ?? 0
+    ];
   }
 }

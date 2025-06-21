@@ -103,11 +103,17 @@ body {
 
 .avaliacao_vendedor {
   height: 100%;
-  align-items: center;
+  align-items: flex-end;
   display: flex;
   flex-direction: column;
   padding-left: 8px;
   border-left: 2px black solid;
+}
+
+.vendedor_rating {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 .vendedor_rating_avaliacao {
@@ -156,10 +162,39 @@ body {
   margin-right: 10px;
 }
 
+.linha_comentario {
+  width: 100%;
+  height: 2px;
+  background-color: var(--cinza);
+  filter: opacity(.3);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
 .avaliacao_vendedor h2 {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   font-size: 16px;
+}
+
+.sem_avaliacoes {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.btn-ver-mais {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .base_botao {
+    padding: 0 16px;
+  }
 }
 
 .avaliacao_vendedor h1 {
@@ -178,7 +213,7 @@ h3 {
 
 .avaliacao_vendedor h3 {
   font-size: 16px;
-  text-align: start;
+  text-align: end;
 }
 
 /* end grid_nome_vendedor */
@@ -699,6 +734,10 @@ h3 {
   }
 }
 
+.bullet-list, .ordered-list {
+    margin-left: 32px;
+  }
+
 .grid_descricao_produto a {
   color: #006494;
   text-decoration: none;
@@ -1168,6 +1207,9 @@ textarea {
 
 
 @media (max-width: 1200px) {
+  .bullet-list, .ordered-list {
+    margin-left: 32px;
+  }
 
   .grid_produto,
   .grid_comentarios_usuarios {
@@ -1180,6 +1222,10 @@ textarea {
 }
 
 @media (max-width: 880px) {
+  .produto_image  {
+    min-width: auto;
+    min-height: auto;
+  }
   .grid_produto {
     grid-template-columns: 1fr;
 
@@ -1367,6 +1413,11 @@ textarea {
     gap: 16px;
   }
 
+  .vendedor_rating {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   .grid_produto {
     padding-top: 96px;
   }
@@ -1377,6 +1428,10 @@ textarea {
     border-top: 2px black solid;
     width: 100%;
     padding-top: 16px;
+    > h1 {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .grid_descricao_produto {
@@ -1419,6 +1474,14 @@ textarea {
       margin-top: 8px;
     }
   }
+
+  .grid_images_user {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  & > .image1_user > img {
+    max-height: 100px;
+  }
+}
 }
 
 @media (max-width: 425px) {

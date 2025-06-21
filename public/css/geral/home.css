@@ -330,7 +330,6 @@ body {
         }
 
         .index_body_produto_card {
-            max-width: none;
             width: 100%;
             max-height: none;
         }

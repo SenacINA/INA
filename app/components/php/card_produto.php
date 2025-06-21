@@ -17,6 +17,8 @@ class cardProduto
             $id = intval($produto['id_produto']);
             $subcategoria = htmlspecialchars($produto['subcategoria_produto']);
             $imagem_raw = htmlspecialchars($produto['endereco_imagem_produto']);
+            $total_avaliacoes = $produto['total_avaliacoes'];
+            $media_avaliacoes = round($produto['media_avaliacoes']);
 
             echo "
             <div class='index_body_produto_card'>
@@ -26,8 +28,8 @@ class cardProduto
                 </div>
                 <div class='index_body_estrela_valor'>
                     <div class='index_body_estrela_produto'>
-                        <p>★★★★★</p>
-                        <h4>(12)</h4>
+                        <p class='estrelas-$media_avaliacoes'>★★★★★</p>
+                        <h4>($total_avaliacoes)</h4>
                     </div>
                     <div class='index_body_valor_produto'>
                         <p id='indexBodyValorProduto'>R$ {$preco}</p>

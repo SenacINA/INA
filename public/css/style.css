@@ -1132,7 +1132,7 @@ input:checked + .toggle_slider::before {
   row-gap: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
   &>img {
     aspect-ratio: 1 / 1;
   }
@@ -1178,17 +1178,40 @@ input:checked + .toggle_slider::before {
 }
 
 .index_body_estrela_produto {
-      p {
-          background: linear-gradient(90deg, #FFD600 80%, #989898 81%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-      }
-      h4 {
-        font-size: 12px;
-        font-weight: 500;
-    }
+  p {
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
   }
+  h4 {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+.estrelas-0 {
+  background: #989898;
+}
+
+.estrelas-1 {
+  background: linear-gradient(90deg, #FFD600 20%, #989898 20% 100%);
+}
+
+.estrelas-2 {
+  background: linear-gradient(90deg, #FFD600 40%, #989898 40% 100%);
+}
+
+.estrelas-3 {
+  background: linear-gradient(90deg, #FFD600 60%, #989898 60% 100%);
+}
+
+.estrelas-4 {
+  background: linear-gradient(90deg, #FFD600 80%, #989898 80% 100%);
+}
+
+.estrelas-5 {
+  background: linear-gradient(90deg, #FFD600 100%, #989898 0%);
+}
 
 .index_body_botoes_produto {
   .base_botao, btn_blue {

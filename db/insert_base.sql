@@ -552,9 +552,9 @@ INSERT INTO avaliacao (
     (1, TRUE, 5.0, '2025-06-17',
      'Produto incrível, superou todas as minhas expectativas! Ótima qualidade e entrega rápida.',
      'Excelente', TRUE, 1, 2, 1),
-    (2, TRUE, 4, '2025-06-16',
-     'Ótimo desempenho, só a embalagem chegou um pouco amassada, mas o produto veio intacto.',
-     'Boa', TRUE, 1, 3, 1),
+    -- (2, TRUE, 4, '2025-06-16',
+    --  'Ótimo desempenho, só a embalagem chegou um pouco amassada, mas o produto veio intacto.',
+    --  'Boa', TRUE, 1, 3, 1),
     (3, TRUE, 3.0, '2025-06-15',
      'Produto funcional, mas o acabamento poderia ser melhor e alguns detalhes de montagem vieram soltos.',
      'Regular', FALSE, 1, 4, 1),
@@ -573,7 +573,40 @@ INSERT INTO imagem_avaliacao (
     id_avaliacao
 ) VALUES
     (1, '/upload/avaliacoes/1/1/avaliacao_imagem.jpg', 1),
-    (2, '/upload/avaliacoes/1/2/avaliacao_imagem.jpg', 2),
+    -- (2, '/upload/avaliacoes/1/2/avaliacao_imagem.jpg', 2),
     (3, '/upload/avaliacoes/1/3/avaliacao_imagem.jpg', 3),
     (4, '/upload/avaliacoes/1/4/avaliacao_imagem.jpg', 4),
     (5, '/upload/avaliacoes/1/5/avaliacao_imagem2.jpg', 4);
+
+
+-- Insert metodo pagamento
+INSERT INTO `metodo_pagamento` (`id_metodo_pagamento`, `tipo_pagamento`) VALUES ('1', 'Pix');
+
+-- Insert na tabela compra
+INSERT INTO compra (id_cliente, data_compra, id_endereço, id_tipo_frete)
+VALUES (3, CURDATE(), 1, 1);  -- Supondo endereço ID 1 e frete ID 1
+
+-- Obter o ID da compra recém-criada
+SET @id_compra = LAST_INSERT_ID();
+
+-- Insert na tabela item_compra
+INSERT INTO item_compra (
+    id_compra, 
+    id_produto, 
+    quantidade_compra, 
+    preco_pago_compra, 
+    id_metodo_pagamento, 
+    data_limite_entrega_compra, 
+    status_pagamento_compra, 
+    status_entrega_compra
+)
+VALUES (
+    @id_compra,
+    1,  -- ID do produto
+    1,  -- Quantidade
+    (SELECT preco_produto FROM produto WHERE id_produto = 1),  -- Preço atual do produto
+    1,  -- Método pagamento ID 1
+    DATE_ADD(CURDATE(), INTERVAL 7 DAY),  -- Entrega em 7 dias
+    TRUE,  -- Pagamento confirmado
+    TRUE   -- Entrega confirmada
+);

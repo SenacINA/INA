@@ -33,10 +33,10 @@ $info = $controller->exibirProduto($id);
                 <div class="avaliacao_vendedor">
                     <h1>AVALIAÇÃO GERAL</h1>
                     <div class='vendedor_rating'>
-                        <h2 class='vendedor_estrelas'>★★★★★</h2>
+                        <h2 class='vendedor_estrelas estrelas-<?= round($info["mediaEstrelasVendedor"])?>'>★★★★★</h2>
                         <h2>4.5</h2>
                     </div>
-                    <h3>(156mil+)</h3>
+                    <h3>(<?= $info['total_avaliacoes'] ?>)</h3>
                 </div>
             </div>
 
@@ -133,32 +133,29 @@ $info = $controller->exibirProduto($id);
         <div class="avaliacao_produto_bg">
             <div class="grid_estrelas_avaliacao_produto">
                 <div class="estrelas_avaliacao_produto">
-                    <h1>4.5</h1>
+                    <h1><?= $media ?></h1>
                 </div>
                 <div class="estrelas_avaliacao_produto">
-                    <h2 class='vendedor_estrelas'>★★★★★</h2>
+                    <h2 class='vendedor_estrelas <?= 'estrelas-' . $media ?>'>★★★★★</h2>
                 </div>
             </div>
 
-            <div class="grid_retangulos_avaliacao_produto ">
+            <div class="grid_retangulos_avaliacao_produto">
                 <div class="retangulos_avaliacao_produto">
+                    <?php
+                    $distribuicao = $info['distribuicao_avaliacoes'];
+                    
+                    for ($estrelas = 5; $estrelas >= 1; $estrelas--):
+                        $total = $distribuicao['estrelas'][$estrelas];
+                        $texto = $estrelas . ' Estrela' . ($estrelas > 1 ? 's' : '');
+                    ?>
+                        <button>
+                            <p><?= $texto ?> (<?= number_format($total, 0, ',', '.') ?>)</p>
+                        </button>
+                    <?php endfor; ?>
+                    
                     <button>
-                        <p>5 Estrelas (1,3 mil)</p>
-                    </button>
-                    <button>
-                        <p>4 Estrelas (708)</p>
-                    </button>
-                    <button>
-                        <p>3 Estrelas (19)</p>
-                    </button>
-                    <button>
-                        <p>2 Estrelas (75)</p>
-                    </button>
-                    <button>
-                        <p>1 Estrela (5)</p>
-                    </button>
-                    <button>
-                        <p>Com mídia (3)</p>
+                        <p>Com mídia (<?= number_format($distribuicao['com_midia'], 0, ',', '.') ?>)</p>
                     </button>
                 </div>
             </div>
@@ -166,8 +163,8 @@ $info = $controller->exibirProduto($id);
     </div>
 
     <?php
-    $jaComprou = true;
-    if ($jaComprou): ?>
+
+    if ($comprou): ?>
         <div class="descricao_produto_item avaliar_produto_descricao">
             <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>AVALIAR PRODUTO</h1>
@@ -179,7 +176,7 @@ $info = $controller->exibirProduto($id);
                     <div class='cliente_nome_pic'>
                         <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
                         <div>
-                            <h1>Carlos</h1>
+                            <h1><?= $cliente['nome_cliente'] ?></h1>
                             <div class="rating">
                                 <input type="radio" id="star5" name="rating" value="5">
                                 <label for="star5"></label>
@@ -248,16 +245,21 @@ $info = $controller->exibirProduto($id);
                     'parecido' => $comentario['parecido'],
                     'texto' => $comentario['descricao_avaliacao'],
                     'imagens' => $comentario['imagens'],
-                    'foto_perfil' => $comentario['foto_perfil_cliente'] ?? null
+                    'foto_perfil' => $comentario['foto_perfil_cliente'] ?? null,
+                    'data' => $comentario['data_avaliacao']
                 ];
                 
                 echo ComentarioAvaliacaoProdutoComponent::render($dadosComponente);
             }
 
             if (count($comentarios) > 0) {
-                echo '<button class="btn-ver-mais">Ver mais avaliações</button>';
+                echo '
+                <div class="btn-ver-mais">
+                    <button class="base_botao btn_blue">Ver mais avaliações</button>
+                </div>
+                ';
             } else {
-                echo 'Sem avaliações';
+                echo '<div class="sem_avaliacoes">Sem avaliações</div>';
             }
         ?>
 

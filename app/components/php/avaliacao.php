@@ -8,6 +8,7 @@ class ComentarioAvaliacaoProdutoComponent {
         $parecido = $comentario['parecido'];
         $texto = $comentario['texto'];
         $imagens = $comentario['imagens'] ?? [];
+        $data = (new DateTime($comentario['data']))->format('d/m/Y');
 
         $parecido = $parecido ? 'Sim' : 'Não';
 
@@ -39,6 +40,10 @@ class ComentarioAvaliacaoProdutoComponent {
 
             <div class="grid_comentario_user">
                 <div class="avaliacao_user_item1">
+                    <h2>Avaliado em:</h2>
+                    <h3>$data</h3>
+                </div>
+                <div class="avaliacao_user_item1">
                     <h2>Qualidade:</h2>
                     <h3>$qualidade</h3>
                 </div>
@@ -55,6 +60,7 @@ class ComentarioAvaliacaoProdutoComponent {
                 $imagensHTML
             </div>
         </div>
+        <hr class='linha_comentario'>
         HTML;
     }
 }
