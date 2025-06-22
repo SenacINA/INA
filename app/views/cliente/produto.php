@@ -171,7 +171,7 @@ $info = $controller->exibirProduto($id);
         </div>
 
         <div class="form_avaliacao_container">
-            <form id="formAvaliacao">
+            <form id="formAvaliacao" data-id-produto="<?= $id ?>">
                 <div class="grid_user">
                     <div class='cliente_nome_pic'>
                         <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
@@ -195,7 +195,7 @@ $info = $controller->exibirProduto($id);
                 </div>
                 <div class="avaliacao_container_campos">
                     <div class="base_select">
-                        <label for="qualidade">Qualidade:</label>
+                        <label for="qualidade">Qualidade</label>
                         <input class="base_input" type="text" id="qualidade" name="qualidade">
                     </div>
                     <div class="base_input_select">
@@ -206,16 +206,30 @@ $info = $controller->exibirProduto($id);
                             <option value="Não">Não</option>
                         </select>
                     </div>
-                    <div>
-                        <label>Imagem:</label>
-                        <input type="file" id="imagem" name="imagem[]" accept="image/*" multiple>
+                    <div class='outer'>
+                        <input type="hidden" name="id_produto" value="<?= $id ?>">
+                        <label>Imagens <small>(Opcional)</small></label>
+                        <div class="registro_produto_imagens"></div>
+                        <input type="hidden" name="produto_imagens" id="produto-imagens">
+                        <div class="contador">
+                            <span id="contador-total">0</span>
+                            <span id="contador-restante">/5</span>
+                        </div>
+                        <button class="base_botao btn_blue" name="produtoImagem" type='button'>
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
+                        ENVIAR ARQUIVO
+                        <input type="file" id="input-file" name="produto-imagens" accept="image/*" multiple>
+                        </button>
+                        <h4 id='info-image'>
+                            O tamanho do arquivo não pode ultrapassar 2mb
+                        </h4>
                     </div>
                     <div>
-                        <label>Vídeo:</label>
-                        <input type="file" id="video" name="video" accept="video/*">
+                        <!-- <label>Vídeo:</label>
+                        <input type="file" id="video" name="video" accept="video/*"> -->
                     </div>
-                    <button type="submit" class="base_botao btn_blue">
-                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/geral/botoes/+_branco_icon.svg" alt="">
+                    <button type="submit" class="base_botao btn_blue btn_submit">
+                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_branca_icon.svg" alt=""> 
                         ENVIAR AVALIAÇÃO
                     </button>
                 </div>
@@ -230,7 +244,7 @@ $info = $controller->exibirProduto($id);
             $params = [
                 'idVendedor' => $info['infoProduto']['id_vendedor'],
                 'idProduto'  => $id,
-                'maxRender'  => $_GET['maxRender'] ?? 10,
+                'maxRender'  => $_GET['maxRender'] ?? 5,
                 'offset'     => $_GET['offset'] ?? 0
             ];
             $comentarios = $controller->comentarios($params);
@@ -270,6 +284,10 @@ $info = $controller->exibirProduto($id);
     include_once("$PATH_COMPONENTS/php/footer.php");
     ?>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
+    <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/avaliacaoImgInput.js'></script>
+    <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/EnviarAvaliacao.js'></script>
+
+    <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
 </body>
 <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
 <script type="module" src="<?= $PATH_PUBLIC ?>/js/cliente/AvaliacaoProduto.js"></script>

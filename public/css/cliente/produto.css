@@ -326,6 +326,108 @@ h3 {
 
 }
 
+.outer {
+  max-width: 806px;
+}
+
+.registro_produto_imagens {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  background: var(--branco_gelo);
+  width: 100%;
+  height: 160px;
+  padding: 16px;
+  gap: 16px;
+  border-radius: 5px;
+  overflow-y: auto;
+
+  & > button {
+    width: fit-content;
+    height: fit-content;
+    max-height: 128px;
+    border: none;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    position: relative;
+    &:hover {
+      cursor: pointer;
+      transition: all .3s ease;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        position: absolute;
+        opacity: 0.5;
+      }
+      &::after {
+        content: '';
+        width: 32px; /* Ajuste conforme necessário */
+        height: 32px;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTIwIDZhMSAxIDAgMCAxIC4xMTcgMS45OTNMMjAgOGgtLjA4MUwxOSAxOWEzIDMgMCAwIDEtMi44MjQgMi45OTVMMTYgMjJIOGMtMS41OTggMC0yLjkwNC0xLjI0OS0yLjk5Mi0yLjc1bC0uMDA1LS4xNjdMNC4wOCA4SDRhMSAxIDAgMCAxLS4xMTctMS45OTNMNCA2em0tNi00YTIgMiAwIDAgMSAyIDJhMSAxIDAgMCAxLTEuOTkzLjExN0wxNCA0aC00bC0uMDA3LjExN0ExIDEgMCAwIDEgOCA0YTIgMiAwIDAgMSAxLjg1LTEuOTk1TDEwIDJ6Ii8+PC9zdmc+');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+      }
+    }
+    
+  }
+
+  & > button > img {
+    max-width: 100%;
+    background: transparent;
+    border: 2px dashed var(--cinza);
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+#formAvaliacao {
+  position: relative;
+}
+
+.btn_submit {
+  position: absolute !important;
+  bottom: 0;
+  right: 0;
+  width: 280px;
+}
+
+.contador {
+  justify-content: flex-end;  
+  display: flex;
+  flex-direction: row !important;
+  margin: 4px 0;
+}
+
+#info-image {
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  color: var(--cinza);
+}
+
+.base_botao {
+  position: relative;
+  #input-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
 .ultra_blue_produto_image {
   position: absolute;
   top: 0%;
@@ -989,7 +1091,7 @@ h3 {
 
 .avaliacao_container_campos {
   display: none;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   gap: 4%;
 
   div {
@@ -997,13 +1099,13 @@ h3 {
     flex-direction: column;
   }
 
-  button {
+  /* button {
     grid-column: 2;
     grid-row: 3;
     width: auto;
     justify-self: end;
     padding: 0 8px;
-  }
+  } */
 }
 
 /* start avaliação_usuario */
@@ -1028,7 +1130,8 @@ h3 {
 
   text-align: start;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  
 }
 
 .comentario_usuario {
@@ -1092,7 +1195,7 @@ textarea {
   flex-direction: column;
   gap: 8px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .grid_comentario_user h2 {
@@ -1128,17 +1231,19 @@ textarea {
 .grid_images_user img {
   width: auto;
   height: 100%;
-  aspect-ratio: 1 / 1;
   max-height: 150px;
+  object-fit: contain;
   border: 2px var(--cinza) dotted;
 }
 
 .image1_user {
+  aspect-ratio: 1 / 1;
   display: flex;
+  height: 150px;
   flex-direction: column;
   width: fit-content;
   position: relative;
-  height: fit-content;
+  background-color: white;
 }
 
 .div_video {
