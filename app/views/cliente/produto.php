@@ -244,7 +244,7 @@ $info = $controller->exibirProduto($id);
             $params = [
                 'idVendedor' => $info['infoProduto']['id_vendedor'],
                 'idProduto'  => $id,
-                'maxRender'  => $_GET['maxRender'] ?? 5,
+                'maxRender'  => $_GET['maxRender'] ?? 10,
                 'offset'     => $_GET['offset'] ?? 0
             ];
             $comentarios = $controller->comentarios($params);

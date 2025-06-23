@@ -555,13 +555,13 @@ INSERT INTO avaliacao (
     -- (2, TRUE, 4, '2025-06-16',
     --  'Ótimo desempenho, só a embalagem chegou um pouco amassada, mas o produto veio intacto.',
     --  'Boa', TRUE, 1, 3, 1),
-    (3, TRUE, 3.0, '2025-06-15',
+    (2, TRUE, 3.0, '2025-06-15',
      'Produto funcional, mas o acabamento poderia ser melhor e alguns detalhes de montagem vieram soltos.',
      'Regular', FALSE, 1, 4, 1),
-    (4, TRUE, 2.0, '2025-06-14',
+    (3, TRUE, 2.0, '2025-06-14',
      'Não gostei da durabilidade; após poucos usos já apresentou sinal de desgaste.',
      'Ruim', FALSE, 1, 5, 1),
-    (5, TRUE, 0, '2025-06-18',
+    (4, TRUE, 1, '2025-06-18',
      'Recebi o produto danificado e ainda não consegui contato para troca. Estou aguardando resposta.',
      'Péssimo', FALSE, 1, 6, 1);
 
@@ -574,9 +574,9 @@ INSERT INTO imagem_avaliacao (
 ) VALUES
     (1, '/upload/avaliacoes/1/1/avaliacao_imagem.jpg', 1),
     -- (2, '/upload/avaliacoes/1/2/avaliacao_imagem.jpg', 2),
-    (3, '/upload/avaliacoes/1/3/avaliacao_imagem.jpg', 3),
-    (4, '/upload/avaliacoes/1/4/avaliacao_imagem.jpg', 4),
-    (5, '/upload/avaliacoes/1/5/avaliacao_imagem2.jpg', 4);
+    (2, '/upload/avaliacoes/1/2/avaliacao_imagem.jpg', 2),
+    (3, '/upload/avaliacoes/1/4/avaliacao_imagem.jpg', 4),
+    (4, '/upload/avaliacoes/1/4/avaliacao_imagem2.jpg', 4);
 
 
 -- Insert metodo pagamento
