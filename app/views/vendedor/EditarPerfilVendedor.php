@@ -231,21 +231,22 @@ include("$PATH_COMPONENTS/php/card_produto.php");
       $destaques = $controller->listarDestaques();
       ?>
       <div class="destaques_container">
-        <?php foreach ($destaques as $produto): ?>
-          <form method="POST" action="SalvarDestaque-api" class="produto_form" data-id="<?= $produto['id_produto'] ?>">
-            <input type="hidden" name="id_produto" value="<?= $produto['id_produto'] ?>">
-            <div class="produto">
-              <img src="<?= !empty($produto['endereco_imagem_produto']) ? './public/' . $produto['endereco_imagem_produto'] : 'https://placehold.co/400x400' ?>" alt="<?= htmlspecialchars($produto['nome_produto']) ?>">
-              <span><?= htmlspecialchars($produto['nome_produto']) ?></span>
-            </div>
-            <button type="submit">Salvar destaque</button>
-          </form>
-        <?php endforeach; ?>
+        <?php
+        $IdVendedor = $_SESSION['cliente_id'];
+        include_once("$PATH_COMPONENTS/php/card_produto.php");
+        include_once("$PATH_CONTROLLER/geral/CardController.php");
 
+        $card = new cardProduto;
+        $controller = new CardController;
+
+        $destaques = $controller->sendDestaques($IdVendedor);
+        $card->gerarProdutoCards(6, $destaques);
+        ?>
         <button class="add">
-          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/add_icon.svg">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/add_icon.svg" alt="Adicionar">
         </button>
       </div>
+
     </div>
 
     <div class="produtos" style="display:none;">
@@ -257,25 +258,27 @@ include("$PATH_COMPONENTS/php/card_produto.php");
       <div class="produtos_container">
         <?php
         $IdVendedor = $_SESSION['cliente_id'];
+
         include_once("$PATH_COMPONENTS/php/card_produto.php");
         include_once("$PATH_CONTROLLER/geral/CardController.php");
 
         $card = new cardProduto;
         $controller = new CardController;
 
-        $info = $controller->sendProdutos($IdVendedor);
-        $card->gerarProdutoCards(6, $info);
+        $info = $controller->sendProdutosNaoDestaques($IdVendedor);
+        $card->gerarProdutoCards(2, $info);
         ?>
       </div>
     </div>
-
-
+  
     <div class="botoes">
       <button id=salvarEdit class="base_botao btn_blue salvar">
-        <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">Salvar
+        <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">
+        Salvar
       </button>
       <button class="base_botao btn_outline_red cancelar">
-        <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_vermelho_icon.svg">Cancelar
+        <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_vermelho_icon.svg">
+        Cancelar
       </button>
     </div>
 

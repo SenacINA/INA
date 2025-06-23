@@ -15,36 +15,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const produtoId = produtoCard.dataset.id;
 
     if (destaquesContainer.querySelector(`.produto[data-id="${produtoId}"]`)) {
-      alert('Produto já está nos destaques.');
-      return;
+      gerarToast('Produto já está nos destaques.', 'erro');
+      return; 
     }
 
     const clone = produtoCard.cloneNode(true);
     clone.classList.add('produto');
     clone.dataset.id = produtoId;
     destaquesContainer.insertBefore(clone, btnAdd);
+
     produtosSection.style.display = 'none';
 
-    function adicionarDestaque(ProdutoId) {
-      fetch('/SalvarDestaque-api', {
+    adicionarDestaque(produtoId);
+
+    async function adicionarDestaque(produtoId) {
+      const formdata = new URLSearchParams();
+      formdata.append('id_produto', produtoId);
+
+      const resp = await fetch('SalvarDestaque-api', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: 'id_produto=' + encodeURIComponent(ProdutoId)
-      })
-        .then(res => {
-          if (!res.ok) throw new Error('Resposta não OK');
-          return res.json();
-        })
-        .then(data => {
-          if (data.success) {
-            alert('Produto adicionado aos destaques!');
-          } else {
-            alert(data.error || 'Erro ao adicionar destaque');
-          }
-        })
-        .catch(() => alert('Erro na comunicação com o servidor'));
-    }
+        body: formdata.toString()
+      });
 
-    adicionarDestaque(produtoId);
+      const res = await resp.json();
+
+      if (res.success) {
+        gerarToast('Produto adicionado aos destaques.', 'sucesso');
+      } else {
+        gerarToast('Erro ao adicionar destaque.', 'erro');
+        clone.remove();
+      }
+    }
   });
 });

@@ -17,11 +17,11 @@ class cardProduto
             $id = intval($produto['id_produto']);
             $subcategoria = htmlspecialchars($produto['subcategoria_produto']);
             $imagem_raw = htmlspecialchars($produto['endereco_imagem_produto']);
-            $total_avaliacoes = $produto['total_avaliacoes'];
-            $media_avaliacoes = round($produto['media_avaliacoes']);
+            $total_avaliacoes = $produto['total_avaliacoes'] ?? 0;
+            $media_avaliacoes = round($produto['media_avaliacoes'] ?? 0);
 
             echo "
-            <div class='index_body_produto_card' data-id='<?= $id ?>' data-nome='<?= htmlspecialchars($nome) ?>'>
+            <div class='index_body_produto_card' data-id='$id' data-nome='$nome'>
                 <div class='index_body_imagem_produto'>
                     <img id='produto' src='{$imagem}' alt='{$nome}'>
                     <p>{$nome}</p>

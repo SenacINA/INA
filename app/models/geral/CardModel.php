@@ -14,7 +14,7 @@ class CardModel
 
   public function getProdutoInfo()
   {
-      $sql = "SELECT 
+    $sql = "SELECT 
           p.id_produto,
           p.nome_produto,
           p.preco_produto,
@@ -39,11 +39,11 @@ class CardModel
           p.status_produto != 0
       GROUP BY 
           p.id_produto;";
-      
-      $stmt = $this->db->getConnection()->prepare($sql);
-      $stmt->execute();
-      $res = $stmt->fetchAll();
-      return $res;
+
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->execute();
+    $res = $stmt->fetchAll();
+    return $res;
   }
 
   public function getProdutoInfoComSubcategoria($subcategoria)
@@ -96,37 +96,76 @@ class CardModel
     AND p.categoria_produto = :categoria;";
 
     $stmt = $this->db->getConnection()->prepare($sql);
-    $stmt->bindValue(':categoria', $categoria); 
+    $stmt->bindValue(':categoria', $categoria);
     $stmt->execute();
 
     return $stmt->fetchAll();
   }
 
   public function getProdutoInfoPorVendedor($idVendedor)
-{
-  $sql = "SELECT 
-      p.id_produto,
-      p.nome_produto,
-      p.preco_produto,
-      p.categoria_produto,
-      p.subcategoria_produto,
-      p.status_produto,
-      ip.id_imagem_produto,
-      ip.endereco_imagem_produto,
-      ip.index_imagem_produto
-    FROM 
-      produto p
-    LEFT JOIN 
-      imagem_produto ip 
-      ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 1
-    WHERE 
-      p.status_produto != 0
-      AND p.vendedor_id = :idVendedor";
+  {
+    $sql = "SELECT 
+        p.id_produto,
+        p.nome_produto,
+        p.preco_produto,
+        p.categoria_produto,
+        p.subcategoria_produto,
+        p.status_produto,
+        ip.id_imagem_produto,
+        ip.endereco_imagem_produto,
+        ip.index_imagem_produto,
+        COALESCE(AVG(a.estrelas_avaliacao), 0) AS media_avaliacoes,
+        COUNT(a.id_avaliacao) AS total_avaliacoes
+      FROM 
+        produto p
+      LEFT JOIN 
+        imagem_produto ip ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 1
+      LEFT JOIN
+        avaliacao a ON p.id_produto = a.id_produto AND a.status_avaliacao = TRUE
+      WHERE 
+        p.status_produto != 0
+        AND p.id_vendedor = :idVendedor
+      GROUP BY
+        p.id_produto";
 
-  $stmt = $this->db->getConnection()->prepare($sql);
-  $stmt->bindValue(':idVendedor', $idVendedor);
-  $stmt->execute();
-  return $stmt->fetchAll();
-}
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':idVendedor', $idVendedor);
+    $stmt->execute();
 
+    return $stmt->fetchAll();
+  }
+
+  public function getDestaquesPorVendedor($idVendedor)
+  {
+    $sql = "SELECT 
+          p.id_produto,
+          p.nome_produto,
+          p.preco_produto,
+          p.categoria_produto,
+          p.subcategoria_produto,
+          p.status_produto,
+          ip.id_imagem_produto,
+          ip.endereco_imagem_produto,
+          ip.index_imagem_produto,
+          COALESCE(AVG(a.estrelas_avaliacao), 0) AS media_avaliacoes,
+          COUNT(a.id_avaliacao) AS total_avaliacoes
+        FROM 
+          destaques d
+        INNER JOIN 
+          produto p ON d.id_produto = p.id_produto
+        LEFT JOIN 
+          imagem_produto ip ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 1
+        LEFT JOIN
+          avaliacao a ON p.id_produto = a.id_produto AND a.status_avaliacao = TRUE
+        WHERE 
+          p.status_produto != 0
+          AND p.id_vendedor = :idVendedor
+        GROUP BY p.id_produto";
+
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':idVendedor', $idVendedor);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
 }

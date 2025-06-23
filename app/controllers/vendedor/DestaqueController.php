@@ -32,22 +32,29 @@ class DestaqueController
     public function salvarDestaque()
     {
         header('Content-Type: application/json');
-        session_start();
 
-        $idVendedor = $_SESSION['vendedor_id'] ?? null;
-        $idProduto = $_POST['id_produto'] ?? null;
-
-        if (!$idVendedor || !$idProduto) {
-            http_response_code(400);
-            echo json_encode(['success' => false, 'error' => 'Dados ausentes.']);
-            return;
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
         }
 
-        if ($this->salvarDestaque($idVendedor, $idProduto)) {
-            echo json_encode(['success' => true]);
-        } else {
+        $id = $_SESSION['cliente_id'] ?? null;
+        $idProduto = $_POST['id_produto'] ?? null;
+
+        if (!$id || !$idProduto) {
+            echo json_encode(['success' => false, 'error' => $idProduto]);
+            exit;
+        }
+
+        try {
+            if ($this->model->adicionarDestaque($id, $idProduto)) {
+                echo json_encode(['success' => true]);
+            } else {
+                http_response_code(500);
+                echo json_encode(['success' => false, 'error' => 'Erro ao salvar destaque.']);
+            }
+        } catch (Exception $e) {
             http_response_code(500);
-            echo json_encode(['success' => false, 'error' => 'Erro ao salvar destaque.']);
+            echo json_encode(['success' => false, 'error' => 'Exceção: ' . $e->getMessage()]);
         }
     }
 }
