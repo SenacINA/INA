@@ -34,7 +34,7 @@
               <form action="" method="post" class="gerenciar_produtos_forms_pesquisa_pedidos">
                 <div class="gerenciar_produtos_form_cliente">
                   <label class="font_subtitulo font_celadon">Nome do Cliente</label>
-                  <input type="text" spellcheck="false" class="base_input">
+                  <input type="text" spellcheck="false" class="base_input" name="cliente">
                 </div>
                 <div class="gerenciar_produtos_inputs_esquerda">
                   
@@ -84,15 +84,15 @@
               <div class="gerenciar_produtos_estatistica_holder">
                 <div class="gerenciar_produtos_card">
                   <span class="gerenciar_produtos_titulo">Lucro total</span>
-                  <span class="gerenciar_produtos_estatistica_descricao">R$14.145,35</span>
+                  <span class="gerenciar_produtos_estatistica_descricao">
+                    R$ <?= number_format($estatisticas['lucro_total'] ?? 0, 2, ',', '.') ?>
+                  </span>
                 </div>
                 <div class="gerenciar_produtos_card">
                   <span class="gerenciar_produtos_titulo">Total De Vendas</span>
-                  <span class="gerenciar_produtos_estatistica_descricao">14 UNI</span>
-                </div>
-                <div class="gerenciar_produtos_card">
-                  <span class="gerenciar_produtos_titulo">Tempo </span>
-                  <span class="gerenciar_produtos_estatistica_descricao">9 Dias</span>
+                  <span class="gerenciar_produtos_estatistica_descricao">
+                    <?= $estatisticas['total_vendas'] ?? 0 ?> UNI
+                  </span>
                 </div>
               </div>
             </div>
@@ -107,13 +107,15 @@
     <div class="gerenciar_produtos_table">
       <div class="gerenciar_produtos_table_filtro bg_carolina">
         <p class="gerenciar_produtos_filtro_titulo font_subtitulo">Organizar por:</p>
-        <select>
-          <option value="" selected disable style="display: none;"></option>
-          <option value="">ID</option>
-          <option value="">CLIENTE</option>
-          <option value="">PREÇO</option>
-          <option value="">DATA DE COMPRA</option>
-        </select>
+        <form method="post" id="ordenarForm">
+          <select name="ordenar" onchange="document.getElementById('ordenarForm').submit();">
+            <option value="" selected disabled>Selecione</option>
+            <option value="id_compra">ID</option>
+            <option value="cliente">CLIENTE</option>
+            <option value="valor_total">PREÇO</option>
+            <option value="data_compra">DATA DE COMPRA</option>
+          </select>
+        </form>
       </div>
       <div class="base_tabela">
         <table>
