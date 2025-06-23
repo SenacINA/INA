@@ -7,7 +7,7 @@
  */
 
 function pag(url = "", params = "") {
-    const base = window.location.origin + "/INA/";
+    const base = window.location.origin + '/INA/';
     window.location.href = base + url + params;
 }
 

@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /ina/
+# RewriteBase /ina/
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]

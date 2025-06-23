@@ -141,7 +141,7 @@ include("$PATH_COMPONENTS/php/card_produto.php");
         </div>
         <div class="forms_inner_container">
           <label for="descricao">Descrição:</label>
-          <textarea name="descricao" id="descricao" cols="90" rows="10" class="base_input"><?= htmlspecialchars($user['descricao_perfil']) ?></textarea>
+          <textarea name="descricao" maxlength="500" id="descricao" cols="90" rows="10" class="base_input"><?= htmlspecialchars($user['descricao_perfil']) ?></textarea>
           <div class="counter"><span id="charCount">0</span> / 500</div>
         </div>
         <div class="forms_inner_container">
