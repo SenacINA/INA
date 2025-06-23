@@ -1142,6 +1142,12 @@ h3 {
   align-items: flex-start;
 }
 
+.icon_user {
+  width: 80px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
 .grid_user {
   display: flex;
   flex-direction: column;

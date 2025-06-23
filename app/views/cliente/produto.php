@@ -174,7 +174,7 @@ $info = $controller->exibirProduto($id);
             <form id="formAvaliacao" data-id-produto="<?= $id ?>">
                 <div class="grid_user">
                     <div class='cliente_nome_pic'>
-                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
+                        <img class="icon_user" src="<?= $PATH_PUBLIC . ($cliente['foto_perfil'] ?? '/image/cliente/produto/icon_profile.svg') ?>" alt="">
                         <div>
                             <h1><?= $cliente['nome_cliente'] ?></h1>
                             <div class="rating">
