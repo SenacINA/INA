@@ -13,6 +13,8 @@ $routes = [
       '/api/cliente/register'      => 'cliente/ClienteController@register',
       '/api/cliente/editar-perfil/redes'  => 'cliente/ClienteController@updateSocial',
       '/api/cliente/editarDadosCliente'   => 'cliente/ClienteCOntroller@editarDadosCliente',
+      '/api/avaliar-produto' => 'cliente/ProdutoController@avaliarProduto',
+      '/produto/comentariosJson' => 'cliente/ProdutoController@comentariosJson',
 
       // Cliente - Carrinho
       '/Carrinho'                  => 'cliente/CarrinhoController@index',
@@ -47,7 +49,7 @@ $routes = [
       // Geral - Perfil
       '/EditarPerfil' => 'geral/GeralController@editarPerfil',
       '/Perfil' => 'geral/GeralController@perfil',
-      '/Error/404' => 'gerral/GeralController@error',
+      '/Error-404' => 'gerral/GeralController@error',
 
       // Vendedor - Cadastro e Perfil
       '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
