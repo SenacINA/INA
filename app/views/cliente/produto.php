@@ -33,10 +33,10 @@ $info = $controller->exibirProduto($id);
                 <div class="avaliacao_vendedor">
                     <h1>AVALIAÇÃO GERAL</h1>
                     <div class='vendedor_rating'>
-                        <h2 class='vendedor_estrelas'>★★★★★</h2>
-                        <h2>4.5</h2>
+                        <h2 class='vendedor_estrelas estrelas-<?= round($info["mediaEstrelasVendedor"])?>'>★★★★★</h2>
+                        <h2><?=$info["mediaEstrelasVendedor"]?></h2>
                     </div>
-                    <h3>(156mil+)</h3>
+                    <h3>(<?= $info['total_avaliacoes'] ?>)</h3>
                 </div>
             </div>
 
@@ -133,32 +133,29 @@ $info = $controller->exibirProduto($id);
         <div class="avaliacao_produto_bg">
             <div class="grid_estrelas_avaliacao_produto">
                 <div class="estrelas_avaliacao_produto">
-                    <h1>4.5</h1>
+                    <h1><?= $media ?></h1>
                 </div>
                 <div class="estrelas_avaliacao_produto">
-                    <h2 class='vendedor_estrelas'>★★★★★</h2>
+                    <h2 class='vendedor_estrelas <?= 'estrelas-' . $media ?>'>★★★★★</h2>
                 </div>
             </div>
 
-            <div class="grid_retangulos_avaliacao_produto ">
+            <div class="grid_retangulos_avaliacao_produto">
                 <div class="retangulos_avaliacao_produto">
+                    <?php
+                    $distribuicao = $info['distribuicao_avaliacoes'];
+                    
+                    for ($estrelas = 5; $estrelas >= 1; $estrelas--):
+                        $total = $distribuicao['estrelas'][$estrelas];
+                        $texto = $estrelas . ' Estrela' . ($estrelas > 1 ? 's' : '');
+                    ?>
+                        <button>
+                            <p><?= $texto ?> (<?= number_format($total, 0, ',', '.') ?>)</p>
+                        </button>
+                    <?php endfor; ?>
+                    
                     <button>
-                        <p>5 Estrelas (1,3 mil)</p>
-                    </button>
-                    <button>
-                        <p>4 Estrelas (708)</p>
-                    </button>
-                    <button>
-                        <p>3 Estrelas (19)</p>
-                    </button>
-                    <button>
-                        <p>2 Estrelas (75)</p>
-                    </button>
-                    <button>
-                        <p>1 Estrela (5)</p>
-                    </button>
-                    <button>
-                        <p>Com mídia (3)</p>
+                        <p>Com mídia (<?= number_format($distribuicao['com_midia'], 0, ',', '.') ?>)</p>
                     </button>
                 </div>
             </div>
@@ -166,20 +163,20 @@ $info = $controller->exibirProduto($id);
     </div>
 
     <?php
-    $jaComprou = true;
-    if ($jaComprou): ?>
+
+    if ($comprou): ?>
         <div class="descricao_produto_item avaliar_produto_descricao">
             <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/etiqueta_icon.svg" alt="">
             <h1>AVALIAR PRODUTO</h1>
         </div>
 
         <div class="form_avaliacao_container">
-            <form id="formAvaliacao">
+            <form id="formAvaliacao" data-id-produto="<?= $id ?>" data-id-vendedor='<?= $info['infoProduto']['id_vendedor']?>'>
                 <div class="grid_user">
                     <div class='cliente_nome_pic'>
-                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
+                        <img class="icon_user" src="<?= $PATH_PUBLIC . ($cliente['foto_perfil'] ?? '/image/cliente/produto/icon_profile.svg') ?>" alt="">
                         <div>
-                            <h1>Carlos</h1>
+                            <h1><?= $cliente['nome_cliente'] ?></h1>
                             <div class="rating">
                                 <input type="radio" id="star5" name="rating" value="5">
                                 <label for="star5"></label>
@@ -198,7 +195,7 @@ $info = $controller->exibirProduto($id);
                 </div>
                 <div class="avaliacao_container_campos">
                     <div class="base_select">
-                        <label for="qualidade">Qualidade:</label>
+                        <label for="qualidade">Qualidade</label>
                         <input class="base_input" type="text" id="qualidade" name="qualidade">
                     </div>
                     <div class="base_input_select">
@@ -209,16 +206,31 @@ $info = $controller->exibirProduto($id);
                             <option value="Não">Não</option>
                         </select>
                     </div>
-                    <div>
-                        <label>Imagem:</label>
-                        <input type="file" id="imagem" name="imagem[]" accept="image/*" multiple>
+                    <div class='outer'>
+                        <input type="hidden" name="id_produto" value="<?= $id ?>">
+                        <input type="hidden" name="id_vendedor" value="<?= $info['infoProduto']['id_vendedor'] ?>">
+                        <label>Imagens <small>(Opcional)</small></label>
+                        <div class="registro_produto_imagens"></div>
+                        <input type="hidden" name="produto_imagens" id="produto-imagens">
+                        <div class="contador">
+                            <span id="contador-total">0</span>
+                            <span id="contador-restante">/5</span>
+                        </div>
+                        <button class="base_botao btn_blue" name="produtoImagem" type='button'>
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
+                        ENVIAR ARQUIVO
+                        <input type="file" id="input-file" name="produto-imagens" accept="image/*" multiple>
+                        </button>
+                        <h4 id='info-image'>
+                            O tamanho do arquivo não pode ultrapassar 2mb
+                        </h4>
                     </div>
                     <div>
-                        <label>Vídeo:</label>
-                        <input type="file" id="video" name="video" accept="video/*">
+                        <!-- <label>Vídeo:</label>
+                        <input type="file" id="video" name="video" accept="video/*"> -->
                     </div>
-                    <button type="submit" class="base_botao btn_blue">
-                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/geral/botoes/+_branco_icon.svg" alt="">
+                    <button type="submit" class="base_botao btn_blue btn_submit">
+                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_branca_icon.svg" alt=""> 
                         ENVIAR AVALIAÇÃO
                     </button>
                 </div>
@@ -227,124 +239,56 @@ $info = $controller->exibirProduto($id);
     <?php endif; ?>
 
     <div class="grid_comentarios_usuarios">
-        <div class="comentario_usuario">
-            <div class="grid_user">
-                <div class='cliente_nome_pic'>
-                    <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
-                    <div>
-                        <h1>Carlos</h1>
-                        <h2 class='vendedor_estrelas'>★★★★★</h2>
-                    </div>
-                </div>
-            </div>
+        
+        <?php
+            $controller = new ProdutoController();
+            $params = [
+                'idVendedor' => $info['infoProduto']['id_vendedor'],
+                'idProduto'  => $id,
+                'maxRender'  => $_GET['maxRender'] ?? 10,
+                'offset'     => $_GET['offset'] ?? 0
+            ];
+            $comentarios = $controller->comentarios($params);
 
-            <div class="grid_comentario_user">
-                <div class="avaliacao_user_item1">
-                    <h2>Qualidade:</h2>
-                    <h3>Muito boa</h3>
-                </div>
-                <div class="avaliacao_user_item2">
-                    <h2>Parecido com o anúncio:</h2>
-                    <h3>Sim</h3>
-                </div>
-                <h2 class='produto_comentario'>
-                    Uma cadeira gamer envolvente e seduzente é muito mais do que um simples móvel. Ela combina conforto ergonômico com um design atraente que promove uma imersão total na experiência de jogo. Com seu encosto alto e ajustes personalizáveis, não só proporciona suporte para longas sessões de jogo, mas também se torna um elemento marcante no ambiente, convidando você a se entregar ao mundo virtual com estilo e conforto.
-                </h2>
-            </div>
+            require_once __DIR__ . '/../../components/php/avaliacao.php';
 
-            <div class="grid_images_user">
-                <div class="image1_user">
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                    <div class='div_video'>
-                        <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_camera.svg" alt="">
-                        1:32
-                    </div>
-                </div>
-                <div class='image1_user'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-            </div>
-        </div>
+            foreach ($comentarios as $comentario) {
+                $dadosComponente = [
+                    'nome' => $comentario['nome_cliente'],
+                    'estrelas' => $comentario['estrelas_avaliacao'],
+                    'qualidade' => $comentario['qualidade'],
+                    'parecido' => $comentario['parecido'],
+                    'texto' => $comentario['descricao_avaliacao'],
+                    'imagens' => $comentario['imagens'],
+                    'foto_perfil' => $comentario['foto_perfil_cliente'] ?? null,
+                    'data' => $comentario['data_avaliacao']
+                ];
+                
+                echo ComentarioAvaliacaoProdutoComponent::render($dadosComponente);
+            }
 
-        <div class="comentario_usuario">
-            <div class="grid_user">
-                <div class='cliente_nome_pic'>
-                    <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
-                    <div>
-                        <h1>Julia</h1>
-                        <h2 class='vendedor_estrelas'>★★★★★</h2>
-                    </div>
+            if (count($comentarios) > 0) {
+                echo '
+                <div class="btn-ver-mais">
+                    <button class="base_botao btn_blue">Ver mais avaliações</button>
                 </div>
-            </div>
+                ';
+            } else {
+                echo '<div class="sem_avaliacoes">Sem avaliações</div>';
+            }
+        ?>
 
-            <div class="grid_comentario_user">
-                <div class="avaliacao_user_item1">
-                    <h2>Qualidade:</h2>
-                    <h3>Muito boa</h3>
-                </div>
-                <div class="avaliacao_user_item2">
-                    <h2>Parecido com o anúncio:</h2>
-                    <h3>Sim</h3>
-                </div>
-                <h2 class='produto_comentario'>
-                    Uma cadeira gamer que se destaca pela sua envolvência, sedução e incrível conforto transcende o conceito tradicional de móvel. Com linhas sofisticadas e um encosto que abraça suavemente, ela não apenas complementa o ambiente com seu design elegante, mas também oferece um suporte ergonômico que se adapta perfeitamente ao corpo.
-                </h2>
-            </div>
-
-            <div class="grid_images_user">
-                <div class='image1_user'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-                <div class='image1_user'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-            </div>
-        </div>
-
-        <div class="comentario_usuario">
-            <div class="grid_user">
-                <div class='cliente_nome_pic'>
-                    <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_profile.svg" alt="">
-                    <div>
-                        <h1>Alex</h1>
-                        <h2 class='vendedor_estrelas'>★★★★★</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid_comentario_user">
-                <div class="avaliacao_user_item1">
-                    <h2>Qualidade:</h2>
-                    <h3>Incrível</h3>
-                </div>
-                <div class="avaliacao_user_item2">
-                    <h2>Parecido com o anúncio:</h2>
-                    <h3>Sim</h3>
-                </div>
-                <h2 class='produto_comentario'>
-                    Meu irmao adorou a cadeira 😁
-                </h2>
-            </div>
-
-            <div class="grid_images_user">
-                <div class="image1_user">
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                    <div class='div_video'>
-                        <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/icon_camera.svg" alt="">
-                        0:45
-                    </div>
-                </div>
-                <div class='image1_user'>
-                    <img src="<?= $PATH_PUBLIC ?>/image/cliente/produto/cadeira_gamer_size_big.png" alt="">
-                </div>
-            </div>
-        </div>
+    </div>
 
     </div>
     <?php
     include_once("$PATH_COMPONENTS/php/footer.php");
     ?>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
+    <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/avaliacaoImgInput.js'></script>
+    <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/EnviarAvaliacao.js'></script>
+
+    <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
 </body>
 <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
 <script type="module" src="<?= $PATH_PUBLIC ?>/js/cliente/AvaliacaoProduto.js"></script>
