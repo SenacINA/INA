@@ -11,6 +11,7 @@ class ProdutoController extends RenderView {
         $clienteId = $_SESSION['cliente_id'] ?? 0;
         $comprou = false; 
         $model = new ProdutoClienteModel();
+        $info = $model->searchProduto($id);
         $dados = [];
 
         if ($clienteId > 0) {
@@ -20,7 +21,8 @@ class ProdutoController extends RenderView {
             $dados = $modelCliente->findById($clienteId);
         }
 
-        $media = round($model->getMediaAvaliacoes($id));
+        $media = round($model->getMediaAvaliacoes($info['infoProduto']['id_vendedor']));
+
         $media = $media > 5 ? 5 : $media;
 
         $this->loadView('cliente/Produto', [
@@ -38,18 +40,20 @@ class ProdutoController extends RenderView {
 
         $vendedorAvaliacoes = $modelVendedor->getEstrelasPorVendedor($info['infoProduto']['id_vendedor']);
 
-        $total = 0;
-        foreach ($vendedorAvaliacoes as $avaliacao) {
-          $total += $avaliacao;
-        }
+        $total = count($vendedorAvaliacoes);
+        // foreach ($vendedorAvaliacoes as $avaliacao) {
+        //   $total += $avaliacao;
+        // }
+
+        // var_dump($modelVendedor->getEstrelasPorVendedor($info['infoProduto']['id_vendedor']));
+        // exit;
 
         $info['total_avaliacoes'] = $total;
 
-        $info['mediaEstrelasVendedor'] = count($vendedorAvaliacoes) > 0
-          ? round($total / count($vendedorAvaliacoes) * 2) / 2
-          : 0;
+        $info['mediaEstrelasVendedor'] = count($vendedorAvaliacoes) > 0 ? floor($total) : 0;
 
-        
+        // var_dump($info['mediaEstrelasVendedor']);
+        // exit;
         $info['distribuicao_avaliacoes'] = $model->getDistribuicaoAvaliacoes($id);
         
         return $info;
@@ -87,6 +91,7 @@ class ProdutoController extends RenderView {
         $data = [
             'id_cliente' => $clienteId,
             'id_produto' => (int)$_POST['id_produto'],
+            'id_vendedor' => (int)$_POST['id_vendedor'],
             'estrelas' => (float)$_POST['estrelas'],
             'comentario' => trim($_POST['comentario']),
             'qualidade' => trim($_POST['qualidade']),

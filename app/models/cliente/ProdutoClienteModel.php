@@ -203,7 +203,7 @@ class ProdutoClienteModel
     } 
 
     public function insertAvaliacao($data) {
-        $sql = "INSERT INTO avaliacao (
+       $sql = "INSERT INTO avaliacao (
             status_avaliacao,
             estrelas_avaliacao,
             descricao_avaliacao,
@@ -211,8 +211,10 @@ class ProdutoClienteModel
             parecido,
             id_produto,
             id_cliente,
+            id_vendedor,
             data_avaliacao
-        ) VALUES (1, ?, ?, ?, ?, ?, ?, CURDATE())";
+        ) VALUES (1, ?, ?, ?, ?, ?, ?, ?, CURDATE())";
+
         
         $stmt = $this->db->getConnection()->prepare($sql);
         $stmt->execute([
@@ -221,8 +223,10 @@ class ProdutoClienteModel
             $data['qualidade'],
             $data['parecido'],
             $data['id_produto'],
-            $data['id_cliente']
+            $data['id_cliente'],
+            $data['id_vendedor']
         ]);
+
         
         return $this->db->getConnection()->lastInsertId();
     }

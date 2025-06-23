@@ -34,7 +34,7 @@ $info = $controller->exibirProduto($id);
                     <h1>AVALIAÇÃO GERAL</h1>
                     <div class='vendedor_rating'>
                         <h2 class='vendedor_estrelas estrelas-<?= round($info["mediaEstrelasVendedor"])?>'>★★★★★</h2>
-                        <h2>4.5</h2>
+                        <h2><?=$info["mediaEstrelasVendedor"]?></h2>
                     </div>
                     <h3>(<?= $info['total_avaliacoes'] ?>)</h3>
                 </div>
@@ -171,7 +171,7 @@ $info = $controller->exibirProduto($id);
         </div>
 
         <div class="form_avaliacao_container">
-            <form id="formAvaliacao" data-id-produto="<?= $id ?>">
+            <form id="formAvaliacao" data-id-produto="<?= $id ?>" data-id-vendedor='<?= $info['infoProduto']['id_vendedor']?>'>
                 <div class="grid_user">
                     <div class='cliente_nome_pic'>
                         <img class="icon_user" src="<?= $PATH_PUBLIC . ($cliente['foto_perfil'] ?? '/image/cliente/produto/icon_profile.svg') ?>" alt="">
@@ -208,6 +208,7 @@ $info = $controller->exibirProduto($id);
                     </div>
                     <div class='outer'>
                         <input type="hidden" name="id_produto" value="<?= $id ?>">
+                        <input type="hidden" name="id_vendedor" value="<?= $info['infoProduto']['id_vendedor'] ?>">
                         <label>Imagens <small>(Opcional)</small></label>
                         <div class="registro_produto_imagens"></div>
                         <input type="hidden" name="produto_imagens" id="produto-imagens">

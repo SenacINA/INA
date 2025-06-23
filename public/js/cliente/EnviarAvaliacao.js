@@ -6,6 +6,8 @@ document.getElementById('formAvaliacao').addEventListener('submit', async functi
     const qualidade = document.getElementById('qualidade').value;
     const parecido = document.getElementById('parecido').value;
     const idProduto = document.getElementById('formAvaliacao').dataset.idProduto;
+    const id_vendedor = document.getElementById('formAvaliacao').dataset.idVendedor;
+
 
     if (!estrelas || !comentario || !qualidade || !parecido) {
         gerarToast('Preencha todos os campos obrigatórios', 'erro');
@@ -27,6 +29,7 @@ document.getElementById('formAvaliacao').addEventListener('submit', async functi
     formData.append('parecido', parecido);
     formData.append('id_produto', idProduto);
     formData.append('imagens', JSON.stringify(imagens));
+    formData.append('id_vendedor', id_vendedor);
 
     try {
         const response = await fetch('/INA/api/avaliar-produto', {
