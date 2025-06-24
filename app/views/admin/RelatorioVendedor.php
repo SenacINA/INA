@@ -67,15 +67,15 @@
 
             <div class="relatorio_vendedor_card_column_2">
               <div class="relatorio_vendedor_card">
-                <span class="relatorio_vendedor_titulo">cu</span>
+                <span class="relatorio_vendedor_titulo">Nome Vendedor</span>
               </div>
 
               <div class="relatorio_vendedor_card">
-                <span class="relatorio_vendedor_titulo">cu</span>
+                <span class="relatorio_vendedor_titulo">E-mail</span>
               </div>
 
               <div class="relatorio_vendedor_card">
-                <span class="relatorio_vendedor_titulo">cu</span>
+                <span class="relatorio_vendedor_titulo">Data de Cadastro</span>
               </div>
             </div>
           </div>
