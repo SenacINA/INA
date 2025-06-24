@@ -231,7 +231,9 @@ $disativar = $estaAtivo ? '' : 'disabled';
       <div class="text_popup">
         <h1>Confirmação</h1>
         <p>Você deseja desativar este Usuário?</p>
-        <button class="base_botao btn_blue" id="confirmar_desativar">CONFIRMAR</button>
+        <button class="base_botao btn_blue botao_popup" id="confirmar_desativar">
+        <img src="<?= $PATH_PUBLIC ?>/image\geral\botoes\v_branco_icon.svg">  
+        CONFIRMAR</button>
       </div>
     </div>
   </div>

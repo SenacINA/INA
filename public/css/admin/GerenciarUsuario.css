@@ -62,6 +62,12 @@
   }
 }
 
+.botao_popup{
+  max-width: none;
+  width: 100%;
+
+}
+
 #close_btn {
   position: absolute;
   top: 15px;
