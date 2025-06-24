@@ -49,11 +49,6 @@ class VendedorController extends RenderView
         }
     }
 
-    public function editarPerfil()
-    {
-        $this->loadView('vendedor/EditarPerfilVendedor', []);
-    }
-
     public function cadastroForm()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -262,6 +257,24 @@ class VendedorController extends RenderView
             'errors' => $errors
         ], JSON_UNESCAPED_UNICODE);
         exit;
+    }
+    
+    public function gerenciarProdutos()
+    {
+        $idCliente = $_SESSION('cliente_id');
+
+        if (!$idCliente) {
+            header('Location: Login');
+            exit;
+        };
+
+        $idVendedor = $model->getVendedorId($idCliente);
+        
+        $model = new VendedorModel();
+
+        $dadosVendedor = $model->dadosVendedor($idCliente);
+
+        $this->loadView('vendedor/GerenciarProdutos', []);
     }
 
 }

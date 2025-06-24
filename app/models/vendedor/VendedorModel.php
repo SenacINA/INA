@@ -77,4 +77,9 @@ class VendedorModel
     $stmt = $conn->prepare("UPDATE vendedor SET nome_fantasia = :nome_fantasia WHERE id_vendedor = :id_vendedor");
     return $stmt->execute([':nome_fantasia' => $nome_fantasia, ':id_vendedor' => $id_vendedor]);
   }
+  
+  public function getAllProducts(int $id_vendedor): [] {
+
+  }
+
 }
