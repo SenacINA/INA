@@ -16,8 +16,25 @@ class CarrinhoController extends RenderView
     $idProduto = $_POST['produto_id'] ?? null;
     $quantidade = $_POST['quantidade'] ?? 1;
 
-    if ($idProduto) {
-      $this->model->adicionarItem((int)$idProduto, (int)$quantidade);
+    if (isset($_SESSION['cliente_id']) && $idProduto) {
+      $carrinho = $this->model->adicionarItem((int)$idProduto, (int)$quantidade);
+      if (gettype($carrinho) == 'string') {
+        echo json_encode([
+          'success' => false,
+          'message' => 'Limite de itens atingido'
+        ], JSON_UNESCAPED_UNICODE);
+        exit;
+      }
+      echo json_encode([
+        'success' => true
+      ], JSON_UNESCAPED_UNICODE);
+      exit;
+    } else {
+      echo json_encode([
+        'success' => false,
+        'message' => 'É necessário estar logado para adicionar um produto ao carrinho.'
+      ], JSON_UNESCAPED_UNICODE);
+      exit;
     }
   }
 

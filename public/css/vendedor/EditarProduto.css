@@ -158,12 +158,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
+    max-width: 510px;
 }
 
 /* Estilos Gerais do Editor */
 .editor-content {
     all: initial;
     max-height: 270px;
+    max-width: 510px;
     height: 270px;
     padding: 8px;
     border: 2px solid var(--carolina);

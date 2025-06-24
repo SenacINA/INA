@@ -8,6 +8,19 @@
   .gerenciar_produtos_body_holder {
     border-radius: 10px;
   }
+
+  .aprovar_vendedor_btn_aprovar{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    max-width: 192px;
+    width: 192px;
+    height: 30px;
+  }
   
   .gerenciar_pedidor_firula_holder{
     border-radius: 10px;

@@ -2,11 +2,21 @@
 require_once __DIR__ . '/../../models/admin/AdminModel.php';
 require_once __DIR__ . '/../../models/admin/GerenciarUsuariosModel.php';
 require_once __DIR__ . '/../../models/geral/GeralModel.php';
+require_once __DIR__ . '/../../models/cliente/ClienteModel.php';
 require_once('./app/models/admin/AprovarVendedorModel.php');
 
 
 class AdminController extends RenderView
 {
+    public function __construct()
+    {
+        if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
+            header('Location: Login');
+            exit;
+        } else if ($_SESSION['user_type'] != "admin") {
+            header("Location: page-not-found");
+        }
+    }
 
     public function dashboard()
     {

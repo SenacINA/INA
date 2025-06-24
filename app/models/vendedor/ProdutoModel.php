@@ -126,6 +126,4 @@ class ProdutoModel
         $stmt->execute();
         return $stmt->fetchColumn() > 0;
     }
-
-  
 }
