@@ -7,7 +7,7 @@
  */
 
 function pag(url = "", params = "") {
-    const base = window.location.origin + "/INA/";
+    const base = window.location.origin + '/INA/';
     window.location.href = base + url + params;
 }
 
@@ -17,7 +17,7 @@ function atualizarBadge() {
         .then(data => {
             const badge = document.getElementById('carrinho-badge');
             if (badge) {
-                badge.textContent = data.quantidade;
+                badge.innerText = data.quantidade;
                 badge.style.display = data.quantidade ? 'inline' : 'none'
             }
         })

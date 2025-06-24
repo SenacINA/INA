@@ -31,18 +31,18 @@
         <div>
         <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_1"> 
           <hr class="relatorio_vendedor_vertical">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_icon.svg" alt=""/>
-          <h1 class="relatorio_vendedor_text">Procurar o vendedor</h1>
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_lupa_icon.svg" alt=""/>
+          <h1 class="relatorio_vendedor_text">Pesquisar Vendedor</h1>
         </div>
 
         <div class="relatorio_vendedor_pesquisar_usuario">
-          <h2>Digite o ID do usuário para encontrá-lo. Após isso clique em procurar.</h2>
+          <h2>Digite o ID do Vendedor para encontrá-lo. Após isso clique em Pesquisar.</h2>
           <form action="" method="post" class="relatorio_vendedor_forms">
             <div class="relatorio_vendedor_pesquisar_usuario_item" id="relatorio_vendedor_pesquisar_usuario_item_1">
-              <label>ID</label>
+              <label class="font_subtitulo font_celadon">ID do Vendedor</label>
               <input type="text" name="vendedor_id" class="base_input">
             <button type="submit" class="base_botao  btn_blue">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt=""/>PROCURAR</button>
+          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt=""/>PESQUISAR</button>
             </div>
           </form>
         </div>
@@ -52,7 +52,14 @@
           <hr class="relatorio_vendedor_vertical">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_icon.svg" alt=""/>
           <h1 class="relatorio_vendedor_text">Perfil Do Vendedor</h1>
-        </div>        
+        </div>
+        
+        <div class="relatorio_vendedor_estatistica_holder">
+          <div class="relatorio_vendedor_card">
+            <span class="relatorio_vendedor_titulo2" id="nome_cliente"></span>
+                  <img src="<?= $PATH_PUBLIC ?>/image/admin/perfil_admin/perfil_img.svg" alt="" class="relatorio_vendedor_card_img_perfil">
+          </div>
+        </div>
 
         <?php if ($perfil): ?>
           <div class="relatorio_vendedor_perfil_usuario">
