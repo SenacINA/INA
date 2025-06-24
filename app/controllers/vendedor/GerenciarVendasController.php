@@ -12,26 +12,31 @@ class GerenciarVendasController extends RenderView
   }
 
   public function exibirVendas()
-{
-  $vendas = [];
-  $estatisticas = ['lucro_total' => 0, 'total_vendas' => 0];
+  {
+    $vendas = [];
+    $estatisticas = ['lucro_total' => 0, 'total_vendas' => 0];
 
-  if (isset($_SESSION['cliente_id'])) {
-    $vendas = $this->model->getVendas($_SESSION['cliente_id'], [
-      'cliente' => $_POST['cliente'] ?? null,
-      'mes' => $_POST['mes'] ?? null,
-      'ano' => $_POST['ano'] ?? null,
-      'ordenar' => $_POST['ordenar'] ?? null
-    ]);
-    
-    $estatisticas = $this->model->getEstatisticas($_SESSION['cliente_id']);
+    if (isset($_SESSION['cliente_id'])) {
+      $vendas = $this->model->getVendas($_SESSION['cliente_id'], [
+        'cliente' => $_POST['cliente'] ?? null,
+        'mes' => $_POST['mes'] ?? null,
+        'ano' => $_POST['ano'] ?? null,
+        'ordenar' => $_POST['ordenar'] ?? null
+      ]);
+      
+      $estatisticas = $this->model->getEstatisticas($_SESSION['cliente_id']);
+    }
+
+    return [
+      'vendas' => $vendas,
+      'estatisticas' => $estatisticas
+    ];
   }
 
-  return [
-    'vendas' => $vendas,
-    'estatisticas' => $estatisticas
-  ];
-}
+  public function exibirVenda()
+  {
+    // idk man
+  }
 
 
 
