@@ -1,33 +1,32 @@
-
-
-console.log('a')
-
+console.log('Script de Gerenciar Usuários carregado');
 
 document.addEventListener('DOMContentLoaded', function() {
     const buttonDesativar = document.getElementById("disable_button");
-    const modal = document.getElementById("modal_desativar");
-    const fecharModal = document.getElementById("modal_fechar");
-    const confirmarModal = document.getElementById("modal_confirmar");
+    const popupDesativar = document.getElementById("popup_desativar");
+    const fecharPopup = document.getElementById("close_btn");
+    const confirmarPopup = document.getElementById("confirmar_desativar");
 
+    if (buttonDesativar && popupDesativar && fecharPopup && confirmarPopup) {
 
-    if (buttonDesativar && modal && fecharModal && confirmarModal) {
         buttonDesativar.addEventListener("click", function(e) {
-          console.log('asa')
             e.preventDefault();
-            modal.style.display = "flex";
+            popupDesativar.classList.add('abrir');
         });
 
-        fecharModal.addEventListener("click", function() {
-            modal.style.display = "none";
+
+        fecharPopup.addEventListener("click", function() {
+            popupDesativar.classList.remove('abrir');
         });
 
-        modal.addEventListener("click", function(e) {
-            if (e.target === modal) {
-                modal.style.display = "none";
+
+        popupDesativar.addEventListener("click", function(e) {
+            if (e.target === popupDesativar) {
+                popupDesativar.classList.remove('abrir');
             }
         });
 
-        confirmarModal.addEventListener("click", function() {
+
+        confirmarPopup.addEventListener("click", function() {
             const nome = document.getElementById("nome_cliente").innerText;
             const email = document.getElementById("email_cliente").innerText;
             const cargo = 
@@ -40,18 +39,36 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append("cargo", cargo);
 
             sendData(formData).then(() => {
-                modal.style.display = "none";
+                popupDesativar.classList.remove('abrir');
                 window.location.reload();
+            }).catch(error => {
+                console.error('Erro ao desativar usuário:', error);
+                popupDesativar.classList.remove('abrir');
             });
         });
 
         async function sendData(formData) {
-            return await fetch("DesativarUser", {
-                method: "POST",
-                body: formData,
-            });
+            try {
+                const response = await fetch("DesativarUser", {
+                    method: "POST",
+                    body: formData,
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Erro na requisição');
+                }
+                
+                return await response;
+            } catch (error) {
+                console.error('Erro:', error);
+                throw error;
+            }
         }
     } else {
-        console.error("Um ou mais elementos não foram encontrados no DOM");
+        console.error("Elementos necessários não encontrados no DOM:");
+        if (!buttonDesativar) console.error("Botão desativar não encontrado");
+        if (!popupDesativar) console.error("Popup desativar não encontrado");
+        if (!fecharPopup) console.error("Botão fechar popup não encontrado");
+        if (!confirmarPopup) console.error("Botão confirmar popup não encontrado");
     }
 });

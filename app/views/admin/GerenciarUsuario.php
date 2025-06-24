@@ -123,20 +123,9 @@ $disativar = $estaAtivo ? '' : 'disabled';
 
                   <button id="disable_button" class="base_botao btn_red" <?= $disativar ?>>
                     <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_branco_icon.svg">
-                    <?=
-                    $textoBotao
-                    ?>
-                  </button> 
-                <div class="modal_desativar" id="modal_desativar">
-                    <div class="modal_content">
-                      <button class="modal_fechar" id="modal_fechar">X</button>
-                      <h1>Confirmação</h1>
-                      <p>Você deseja desativar este Usuario?</p>
-                      <button class="modal_confirmar" id="modal_confirmar">CONFIRMAR</button>
-                    </div>
+                    <?= $textoBotao ?>
+                  </button>
                 </div>
-                </div>
-
                 <div class="gerenciar_usuario_card_column_2">
                   <div class="gerenciar_usuario_card">
                     <span class="gerenciar_usuario_titulo">Data de Cadastro</span>
@@ -233,6 +222,19 @@ $disativar = $estaAtivo ? '' : 'disabled';
       </div>
     </div>
   </main>
+
+  <!-- Pop-Up de Confirmação -->
+  <div class="popup_container" id="popup_desativar">
+    <div class="popup">
+      <button id="close_btn" class="modal_fechar">X</button>
+      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/check_carolina_icon.svg" width="200px" height="200px">
+      <div class="text_popup">
+        <h1>Confirmação</h1>
+        <p>Você deseja desativar este Usuário?</p>
+        <button class="base_botao btn_blue" id="confirmar_desativar">CONFIRMAR</button>
+      </div>
+    </div>
+  </div>
 
 </body>
 
