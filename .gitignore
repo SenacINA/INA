@@ -16,10 +16,9 @@ env.bak/
 venv.bak/
 insert.php
 insertItens.php
-public/upload/avaliacoes/**/
-public/upload/clientes/**/
-public/upload/produtos/**/
-public/upload/**/
+
+public/upload/
+
 
 # Rope project settings
 .ropeproject

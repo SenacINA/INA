@@ -583,11 +583,8 @@ INSERT INTO imagem_avaliacao (
 INSERT INTO `metodo_pagamento` (`id_metodo_pagamento`, `tipo_pagamento`) VALUES ('1', 'Pix');
 
 -- Insert na tabela compra
-INSERT INTO compra (id_cliente, data_compra, id_endereço, id_tipo_frete)
-VALUES (3, CURDATE(), 1, 1);  -- Supondo endereço ID 1 e frete ID 1
-
--- Obter o ID da compra recém-criada
-SET @id_compra = LAST_INSERT_ID();
+INSERT INTO compra (id_cliente, id_vendedor, data_compra, id_endereço, id_tipo_frete)
+VALUES (3, 1, CURDATE(), 1, 1);  -- Supondo endereço ID 1 e frete ID 1
 
 -- Insert na tabela item_compra
 INSERT INTO item_compra (
@@ -601,7 +598,7 @@ INSERT INTO item_compra (
     status_entrega_compra
 )
 VALUES (
-    @id_compra,
+    1,
     1,  -- ID do produto
     1,  -- Quantidade
     (SELECT preco_produto FROM produto WHERE id_produto = 1),  -- Preço atual do produto
