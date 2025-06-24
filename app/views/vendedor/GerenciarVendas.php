@@ -135,7 +135,8 @@
                 <td><?= htmlspecialchars($v['cliente']) ?></td>
                 <td>R$ <?= number_format($v['valor_total'], 2, ',', '.') ?></td>
                 <td>
-                  <form method="post" style="display:inline;">
+                  <form method="POST" style="display:inline;" action="GerenciarVendas-api-sale">
+                    <input type="hidden" name="id_venda" value="1">
                     <button type="submit" class="aprovar_vendedor_btn_aprovar btn_blue base_botao">GERENCIAR</button>
                   </form>
                 </td>
