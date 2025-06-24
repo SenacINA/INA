@@ -226,7 +226,7 @@ $disativar = $estaAtivo ? '' : 'disabled';
   <!-- Pop-Up de Confirmação -->
   <div class="popup_container" id="popup_desativar">
     <div class="popup">
-      <button id="close_btn" class="modal_fechar">X</button>
+      <button id="close_btn" class="modal_fechar">x</button>
       <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/check_carolina_icon.svg" width="200px" height="200px">
       <div class="text_popup">
         <h1>Confirmação</h1>
