@@ -9,7 +9,7 @@
   border-radius: 10px;
 }
 
-.aprovar_vendedor_firula_holder{
+.aprovar_vendedor_firula_holder {
   border-radius: 10px;
   background-color: #EFF3F5;
   display: flex;
@@ -17,24 +17,24 @@
   padding: 0px 32px 16px 32px;
 }
 
-.aprovar_vendedor_subtitulo_generico{
+.aprovar_vendedor_subtitulo_generico {
   width: 100%;
   display: flex;
   gap: 8px;
 }
 
-.aprovar_vendedor_container_botao{
+.aprovar_vendedor_container_botao {
   margin-top: 16px;
 }
 
-.aprovar_vendedor_linha_vertical{
+.aprovar_vendedor_linha_vertical {
   width: 8px;
   height: 48px;
   background-color: var(--carolina);
   border-radius: 10px;
 }
 
-.aprovar_vendedor_subtitle_holder{
+.aprovar_vendedor_subtitle_holder {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -128,6 +128,10 @@
   margin: 16px 0 0;
 }
 
+.aprovar_vendedor_filtro {
+  display: flex;
+  gap: 8px;
+}
 
 .aprovar_vendedor_holder_botao {
   display: flex;
@@ -135,12 +139,10 @@
   gap: 16px;
 }
 
-.aprovar_vendedor_container_ano, .aprovar_vendedor_container_mes, .aprovar_vendedor_container_status{
+.aprovar_vendedor_container_ano,
+.aprovar_vendedor_container_mes,
+.aprovar_vendedor_container_status {
   margin-top: 8px;
-}
-
-.aprovar_vendedor_input_ano,
-.aprovar_vendedor_input_mes{
   width: 100%;
 }
 
@@ -148,7 +150,7 @@
   display: flex;
   gap: 8px;
 
-  select{
+  select {
     width: 100%;
   }
 }
@@ -221,12 +223,12 @@
   color: #255e7e;
 }
 
-.aprovar_vendedor_table{
+.aprovar_vendedor_table {
   display: flex;
   flex-direction: column;
 }
 
-.aprovar_vendedor_table_filtro{
+.aprovar_vendedor_table_filtro {
   display: flex;
   width: fit-content;
   align-items: center;
@@ -234,34 +236,35 @@
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 
-  & select{
+  & select {
     background-color: var(--carolina);
     border: 0;
     height: 32px;
   }
 
-  & select:focus-visible{
+  & select:focus-visible {
     outline: solid 1px #e0e0e0;
   }
 }
 
-.aprovar_vendedor_filtro_titulo{
+.aprovar_vendedor_filtro_titulo {
   color: #fff;
 }
 
 /**Individual para cada tabela */
 .aprovar_vendedor_table_col-1,
-.aprovar_vendedor_table_col-4{
+.aprovar_vendedor_table_col-4 {
   width: 4%;
 }
+
 .aprovar_vendedor_table_col-3,
-.aprovar_vendedor_table_col-6{
+.aprovar_vendedor_table_col-6 {
   width: 8%;
 }
 
 .aprovar_vendedor_table_col-2,
 .aprovar_vendedor_table_col-5,
-.aprovar_vendedor_table_col-7{
+.aprovar_vendedor_table_col-7 {
   width: 20%;
 }
 
@@ -270,8 +273,8 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.aprovar_vendedor_btn_inativar, 
-.aprovar_vendedor_btn_aprovar, 
+.aprovar_vendedor_btn_inativar,
+.aprovar_vendedor_btn_aprovar,
 .aprovar_vendedor_btn_recusar {
   display: flex;
   justify-content: center;
@@ -316,11 +319,11 @@
 }
 
 @media (max-width:1024px) {
-  .font_titulo{
+  .font_titulo {
     font-size: 1.5rem;
   }
 
-  .aprovar_vendedor_estatistica_holder{
+  .aprovar_vendedor_estatistica_holder {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
@@ -328,7 +331,7 @@
   .aprovar_vendedor_titulo {
     font-size: 1rem;
   }
-  
+
   .aprovar_vendedor_estatistica_descricao {
     font-size: 0.75rem;
   }
@@ -352,27 +355,27 @@
     padding: 8px;
   }
 
-  .gerenciar_pedidor_firula_holder{
+  .gerenciar_pedidor_firula_holder {
     gap: 16px;
     padding: 0;
-  } 
+  }
 
   .aprovar_vendedor_header_title {
     justify-content: flex-start;
   }
 
   .aprovar_vendedor_input_ano,
-  .aprovar_vendedor_input_mes{
+  .aprovar_vendedor_input_mes {
     width: 100%;
   }
 
   .aprovar_vendedor_mes_select,
   .aprovar_vendedor_select_status,
-  .aprovar_vendedor_ano_select{
+  .aprovar_vendedor_ano_select {
     width: 100%;
   }
 
-  .aprovar_vendedor_holder_botao{
+  .aprovar_vendedor_holder_botao {
     justify-content: center;
   }
 
@@ -381,7 +384,7 @@
     width: 100%;
   }
 
-  .aprovar_vendedor_btn_aprovar, 
+  .aprovar_vendedor_btn_aprovar,
   .aprovar_vendedor_btn_recusar,
   .aprovar_vendedor_btn_inativar {
     width: 100px;
@@ -396,11 +399,11 @@
     top: -85px;
   }
 
-  .aprovar_vendedor_linha_sublinhado{
+  .aprovar_vendedor_linha_sublinhado {
     display: none;
   }
 
-  .aprovar_vendedor_titulo{
+  .aprovar_vendedor_titulo {
     font-size: 14px;
   }
 }
