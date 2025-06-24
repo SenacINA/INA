@@ -13,6 +13,8 @@ $routes = [
       '/api/cliente/register'      => 'cliente/ClienteController@register',
       '/api/cliente/editar-perfil/redes'  => 'cliente/ClienteController@updateSocial',
       '/api/cliente/editarDadosCliente'   => 'cliente/ClienteCOntroller@editarDadosCliente',
+      '/api/avaliar-produto' => 'cliente/ProdutoController@avaliarProduto',
+      '/produto/comentariosJson' => 'cliente/ProdutoController@comentariosJson',
 
       // Cliente - Carrinho
       '/Carrinho'                  => 'cliente/CarrinhoController@index',
@@ -47,7 +49,7 @@ $routes = [
       // Geral - Perfil
       '/EditarPerfil' => 'geral/GeralController@editarPerfil',
       '/Perfil' => 'geral/GeralController@perfil',
-      '/Error/404' => 'gerral/GeralController@error',
+      '/Error-404' => 'gerral/GeralController@error',
 
       // Vendedor - Cadastro e Perfil
       '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
@@ -63,17 +65,21 @@ $routes = [
       '/RelatorioVendas'          => 'vendedor/VendedorProductController@report',
       '/ProdutoRegistro'          => 'vendedor/ProdutoController@produto',
 
+      // Vendedor - Gerenciar Vendas
+      '/GerenciarVendas'          => 'vendedor/GerenciarVendasController@index',
+      '/GerenciarVendas-api-show' => 'vendedor/GerenciarVendasController@showItems',
+
       // Admin
       '/AdminDashboard'           => 'admin/AdminController@dashboard',
       '/AprovarVendedor'          => 'admin/AdminController@aprovarVendedor',
       '/AtualizarUsuario'         => 'admin/AdminController@atualizarUsuario',
       '/GerenciarUsuarios'        => 'admin/AdminController@gerenciarUsuarios',
-      '/GerenciarProdutos'        => 'admin/AdminController@gerenciarProdutos',
       '/GerenciarCarrossel'       => 'admin/AdminController@gerenciarCarrossel',
       '/RelatorioVendedor'        => 'admin/AdminController@relatorioVendedor',
       '/AdminCarrossel'           => 'admin/AdminController@adminCarrossel',
       '/searchDesativarUser'      => 'admin/AdminController@searchDesativarUser',
       '/DesativarUser'            => 'admin/AdminController@desativarUser',
+      '/GerenciarVendedor'           => 'admin/AdminController@gerenciarVendedor',
       '/api/admin/pesquisar-cliente' => 'admin/AdminController@searchUser',
       '/api/admin/atualizar-cliente' => 'admin/AdminController@updateUser',
       '/api/admin/editarDadosAdmin' => 'admin/AdminController@editarDadosAdmin',

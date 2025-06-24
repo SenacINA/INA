@@ -165,11 +165,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0;
+  max-width: 510px;
 }
 
 /* Estilos Gerais do Editor */
 .editor-content {
-  width: 535px;
+  max-width: 510px;
+  width: 510px;
   all: initial;
   max-height: 270px;
   height: 270px;
@@ -530,7 +532,43 @@ input:focus + .input_icon {
   border-radius: 5px;
   overflow-y: auto;
 
-  & > img {
+  & > button {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    position: relative;
+    &:hover {
+      cursor: pointer;
+      transition: all .3s ease;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        position: absolute;
+        opacity: 0.5;
+      }
+      &::after {
+        content: '';
+        width: 32px; /* Ajuste conforme necessário */
+        height: 32px;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTIwIDZhMSAxIDAgMCAxIC4xMTcgMS45OTNMMjAgOGgtLjA4MUwxOSAxOWEzIDMgMCAwIDEtMi44MjQgMi45OTVMMTYgMjJIOGMtMS41OTggMC0yLjkwNC0xLjI0OS0yLjk5Mi0yLjc1bC0uMDA1LS4xNjdMNC4wOCA4SDRhMSAxIDAgMCAxLS4xMTctMS45OTNMNCA2em0tNi00YTIgMiAwIDAgMSAyIDJhMSAxIDAgMCAxLTEuOTkzLjExN0wxNCA0aC00bC0uMDA3LjExN0ExIDEgMCAwIDEgOCA0YTIgMiAwIDAgMSAxLjg1LTEuOTk1TDEwIDJ6Ii8+PC9zdmc+');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+      }
+    }
+    
+  }
+
+  & > button > img {
     max-width: 100%;
     background: transparent;
     border: 2px dashed var(--cinza);

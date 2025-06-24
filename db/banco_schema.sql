@@ -114,10 +114,12 @@ CREATE TABLE
         -- 5
         id_compra INT AUTO_INCREMENT PRIMARY KEY,
         id_cliente INT NOT NULL,
+        id_vendedor INT NOT NULL,
         data_compra DATE NOT NULL,
         id_endereço INT NOT NULL,
         id_tipo_frete INT,
         FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente),
+        FOREIGN KEY (id_vendedor) REFERENCES vendedor (id_vendedor),
         FOREIGN KEY (id_endereço) REFERENCES endereco (id_endereco)
     );
 
@@ -130,6 +132,8 @@ CREATE TABLE
         -- ver float dps
         data_avaliacao DATE NOT NULL,
         descricao_avaliacao VARCHAR(500) NOT NULL,
+        qualidade VARCHAR(50),
+        parecido BOOLEAN NOT NULL,
         id_produto INT,
         id_cliente INT,
         id_vendedor INT,
@@ -184,8 +188,8 @@ CREATE TABLE
         -- 17
         id_perfil INT PRIMARY KEY AUTO_INCREMENT,
         id_cliente INT,
-        foto_perfil VARCHAR(500) NOT NULL DEFAULT 'default_profile_picture.jpg',
-        banner_perfil VARCHAR(500) NOT NULL DEFAULT 'default_banner_picture.jpg',
+        foto_perfil VARCHAR(500) NOT NULL DEFAULT '/image/cliente/perfil_cliente/foto_user.png',
+        banner_perfil VARCHAR(500) NOT NULL DEFAULT '/image/cliente/perfil_cliente/banner_user.png',
         descricao_perfil VARCHAR(500),
         tiktok_perfil VARCHAR(50),
         linkedin_perfil VARCHAR(50),
