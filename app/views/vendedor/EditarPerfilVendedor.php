@@ -219,20 +219,16 @@ include("$PATH_COMPONENTS/php/card_produto.php");
       </div>
     </div>
 
-    <div class="destaques">
+    <div class="destaques" data-edit-destaques="true">
       <div class="destaques_text">
         <hr class="linha_vertical">
         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/loja_icon.svg" class="icon_destaques_vendedor">
         <p class="destaques_main_text">Destaques</p>
       </div>
-      <?php
-      include_once("$PATH_CONTROLLER/vendedor/DestaqueController.php");
-      $controller = new DestaqueController();
-      $destaques = $controller->listarDestaques();
-      ?>
       <div class="destaques_container">
         <?php
         $IdVendedor = $_SESSION['cliente_id'];
+
         include_once("$PATH_COMPONENTS/php/card_produto.php");
         include_once("$PATH_CONTROLLER/geral/CardController.php");
 
@@ -240,13 +236,12 @@ include("$PATH_COMPONENTS/php/card_produto.php");
         $controller = new CardController;
 
         $destaques = $controller->sendDestaques($IdVendedor);
-        $card->gerarProdutoCards(6, $destaques);
+        $card->gerarProdutoCards(count($destaques), $destaques);
         ?>
         <button class="add">
           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/add_icon.svg" alt="Adicionar">
         </button>
       </div>
-
     </div>
 
     <div class="produtos" style="display:none;">
@@ -257,20 +252,12 @@ include("$PATH_COMPONENTS/php/card_produto.php");
       </div>
       <div class="produtos_container">
         <?php
-        $IdVendedor = $_SESSION['cliente_id'];
-
-        include_once("$PATH_COMPONENTS/php/card_produto.php");
-        include_once("$PATH_CONTROLLER/geral/CardController.php");
-
-        $card = new cardProduto;
-        $controller = new CardController;
-
         $info = $controller->sendProdutosNaoDestaques($IdVendedor);
-        $card->gerarProdutoCards(2, $info);
+        $card->gerarProdutoCards(count($info), $info);
         ?>
       </div>
     </div>
-  
+
     <div class="botoes">
       <button id=salvarEdit class="base_botao btn_blue salvar">
         <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">

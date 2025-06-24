@@ -29,5 +29,4 @@ class VendedorProductController extends RenderView {
     public function report() {
         $this->loadView('vendedor/RelatorioVendas', []);
     }
-
 }

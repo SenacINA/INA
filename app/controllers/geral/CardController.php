@@ -51,6 +51,6 @@ class CardController extends RenderView
       return !in_array($produto['id_produto'], $idsDestaques);
     });
 
-    return $produtosFiltrados;
+    return array_values($produtosFiltrados);
   }
 }

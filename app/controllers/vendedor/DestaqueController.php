@@ -57,4 +57,33 @@ class DestaqueController
             echo json_encode(['success' => false, 'error' => 'Exceção: ' . $e->getMessage()]);
         }
     }
+
+    public function removerDestaque()
+    {
+        header('Content-Type: application/json');
+
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $id = $_SESSION['cliente_id'] ?? null;
+        $idProduto = $_POST['id_produto'] ?? null;
+
+        if (!$id || !$idProduto) {
+            echo json_encode(['success' => false, 'error' => 'Dados incompletos.']);
+            exit;
+        }
+
+        try {
+            if ($this->model->removerDestaque($id, $idProduto)) {
+                echo json_encode(['success' => true]);
+            } else {
+                http_response_code(500);
+                echo json_encode(['success' => false, 'error' => 'Erro ao remover destaque.']);
+            }
+        } catch (Exception $e) {
+            http_response_code(500);
+            echo json_encode(['success' => false, 'error' => 'Exceção: ' . $e->getMessage()]);
+        }
+    }
 }

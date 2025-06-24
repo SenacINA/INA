@@ -52,4 +52,19 @@ class DestaqueModel
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function removerDestaque($idCliente, $idProduto)
+    {
+        $stmt = $this->db->prepare("SELECT id_vendedor FROM vendedor WHERE id_cliente = :id_cliente");
+        $stmt->execute([':id_cliente' => $idCliente]);
+        $idVendedor = $stmt->fetchColumn();
+
+        if (!$idVendedor) return false;
+
+        $stmt = $this->db->prepare("DELETE FROM destaques WHERE id_produto = :id_produto AND id_vendedor = :id_vendedor");
+        return $stmt->execute([
+            ':id_produto' => $idProduto,
+            ':id_vendedor' => $idVendedor
+        ]);
+    }
 }
