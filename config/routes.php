@@ -70,6 +70,7 @@ $routes = [
       '/RelatorioVendas'          => 'vendedor/VendedorProductController@report',
       '/ProdutoRegistro'          => 'vendedor/ProdutoController@produto',
       '/GerenciarProdutos'        => 'vendedor/VendedorController@gerenciarProdutos',
+      '/GerenciarProdutos-api'    => 'vendedor/VendedorController@getTable',
 
       // Vendedor - Gerenciar Vendas
       '/GerenciarVendas'          => 'vendedor/GerenciarVendasController@index',

@@ -23,6 +23,8 @@ hr {
   width: 100%;
   aspect-ratio: 3 / 1;
   max-width: 100%;
+  object-fit: cover;
+  object-position: center 30%;
 }
 
 .perfil_vendedor_content_pfp {
@@ -53,6 +55,7 @@ hr {
     height: 248px;
     border-radius: 50%;
     background-color: var(--branco_gelo);
+    position: relative;
   }
 
   h1 {

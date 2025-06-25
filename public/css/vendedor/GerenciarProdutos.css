@@ -1,7 +1,45 @@
+.relatorio_vendas_table_col-1 {
+    width: 295px !important;
+    max-width: 295px !important;
+}
+
+.relatorio_vendas_table_col-2 {
+    width: 40% !important;
+}
+
+.relatorio_vendas_table_col-3 {
+    width: 10% !important;
+}
+
+.base_tabela th:last-child, td:last-child {
+    background-color: var(--branco_gelo);
+}
+
 .relatorio_vendas_table_col-1,
 .relatorio_vendas_table_col-2,
 .relatorio_vendas_table_col-3,
-.relatorio_vendas_table_col-4,
-.relatorio_vendas_table_col-5 {
-    width: 100% !important;
+.relatorio_vendas_table_col-4 {
+    min-width: 209px;
+}
+
+.base_tabela {
+    * {
+        font-size: 1rem !important;
+    }
+}
+
+.tabela-scroll {
+    overflow-x: auto;
+    width: 100%;
+  }
+  
+@media (max-width: 1024px) {
+    .relatorio_vendas_quadrado_container {
+        grid-template-rows: 1fr !important;
+    }
+
+    .relatorio_vendas_header_title, .relatorio_vendas_table {
+        padding: 0 8px;
+        padding-bottom: 16px;
+    }
 }

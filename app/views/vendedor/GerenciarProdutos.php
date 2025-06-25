@@ -104,54 +104,61 @@
           <option value="">Inativos</option>
         </select>
       </div>
-      <div class="base_tabela">
-        <table>
-          <colgroup>
-            <col class="relatorio_vendas_table_col-1">
-            <col class="relatorio_vendas_table_col-2">
-            <col class="relatorio_vendas_table_col-3">
-            <col class="relatorio_vendas_table_col-4">
-            <col class="relatorio_vendas_table_col-5">
-            <!-- <col class="relatorio_vendas_table_col-6">
-            <col class="relatorio_vendas_table_col-7"> -->
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Cód.</th>
-              <th>Nome</th>
-              <th>Preço</th>
-              <th>Qtn.</th>
-              <th>Status</th>
-              <th></th>
-            </tr>
-            <tbody>
+      <div class='tabela-scroll'>
+        <div class="base_tabela">
+          <table>
+            <colgroup>
+              <col class="relatorio_vendas_table_col-1">
+              <col class="relatorio_vendas_table_col-2">
+              <col class="relatorio_vendas_table_col-3">
+              <col class="relatorio_vendas_table_col-4">
+              <col class="relatorio_vendas_table_col-5">
+              <!-- <col class="relatorio_vendas_table_col-6">
+              <col class="relatorio_vendas_table_col-7"> -->
+            </colgroup>
+            <thead>
               <tr>
-                <td># 1001</td>
-                <td>
-                  <span>
-                    Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB
-                  </span>
-                </td>
-                <td>R$ 1.400,00</td>
-                <td>01</td>
-                <td>
-                  <span>
-                    Ativo
-                  </span>
-                </td>
-                <td>
-                  <button>editar</button>
-                </td>
+                <th>Cód.</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Qtn.</th>
+                <th>Status</th>
+                <th></th>
               </tr>
-            </tbody>
-          </thead>
-        </table>
+              <tbody>
+                <tr>
+                  <td># 1001</td>
+                  <td>
+                    <span>
+                      Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB
+                    </span>
+                  </td>
+                  <td>R$ 1.400,00</td>
+                  <td>01</td>
+                  <td>
+                    <span>
+                      Ativo
+                    </span>
+                  </td>
+                  <td>
+                    <button class='base_botao btn_blue'>Editar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </thead>
+          </table>
+        </div>
       </div>
+      
     </div>
   </main>
   <?php 
     include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
 </body>
+<script>
+  const idVendedor = <?= $idVendedor ?>;
+</script>
+<script src="<?= $PATH_PUBLIC ?>/js/vendedor/renderTableProdutos.js"></script>
 
 </html>

@@ -260,21 +260,61 @@ class VendedorController extends RenderView
     }
     
     public function gerenciarProdutos()
-    {
-        // $idCliente = $_SESSION('cliente_id');
+    {    
+        $idCliente = $_SESSION['cliente_id'];
 
-        // if (!$idCliente) {
-        //     header('Location: Login');
-        //     exit;
-        // };
+        if (!$idCliente) {
+            header('Location: Login');
+            exit;
+        };
 
-        // $idVendedor = $model->getVendedorId($idCliente);
-        
-        // $model = new VendedorModel();
+        $model = new VendedorModel();
 
-        // $dadosVendedor = $model->dadosVendedor($idCliente);
+        $idVendedor = $model->getVendedorId($idCliente);
 
-        $this->loadView('vendedor/GerenciarProdutos', []);
+        $this->loadView('vendedor/GerenciarProdutos', ['idVendedor' => $idVendedor]);
+    }
+
+    public function getTable() {
+        header('Content-Type: application/json; charset=utf-8');
+
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            http_response_code(405);
+            echo json_encode(['success' => false, 'errors' => ['Método não permitido.']], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        $clienteId = $_SESSION['cliente_id'] ?? null;
+        if (!$clienteId) {
+            http_response_code(401);
+            echo json_encode(['success' => false, 'errors' => ['Usuário não autenticado.']], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        $idVendedor = $_POST['id_vendedor'] ?? null;
+
+        if (!$idVendedor) {
+            http_response_code(401);
+            echo json_encode(['success' => false, 'errors' => ['Vendedor não autenticado']], JSON_UNESCAPED_UNICODE);
+            exit;
+        };
+
+        $model = new VendedorModel();
+
+        $sucesso = $model->getAllProducts($idVendedor);
+
+        if (empty($sucesso)) {
+            http_response_code(404);
+            echo json_encode(['success' => false, 'erros' => ['Erro no banco de dados']], JSON_UNESCAPED_UNICODE);
+            exit;
+        } else {
+            echo json_encode([
+                'success' => true,
+                'data' => $sucesso
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
     }
 
 }

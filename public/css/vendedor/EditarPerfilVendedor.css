@@ -179,6 +179,8 @@
   width: 100%;
   aspect-ratio: 3 / 1;
   background-color: var(--branco_gelo);
+  object-fit: cover;
+  object-position: center 30%;
 }
 
 .pfp_vendedor {
@@ -693,6 +695,8 @@
   width: 100%;
   max-width: 300px;
   aspect-ratio: 3 / 1;
+  object-fit: cover;
+  object-position: center 30%;
 }
 
 .banner_text,
