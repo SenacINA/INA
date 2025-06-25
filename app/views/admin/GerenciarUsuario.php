@@ -16,13 +16,16 @@ if (!$usuarioSelecionado) {
 $disativar = $estaAtivo ? '' : 'disabled';
 
 ?>
-
+<script src="<?= $PATH_PUBLIC ?>/js/admin/GerenciarUsuario.js"></script>
+<script src="../../../public/js/admin/GerenciarUsuario.js"></script>
+  
 <body>
   <!-- Até 768px -->
 
   <?php
   include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
+
   <main class="gerenciar_usuario_body_container">
     <div class="gerenciar_pedidor_firula_holder">
       <div class="gerenciar_usuario_header_holder">
@@ -120,12 +123,9 @@ $disativar = $estaAtivo ? '' : 'disabled';
 
                   <button id="disable_button" class="base_botao btn_red" <?= $disativar ?>>
                     <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_branco_icon.svg">
-                    <?=
-                    $textoBotao
-                    ?>
+                    <?= $textoBotao ?>
                   </button>
                 </div>
-
                 <div class="gerenciar_usuario_card_column_2">
                   <div class="gerenciar_usuario_card">
                     <span class="gerenciar_usuario_titulo">Data de Cadastro</span>
@@ -222,7 +222,22 @@ $disativar = $estaAtivo ? '' : 'disabled';
       </div>
     </div>
   </main>
-  <script src="<?= $PATH_PUBLIC ?>/js/admin/GerenciarUsuario.js"></script>
+
+  <!-- Pop-Up de Confirmação -->
+  <div class="popup_container" id="popup_desativar">
+    <div class="popup">
+      <button id="close_btn" class="modal_fechar">x</button>
+      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/check_carolina_icon.svg" width="200px" height="200px">
+      <div class="text_popup">
+        <h1>Confirmação</h1>
+        <p>Você deseja desativar este Usuário?</p>
+        <button class="base_botao btn_blue botao_popup" id="confirmar_desativar">
+        <img src="<?= $PATH_PUBLIC ?>/image\geral\botoes\v_branco_icon.svg">  
+        CONFIRMAR</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

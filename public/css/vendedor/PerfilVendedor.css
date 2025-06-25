@@ -303,7 +303,6 @@ hr {
   grid-template-columns: repeat(6, 1fr);
   max-width: 1600px;
   width: 100%;
-  background-color: var(--azul_leve);
   border-radius: 10px;
   padding: 16px;
   gap: 0;

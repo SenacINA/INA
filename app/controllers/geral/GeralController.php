@@ -10,7 +10,7 @@ class GeralController extends RenderView
   private function renderPerfil(string $action)
   {
     if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
-      header('Location: login');
+      header('Location: Login');
       exit;
     }
 
