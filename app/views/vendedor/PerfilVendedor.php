@@ -5,20 +5,14 @@ $titulo = "Perfil - E ao Quadrado";
 $css = ["/css/vendedor/PerfilVendedor.css"];
 require_once('./utils/head.php');
 require_once("./app/models/vendedor/PerfilVendedorModel.php");
-
 ?>
 
 <body>
-  <!-- Até 375px -->
-  <!-- Caminho de Icon Correto -->
-
   <?php
   include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
-
   <main>
     <img class='perfil_vendedor_banner' src="<?= $PATH_PUBLIC . $user['banner_perfil'] ?>">
-
     <div class="perfil_vendedor_content_pfp">
       <div class="perfil_vendedor_pfp">
         <img class='pfp_img' src="<?= $PATH_PUBLIC . $user['foto_perfil'] ?>" alt="pfp_vendedor">
@@ -58,9 +52,7 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
     </div>
 
     <div class="perfil_vendedor_grid_principal">
-
       <hr>
-
       <div class="info_container">
         <div class="about_container">
           <div class="about_text">
@@ -115,7 +107,6 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
         </div>
       </div>
       <hr>
-
       <?php
       $IdVendedor = $_SESSION['cliente_id'];
 
@@ -140,8 +131,6 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
           </div>
         </div>
       <?php endif; ?>
-
-
       <div class="perfil_vendedor_grid_produtos">
         <div class="perfil_vendedor_about_container_2">
           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/produto_icon.svg" alt="Icon Loja" class="base_icon">
@@ -157,6 +146,7 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
     </div>
   </main>
   <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
+  <script src="<?= $PATH_PUBLIC ?>/js/geral/card.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       <?php if (!empty($errors)): ?>
@@ -169,11 +159,8 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
         gerarToast("<?= addslashes($_SESSION['successMessage']) ?>", "sucesso");
         <?php unset($_SESSION['successMessage']); ?>
       <?php endif; ?>
-
     });
   </script>
-
-
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
