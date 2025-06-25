@@ -103,6 +103,16 @@ CREATE TABLE
     );
 
 CREATE TABLE
+    IF NOT EXISTS destaques (
+        id_destaque INT AUTO_INCREMENT PRIMARY KEY,
+        id_vendedor INT NOT NULL,
+        id_produto INT NOT NULL,
+        UNIQUE KEY (id_vendedor, id_produto),
+        FOREIGN KEY (id_vendedor) REFERENCES vendedor (id_vendedor),
+        FOREIGN KEY (id_produto) REFERENCES produto (id_produto)
+    );
+
+CREATE TABLE
     IF NOT EXISTS metodo_pagamento (
         -- 13
         id_metodo_pagamento INT AUTO_INCREMENT PRIMARY KEY,
@@ -114,10 +124,12 @@ CREATE TABLE
         -- 5
         id_compra INT AUTO_INCREMENT PRIMARY KEY,
         id_cliente INT NOT NULL,
+        id_vendedor INT NOT NULL,
         data_compra DATE NOT NULL,
         id_endereço INT NOT NULL,
         id_tipo_frete INT,
         FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente),
+        FOREIGN KEY (id_vendedor) REFERENCES vendedor (id_vendedor),
         FOREIGN KEY (id_endereço) REFERENCES endereco (id_endereco)
     );
 
