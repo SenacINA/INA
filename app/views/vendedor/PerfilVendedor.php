@@ -4,7 +4,6 @@
 $titulo = "Perfil - E ao Quadrado";
 $css = ["/css/vendedor/PerfilVendedor.css"];
 require_once('./utils/head.php');
-require_once("./app/models/vendedor/PerfilVendedorModel.php");
 ?>
 
 <body>

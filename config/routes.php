@@ -49,7 +49,7 @@ $routes = [
       // Geral - Perfil
       '/EditarPerfil' => 'geral/GeralController@editarPerfil',
       '/Perfil' => 'geral/GeralController@perfil',
-      '/Error-404' => 'gerral/GeralController@error',
+      '/Error-404' => 'geral/GeralController@error',
 
       // Vendedor - Cadastro e Perfil
       '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
