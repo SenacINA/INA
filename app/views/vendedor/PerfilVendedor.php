@@ -130,7 +130,7 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
       if (!empty($destaques)) : ?>
         <div class="perfil_vendedor_grid_destaques">
           <div class="perfil_vendedor_about_container_2">
-            <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/tempo_icon.svg" alt="Icon Loja" class="base_icon">
+            <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_azul_icon.svg" alt="Icon Loja" class="base_icon">
             <h1>Destaques:</h1>
           </div>
           <div class="destaques_itens">
@@ -144,7 +144,7 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
 
       <div class="perfil_vendedor_grid_produtos">
         <div class="perfil_vendedor_about_container_2">
-          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/tempo_icon.svg" alt="Icon Loja" class="base_icon">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/produto_icon.svg" alt="Icon Loja" class="base_icon">
           <h1>Produtos:</h1>
         </div>
         <div class="produtos_itens">
