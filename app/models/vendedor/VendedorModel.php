@@ -78,8 +78,22 @@ class VendedorModel
     return $stmt->execute([':nome_fantasia' => $nome_fantasia, ':id_vendedor' => $id_vendedor]);
   }
   
-  public function getAllProducts(int $id_vendedor): [] {
+  public function getAllProducts(int $id_vendedor): ?array {
+    $sql = "
+        SELECT p.*, i.endereco_imagem_produto
+        FROM produto p
+        LEFT JOIN imagem_produto i
+            ON i.id_produto = p.id_produto
+            AND i.index_imagem_produto = 1
+        WHERE p.id_vendedor = :id_vendedor
+    ";
 
+    $stmt = $this->db->prepare($sql);
+    $stmt->bindValue(':id_vendedor', $id_vendedor, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
+
 
 }

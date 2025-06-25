@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
   $titulo = "Relatório de Vendas- E ao Quadrado";
-  $css = ["/css/vendedor/RelatorioVendas.css"];
+  $css = ["/css/vendedor/RelatorioVendas.css", '/css/vendedor/GerenciarProdutos.css'];
   require_once('./utils/head.php');
 ?>
 <body>
@@ -122,6 +122,7 @@
               <th>Preço</th>
               <th>Qtn.</th>
               <th>Status</th>
+              <th></th>
             </tr>
             <tbody>
               <tr>
@@ -137,6 +138,9 @@
                   <span>
                     Ativo
                   </span>
+                </td>
+                <td>
+                  <button>editar</button>
                 </td>
               </tr>
             </tbody>
