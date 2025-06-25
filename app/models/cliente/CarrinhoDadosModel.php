@@ -21,7 +21,7 @@ class CarrinhoDadosModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function salvarEndereco(array $dadosEndereco): bool
+    public function salvarEnderecoModel(array $dadosEndereco): bool
     {
         $sql = "INSERT INTO endereco (
                     rua_endereco, bairro_endereco, numero_endereco,

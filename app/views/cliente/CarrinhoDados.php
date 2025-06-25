@@ -12,7 +12,6 @@ require_once("./utils/head.php")
   ?>
   <main>
     <div class="carrinho_dados">
-
       <div class="carrinho_dados_nav">
         <div class="carrinho_dados_nav_item">
           <img src="<?= $PATH_PUBLIC ?>/image/carrinho/carrinho_cinza_icon.svg" alt="Carrinho">
@@ -38,44 +37,36 @@ require_once("./utils/head.php")
         <div class="carrinho_dados_container_forms">
           <form id="form_endereco" class="carrinho_dados_forms_carrinho" onsubmit="return false;">
             <label for="nome_carrinho">Nome:</label>
-            <input type="text" name="nome" id="nome_carrinho" class="base_input">
+            <input type="text" name="nome" id="nome_carrinho" class="base_input" autocomplete="name">
 
             <label for="cpf_carrinho">CPF:</label>
-            <input type="text" name="cpf" id="cpf_carrinho" class="base_input">
+            <input type="text" name="cpf" id="cpf_carrinho" class="base_input" autocomplete="off">
 
             <label for="endereco_carrinho">Endereço:</label>
-            <input type="text" name="endereco" id="endereco_carrinho" class="base_input">
+            <input type="text" name="endereco" id="endereco_carrinho" class="base_input" autocomplete="street-address">
 
             <div class="carrinho_dados_informacoes_cep">
               <label for="cep" class="carrinho_dados_cep">CEP:</label>
-              <input type="text" name="cep" id="cep" class="base_input" pattern="\d{5}-?\d{3}" inputmode="numeric">
+              <input type="text" name="cep" id="cep" class="base_input" pattern="\d{5}-?\d{3}" inputmode="numeric" autocomplete="postal-code">
 
               <label for="cidade" class="carrinho_dados_cidade">Cidade:</label>
-              <input type="text" name="cidade" id="cidade" class="base_input">
+              <input type="text" name="cidade" id="cidade" class="base_input" autocomplete="address-level2">
             </div>
 
             <label for="telefone">Telefone:</label>
-            <input type="text" name="telefone" id="telefone" class="base_input">
+            <input type="text" name="telefone" id="telefone" class="base_input" autocomplete="tel">
 
             <label for="email">Email:</label>
-            <input type="text" name="email" id="email" class="base_input">
+            <input type="text" name="email" id="email" class="base_input" autocomplete="email">
 
             <label for="ponto">Ponto de referência (opcional):</label>
-            <input type="text" name="ponto" id="ponto" class="base_input">
+            <input type="text" name="ponto" id="ponto" class="base_input" autocomplete="off">
 
-            <label for="numeroCasa">Número da casa:</label>
-            <input type="number" name="numeroCasa" id="numeroCasa" class="base_input">
+            <label for="numero_casa">Número da casa:</label>
+            <input type="number" name="numero_casa" id="numero_casa" class="base_input" autocomplete="off">
 
             <label for="mensagem_vendedor">Mensagem para o vendedor (opcional):</label>
-            <input type="text" name="mensagem_vendedor" id="mensagem_vendedor" class="base_input">
-
-            <label for="opcaoEnvio">Opções de envio:</label>
-            <div class="base_input_select">
-              <select name="opcaoEnvio" id="opcaoEnvio" class="base_input">
-                <option value="" disabled selected>Selecione o tipo de entrega</option>
-                <option value="entrega_padrao">Entrega Padrão - R$15,00</option>
-              </select>
-            </div>
+            <input type="text" name="mensagem_vendedor" id="mensagem_vendedor" class="base_input" autocomplete="off">
           </form>
 
           <div class="carrinho_dados_botoes_carrinho">
@@ -118,7 +109,7 @@ require_once("./utils/head.php")
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
 
                       </button>
-                      <form action="/CarrinhoDados/excluir" method="POST" style="display:inline;">
+                      <form action="/CarrinhoDados-excluir" method="POST" style="display:inline;">
                         <input type="hidden" name="idEndereco" value="<?= $endereco['id_endereco'] ?>">
                         <button type="submit" class="carrinho_dados_remove_info" title="Remover">
                           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">

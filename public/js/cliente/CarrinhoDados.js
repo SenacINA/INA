@@ -1,114 +1,126 @@
-document.getElementById('btnSalvarEndereco').addEventListener('click', function() {
-  // Lista dos campos obrigatórios com seus ids
+document.getElementById('btnSalvarEndereco').addEventListener('click', async function () {
   const camposObrigatorios = [
     'nome_carrinho',
     'cpf_carrinho',
     'endereco_carrinho',
-    'numeroCasa',
+    'numero_casa',   // corrigido aqui para bater com o id do HTML
     'cidade',
     'cep'
   ];
 
   let formularioValido = true;
 
-  // Remove classe de erro de todos os campos antes de validar
+  // Limpa erros anteriores
   camposObrigatorios.forEach(id => {
     const campo = document.getElementById(id);
-    campo.classList.remove('input-error');
+    if (campo) campo.classList.remove('input-error');
   });
 
-  // Verifica campos obrigatórios
+  // Validação dos campos obrigatórios
   camposObrigatorios.forEach(id => {
     const campo = document.getElementById(id);
-    if (!campo.value.trim()) {
-      campo.classList.add('input-error');
+    if (!campo || !campo.value.trim()) {
+      if (campo) campo.classList.add('input-error');
       formularioValido = false;
     }
   });
 
   if (!formularioValido) {
-    // Para evitar o alerta, apenas foca no primeiro campo com erro
-    document.querySelector('.input-error').focus();
+    const primeiroErro = document.querySelector('.input-error');
+    if (primeiroErro) primeiroErro.focus();
     return;
   }
 
-  // Segue o restante da lógica para salvar o endereço
+  // Coleta os dados
+  const dados = {
+    nome: document.getElementById('nome_carrinho').value.trim(),
+    cpf: document.getElementById('cpf_carrinho').value.trim(),
+    endereco: document.getElementById('endereco_carrinho').value.trim(),
+    numeroCasa: document.getElementById('numero_casa').value.trim(), // corrigido
+    cidade: document.getElementById('cidade').value.trim(),
+    cep: document.getElementById('cep').value.trim(),
+    telefone: document.getElementById('telefone').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    ponto: document.getElementById('ponto').value.trim()
+  };
 
-  // Captura valores
-  const nome = document.getElementById('nome_carrinho').value.trim();
-  const cpf = document.getElementById('cpf_carrinho').value.trim();
-  const endereco = document.getElementById('endereco_carrinho').value.trim();
-  const numero = document.getElementById('numeroCasa').value.trim();
-  const cidade = document.getElementById('cidade').value.trim();
-  const cep = document.getElementById('cep').value.trim();
-  const telefone = document.getElementById('telefone').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const ponto = document.getElementById('ponto').value.trim();
-  const mensagemVendedor = document.getElementById('mensagem_vendedor').value.trim();
-  const opcaoEnvio = document.getElementById('opcaoEnvio').value;
+  try {
+    const response = await fetch('/CarrinhoDados-salvar', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dados)
+    });
 
-  // Criar novo elemento para endereço salvo
-  const novoEndereco = document.createElement('div');
-  novoEndereco.classList.add('carrinho_dados_info_container');
-  novoEndereco.innerHTML = `
-    <input type="radio" name="endereco" class="base_radio">
-    <div class="carrinho_dados_text_info">
-      <div class="carrinho_dados_text">
-        <h3 class="carrinho_dados_endereco_info">${endereco}</h3>
-        <p class="carrinho_dados_endereco_info_adicional">
-          Nº ${numero}, ${cidade}, CEP: ${cep}
-        </p>
-        <p><strong>Nome:</strong> ${nome}</p>
-        <p><strong>CPF:</strong> ${cpf}</p>
-        <p><strong>Telefone:</strong> ${telefone}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        ${ponto ? `<p><strong>Ponto de referência:</strong> ${ponto}</p>` : ''}
-        ${mensagemVendedor ? `<p><strong>Mensagem:</strong> ${mensagemVendedor}</p>` : ''}
-        <p><strong>Opção de envio:</strong> ${opcaoEnvio}</p>
-      </div>
-      <div class="carrinho_dados_botoes_info">
-        <button type="button" class="carrinho_dados_edit_info" title="Editar">
-          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg" alt="Editar">
-        </button>
-        <button type="button" class="carrinho_dados_remove_info" title="Remover">
-          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg" alt="Remover">
-        </button>
-      </div>
-    </div>
-  `;
+    if (!response.ok) throw new Error(`Erro HTTP ${response.status}`);
 
-  // Remove endereço ao clicar no botão
-  novoEndereco.querySelector('.carrinho_dados_remove_info').addEventListener('click', () => {
-    novoEndereco.remove();
-  });
+    const data = await response.json();
 
-  // Placeholder para editar (você pode implementar)
-  novoEndereco.querySelector('.carrinho_dados_edit_info').addEventListener('click', () => {
-    alert('Função de editar ainda não implementada.');
-  });
+    if (data.sucesso) {
+      alert('Endereço salvo com sucesso!');
 
-  // Adiciona ao container dos endereços salvos
-  document.getElementById('enderecos_salvos').appendChild(novoEndereco);
+      // Adiciona o novo endereço ao DOM
+      const novoEndereco = document.createElement('div');
+      novoEndereco.classList.add('carrinho_dados_info_container');
+      novoEndereco.innerHTML = `
+        <input type="radio" name="endereco" class="base_radio">
+        <div class="carrinho_dados_text_info">
+          <div class="carrinho_dados_text">
+            <h3 class="carrinho_dados_endereco_info">${dados.endereco}</h3>
+            <p class="carrinho_dados_endereco_info_adicional">
+              Nº ${dados.numeroCasa}, ${dados.cidade}, CEP: ${dados.cep}
+            </p>
+            <p><strong>Nome:</strong> ${dados.nome}</p>
+            <p><strong>CPF:</strong> ${dados.cpf}</p>
+            <p><strong>Telefone:</strong> ${dados.telefone}</p>
+            <p><strong>Email:</strong> ${dados.email}</p>
+            ${dados.ponto ? `<p><strong>Ponto de referência:</strong> ${dados.ponto}</p>` : ''}
+          </div>
+          <div class="carrinho_dados_botoes_info">
+            <button type="button" class="carrinho_dados_edit_info" title="Editar">
+              <img src="/image/geral/icons/caneta_carolina_icon.svg" alt="Editar">
+            </button>
+            <button type="button" class="carrinho_dados_remove_info" title="Remover">
+              <img src="/image/geral/icons/lixo_vermelho_icon.svg" alt="Remover">
+            </button>
+          </div>
+        </div>
+      `;
 
-  // Limpa o formulário e remove classes de erro
-  const form = document.getElementById('form_endereco');
-  form.reset();
-  camposObrigatorios.forEach(id => {
-    document.getElementById(id).classList.remove('input-error');
-  });
+      // Evento de remoção
+      novoEndereco.querySelector('.carrinho_dados_remove_info').addEventListener('click', () => {
+        novoEndereco.remove();
+      });
+
+      document.getElementById('enderecos_salvos').appendChild(novoEndereco);
+
+      // Limpa formulário
+      const form = document.getElementById('form_endereco');
+      form.reset();
+      camposObrigatorios.forEach(id => {
+        const campo = document.getElementById(id);
+        if (campo) campo.classList.remove('input-error');
+      });
+
+    } else {
+      alert('Erro: ' + data.mensagem);
+    }
+
+  } catch (error) {
+    console.error('Erro na requisição:', error);
+    alert('Erro ao salvar o endereço.');
+  }
 });
 
-// Remove o erro assim que usuário digitar em um campo
-const camposInput = [
-  'nome_carrinho', 'cpf_carrinho', 'endereco_carrinho',
-  'numeroCasa', 'cidade', 'cep'
-];
-
-camposInput.forEach(id => {
+// Remove classe de erro ao digitar
+['nome_carrinho', 'cpf_carrinho', 'endereco_carrinho', 'numero_casa', 'cidade', 'cep'].forEach(id => {
   const campo = document.getElementById(id);
-  campo.addEventListener('input', () => {
-    if (campo.value.trim()) {
-      campo.classList.remove('input-error');
-    }
-  });
+  if (campo) {
+    campo.addEventListener('input', () => {
+      if (campo.value.trim()) {
+        campo.classList.remove('input-error');
+      }
+    });
+  }
 });
