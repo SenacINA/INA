@@ -2,7 +2,6 @@
 <html lang="pt-br">
 <?php
 $css = ["/css/cliente/CarrinhoVazio.css"];
-$js = ["/js/cliente/Carrinhos.js"];
 require_once("./utils/head.php");
 $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
 ?>
@@ -63,8 +62,8 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
                     </div>
                   </div>
                   <hr>
-                  <?php endforeach; ?>
-                  <?php endif; ?>
+                <?php endforeach; ?>
+              <?php endif; ?>
             </div>
 
             <div class="carrinho_vazio_conteudo_servicos">
@@ -134,6 +133,8 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
+  <script src="<?= $PATH_PUBLIC ?>/js/cliente/Carrinhos.js"></script>
+  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
 </body>
 
 </html>
