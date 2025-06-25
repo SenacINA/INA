@@ -212,7 +212,7 @@ main {
 .relatorio_vendedor_pesquisar_usuario_item {
   margin-top: 16px;
   flex-direction: column;
-  width: 573px;
+  width: 100%;
 }
 
 .relatorio_vendedor_pesquisar_usuario_item button {
@@ -240,11 +240,11 @@ main {
   display: none;
 }
 
-.gerenciar_pedidos_table {
-  margin: 0 32px;
+.relatorio_vendedor_table {
+  width: 100%;
 }
 
-.gerenciar_pedidos_table_filtro {
+.relatorio_vendedor_table_filtro {
   display: flex;
   width: fit-content;
   align-items: center;
@@ -253,67 +253,87 @@ main {
   border-top-left-radius: 5px;
 }
 
-.gerenciar_pedidos_table_filtro select {
+.relatorio_vendedor_table_filtro select {
   background-color: var(--carolina);
   border: 0;
   height: 32px;
 }
 
-.gerenciar_pedidos_table_filtro select:focus-visible {
+.relatorio_vendedor_table_filtro select:focus-visible {
   outline: solid 1px #e0e0e0;
 }
 
-.gerenciar_pedidos_filtro_titulo {
+.relatorio_vendedor_filtro_titulo {
   color: #fff;
 }
 
-.gerenciar_pedidos_table_holder table {
+.relatorio_vendedor_table_holder table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.gerenciar_pedidos_table_holder th,
-.gerenciar_pedidos_table_holder td {
+.relatorio_vendedor_table_holder th,
+.relatorio_vendedor_table_holder td {
   padding: 8px;
   text-align: left;
   border: 1px solid var(--carolina);
 }
 
-.gerenciar_pedidos_table_holder th {
+.relatorio_vendedor_table_holder th {
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--cinza);
 }
 
-.gerenciar_pedidos_table_holder td {
+.relatorio_vendedor_table_holder td {
   height: 100%;
   color: var(--sappire);
   font-size: 1rem;
   font-weight: 500;
 }
 
-.gerenciar_pedidos_table_holder tr {
+.relatorio_vendedor_table_holder tr {
   background-color: var(--branco_gelo);
   min-height: 48px;
   border-radius: 10px;
 }
 
-.gerenciar_pedidos_table_holder tbody > tr:nth-child(odd) {
+.relatorio_vendedor_table_holder tbody > tr:nth-child(odd) {
   background-color: var(--azul_leve);
 }
 
-.gerenciar_pedidos_table_col-1,
-.gerenciar_pedidos_table_col-4 {
+.relatorio_vendedor_table_col-1,
+.relatorio_vendedor_table_col-4 {
   width: 19%;
 }
 
-.gerenciar_pedidos_table_col-3,
-.gerenciar_pedidos_table_col-6 {
+.relatorio_vendedor_table_col-3,
+.relatorio_vendedor_table_col-6 {
   width: 11%;
 }
 
-.gerenciar_pedidos_table_col-2,
-.gerenciar_pedidos_table_col-5,
-.gerenciar_pedidos_table_col-7 {
+.relatorio_vendedor_table_col-2,
+.relatorio_vendedor_table_col-5,
+.relatorio_vendedor_table_col-7 {
   width: 20%;
+}
+
+@media (max-width:768px) {
+  .relatorio_vendedor_grid_conteudo{
+    grid-template-columns: 1fr;
+    padding: 32px 0px;
+    row-gap: 32px;
+  }
+
+  .relatorio_vendedor_pesquisar_usuario_item button{
+    width: 100%;
+  }
+
+  .relatorio_vendedor_titulo{
+    height: 50%;
+  }
+
+  .relatorio_vendedor_estatistica_holder{
+    grid-template-columns: 1fr;
+  }
 }

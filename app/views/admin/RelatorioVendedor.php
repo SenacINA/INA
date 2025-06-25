@@ -101,10 +101,10 @@
       </div>
     </div>
 
-    <div class="gerenciar_pedidos_table">
+    <div class="relatorio_vendedor_table">
       <!-- Filtro de Tabela -->
-      <div class="gerenciar_pedidos_table_filtro bg_carolina">
-        <p class="gerenciar_pedidos_filtro_titulo font_subtitulo">Organizar por:</p>
+      <div class="relatorio_vendedor_table_filtro bg_carolina">
+        <p class="relatorio_vendedor_filtro_titulo font_subtitulo">Organizar por:</p>
         <select class="base_input">
           <option value="" selected disabled style="display: none;"></option>
           <option value="">ID</option>
@@ -116,15 +116,15 @@
       </div>
 
       <!-- Tabela de Pedidos -->
-      <div class="gerenciar_pedidos_table_holder">
+      <div class="relatorio_vendedor_table_holder">
         <table>
           <colgroup>
-            <col class="gerenciar_pedidos_table_col-1">
-            <col class="gerenciar_pedidos_table_col-2">
-            <col class="gerenciar_pedidos_table_col-3">
-            <col class="gerenciar_pedidos_table_col-4">
-            <col class="gerenciar_pedidos_table_col-5">
-            <col class="gerenciar_pedidos_table_col-6">
+            <col class="relatorio_vendedor_table_col-1">
+            <col class="relatorio_vendedor_table_col-2">
+            <col class="relatorio_vendedor_table_col-3">
+            <col class="relatorio_vendedor_table_col-4">
+            <col class="relatorio_vendedor_table_col-5">
+            <col class="relatorio_vendedor_table_col-6">
           </colgroup>
           <thead>
             <tr>
