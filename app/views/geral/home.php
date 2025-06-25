@@ -34,11 +34,11 @@ require_once('./utils/head.php')
                         <img src="<?= $PATH_PUBLIC ?>/image/index/BannerGarantia.jpg" alt="">
                     </div>
                 </div>
-                <h1>Descobertas do Dia</h1>
+                <h1 class="index_body_text_carolina">Descobertas do Dia</h1>
                 <div class="index_body_produto_container">
                     <div class="index_body_container_title">
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/foguinho.svg" alt="">
-                        <h2>Novidades</h2>
+                        <h2 class="index_body_text_carolina">Novidades</h2>
                     </div>
                     <div class="index_body_produtos_content">
                         <?php
@@ -63,7 +63,7 @@ require_once('./utils/head.php')
                 <div class="index_body_produto_container">
                     <div class="index_body_container_title">
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/descontos.svg" alt="">
-                        <h2>Descontos</h2>
+                        <h2 class="index_body_text_carolina">Descontos</h2>
                     </div>
                     <div class="index_body_produtos_content">
                         <?php $card->gerarProdutoCards(6, $info, 6); ?>
@@ -80,10 +80,8 @@ require_once('./utils/head.php')
                 <img class="index_body_large_ad" src="<?= $PATH_PUBLIC ?>/image/index/BannerRedragon.jpg" alt="">
                 <div class="index_body_produto_container">
                     <div class="index_body_container_title">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="m5.825 21l1.625-7.025L2 9.25l7.2-.625L12 2l2.8 6.625l7.2.625l-5.45 4.725L18.175 21L12 17.275z" />
-                        </svg>
-                        <h2>Mais Vendidos</h2>
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_carolina.svg" alt="">
+                        <h2 class="index_body_text_carolina">Mais Vendidos</h2>
                     </div>
                     <div class="index_body_produtos_content">
                         <?php $card->gerarProdutoCards(6, $info, 12); ?>
