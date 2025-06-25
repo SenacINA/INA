@@ -24,16 +24,13 @@ $routes = [
       '/Carrinho-api-limpar'       => 'cliente/CarrinhoController@limparCarrinho',
       '/Carrinho-api-update'       => 'cliente/CarrinhoController@atualizar',
       '/Carrinho-api-badge'        => 'cliente/CarrinhoController@exibirBadge',
-      
-
-      '/CarrinhoDados' => 'cliente/CarrinhoController@dados',
-      '/CarrinhoDados/salvar-endereco' => 'cliente/CarrinhoController@salvarEndereco',
-      '/CarrinhoDados/atualizar-endereco/{id}' => 'cliente/CarrinhoController@atualizarEndereco',
-      '/CarrinhoDados/remover-endereco/{id}' => 'cliente/CarrinhoController@removerEndereco',
-      '/CarrinhoDados/definir-principal/{id}' => 'cliente/CarrinhoController@definirPrincipal',
-
-      '/CarrinhoDados'             => 'cliente/ClienteController@dados',
       '/CarrinhoPagamentos'        => 'cliente/ClienteController@pagamentos',
+      
+      '/CarrinhoDados'             => 'cliente/CarrinhoController@dados',
+      '/CarrinhoDados/salvar'      => 'cliente/CarrinhoController@salvarEndereco',
+      '/CarrinhoDados/excluir'     => 'cliente/CarrinhoController@excluirEndereco',
+
+
 
       // Geral
       '/sobre-nos'                 => 'geral/GeralController@sobreNos',

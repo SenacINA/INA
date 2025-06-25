@@ -80,6 +80,8 @@ require_once("./utils/head.php")
               Salvar
             </button>
           </div>
+
+
           <div class="carrinho_dados_informacoes_salvas">
             <div class="carrinho_dados_enderecos_salvos_main">
               <hr class="carrinho_dados_carrinho_dados_linha">
@@ -88,24 +90,35 @@ require_once("./utils/head.php")
               </svg>
               <p class="carrinho_dados_enderecos_salvos_main_text">Endereços Salvos</p>
             </div>
+
+          
             <forms action="" class="carrinho_dados_enderecos_salvos_container">
-              <div class="carrinho_dados_info_container">
-                <input type="radio" name="endereco" class="base_radio" class="base_radio">
-                <div class="carrinho_dados_text_info">
-                  <div class="carrinho_dados_text">
-                    <h3 class="carrinho_dados_endereco_info">Endereço</h3>
-                    <p class="carrinho_dados_endereco_info_adicional">Nome, Número da casa, Cidade, CEP</p>
-                  </div>
-                  <div class="carrinho_dados_botoes_info">
-                    <button class="carrinho_dados_edit_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
+              
+            <!-- Dados salvos -->
+              <?php foreach ($enderecos as $endereco): ?>
+    <div class="carrinho_dados_info_container">
+        <input type="radio" name="endereco" class="base_radio" value="<?= $endereco['id_endereco'] ?>">
+        <div class="carrinho_dados_text_info">
+            <div class="carrinho_dados_text">
+                <h3 class="carrinho_dados_endereco_info"><?= $endereco['rua_endereco'] ?></h3>
+                <p class="carrinho_dados_endereco_info_adicional">
+                    <?= $endereco['numero_endereco'] ?>, <?= $endereco['cidade_endereco'] ?>, <?= $endereco['cep_endereco'] ?>
+                </p>
+            </div>
+            <div class="carrinho_dados_botoes_info">
+                <button class="carrinho_dados_edit_info">
+                    <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
+                </button>
+                <form action="/CarrinhoDados/excluir" method="POST" style="display:inline;">
+                    <input type="hidden" name="idEndereco" value="<?= $endereco['id_endereco'] ?>">
+                    <button type="submit" class="carrinho_dados_remove_info">
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
                     </button>
-                    <button class="carrinho_dados_remove_info">
-                      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                    </button>
-                  </div>
-                </div>
-              </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
               
             </forms>
           </div>
