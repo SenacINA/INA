@@ -12,6 +12,13 @@ select {
   cursor: pointer;
 }
 
+.input-error {
+  border: 2px solid red !important;
+  background-color: #ffe6e6; /* fundo clarinho vermelho */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
 .carrinho_dados_fundo {
   height: 100%;
   width: 100%;

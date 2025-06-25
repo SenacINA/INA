@@ -133,7 +133,7 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
-  <script src="<?= $PATH_PUBLIC ?>/js/cliente/Carrinhos.js"></script>
+  <script src="<?= $PATH_PUBLIC ?>/js/cliente/Carrinho.js"></script>
   <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
 </body>
 

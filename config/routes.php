@@ -26,11 +26,9 @@ $routes = [
       '/Carrinho-api-badge'        => 'cliente/CarrinhoController@exibirBadge',
       '/CarrinhoPagamentos'        => 'cliente/ClienteController@pagamentos',
       
-      '/CarrinhoDados'             => 'cliente/CarrinhoController@dados',
-      '/CarrinhoDados/salvar'      => 'cliente/CarrinhoController@salvarEndereco',
-      '/CarrinhoDados/excluir'     => 'cliente/CarrinhoController@excluirEndereco',
-
-
+      '/CarrinhoDados'             => 'cliente/CarrinhoDadosController@dados',
+      '/CarrinhoDados-salvar'      => 'cliente/CarrinhoDadosController@salvarEndereco',
+      '/CarrinhoDados-excluir'     => 'cliente/CarrinhoDadosController@excluirEndereco',
 
       // Geral
       '/sobre-nos'                 => 'geral/GeralController@sobreNos',
