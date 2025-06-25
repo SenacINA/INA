@@ -231,6 +231,7 @@ hr {
   width:100%;
   justify-self: center;
 
+  margin-top: 32px;
   column-gap: 8px;
   align-items: center;
 
@@ -294,49 +295,22 @@ hr {
 .destaques_itens,
 .produtos_itens {
   margin-top: 1%;
+  
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  max-width: 1600px;
+  width: 100%;
+  background-color: var(--azul_leve);
+  border-radius: 10px;
+  padding: 16px;
   gap: 0;
-  justify-content: space-around;
-  margin-left: 4.5%;
+  justify-content: center;
+  justify-self: center;
 }
 
-.ver_mais_container {
-  display: flex;
-  justify-content: end;
-  position: relative;
-  right: 5%;
-  column-gap: 0.5%;
-  cursor: pointer;
-  button {
-    color: white;
-    border-radius: 5px;
-    background-color: #1b98e0;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
-    border: 0;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    svg {
-      transform: rotate(90deg);
-      cursor: pointer;
-    }
-  }
-}
-
-.ver_mais_text {
-  color: var(--sappire);
-  text-align: center;
-  font-family: Jost;
-  font-size: 16px;
-  font-weight: 600;
+.produtos_itens {
+  overflow-y: scroll;
+  max-height: 700px;
 }
 
 .anuncio {
