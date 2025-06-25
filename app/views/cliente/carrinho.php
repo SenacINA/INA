@@ -54,9 +54,9 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
                       <input class="input_quantidade" type="number" name="quantidade" id="quantidade_produto" min="1" max="99" value="<?= (int)$item['quantidade_produto'] ?>">
                       <form method="POST" action="Carrinho-api-remove">
                         <input hidden name="id_produto" id="id_produto" value="<?= $item['id_produto'] ?>">
-                        <button class="">
+                        <button class="base_botao btn_outline_red">
                           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                          <span>Limpar</span>
+                          Limpar
                         </button>
                       </form>
                     </div>
@@ -64,34 +64,6 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
                   <hr>
                 <?php endforeach; ?>
               <?php endif; ?>
-            </div>
-
-            <div class="carrinho_vazio_conteudo_servicos">
-              <div class="servicos_container_1">
-                <div class="text_servicos">
-                  <img src="<?= $PATH_PUBLIC ?>/image/carrinho/servico.svg" class="base_icon" alt="Serviço de frete">
-                  <p class="font_subtitulo font_celadon">FRETE</p>
-                </div>
-
-                <button id="btn_mostrar_servicos" class="btn_mostrar_servicos" aria-label="Mostrar serviços de frete">
-                  <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/seta_baixo.svg" class="base_icon" alt="Seta para baixo">
-                </button>
-
-                <div id="frete_container_1" class="frete_container_1 visible_servicos">
-                  <div class="consultar_frete">
-                    <h1>CONSULTAR FRETE</h1>
-                    <div class="consultar_input">
-                      <input class="base_input" type="text" aria-label="CEP para consultar frete">
-                      <button class='base_botao btn_blue btn_consulta'>Ok</button>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="frete_container_2" class="frete_container_2 visible_servicos">
-                  <p class="font_descricao font_celadon font_bold">Total de Itens: <?= count($itensCarrinho) ?></p>
-                  <p class="font_descricao font_celadon font_bold">Frete Total: N/A</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
