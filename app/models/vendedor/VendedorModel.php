@@ -106,5 +106,59 @@ class VendedorModel
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  public function getAllProductsFiltered(int $id_vendedor, string $filter = 'code'): ?array
+  {
+    // campos válidos para filtro
+    $allowed = ['code', 'name', 'qty_asc', 'qty_desc', 'active', 'inactive'];
+    if (!in_array($filter, $allowed, true)) {
+        $filter = 'code';
+    }
+
+    // montagem inicial
+    $orderBy = 'p.cod_produto';  // usar cod_produto, pois é o alias que você usa
+    $where   = '';
+
+    switch ($filter) {
+        case 'name':
+            $orderBy = 'p.nome_produto';
+            break;
+        case 'qty_asc':
+            $orderBy = 'p.unidade_produto ASC';
+            break;
+        case 'qty_desc':
+            $orderBy = 'p.unidade_produto DESC';
+            break;
+        case 'active':
+            $where   = 'AND p.status_produto = 1';
+            break;
+        case 'inactive':
+            $where   = 'AND p.status_produto = 0';
+            break;
+        case 'code':
+        default:
+            $orderBy = 'p.cod_produto';
+            break;
+    }
+
+    $sql = "
+        SELECT
+            p.*,
+            i.endereco_imagem_produto
+        FROM produto p
+        LEFT JOIN imagem_produto i
+          ON i.id_produto = p.id_produto
+         AND i.index_imagem_produto = 1
+        WHERE p.id_vendedor = :id_vendedor
+        $where
+        ORDER BY $orderBy
+    ";
+
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id_vendedor', $id_vendedor, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
 
 }

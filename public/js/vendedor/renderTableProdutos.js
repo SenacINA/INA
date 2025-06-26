@@ -3,14 +3,16 @@ document.addEventListener('DOMContentLoaded', function () {
   let paginaAtual = 0;
   const produtosPorPagina = 10;
 
-  async function carregarTabelaProdutos(idVendedor) {
+  const filtroSelect = document.getElementById('filtroRelatorio');
+
+  async function carregarTabelaProdutos(idVendedor, filtro = 'code') {
     try {
       const resposta = await fetch('/ina/GerenciarProdutos-api', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: `id_vendedor=${idVendedor}`
+        body: `id_vendedor=${idVendedor}&filtro=${filtro}`
       });
 
       const json = await resposta.json();
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
       tbody.appendChild(tr);
     });
 
-    // Adiciona linhas vazias se a página tiver menos de 5 produtos
+    // Adiciona linhas vazias para completar a página
     const linhasFaltantes = produtosPorPagina - produtosPagina.length;
     for (let i = 0; i < linhasFaltantes; i++) {
       const trVazio = document.createElement('tr');
@@ -125,5 +127,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  carregarTabelaProdutos(idVendedor);
+  // Event listener para o filtro
+  if (filtroSelect) {
+    filtroSelect.addEventListener('change', () => {
+      const filtroSelecionado = filtroSelect.value || 'code';
+      carregarTabelaProdutos(idVendedor, filtroSelecionado);
+    });
+  }
+
+  // Início: carregamento inicial com filtro padrão
+  carregarTabelaProdutos(idVendedor, filtroSelect?.value || 'code');
 });

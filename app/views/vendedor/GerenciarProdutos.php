@@ -98,17 +98,18 @@
       <h1 class="relatorio_vendas_text_header font_titulo">PRODUTOS</h1>
     </div>
     <div class="relatorio_vendas_table">
-      <div class="relatorio_vendas_table_filtro bg_carolina">
-        <p class="relatorio_vendas_filtro_titulo font_subtitulo">Organizar por:</p>
-        <select>
-          <option value="" selected>Código</option>
-          <option value="">Nome</option>
-          <option value="">Quantidade ASC</option>
-          <option value="">Quantidade DESC</option>
-          <option value="">Ativos</option>
-          <option value="">Inativos</option>
-        </select>
-      </div>
+    <div class="relatorio_vendas_table_filtro bg_carolina">
+      <p class="relatorio_vendas_filtro_titulo font_subtitulo">Organizar por:</p>
+      <select id="filtroRelatorio">
+        <option value="code">Código</option>
+        <option value="name">Nome</option>
+        <option value="qty_asc">Quantidade ASC</option>
+        <option value="qty_desc">Quantidade DESC</option>
+        <option value="active">Ativos</option>
+        <option value="inactive">Inativos</option>
+      </select>
+    </div>
+
       <div class='tabela-scroll'>
         <div class="base_tabela">
           <table>
