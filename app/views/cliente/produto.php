@@ -33,8 +33,8 @@ $info = $controller->exibirProduto($id);
                 <div class="avaliacao_vendedor">
                     <h1>AVALIAÇÃO GERAL</h1>
                     <div class='vendedor_rating'>
-                        <h2 class='vendedor_estrelas estrelas-<?= round($info["mediaEstrelasVendedor"])?>'>★★★★★</h2>
-                        <h2><?=$info["mediaEstrelasVendedor"]?></h2>
+                        <h2 class='vendedor_estrelas estrelas-<?= round($info["mediaEstrelasVendedor"]) ?>'>★★★★★</h2>
+                        <h2><?= $info["mediaEstrelasVendedor"] ?></h2>
                     </div>
                     <h3>(<?= $info['total_avaliacoes'] ?>)</h3>
                 </div>
@@ -55,8 +55,7 @@ $info = $controller->exibirProduto($id);
                                 echo "<div><img src='$PATH_PUBLIC" . $info['imagens'][$i - 1]['endereco_imagem_produto'] . "'></div>";
                             }
                         }
-                    }
-                    else {
+                    } else {
                         echo "<div class='imagem_selecionada'> <img src='https://placehold.co/400x400'></div>";
                     }
                     ?>
@@ -82,7 +81,12 @@ $info = $controller->exibirProduto($id);
                             <h1><?= $info['infoProduto']['nome_produto'] ?></h1>
                         </div>
                         <div class="produto_info_text">
-                            <h2>Vendido e entregue por: <a href=""><b><?= $info['infoProduto']['nome_vendedor'] ?></b></a> </h2>
+                            <h2>Vendido e entregue por: <a <?php 
+                            if (isset($_SESSION['cliente_id']) && $_SESSION['user_type'] == 'vendedor' && $_SESSION['cliente_id'] == $info['infoProduto']['id_vendedor']) {
+                                echo "href='./Perfil'";
+                            } else {
+                                echo "href='./Perfil?isCliente=true&idVendedor={$info['infoProduto']['id_vendedor']}'";
+                            }?>> <b><?= $info['infoProduto']['nome_vendedor'] ?></b></a></h2>
                             <h3>Em estoque</h3>
                         </div>
                     </div>
@@ -144,7 +148,7 @@ $info = $controller->exibirProduto($id);
                 <div class="retangulos_avaliacao_produto">
                     <?php
                     $distribuicao = $info['distribuicao_avaliacoes'];
-                    
+
                     for ($estrelas = 5; $estrelas >= 1; $estrelas--):
                         $total = $distribuicao['estrelas'][$estrelas];
                         $texto = $estrelas . ' Estrela' . ($estrelas > 1 ? 's' : '');
@@ -153,7 +157,7 @@ $info = $controller->exibirProduto($id);
                             <p><?= $texto ?> (<?= number_format($total, 0, ',', '.') ?>)</p>
                         </button>
                     <?php endfor; ?>
-                    
+
                     <button>
                         <p>Com mídia (<?= number_format($distribuicao['com_midia'], 0, ',', '.') ?>)</p>
                     </button>
@@ -171,7 +175,7 @@ $info = $controller->exibirProduto($id);
         </div>
 
         <div class="form_avaliacao_container">
-            <form id="formAvaliacao" data-id-produto="<?= $id ?>" data-id-vendedor='<?= $info['infoProduto']['id_vendedor']?>'>
+            <form id="formAvaliacao" data-id-produto="<?= $id ?>" data-id-vendedor='<?= $info['infoProduto']['id_vendedor'] ?>'>
                 <div class="grid_user">
                     <div class='cliente_nome_pic'>
                         <img class="icon_user" src="<?= $PATH_PUBLIC . ($cliente['foto_perfil'] ?? '/image/cliente/produto/icon_profile.svg') ?>" alt="">
@@ -217,9 +221,9 @@ $info = $controller->exibirProduto($id);
                             <span id="contador-restante">/5</span>
                         </div>
                         <button class="base_botao btn_blue" name="produtoImagem" type='button'>
-                        <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
-                        ENVIAR ARQUIVO
-                        <input type="file" id="input-file" name="produto-imagens" accept="image/*" multiple>
+                            <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
+                            ENVIAR ARQUIVO
+                            <input type="file" id="input-file" name="produto-imagens" accept="image/*" multiple>
                         </button>
                         <h4 id='info-image'>
                             O tamanho do arquivo não pode ultrapassar 2mb
@@ -230,7 +234,7 @@ $info = $controller->exibirProduto($id);
                         <input type="file" id="video" name="video" accept="video/*"> -->
                     </div>
                     <button type="submit" class="base_botao btn_blue btn_submit">
-                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_branca_icon.svg" alt=""> 
+                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_branca_icon.svg" alt="">
                         ENVIAR AVALIAÇÃO
                     </button>
                 </div>
@@ -239,43 +243,43 @@ $info = $controller->exibirProduto($id);
     <?php endif; ?>
 
     <div class="grid_comentarios_usuarios">
-        
+
         <?php
-            $controller = new ProdutoController();
-            $params = [
-                'idVendedor' => $info['infoProduto']['id_vendedor'],
-                'idProduto'  => $id,
-                'maxRender'  => $_GET['maxRender'] ?? 10,
-                'offset'     => $_GET['offset'] ?? 0
+        $controller = new ProdutoController();
+        $params = [
+            'idVendedor' => $info['infoProduto']['id_vendedor'],
+            'idProduto'  => $id,
+            'maxRender'  => $_GET['maxRender'] ?? 10,
+            'offset'     => $_GET['offset'] ?? 0
+        ];
+        $comentarios = $controller->comentarios($params);
+
+        require_once __DIR__ . '/../../components/php/avaliacao.php';
+
+        foreach ($comentarios as $comentario) {
+            $dadosComponente = [
+                'nome' => $comentario['nome_cliente'],
+                'estrelas' => $comentario['estrelas_avaliacao'],
+                'qualidade' => $comentario['qualidade'],
+                'parecido' => $comentario['parecido'],
+                'texto' => $comentario['descricao_avaliacao'],
+                'imagens' => $comentario['imagens'],
+                'foto_perfil' => $comentario['foto_perfil_cliente'] ?? null,
+                'data' => $comentario['data_avaliacao']
             ];
-            $comentarios = $controller->comentarios($params);
 
-            require_once __DIR__ . '/../../components/php/avaliacao.php';
+            echo ComentarioAvaliacaoProdutoComponent::render($dadosComponente);
+        }
 
-            foreach ($comentarios as $comentario) {
-                $dadosComponente = [
-                    'nome' => $comentario['nome_cliente'],
-                    'estrelas' => $comentario['estrelas_avaliacao'],
-                    'qualidade' => $comentario['qualidade'],
-                    'parecido' => $comentario['parecido'],
-                    'texto' => $comentario['descricao_avaliacao'],
-                    'imagens' => $comentario['imagens'],
-                    'foto_perfil' => $comentario['foto_perfil_cliente'] ?? null,
-                    'data' => $comentario['data_avaliacao']
-                ];
-                
-                echo ComentarioAvaliacaoProdutoComponent::render($dadosComponente);
-            }
-
-            if (count($comentarios) > 0) {
-                echo '
+        if (count($comentarios) > 0) {
+            echo '
                 <div class="btn-ver-mais">
                     <button class="base_botao btn_blue">Ver mais avaliações</button>
                 </div>
                 ';
-            } else {
-                echo '<div class="sem_avaliacoes">Sem avaliações</div>';
-            }
+        } else {
+            echo '<div class="sem_avaliacoes">Sem avaliações</div>';
+        }
         ?>
 
     </div>
@@ -287,10 +291,9 @@ $info = $controller->exibirProduto($id);
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/avaliacaoImgInput.js'></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/EnviarAvaliacao.js'></script>
-
     <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
+    <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
+    <script type="module" src="<?= $PATH_PUBLIC ?>/js/cliente/AvaliacaoProduto.js"></script>
 </body>
-<script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
-<script type="module" src="<?= $PATH_PUBLIC ?>/js/cliente/AvaliacaoProduto.js"></script>
 
 </html>
