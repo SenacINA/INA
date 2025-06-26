@@ -223,12 +223,6 @@ CREATE TABLE
     );
 
 CREATE TABLE
-    IF NOT EXISTS tipo_promocoes (
-        id_tipo_promocao INT PRIMARY KEY AUTO_INCREMENT,
-        promocao VARCHAR(50)
-    );
-
-CREATE TABLE
     IF NOT EXISTS promocao (
         -- 20
         id_promocao INT PRIMARY KEY AUTO_INCREMENT,
@@ -240,8 +234,7 @@ CREATE TABLE
         data_fim_promocao DATE,
         hora_inicio_promocao TIME,
         hora_fim_promocao TIME,
-        FOREIGN KEY (id_produto) REFERENCES produto (id_produto),
-        FOREIGN KEY (tipo_promocao) REFERENCES tipo_promocoes (id_tipo_promocao)
+        FOREIGN KEY (id_produto) REFERENCES produto (id_produto)
     );
 
 CREATE TABLE
