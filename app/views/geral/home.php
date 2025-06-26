@@ -34,6 +34,7 @@ require_once('./utils/head.php')
                         <img src="<?= $PATH_PUBLIC ?>/image/index/BannerGarantia.jpg" alt="">
                     </div>
                 </div>
+                
                 <h1>Descobertas do Dia</h1>
                 <div class="index_body_produto_container">
                     <div class="index_body_container_title">
