@@ -43,7 +43,7 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
             <option value="EditarPerfil">Editar Perfil</option>
             <option value="GerenciarVendas">Gerenciar Vendas</option>
             <option value="RelatorioVendas">Relatório</option>
-            <option value="ProdutoEditar">Editar Produtos</option>
+            <option value="GerenciarProdutos">Gerenciar Produtos</option>
             <option value="ProdutoRegistrar">Registrar Produto</option>
             <option value="Logout">Sair</option>
           </select>
