@@ -77,6 +77,16 @@ class VendedorModel
     $stmt = $conn->prepare("UPDATE vendedor SET nome_fantasia = :nome_fantasia WHERE id_vendedor = :id_vendedor");
     return $stmt->execute([':nome_fantasia' => $nome_fantasia, ':id_vendedor' => $id_vendedor]);
   }
+
+  public function getLastCod(int $id_vendedor): ?int {
+    $sql = "
+      SELECT max(cod_produto) FROM produto WHERE id_vendedor = :id_vendedor;
+    ";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id_vendedor', $id_vendedor, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetchColumn();
+  }
   
   public function getAllProducts(int $id_vendedor): ?array {
     $sql = "
@@ -86,9 +96,10 @@ class VendedorModel
             ON i.id_produto = p.id_produto
             AND i.index_imagem_produto = 1
         WHERE p.id_vendedor = :id_vendedor
+        ORDER BY p.cod_produto ASC
     ";
 
-    $stmt = $this->db->prepare($sql);
+    $stmt = $this->db->getConnection()->prepare($sql);
     $stmt->bindValue(':id_vendedor', $id_vendedor, PDO::PARAM_INT);
     $stmt->execute();
 

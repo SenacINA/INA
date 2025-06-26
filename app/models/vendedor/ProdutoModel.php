@@ -14,6 +14,7 @@ class ProdutoModel
 
   public function createProduto(
       int $idVendedor,
+      int $cod,
       string $nome,
       float $preco,
       int $categoria,
@@ -29,11 +30,11 @@ class ProdutoModel
       bool $status
   ): int|any {
       $sql = "INSERT INTO produto(
-          id_vendedor, nome_produto, preco_produto, categoria_produto, subcategoria_produto,
+          id_vendedor, cod_produto, nome_produto, preco_produto, categoria_produto, subcategoria_produto,
           origem_produto, unidade_produto, peso_liquido_produto, peso_bruto_produto,
           largura_produto, altura_produto, comprimento_produto, descricao_produto, status_produto
       ) VALUES (
-          :id_vendedor, :nome, :preco, :categoria, :subCategoria,
+          :id_vendedor, :cod, :nome, :preco, :categoria, :subCategoria,
           :origem, :unidade, :peso, :pesoBruto,
           :largura, :altura, :comprimento, :descricao, :status
       )";
@@ -42,6 +43,7 @@ class ProdutoModel
             $stmt = $this->db->getConnection()->prepare($sql);
 
             $stmt->bindValue(':id_vendedor', $idVendedor, PDO::PARAM_INT);
+            $stmt->bindValue(':cod', $cod, PDO::PARAM_STR);
             $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
             $stmt->bindValue(':preco', $preco, PDO::PARAM_STR);            
             $stmt->bindValue(':categoria', $categoria, PDO::PARAM_INT);

@@ -89,11 +89,18 @@ class ProdutoController extends RenderView
 
         $vendedorModel = new VendedorModel();
 
+
         $vendedorId = $vendedorModel->getVendedorId($_SESSION['cliente_id']);
         if (!$vendedorId) {
             $errors[] = "Cliente não possui cadastro de vendedor";
             $this->loadView('vendedor/RegistroProduto', ['errors' => $errors]);
             return;
+        }
+
+        $lastCod = $vendedorModel->getLastCod($vendedorId);
+
+        if ($lastCod == $codigo) {
+            $errors[] = "Esse código já foi usado";
         }
 
         // Após obter $categoria e $subCategoria
@@ -122,13 +129,19 @@ class ProdutoController extends RenderView
         }
 
         if (!empty($errors)) {
-            $errors[] = "O produto foi cadastrado usando a categoria/subcategoria padrão 'Geral'.";
+            // $errors[] = "O produto foi cadastrado usando a categoria/subcategoria padrão 'Geral'.";
+            $this->loadView('vendedor/RegistroProduto', [
+                'errors' => $errors,
+                'proxCod' => $lastCod + 1 
+            ]);
+            return;
         }
 
         // Criação do produto
         $model = new ProdutoModel();
         $produtoId = $model->createProduto(
             $vendedorId,
+            (int)$codigo,
             (string)$nome,                 // Nome do produto
             (float)$valor,                 // Preço
             (int)$categoria,               // Categoria

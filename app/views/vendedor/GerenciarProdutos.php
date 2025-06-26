@@ -32,9 +32,14 @@
               </div>
               <form action="" method="post" class="relatorio_vendas_forms_pesquisa_pedidos">
                 <div class="relatorio_vendas_form_cliente">
+                  <label class="font_subtitulo font_celadon">Nome do Produto</label>
+                  <input type="text" spellcheck="false" class="base_input">
+                </div>
+                <div class="relatorio_vendas_form_cliente">
                   <label class="font_subtitulo font_celadon">Código Do Produto</label>
                   <input type="text" spellcheck="false" class="base_input">
                 </div>
+                <p class="instrucoes_busca">Preencha <strong>pelo menos um</strong> dos campos abaixo para realizar a pesquisa.</p>
 
                 <div class="relatorio_vendas_holder_botao">
                   <button type="reset" class="base_botao btn_red">
@@ -49,12 +54,12 @@
                 </div>
               </form>
             </div>
-            <!-- <div class="relatorio_vendas_estatisticas">
+            <div class="relatorio_vendas_estatisticas">
               <div class="relatorio_vendas_subtitulo_generico">
                 <div class="relatorio_vendas_linha_vertical"></div>
                 <div class="relatorio_vendas_subtitle_holder">
-                  <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/grafico_icon.svg" />
-                  <h2 class="font_subtitulo font_celadon">Estatísticas</p>
+                  <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_lupa_icon.svg" />
+                  <h2 class="font_subtitulo font_celadon">Resultado da Consulta</p>
                 </div>
               </div>
               <div class="relatorio_vendas_estatistica_holder">
@@ -84,7 +89,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -119,7 +124,7 @@
             <thead>
               <tr>
                 <th>Cód.</th>
-                <th>Nome</th>
+                <th>Produto</th>
                 <th>Preço</th>
                 <th>Qtn.</th>
                 <th>Status</th>

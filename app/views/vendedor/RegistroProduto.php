@@ -49,7 +49,7 @@ require_once('./utils/head.php');
               <div class='registro_produto_small_input'>
                 <div class='registro_produto_input'>
                   <label for="codigoProduto">Código</label>
-                  <input class='base_input' type="number" id='codigoProduto' name='codigoProduto'>
+                  <input value='<?= $proxCod ?>' class='base_input' type="number" id='codigoProduto' name='codigoProduto'>
                 </div>
                 <div class='registro_produto_input'>
                   <label for="estoqueProduto">Estoque</label>

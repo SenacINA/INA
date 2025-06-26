@@ -12,7 +12,9 @@
 }
 
 .base_tabela th:last-child, td:last-child {
-    background-color: var(--branco_gelo);
+    * {
+        padding: 0;
+    }
 }
 
 .relatorio_vendas_table_col-1,
@@ -23,9 +25,56 @@
 }
 
 .base_tabela {
-    * {
+    span {
         font-size: 1rem !important;
     }
+    span {
+        align-items: center;
+        gap: 8px;
+    }
+    tr {
+        max-height: 56px;
+        height: 56px;
+        padding: 0 !important ;
+    }
+
+    td {
+        min-height: 62px !important;
+    }
+
+}
+
+.esquerda {
+    rotate: -90deg;
+}
+
+.direita {
+    rotate: 90deg;
+}
+
+.nome_produto {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+}
+
+.navegacao_produtos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 8px;
+}
+
+
+
+.img_table {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    width: auto;
+    max-height: 40px;
+    padding: 0;
 }
 
 .tabela-scroll {
