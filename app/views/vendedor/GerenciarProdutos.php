@@ -131,30 +131,13 @@
                 <th></th>
               </tr>
               <tbody>
-                <tr>
-                  <td># 1001</td>
-                  <td>
-                    <span>
-                      Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB Cadeira Gamer Throne - RGB
-                    </span>
-                  </td>
-                  <td>R$ 1.400,00</td>
-                  <td>01</td>
-                  <td>
-                    <span>
-                      Ativo
-                    </span>
-                  </td>
-                  <td>
-                    <button class='base_botao btn_blue'>Editar</button>
-                  </td>
-                </tr>
               </tbody>
             </thead>
           </table>
         </div>
       </div>
-      
+      <div class='base_navegacao'></div>
+
     </div>
   </main>
   <?php 

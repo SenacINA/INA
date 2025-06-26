@@ -44,6 +44,17 @@
 
 }
 
+.relatorio_vendas_table_filtro select {
+    color: var(--branco_gelo);
+    text-align: center;
+    font-size: 16px;
+    background-color: var(--sappire);
+    margin-left: 8px;
+    border-radius: 5px;
+    height: 100%;
+}
+
+
 .esquerda {
     rotate: -90deg;
 }

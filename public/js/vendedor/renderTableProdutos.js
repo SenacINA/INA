@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function configurarNavegacao() {
-    const container = document.querySelector('.base_tabela');
+    const container = document.querySelector('.base_navegacao');
     let nav = document.querySelector('.navegacao_produtos');
 
     if (!nav) {
