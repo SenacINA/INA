@@ -5,6 +5,7 @@ function limpa_formulário_cep() {
 
 function cepApi(conteudo) {
   if (!("erro" in conteudo)) {
+    console.log(conteudo)
     document.getElementById("logradouro").value = (conteudo.logradouro);
     document.getElementById("localizacaoSelect").value = conteudo.uf + "-" + conteudo.localidade;
   }
