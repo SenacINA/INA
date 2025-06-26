@@ -31,7 +31,7 @@ $routes = [
       // Geral
       '/sobre-nos'                 => 'geral/GeralController@sobreNos',
       '/Subcategoria'              => 'geral/CardController@filtrarProdutosSubcategoria',
-      
+
       // Geral - Trocar Email
       '/TrocarEmail'               => 'auth/AuthController@requestEmailReset',
       '/TrocarEmail-api'           => 'geral/TrocarEmailController@TrocarEmail',
@@ -49,7 +49,7 @@ $routes = [
       // Geral - Perfil
       '/EditarPerfil' => 'geral/GeralController@editarPerfil',
       '/Perfil' => 'geral/GeralController@perfil',
-      '/Error-404' => 'gerral/GeralController@error',
+      '/Error-404' => 'geral/GeralController@error',
 
       // Vendedor - Cadastro e Perfil
       '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
