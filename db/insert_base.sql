@@ -303,6 +303,7 @@ INSERT INTO vendedor (
 INSERT INTO produto (
     id_produto,
     id_vendedor,
+    cod_produto,
     nome_produto,
     preco_produto,
     categoria_produto,
@@ -319,6 +320,7 @@ INSERT INTO produto (
 ) VALUES (
     1,
     1,
+    1000,
     'Mouse Redragon Cobra M711',
     100,
     1,
@@ -343,6 +345,7 @@ INSERT INTO `imagem_produto` (`id_imagem_produto`, `id_produto`, `endereco_image
 INSERT INTO produto (
     id_produto,
     id_vendedor,
+    cod_produto,
     nome_produto,
     preco_produto,
     categoria_produto,
@@ -359,6 +362,7 @@ INSERT INTO produto (
 ) VALUES (
     2,
     1,
+    1001,
     'Snoopy',
     1,
     1,
@@ -378,6 +382,7 @@ INSERT INTO produto (
 INSERT INTO produto (
     id_produto,
     id_vendedor,
+    cod_produto,
     nome_produto,
     preco_produto,
     categoria_produto,
@@ -394,6 +399,7 @@ INSERT INTO produto (
 ) VALUES (
     3,
     1,
+    1003,
     'SAMSUNG Galaxy Buds 2',
     250,
     1,
@@ -446,6 +452,7 @@ INSERT INTO imagem_produto (
 INSERT INTO produto (
     id_produto,
     id_vendedor,
+    cod_produto,
     nome_produto,
     preco_produto,
     categoria_produto,
@@ -462,6 +469,7 @@ INSERT INTO produto (
 ) VALUES (
     4,
     1,
+    1004,
     'Deo Parfum Essencial Natura Masculino 100 ml',
     139,
     1,
@@ -481,6 +489,7 @@ INSERT INTO produto (
 INSERT INTO produto (
     id_produto,
     id_vendedor,
+    cod_produto,
     nome_produto,
     preco_produto,
     categoria_produto,
@@ -497,6 +506,7 @@ INSERT INTO produto (
 ) VALUES (
     5,
     1,
+    1005,
     'PlayStation 5 Pro PlayStation 5 Pro Sony 2024',
     6999,
     1,
@@ -583,11 +593,8 @@ INSERT INTO imagem_avaliacao (
 INSERT INTO `metodo_pagamento` (`id_metodo_pagamento`, `tipo_pagamento`) VALUES ('1', 'Pix');
 
 -- Insert na tabela compra
-INSERT INTO compra (id_cliente, data_compra, id_endereço, id_tipo_frete)
-VALUES (3, CURDATE(), 1, 1);  -- Supondo endereço ID 1 e frete ID 1
-
--- Obter o ID da compra recém-criada
-SET @id_compra = LAST_INSERT_ID();
+INSERT INTO compra (id_cliente, id_vendedor, data_compra, id_endereço, id_tipo_frete)
+VALUES (3, 1, CURDATE(), 1, 1);  -- Supondo endereço ID 1 e frete ID 1
 
 -- Insert na tabela item_compra
 INSERT INTO item_compra (
@@ -601,7 +608,7 @@ INSERT INTO item_compra (
     status_entrega_compra
 )
 VALUES (
-    @id_compra,
+    1,
     1,  -- ID do produto
     1,  -- Quantidade
     (SELECT preco_produto FROM produto WHERE id_produto = 1),  -- Preço atual do produto

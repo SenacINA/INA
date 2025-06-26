@@ -27,6 +27,8 @@ hr {
   width: 100%;
   aspect-ratio: 3 / 1;
   max-width: 100%;
+  object-fit: cover;
+  object-position: center 30%;
 }
 
 .perfil_cliente_content_pfp {
