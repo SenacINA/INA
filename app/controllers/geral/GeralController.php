@@ -6,24 +6,52 @@ require_once __DIR__ . '/../../models/geral/GeralModel.php';
 
 class GeralController extends RenderView
 {
-  private function renderPerfil(string $action, bool $clienteView, int $vendedorId = 0)
+  private function renderPerfil(string $action, bool $isCliente, int $idVendedor = 0)
   {
-    if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
-      header('Location: Login');
-      exit;
-    }
-
-    if ($clienteView == true) {
+    if ($isCliente == true) {
       $vendedorModel = new VendedorModel();
       $clienteModel = new ClienteModel();
 
-      $vendedorData = $vendedorModel->dadosVendedor($vendedorId);
-      $clienteData = $clienteModel->findById($vendedorId);
+      $clienteData = $clienteModel->findById($idVendedor);
+      $vendedorData = $vendedorModel->dadosVendedor($idVendedor);
+      $vendedorAvaliacoes = $vendedorModel->getEstrelasPorVendedor($idVendedor) ?? [];
+
+      $total = 0;
+      foreach ($vendedorAvaliacoes as $avaliacao) {
+        $total += $avaliacao;
+      }
+
+      $vendedorData['mediaEstrelas'] = count($vendedorAvaliacoes) > 0
+        ? round($total / count($vendedorAvaliacoes) * 2) / 2
+        : 0;
+
+      $dataRequisicao = strtotime($vendedorData['data_requisicao']);
+      $agora = time();
+      $diferencaDias = floor(($agora - $dataRequisicao) / (60 * 60 * 24));
+
+      if ($diferencaDias >= 365) {
+        $anos = floor($diferencaDias / 365);
+        $mesesRestantes = floor(($diferencaDias % 365) / 30);
+        $vendedorData['tempo'] = ($anos > 1 ? "{$anos} anos" : "{$anos} ano") .
+          ($mesesRestantes > 0 ? " e " . ($mesesRestantes > 1 ? "{$mesesRestantes} meses" : "{$mesesRestantes} mês") : "");
+      } elseif ($diferencaDias >= 30) {
+        $meses = floor($diferencaDias / 30);
+        $vendedorData['tempo'] = $meses > 1 ? "{$meses} meses" : "{$meses} mês";
+      } else {
+        $vendedorData['tempo'] = $diferencaDias > 1 ? "{$diferencaDias} dias" : "{$diferencaDias} dia";
+      }
+
+      $vendedorData['quantidadeProdutos'] = $vendedorModel->getQuantidadeProdutos($idVendedor);
 
       $this->loadView('vendedor/PerfilVendedor', [
         'user' => $clienteData,
-        'vendedor' => $vendedorData
+        'vendedor' => $vendedorData,
+        'isCliente' => $isCliente,
+        'idVendedor'=> $idVendedor
       ]);
+    } else if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
+      header('Location: Login');
+      exit;
     } else {
       $clienteId = $_SESSION['cliente_id'];
 
@@ -42,7 +70,11 @@ class GeralController extends RenderView
       }
 
       if ($userType === 'vendedor' || $userType === 'cliente') {
-        $clienteData = $clienteModel->findById($clienteId);
+        if (isset($_GET['idVendedor']) && $_SESSION['cliente_id'] != $_GET['idVendedor']) {
+          $clienteData = $clienteModel->findById($clienteData);
+        } else {
+          $clienteData = $clienteModel->findById($clienteId);
+        }
 
         if (!$clienteData) {
           header('Location: Login');
@@ -109,7 +141,8 @@ class GeralController extends RenderView
 
         $this->loadView($viewPath, [
           'user' => $clienteData,
-          'vendedor' => $vendedorData
+          'vendedor' => $vendedorData,
+          'isCliente' => false
         ]);
       } else {
         header('Location: Login');
@@ -118,14 +151,14 @@ class GeralController extends RenderView
     }
   }
 
-  public function perfil($clienteView = false)
+  public function perfil($isCliente = false)
   {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $vendedor_id = $_POST['vendedor_id'];
-      $clienteView = $_POST['clienteView'];
-      $this->renderPerfil('perfil', $clienteView, $vendedor_id);
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['idVendedor']) && isset($_GET['isCliente'])) {
+      $idVendedor = $_GET['idVendedor'];
+      $isCliente = $_GET['isCliente'];
+      $this->renderPerfil('perfil', $isCliente, $idVendedor);
     } else {
-      $this->renderPerfil('perfil', $clienteView);
+      $this->renderPerfil('perfil', $isCliente);
     }
   }
 
