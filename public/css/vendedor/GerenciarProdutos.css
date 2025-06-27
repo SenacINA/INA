@@ -148,6 +148,10 @@
     width: auto;
     max-height: 40px;
     padding: 0;
+    object-fit: contain;
+    background-color: white;
+    border: 1px dotted var(--cinza);
+
 }
 
 .tabela-scroll {
