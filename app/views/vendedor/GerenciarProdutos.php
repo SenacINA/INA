@@ -62,31 +62,19 @@
                   <h2 class="font_subtitulo font_celadon">Resultado da Consulta</p>
                 </div>
               </div>
-              <div class="relatorio_vendas_estatistica_holder">
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Valor Total</span>
-                  <span class="relatorio_vendas_estatistica_descricao">R$14.145,35</span>
-                </div>
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Total De Vendas</span>
-                  <span class="relatorio_vendas_estatistica_descricao">14 UNI</span>
-                </div>
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Tempo Medio De Entrega</span>
-                  <span class="relatorio_vendas_estatistica_descricao">9 Dias</span>
-                </div>
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Pedidos Recebidos</span>
-                  <span class="relatorio_vendas_estatistica_descricao">4 - 100%</span>
-                </div>
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Total De Pedidos</span>
-                  <span class="relatorio_vendas_estatistica_descricao">4</span>
-                </div>
-                <div class="relatorio_vendas_card">
-                  <span class="relatorio_vendas_titulo">Pedidos Reembolsados</span>
-                  <span class="relatorio_vendas_estatistica_descricao">0 - 0%</span>
-                </div>
+              <div class="resultado_pesquisa">
+                  <p class="resultado_title"><strong>&nbsp;</strong>&nbsp;</p>
+                  <img class="resultado_img" src="./public/image/geral/image_placeholder.png" alt="">
+                  <div class="resultado_dados">
+                    
+                    <p><strong>Preço:</strong> -</p>
+                    <p><strong>Quantidade:</strong> -</p>
+                    <p><strong>Status:</strong> -</p>
+                  </div>
+                  <button id="editar_search" disabled class='base_botao btn_blue'>
+                    <img class='base_icon' src='public/image/geral/icons/caneta_branca_icon.svg'>
+                    EDITAR
+                  </button>
               </div>
             </div>
           </div>
@@ -147,7 +135,9 @@
 </body>
 <script>
   const idVendedor = <?= $idVendedor ?>;
-</script>
+</script><script src="<?= $PATH_PUBLIC ?>/js/vendedor/produtoSearch.js"></script>
 <script src="<?= $PATH_PUBLIC ?>/js/vendedor/renderTableProdutos.js"></script>
+<script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
+
 
 </html>

@@ -128,4 +128,52 @@ class ProdutoModel
         $stmt->execute();
         return $stmt->fetchColumn() > 0;
     }
+
+    public function searchProduct(?string $nome, ?string $codProduto, int $vendedorId): ?array {
+        $conds = [];
+        $params = [];
+
+        if ($nome !== null && $nome !== '') {
+            $conds[] = 'p.nome_produto LIKE :nome';
+            $params[':nome'] = '%' . $nome . '%';
+        }
+        if ($codProduto !== null && $codProduto !== '') {
+            $conds[] = 'p.cod_produto = :cod';
+            $params[':cod'] = $codProduto;
+        }
+        if (empty($conds)) {
+            return null;
+        }
+
+        $where = implode(' AND ', $conds);
+
+        $sql = "
+            SELECT
+                p.id_produto AS id,
+                p.cod_produto AS cod_produto,
+                p.nome_produto,
+                p.preco_produto,
+                p.unidade_produto AS quantidade,
+                p.status_produto,
+                i.endereco_imagem_produto
+            FROM produto p
+            LEFT JOIN imagem_produto i
+            ON i.id_produto = p.id_produto
+            AND i.index_imagem_produto = 1
+            WHERE ($where)
+            AND p.id_vendedor = :vendedor
+            LIMIT 1
+        ";
+
+        $stmt = $this->db->getConnection()->prepare($sql);
+
+        $stmt->bindValue(':vendedor', $vendedorId, PDO::PARAM_INT);
+        foreach ($params as $k => $v) {
+            $stmt->bindValue($k, $v, PDO::PARAM_STR);
+        }
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row ?: null;
+    }
 }

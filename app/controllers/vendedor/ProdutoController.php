@@ -243,4 +243,31 @@ class ProdutoController extends RenderView
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result ? (int)$result['id_vendedor'] : null;
     }
+
+    public function searchProductJson() {
+        header('Content-Type: application/json; charset=utf-8');
+
+        $nome = $_POST['name'] ?? '';
+        $cod  = $_POST['code'] ?? '';
+
+        $model = new VendedorModel();
+
+        $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
+
+        if ($idVendedor < 1 || ($nome === '' && $cod === '')) {
+            echo json_encode(['success' => false, 'message' => 'Informe nome ou código.']);
+            exit;
+        }
+
+        $model = new ProdutoModel();
+        $prod = $model->searchProduct($nome, $cod, $idVendedor);
+
+        if (!$prod) {
+            echo json_encode(['success' => false, 'message' => 'Produto não encontrado.']);
+        } else {
+            echo json_encode(['success' => true, 'data' => $prod]);
+        }
+        exit;
+    }
+
 }
