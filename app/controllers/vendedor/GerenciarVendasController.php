@@ -37,27 +37,6 @@ class GerenciarVendasController extends RenderView
     ];
   }
 
-  public function exibirVenda()
-  {
-     $id_venda = $_POST['id_venda'] ?? null;
-
-      if (!$id_venda) {
-          echo "ID da venda não foi fornecido.";
-          return;
-      }
-
-      // $venda = $this->model->getVendaPorId($id_venda);
-
-      // if (!$venda) {
-      //     echo "Venda não encontrada.";
-      //     return;
-      // }
-
-      $this->loadView('vendedor/PedidoConfirmar', [$id_venda]);
-  }
-
-
-
   public function index()
   {
     $dados = $this->exibirVendas();

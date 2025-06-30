@@ -103,11 +103,11 @@
 }
 
 .confirmar_pedido_botao_1, .confirmar_pedido_botao_2 {
-    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40px;
-    align-content: center;
-    text-align: start;
-    padding-left: 7%;
+    border-radius: 5px;
 }
 
 .confirmar_pedido_botao_1 {

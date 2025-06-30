@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-  $titulo = "Gerenciar Produtos - E ao Quadrado";
-  $css = ["/css/admin/GerenciarProdutos.css"];
+  $titulo = "Gerenciar Vendas - E ao Quadrado";
+  $css = ["/css/admin/GerenciarVendas.css"];
   require_once('./utils/head.php');
 ?>
 <body>
@@ -135,8 +135,8 @@
                 <td><?= htmlspecialchars($v['cliente']) ?></td>
                 <td>R$ <?= number_format($v['valor_total'], 2, ',', '.') ?></td>
                 <td>
-                  <form method="POST" style="display:inline;" action="GerenciarVendas-api-sale">
-                    <input type="hidden" name="id_venda" value="1">
+                  <form method="POST" style="display:inline;" action="Venda-api-sale">
+                    <input type="hidden" name="id_venda" value=<?= htmlspecialchars($v['id_compra']) ?>>
                     <button type="submit" class="aprovar_vendedor_btn_aprovar btn_blue base_botao">GERENCIAR</button>
                   </form>
                 </td>
