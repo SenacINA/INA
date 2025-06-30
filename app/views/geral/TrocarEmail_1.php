@@ -19,7 +19,7 @@ require_once('./utils/head.php');
           <h1>Trocar E-mail</h1>
         </div>
 
-        <form class="trocar_email_1_form" id="form_trocar_email" method="POST" action="trocar-email-api" autocomplete="on">
+        <form class="trocar_email_1_form" id="form_trocar_email" method="POST" action="TrocarEmail-api" autocomplete="on">
           <label for="senha-email">Senha:</label>
           <div class="trocar_email_1_input">
             <input class="base_input" type="password" name="senha_cliente" id="senha-email">
