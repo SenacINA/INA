@@ -444,7 +444,7 @@ body {
         }
     }
 
-    @media (max-width:411px) {
+    @media (max-width:440px) {
         .index_body_produtos_content {
             grid-template-columns: 1fr;
     }

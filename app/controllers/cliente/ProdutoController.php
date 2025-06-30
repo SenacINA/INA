@@ -21,7 +21,7 @@ class ProdutoController extends RenderView {
             $dados = $modelCliente->findById($clienteId);
         }
 
-        $media = round($model->getMediaAvaliacoes($info['infoProduto']['id_vendedor']));
+        $media = round($model->getMediaAvaliacoes($id));
 
         $media = $media > 5 ? 5 : $media;
 
@@ -40,17 +40,16 @@ class ProdutoController extends RenderView {
 
         $vendedorAvaliacoes = $modelVendedor->getEstrelasPorVendedor($info['infoProduto']['id_vendedor']);
 
-        $total = count($vendedorAvaliacoes);
-        // foreach ($vendedorAvaliacoes as $avaliacao) {
-        //   $total += $avaliacao;
-        // }
+        $total = 0;
+        $info['total_avaliacoes'] = count($vendedorAvaliacoes);
+        foreach ($vendedorAvaliacoes as $avaliacao) {
+          $total += $avaliacao;
+        }
 
-        // var_dump($modelVendedor->getEstrelasPorVendedor($info['infoProduto']['id_vendedor']));
-        // exit;
+        $info['mediaEstrelasVendedor'] = count($vendedorAvaliacoes) > 0
+          ? round($total / count($vendedorAvaliacoes) * 2) / 2
+          : 0;
 
-        $info['total_avaliacoes'] = $total;
-
-        $info['mediaEstrelasVendedor'] = count($vendedorAvaliacoes) > 0 ? floor($total) : 0;
 
         // var_dump($info['mediaEstrelasVendedor']);
         // exit;

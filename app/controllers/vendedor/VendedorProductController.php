@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . '/../../models/cliente/ClienteModel.php';
+require_once __DIR__ . '/../../models/vendedor/VendedorModel.php';
+
 class VendedorProductController extends RenderView {
     public function __construct()
     {
@@ -19,7 +21,12 @@ class VendedorProductController extends RenderView {
     }
 
     public function create() {
-        $this->loadView('vendedor/RegistroProduto', []);
+        $model = new VendedorModel();
+        $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
+        
+        $lastCodProduct = $model->getLastCod($idVendedor) ?? 1000;
+
+        $this->loadView('vendedor/RegistroProduto', ['proxCod' => $lastCodProduct + 1]);
     }
 
     public function edit() {
