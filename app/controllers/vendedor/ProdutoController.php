@@ -6,6 +6,14 @@ require_once __DIR__ . '/../../models/vendedor/VendedorModel.php';
 
 class ProdutoController extends RenderView
 {
+    public function __construct()
+    {
+        if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
+            header('Location: Login');
+            exit;
+        }
+    }
+
     public function produto()
     {
         $errors = [];
@@ -18,7 +26,7 @@ class ProdutoController extends RenderView
         $origem = $_POST['origemProduto'] ?? '';
         $descricao = $_POST['descricao'] ?? '';
         $imagensBase64 = json_decode($_POST['produto_imagens'] ?? '[]', true) ?: [];
-        
+
         if (!is_array($imagensBase64)) {
             $imagensBase64 = [];
         }
@@ -81,11 +89,18 @@ class ProdutoController extends RenderView
 
         $vendedorModel = new VendedorModel();
 
+
         $vendedorId = $vendedorModel->getVendedorId($_SESSION['cliente_id']);
         if (!$vendedorId) {
             $errors[] = "Cliente não possui cadastro de vendedor";
             $this->loadView('vendedor/RegistroProduto', ['errors' => $errors]);
             return;
+        }
+
+        $lastCod = $vendedorModel->getLastCod($vendedorId);
+
+        if ($lastCod == $codigo) {
+            $errors[] = "Esse código já foi usado";
         }
 
         // Após obter $categoria e $subCategoria
@@ -114,13 +129,19 @@ class ProdutoController extends RenderView
         }
 
         if (!empty($errors)) {
-            $errors[] = "O produto foi cadastrado usando a categoria/subcategoria padrão 'Geral'.";
+            // $errors[] = "O produto foi cadastrado usando a categoria/subcategoria padrão 'Geral'.";
+            $this->loadView('vendedor/RegistroProduto', [
+                'errors' => $errors,
+                'proxCod' => $lastCod + 1 
+            ]);
+            return;
         }
 
         // Criação do produto
         $model = new ProdutoModel();
         $produtoId = $model->createProduto(
             $vendedorId,
+            (int)$codigo,
             (string)$nome,                 // Nome do produto
             (float)$valor,                 // Preço
             (int)$categoria,               // Categoria
@@ -135,7 +156,11 @@ class ProdutoController extends RenderView
             (string)$descricao,            // Descrição
             true                           // Status do produto (ativo)
         );
-        
+        if (isset($_POST['toggle-group'])) {
+            echo $promocao;
+            $promocao = $model->createPromocao($produtoId, true, $promocao, $desconto, $inicio, $fim, $inicio_horario, $fim_horario);
+        }
+
         if (!$produtoId) {
             $errors[] = "Erro ao cadastrar o produto. Tente novamente.";
             $this->loadView('vendedor/RegistroProduto', ['errors' => $errors]);
@@ -145,55 +170,55 @@ class ProdutoController extends RenderView
         // Processamento das imagens
         if (!empty($imagensBase64)) {
             $baseDir = __DIR__ . '/../../../public/upload/produtos/' . $produtoId . '/';
-            
+
             // Verifica/Cria diretório
             if (!is_dir($baseDir)) {
                 if (!mkdir($baseDir, 0755, true)) {
                     error_log("Falha ao criar diretório: " . $baseDir);
                 }
             }
-            
+
             // Verifica permissão de escrita
             if (!is_writable($baseDir)) {
                 error_log("Diretório não tem permissão de escrita: " . $baseDir);
             }
-            
+
             foreach ($imagensBase64 as $index => $base64) {
                 if (preg_match('/^data:image\/webp;base64,/', $base64)) {
                     // Extrai apenas os dados binários
                     $dataPart = substr($base64, strpos($base64, ',') + 1);
                     $dadosBinarios = base64_decode($dataPart);
-                    
+
                     // Verifica se decodificou corretamente
                     if ($dadosBinarios === false) {
                         error_log("Falha ao decodificar base64 na imagem: " . $index);
                         continue;
                     }
-                    
+
                     // Verifica tamanho dos dados
                     if (strlen($dadosBinarios) === 0) {
                         error_log("Dados binários vazios para a imagem: " . $index);
                         continue;
                     }
-                    
+
                     // Gera nome único para o arquivo
-                    $nomeArquivo = 'imagem_' . ($index+1) . '_' . time() . '.webp';
+                    $nomeArquivo = 'imagem_' . ($index + 1) . '_' . time() . '.webp';
                     $absPath = $baseDir . $nomeArquivo;
-                    
+
                     // Salva a imagem
                     $bytesEscritos = file_put_contents($absPath, $dadosBinarios);
-                    
+
                     if ($bytesEscritos !== false) {
                         $caminhoRelativo = '/upload/produtos/' . $produtoId . '/' . $nomeArquivo;
                         $imagensSalvas[] = $caminhoRelativo;
-                        
+
                         // Salva no banco de dados
                         $model->adicionarImagemProduto(
                             $produtoId,
                             $caminhoRelativo,
                             $index + 1
                         );
-                        
+
                         error_log("Imagem salva com sucesso: " . $absPath . " (" . $bytesEscritos . " bytes)");
                     } else {
                         error_log("Falha ao salvar imagem: " . $absPath);
@@ -213,14 +238,13 @@ class ProdutoController extends RenderView
     {
         $db = new Database();
         $db->connect();
-        
+
         $sql = "SELECT id_vendedor FROM vendedor WHERE id_cliente = :id_cliente";
         $stmt = $db->getConnection()->prepare($sql);
         $stmt->bindValue(':id_cliente', $clienteId, PDO::PARAM_INT);
         $stmt->execute();
-        
+
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result ? (int)$result['id_vendedor'] : null;
     }
-
 }

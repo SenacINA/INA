@@ -1,23 +1,4 @@
-const toggleMostrarServicos = () => {
-  const freteContainer1 = document.getElementById("frete_container_1");
-  const freteContainer2 = document.getElementById("frete_container_2");
-
-  if (!freteContainer1 || !freteContainer2) {
-    console.log("Sem serviços");
-    return;
-  }
-
-  freteContainer1.classList.toggle("visible_servicos");
-  freteContainer2.classList.toggle("visible_servicos");
-};
-
 document.addEventListener("DOMContentLoaded", () => {
-  const toggleBotao = document.getElementById("btn_mostrar_servicos");
-
-  if (toggleBotao) {
-    toggleBotao.addEventListener("click", () => toggleMostrarServicos());
-  }
-
   document.querySelectorAll("input#quantidade_produto").forEach((input) => {
     input.addEventListener("change", async (e) => {
       let quantidade = input.value;

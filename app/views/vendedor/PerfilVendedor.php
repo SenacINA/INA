@@ -4,21 +4,14 @@
 $titulo = "Perfil - E ao Quadrado";
 $css = ["/css/vendedor/PerfilVendedor.css"];
 require_once('./utils/head.php');
-require_once("./app/models/vendedor/PerfilVendedorModel.php");
-
 ?>
 
 <body>
-  <!-- Até 375px -->
-  <!-- Caminho de Icon Correto -->
-
   <?php
   include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
-
   <main>
     <img class='perfil_vendedor_banner' src="<?= $PATH_PUBLIC . $user['banner_perfil'] ?>">
-
     <div class="perfil_vendedor_content_pfp">
       <div class="perfil_vendedor_pfp">
         <img class='pfp_img' src="<?= $PATH_PUBLIC . $user['foto_perfil'] ?>" alt="pfp_vendedor">
@@ -42,25 +35,25 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
           </div>
         </div>
       </div>
-      <div class="perfil_vendedor_btn_menu base_input_select">
-        <form action="">
-          <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
-            <option selected disabled value="">Menu</option>
-            <option value="EditarPerfil">Editar Perfil</option>
-            <option value="GerenciarVendas">Gerenciar Vendas</option>
-            <option value="RelatorioVendas">Relatório</option>
-            <option value="ProdutoEditar">Editar Produtos</option>
-            <option value="ProdutoRegistrar">Registrar Produto</option>
-            <option value="Logout">Sair</option>
+      <?php if ($isCliente == false) {
+        echo "<div class='perfil_vendedor_btn_menu base_input_select'>
+        <form action=''>
+          <select class='base_input' name='' id='menu' onchange='selectPag(this.value)'>
+            <option selected disabled value=''>Menu</option>
+            <option value='EditarPerfil'>Editar Perfil</option>
+            <option value='GerenciarVendas'>Gerenciar Vendas</option>
+            <option value='RelatorioVendas'>Relatório</option>
+            <option value='ProdutoEditar'>Editar Produtos</option>
+            <option value='ProdutoRegistrar'>Registrar Produto</option>
+            <option value='Logout'>Sair</option>
           </select>
         </form>
-      </div>
+      </div>";
+      } ?>
     </div>
 
     <div class="perfil_vendedor_grid_principal">
-
       <hr>
-
       <div class="info_container">
         <div class="about_container">
           <div class="about_text">
@@ -115,9 +108,10 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
         </div>
       </div>
       <hr>
-
       <?php
-      $IdVendedor = $_SESSION['cliente_id'];
+      if (!isset($idVendedor) && isset($_SESSION['cliente_id'])) {
+        $idVendedor = $_SESSION['cliente_id'];
+      }
 
       include_once("$PATH_COMPONENTS/php/card_produto.php");
       include_once("$PATH_CONTROLLER/geral/CardController.php");
@@ -125,12 +119,12 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
       $card = new cardProduto;
       $controller = new CardController;
 
-      $destaques = $controller->sendDestaques($IdVendedor);
+      $destaques = $controller->sendDestaques($idVendedor);
 
       if (!empty($destaques)) : ?>
         <div class="perfil_vendedor_grid_destaques">
           <div class="perfil_vendedor_about_container_2">
-            <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/tempo_icon.svg" alt="Icon Loja" class="base_icon">
+            <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_azul_icon.svg" alt="Icon Loja" class="base_icon">
             <h1>Destaques:</h1>
           </div>
           <div class="destaques_itens">
@@ -140,11 +134,9 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
           </div>
         </div>
       <?php endif; ?>
-
-
       <div class="perfil_vendedor_grid_produtos">
         <div class="perfil_vendedor_about_container_2">
-          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/tempo_icon.svg" alt="Icon Loja" class="base_icon">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/produto_icon.svg" alt="Icon Loja" class="base_icon">
           <h1>Produtos:</h1>
         </div>
         <div class="produtos_itens">
@@ -157,6 +149,7 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
     </div>
   </main>
   <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
+  <script src="<?= $PATH_PUBLIC ?>/js/geral/card.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       <?php if (!empty($errors)): ?>
@@ -169,11 +162,8 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
         gerarToast("<?= addslashes($_SESSION['successMessage']) ?>", "sucesso");
         <?php unset($_SESSION['successMessage']); ?>
       <?php endif; ?>
-
     });
   </script>
-
-
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>

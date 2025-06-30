@@ -18,6 +18,7 @@
   text-decoration: none;
   list-style-type: none;
   font-family: Jost;
+  /* font-family: 'Comic Sans MS'; */
 }
 
 body,
@@ -252,7 +253,6 @@ main{
 .base_botao img {
   height: 18px;
   width: 18px;
-
   justify-self: center;
   align-self: center;
 }

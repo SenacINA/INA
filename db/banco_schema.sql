@@ -73,27 +73,29 @@ CREATE TABLE IF NOT EXISTS vendedor (
     KEY idx_vendedor_data (data_requisicao)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXISTS produto (
-    -- 2
-    id_produto INT AUTO_INCREMENT PRIMARY KEY,
-    id_vendedor INT NOT NULL,
-    nome_produto VARCHAR(200) NOT NULL,
-    preco_produto DECIMAL NOT NULL,
-    categoria_produto INT NOT NULL,
-    subcategoria_produto INT NOT NULL,
-    origem_produto VARCHAR(200),
-    unidade_produto INT NOT NULL,
-    peso_liquido_produto FLOAT NOT NULL,
-    peso_bruto_produto FLOAT NOT NULL,
-    largura_produto FLOAT NOT NULL,
-    altura_produto FLOAT NOT NULL,
-    comprimento_produto FLOAT NOT NULL,
-    descricao_produto TEXT NOT NULL,
-    status_produto BOOLEAN DEFAULT TRUE,
-    FOREIGN KEY (id_vendedor) REFERENCES vendedor (id_vendedor),
-    FOREIGN KEY (categoria_produto) REFERENCES categoria (id_categoria),
-    FOREIGN KEY (subcategoria_produto) REFERENCES subcategoria (id_subcategoria)
-);
+CREATE TABLE
+    IF NOT EXISTS produto (
+        -- 2
+        id_produto INT AUTO_INCREMENT PRIMARY KEY,
+        id_vendedor INT NOT NULL,
+        cod_produto INT NOT NULL UNIQUE,
+        nome_produto VARCHAR(200) NOT NULL,
+        preco_produto DECIMAL NOT NULL,
+        categoria_produto INT NOT NULL,
+        subcategoria_produto INT NOT NULL,
+        origem_produto VARCHAR(200),
+        unidade_produto INT NOT NULL,
+        peso_liquido_produto FLOAT NOT NULL,
+        peso_bruto_produto FLOAT NOT NULL,
+        largura_produto FLOAT NOT NULL,
+        altura_produto FLOAT NOT NULL,
+        comprimento_produto FLOAT NOT NULL,
+        descricao_produto TEXT NOT NULL,
+        status_produto BOOLEAN DEFAULT TRUE,
+        FOREIGN KEY (id_vendedor) REFERENCES vendedor (id_vendedor),
+        FOREIGN KEY (categoria_produto) REFERENCES categoria (id_categoria),
+        FOREIGN KEY (subcategoria_produto) REFERENCES subcategoria (id_subcategoria)
+    );
 
 CREATE TABLE IF NOT EXISTS destaques (
     id_destaque INT AUTO_INCREMENT PRIMARY KEY,
@@ -204,19 +206,27 @@ CREATE TABLE IF NOT EXISTS historico_acesso (
     FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente)
 );
 
-CREATE TABLE IF NOT EXISTS promocao (
-    -- 20
-    id_promocao INT PRIMARY KEY AUTO_INCREMENT,
-    id_produto INT UNIQUE,
-    ativo_promocao BOOLEAN DEFAULT FALSE,
-    tipo_promocao INT,
-    desconto_promocao FLOAT,
-    data_inicio_promocao DATE,
-    data_fim_promocao DATE,
-    hora_inicio_promocao TIME,
-    hora_fim_promocao TIME,
-    FOREIGN KEY (id_produto) REFERENCES produto (id_produto)
-);
+CREATE TABLE
+    IF NOT EXISTS tipo_promocoes (
+        id_tipo_promocao INT PRIMARY KEY AUTO_INCREMENT,
+        promocao VARCHAR(50)
+    );
+
+CREATE TABLE
+    IF NOT EXISTS promocao (
+        -- 20
+        id_promocao INT PRIMARY KEY AUTO_INCREMENT,
+        id_produto INT UNIQUE,
+        ativo_promocao BOOLEAN DEFAULT FALSE,
+        tipo_promocao INT,
+        desconto_promocao FLOAT,
+        data_inicio_promocao DATE,
+        data_fim_promocao DATE,
+        hora_inicio_promocao TIME,
+        hora_fim_promocao TIME,
+        FOREIGN KEY (id_produto) REFERENCES produto (id_produto),
+        FOREIGN KEY (tipo_promocao) REFERENCES tipo_promocoes (id_tipo_promocao)
+    );
 
 CREATE TABLE IF NOT EXISTS anuncio (
     -- 21
