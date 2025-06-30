@@ -1,0 +1,105 @@
+.relatorio_vendas_table_col-1 {
+    width: 295px !important;
+    max-width: 295px !important;
+}
+
+.relatorio_vendas_table_col-2 {
+    width: 40% !important;
+}
+
+.relatorio_vendas_table_col-3 {
+    width: 10% !important;
+}
+
+.base_tabela th:last-child, td:last-child {
+    * {
+        padding: 0;
+    }
+}
+
+.relatorio_vendas_table_col-1,
+.relatorio_vendas_table_col-2,
+.relatorio_vendas_table_col-3,
+.relatorio_vendas_table_col-4 {
+    min-width: 209px;
+}
+
+.base_tabela {
+    span {
+        font-size: 1rem !important;
+    }
+    span {
+        align-items: center;
+        gap: 8px;
+    }
+    tr {
+        max-height: 56px;
+        height: 56px;
+        padding: 0 !important ;
+    }
+
+    td {
+        min-height: 62px !important;
+    }
+
+}
+
+.relatorio_vendas_table_filtro select {
+    color: var(--branco_gelo);
+    text-align: center;
+    font-size: 16px;
+    background-color: var(--sappire);
+    margin-left: 8px;
+    border-radius: 5px;
+    height: 100%;
+}
+
+
+.esquerda {
+    rotate: -90deg;
+}
+
+.direita {
+    rotate: 90deg;
+}
+
+.nome_produto {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+}
+
+.navegacao_produtos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 8px;
+}
+
+
+
+.img_table {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    width: auto;
+    max-height: 40px;
+    padding: 0;
+}
+
+.tabela-scroll {
+    overflow-x: auto;
+    width: 100%;
+  }
+  
+@media (max-width: 1024px) {
+    .relatorio_vendas_quadrado_container {
+        grid-template-rows: 1fr !important;
+    }
+
+    .relatorio_vendas_header_title, .relatorio_vendas_table {
+        padding: 0 8px;
+        padding-bottom: 16px;
+    }
+}
