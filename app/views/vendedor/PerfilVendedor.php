@@ -4,7 +4,6 @@
 $titulo = "Perfil - E ao Quadrado";
 $css = ["/css/vendedor/PerfilVendedor.css"];
 require_once('./utils/head.php');
-require_once("./app/models/vendedor/PerfilVendedorModel.php");
 ?>
 
 <body>
@@ -36,19 +35,21 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
           </div>
         </div>
       </div>
-      <div class="perfil_vendedor_btn_menu base_input_select">
-        <form action="">
-          <select class="base_input" name="" id="menu" onchange="selectPag(this.value)">
-            <option selected disabled value="">Menu</option>
-            <option value="EditarPerfil">Editar Perfil</option>
-            <option value="GerenciarVendas">Gerenciar Vendas</option>
-            <option value="RelatorioVendas">Relatório</option>
-            <option value="GerenciarProdutos">Gerenciar Produtos</option>
-            <option value="ProdutoRegistrar">Registrar Produto</option>
-            <option value="Logout">Sair</option>
+      <?php if ($isCliente == false) {
+        echo "<div class='perfil_vendedor_btn_menu base_input_select'>
+        <form action=''>
+          <select class='base_input' name='' id='menu' onchange='selectPag(this.value)'>
+            <option selected disabled value=''>Menu</option>
+            <option value='EditarPerfil'>Editar Perfil</option>
+            <option value='GerenciarVendas'>Gerenciar Vendas</option>
+            <option value='RelatorioVendas'>Relatório</option>
+            <option value='ProdutoEditar'>Editar Produtos</option>
+            <option value='ProdutoRegistrar'>Registrar Produto</option>
+            <option value='Logout'>Sair</option>
           </select>
         </form>
-      </div>
+      </div>";
+      } ?>
     </div>
 
     <div class="perfil_vendedor_grid_principal">
@@ -108,7 +109,9 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
       </div>
       <hr>
       <?php
-      $IdVendedor = $_SESSION['cliente_id'];
+      if (!isset($idVendedor) && isset($_SESSION['cliente_id'])) {
+        $idVendedor = $_SESSION['cliente_id'];
+      }
 
       include_once("$PATH_COMPONENTS/php/card_produto.php");
       include_once("$PATH_CONTROLLER/geral/CardController.php");
@@ -116,7 +119,7 @@ require_once("./app/models/vendedor/PerfilVendedorModel.php");
       $card = new cardProduto;
       $controller = new CardController;
 
-      $destaques = $controller->sendDestaques($IdVendedor);
+      $destaques = $controller->sendDestaques($idVendedor);
 
       if (!empty($destaques)) : ?>
         <div class="perfil_vendedor_grid_destaques">

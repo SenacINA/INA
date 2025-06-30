@@ -156,6 +156,10 @@ class ProdutoController extends RenderView
             (string)$descricao,            // Descrição
             true                           // Status do produto (ativo)
         );
+        if (isset($_POST['toggle-group'])) {
+            echo $promocao;
+            $promocao = $model->createPromocao($produtoId, true, $promocao, $desconto, $inicio, $fim, $inicio_horario, $fim_horario);
+        }
 
         if (!$produtoId) {
             $errors[] = "Erro ao cadastrar o produto. Tente novamente.";
