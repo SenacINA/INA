@@ -40,12 +40,12 @@
             <div class='editar_produto_form_input'>
               <div class='editar_produto_input'>
                 <label for="nomeProduto">Nome do Produto</label>
-                <input class='base_input' type="text" id='nomeProduto' name='nomeProduto'>
+                <input class='base_input' type="text" id='nomeProduto' value="<?= $produto['nome_produto'] ?>" name='nomeProduto'>
               </div>
               <div class='editar_produto_small_input'>
                 <div class='editar_produto_input'>
                   <label for="valorProduto">Valor</label>
-                  <input class='base_input' type="number" id='valorProduto' name='valorProduto'>
+                  <input class='base_input' type="number" id='valorProduto' value="<?= $produto['preco_produto'] ?>" name='valorProduto'>
                 </div>
                 <div class='editar_produto_input'>
                   <label for="categoriaProduto">Categoria</label>

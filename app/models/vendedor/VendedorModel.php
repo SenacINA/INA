@@ -108,14 +108,12 @@ class VendedorModel
 
   public function getAllProductsFiltered(int $id_vendedor, string $filter = 'code'): ?array
   {
-    // campos válidos para filtro
     $allowed = ['code', 'name', 'qty_asc', 'qty_desc', 'active', 'inactive'];
     if (!in_array($filter, $allowed, true)) {
         $filter = 'code';
     }
 
-    // montagem inicial
-    $orderBy = 'p.cod_produto';  // usar cod_produto, pois é o alias que você usa
+    $orderBy = 'p.cod_produto'; 
     $where   = '';
 
     switch ($filter) {
@@ -158,6 +156,68 @@ class VendedorModel
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function fetchProdutoComImagens(int $id_vendedor, int $id_produto): array {
+    $sql = "
+      SELECT
+        p.*,
+        i.id_imagem_produto,
+        i.endereco_imagem_produto,
+        i.index_imagem_produto
+      FROM produto AS p
+      LEFT JOIN imagem_produto AS i
+        ON i.id_produto = p.id_produto
+      WHERE p.id_vendedor = :id_vendedor
+        AND p.id_produto  = :id_produto
+    ";
+
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->execute([
+      ':id_vendedor' => $id_vendedor,
+      ':id_produto'  => $id_produto
+    ]);
+    $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    if (!$rows) {
+      return [];
+    }
+
+    $first = $rows[0];
+    $produto = [
+      'id_produto'   => $first['id_produto'],
+      'nome_produto' => $first['nome_produto'],  // pega o nome completo!
+      'preco_produto'=> $first['preco_produto'],
+      'imagens'      => [],
+    ];
+
+    foreach ($rows as $r) {
+      if ($r['id_imagem_produto']) {
+        $produto['imagens'][] = [
+          'id'    => $r['id_imagem_produto'],
+          'url'   => $r['endereco_imagem_produto'],
+          'index' => $r['index_imagem_produto'],
+        ];
+      }
+    }
+
+    return $produto;
+  }
+
+  public function fetchPromocoes(int $id_produto): array {
+    $sql = "
+      SELECT
+        pr.*,
+        tp.promocao AS tipo_promocao_nome
+      FROM promocao AS pr
+      LEFT JOIN tipo_promocoes AS tp
+        ON tp.id_tipo_promocao = pr.tipo_promocao
+      WHERE pr.id_produto = :id_produto
+    ";
+
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->execute([':id_produto' => $id_produto]);
+
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
   }
 
 

@@ -617,3 +617,29 @@ VALUES (
     TRUE,  -- Pagamento confirmado
     TRUE   -- Entrega confirmada
 );
+
+-- Promoção
+
+INSERT INTO tipo_promocoes (promocao)
+VALUES 
+  ('Reais sobre Total'),
+  ('Porcentagem sobre Total');
+
+
+-- Promoção produto 1 e 3
+INSERT INTO promocao (
+  id_produto,
+  ativo_promocao,
+  tipo_promocao,
+  desconto_promocao,
+  data_inicio_promocao,
+  data_fim_promocao,
+  hora_inicio_promocao,
+  hora_fim_promocao
+) VALUES
+  (1, TRUE, 1, 10,
+   '2025-06-20', '2025-07-10',
+   '00:00:00', '23:59:59'),
+  (3, TRUE, 2, 20,
+   '2025-06-25', '2025-07-05',
+   '00:00:00', '23:59:59');

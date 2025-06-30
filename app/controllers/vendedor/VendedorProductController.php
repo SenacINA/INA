@@ -30,7 +30,17 @@ class VendedorProductController extends RenderView {
     }
 
     public function edit() {
-        $this->loadView('vendedor/EditarProduto', []);
+        if (empty($_GET['id'])) {
+            header("Location: GerenciarProdutos");
+        };
+
+        $model = new VendedorModel;
+
+        $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
+        $produto = $model->fetchProdutoComImagens($idVendedor, $_GET['id']);
+        $promocoes = $model->fetchPromocoes($_GET['id']);
+
+        $this->loadView('vendedor/EditarProduto', ['produto' => $produto, 'promocao' => $promocoes]);
     }
 
     public function report() {

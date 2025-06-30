@@ -45,11 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function atualizarResultadoProduto(produto) {
-    // 1) Título e código
     const strong = titleEl.querySelector('strong');
     strong.textContent = produto.nome_produto;
 
-    // texto restante depois do <strong>
     const textNode = Array.from(titleEl.childNodes)
       .find(n => n.nodeType === Node.TEXT_NODE);
     if (textNode) {
@@ -58,12 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
       titleEl.append(` #${produto.cod_produto}`);
     }
 
-    // 2) Imagem
     imgEl.src = './public' + produto.endereco_imagem_produto;
     imgEl.alt = produto.nome_produto;
     buttonEditar.disabled = false;
+    buttonEditar.onclick = () => {
+      window.location.href = `EditarProduto?id=${produto.id}`;
+    };
 
-    // 3) Dados (Preço, Quantidade, Status)
     if (dadosEls.length >= 3) {
       dadosEls[0].innerHTML = `<strong>Preço:</strong> R$${produto.preco_produto}`;
       dadosEls[1].innerHTML = `<strong>Quantidade:</strong> ${produto.quantidade}`;
