@@ -21,6 +21,14 @@ class CarrinhoDadosModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function editEderecos(int $idEndereco) {
+        $sql = "SELECT * FROM endereco WHERE id_endereco = :idEndereco";
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':idEndereco', $idEndereco);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function salvarEnderecoModel(array $dadosEndereco): bool
     {
         $sql = "INSERT INTO endereco (
@@ -31,21 +39,21 @@ class CarrinhoDadosModel
                 )";
 
         $stmt = $this->db->getConnection()->prepare($sql);
-        return $stmt->execute([
-            ':rua' => $dadosEndereco['rua'],
-            ':bairro' => $dadosEndereco['bairro'],
-            ':numero' => $dadosEndereco['numero'],
-            ':referencia' => $dadosEndereco['referencia'],
-            ':uf' => $dadosEndereco['uf'],
-            ':cidade' => $dadosEndereco['cidade'],
-            ':idCliente' => $dadosEndereco['id_cliente']
-        ]);
+        $stmt->bindValue(':rua', $dadosEndereco['rua']);
+        $stmt->bindValue(':bairro', $dadosEndereco['bairro']);
+        $stmt->bindValue(':numero', $dadosEndereco['numero']);
+        $stmt->bindValue(':referencia', $dadosEndereco['referencia']);
+        $stmt->bindValue(':uf', $dadosEndereco['uf']);
+        $stmt->bindValue(':cidade', $dadosEndereco['cidade']);
+        $stmt->bindValue(':idCliente', $dadosEndereco['id_cliente']);
+        return $stmt->execute();
     }
 
-    public function excluirEndereco(int $idEndereco): bool
+    public function excluirEnderecoModel(int $idEndereco): bool
     {
         $sql = "DELETE FROM endereco WHERE id_endereco = :idEndereco";
         $stmt = $this->db->getConnection()->prepare($sql);
-        return $stmt->execute([':idEndereco' => $idEndereco]);
+        $stmt->bindValue(':idEndereco', $idEndereco);
+        return $stmt->execute();
     }
 }

@@ -121,7 +121,7 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
               REMOVER TUDO
             </button>
           </form>
-          <button class="base_botao btn_blue" <?= $carrinhoVazio ?> onclick="pag('/CarrinhoDados')">
+          <button class="base_botao btn_blue" <?= $carrinhoVazio ?> onclick="pag('CarrinhoDados')">
             <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="Salvar">
             SALVAR
           </button>

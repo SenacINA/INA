@@ -26,9 +26,10 @@ $routes = [
       '/Carrinho-api-badge'        => 'cliente/CarrinhoController@exibirBadge',
       '/CarrinhoPagamentos'        => 'cliente/ClienteController@pagamentos',
       
-      '/CarrinhoDados'             => 'cliente/CarrinhoDadosController@dados',
+      '/CarrinhoDados'             => 'cliente/CarrinhoDadosController@index',
       '/CarrinhoDados-salvar'      => 'cliente/CarrinhoDadosController@salvarEndereco',
       '/CarrinhoDados-excluir'     => 'cliente/CarrinhoDadosController@excluirEndereco',
+      '/CarrinhoDados-editar'      => 'cliente/CarrinhoDadosController@editEndereco',
 
       // Geral
       '/sobre-nos'                 => 'geral/GeralController@sobreNos',

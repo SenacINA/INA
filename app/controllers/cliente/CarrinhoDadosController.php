@@ -11,11 +11,11 @@ class CarrinhoDadosController extends RenderView
         $this->dadosModel = new CarrinhoDadosModel();
     }
 
-    public function dados()
+    public function index()
     {
         $idCliente = $_SESSION['cliente_id'] ?? null;
         if (!$idCliente) {
-            header('Location: /Login');
+            header('Location: Login');
             exit;
         }
 
@@ -25,44 +25,38 @@ class CarrinhoDadosController extends RenderView
 
     public function salvarEndereco()
     {
-        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            http_response_code(405);
-            echo json_encode(['sucesso' => false, 'mensagem' => 'Método não permitido']);
-            return;
-        }
-
-        $idCliente = $_SESSION['cliente_id'] ?? null;
-        if (!$idCliente) {
-            http_response_code(401);
-            echo json_encode(['sucesso' => false, 'mensagem' => 'Não autenticado']);
-            return;
-        }
-
-        $json = file_get_contents('php://input');
-        $dados = json_decode($json, true);
-
-        $required = ['nome', 'cpf', 'endereco', 'cep', 'cidade', 'telefone', 'email'];
-        foreach ($required as $campo) {
-            if (empty($dados[$campo])) {
-                echo json_encode(['sucesso' => false, 'mensagem' => "Campo obrigatório faltando: $campo"]);
-                return;
-            }
-        }
-
         $dadosEndereco = [
-            'rua' => $dados['endereco'],
-            'bairro' => '',
-            'numero' => $dados['numero_casa'],
-            'referencia' => $dados['ponto'] ?? '',
+            'rua' => $_POST['endereco'],
+            'bairro' => $_POST['bairro'],
+            'numero' => $_POST['numeroCasa'],
+            'referencia' => $_POST['referencia'] ?? '',
             'uf' => '',
-            'cidade' => $dados['cidade'],
-            'id_cliente' => $idCliente
+            'cidade' => $_POST['cidade'],
+            'id_cliente' => $_SESSION['cliente_id']
         ];
 
         if ($this->dadosModel->salvarEnderecoModel($dadosEndereco)) {
-            echo json_encode(['sucesso' => true]);
+            echo json_encode(['success' => true, 'message' => 'Endereço salvo com sucesso']);
+            exit;
         } else {
-            echo json_encode(['sucesso' => false, 'mensagem' => 'Erro ao salvar no banco']);
+            echo json_encode(['success' => false, 'message' => 'Erro ao salvar o endereço']);
+            exit;
         }
+    }
+
+    public function excluirEndereco()
+    {
+        $enderecoId = $_POST['endereco_id'];
+        if ($this->dadosModel->excluirEnderecoModel($enderecoId)) {
+            echo json_encode(['success' => true, 'message' => 'Endereço deletado com sucesso']);
+            exit;
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Erro ao deletar o endereço']);
+            exit;
+        }
+    }
+    public function editEndereco() {
+        $enderecoId = $_POST['endereco_id'];
+        return $this->dadosModel->editEderecos($enderecoId);
     }
 };

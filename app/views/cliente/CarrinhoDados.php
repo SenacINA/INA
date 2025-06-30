@@ -35,53 +35,36 @@ require_once("./utils/head.php")
           <hr class="carrinho_dados_separador_carrinho">
         </div>
         <div class="carrinho_dados_container_forms">
-          <form id="form_endereco" class="carrinho_dados_forms_carrinho" onsubmit="return false;">
-            <label for="nome_carrinho">Nome:</label>
-            <input type="text" name="nome" id="nome_carrinho" class="base_input" autocomplete="name">
-
-            <label for="cpf_carrinho">CPF:</label>
-            <input type="text" name="cpf" id="cpf_carrinho" class="base_input" autocomplete="off">
-
+          <form id="form_endereco" class="carrinho_dados_forms_carrinho">
             <label for="endereco_carrinho">Endereço:</label>
-            <input type="text" name="endereco" id="endereco_carrinho" class="base_input" autocomplete="street-address">
+            <input type="text" name="endereco" id="endereco_carrinho" class="base_input">
 
-            <div class="carrinho_dados_informacoes_cep">
-              <label for="cep" class="carrinho_dados_cep">CEP:</label>
-              <input type="text" name="cep" id="cep" class="base_input" pattern="\d{5}-?\d{3}" inputmode="numeric" autocomplete="postal-code">
+            <label for="bairro">Bairro:</label>
+            <input type="text" name="bairro" id="bairro" class="base_input">
 
-              <label for="cidade" class="carrinho_dados_cidade">Cidade:</label>
-              <input type="text" name="cidade" id="cidade" class="base_input" autocomplete="address-level2">
-            </div>
+            <label for="cidade" class="carrinho_dados_cidade">Cidade:</label>
+            <input type="text" name="cidade" id="cidade" class="base_input">
 
             <label for="telefone">Telefone:</label>
-            <input type="text" name="telefone" id="telefone" class="base_input" autocomplete="tel">
-
-            <label for="email">Email:</label>
-            <input type="text" name="email" id="email" class="base_input" autocomplete="email">
+            <input type="text" name="telefone" id="telefone" class="base_input">
 
             <label for="ponto">Ponto de referência (opcional):</label>
-            <input type="text" name="ponto" id="ponto" class="base_input" autocomplete="off">
+            <input type="text" name="referencia" id="referencia" class="base_input">
 
             <label for="numero_casa">Número da casa:</label>
-            <input type="number" name="numero_casa" id="numero_casa" class="base_input" autocomplete="off">
+            <input type="number" name="numero_casa" id="numero_casa" class="base_input">
+            <div class="carrinho_dados_botoes_carrinho">
+              <button class="carrinho_dados_start base_botao btn_outline_blue" type="button" onclick="history.back()">
+                <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/seta_esquerda_carolina_icon.svg" alt="Voltar">
+                VOLTAR
+              </button>
 
-            <label for="mensagem_vendedor">Mensagem para o vendedor (opcional):</label>
-            <input type="text" name="mensagem_vendedor" id="mensagem_vendedor" class="base_input" autocomplete="off">
+              <button type="button" id="btnSalvarEndereco" class="carrinho_dados_salvar_carrinho base_botao">
+                <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/enviar_branco_icon.svg" alt="Salvar">
+                Salvar
+              </button>
+            </div>
           </form>
-
-          <div class="carrinho_dados_botoes_carrinho">
-            <button class="carrinho_dados_start base_botao btn_outline_blue" onclick="history.back()">
-              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/seta_esquerda_carolina_icon.svg" alt="Voltar">
-              VOLTAR
-            </button>
-
-            <!-- Botão Salvar agora só chama JS -->
-            <button type="button" id="btnSalvarEndereco" class="carrinho_dados_salvar_carrinho base_botao">
-              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/enviar_branco_icon.svg" alt="Salvar">
-              Salvar
-            </button>
-          </div>
-
           <div class="carrinho_dados_informacoes_salvas">
             <div class="carrinho_dados_enderecos_salvos_main">
               <hr class="carrinho_dados_carrinho_dados_linha">
@@ -91,48 +74,41 @@ require_once("./utils/head.php")
               <p class="carrinho_dados_enderecos_salvos_main_text">Endereços Salvos</p>
             </div>
 
-            <!-- Troquei <forms> para div -->
             <div id="enderecos_salvos" class="carrinho_dados_enderecos_salvos_container">
-              <!-- Dados carregados via PHP -->
               <?php foreach ($enderecos as $endereco): ?>
-                <div class="carrinho_dados_info_container">
+                <div id="endereco" class="carrinho_dados_info_container">
                   <input type="radio" name="endereco" class="base_radio" value="<?= $endereco['id_endereco'] ?>">
                   <div class="carrinho_dados_text_info">
                     <div class="carrinho_dados_text">
-                      <h3 class="carrinho_dados_endereco_info"><?= htmlspecialchars($endereco['rua_endereco']) ?></h3>
+                      <h3 class="carrinho_dados_endereco_info"><?= "Nº " .  htmlspecialchars($endereco['numero_endereco']) . ", " . htmlspecialchars($endereco['rua_endereco']) . ", " .  htmlspecialchars($endereco['bairro_endereco']) ?></h3>
                       <p class="carrinho_dados_endereco_info_adicional">
-                        <?= htmlspecialchars($endereco['numero_endereco']) ?>, <?= htmlspecialchars($endereco['cidade_endereco']) ?>, <?= htmlspecialchars($endereco['cep_endereco']) ?>
+                        <?= ($endereco['cidade_endereco']) ?>
                       </p>
                     </div>
                     <div class="carrinho_dados_botoes_info">
-                      <button type="button" class="carrinho_dados_edit_info" title="Editar">
+                      <button data-id="<?= $endereco['id_endereco'] ?>" id="carrinho_dados_edit_btn" type="button" class="carrinho_dados_edit_info">
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_carolina_icon.svg">
-
                       </button>
-                      <form action="/CarrinhoDados-excluir" method="POST" style="display:inline;">
-                        <input type="hidden" name="idEndereco" value="<?= $endereco['id_endereco'] ?>">
-                        <button type="submit" class="carrinho_dados_remove_info" title="Remover">
-                          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                        </button>
-                      </form>
+                      <button id="carrinho_dados_remove_btn" data-id="<?= $endereco['id_endereco'] ?>" type="button" class="carrinho_dados_remove_info">
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
+                      </button>
                     </div>
                   </div>
                 </div>
               <?php endforeach; ?>
             </div>
+            <button class="carrinho_dados_avançar_carrinho base_botao" onclick="pag('CarrinhoPagamentos')">
+              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="Avançar">
+              AVANÇAR
+            </button>
           </div>
-
-          <button class="carrinho_dados_avançar_carrinho base_botao" onclick="pag('CarrinhoPagamentos')">
-            <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="Avançar">
-            AVANÇAR
-          </button>
-
         </div>
       </div>
   </main>
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
+  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
   <script src="<?= $PATH_PUBLIC ?>/js/cliente/CarrinhoDados.js"></script>
 </body>
 
