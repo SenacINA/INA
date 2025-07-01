@@ -89,6 +89,7 @@ main {
 .relatorio_vendedor_card_img_perfil {
   width: 130px;
   height: 130px;
+  margin-top: 25px;
   border-radius: 50%;
 }
 

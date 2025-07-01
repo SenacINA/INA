@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-$titulo = "Relatório de Vendas- E ao Quadrado";
+$titulo = "Gerenciar Produtos - E ao Quadrado";
 $css = ['/css/vendedor/GerenciarProdutos.css'];
 require_once('./utils/head.php');
 ?>
