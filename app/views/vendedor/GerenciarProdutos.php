@@ -11,7 +11,7 @@ require_once('./utils/head.php');
   include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main class="gerenciar_produtos_body_container">
-    <div class="gerenciar_pedidor_firula_holder">
+    <div class="gerenciar_produtos_firula_holder">
       <div class="gerenciar_produtos_header_holder">
         <div class="gerenciar_produtos_text_titulo">
           <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/etiqueta_icon.svg" alt="">

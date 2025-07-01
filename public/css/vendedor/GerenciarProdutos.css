@@ -9,7 +9,7 @@
     border-radius: 10px;
 }
 
-.gerenciar_pedidor_firula_holder {
+.gerenciar_produtos_firula_holder {
     border-radius: 10px;
     background-color: #EFF3F5;
     display: flex;
@@ -240,18 +240,18 @@
 /**Individual para cada tabela */
 .gerenciar_produtos_table_col-1,
 .gerenciar_produtos_table_col-4 {
-    width: 8%;
+    width: 4%;
 }
 
 .gerenciar_produtos_table_col-3,
 .gerenciar_produtos_table_col-6 {
-    width: 10%;
+    width: 8%;
 }
 
 .gerenciar_produtos_table_col-2,
 .gerenciar_produtos_table_col-5,
 .gerenciar_produtos_table_col-7 {
-    width: 40%;
+    width: 20%;
 }
 
 @media (max-width:1024px) {
@@ -332,29 +332,30 @@
     }
 }
 
-.gerenciar_proutos_table_col-1 {
+.gerenciar_produtos_table_col-1 {
     width: 295px !important;
     max-width: 295px !important;
 }
 
-.gerenciar_proutos_table_col-2 {
+.gerenciar_produtos_table_col-2 {
     width: 40% !important;
 }
 
-.gerenciar_proutos_table_col-3 {
+.gerenciar_produtos_table_col-3 {
     width: 10% !important;
 }
 
-.base_tabela th:last-child, td:last-child {
+.base_tabela th:last-child,
+td:last-child {
     * {
         padding: 0;
     }
 }
 
-.gerenciar_proutos_table_col-1,
-.gerenciar_proutos_table_col-2,
-.gerenciar_proutos_table_col-3,
-.gerenciar_proutos_table_col-4 {
+.gerenciar_produtos_table_col-1,
+.gerenciar_produtos_table_col-2,
+.gerenciar_produtos_table_col-3,
+.gerenciar_produtos_table_col-4 {
     min-width: 209px;
 }
 
@@ -362,15 +363,16 @@
     span {
         font-size: 1rem !important;
     }
-    
+
     span {
         align-items: center;
         gap: 8px;
     }
+
     tr {
         max-height: 56px;
         height: 56px;
-        padding: 0 !important ;
+        padding: 0 !important;
     }
 
     td {
@@ -379,7 +381,7 @@
 
 }
 
-#filtroRelatorio {
+.gerenciar_produtos_table_filtro select {
     color: var(--branco_gelo);
     text-align: center;
     font-size: 16px;
@@ -423,14 +425,15 @@
 .tabela-scroll {
     overflow-x: auto;
     width: 100%;
-  }
-  
+}
+
 @media (max-width: 1024px) {
-    .gerenciar_proutos_quadrado_container {
+    .gerenciar_produtos_quadrado_container {
         grid-template-rows: 1fr !important;
     }
 
-    .gerenciar_proutos_header_title, .gerenciar_proutos_table {
+    .gerenciar_produtos_header_title,
+    .gerenciar_produtos_table {
         padding: 0 8px;
         padding-bottom: 16px;
     }
