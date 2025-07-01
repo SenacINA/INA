@@ -25,18 +25,26 @@ class CarrinhoDadosController extends RenderView
 
     public function salvarEndereco()
     {
+        header('Content-Type: application/json');
         $dadosEndereco = [
             'rua' => $_POST['endereco'],
             'bairro' => $_POST['bairro'],
-            'numero' => $_POST['numeroCasa'],
-            'referencia' => $_POST['referencia'] ?? '',
+            'numero' => $_POST['numero'],
+            'referencia' => $_POST['referencia'] ?? 'Não Definido',
             'uf' => '',
             'cidade' => $_POST['cidade'],
-            'id_cliente' => $_SESSION['cliente_id']
+            'id_cliente' => $_SESSION['cliente_id'],
         ];
 
+        $isEditing = true;
+        isset($_POST['id_endereco']) ? $dadosEndereco['id_endereco'] = $_POST['id_endereco'] : $isEditing = false;
+
         if ($this->dadosModel->salvarEnderecoModel($dadosEndereco)) {
-            echo json_encode(['success' => true, 'message' => 'Endereço salvo com sucesso']);
+            echo json_encode(
+                $isEditing === true
+                    ? ['success' => true, 'message' => 'Endereço editado com sucesso']
+                    : ['success' => true, 'message' => 'Endereço salvo com sucesso']
+            );
             exit;
         } else {
             echo json_encode(['success' => false, 'message' => 'Erro ao salvar o endereço']);
@@ -46,6 +54,7 @@ class CarrinhoDadosController extends RenderView
 
     public function excluirEndereco()
     {
+        header('Content-Type: application/json');
         $enderecoId = $_POST['endereco_id'];
         if ($this->dadosModel->excluirEnderecoModel($enderecoId)) {
             echo json_encode(['success' => true, 'message' => 'Endereço deletado com sucesso']);
@@ -55,8 +64,12 @@ class CarrinhoDadosController extends RenderView
             exit;
         }
     }
-    public function editEndereco() {
+
+    public function editEndereco()
+    {
+        header('Content-Type: application/json');
         $enderecoId = $_POST['endereco_id'];
-        return $this->dadosModel->editEderecos($enderecoId);
+        echo json_encode($this->dadosModel->editEndereco($enderecoId));
+        exit;
     }
 };

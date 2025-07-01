@@ -45,9 +45,6 @@ require_once("./utils/head.php")
             <label for="cidade" class="carrinho_dados_cidade">Cidade:</label>
             <input type="text" name="cidade" id="cidade" class="base_input">
 
-            <label for="telefone">Telefone:</label>
-            <input type="text" name="telefone" id="telefone" class="base_input">
-
             <label for="ponto">Ponto de referência (opcional):</label>
             <input type="text" name="referencia" id="referencia" class="base_input">
 
@@ -59,7 +56,7 @@ require_once("./utils/head.php")
                 VOLTAR
               </button>
 
-              <button type="button" id="btnSalvarEndereco" class="carrinho_dados_salvar_carrinho base_botao">
+              <button value="" type="button" id="btnSalvarEndereco" class="carrinho_dados_salvar_carrinho base_botao">
                 <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/enviar_branco_icon.svg" alt="Salvar">
                 Salvar
               </button>

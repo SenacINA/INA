@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("btnSalvarEndereco");
+  const btnSalvar = document.getElementById("btnSalvarEndereco");
   const btnRemove = document.querySelectorAll("#carrinho_dados_remove_btn");
   const btnEdit = document.querySelectorAll("#carrinho_dados_edit_btn");
 
@@ -29,46 +29,77 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData();
       formData.append("endereco_id", btn.dataset.id);
 
-      const response = await fetch("CarrinhoDados-Editar", {
+      const response = await fetch("CarrinhoDados-editar", {
         method: "POST",
         body: formData,
       });
 
-      console.log(await response.json())
+      const json = await response.json();
+
+      const inputs = {
+        bairro_endereco: document.getElementById("bairro"),
+        rua_endereco: document.getElementById("endereco_carrinho"),
+        numero_endereco: document.getElementById("numero_casa"),
+        cidade_endereco: document.getElementById("cidade"),
+        referencia_endereco: document.getElementById("referencia"),
+      };
+
+      Object.keys(inputs).forEach((key) => {
+        const info = json[key];
+        inputs[key].value = info;
+      });
+
+      btnSalvar.value = btn.dataset.id;
     });
   });
 
-  btn.addEventListener("click", async () => {
+  btnSalvar.addEventListener("click", async () => {
     const formData = new FormData();
 
     const dados = {
       bairro: document.getElementById("bairro").value.trim(),
       endereco: document.getElementById("endereco_carrinho").value.trim(),
-      numeroCasa: document.getElementById("numero_casa").value.trim(),
+      numero: document.getElementById("numero_casa").value.trim(),
       cidade: document.getElementById("cidade").value.trim(),
-      telefone: document.getElementById("telefone").value.trim(),
       referencia: document.getElementById("referencia").value.trim(),
     };
 
+    let vazio = false;
+
     Object.keys(dados).forEach((key) => {
-      const value = dados[key];
-      formData.append(`${key}`, value);
+      if (dados[key] === "") {
+        if (key != "referencia") {
+          gerarToast(`Preencha o campo de ${key}`, "erro");
+          vazio = true;
+        }
+      }
     });
 
-    const response = await fetch("CarrinhoDados-salvar", {
-      method: "POST",
-      body: formData,
-    });
+    if (!vazio) {
+      Object.keys(dados).forEach((key) => {
+        const value = dados[key];
+        formData.append(`${key}`, value);
+      });
 
-    const data = await response.json();
+      if (btnSalvar.value !== "") {
+        formData.append("id_endereco", btnSalvar.value);
+      }
 
-    if (data.success) {
-      gerarToast(data.message, "sucesso");
-      setTimeout(() => {
-        window.location.reload();
-      }, 1500);
-    } else {
-      gerarToast(data.message, "erro");
+      const response = await fetch("CarrinhoDados-salvar", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        gerarToast(data.message, "sucesso");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
+      } else {
+        gerarToast(data.message, "erro");
+      }
     }
   });
 });
