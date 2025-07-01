@@ -10,7 +10,7 @@ document.getElementById("continuar_button_senha").addEventListener("click", asyn
     formData.append("token", token);
 
     try {
-        const res = await fetch("/ina/RedefinirSenha-api-salvar", {
+        const res = await fetch("RedefinirSenha-api-salvar", {
             method: "POST",
             body: formData
         });
