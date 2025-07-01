@@ -49,11 +49,6 @@ class VendedorController extends RenderView
         }
     }
 
-    public function editarPerfil()
-    {
-        $this->loadView('vendedor/EditarPerfilVendedor', []);
-    }
-
     public function cadastroForm()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -261,6 +256,43 @@ class VendedorController extends RenderView
             'success' => false,
             'errors' => $errors
         ], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    
+    public function gerenciarProdutos()
+    {    
+        $idCliente = $_SESSION['cliente_id'];
+
+        if (!$idCliente) {
+            header('Location: Login');
+            exit;
+        };
+
+        $model = new VendedorModel();
+
+        $idVendedor = $model->getVendedorId($idCliente);
+
+        $this->loadView('vendedor/GerenciarProdutos', ['idVendedor' => $idVendedor]);
+    }
+
+    public function relatorioVendasJson()
+    {
+        header('Content-Type: application/json; charset=utf-8');
+
+        $filter = $_POST['filtro'] ?? 'code';
+
+        $model = new VendedorModel();
+
+        $vendedorId = $_POST['id_vendedor'];
+
+        if ($vendedorId < 1) {
+            echo json_encode(['success' => false, 'message' => 'Vendedor inválido']);
+            exit;
+        }
+
+        $data = $model->getAllProductsFiltered($vendedorId, $filter);
+
+        echo json_encode(['success' => true, 'data' => $data]);
         exit;
     }
 

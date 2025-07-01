@@ -18,6 +18,7 @@
   text-decoration: none;
   list-style-type: none;
   font-family: Jost;
+  /* font-family: 'Comic Sans MS'; */
 }
 
 body,
@@ -1023,6 +1024,7 @@ input:checked + .toggle_slider::before {
   padding: 1rem;
   background-color: var(--carolina);
   color: var(--branco);
+  height: 72px;
 }
 
 .close-button {

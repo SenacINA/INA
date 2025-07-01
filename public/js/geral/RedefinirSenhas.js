@@ -10,7 +10,7 @@ document.getElementById("continuar_button_senha").addEventListener("click", asyn
     formData.append("token", token);
 
     try {
-        const res = await fetch("redefinir-senha-api-salvar", {
+        const res = await fetch("RedefinirSenha-api-salvar", {
             method: "POST",
             body: formData
         });
@@ -19,7 +19,7 @@ document.getElementById("continuar_button_senha").addEventListener("click", asyn
         if (data.success) {
             gerarToast(data.message, 'sucesso');
             setTimeout(() => {
-                pag('/editar-perfil');
+                pag('/Login');
             }, 3000);
         } else if (data.errors && Array.isArray(data.errors)) {
             data.errors.forEach(error => gerarToast(error, 'erro'));

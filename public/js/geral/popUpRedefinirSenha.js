@@ -14,7 +14,7 @@ btn.addEventListener("click", async () => {
   formData.append("email", email);
 
   try {
-    const res = await fetch("redefinir-senha-api", {
+    const res = await fetch("RedefinirSenha-api", {
       method: "POST",
       headers: { 'X-Requested-With': 'XMLHttpRequest' },
       body: formData,

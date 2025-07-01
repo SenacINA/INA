@@ -8,10 +8,6 @@ class CarrinhoController extends RenderView
 
   public function __construct()
   {
-    if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
-      header('Location: Login');
-      exit;
-    }
     $this->model = new CarrinhoModel();
   }
 

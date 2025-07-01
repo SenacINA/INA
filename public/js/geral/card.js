@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData(form);
       const resp = await fetch("Carrinho-api-add", {
         method: "POST",
-        body: formData,
+        body: formData
       });
       const json = await resp.json();
       if (!json.success) {
