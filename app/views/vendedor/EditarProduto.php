@@ -45,32 +45,45 @@
               <div class='editar_produto_small_input'>
                 <div class='editar_produto_input'>
                   <label for="valorProduto">Valor</label>
-                  <input class='base_input' type="number" id='valorProduto' value="<?= $produto['preco_produto'] ?>" name='valorProduto'>
+                  <input class='base_input' type="number" id='valorProduto' value="<?= $produto['preco_total'] ?>" name='valorProduto'>
                 </div>
                 <div class='editar_produto_input'>
-                  <label for="categoriaProduto">Categoria</label>
-                  <input class='base_input' type="text" id='categoriaProduto' name='categoriaProduto'>
+                  <label for="marcaProduto">Marca</label>
+                  <input class='base_input' type="text" id='marcaProduto' value="<?= $produto['marca_produto'] ?>" name='marcaProduto'>
                 </div>
               </div>
-              <div class='editar_produto_input'>
-                <label for="marcaProduto">Marca</label>
-                <input class='base_input' type="text" id='marcaProduto' name='marcaProduto'>
-              </div>
+              
               <div class='editar_produto_small_input'>
+                
                 <div class='editar_produto_input'>
                   <label for="codigoProduto">Código</label>
-                  <input class='base_input' type="number" id='codigoProduto' name='codigoProduto'>
+                  <input class='base_input' type="number" id='codigoProduto' value="<?= $produto['cod_produto'] ?>" name='codigoProduto'>
                 </div>
                 <div class='editar_produto_input'>
                   <label for="estoqueProduto">Estoque</label>
-                  <input class='base_input' type="number" id='estoqueProduto' name='estoqueProduto'>
+                  <input class='base_input' type="number" id='estoqueProduto' value="<?= $produto['unidade_produto']?>" name='estoqueProduto'>
                 </div>
               </div>
               <div class='editar_produto_small_input'>
                 <div class='editar_produto_input'>
                   <label for="origemProduto">Origem</label>
-                  <input class='base_input' type="text" id='origemProduto' name='origemProduto'>
+                  <input class='base_input' type="text" id='origemProduto' value="<?= $produto['origem_produto']?>" name='origemProduto'>
                 </div>
+              </div>
+
+              <div class="base_input_select">
+                <label for="categoriaProduto">Categoria</label>
+                <select
+                  class="base_input" id="categoriaProduto" name="categoriaProduto" data-selected="<?= $produto['categoria']['id'] ?>" >
+                  <option value="" disabled>Selecione</option>
+                </select>
+              </div>
+
+              <div class="base_input_select">
+                <label for="subCategoriaProduto">Sub-Categoria</label>
+                <select class="base_input" id="subCategoriaProduto" name="subCategoriaProduto" data-selected="<?= $produto['subcategoria']['id'] ?>">
+                  <option value="" disabled selected>Selecione</option>
+                </select>
               </div>
             </div>
           </div>
@@ -89,33 +102,24 @@
             <div class='editar_produto_form_input'>
               <div class='editar_produto_small_input'>
                 <div class='editar_produto_input'>
-                  <label for="pesoLiquidoProduto">Peso Líquido</label>
-                  <input class='base_input' type="number" id='pesoLiquidoProduto' name='pesoProduto'>
+                  <label for="pesoLiquidoProduto">Peso Líquido(g)</label>
+                  <input class='base_input' value="<?= $produto['peso_liquido_produto'] ?>" type="number" id='pesoLiquidoProduto' name='pesoProduto'>
                 </div>
                 <div class='editar_produto_input'>
-                  <label for="pesoBrutoProduto">Peso Bruto</label>
-                  <input class='base_input' type="text" id='pesoBrutoProduto' name='pesoBrutoProduto'>
-                </div>
-                <div class='base_input_select'>
-                  <label for="tipoEmbalagem">Tipo De Embalagem</label>
-                  <select class='base_input' id='tipoEmbalagem' name='tipoEmbalagem'>
-                    <option value="caixa">Caixa</option>
-                    <option value="saco">Saco</option>
-                    <option value="embalagemPlastica">Embalagem Plástica</option>
-                    <option value="outro">Outro</option>
-                  </select>
+                  <label for="pesoBrutoProduto">Peso Bruto(g)</label>
+                  <input class='base_input' type="text" value="<?= $produto['peso_bruto_produto'] ?>" id='pesoBrutoProduto' name='pesoBrutoProduto'>
                 </div>
                 <div class='editar_produto_input'>
-                  <label for="larguraProduto">Largura</label>
-                  <input class='base_input' type="text" id='larguraProduto' name='larguraProduto'>
+                  <label for="larguraProduto">Largura(cm)</label>
+                  <input class='base_input' type="text" value="<?= $produto['largura_produto'] ?>" id='larguraProduto' name='larguraProduto'>
                 </div>
                 <div class='editar_produto_input'>
-                  <label for="alturaProduto">Altura</label>
-                  <input class='base_input' type="text" id='alturaProduto' name='alturaProduto'>
+                  <label for="alturaProduto">Altura(cm)</label>
+                  <input class='base_input' type="text" value="<?= $produto['altura_produto'] ?>" id='alturaProduto' name='alturaProduto'>
                 </div>
                 <div class='editar_produto_input'>
-                  <label for="comprimentoProduto">Comprimento</label>
-                  <input class='base_input' type="text" id='comprimentoProduto' name='comprimentoProduto'>
+                  <label for="comprimentoProduto">Comprimento(cm)</label>
+                  <input class='base_input' type="text" value="<?= $produto['altura_produto'] ?>" id='comprimentoProduto' name='comprimentoProduto'>
                 </div>
               </div>
             </div>
@@ -171,7 +175,11 @@
                   </div>
                 </div>
                 <input type="text" id="descricao" name="descricao" hidden>
-                <div class="editor-content"></div>
+                <div class="editor-content">
+                  
+                    <?= $produto['descricao_produto'] ?>
+                  
+                </div>
               </div>
             </div>
           </div>
@@ -189,7 +197,7 @@
             </div>
             <div class='toggle_container'>
               <label class="toggle">
-                <input type="checkbox" name="toggle-group" id="toggle-promotion" class='base_input'>
+                <input <?= !empty($promocao) ? 'checked' : '' ?> type="checkbox" name="toggle-group" id="toggle-promotion" class='base_input'>
                 <span class="toggle_slider"></span>
               </label>
               <label for='toggle-promotion'>Ativar Promoção</label>
@@ -199,22 +207,18 @@
               <h4>Tipos de Promoção</h4>
               <div class='radio_inputs'>
                 <label for="reaisSobreTotal">Reais sobre o Total</label>
-                <input name='tipoPromocaoProduto' id='reaisSobreTotal' type="radio" checked>
-              </div>
-              <div class='radio_inputs'>
-                <label for="reaisSobreFrete">Reais sobre o Frete</label>
-                <input name='tipoPromocaoProduto' id='reaisSobreFrete' type="radio">
+                <input name='tipoPromocaoProduto' id='reaisSobreTotal' type="radio" <?= ( ($promocao['tipo_promocao_nome'] ?? '') === 'Reais sobre Total') ? 'checked' : '' ?>>
               </div>
               <div class='radio_inputs'>
                 <label for="porcenSobreProduto">Porcentagem sobre o Total</label>
-                <input name='tipoPromocaoProduto' id='porcenSobreProduto' type="radio">
+                <input name='tipoPromocaoProduto' id='porcenSobreProduto' type="radio" <?= ( ($promocao['tipo_promocao_nome'] ?? '') === 'Porcentagem sobre Total') ? 'checked' : '' ?>>
               </div>
             </div>
             <div class='editar_produto_small_input'>
               <div class='editar_produto_input'>
                 <label for="produtoDescontPromo">Desconto da Promoção</label>
                 <div class="input_icon_container">
-                  <input class='base_input' type="text" id='produtoDescontPromo' name='produtoDescontPromo'>
+                  <input class='base_input' type="text" id='produtoDescontPromo' value="<?= $promocao['desconto_promocao'] ?? ''?>" name='produtoDescontPromo'>
                   <div class='input_icon'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path
@@ -228,19 +232,19 @@
             <div class='editar_produto_small_input' id='small_duas_colunas'>
               <div class='editar_produto_input'>
                 <label for="promoDataInicio">Data de Início</label>
-                <input class='base_input' type="date" id='promoDataInicio' name='promoDataInicio'>
+                <input class='base_input' value="<?= ($promocao['data_inicio_promocao']) ?? '' ?>" type="date" id='promoDataInicio' name='promoDataInicio'>
               </div>
               <div class='editar_produto_input'>
                 <label for="promoDataFim">Data de Término</label>
-                <input class='base_input' type="date" id='promoDataFim' name='promoDataFim'>
+                <input class='base_input' value="<?= ($promocao['data_fim_promocao']) ?? '' ?>" type="date" id='promoDataFim' name='promoDataFim'>
               </div>
               <div class='editar_produto_input'>
                 <label for="promoHoraInicio">Horário de Início</label>
-                <input class='base_input' type="time" id='promoHoraInicio' name='promoHoraInicio'>
+                <input class='base_input' value="<?= ($promocao['hora_inicio_promocao']) ?? '' ?>" type="time" id='promoHoraInicio' name='promoHoraInicio'>
               </div>
               <div class='editar_produto_input'>
                 <label for="promoHoraFim">Horário de Término</label>
-                <input class='base_input' type="time" id='promoHoraFim' name='promoHoraFim'>
+                <input class='base_input' value="<?= ($promocao['hora_fim_promocao']) ?? '' ?>" type="time" id='promoHoraFim' name='promoHoraFim'>
               </div>
             </div>
           </div>
@@ -281,13 +285,17 @@
             </div>
           </div>
           <div class='editar_produto_form_buttons'>
-            <button class="base_botao btn_red">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M9 0C4.023 0 0 4.023 0 9C0 13.977 4.023 18 9 18C13.977 18 18 13.977 18 9C18 4.023 13.977 0 9 0ZM12.87 12.87C12.7867 12.9534 12.6878 13.0196 12.579 13.0648C12.4701 13.11 12.3534 13.1332 12.2355 13.1332C12.1176 13.1332 12.0009 13.11 11.892 13.0648C11.7832 13.0196 11.6843 12.9534 11.601 12.87L9 10.269L6.399 12.87C6.23072 13.0383 6.00248 13.1328 5.7645 13.1328C5.52652 13.1328 5.29828 13.0383 5.13 12.87C4.96172 12.7017 4.86718 12.4735 4.86718 12.2355C4.86718 12.1177 4.89039 12.001 4.93549 11.8921C4.98058 11.7832 5.04668 11.6843 5.13 11.601L7.731 9L5.13 6.399C4.96172 6.23072 4.86718 6.00248 4.86718 5.7645C4.86718 5.52652 4.96172 5.29828 5.13 5.13C5.29828 4.96172 5.52652 4.86718 5.7645 4.86718C6.00248 4.86718 6.23072 4.96172 6.399 5.13L9 7.731L11.601 5.13C11.6843 5.04668 11.7832 4.98058 11.8921 4.93549C12.001 4.89039 12.1177 4.86718 12.2355 4.86718C12.3533 4.86718 12.47 4.89039 12.5789 4.93549C12.6878 4.98058 12.7867 5.04668 12.87 5.13C12.9533 5.21332 13.0194 5.31224 13.0645 5.42111C13.1096 5.52998 13.1328 5.64666 13.1328 5.7645C13.1328 5.88234 13.1096 5.99902 13.0645 6.10789C13.0194 6.21676 12.9533 6.31568 12.87 6.399L10.269 9L12.87 11.601C13.212 11.943 13.212 12.519 12.87 12.87Z" fill="white" />
-              </svg>
-              INATIVAR PRODUTO
+            <button class="base_botao <?= $produto['status_produto'] ? 'btn_red' : 'btn_sappire' ?>">
+              <?php if ($produto['status_produto']): ?>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M9 0C4.023 0 0 4.023 0 9C0 13.977 4.023 18 9 18C13.977 18 18 13.977 18 9C18 4.023 13.977 0 9 0ZM12.87 12.87C12.7867 12.9534 12.6878 13.0196 12.579 13.0648C12.4701 13.11 12.3534 13.1332 12.2355 13.1332C12.1176 13.1332 12.0009 13.11 11.892 13.0648C11.7832 13.0196 11.6843 12.9534 11.601 12.87L9 10.269L6.399 12.87C6.23072 13.0383 6.00248 13.1328 5.7645 13.1328C5.52652 13.1328 5.29828 13.0383 5.13 12.87C4.96172 12.7017 4.86718 12.4735 4.86718 12.2355C4.86718 12.1177 4.89039 12.001 4.93549 11.8921C4.98058 11.7832 5.04668 11.6843 5.13 11.601L7.731 9L5.13 6.399C4.96172 6.23072 4.86718 6.00248 4.86718 5.7645C4.86718 5.52652 4.96172 5.29828 5.13 5.13C5.29828 4.96172 5.52652 4.86718 5.7645 4.86718C6.00248 4.86718 6.23072 4.96172 6.399 5.13L9 7.731L11.601 5.13C11.6843 5.04668 11.7832 4.98058 11.8921 4.93549C12.001 4.89039 12.1177 4.86718 12.2355 4.86718C12.3533 4.86718 12.47 4.89039 12.5789 4.93549C12.6878 4.98058 12.7867 5.04668 12.87 5.13C12.9533 5.21332 13.0194 5.31224 13.0645 5.42111C13.1096 5.52998 13.1328 5.64666 13.1328 5.7645C13.1328 5.88234 13.1096 5.99902 13.0645 6.10789C13.0194 6.21676 12.9533 6.31568 12.87 6.399L10.269 9L12.87 11.601C13.212 11.943 13.212 12.519 12.87 12.87Z" fill="white" />
+                  </svg> 
+              <?php else: ?>
+                <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="">
+              <?php endif; ?>
+              <?= $produto['status_produto'] ? 'INATIVAR PRODUTO' : 'ATIVAR PRODUTO' ?>
             </button>
-            <button class="base_botao btn_outline_red" type='reset'>
+            <button class="base_botao btn_outline_red" type='back'>
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
                 <path d="M9.5 0C4.523 0 0.5 4.023 0.5 9C0.5 13.977 4.523 18 9.5 18C14.477 18 18.5 13.977 18.5 9C18.5 4.023 14.477 0 9.5 0ZM13.37 12.87C13.2867 12.9534 13.1878 13.0196 13.079 13.0648C12.9701 13.11 12.8534 13.1332 12.7355 13.1332C12.6176 13.1332 12.5009 13.11 12.392 13.0648C12.2832 13.0196 12.1843 12.9534 12.101 12.87L9.5 10.269L6.899 12.87C6.73072 13.0383 6.50248 13.1328 6.2645 13.1328C6.02652 13.1328 5.79828 13.0383 5.63 12.87C5.46172 12.7017 5.36718 12.4735 5.36718 12.2355C5.36718 12.1177 5.39039 12.001 5.43549 11.8921C5.48058 11.7832 5.54668 11.6843 5.63 11.601L8.231 9L5.63 6.399C5.46172 6.23072 5.36718 6.00248 5.36718 5.7645C5.36718 5.52652 5.46172 5.29828 5.63 5.13C5.79828 4.96172 6.02652 4.86718 6.2645 4.86718C6.50248 4.86718 6.73072 4.96172 6.899 5.13L9.5 7.731L12.101 5.13C12.1843 5.04668 12.2832 4.98058 12.3921 4.93549C12.501 4.89039 12.6177 4.86718 12.7355 4.86718C12.8533 4.86718 12.97 4.89039 13.0789 4.93549C13.1878 4.98058 13.2867 5.04668 13.37 5.13C13.4533 5.21332 13.5194 5.31224 13.5645 5.42111C13.6096 5.52998 13.6328 5.64666 13.6328 5.7645C13.6328 5.88234 13.6096 5.99902 13.5645 6.10789C13.5194 6.21676 13.4533 6.31568 13.37 6.399L10.769 9L13.37 11.601C13.712 11.943 13.712 12.519 13.37 12.87Z" fill="#D73232" />
               </svg>
@@ -307,8 +315,19 @@
   <?php
     include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
+  <script>
+    const imagensExistentes = <?= json_encode(
+      array_map(fn($i) => $i['url'], $produto['imagens'] ?? [])
+    ); ?>;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderImagens(imagensExistentes);
+    });
+  </script>
+
   <script src="<?=$PATH_PUBLIC?>/js/vendedor/ImgInput.js"></script>
   <script type="module" src="<?=$PATH_PUBLIC?>/js/vendedor/TextEditor.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/vendedor/selectCats.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/vendedor/PromocaoToggle.js"></script>
 </body>
 

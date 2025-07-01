@@ -55,6 +55,7 @@ $routes = [
       '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
       '/CadastroVendedor'                 => 'vendedor/VendedorController@showFormCadastro',
       '/CadastroVendedorForms'            => 'vendedor/VendedorController@cadastroForm',
+      '/GetCategoriasSubcategorias-api' => 'vendedor/VendedorController@getCategoriasSubcategorias',
 
 
       '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',

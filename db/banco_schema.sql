@@ -87,6 +87,7 @@ CREATE TABLE
         cod_produto INT NOT NULL UNIQUE,
         nome_produto VARCHAR(200) NOT NULL,
         preco_produto DECIMAL NOT NULL,
+        marca_produto VARCHAR(200) NOT NULL,
         categoria_produto INT NOT NULL,
         subcategoria_produto INT NOT NULL,
         origem_produto VARCHAR(200),

@@ -230,6 +230,58 @@ INSERT INTO categoria (nome_categoria) VALUES ('Geral');
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria) 
 VALUES ('Geral', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Geral'));
 
+-- Categoria: Periféricos
+INSERT INTO categoria (nome_categoria)
+VALUES ('Periféricos');
+
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
+VALUES 
+  ('Mouses',     (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Periféricos')),
+  ('Teclados',   (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Periféricos')),
+  ('Headsets',   (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Periféricos'));
+
+-- Categoria: Componentes
+INSERT INTO categoria (nome_categoria)
+VALUES ('Componentes');
+
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
+VALUES
+  ('Placas de Vídeo',     (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Componentes')),
+  ('Placas-Mãe',           (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Componentes')),
+  ('Memórias RAM',         (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Componentes')),
+  ('Fontes de Alimentação',(SELECT id_categoria FROM categoria WHERE nome_categoria = 'Componentes'));
+
+-- Categoria: Acessórios
+INSERT INTO categoria (nome_categoria)
+VALUES ('Acessórios');
+
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
+VALUES
+  ('Mousepads',            (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Acessórios')),
+  ('Cabos e Adaptadores',  (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Acessórios')),
+  ('Suportes e Montagens', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Acessórios'));
+
+-- Categoria: Computadores
+INSERT INTO categoria (nome_categoria)
+VALUES ('Computadores');
+
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
+VALUES
+  ('Desktops',             (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Computadores')),
+  ('Notebooks',            (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Computadores')),
+  ('All-in-One',           (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Computadores'));
+
+-- Categoria: Monitores
+INSERT INTO categoria (nome_categoria)
+VALUES ('Monitores');
+
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
+VALUES
+  ('LED',                  (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Monitores')),
+  ('IPS',                  (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Monitores')),
+  ('Curvos',               (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Monitores'));
+
+
 -- Inserir endereço
 INSERT INTO endereco (
     id_endereco,
@@ -306,6 +358,7 @@ INSERT INTO produto (
     cod_produto,
     nome_produto,
     preco_produto,
+    marca_produto,
     categoria_produto,
     subcategoria_produto,
     origem_produto,
@@ -323,6 +376,7 @@ INSERT INTO produto (
     1000,
     'Mouse Redragon Cobra M711',
     100,
+    'Redragon',
     1,
     1,
     'Campo Grande',
@@ -348,6 +402,7 @@ INSERT INTO produto (
     cod_produto,
     nome_produto,
     preco_produto,
+    marca_produto,
     categoria_produto,
     subcategoria_produto,
     origem_produto,
@@ -365,6 +420,7 @@ INSERT INTO produto (
     1001,
     'Snoopy',
     1,
+    'Cachorro',
     1,
     1,
     'Campo Grande',
@@ -385,6 +441,7 @@ INSERT INTO produto (
     cod_produto,
     nome_produto,
     preco_produto,
+    marca_produto,
     categoria_produto,
     subcategoria_produto,
     origem_produto,
@@ -402,6 +459,7 @@ INSERT INTO produto (
     1003,
     'SAMSUNG Galaxy Buds 2',
     250,
+    'Samsung',
     1,
     1,
     'São Paulo',
@@ -455,6 +513,7 @@ INSERT INTO produto (
     cod_produto,
     nome_produto,
     preco_produto,
+    marca_produto,
     categoria_produto,
     subcategoria_produto,
     origem_produto,
@@ -472,6 +531,7 @@ INSERT INTO produto (
     1004,
     'Deo Parfum Essencial Natura Masculino 100 ml',
     139,
+    'Natura',
     1,
     1,
     'São Paulo',
@@ -492,6 +552,7 @@ INSERT INTO produto (
     cod_produto,
     nome_produto,
     preco_produto,
+    marca_produto,
     categoria_produto,
     subcategoria_produto,
     origem_produto,
@@ -509,6 +570,7 @@ INSERT INTO produto (
     1005,
     'PlayStation 5 Pro PlayStation 5 Pro Sony 2024',
     6999,
+    'Sony',
     1,
     1,
     'São Paulo',

@@ -33,14 +33,35 @@ class VendedorProductController extends RenderView {
         if (empty($_GET['id'])) {
             header("Location: GerenciarProdutos");
         };
-
         $model = new VendedorModel;
 
         $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
         $produto = $model->fetchProdutoComImagens($idVendedor, $_GET['id']);
-        $promocoes = $model->fetchPromocoes($_GET['id']);
+        $promocoes = $model->fetchPromocoes($_GET['id']) ?? [];
 
-        $this->loadView('vendedor/EditarProduto', ['produto' => $produto, 'promocao' => $promocoes]);
+        // var_dump($promocoes);
+            
+        $valorProduto = $produto['preco_produto'];
+
+        if (!empty($promocoes)) {
+            
+            $tipoPromocao = $promocoes[0]['tipo_promocao_nome'];
+            
+            if ($tipoPromocao == 'Reais sobre Total') {
+                $valorProduto = $produto['preco_produto'] - $promocoes[0]['desconto_promocao'];
+                $promocoes[0]['calculo'] = sprintf("%.2f (%.2f - R$%.2f)", $valorProduto, $produto['preco_produto'], $promocoes[0]['desconto_promocao']);
+            } elseif ($tipoPromocao == 'Porcentagem sobre Total') {
+                $valorProduto = $produto['preco_produto'] - ($produto['preco_produto'] * ($promocoes[0]['desconto_promocao'] / 100));
+                $promocoes[0]['calculo'] = sprintf("%.2f (%.2f - %d%%)", $valorProduto, $produto['preco_produto'], $promocoes[0]['desconto_promocao']);
+            } else {
+                $valorProduto = $produto['preco_produto'];
+            } 
+             
+        };
+
+        $produto['preco_total'] = $valorProduto; 
+
+        $this->loadView('vendedor/EditarProduto', ['produto' => $produto, 'promocao' => $promocoes[0] ?? []]);
     }
 
     public function report() {

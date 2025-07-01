@@ -52,6 +52,11 @@ body {
     justify-self: center;
   }
 
+.toggle_container {
+  display: flex;
+  gap: 8px;
+}
+
 .editar_produto_container {
     display: flex;
     flex-direction: column;
@@ -512,11 +517,11 @@ input:focus + .input_icon {
   overflow-y: auto;
 
   & > button {
-    width: fit-content;
     height: fit-content;
     border: none;
     aspect-ratio: 1 / 1;
     display: flex;
+    width: 100%;
     position: relative;
     &:hover {
       cursor: pointer;
@@ -556,6 +561,21 @@ input:focus + .input_icon {
     object-fit: contain;
     image-rendering: -webkit-optimize-contrast;
   }
+}
+
+.btn_sappire {
+    background-color: var(--sappire);
+    color: var(--branco_gelo);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: var(--celadon);
+    }
 }
 
 .editar_produto_input {

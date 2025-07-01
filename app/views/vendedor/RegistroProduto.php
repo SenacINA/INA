@@ -62,19 +62,18 @@ require_once('./utils/head.php');
                   <input class='base_input' type="text" id='origemProduto' name='origemProduto'>
                 </div>
               </div>
-              <div class='base_input_select'>
+              <div class="base_input_select">
                 <label for="categoriaProduto">Categoria</label>
-                <select class='base_input' id='categoriaProduto' name='categoriaProduto'>
-                  <option value="" disabled selected>Selecione</option>
-                  <option value="1">Categoria 1</option>
+                <select
+                  class="base_input" id="categoriaProduto" name="categoriaProduto">
+                  <option value=""selected disabled>Selecione</option>
                 </select>
               </div>
 
-              <div class='base_input_select'>
-                <label for="categoriaProduto">Sub-Categoria</label>
-                <select class='base_input' id='subCategoriaProduto' name='subCategoriaProduto'>
+              <div class="base_input_select">
+                <label for="subCategoriaProduto">Sub-Categoria</label>
+                <select class="base_input" id="subCategoriaProduto" name="subCategoriaProduto">
                   <option value="" disabled selected>Selecione</option>
-                  <option value="1">Sub-Categoria 1</option>
                 </select>
               </div>
 
@@ -91,23 +90,23 @@ require_once('./utils/head.php');
             <div class='registro_produto_form_input'>
               <div class='registro_produto_small_input'>
                 <div class='registro_produto_input'>
-                  <label for="pesoLiquidoProduto">Peso Líquido</label>
+                  <label for="pesoLiquidoProduto">Peso Líquido(g)</label>
                   <input class='base_input' type="number" id='pesoLiquidoProduto' name='pesoProduto'>
                 </div>
                 <div class='registro_produto_input'>
-                  <label for="pesoBrutoProduto">Peso Bruto</label>
+                  <label for="pesoBrutoProduto">Peso Bruto(g)</label>
                   <input class='base_input' type="text" id='pesoBrutoProduto' name='pesoBrutoProduto'>
                 </div>
                 <div class='registro_produto_input'>
-                  <label for="larguraProduto">Largura</label>
+                  <label for="larguraProduto">Largura(cm)</label>
                   <input class='base_input' type="text" id='larguraProduto' name='larguraProduto'>
                 </div>
                 <div class='registro_produto_input'>
-                  <label for="alturaProduto">Altura</label>
+                  <label for="alturaProduto">Altura(cm)</label>
                   <input class='base_input' type="text" id='alturaProduto' name='alturaProduto'>
                 </div>
                 <div class='registro_produto_input'>
-                  <label for="comprimentoProduto">Comprimento</label>
+                  <label for="comprimentoProduto">Comprimento(cm)</label>
                   <input class='base_input' type="text" id='comprimentoProduto' name='comprimentoProduto'>
                 </div>
               </div>
@@ -298,6 +297,8 @@ require_once('./utils/head.php');
   <script src="./public/js/vendedor/ImgInput.js"></script>
   <script type="module" src="./public/js/vendedor/TextEditor.js"></script>
   <script src="./public/js/vendedor/PromocaoToggle.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/vendedor/selectCats.js"></script>
+
 </body>
 
 </html>

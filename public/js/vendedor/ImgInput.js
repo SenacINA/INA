@@ -174,3 +174,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+function renderImagens(imageList) {
+  const div = document.querySelector('.registro_produto_imagens');
+  if (!div) return;
+
+  imageList.forEach(src => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.onclick = removerImagem;    
+    button.classList.add('imagem-container');
+
+    const img = document.createElement('img');
+    img.src = './public' + src;
+
+    button.appendChild(img);
+    div.appendChild(button);
+    totalImagens++;
+  });
+
+  atualizarContadores();
+}
