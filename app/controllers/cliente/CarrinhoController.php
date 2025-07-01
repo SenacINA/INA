@@ -26,7 +26,8 @@ class CarrinhoController extends RenderView
         exit;
       }
       echo json_encode([
-        'success' => true
+        'success' => true,
+        'message' => 'Produto adicionado ao carrinho'
       ], JSON_UNESCAPED_UNICODE);
       exit;
     } else {
@@ -40,19 +41,39 @@ class CarrinhoController extends RenderView
 
   public function removerItem()
   {
-    $this->model->removerItem($_POST['id_produto']);
-
-    header("Location: " . $_SERVER['HTTP_REFERER']);
-    exit;
+    $carrinho = $this->model->removerItem($_POST['id_produto']);
+    if ($carrinho) {
+      echo json_encode([
+        'success' => true,
+        'message' => 'Item removido do carrinho'
+      ], JSON_UNESCAPED_UNICODE);
+      exit;
+    } else {
+      echo json_encode([
+        'success' => false,
+        'message' => 'Erro ao remover item'
+      ], JSON_UNESCAPED_UNICODE);
+      exit;
+    }
   }
 
   public function limparCarrinho()
   {
-    $idProduto = (int)$_POST['idProduto'];
-    $this->model->limparCarrinho($idProduto);
+    $carrinho = $this->model->limparCarrinho($_SESSION['cliente_id']);
 
-    header("Location: " . $_SERVER['HTTP_REFERER']);
-    exit;
+    if ($carrinho) {
+      echo json_encode([
+        'success' => true,
+        'message' => 'Carrinho limpo'
+      ], JSON_UNESCAPED_UNICODE);
+      exit;
+    } else {
+      echo json_encode([
+        'success' => false,
+        'message' => 'Erro ao limpar o carrinho'
+      ], JSON_UNESCAPED_UNICODE);
+      exit;
+    }
   }
 
   public function exibirItens()

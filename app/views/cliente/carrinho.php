@@ -41,27 +41,24 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
           </div>
 
           <div class="carrinho_vazio_main_content">
-            <div class="carrinho_vazio_conteudo_items">
+            <div class="carrinho_vazio_conteudo_items" id="carrinho_vazio">
               <?php if (empty($itensCarrinho)): ?>
                 <p>Seu carrinho está vazio.</p>
               <?php else: ?>
                 <?php foreach ($itensCarrinho as $item): ?>
-                  <div class="carrrinho_produto_item" data-id="<?= $item['id_produto'] ?>">
+                  <div class="carrrinho_produto_item" id="carrinho_produto" data-id="<?= $item['id_produto'] ?>">
                     <img src="<?= empty($item['endereco_imagem_produto']) ? 'https://placehold.co/400x400' : "./public/" . $item['endereco_imagem_produto'] ?>" alt="<?= $item['nome_produto'] ?>">
                     <span><?= htmlspecialchars($item['nome_produto']) ?></span>
                     <div class="carrinho_quantidade">
                       <span id="preco_produto">R$ <?= number_format($item['preco_produto'], 2, ',', '.') ?></span>
                       <input class="input_quantidade" type="number" name="quantidade" id="quantidade_produto" min="1" max="99" value="<?= (int)$item['quantidade_produto'] ?>">
-                      <form method="POST" action="Carrinho-api-remove">
-                        <input hidden name="id_produto" id="id_produto" value="<?= $item['id_produto'] ?>">
-                        <button class="base_botao btn_outline_red">
-                          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
-                          Limpar
-                        </button>
-                      </form>
+                      <button data-id="<?= $item['id_produto'] ?>" id="carrinho_remove_btn" class="base_botao btn_outline_red">
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
+                        Limpar
+                      </button>
                     </div>
                   </div>
-                  <hr>
+                  <hr id="linha_horizontal">
                 <?php endforeach; ?>
               <?php endif; ?>
             </div>
@@ -87,13 +84,11 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
           VOLTAR
         </button>
         <div class="carrinho_vazio_holder_final">
-          <form action="Carrinho-api-limpar">
-            <button class="base_botao btn_red" id="remover_tudo" <?= $carrinhoVazio ?>>
-              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/lixo_branco_icon.svg" alt="Remover tudo">
-              REMOVER TUDO
-            </button>
-          </form>
-          <button class="base_botao btn_blue" <?= $carrinhoVazio ?> onclick="pag('/CarrinhoDados')">
+          <button class="base_botao btn_red" id="remover_tudo" <?= $carrinhoVazio ?>>
+            <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/lixo_branco_icon.svg" alt="Remover tudo">
+            REMOVER TUDO
+          </button>
+          <button class="base_botao btn_blue" id="salvar_carrinho" <?= $carrinhoVazio ?> onclick="pag('/CarrinhoDados')">
             <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="Salvar">
             SALVAR
           </button>

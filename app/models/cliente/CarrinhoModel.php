@@ -82,24 +82,24 @@ class CarrinhoModel
     ]);
   }
 
-  public function removerItem(int $idProduto)
+  public function removerItem(int $idProduto) : bool
   {
     $sql = "DELETE FROM carrinho WHERE id_cliente = :idCliente AND id_produto = :idProduto";
     $stmt = $this->db->getConnection()->prepare($sql);
-    $stmt->execute([
+    return $stmt->execute([
       'idCliente' => $_SESSION['cliente_id'],
       'idProduto' => $idProduto
     ]);
   }
 
-  public function limparCarrinho()
+  public function limparCarrinho(int $idCliente) : bool
   {
     $sql = "DELETE FROM carrinho 
         WHERE id_cliente = :idCliente";
 
     $stmt = $this->db->getConnection()->prepare($sql);
-    $stmt->execute([
-      'idCliente' => $_SESSION['cliente_id']
+    return $stmt->execute([
+      'idCliente' => $idCliente
     ]);
   }
 

@@ -81,12 +81,12 @@ $info = $controller->exibirProduto($id);
                             <h1><?= $info['infoProduto']['nome_produto'] ?></h1>
                         </div>
                         <div class="produto_info_text">
-                            <h2>Vendido e entregue por: <a <?php 
-                            if (isset($_SESSION['cliente_id']) && $_SESSION['user_type'] == 'vendedor' && $_SESSION['cliente_id'] == $info['infoProduto']['id_vendedor']) {
-                                echo "href='./Perfil'";
-                            } else {
-                                echo "href='./Perfil?isCliente=true&idVendedor={$info['infoProduto']['id_vendedor']}'";
-                            }?>> <b><?= $info['infoProduto']['nome_vendedor'] ?></b></a></h2>
+                            <h2>Vendido e entregue por: <a <?php
+                                                            if (isset($_SESSION['cliente_id']) && $_SESSION['user_type'] == 'vendedor' && $_SESSION['cliente_id'] == $info['infoProduto']['id_vendedor']) {
+                                                                echo "href='./Perfil'";
+                                                            } else {
+                                                                echo "href='./Perfil?isCliente=true&idVendedor={$info['infoProduto']['id_vendedor']}'";
+                                                            } ?>> <b><?= $info['infoProduto']['nome_vendedor'] ?></b></a></h2>
                             <h3>Em estoque</h3>
                         </div>
                     </div>
@@ -108,8 +108,8 @@ $info = $controller->exibirProduto($id);
                     </div>
 
                     <div class="grid_produto_info_button">
-                        <button class="base_botao btn_blue"><img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/cesta_branca_icon.svg" alt="">CARRINHO</button>
-                        <button class="base_botao btn_outline_blue" onclick="pag('Carrinho')">
+                        <button data-id="<?= $id ?>" id="produto_add_carrinho" type="button" class="base_botao btn_blue"><img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/cesta_branca_icon.svg" alt="">CARRINHO</button>
+                        <button data-id="<?= $id ?>" id="produto_comprar" type="button" class="base_botao btn_outline_blue">
                             <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/+_carolina_icon.svg" alt="">
                             COMPRAR
                         </button>
@@ -291,6 +291,7 @@ $info = $controller->exibirProduto($id);
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/avaliacaoImgInput.js'></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/EnviarAvaliacao.js'></script>
+    <script src='<?= $PATH_PUBLIC ?>/js/geral/produto.js'></script>
     <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
     <script type="module" src="<?= $PATH_PUBLIC ?>/js/cliente/AvaliacaoProduto.js"></script>

@@ -1,4 +1,75 @@
 document.addEventListener("DOMContentLoaded", () => {
+  function disableButton() {
+    const btnSalvar = document.getElementById("salvar_carrinho");
+    const btnRemover = document.getElementById("remover_tudo");
+    btnSalvar.setAttribute("disabled", "")
+    btnRemover.setAttribute("disabled", "")
+  }
+
+  document
+    .getElementById("remover_tudo")
+    .addEventListener("click", async () => {
+      const response = await fetch("Carrinho-api-limpar");
+
+      const json = await response.json();
+      if (json.success) {
+        gerarToast(json.message, "sucesso");
+        document.querySelectorAll("#carrinho_produto").forEach((div) => {
+          div.remove();
+        });
+        document.querySelectorAll("#linha_horizontal").forEach((linha) => {
+          linha.remove();
+        });
+
+        const div = document.getElementById("carrinho_vazio");
+        const p = document.createElement("p");
+
+        p.appendChild(document.createTextNode("Seu carrinho está vazio."));
+        div.appendChild(p);
+
+        disableButton();
+        atualizarBadge();
+      } else {
+        gerarToast(json.message, "erro");
+      }
+    });
+  document.querySelectorAll("button#carrinho_remove_btn").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const formData = new FormData();
+
+      formData.append("id_produto", button.dataset.id);
+
+      const response = await fetch("Carrinho-api-remove", {
+        method: "POST",
+        body: formData,
+      });
+
+      const json = await response.json();
+
+      if (json.success) {
+        gerarToast(json.message, "sucesso");
+
+        document.getElementById("carrinho_produto").remove();
+        document.getElementById("linha_horizontal").remove();
+
+        const produtos = document.querySelectorAll("#carrinho_produto").length
+
+        if (produtos == 0) {
+          const div = document.getElementById("carrinho_vazio");
+          const p = document.createElement("p");
+  
+          p.appendChild(document.createTextNode("Seu carrinho está vazio."));
+          div.appendChild(p);
+
+          disableButton();
+        }
+
+        atualizarBadge();
+      } else {
+        gerarToast(json.message, "erro");
+      }
+    });
+  });
   document.querySelectorAll("input#quantidade_produto").forEach((input) => {
     input.addEventListener("change", async (e) => {
       let quantidade = input.value;
@@ -16,25 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
           method: "POST",
           body: formData,
         }).then(window.location.reload());
-      }
-    });
-  });
-});
-
-document.querySelectorAll(".botao_adicionar_ao_carrinho").forEach((botao) => {
-  botao.addEventListener("click", () => {
-    const produtoId = botao.dataset.id;
-    const quantidade = 1;
-
-    fetch("Carrinho/adicionarItem", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: `produto_id=${produtoId}&quantidade=${quantidade}`,
-    }).then((res) => {
-      if (res.ok) {
-        console.log("Produto adicionado!");
       }
     });
   });
