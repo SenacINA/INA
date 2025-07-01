@@ -49,6 +49,8 @@ class ProdutoModel
         int $idVendedor,
         string $nome,
         float $preco,
+        string $marca,
+        int $cod,
         int $categoria,
         int $subCategoria,
         string $origem,
@@ -60,24 +62,24 @@ class ProdutoModel
         float $comprimento,
         string $descricao,
         bool $status
-    ): int|any {
+    ): int|false {
         $sql = "INSERT INTO produto(
-          id_vendedor, nome_produto, preco_produto, categoria_produto, subcategoria_produto,
+          id_vendedor, nome_produto, preco_produto, marca_produto, cod_produto, categoria_produto, subcategoria_produto,
           origem_produto, unidade_produto, peso_liquido_produto, peso_bruto_produto,
           largura_produto, altura_produto, comprimento_produto, descricao_produto, status_produto
       ) VALUES (
-          :id_vendedor, :cod, :nome, :preco, :categoria, :subCategoria,
+          :id_vendedor, :nome, :preco, :marca, :cod, :categoria, :subCategoria,
           :origem, :unidade, :peso, :pesoBruto,
           :largura, :altura, :comprimento, :descricao, :status
       )";
 
         try {
             $stmt = $this->db->getConnection()->prepare($sql);
-
             $stmt->bindValue(':id_vendedor', $idVendedor, PDO::PARAM_INT);
-            $stmt->bindValue(':cod', $cod, PDO::PARAM_STR);
+            $stmt->bindValue(':cod', $cod, PDO::PARAM_INT);
             $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
             $stmt->bindValue(':preco', $preco, PDO::PARAM_STR);
+            $stmt->bindValue(':marca', $marca, PDO::PARAM_STR);
             $stmt->bindValue(':categoria', $categoria, PDO::PARAM_INT);
             $stmt->bindValue(':subCategoria', $subCategoria, PDO::PARAM_INT);
             $stmt->bindValue(':origem', $origem, PDO::PARAM_STR);

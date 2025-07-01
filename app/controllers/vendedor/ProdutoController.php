@@ -141,9 +141,10 @@ class ProdutoController extends RenderView
         $model = new ProdutoModel();
         $produtoId = $model->createProduto(
             $vendedorId,
-            (int)$codigo,
             (string)$nome,                 // Nome do produto
             (float)$valor,                 // Preço
+            (string)$marca,                // Marca                
+            (int)$codigo,
             (int)$categoria,               // Categoria
             (int)$subCategoria,            // Subcategoria
             (string)$origem,               // Origem
@@ -154,7 +155,7 @@ class ProdutoController extends RenderView
             (float)$altura,                // Altura
             (float)$comprimento,           // Comprimento
             (string)$descricao,            // Descrição
-            true                           // Status do produto (ativo)
+            1                           // Status do produto (ativo)
         );
         if (isset($_POST['toggle-group'])) {
             echo $promocao;

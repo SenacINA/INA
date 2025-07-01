@@ -224,6 +224,40 @@ INSERT INTO perfil (
     '/image/cliente/perfil_cliente/banner_user.png'
 );
 
+-- Insert cliente id:7 (Vendedor 2)
+
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    7,
+    'Vendedor2',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-01',
+    'vendedor2@email.com',
+    1,
+    1
+);
+
+-- Insert Perfil vendedor 2
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    6,
+    7,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
 -- Inserir categoria
 INSERT INTO categoria (nome_categoria) VALUES ('Geral');
 
@@ -301,6 +335,27 @@ INSERT INTO endereco (
     'MS',
     'Campo Grande',
     1
+);
+
+-- Inserir endereço para o cliente 7 (Vendedor 2)
+INSERT INTO endereco (
+    id_endereco,
+    rua_endereco,
+    bairro_endereco,
+    numero_endereco,
+    referencia_endereco,
+    uf_endereco,
+    cidade_endereco,
+    id_cliente
+) VALUES (
+    2,
+    '',
+    '',
+    '',
+    '',
+    'SP',
+    'Presidente Prudente',
+    7
 );
 
 -- Inserir perfil
@@ -607,6 +662,80 @@ INSERT INTO imagem_produto (
     (13, 5, '/upload/produtos/5/imagem_2_1750113375.webp', 2),
     (14, 5, '/upload/produtos/5/imagem_3_1750113375.webp', 3);
 
+-- Insert vendedor 2 
+
+INSERT INTO vendedor (
+    id_vendedor,
+    id_cliente,
+    nome_fantasia,
+    cnpj_vendedor,
+    requisitos_completos,
+    documento_entregue,
+    STATUS,
+    data_requisicao
+) VALUES (
+    2,
+    7,
+    'Vendedor - 2',
+    '12345678911',
+    1,
+    1,
+    'Pendente',
+    '2025-07-01 10:51:43'
+);
+
+-- Inserir produto 1 (id:6) do vendedor 2
+
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    6,
+    2,
+    1000,
+    'Monitor Gamer HERO 23,8'' 144Hz IPS FreeSync 24G2/BK Cor Preto/Vermelho AOC',
+    899,
+    'AOC',
+    6,
+    16,
+    'São Paulo',
+    50,
+    7000,
+    10000,
+    22,
+    52,
+    52,
+    '<p><strong>AOC HERO 27</strong></p><h4>Gameplay liso.</h4><p>Com o monitor HERO 27 seus movimentos serão ainda mais insanos. Com tela de 27", desempenho ultrarrápido e ótimos recursos para todos os tipos de jogos sua experiência será impecável. Conte também com o G-MENU, um software exclusivo da AOC para configurar seu dispositivo em uma única plataforma.</p><p><br class="ProseMirror-trailingBreak"></p><h3><strong>G-SYNC</strong></h3><p>É oficial: após ser testado pela NVIDIA, o monitor HERO 27 é compatível com a tecnologia G-Sync e entrega aos gamers uma experiência lisa, rápida e responsiva em todos os jogos.</p><p><br class="ProseMirror-trailingBreak"></p><h3><strong>TAXA DE ATUALIZAÇÃO DE 144HZ</strong></h3><p>Experimente uma jogabilidade impecável com a taxa de atualização de 144Hz, sem rastros e efeitos fantasmas.</p><p><br class="ProseMirror-trailingBreak"></p><h3><strong><br>1MS DE TEMPO DE RESPOSTA</strong></h3><p>Tenha em sua casa um monitor gamer com tempo de resposta de 1ms e aproveite um desempenho excepcional.</p><p><br class="ProseMirror-trailingBreak"></p><h3><strong><br>BASE ERGONÔMICA</strong></h3><p>Projetado e pensado para os gamers, a base ergonômica garante um controle preciso para o ajuste e adaptação conveniente da altura e ângulo do seu monitor, permitindo que você jogue por ainda mais tempo, sem nenhum desconforto.</p><p><br class="ProseMirror-trailingBreak"></p><h3><strong>DESIGN GAMER COM BORDAS ULTRAFINAS</strong></h3><p>Tenha uma experiência completamente imersiva graças às bordas ultrafinas, que possibilitam uma visão ininterrupta dos seus jogos.</p>',
+    1
+);
+
+-- Imagens do produto 6
+INSERT INTO imagem_produto (
+    id_imagem_produto,
+    id_produto,
+    endereco_imagem_produto,
+    index_imagem_produto
+) VALUES
+    (15, 6, '/upload/produtos/6/imagem_1_1751386027.webp', 1),
+    (16, 6, '/upload/produtos/6/imagem_2_1751386027.webp', 2),
+    (17, 6, '/upload/produtos/6/imagem_3_1751386027.webp', 3),
+    (18, 6, '/upload/produtos/6/imagem_4_1751386027.webp', 4);
+
 -- Avaliações para o produto 1 do vendedor 1 por vários clientes
 
 INSERT INTO avaliacao (
@@ -655,7 +784,7 @@ INSERT INTO imagem_avaliacao (
 INSERT INTO `metodo_pagamento` (`id_metodo_pagamento`, `tipo_pagamento`) VALUES ('1', 'Pix');
 
 -- Insert na tabela compra
-INSERT INTO compra (id_cliente, id_vendedor, data_compra, id_endereço, id_tipo_frete)
+INSERT INTO compra (id_cliente, id_vendedor, data_compra, id_endereco, id_tipo_frete)
 VALUES (3, 1, CURDATE(), 1, 1);  -- Supondo endereço ID 1 e frete ID 1
 
 -- Insert na tabela item_compra

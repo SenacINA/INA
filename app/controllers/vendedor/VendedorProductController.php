@@ -24,7 +24,8 @@ class VendedorProductController extends RenderView {
         $model = new VendedorModel();
         $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
         
-        $lastCodProduct = $model->getLastCod($idVendedor) ?? 1000;
+        $lastCodProduct = $model->getLastCod($idVendedor) ?? 999;
+
 
         $this->loadView('vendedor/RegistroProduto', ['proxCod' => $lastCodProduct + 1]);
     }
@@ -39,7 +40,11 @@ class VendedorProductController extends RenderView {
         $produto = $model->fetchProdutoComImagens($idVendedor, $_GET['id']);
         $promocoes = $model->fetchPromocoes($_GET['id']) ?? [];
 
+        $sucesso = $model->produtoDoVendedor($idVendedor, $_GET['id']);
         // var_dump($promocoes);
+        if (!$sucesso) {
+            header("Location: Pagina-nao-encontrada");
+        }
             
         $valorProduto = $produto['preco_produto'];
 

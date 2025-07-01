@@ -287,5 +287,17 @@ class VendedorModel
     return $cats;
   }
 
+  public function produtoDoVendedor(int $id_vendedor, int $id_produto): bool
+  {
+    $sql = "
+      SELECT COUNT(*) FROM produto
+      WHERE id_vendedor = :id_vendedor AND id_produto = :id_produto;
+    ";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id_vendedor', $id_vendedor, PDO::PARAM_INT);
+    $stmt->bindValue(':id_produto', $id_produto, PDO::PARAM_INT);
+    $stmt->execute();
+    return (bool) $stmt->fetchColumn();
+  }
 
 }
