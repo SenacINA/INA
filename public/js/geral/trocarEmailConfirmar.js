@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append("confirm_email_cliente", confirmEmail);
 
     try {
-      const res = await fetch("trocar-email-api-confirmar", {
+      const res = await fetch("TrocarEmail-api-confirmar", {
         method: "POST",
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
         body: formData,

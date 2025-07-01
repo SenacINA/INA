@@ -19,7 +19,7 @@ require_once('./utils/head.php');
           <h1>trocar E-mail</h1>
         </div>
 
-        <form class="trocar_email_2_form" method="POST" action="trocar-email-api-confirmar">
+        <form class="trocar_email_2_form" method="POST" action="TrocarEmail-api-confirmar">
           <div class="trocar_email_2_input">
             <label for="email">Novo E-mail:</label>
             <input class="base_input" type="text" name="email_novo" id="email-novo">
