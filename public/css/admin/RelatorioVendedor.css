@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Jost";
-  user-select: none;
 }
 
 main {
@@ -13,7 +12,7 @@ main {
 
 /* Corpo principal */
 .relatorio_vendedor_body {
-  display: flex;
+  display: flex; 
   flex-direction: column;
   justify-self: center;
   align-self: center;
@@ -73,16 +72,24 @@ main {
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   width: 100%;
-  height: 100%;
+  height: 260px;
   max-width: 100%;
   overflow-x: auto;
+
+  label {
+    display: flex;
+    height: 50%;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+    color: #255e7e;
+  }
 }
 
 .relatorio_vendedor_card_img_perfil {
-  width: 104px;
-  height: 104px;
-  margin-bottom: 16px;
-  max-width: 100%;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
 }
 
 .relatorio_vendedor_card_column_2 {
@@ -217,10 +224,12 @@ main {
 
 .relatorio_vendedor_pesquisar_usuario_item button {
   margin-top: 16px;
+  justify-self: end;
 }
 
 .relatorio_vendedor_dados_pessoais_item input,
 .relatorio_vendedor_pesquisar_usuario_item input,
+.relatorio_vendedor_pesquisar_usuario_item,
 .relatorio_vendedor_localizacao_item input {
   max-width: 600px;
   width: 100%;
