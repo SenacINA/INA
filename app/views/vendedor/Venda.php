@@ -24,7 +24,7 @@
         <hr class="confirmar_pedido_vertical">
         <div class="confirmar_pedido_id_pedido">
           <h1>#<?= htmlspecialchars($id_venda) ?></h1>
-          <h2>05 de julho 2024, 17:37</h2>
+          <h2><?= htmlspecialchars($data_compra ?? 'Data não disponível') ?></h2>
         </div>
 
       </div>
@@ -74,9 +74,7 @@
             <div>
               <h1>Guilherme Xavier</h1>
               <h2>fez o pedido em</h2>
-              <h2>05/07/2024</h2>
-              <h2>às</h2>
-              <h2>17:37.</h2>
+              <h2><?= htmlspecialchars($data_compra ?? 'Data não disponível') ?></h2>
             </div>
           </div>
 
@@ -89,8 +87,6 @@
               <h1>Guilherme Xavier</h1>
               <h2>pagamento confirmado em</h2>
               <h2>06/07/2024</h2>
-              <h2>às</h2>
-              <h2>10:15.</h2>
             </div>
           </div>
 

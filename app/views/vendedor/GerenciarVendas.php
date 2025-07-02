@@ -134,7 +134,7 @@ require_once('./utils/head.php');
                                 <th>Cliente</th>
                                 <th>Preço</th>
                                 <th>Data de Compra</th>
-                                <th>Gerenciamento</th> 
+                                <th>Gerenciamento</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -150,7 +150,8 @@ require_once('./utils/head.php');
                                         <td>R$ <?= number_format($v['valor_total'], 2, ',', '.') ?></td>
                                         <td><?= htmlspecialchars(date('d/m/Y', strtotime($v['data_compra']))) ?></td>
                                         <td>
-                                            <form method="post" style="display:inline;">
+                                            <form method="post" style="display:inline;" action="Venda-api-sale">
+                                                <input type="hidden" name="id_venda" value="<?= htmlspecialchars($v['id_compra']) ?>">
                                                 <button type="submit" class="aprovar_vendedor_btn_aprovar btn_blue base_botao">GERENCIAR</button>
                                             </form>
                                         </td>
@@ -165,6 +166,5 @@ require_once('./utils/head.php');
         </div>
     </main>
 </body>
-<script src="<?= $PATH_PUBLIC ?>/js/vendedor/renderTableProdutos.js"></script>
 
 </html>
