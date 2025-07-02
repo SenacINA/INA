@@ -2,14 +2,17 @@
 
 require_once './app/models/admin/RelatorioVendedorModel.php';
 
-class RelatorioVendedorController {
+class RelatorioVendedorController
+{
     private $model;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->model = new RelatorioVendedorModel();
     }
 
-    public function handle(): array {
+    public function exibirRelatorio(): array
+    {
         $vendas = [];
         $perfil = null;
 
@@ -19,7 +22,9 @@ class RelatorioVendedorController {
             $perfil = $this->model->buscarPerfilVendedor($vendedorId);
         }
 
-        return ['vendas' => $vendas, 'perfil' => $perfil];
+        return [
+            'vendas' => $vendas,
+            'perfil' => $perfil
+        ];
     }
-
 }

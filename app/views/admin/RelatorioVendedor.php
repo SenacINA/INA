@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-  $titulo = "Perfil - E ao Quadrado";
-  $css = ["/css/admin/RelatorioVendedor.css"];
-  require_once('./utils/head.php');
-  require_once './app/controllers/admin/AdminRelatorioVendedorController.php';
+$titulo = "Perfil - E ao Quadrado";
+$css = ["/css/admin/RelatorioVendedor.css"];
+require_once('./utils/head.php');
+require_once './app/controllers/admin/RelatorioVendedorController.php';
 
-  $controller = new RelatorioVendedorController();
-  $dados = $controller->handle();
-  $vendas = $dados['vendas'];
-  $perfil = $dados['perfil'];
+$controller = new RelatorioVendedorController();
+$dados = $controller->exibirRelatorio();
+$vendas = $dados['vendas'];
+$perfil = $dados['perfil'];
 ?>
+
 <body>
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
 
@@ -27,13 +28,11 @@
 
       <div class="bg_mobile_1"></div>
 
-      <!-- Grid de Conteúdo -->
       <div class="relatorio_vendedor_grid_conteudo">
-        <!-- Bloco: Pesquisa de Vendedor -->
         <div>
           <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_1">
             <hr class="relatorio_vendedor_vertical">
-            <img class="base_icon" src="<?= $PATH_PUBLIC . '/image/geral/icons/perfil_lupa_icon.svg' ?>" alt=""/>
+            <img class="base_icon" src="<?= $PATH_PUBLIC . '/image/geral/icons/perfil_lupa_icon.svg' ?>" alt="" />
             <h1 class="relatorio_vendedor_text">Pesquisar Vendedor</h1>
           </div>
 
@@ -42,67 +41,62 @@
             <form action="" method="post" class="relatorio_vendedor_forms">
               <div class="relatorio_vendedor_pesquisar_usuario_item" id="relatorio_vendedor_pesquisar_usuario_item_1">
                 <label class="font_subtitulo font_celadon">ID do Vendedor</label>
-                <input type="text" name="vendedor_id" class="base_input">
+                <input type="text" name="vendedor_id" class="base_input" value="<?= htmlspecialchars($_POST['vendedor_id'] ?? '') ?>">
                 <button type="submit" class="base_botao btn_blue">
-                  <img class="base_icon" src="<?= $PATH_PUBLIC . '/image/geral/botoes/v_branco_icon.svg' ?>" alt=""/>PESQUISAR
+                  <img class="base_icon" src="<?= $PATH_PUBLIC . '/image/geral/botoes/v_branco_icon.svg' ?>" alt="" />
+                  PESQUISAR
                 </button>
               </div>
             </form>
           </div>
         </div>
 
-        <!-- Bloco: Perfil do Vendedor -->
         <div class="relatorio_vendedor_bloco_perfil_do_vendedor">
           <div class="relatorio_vendedor_text" id="relatorio_vendedor_text_4">
             <hr class="relatorio_vendedor_vertical">
-            <img class="base_icon" src="<?= $PATH_PUBLIC . '/image/geral/icons/lista_icon.svg' ?>" alt=""/>
+            <img class="base_icon" src="<?= $PATH_PUBLIC . '/image/geral/icons/lista_icon.svg' ?>" alt="" />
             <h1 class="relatorio_vendedor_text">Perfil Do Vendedor</h1>
           </div>
 
-          <div class="relatorio_vendedor_estatistica_holder">
-            <div class="relatorio_vendedor_card">
-              <span class="relatorio_vendedor_titulo2" id="nome_cliente"></span>
-              <img src="<?= $PATH_PUBLIC . '/image/admin/perfil_admin/perfil_img.svg' ?>" alt="" class="relatorio_vendedor_card_img_perfil">
-            </div>
-
-            <div class="relatorio_vendedor_card_column_2">
-              <div class="relatorio_vendedor_card">
-                <span class="relatorio_vendedor_titulo">Nome Vendedor</span>
-              </div>
-
-              <div class="relatorio_vendedor_card">
-                <span class="relatorio_vendedor_titulo">E-mail</span>
-              </div>
-
-              <div class="relatorio_vendedor_card">
-                <span class="relatorio_vendedor_titulo">Data de Cadastro</span>
-              </div>
-            </div>
-          </div>
-
           <?php if ($perfil): ?>
-            <div class="relatorio_vendedor_perfil_usuario">
-              <img src="<?= $PATH_PUBLIC . htmlspecialchars($perfil['foto_perfil']) ?>" alt="Foto do vendedor" class="base_icon" />
-              <h1><?= htmlspecialchars($perfil['nome']) ?></h1>
-              <h2><?= !empty($perfil['descricao_perfil']) ? htmlspecialchars($perfil['descricao_perfil']) : 'Descrição não informada.' ?></h2>
+            <div class="relatorio_vendedor_estatistica_holder">
+              <div class="relatorio_vendedor_card">
+                <span class="relatorio_vendedor_titulo2" id="nome"><?= htmlspecialchars($perfil['nome'] ?? '') ?></span>
+                <img src="<?= $PATH_PUBLIC . htmlspecialchars($perfil['foto_perfil'] ?? '') ?>" alt="Foto do perfil" class="relatorio_vendedor_card_img_perfil">
+              </div>
+
+              <div class="relatorio_vendedor_card_column_2">
+                <div class="relatorio_vendedor_card">
+                  <span class="relatorio_vendedor_titulo">Nome:</span>
+                  <label> <?= htmlspecialchars($perfil['nome'] ?? '') ?> </label>
+                </div>
+
+                <div class="relatorio_vendedor_card">
+                  <span class="relatorio_vendedor_titulo">E-mail: </span>
+                  <label> <?= htmlspecialchars($perfil['email'] ?? '') ?> </label>
+                </div>
+
+                <div class="relatorio_vendedor_card">
+                  <span class="relatorio_vendedor_titulo">Data de Cadastro: </span>
+                  <label> <?= !empty($perfil['data_cadastro']) ? date('d/m/Y', strtotime($perfil['data_cadastro'])) : '' ?> </label>
+                </div>
+              </div>
             </div>
+          <?php else: ?>
+            <p>Perfil do vendedor não encontrado.</p>
           <?php endif; ?>
         </div>
-
       </div>
-      <!-- GRID CONTEUDO -->
     </div>
 
-    <!-- Seção: Histórico de Pedidos -->
     <div class="relatorio_vendedor_titulo_2">
       <div class="relatorio_vendedor_text_titulo_2">
-        <img class="base_icon" src="<?= $PATH_PUBLIC . '/image/geral/icons/pasta_clock_icon.svg' ?>" alt=""/>
+        <img class="base_icon" src="<?= $PATH_PUBLIC . '/image/geral/icons/pasta_clock_icon.svg' ?>" alt="" />
         <h1>HISTÓRICO DE PEDIDOS</h1>
       </div>
     </div>
 
     <div class="relatorio_vendedor_table">
-      <!-- Filtro de Tabela -->
       <div class="relatorio_vendedor_table_filtro bg_carolina">
         <p class="relatorio_vendedor_filtro_titulo font_subtitulo">Organizar por:</p>
         <select class="base_input">
@@ -115,7 +109,6 @@
         </select>
       </div>
 
-      <!-- Tabela de Pedidos -->
       <div class="relatorio_vendedor_table_holder">
         <table>
           <colgroup>
@@ -155,4 +148,5 @@
     </div>
   </main>
 </body>
+
 </html>

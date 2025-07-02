@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   async function carregarTabelaProdutos(idVendedor, filtro = 'code') {
     try {
-      const resposta = await fetch('/ina/GerenciarProdutos-api', {
+      const resposta = await fetch('GerenciarProdutos-api', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
