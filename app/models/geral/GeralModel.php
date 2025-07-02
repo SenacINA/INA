@@ -186,6 +186,5 @@ class GeralModel
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
-    
    
 }

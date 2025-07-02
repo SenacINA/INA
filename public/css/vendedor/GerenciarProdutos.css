@@ -414,12 +414,80 @@ td:last-child {
     margin-top: 8px;
 }
 
+.resultado_pesquisa, .resultado_dados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    
+}
+
+.resultado_pesquisa {
+    border-radius: 10px;
+    background-color: var(--azul_leve);
+    padding: 16px;
+    .base_botao {
+        width: 240px;
+    }
+
+}
+
+.resultado_dados {
+    gap: 4px;
+    align-items: start;
+    width: 240px;
+    
+    p {
+        font-size: 20px;
+    }
+    strong {
+        color: var(--sappire);
+    }
+
+}
+
+
+.resultado_title{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--sappire);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    strong {
+        color: var(--carolina);
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100% !important; 
+        background: transparent;
+    }
+}
+
+.resultado_img {
+    max-height: 240px;
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    object-fit: contain;
+    border: 2px dotted var(--cinza);
+}
+
 .img_table {
     aspect-ratio: 1 / 1;
     height: 100%;
     width: auto;
     max-height: 40px;
     padding: 0;
+    object-fit: contain;
+    background-color: white;
+    border: 1px dotted var(--cinza);
+
 }
 
 .tabela-scroll {

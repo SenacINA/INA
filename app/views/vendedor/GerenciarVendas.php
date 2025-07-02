@@ -166,5 +166,5 @@ require_once('./utils/head.php');
         </div>
     </main>
 </body>
-
+<script src="<?= $PATH_PUBLIC ?>/js/tabelas/renderTableVendas.js"></script>
 </html>
