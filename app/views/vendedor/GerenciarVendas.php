@@ -4,6 +4,7 @@
 $titulo = "Gerenciar Vendas - E ao Quadrado";
 $css = ["/css/vendedor/GerenciarVendas.css"];
 require_once('./utils/head.php');
+var_dump($vendas);
 ?>
 
 <body>
@@ -108,63 +109,77 @@ require_once('./utils/head.php');
         <div class="gerenciar_vendas_table">
             <div class="gerenciar_vendas_table_filtro bg_carolina">
                 <p class="gerenciar_vendas_filtro_titulo font_subtitulo">Organizar por:</p>
-                <form method="post" id="ordenarForm">
-                    <select name="ordenar" onchange="document.getElementById('ordenarForm').submit();">
-                        <option value="" selected disabled>Selecione</option>
-                        <option value="id_compra">ID</option>
-                        <option value="cliente">CLIENTE</option>
-                        <option value="valor_total">PREÇO</option>
-                        <option value="data_compra">DATA DE COMPRA</option>
-                    </select>
-                </form>
+                <select id="filtros-gerenciar-vendas" name="ordenar">
+                    <option selected value="id_compra">ID</option>
+                    <option value="alfabetica">A-Z</option>
+                    <option value="valor_total">PREÇO</option>
+                    <option value="data_compra">DATA DE COMPRA</option>
+                </select>
             </div>
-            <div class='tabela-scroll'>
-                <div class="base_tabela">
-                    <table>
-                        <colgroup>
-                            <col class="gerenciar_vendas_table_col-1">
-                            <col class="gerenciar_vendas_table_col-2">
-                            <col class="gerenciar_vendas_table_col-3">
-                            <col class="gerenciar_vendas_table_col-4">
-                            <col class="gerenciar_vendas_table_col-5">
-                        </colgroup>
-                        <thead>
+        </div>
+
+        <div class='tabela-scroll'>
+            <div class="base_tabela">
+                <table>
+                    <colgroup>
+                        <col class="gerenciar_vendas_table_col-1">
+                        <col class="gerenciar_vendas_table_col-2">
+                        <col class="gerenciar_vendas_table_col-3">
+                        <col class="gerenciar_vendas_table_col-4">
+                        <col class="gerenciar_vendas_table_col-5">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Preço</th>
+                            <th>Data de Compra</th>
+                            <th>Gerenciamento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (empty($vendas)): ?>
                             <tr>
-                                <th>ID</th>
-                                <th>Cliente</th>
-                                <th>Preço</th>
-                                <th>Data de Compra</th>
-                                <th>Gerenciamento</th>
+                                <td colspan="5">Nenhum resultado encontrado</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (empty($vendas)): ?>
+                        <?php else: ?>
+                            <?php foreach ($vendas as $v): ?>
                                 <tr>
-                                    <td colspan="5">Nenhum resultado encontrado</td>
+                                    <td data-id_compra="<?= $v['id_compra'] ?>">#<?= htmlspecialchars($v['id_compra']) ?></td>
+                                    <td data-cliente=" <?= $v['cliente'] ?> "><?= htmlspecialchars($v['cliente']) ?></td>
+                                    <td data-preco="<?= $v['valor_total'] ?>">R$ <?= number_format($v['valor_total'], 2, ',', '.') ?></td>
+                                    <td data-data="<?= date('d/m/Y', strtotime($v['data_compra']))?>"><?= htmlspecialchars(date('d/m/Y', strtotime($v['data_compra']))) ?></td>
+                                    <td>
+                                        <form method="post" style="display:inline;" action="Venda-api-sale">
+                                            <input type="hidden" name="id_venda" value="<?= htmlspecialchars($v['id_compra']) ?>">
+
+                                            <button type="submit" class="aprovar_vendedor_btn_aprovar btn_blue base_botao">
+                                                <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_branca_icon.svg" alt="">
+                                                GERENCIAR
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
-                            <?php else: ?>
-                                <?php foreach ($vendas as $v): ?>
-                                    <tr>
-                                        <td>#<?= htmlspecialchars($v['id_compra']) ?></td>
-                                        <td><?= htmlspecialchars($v['cliente']) ?></td>
-                                        <td>R$ <?= number_format($v['valor_total'], 2, ',', '.') ?></td>
-                                        <td><?= htmlspecialchars(date('d/m/Y', strtotime($v['data_compra']))) ?></td>
-                                        <td>
-                                            <form method="post" style="display:inline;" action="Venda-api-sale">
-                                                <input type="hidden" name="id_venda" value="<?= htmlspecialchars($v['id_compra']) ?>">
-                                                <button type="submit" class="aprovar_vendedor_btn_aprovar btn_blue base_botao">GERENCIAR</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
             </div>
+        </div>
+        <div class="base_navegacao">
+            <div class="navegacao_vendas">
+                <button id="btnAnterior" class="base_botao btn_blue">
+                    <img src="./public/image/geral/icons/seta_filtro_branco.svg" class="base_icon esquerda">
+                </button>
+                <button id="btnProximo" class="base_botao btn_blue">
+                    <img src="./public/image/geral/icons/seta_filtro_branco.svg" class="base_icon direita">
+                </button>
+            </div>
+        </div>
 
         </div>
     </main>
 </body>
 <script src="<?= $PATH_PUBLIC ?>/js/tabelas/renderTableVendas.js"></script>
+
 </html>

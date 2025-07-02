@@ -20,16 +20,17 @@ class GerenciarVendasController extends RenderView
     $vendas = [];
     $estatisticas = ['lucro_total' => 0, 'total_vendas' => 0];
 
-    if (isset($_SESSION['cliente_id'])) {
-      $vendas = $this->model->getVendas($_SESSION['cliente_id'], [
-        'cliente' => $_POST['cliente'] ?? null,
-        'mes' => $_POST['mes'] ?? null,
-        'ano' => $_POST['ano'] ?? null,
-        'ordenar' => $_POST['ordenar'] ?? null
-      ]);
-      
-      $estatisticas = $this->model->getEstatisticas($_SESSION['cliente_id']);
+    if(isset($_POST['filtro'])) {
+      $filtro = $_POST['filtro'];
+      $vendas = $this->model->getVendas($_SESSION['cliente_id'], $filtro);
+
+      echo json_encode(["success" => false, "message" => 'Erro ao adquirir vendas', 'data' => $vendas]);
+      exit;
+    } else {
+      $vendas = $this->model->getVendas($_SESSION['cliente_id']);
     }
+      
+    $estatisticas = $this->model->getEstatisticas($_SESSION['cliente_id']);
 
     return [
       'vendas' => $vendas,

@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
       tbody.appendChild(tr);
     });
 
-    // Adiciona linhas vazias para completar a página
     const linhasFaltantes = produtosPorPagina - produtosPagina.length;
     for (let i = 0; i < linhasFaltantes; i++) {
       const trVazio = document.createElement('tr');
@@ -127,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Event listener para o filtro
   if (filtroSelect) {
     filtroSelect.addEventListener('change', () => {
       const filtroSelecionado = filtroSelect.value || 'code';
@@ -135,6 +133,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Início: carregamento inicial com filtro padrão
   carregarTabelaProdutos(idVendedor, filtroSelect?.value || 'code');
 });
