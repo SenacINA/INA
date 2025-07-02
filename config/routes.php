@@ -32,7 +32,7 @@ $routes = [
       '/CarrinhoDados-editar'      => 'cliente/CarrinhoDadosController@editEndereco',
 
       // Geral
-      '/sobre-nos'                 => 'geral/GeralController@sobreNos',
+      '/SobreNos'                 => 'geral/GeralController@sobreNos',
       '/Subcategoria'              => 'geral/CardController@filtrarProdutosSubcategoria',
 
       // Geral - Trocar Email

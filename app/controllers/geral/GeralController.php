@@ -162,6 +162,11 @@ class GeralController extends RenderView
     }
   }
 
+  public function sobreNos($clienteView = false)
+  {
+    $this->loadview('geral/SobreNos', []);
+  }
+
   public function editarPerfil($clienteView = false)
   {
     $this->renderPerfil('EditarPerfil', $clienteView);

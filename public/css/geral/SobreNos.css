@@ -5,35 +5,54 @@ h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
 }
+.team-description {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Container principal do carrossel */
 .carousel-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    margin: 30px auto;
-    max-width: 800px;
-}
-.carousel-container {
     position: relative;
-    width: 300px;
-    height: 300px;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 50px; /* Espaço para as setas */
+    margin: 20px 0;
+}
+
+/* Container das imagens */
+.carousel-container {
+    width: 80%; /* Ocupa 80% da largura */
+    max-width: 800px; /* Largura máxima */
+    height: 400px; /* Altura fixa */
     overflow: hidden;
+    position: relative;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+/* Carrossel de imagens */
 .carousel {
     display: flex;
     height: 100%;
-    transition: transform 0.5s ease-in-out;
+    width: 1000%; /* (10 imagens) × 100% */
+    transition: transform 0.5s ease;
 }
+
+/* Estilo das imagens */
 .carousel img {
-    min-width: 100%;
+    width: 10%; /* 100% / 10 imagens */
     height: 100%;
     object-fit: cover;
     flex-shrink: 0;
 }
+
+/* Setas de navegação */
 .arrow {
     background: #1e3a5f;
+    position: absolute;
     color: white;
     width: 40px;
     height: 40px;
@@ -46,27 +65,18 @@ h1 {
     font-size: 24px;
     transition: all 0.3s;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
 }
+
 .arrow:hover {
     background: #2a4a7a;
     transform: scale(1.1);
 }
-.footer {
-    background: #1e3a5f;
-    color: white;
-    padding: 1rem 0;
-    position: relative;
-    z-index: -10;
+
+.arrow:nth-child(1) {
+    left: 10px; /* Seta esquerda */
 }
 
-.footer-background{    
-    background: #1e3a5f;
-    position: absolute;
-    z-index: -11;
-    width: 100%;
-    height: 300px;
-}
-.team-description {
-    margin-bottom: 30px;
-    line-height: 1.6;
+.arrow:nth-child(3) {
+    right: 10px; /* Seta direita */
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">    
+<html lang="pt-br">    
 <?php
   $titulo = "Sobre Nós - E ao Quadrado";
   $css = ["/css/geral/SobreNos.css"];
@@ -20,6 +20,9 @@
         
         <div class="carousel-container">
             <div class="carousel" id="carousel">
+                <!-- CLONE DA ÚLTIMA IMAGEM (ANTES DA PRIMEIRA) -->
+                <img src="<?=$PATH_PUBLIC?>/image/index/Produto08.jpg" alt="Person 8">
+                <!-- IMAGENS ORIGINAIS -->
                 <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Person 1">
                 <img src="<?=$PATH_PUBLIC?>/image/index/Produto02.jpg" alt="Person 2">
                 <img src="<?=$PATH_PUBLIC?>/image/index/Produto03.jpg" alt="Person 3">
@@ -28,6 +31,8 @@
                 <img src="<?=$PATH_PUBLIC?>/image/index/Produto06.jpg" alt="Person 6">
                 <img src="<?=$PATH_PUBLIC?>/image/index/Produto07.jpg" alt="Person 7">
                 <img src="<?=$PATH_PUBLIC?>/image/index/Produto08.jpg" alt="Person 8">
+                <!-- CLONE DA PRIMEIRA IMAGEM (APÓS A ÚLTIMA) -->
+                <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Person 1">
             </div>
         </div>
         
