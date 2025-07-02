@@ -168,19 +168,35 @@ function generateModalContent($user)
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'RelatorioVendas\')">
+                  <a href="#" class="menu-item" onclick="pag(\'EditarPerfil\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
                       </svg>
-                      <span>Relatório De Vendas</span>
+                      <span>Editar Perfil</span>
                   </a>
               </li>
               <li>
                   <a href="#" class="menu-item" onclick="pag(\'GerenciarProdutos\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
-                          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                      <path fill="#3498db" d="M3 4.5A1.5 1.5 0 0 1 4.5 3h15A1.5 1.5 0 0 1 21 4.5V6a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 6zM4 9h16v2.498A6.5 6.5 0 0 0 17.5 11a6.5 6.5 0 0 0-3 .732a.75.75 0 0 0-.75-.732h-3.5a.75.75 0 0 0 0 1.5h3.096a6.49 6.49 0 0 0-2.346 5a6.47 6.47 0 0 0 1.022 3.5H7.75A3.75 3.75 0 0 1 4 17.25zm10.277 4.976a2 2 0 0 1-1.441 2.496l-.584.145a5.7 5.7 0 0 0 .006 1.807l.54.13a2 2 0 0 1 1.45 2.51l-.187.631c.44.386.94.7 1.485.922l.493-.519a2 2 0 0 1 2.899 0l.499.526a5.3 5.3 0 0 0 1.482-.913l-.198-.686a2 2 0 0 1 1.442-2.496l.583-.145a5.7 5.7 0 0 0-.006-1.807l-.54-.13a2 2 0 0 1-1.449-2.51l.186-.631a5.3 5.3 0 0 0-1.484-.922l-.493.518a2 2 0 0 1-2.9 0l-.498-.525c-.544.22-1.044.53-1.483.913zM17.5 19c-.8 0-1.45-.671-1.45-1.5c0-.828.65-1.5 1.45-1.5s1.45.672 1.45 1.5c0 .829-.65 1.5-1.45 1.5"/>
                       </svg>
-                      <span>Gerenciar Produtos</span>
+                      <span>Gerenciar Produto</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="menu-item" onclick="pag(\'RelatorioVendas\')">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="#3498db" d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                  </svg>
+                      <span>Relatório de Vendas</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="menu-item" onclick="pag(\'ProdutoEditar\')">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="#3498db" d="M5 21q-.825 0-1.412-.587T3 19V6.525q0-.35.113-.675t.337-.6L4.7 3.725q.275-.35.687-.538T6.25 3h11.5q.45 0 .863.188t.687.537l1.25 1.525q.225.275.338.6t.112.675V10q-.825 0-1.562.2t-1.313.8L16 13.125V8H8v8l4-2l2.075 1.05L12 17.1V21zm9 0v-3.075l5.525-5.5q.225-.225.5-.325t.55-.1q.3 0 .575.113t.5.337l.925.925q.2.225.313.5t.112.55t-.1.563t-.325.512l-5.5 5.5zm6.575-5.6l.925-.975l-.925-.925l-.95.95zM5.4 6h13.2l-.85-1H6.25z"/>
+                  </svg>
+                    <span>Editar Produto</span>
                   </a>
               </li>
               <li>
