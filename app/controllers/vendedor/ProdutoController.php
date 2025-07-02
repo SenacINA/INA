@@ -97,9 +97,9 @@ class ProdutoController extends RenderView
             return;
         }
 
-        $lastCod = $vendedorModel->getLastCod($vendedorId);
+        $existe = $vendedorModel->codJaExiste($vendedorId, $codigo);
 
-        if ($lastCod == $codigo) {
+        if ($existe) {
             $errors[] = "Esse código já foi usado";
         }
 
@@ -141,9 +141,10 @@ class ProdutoController extends RenderView
         $model = new ProdutoModel();
         $produtoId = $model->createProduto(
             $vendedorId,
-            (int)$codigo,
             (string)$nome,                 // Nome do produto
             (float)$valor,                 // Preço
+            (string)$marca,                // Marca                
+            (int)$codigo,
             (int)$categoria,               // Categoria
             (int)$subCategoria,            // Subcategoria
             (string)$origem,               // Origem
@@ -154,7 +155,7 @@ class ProdutoController extends RenderView
             (float)$altura,                // Altura
             (float)$comprimento,           // Comprimento
             (string)$descricao,            // Descrição
-            true                           // Status do produto (ativo)
+            1                           // Status do produto (ativo)
         );
         if (isset($_POST['toggle-group'])) {
             echo $promocao;
@@ -247,4 +248,337 @@ class ProdutoController extends RenderView
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result ? (int)$result['id_vendedor'] : null;
     }
+
+    public function searchProductJson() {
+        header('Content-Type: application/json; charset=utf-8');
+
+        $nome = $_POST['name'] ?? '';
+        $cod  = $_POST['code'] ?? '';
+
+        $model = new VendedorModel();
+
+        $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
+
+        if ($idVendedor < 1 || ($nome === '' && $cod === '')) {
+            echo json_encode(['success' => false, 'message' => 'Informe nome ou código.']);
+            exit;
+        }
+
+        $model = new ProdutoModel();
+        $prod = $model->searchProduct($nome, $cod, $idVendedor);
+
+        if (!$prod) {
+            echo json_encode(['success' => false, 'message' => 'Produto não encontrado.']);
+        } else {
+            echo json_encode(['success' => true, 'data' => $prod]);
+        }
+        exit;
+    }
+
+    public function atualizarProduto()
+    {
+        $errors = [];
+        $produtoId = $_POST['produtoId'] ?? null;
+
+        if (!$produtoId) {
+            $errors[] = "Produto não especificado.";
+            $_SESSION['errors'] = $errors;
+            header("Location: EditarProduto?id=$produtoId");
+            exit;
+        }
+
+        $vendedorModel = new VendedorModel();
+        $vendedorId = $vendedorModel->getVendedorId($_SESSION['cliente_id']);
+
+        if (!$vendedorId) {
+            $errors[] = "Cliente não possui cadastro de vendedor";
+            $_SESSION['errors'] = $errors;
+            header("Location: EditarProduto?id=$produtoId");
+            exit;
+        }
+
+        $produtoModel = new ProdutoModel();
+        $produto = $produtoModel->getProdutoById($produtoId);
+
+        if (!$produto || $produto['id_vendedor'] != $vendedorId) {
+            $errors[] = "Produto não encontrado ou não pertence a este vendedor.";
+            $_SESSION['errors'] = $errors;
+            header("Location: EditarProduto?id=$produtoId");;
+            exit;
+        }
+
+        // Validações básicas
+        $nome = $_POST['nomeProduto'] ?? '';
+        $valor = $_POST['valorProduto'] ?? '';
+        $codigo = $_POST['codigoProduto'] ?? '';
+        $unidade = $_POST['estoqueProduto'] ?? '';
+        $origem = $_POST['origemProduto'] ?? '';
+        $descricao = $_POST['descricao'] ?? '';
+
+        if (empty($nome)) $errors[] = "O nome do produto é obrigatório.";
+        if (!is_numeric($valor) || $valor <= 0) $errors[] = "Valor inválido. Confira a promoção.";
+        if (empty($codigo)) $errors[] = "Código do produto é obrigatório.";
+        if (!is_numeric($unidade) || $unidade < 0) $errors[] = "Estoque inválido.";
+        if (empty($origem)) $errors[] = "Origem do produto é obrigatória.";
+        if (empty($descricao)) $errors[] = "Descrição do produto é obrigatória.";
+
+        // Campos opcionais
+        $marca = $_POST['marcaProduto'] ?? '';
+        $peso = $_POST['pesoProduto'] ?? 0;
+        $pesoBruto = $_POST['pesoBrutoProduto'] ?? 0;
+        $largura = $_POST['larguraProduto'] ?? 0;
+        $altura = $_POST['alturaProduto'] ?? 0;
+        $comprimento = $_POST['comprimentoProduto'] ?? 0;
+        $categoria = (int)($_POST['categoriaProduto'] ?? 1);
+        $subCategoria = (int)($_POST['subCategoriaProduto'] ?? 1);
+        $codAntigo = $_POST['cod_atual'] ?? '';
+        $promocao = $_POST['tipoPromocaoProduto'] ?? '';
+
+        $existe = $vendedorModel->codJaExiste($vendedorId, $codigo, $produtoId);
+        if ($existe && $codigo != $codAntigo) {
+            $errors[] = "Este código já está em uso por outro produto.";
+        }
+
+        if (!$produtoModel->categoriaExiste($categoria)) {
+            $errors[] = "Categoria inválida.";
+            $categoria = 1;
+        }
+
+        if (!$produtoModel->subcategoriaExiste($subCategoria)) {
+            $errors[] = "Subcategoria inválida.";
+            $subCategoria = 1;
+        }
+
+        if (!$produtoModel->subcategoriaPertenceACategoria($subCategoria, $categoria)) {
+            $errors[] = "Subcategoria não pertence à categoria selecionada.";
+            $subCategoria = 1;
+        }
+
+        // Verificação da promoção
+        $promocaoAtiva = isset($_POST['toggle-group']) && $_POST['toggle-group'] === 'on';
+        $promocaoData = $produtoModel->getPromocaoByProdutoId($produtoId);
+
+        // Validação dos campos da promoção se ativa
+        if ($promocaoAtiva) {
+            $promocaoTipo = $_POST['tipoPromocaoProduto'] ?? null;
+            $desconto = $_POST['produtoDescontPromo'] ?? null;
+            $inicio = $_POST['promoDataInicio'] ?? null;
+            $fim = $_POST['promoDataFim'] ?? null;
+            $inicio_horario = $_POST['promoHoraInicio'] ?? null;
+            $fim_horario = $_POST['promoHoraFim'] ?? null;
+
+            if (empty($promocaoTipo) || empty($desconto) || empty($inicio) || 
+                empty($fim) || empty($inicio_horario) || empty($fim_horario)) {
+                $errors[] = "Todos os campos da promoção são obrigatórios quando ativada";
+            }
+        }
+
+        if (!empty($errors)) {
+            $_SESSION['errors'] = $errors;
+            $_SESSION['form_data'] = $_POST;
+            header('Location: EditarProduto?id=' . $produtoId);
+            exit;
+        }
+
+        // Atualizar produto
+        $success = $produtoModel->updateProduto(
+            $produtoId,
+            $nome,
+            $valor,
+            $marca,
+            $codigo,
+            $categoria,
+            $subCategoria,
+            $origem,
+            $unidade,
+            $peso,
+            $pesoBruto,
+            $largura,
+            $altura,
+            $comprimento,
+            $descricao
+        );
+
+        if (!$success) {
+            $errors[] = "Erro ao atualizar o produto. Tente novamente.";
+            $_SESSION['errors'] = $errors;
+            $_SESSION['form_data'] = $_POST;
+            header('Location: EditarProduto?id=' . $produtoId);
+            exit;
+        }
+
+        // Gerenciar promoção
+        $promocaoSuccess = true;
+        if ($promocaoAtiva) {
+            if ($promocaoData) {
+                $promocaoSuccess = $produtoModel->updatePromocao(
+                    $promocaoData['id_promocao'],
+                    true,
+                    $promocao,
+                    $desconto,
+                    $inicio,
+                    $fim,
+                    $inicio_horario,
+                    $fim_horario
+                );
+            } else {
+                $promocaoSuccess = $produtoModel->createPromocao(
+                    $produtoId,
+                    true,
+                    $promocao,
+                    $desconto,
+                    $inicio,
+                    $fim,
+                    $inicio_horario,
+                    $fim_horario
+                );
+            }
+            
+            if (!$promocaoSuccess) {
+                $errors[] = "Erro ao salvar promoção.";
+            }
+        } else if ($promocaoData) {
+            $promocaoSuccess = $produtoModel->desativarPromocao($promocaoData['id_promocao']);
+            if (!$promocaoSuccess) {
+                $errors[] = "Erro ao desativar promoção.";
+            }
+        }
+
+        // Gerenciar imagens
+        $imagensExistentes = $produtoModel->getImagensProduto($produtoId);
+        $imagensParaRemover = json_decode($_POST['imagens_remover'] ?? '[]', true) ?: [];
+
+        // Verificar quantidade mínima de imagens
+        $totalImagensRestantes = count($imagensExistentes) - count($imagensParaRemover);
+        $novasImagensBase64 = json_decode($_POST['produto_imagens'] ?? '[]', true) ?: [];
+        
+        if ($totalImagensRestantes + count($novasImagensBase64) < 1) {
+            $errors[] = "O produto deve ter pelo menos uma imagem.";
+            $_SESSION['errors'] = $errors;
+            $_SESSION['form_data'] = $_POST;
+            header('Location: EditarProduto?id=' . $produtoId);
+            exit;
+        }
+
+        // Remover imagens selecionadas
+        foreach ($imagensParaRemover as $imagemId) {
+            if (!$produtoModel->removerImagemProduto($imagemId)) {
+                $errors[] = "Erro ao remover imagem ID: $imagemId";
+            }
+        }
+
+        // Reordenar imagens restantes
+        $ordem = 1;
+        foreach ($imagensExistentes as $imagem) {
+            if (!in_array($imagem['id_imagem_produto'], $imagensParaRemover)) {
+                if (!$produtoModel->atualizarOrdemImagem($imagem['id_imagem_produto'], $ordem)) {
+                    $errors[] = "Erro ao reordenar imagens";
+                }
+                $ordem++;
+            }
+        }
+
+        // Adicionar novas imagens
+        if (!empty($novasImagensBase64)) {
+            $baseDir = __DIR__ . '/../../../public/upload/produtos/' . $produtoId . '/';
+            if (!is_dir($baseDir)) {
+                mkdir($baseDir, 0755, true);
+            }
+
+            foreach ($novasImagensBase64 as $base64) {
+                if (preg_match('/^data:image\/webp;base64,/', $base64)) {
+                    $dataPart = substr($base64, strpos($base64, ',') + 1);
+                    $dadosBinarios = base64_decode($dataPart);
+                    
+                    if ($dadosBinarios !== false) {
+                        $nomeArquivo = 'imagem_' . $ordem . '_' . time() . '.webp';
+                        $absPath = $baseDir . $nomeArquivo;
+                        
+                        if (file_put_contents($absPath, $dadosBinarios)) {
+                            $caminhoRelativo = '/upload/produtos/' . $produtoId . '/' . $nomeArquivo;
+                            if (!$produtoModel->adicionarImagemProduto($produtoId, $caminhoRelativo, $ordem)) {
+                                $errors[] = "Erro ao salvar nova imagem no banco de dados";
+                            }
+                            $ordem++;
+                        } else {
+                            $errors[] = "Erro ao salvar arquivo de imagem";
+                        }
+                    } else {
+                        $errors[] = "Erro ao decodificar imagem";
+                    }
+                } else {
+                    $errors[] = "Formato de imagem inválido";
+                }
+            }
+        }
+        
+        if (!empty($errors)) {
+            $_SESSION['errors'] = $errors;
+        } else {
+            $_SESSION['successMessage'] = "Produto atualizado com sucesso!";
+        }
+        
+        header('Location: GerenciarProdutos');
+        exit;
+    }
+
+    public function alterarStatusProduto()
+    {
+        header('Content-Type: application/json');
+
+        $rawData = file_get_contents("php://input");
+        $data = json_decode($rawData, true);
+
+        $produtoId = $data['id'] ?? null;
+        $novoStatus = $data['status'] ?? null;
+
+        if ($produtoId === null || $novoStatus === null) {
+            echo json_encode([
+                'success' => false,
+                'message' => 'Parâmetros inválidos.'
+            ]);
+            return;
+        }
+
+        $vendedorModel = new VendedorModel();
+        $vendedorId = $vendedorModel->getVendedorId($_SESSION['cliente_id']);
+
+        if (!$vendedorId) {
+            echo json_encode([
+                'success' => false,
+                'message' => 'Cliente não possui cadastro de vendedor.'
+            ]);
+            return;
+        }
+
+        $produtoModel = new ProdutoModel();
+        $produto = $produtoModel->getProdutoById($produtoId);
+
+        if (!$produto || $produto['id_vendedor'] != $vendedorId) {
+            echo json_encode([
+                'success' => false,
+                'message' => 'Produto não encontrado ou não pertence ao vendedor.'
+            ]);
+            return;
+        }
+
+        $novoStatus = (bool) $novoStatus;
+        $success = $produtoModel->ativarInativarProduto($produtoId, $novoStatus);
+
+        if ($success) {
+            echo json_encode([
+                'success' => true,
+                'message' => 'Status do produto atualizado com sucesso.',
+                'novoStatus' => $novoStatus
+            ]);
+        } else {
+            echo json_encode([
+                'success' => false,
+                'message' => 'Erro ao atualizar status.'
+            ]);
+        }
+    }
+
+
+
 }

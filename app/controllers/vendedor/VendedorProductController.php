@@ -24,13 +24,49 @@ class VendedorProductController extends RenderView {
         $model = new VendedorModel();
         $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
         
-        $lastCodProduct = $model->getLastCod($idVendedor) ?? 1000;
+        $lastCodProduct = $model->getLastCod($idVendedor) ?? 999;
+
 
         $this->loadView('vendedor/RegistroProduto', ['proxCod' => $lastCodProduct + 1]);
     }
 
     public function edit() {
-        $this->loadView('vendedor/EditarProduto', []);
+        if (empty($_GET['id'])) {
+            header("Location: GerenciarProdutos");
+        };
+        $model = new VendedorModel;
+
+        $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
+        $produto = $model->fetchProdutoComImagens($idVendedor, $_GET['id']);
+        $promocoes = $model->fetchPromocoes($_GET['id']) ?? [];
+
+        $sucesso = $model->produtoDoVendedor($idVendedor, $_GET['id']);
+        // var_dump($promocoes);
+        if (!$sucesso) {
+            header("Location: Pagina-nao-encontrada");
+        }
+            
+        $valorProduto = $produto['preco_produto'];
+
+        if (!empty($promocoes)) {
+            
+            $tipoPromocao = $promocoes[0]['tipo_promocao_nome'];
+            
+            if ($tipoPromocao == 'Reais sobre Total') {
+                $valorProduto = $produto['preco_produto'] - $promocoes[0]['desconto_promocao'];
+                $promocoes[0]['calculo'] = sprintf("%.2f (%.2f - R$%.2f)", $valorProduto, $produto['preco_produto'], $promocoes[0]['desconto_promocao']);
+            } elseif ($tipoPromocao == 'Porcentagem sobre Total') {
+                $valorProduto = $produto['preco_produto'] - ($produto['preco_produto'] * ($promocoes[0]['desconto_promocao'] / 100));
+                $promocoes[0]['calculo'] = sprintf("%.2f (%.2f - %d%%)", $valorProduto, $produto['preco_produto'], $promocoes[0]['desconto_promocao']);
+            } else {
+                $valorProduto = $produto['preco_produto'];
+            } 
+             
+        };
+
+        $produto['preco_total'] = $valorProduto; 
+
+        $this->loadView('vendedor/EditarProduto', ['produto' => $produto, 'promocao' => $promocoes[0] ?? []]);
     }
 
     public function report() {

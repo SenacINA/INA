@@ -153,7 +153,7 @@
   grid-column: 1;
   grid-row: 2;
   position: relative;
-  background: var(--azul_leve);
+  background: var(--branco);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -672,7 +672,9 @@
   font-weight: 500;
 }
 
-#imgPreviewBanner {
+#imgPreviewBanner,
+#imgPreviewFoto 
+{
   transition: all .3s ease;
   background-color: var(--branco_gelo);
 }

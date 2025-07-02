@@ -296,4 +296,19 @@ class VendedorController extends RenderView
         exit;
     }
 
+    public function getCategoriasSubcategorias()
+    {
+        header('Content-Type: application/json; charset=utf-8');
+
+        $model = new VendedorModel();
+        $data = $model->getAllWithSub();
+
+        if ($data) {
+            echo json_encode(['success' => true, 'data' => $data]);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Nenhuma categoria encontrada.']);
+        }
+        exit;
+    }
+
 }

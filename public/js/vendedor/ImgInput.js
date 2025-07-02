@@ -26,17 +26,22 @@ function convertImageToWebP(file) {
     };
     reader.readAsDataURL(file);
   });
+
 }
+
+let imagensRemovidas = [];
+
 
 function removerImagem(event) {
   const button = event.target.closest('button');
   if (button) {
-    button.remove(); 
+    if (button.dataset.id) {
+      imagensRemovidas.push(button.dataset.id);
+    }
+    button.remove();
     totalImagens--;
     atualizarContadores();
   }
-
-  document.getElementById("input-file").value = '';
 }
 // Função para converter URL para WebP
 async function convertUrlToWebP(url) {
@@ -78,7 +83,6 @@ document.getElementById("input-file").addEventListener("change", async function(
         const span = document.createElement('span');
         button.appendChild(span);
         img.src = webpData;
-        button.appendChild(img);
         button.appendChild(img);
         div.appendChild(button);
         totalImagens++;
@@ -136,28 +140,20 @@ function atualizarContadores() {
   document.getElementById("contador-total").innerText = `${totalImagens} `;
 }
 
+
 function coletarImagensParaEnvio() {
   const imagens = document.querySelectorAll('.registro_produto_imagens img');
   const imagensBase64 = [];
   
   imagens.forEach(img => {
+    // Considera apenas imagens novas (base64)
     if (img.src.startsWith('data:image')) {
       imagensBase64.push(img.src);
     }
   });
   
   document.getElementById('produto-imagens').value = JSON.stringify(imagensBase64);
-}
-
-function coletarDadosParaEnvio() {
-  coletarImagensParaEnvio();
-  
-  // Captura o conteúdo HTML do editor
-  const editor = document.querySelector('.tiptap_editor');
-  if (editor) {
-    const conteudoHTML = editor.innerHTML;
-    document.getElementById('descricao').value = conteudoHTML;
-  }
+  document.getElementById('imagens-remover').value = JSON.stringify(imagensRemovidas);
 }
 
 document.querySelector('form').addEventListener('submit', function(e) {
@@ -174,3 +170,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+function renderImagens(imageList) {
+  const div = document.querySelector('.registro_produto_imagens');  
+  if (!div) return;
+
+  imageList.forEach(img => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.onclick = removerImagem;
+    button.classList.add('imagem-container');
+    button.dataset.id = img.id; 
+
+    const imgElement = document.createElement('img');
+    imgElement.dataset.existente = "true"; 
+    imgElement.src = './public' + img.url;
+
+    button.appendChild(imgElement);
+    div.appendChild(button);
+    totalImagens++;
+  });
+
+  atualizarContadores();
+}

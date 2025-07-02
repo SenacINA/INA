@@ -78,9 +78,10 @@ CREATE TABLE
         -- 2
         id_produto INT AUTO_INCREMENT PRIMARY KEY,
         id_vendedor INT NOT NULL,
-        cod_produto INT NOT NULL UNIQUE,
+        cod_produto INT NOT NULL,
         nome_produto VARCHAR(200) NOT NULL,
         preco_produto DECIMAL NOT NULL,
+        marca_produto VARCHAR(200) NOT NULL,
         categoria_produto INT NOT NULL,
         subcategoria_produto INT NOT NULL,
         origem_produto VARCHAR(200),
