@@ -34,8 +34,15 @@ require_once("./utils/head.php")
           <p class="carrinho_dados_main_text_carrinho_dados">Identificação</p>
           <hr class="carrinho_dados_separador_carrinho">
         </div>
+
         <div class="carrinho_dados_container_forms">
           <form id="form_endereco" class="carrinho_dados_forms_carrinho">
+            <div class="carrinho_dados_subtitulo_main">
+              <hr class="carrinho_dados_carrinho_dados_linha">
+              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/+_carolina_icon.svg" class="base_icon carrinho_dados_add_carrinho" alt="">
+              <p class="carrinho_dados_subtitulo_main_text">Salvar Endereço</p>
+            </div>
+
             <label for="endereco_carrinho">Endereço:</label>
             <input type="text" name="endereco" id="endereco_carrinho" class="base_input">
 
@@ -63,15 +70,15 @@ require_once("./utils/head.php")
             </div>
           </form>
           <div class="carrinho_dados_informacoes_salvas">
-            <div class="carrinho_dados_enderecos_salvos_main">
+            <div class="carrinho_dados_subtitulo_main">
               <hr class="carrinho_dados_carrinho_dados_linha">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
                 <path fill="#1B98E0" d="M10.925 14.05L16.6 8.4l-1.425-1.425l-4.25 4.25L8.8 9.1l-1.4 1.4zM1 21v-2h22v2zm3-3q-.825 0-1.412-.587T2 16V5q0-.825.588-1.412T4 3h16q.825 0 1.413.588T22 5v11q0 .825-.587 1.413T20 18z" />
               </svg>
-              <p class="carrinho_dados_enderecos_salvos_main_text">Endereços Salvos</p>
+              <p class="carrinho_dados_subtitulo_main_text">Endereços Salvos</p>
             </div>
 
-            <div id="enderecos_salvos" class="carrinho_dados_enderecos_salvos_container">
+            <div id="enderecos_salvos" class="carrinho_dados_subtitulo_container">
               <?php foreach ($enderecos as $endereco): ?>
                 <div id="endereco" class="carrinho_dados_info_container">
                   <input type="radio" name="endereco" class="base_radio" value="<?= $endereco['id_endereco'] ?>">
