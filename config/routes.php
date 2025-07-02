@@ -77,7 +77,7 @@ $routes = [
 
       // Vendedor - Gerenciar Vendas
       '/GerenciarVendas'          => 'vendedor/GerenciarVendasController@index',
-      '/Venda-api-sale' => 'vendedor/VendaController@exibirVenda',
+      '/Venda' => 'vendedor/VendaController@exibirVenda',
 
       // Admin
       '/AdminDashboard'           => 'admin/AdminController@dashboard',

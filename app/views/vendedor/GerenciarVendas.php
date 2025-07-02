@@ -150,7 +150,7 @@ require_once('./utils/head.php');
                                         <td>R$ <?= number_format($v['valor_total'], 2, ',', '.') ?></td>
                                         <td><?= htmlspecialchars(date('d/m/Y', strtotime($v['data_compra']))) ?></td>
                                         <td>
-                                            <form method="post" style="display:inline;" action="Venda-api-sale">
+                                            <form method="post" style="display:inline;" action="Venda">
                                                 <input type="hidden" name="id_venda" value="<?= htmlspecialchars($v['id_compra']) ?>">
                                                 <button type="submit" class="aprovar_vendedor_btn_aprovar btn_blue base_botao">GERENCIAR</button>
                                             </form>
