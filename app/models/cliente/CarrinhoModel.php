@@ -42,10 +42,6 @@ class CarrinhoModel
       $item = $stmt->fetch(PDO::FETCH_ASSOC);
 
       if ($item) {
-        if ($item['quantidade_produto'] == 99) {
-          return 'Limite de produtos atingido';
-          exit;
-        }
         $novaQuantidade = $item['quantidade_produto'] + $quantidade;
         $sqlUpdate = "UPDATE carrinho SET quantidade_produto = :quantidade WHERE id_cliente = :idCliente AND id_produto = :idProduto";
         $stmtUpdate = $this->db->getConnection()->prepare($sqlUpdate);

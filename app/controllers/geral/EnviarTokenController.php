@@ -25,7 +25,7 @@ class EnviarTokenController
 
     echo json_encode([
       "mensagem" => "<p>Clique no link abaixo para redefinir sua senha</p>",
-      "link" => "redefinir-senha-confirmar"
+      "link" => "RedefinirSenhaConfirmar"
     ]);
   }
 
