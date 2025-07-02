@@ -26,17 +26,22 @@ function convertImageToWebP(file) {
     };
     reader.readAsDataURL(file);
   });
+
 }
+
+let imagensRemovidas = [];
+
 
 function removerImagem(event) {
   const button = event.target.closest('button');
   if (button) {
-    button.remove(); 
+    if (button.dataset.id) {
+      imagensRemovidas.push(button.dataset.id);
+    }
+    button.remove();
     totalImagens--;
     atualizarContadores();
   }
-
-  document.getElementById("input-file").value = '';
 }
 // Função para converter URL para WebP
 async function convertUrlToWebP(url) {
@@ -136,6 +141,7 @@ function atualizarContadores() {
   document.getElementById("contador-total").innerText = `${totalImagens} `;
 }
 
+
 function coletarImagensParaEnvio() {
   const imagens = document.querySelectorAll('.registro_produto_imagens img');
   const imagensBase64 = [];
@@ -147,17 +153,9 @@ function coletarImagensParaEnvio() {
   });
   
   document.getElementById('produto-imagens').value = JSON.stringify(imagensBase64);
-}
-
-function coletarDadosParaEnvio() {
-  coletarImagensParaEnvio();
   
-  // Captura o conteúdo HTML do editor
-  const editor = document.querySelector('.tiptap_editor');
-  if (editor) {
-    const conteudoHTML = editor.innerHTML;
-    document.getElementById('descricao').value = conteudoHTML;
-  }
+  // Adicione imagens removidas ao formulário
+  document.getElementById('imagens-remover').value = JSON.stringify(imagensRemovidas);
 }
 
 document.querySelector('form').addEventListener('submit', function(e) {
@@ -175,20 +173,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
 function renderImagens(imageList) {
   const div = document.querySelector('.registro_produto_imagens');
   if (!div) return;
 
-  imageList.forEach(src => {
+  imageList.forEach(img => {
     const button = document.createElement('button');
     button.type = 'button';
-    button.onclick = removerImagem;    
+    button.onclick = removerImagem;
     button.classList.add('imagem-container');
+    button.dataset.id = img.id; 
 
-    const img = document.createElement('img');
-    img.src = './public' + src;
+    const imgElement = document.createElement('img');
+    imgElement.src = './public' + img.url;
 
-    button.appendChild(img);
+    button.appendChild(imgElement);
     div.appendChild(button);
     totalImagens++;
   });

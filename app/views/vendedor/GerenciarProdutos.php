@@ -134,6 +134,19 @@
   ?>
 </body>
 <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      <?php if (!empty($_SESSION['errors'])): ?>
+        gerarToast(<?= json_encode($_SESSION['errors']) ?>, "erro");
+        <?php unset($_SESSION['errors']); ?>
+      <?php endif; ?>
+
+      <?php if (!empty($_SESSION['successMessage'])): ?>
+        gerarToast(<?= json_encode($_SESSION['successMessage']) ?>, "sucesso");
+        <?php unset($_SESSION['successMessage']); ?>
+      <?php endif; ?>
+    });
+  </script>
+<script>
   const idVendedor = <?= $idVendedor ?>;
 </script><script src="<?= $PATH_PUBLIC ?>/js/vendedor/produtoSearch.js"></script>
 <script src="<?= $PATH_PUBLIC ?>/js/vendedor/renderTableProdutos.js"></script>

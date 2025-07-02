@@ -578,6 +578,10 @@ input:focus + .input_icon {
     }
 }
 
+.a_button, .a_button > button {
+    width: 100%;
+}
+
 .editar_produto_input {
     position: relative;
     

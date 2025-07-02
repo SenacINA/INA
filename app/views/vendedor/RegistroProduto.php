@@ -189,12 +189,8 @@ require_once('./utils/head.php');
                 <input value="1" name='tipoPromocaoProduto' id='reaisSobreTotal' type="radio" checked>
               </div>
               <div class='radio_inputs'>
-                <label for="reaisSobreFrete">Reais sobre o Frete</label>
-                <input value="2" name='tipoPromocaoProduto' id='reaisSobreFrete' type="radio">
-              </div>
-              <div class='radio_inputs'>
                 <label for="porcenSobreProduto">Porcentagem sobre o Total</label>
-                <input value="3" name='tipoPromocaoProduto' id='porcenSobreProduto' type="radio">
+                <input value="2" name='tipoPromocaoProduto' id='porcenSobreProduto' type="radio">
               </div>
             </div>
             <div class='registro_produto_small_input'>

@@ -78,6 +78,17 @@ class VendedorModel
     return $stmt->execute([':nome_fantasia' => $nome_fantasia, ':id_vendedor' => $id_vendedor]);
   }
 
+  public function codJaExiste (int $id_vendedor, int $cod_produto): bool {
+    $sql = "
+      SELECT COUNT(*) FROM produto WHERE id_vendedor = :id_vendedor AND cod_produto = :cod_produto;
+    ";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id_vendedor', $id_vendedor, PDO::PARAM_INT);
+    $stmt->bindValue(':cod_produto', $cod_produto, PDO::PARAM_INT);
+    $stmt->execute();
+    return (bool) $stmt->fetchColumn();
+  }
+
   public function getLastCod(int $id_vendedor): ?int {
     $sql = "
       SELECT max(cod_produto) FROM produto WHERE id_vendedor = :id_vendedor;
