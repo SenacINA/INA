@@ -1,92 +1,109 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const btnSalvar = document.getElementById("salvar_carrinho");
+  const btnRemover = document.getElementById("remover_tudo");
+
   function disableButton() {
-    const btnSalvar = document.getElementById("salvar_carrinho");
-    const btnRemover = document.getElementById("remover_tudo");
     btnSalvar.setAttribute("disabled", "");
     btnRemover.setAttribute("disabled", "");
   }
 
-  document
-    .getElementById("remover_tudo")
-    .addEventListener("click", async () => {
-      const response = await fetch("Carrinho-api-limpar");
+  function mostrarCarrinhoVazio() {
+    const div = document.getElementById("carrinho_vazio");
+    const p = document.createElement("p");
+    p.textContent = "Seu carrinho está vazio.";
+    div.appendChild(p);
+  }
 
-      const json = await response.json();
-      if (json.success) {
-        gerarToast(json.message, "sucesso");
-        document.querySelectorAll("#carrinho_produto").forEach((div) => {
-          div.remove();
-        });
-        document.querySelectorAll("#linha_horizontal").forEach((linha) => {
-          linha.remove();
-        });
+  async function removerTodosProdutos() {
+    const response = await fetch("Carrinho-api-limpar");
+    const json = await response.json();
 
-        const div = document.getElementById("carrinho_vazio");
-        const p = document.createElement("p");
+    if (json.success) {
+      gerarToast(json.message, "sucesso");
 
-        p.appendChild(document.createTextNode("Seu carrinho está vazio."));
-        div.appendChild(p);
+      document
+        .querySelectorAll("[data-carrinho-produto]")
+        .forEach((div) => div.remove());
+      document
+        .querySelectorAll("[data-linha-horizontal]")
+        .forEach((linha) => linha.remove());
 
+      mostrarCarrinhoVazio();
+      disableButton();
+      atualizarBadge();
+    } else {
+      gerarToast(json.message, "erro");
+    }
+  }
+
+  async function removerProdutoIndividual(button) {
+    const idProduto = button.dataset.id;
+
+    const formData = new FormData();
+    formData.append("id_produto", idProduto);
+
+    const response = await fetch("Carrinho-api-remove", {
+      method: "POST",
+      body: formData,
+    });
+
+    const json = await response.json();
+
+    if (json.success) {
+      gerarToast(json.message, "sucesso");
+
+      const produto = button.closest("[data-carrinho-produto]");
+      const linha =
+        produto?.nextElementSibling?.dataset.linhaHorizontal !== undefined
+          ? produto.nextElementSibling
+          : null;
+
+      produto.remove();
+      if (linha) linha.remove();
+
+      const produtos = document.querySelectorAll(
+        "[data-carrinho-produto]"
+      ).length;
+
+      if (produtos === 0) {
+        mostrarCarrinhoVazio();
         disableButton();
-        atualizarBadge();
-      } else {
-        gerarToast(json.message, "erro");
       }
-    });
-  document.querySelectorAll("button#carrinho_remove_btn").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const formData = new FormData();
 
-      formData.append("id_produto", button.dataset.id);
+      atualizarBadge();
+    } else {
+      gerarToast(json.message, "erro");
+    }
+  }
 
-      const response = await fetch("Carrinho-api-remove", {
-        method: "POST",
-        body: formData,
-      });
+  // Remover todos
+  btnRemover?.addEventListener("click", removerTodosProdutos);
 
-      const json = await response.json();
-
-      if (json.success) {
-        gerarToast(json.message, "sucesso");
-
-        document.getElementById("carrinho_produto").remove();
-        document.getElementById("linha_horizontal").remove();
-
-        const produtos = document.querySelectorAll("#carrinho_produto").length;
-
-        if (produtos == 0) {
-          const div = document.getElementById("carrinho_vazio");
-          const p = document.createElement("p");
-
-          p.appendChild(document.createTextNode("Seu carrinho está vazio."));
-          div.appendChild(p);
-
-          disableButton();
-        }
-
-        atualizarBadge();
-      } else {
-        gerarToast(json.message, "erro");
-      }
-    });
+  // Remover individual
+  document.querySelectorAll("[data-carrinho-remove-btn]").forEach((button) => {
+    button.addEventListener("click", () => removerProdutoIndividual(button));
   });
-  document.querySelectorAll("input#quantidade_produto").forEach((input) => {
+
+  // Atualizar quantidade
+  document.querySelectorAll("[data-quantidade-produto]").forEach((input) => {
     input.addEventListener("change", async (e) => {
       let quantidade = input.value;
       if (quantidade > 99) {
         gerarToast("Limite de itens atingido", "erro");
         input.value = 99;
       } else {
-        let id = e.target.closest(".carrrinho_produto_item").dataset.id;
+        const id = e.target.closest("[data-carrinho-produto]").dataset.id;
 
-        let formData = new FormData();
+        const formData = new FormData();
         formData.append("quantidade", quantidade);
         formData.append("id", id);
 
         await fetch("Carrinho-api-update", {
           method: "POST",
           body: formData,
-        }).then(window.location.reload());
+        });
+
+        window.location.reload();
       }
     });
   });

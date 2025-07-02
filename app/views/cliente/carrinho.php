@@ -46,19 +46,27 @@ $carrinhoVazio = empty($itensCarrinho) ? 'disabled' : '';
                 <p>Seu carrinho está vazio.</p>
               <?php else: ?>
                 <?php foreach ($itensCarrinho as $item): ?>
-                  <div class="carrrinho_produto_item" id="carrinho_produto" data-id="<?= $item['id_produto'] ?>">
+                  <div class="carrinho_produto_item" data-carrinho-produto data-id="<?= $item['id_produto'] ?>">
                     <img src="<?= empty($item['endereco_imagem_produto']) ? 'https://placehold.co/400x400' : "./public/" . $item['endereco_imagem_produto'] ?>" alt="<?= $item['nome_produto'] ?>">
                     <span><?= htmlspecialchars($item['nome_produto']) ?></span>
                     <div class="carrinho_quantidade">
-                      <span id="preco_produto">R$ <?= number_format($item['preco_produto'], 2, ',', '.') ?></span>
-                      <input class="input_quantidade" type="number" name="quantidade" id="quantidade_produto" min="1" max="99" value="<?= (int)$item['quantidade_produto'] ?>">
-                      <button data-id="<?= $item['id_produto'] ?>" id="carrinho_remove_btn" class="base_botao btn_outline_red">
+                      <span class="preco_produto">R$ <?= number_format($item['preco_produto'], 2, ',', '.') ?></span>
+                      <input type="number"
+                        name="quantidade"
+                        min="1"
+                        max="99"
+                        value="<?= (int)$item['quantidade_produto'] ?>"
+                        class="input_quantidade"
+                        data-quantidade-produto>
+                      <button class="base_botao btn_outline_red"
+                        data-carrinho-remove-btn
+                        data-id="<?= $item['id_produto'] ?>">
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/lixo_vermelho_icon.svg">
                         Limpar
                       </button>
                     </div>
                   </div>
-                  <hr id="linha_horizontal">
+                  <hr class="linha_horizontal" data-linha-horizontal>
                 <?php endforeach; ?>
               <?php endif; ?>
             </div>
