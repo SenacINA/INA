@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <?php
 $titulo = "Cadastrar Produto- E ao Quadrado";
-$css = ["/css/vendedor/RegistroProduto.css"];
+$css = ["/css/vendedor/RegistroProduto.css", "/css/vendedor/EditarProduto.css"];
 require_once('./utils/head.php');
 
 ?>
@@ -224,24 +224,29 @@ require_once('./utils/head.php');
               </div>
             </div>
           </div>
-          <div class='registro_produto_form' id='image_container'>
-            <div class='registro_produto_form_title'>
-              <div class='registro_produto_line'></div>
+          
+          <div class='editar_produto_form' id='image_container'>
+            <div class='editar_produto_form_title'>
+              <div class='editar_produto_line'></div>
               <h3>
-                <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/imagem_icon.svg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M0 3.81814C0 2.01302 1.34531 0.54541 3 0.54541H21C22.6547 0.54541 24 2.01302 24 3.81814V20.1818C24 21.9869 22.6547 23.4545 21 23.4545H3C1.34531 23.4545 0 21.9869 0 20.1818V3.81814ZM15.1781 9.26416C14.9672 8.92666 14.6203 8.72723 14.25 8.72723C13.8797 8.72723 13.5281 8.92666 13.3219 9.26416L9.24375 15.7892L8.00156 14.0965C7.78594 13.8051 7.4625 13.6363 7.125 13.6363C6.7875 13.6363 6.45938 13.8051 6.24844 14.0965L3.24844 18.1875C2.97656 18.5556 2.925 19.0619 3.1125 19.4863C3.3 19.9108 3.69375 20.1818 4.125 20.1818H19.875C20.2922 20.1818 20.6766 19.9312 20.8688 19.5272C21.0609 19.1233 21.0375 18.6375 20.8031 18.2642L15.1781 9.26416ZM5.25 8.72723C5.84674 8.72723 6.41903 8.46863 6.84099 8.00831C7.26295 7.54799 7.5 6.92367 7.5 6.27268C7.5 5.6217 7.26295 4.99737 6.84099 4.53706C6.41903 4.07674 5.84674 3.81814 5.25 3.81814C4.65326 3.81814 4.08097 4.07674 3.65901 4.53706C3.23705 4.99737 3 5.6217 3 6.27268C3 6.92367 3.23705 7.54799 3.65901 8.00831C4.08097 8.46863 4.65326 8.72723 5.25 8.72723Z" fill="#247BA0" />
+                </svg>
                 Imagens
               </h3>
             </div>
             <div class="registro_produto_imagens"></div>
-            <input type="hidden" name="produto_imagens" id="produto-imagens">
             <div class="contador">
               <span id="contador-total">0</span>
               <span id="contador-restante"> / 1</span>
             </div>
-            <button class="base_botao btn_blue" name="produtoImagem" type='button'>
-              <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/arquivo_icon.svg">
+            <button class="base_botao btn_blue" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0004 15.7496C12.1993 15.7496 12.39 15.6706 12.5307 15.5299C12.6713 15.3893 12.7504 15.1985 12.7504 14.9996V4.02658L14.4304 5.98758C14.5598 6.13875 14.744 6.23232 14.9424 6.2477C15.1408 6.26308 15.3372 6.19901 15.4884 6.06958C15.6395 5.94016 15.7331 5.75598 15.7485 5.55756C15.7639 5.35915 15.6998 5.16275 15.5704 5.01158L12.5704 1.51158C12.5 1.42925 12.4125 1.36314 12.3141 1.31782C12.2157 1.27249 12.1087 1.24902 12.0004 1.24902C11.892 1.24902 11.785 1.27249 11.6866 1.31782C11.5882 1.36314 11.5008 1.42925 11.4304 1.51158L8.43036 5.01158C8.36628 5.08643 8.31756 5.17318 8.287 5.26686C8.25644 5.36054 8.24463 5.45932 8.25224 5.55756C8.25986 5.65581 8.28675 5.75159 8.33138 5.83944C8.37601 5.9273 8.43751 6.0055 8.51236 6.06958C8.58722 6.13367 8.67396 6.18238 8.76764 6.21294C8.86132 6.2435 8.9601 6.25531 9.05835 6.2477C9.15659 6.24009 9.25237 6.2132 9.34022 6.16856C9.42808 6.12393 9.50628 6.06243 9.57036 5.98758L11.2504 4.02758V14.9996C11.2504 15.4136 11.5864 15.7496 12.0004 15.7496Z" fill="#F9F9FC" />
+                <path d="M16 9C15.298 9 14.947 9 14.694 9.169C14.5852 9.24179 14.4918 9.33522 14.419 9.444C14.25 9.697 14.25 10.048 14.25 10.75V15C14.25 15.5967 14.0129 16.169 13.591 16.591C13.169 17.0129 12.5967 17.25 12 17.25C11.4033 17.25 10.831 17.0129 10.409 16.591C9.98705 16.169 9.75 15.5967 9.75 15V10.75C9.75 10.048 9.75 9.697 9.581 9.444C9.50821 9.33522 9.41478 9.24179 9.306 9.169C9.053 9 8.702 9 8 9C5.172 9 3.757 9 2.879 9.879C2 10.757 2 12.17 2 14.999V15.999C2 18.829 2 20.242 2.879 21.121C3.757 22 5.172 22 8 22H16C18.828 22 20.243 22 21.121 21.121C21.999 20.242 22 18.828 22 16V15C22 12.171 22 10.757 21.121 9.879C20.243 9 18.828 9 16 9Z" fill="#F9F9FC" />
+              </svg>
               ENVIAR ARQUIVO
-              <input type="file" id="input-file" name="produto-imagens" accept="image/*" multiple>
+              <input type="file" id="input-file" accept="image/*" multiple>
             </button>
             <h4 id='info-image'>
               O tamanho do arquivo não pode ultrapassar 2mb
@@ -251,11 +256,15 @@ require_once('./utils/head.php');
                 adicionar link URL
                 <div class="dropdown-content">
                   <input class='base_input' type="text" id="input-url" placeholder="Insira a URL da imagem">
-                  <button type="button" class="url-add-button">Adicionar</button>
+                  <button type='button' onclick="adicionarImagemPorURL()">Adicionar</button>
                 </div>
               </span>
             </div>
           </div>
+          
+        <input type="hidden" id="produto-imagens" name="produto_imagens">
+        <input type="hidden" name="imagens_remover" id="imagens-remover" value="">
+
           <div class='registro_produto_form_buttons'>
             <button class="base_botao btn_outline_red" type='reset'>
               <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_vermelho_icon.svg">
@@ -273,7 +282,7 @@ require_once('./utils/head.php');
   <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-
+      const imagensExistentes = [];
       <?php if (!empty($errors)): ?>
         <?php foreach ($errors as $e): ?>
           gerarToast("<?= addslashes($e) ?>", "erro");
@@ -285,6 +294,10 @@ require_once('./utils/head.php');
         <?php unset($_SESSION['successMessage']); ?>
       <?php endif; ?>
 
+    });
+
+    document.querySelector('form').addEventListener('submit', function(e) {
+      coletarImagensParaEnvio();
     });
   </script>
   <?php

@@ -1,26 +1,361 @@
-.relatorio_vendas_table_col-1 {
+.gerenciar_produtos_body_container {
+    padding: 0px 48px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gerenciar_produtos_body_holder {
+    border-radius: 10px;
+}
+
+.gerenciar_produtos_firula_holder {
+    border-radius: 10px;
+    background-color: #EFF3F5;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 32px 16px 32px;
+}
+
+.gerenciar_produtos_subtitulo_generico {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+}
+
+.gerenciar_produtos_linha_vertical {
+    width: 8px;
+    height: 48px;
+    background-color: var(--carolina);
+    border-radius: 10px;
+}
+
+.gerenciar_produtos_subtitle_holder {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.gerenciar_produtos_titulo {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: auto;
+    align-content: center;
+    justify-items: center;
+
+    width: 100%;
+}
+
+.gerenciar_produtos_text_titulo {
+    margin-top: 16px;
+}
+
+.gerenciar_produtos_text_titulo,
+.gerenciar_produtos_header_title {
+    display: flex;
+    justify-self: center;
+
+    gap: 8px;
+}
+
+.gerenciar_produtos_text_titulo h1,
+.gerenciar_produtos_header_title h1 {
+    justify-self: center;
+    font-weight: 500;
+    color: #255e7e;
+    text-align: center;
+    font-size: 32px;
+}
+
+.gerenciar_produtos_linha_sublinhado {
+    width: 95%;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #2888b1;
+    border: 0;
+
+    justify-self: center;
+}
+
+.gerenciar_produtos_quadrado_container {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10%;
+}
+
+.gerenciar_produtos_main_content {
+    padding: 32px;
+}
+
+.gerenciar_produtos_pesquisar_pedidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.gerenciar_produtos_form_cliente {
+    display: flex;
+    flex-direction: column;
+}
+
+.gerenciar_produtos_input_ano {
+    display: flex;
+    flex-direction: column;
+}
+
+.gerenciar_produtos_input_status {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.gerenciar_produtos_forms_pesquisa_pedidos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    margin: 16px 0 0;
+}
+
+.gerenciar_produtos_holder_botao {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.gerenciar_produtos_input_ano,
+.gerenciar_produtos_input_mes {
+    width: 100%;
+}
+
+.gerenciar_produtos_inputs_esquerda {
+    display: flex;
+    gap: 8px;
+
+    select {
+        width: 100%;
+    }
+}
+
+.gerenciar_produtos_select_status {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.gerenciar_produtos_mes_select {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.gerenciar_produtos_ano_select {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.gerenciar_produtos_estatistica_holder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    height: 100%;
+}
+
+.gerenciar_produtos_estatisticas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.gerenciar_produtos_card {
+    background: var(--branco_gelo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+}
+
+.gerenciar_produtos_titulo {
+    display: flex;
+    padding: 8px;
+    height: 50%;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: var(--carolina);
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+}
+
+.gerenciar_produtos_estatistica_descricao {
+    display: flex;
+    height: 50%;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+    color: #255e7e;
+}
+
+
+.gerenciar_produtos_table {
+    display: flex;
+    flex-direction: column;
+}
+
+.gerenciar_produtos_table_filtro {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    padding: 0 8px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+    & select {
+        background-color: var(--carolina);
+        border: 0;
+        height: 32px;
+    }
+
+    & select:focus-visible {
+        outline: solid 1px #e0e0e0;
+    }
+}
+
+.gerenciar_produtos_filtro_titulo {
+    color: #fff;
+}
+
+/**Individual para cada tabela */
+.gerenciar_produtos_table_col-1,
+.gerenciar_produtos_table_col-4 {
+    width: 4%;
+}
+
+.gerenciar_produtos_table_col-3,
+.gerenciar_produtos_table_col-6 {
+    width: 8%;
+}
+
+.gerenciar_produtos_table_col-2,
+.gerenciar_produtos_table_col-5,
+.gerenciar_produtos_table_col-7 {
+    width: 20%;
+}
+
+@media (max-width:1024px) {
+    .font_titulo {
+        font-size: 1.5rem;
+    }
+
+    .gerenciar_produtos_estatistica_holder {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .gerenciar_produtos_titulo {
+        font-size: 1rem;
+    }
+
+    .gerenciar_produtos_estatistica_descricao {
+        font-size: 0.75rem;
+    }
+
+    .gerenciar_produtos_quadrado_container {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .gerenciar_produtos_body_container {
+        padding: 0px 16px 16px;
+        gap: 8px;
+    }
+
+    .gerenciar_produtos_body_holder {
+        padding: 8px;
+    }
+
+    .gerenciar_produtos_main_content {
+        padding: 8px;
+    }
+
+    .gerenciar_pedidor_firula_holder {
+        gap: 16px;
+        padding: 0;
+    }
+
+    .gerenciar_produtos_header_title {
+        justify-content: flex-start;
+    }
+
+    .gerenciar_produtos_input_ano,
+    .gerenciar_produtos_input_mes {
+        width: 100%;
+    }
+
+    .gerenciar_produtos_mes_select,
+    .gerenciar_produtos_select_status,
+    .gerenciar_produtos_ano_select {
+        width: 100%;
+    }
+
+    .gerenciar_produtos_holder_botao {
+        justify-content: center;
+    }
+
+    .base_botao {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .gerenciar_produtos_text_titulo {
+        position: absolute;
+        top: -85px;
+        margin-top: none;
+    }
+
+    .gerenciar_produtos_linha_sublinhado {
+        display: none;
+    }
+}
+
+.gerenciar_produtos_table_col-1 {
     width: 295px !important;
     max-width: 295px !important;
 }
 
-.relatorio_vendas_table_col-2 {
+.gerenciar_produtos_table_col-2 {
     width: 40% !important;
 }
 
-.relatorio_vendas_table_col-3 {
+.gerenciar_produtos_table_col-3 {
     width: 10% !important;
 }
 
-.base_tabela th:last-child, td:last-child {
+.base_tabela th:last-child,
+td:last-child {
     * {
         padding: 0;
     }
 }
 
-.relatorio_vendas_table_col-1,
-.relatorio_vendas_table_col-2,
-.relatorio_vendas_table_col-3,
-.relatorio_vendas_table_col-4 {
+.gerenciar_produtos_table_col-1,
+.gerenciar_produtos_table_col-2,
+.gerenciar_produtos_table_col-3,
+.gerenciar_produtos_table_col-4 {
     min-width: 209px;
 }
 
@@ -28,14 +363,16 @@
     span {
         font-size: 1rem !important;
     }
+
     span {
         align-items: center;
         gap: 8px;
     }
+
     tr {
         max-height: 56px;
         height: 56px;
-        padding: 0 !important ;
+        padding: 0 !important;
     }
 
     td {
@@ -44,7 +381,7 @@
 
 }
 
-.relatorio_vendas_table_filtro select {
+.gerenciar_produtos_table_filtro select {
     color: var(--branco_gelo);
     text-align: center;
     font-size: 16px;
@@ -53,7 +390,6 @@
     border-radius: 5px;
     height: 100%;
 }
-
 
 .esquerda {
     rotate: -90deg;
@@ -157,14 +493,15 @@
 .tabela-scroll {
     overflow-x: auto;
     width: 100%;
-  }
-  
+}
+
 @media (max-width: 1024px) {
-    .relatorio_vendas_quadrado_container {
+    .gerenciar_produtos_quadrado_container {
         grid-template-rows: 1fr !important;
     }
 
-    .relatorio_vendas_header_title, .relatorio_vendas_table {
+    .gerenciar_produtos_header_title,
+    .gerenciar_produtos_table {
         padding: 0 8px;
         padding-bottom: 16px;
     }

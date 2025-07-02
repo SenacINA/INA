@@ -10,7 +10,7 @@
     include_once("$PATH_COMPONENTS/php/navbar.php");
   ?>
   <main class="relatorio_vendas_body_container">
-    <div class="gerenciar_pedidor_firula_holder">
+    <div class="relatorio_vendas_firula_holder">
       <div class="relatorio_vendas_header_holder">
         <div class="relatorio_vendas_text_titulo">
           <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_relatorio_icon.svg" alt="">

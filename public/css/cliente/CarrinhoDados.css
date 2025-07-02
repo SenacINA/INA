@@ -14,10 +14,9 @@ select {
 
 .input-error {
   border: 2px solid red !important;
-  background-color: #ffe6e6; /* fundo clarinho vermelho */
+  background-color: #ffe6e6; 
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
 
 .carrinho_dados_fundo {
   height: 100%;
@@ -167,7 +166,6 @@ select {
   line-height: 130%;
   display: flex;
   flex-direction: column;
-  max-width: 100%;
   width: 100%;
 }
 
@@ -176,7 +174,7 @@ select {
 }
 
 .carrinho_dados_botoes_carrinho {
-  margin-top: 10%;
+  margin-top: auto;
   display: flex;
   justify-content: end;
   column-gap: 10%;
@@ -207,7 +205,7 @@ select {
   width: 100%;
 }
 
-.carrinho_dados_enderecos_salvos_main {
+.carrinho_dados_subtitulo_main {
   display: flex;
   justify-self: start;
   align-items: center;
@@ -222,7 +220,7 @@ select {
   height: 48px;
 }
 
-.carrinho_dados_enderecos_salvos_main_text {
+.carrinho_dados_subtitulo_main_text {
   color: #247ba0;
   text-align: center;
   font-family: Jost;
@@ -232,7 +230,7 @@ select {
   text-transform: capitalize;
 }
 
-.carrinho_dados_enderecos_salvos_container {
+.carrinho_dados_subtitulo_container {
   width: 100%;
   height: 326px;
   overflow-y: auto;

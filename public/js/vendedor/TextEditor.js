@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const editor = new Editor({
     element: contentDiv,
-    content: initialHTML || '<p><br/></p>',
+    content: initialHTML || '<p></p>',
     editorProps: {
       attributes: { class: 'tiptap_editor' }
     },

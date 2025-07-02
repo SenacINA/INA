@@ -251,7 +251,7 @@ main {
   }
 }
 
-.carrrinho_produto_item {
+.carrinho_produto_item {
   display: grid;
   grid-template-columns: 100px auto auto;
   gap: 20px;
@@ -558,11 +558,11 @@ main {
 }
 
 @media (max-width: 425px) {
-  .carrrinho_produto_item {
+  .carrinho_produto_item {
     grid-template-columns: min-content min-content;
     grid-template-rows: 30px;
   }
-  .carrrinho_produto_item img {
+  .carrinho_produto_item img {
     grid-column: 1;
     grid-row: 1/2;
   }

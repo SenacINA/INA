@@ -1,14 +1,17 @@
 <?php
 require_once('./app/models/connect.php');
 
-class RelatorioVendedorModel {
+class RelatorioVendedorModel
+{
     private $db;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = new Database();
     }
 
-    public function buscarPorVendedor($vendedor_id) {
+    public function buscarPorVendedor($vendedor_id)
+    {
         $this->db->connect();
         $sql = "SELECT 
                     rv.id AS id,
@@ -31,24 +34,28 @@ class RelatorioVendedorModel {
         return $result;
     }
 
-    public function buscarPerfilVendedor($vendedor_id) {
+    public function buscarPerfilVendedor($vendedor_id)
+    {
         $this->db->connect();
 
         $sql = "SELECT 
                     c.nome_cliente AS nome,
+                    c.email_cliente AS email,
+                    c.data_registro_cliente AS data_cadastro,
+                    v.nome_fantasia,
+                    v.cnpj_vendedor,
                     p.foto_perfil,
                     p.descricao_perfil
                 FROM vendedor v
                 JOIN cliente c ON v.id_cliente = c.id_cliente
-                JOIN perfil p ON p.id_cliente = c.id_cliente
+                LEFT JOIN perfil p ON p.id_cliente = c.id_cliente
                 WHERE v.id_vendedor = :vendedor_id";
 
         $params = [':vendedor_id' => $vendedor_id];
         $result = $this->db->executeQuery($sql, $params);
-        
+
         $this->db->disconnect();
 
-        return $result[0] ?? null; // return the first row or null
+        return $result[0] ?? null;
     }
-
 }

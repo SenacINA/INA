@@ -84,7 +84,6 @@ document.getElementById("input-file").addEventListener("change", async function(
         button.appendChild(span);
         img.src = webpData;
         button.appendChild(img);
-        button.appendChild(img);
         div.appendChild(button);
         totalImagens++;
         atualizarContadores();
@@ -147,14 +146,13 @@ function coletarImagensParaEnvio() {
   const imagensBase64 = [];
   
   imagens.forEach(img => {
+    // Considera apenas imagens novas (base64)
     if (img.src.startsWith('data:image')) {
       imagensBase64.push(img.src);
     }
   });
   
   document.getElementById('produto-imagens').value = JSON.stringify(imagensBase64);
-  
-  // Adicione imagens removidas ao formulário
   document.getElementById('imagens-remover').value = JSON.stringify(imagensRemovidas);
 }
 
@@ -175,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function renderImagens(imageList) {
-  const div = document.querySelector('.registro_produto_imagens');
+  const div = document.querySelector('.registro_produto_imagens');  
   if (!div) return;
 
   imageList.forEach(img => {
@@ -186,6 +184,7 @@ function renderImagens(imageList) {
     button.dataset.id = img.id; 
 
     const imgElement = document.createElement('img');
+    imgElement.dataset.existente = "true"; 
     imgElement.src = './public' + img.url;
 
     button.appendChild(imgElement);
