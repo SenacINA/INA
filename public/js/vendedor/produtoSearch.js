@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form       = document.querySelector('.relatorio_vendas_forms_pesquisa_pedidos');
+  const form       = document.querySelector('.gerenciar_produtos_forms_pesquisa_pedidos');
   const resultadoEl = document.querySelector('.resultado_pesquisa');
   const titleEl     = resultadoEl.querySelector('.resultado_title');
   const imgEl       = resultadoEl.querySelector('.resultado_img');
