@@ -12,6 +12,18 @@ class GerenciarVendasModel
     $this->db->connect();
   }
 
+  public function getIdVendedor(int $idCliente): ?int
+  {
+    $sql = "SELECT id_vendedor FROM vendedor WHERE id_cliente = :idCliente";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(":idCliente", $idCliente);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['id_vendedor'] ?? null;
+  }
+
+
   public function getVendas(int $idCliente, $filtro = 'id_compra'): array
   {
     $sql = "select id_vendedor from vendedor WHERE id_cliente = :idCliente";
@@ -37,7 +49,7 @@ class GerenciarVendasModel
         $orderBy = 'c.id_compra';
         break;
     }
-    
+
     $sql = "
     SELECT 
       c.id_compra, 
@@ -53,7 +65,7 @@ class GerenciarVendasModel
     GROUP BY c.id_compra, c.data_compra, cli.nome_cliente
     ORDER BY $orderBy
     ";
-    
+
 
     $stmt = $this->db->getConnection()->prepare($sql);
     $stmt->bindValue(":idVendedor", $idVendedor['id_vendedor']);
