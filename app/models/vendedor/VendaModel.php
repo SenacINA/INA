@@ -16,7 +16,8 @@ public function getVendas(int $idVenda)
 {
   $sql = "
     SELECT 
-      c.data_compra
+      c.data_compra,
+      c.id_cliente
     FROM compra c
     WHERE c.id_compra = :idVenda
   ";
