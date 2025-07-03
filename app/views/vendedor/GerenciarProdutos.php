@@ -116,7 +116,7 @@ require_once('./utils/head.php');
                 <th>Preço</th>
                 <th>Qtn.</th>
                 <th>Status</th>
-                <th></th>
+                <th>Gerenciamento</th>
               </tr>
             <tbody>
             </tbody>
@@ -148,7 +148,7 @@ require_once('./utils/head.php');
 <script>
   const idVendedor = <?= $idVendedor ?>;
 </script><script src="<?= $PATH_PUBLIC ?>/js/vendedor/produtoSearch.js"></script>
-<script src="<?= $PATH_PUBLIC ?>/js/vendedor/renderTableProdutos.js"></script>
+<script src="<?= $PATH_PUBLIC ?>/js/tabelas/renderTableProdutos.js"></script>
 <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
 
 

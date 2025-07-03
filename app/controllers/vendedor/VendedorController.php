@@ -275,7 +275,7 @@ class VendedorController extends RenderView
         $this->loadView('vendedor/GerenciarProdutos', ['idVendedor' => $idVendedor]);
     }
 
-    public function relatorioVendasJson()
+    public function relatorioProdutosJson()
     {
         header('Content-Type: application/json; charset=utf-8');
 

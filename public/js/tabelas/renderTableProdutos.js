@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <td>${produto.unidade_produto}</td>
         <td><span>${produto.status_produto ? "Ativo" : "Inativo"}</span></td>
         <td>
-          <button class='base_botao btn_blue' onclick="window.location.href = 'EditarProduto?id=${produto.id_produto}'">
+          <button class='base_botao btn_blue'>
             <img class='base_icon' src='public/image/geral/icons/caneta_branca_icon.svg'>
             EDITAR
           </button>

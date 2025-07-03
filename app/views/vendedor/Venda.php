@@ -23,18 +23,18 @@
       <div class="confirmar_pedido_text_1">
         <hr class="confirmar_pedido_vertical">
         <div class="confirmar_pedido_id_pedido">
-          <h1>#1001</h1>
-          <h2>05 de julho 2024, 17:37</h2>
+          <h1>#<?= htmlspecialchars($id_venda) ?></h1>
+          <h2><?= htmlspecialchars($data_compra ?? 'Data não disponível') ?></h2>
         </div>
 
       </div>
 
       <div class="confirmar_pedido_botoes_status">
         <div class="confirmar_pedido_botao_1">
-          <h2>O Pagamento Pendente</h2>
+          <h2>Pagamento Pendente</h2>
         </div>
         <div class="confirmar_pedido_botao_2">
-          <h2>O Não processado</h2>
+          <h2>Não processado</h2>
         </div>
       </div>
     </div>
@@ -47,27 +47,10 @@
             <h1>Mouse Logitech G203</h1>
             <div class="confirmar_pedido_produtos_valor">
               <h2>R$170,91 x 1</h2>
-              <h1>R$170,91</h1>
+              <h1>hehe</h1>
             </div>
           </div>
-          <hr>
-          <div class="confirmar_pedido_produtos">
-            <img src="<?=$PATH_PUBLIC?>/image/vendedor/confirmar_pedido/mouse.svg" alt="">
-            <h1>Mouse Logitech G203</h1>
-            <div class="confirmar_pedido_produtos_valor">
-              <h2>R$170,91 x 1</h2>
-              <h1>R$170,91</h1>
-            </div>
-          </div>
-          <hr>
-          <div class="confirmar_pedido_produtos">
-            <img src="<?=$PATH_PUBLIC?>/image/vendedor/confirmar_pedido/mouse.svg" alt="">
-            <h1>Mouse Logitech G203</h1>
-            <div class="confirmar_pedido_produtos_valor">
-              <h2>R$170,91 x 1</h2>
-              <h1>R$170,91</h1>
-            </div>
-          </div>
+          <hr>          
         </div>
 
         <div class="confirmar_pedido_botao_confirmar_envio">
@@ -91,9 +74,7 @@
             <div>
               <h1>Guilherme Xavier</h1>
               <h2>fez o pedido em</h2>
-              <h2>05/07/2024</h2>
-              <h2>às</h2>
-              <h2>17:37.</h2>
+              <h2><?= htmlspecialchars($data_compra ?? 'Data não disponível') ?></h2>
             </div>
           </div>
 
@@ -106,8 +87,20 @@
               <h1>Guilherme Xavier</h1>
               <h2>pagamento confirmado em</h2>
               <h2>06/07/2024</h2>
+            </div>
+          </div>
+
+          <!-- Aguardando Confirmação -->
+          <div class="confirmar_pedido_container_2_item">
+            <div>
+              <img src="<?=$PATH_PUBLIC?>/image/vendedor/confirmar_pedido/bolinha_itens.svg" alt="">
+            </div>
+            <div>
+              <h1>Aguardando Confirmação</h1>
+              <h2>Iniciado em</h2>
+              <h2>06/07/2024</h2>
               <h2>às</h2>
-              <h2>10:15.</h2>
+              <h2>11:00.</h2>
             </div>
           </div>
 
@@ -175,11 +168,7 @@
             <h2>69910-890</h2>
           </div>
           <h2>Rua Vinte e Três, Tancredo Neves - Rio Branco, AC</h2>
-        </div>
-        <div class="confirmar_pedido_botao_denunciar_usuario">
-          <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/x_branco_icon.svg" alt="">
-          <h1>DENUNCIAR</h1>
-        </div>
+        </div>        
       </div>
     </div>
   </main>

@@ -16,28 +16,37 @@ class GerenciarVendasController extends RenderView
   }
 
   public function exibirVendas()
-{
-  $vendas = [];
-  $estatisticas = ['lucro_total' => 0, 'total_vendas' => 0];
+  {
+    $vendas = [];
+    $estatisticas = ['lucro_total' => 0, 'total_vendas' => 0];
 
-  if (isset($_SESSION['cliente_id'])) {
-    $vendas = $this->model->getVendas($_SESSION['cliente_id'], [
-      'cliente' => $_POST['cliente'] ?? null,
-      'mes' => $_POST['mes'] ?? null,
-      'ano' => $_POST['ano'] ?? null,
-      'ordenar' => $_POST['ordenar'] ?? null
-    ]);
-    
-    $estatisticas = $this->model->getEstatisticas($_SESSION['cliente_id']);
+    $idCliente = $_SESSION['cliente_id'];
+    $idVendedor = $this->model->getIdVendedor($idCliente);
+
+    if (!$idVendedor) {
+      return [
+        'vendas' => [],
+        'estatisticas' => $estatisticas
+      ];
+    }
+
+    if (isset($_POST['filtro'])) {
+      $filtro = $_POST['filtro'];
+      $vendas = $this->model->getVendas($idCliente, $filtro);
+
+      echo json_encode(["success" => true, "message" => 'Vendas carregadas com sucesso', 'data' => $vendas]);
+      exit;
+    } else {
+      $vendas = $this->model->getVendas($idCliente);
+    }
+
+    $estatisticas = $this->model->getEstatisticas($idVendedor);
+
+    return [
+      'vendas' => $vendas,
+      'estatisticas' => $estatisticas
+    ];
   }
-
-  return [
-    'vendas' => $vendas,
-    'estatisticas' => $estatisticas
-  ];
-}
-
-
 
   public function index()
   {
