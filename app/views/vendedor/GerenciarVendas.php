@@ -136,30 +136,6 @@ require_once('./utils/head.php');
             </tr>
           </thead>
           <tbody>
-            <?php if (empty($vendas)): ?>
-              <tr>
-                <td colspan="5">Nenhum resultado encontrado</td>
-              </tr>
-            <?php else: ?>
-              <?php foreach ($vendas as $v): ?>
-                <tr>
-                  <td data-id_compra="<?= $v['id_compra'] ?>">#<?= htmlspecialchars($v['id_compra']) ?></td>
-                  <td data-cliente=" <?= $v['cliente'] ?> "><?= htmlspecialchars($v['cliente']) ?></td>
-                  <td data-preco="<?= $v['valor_total'] ?>">R$ <?= number_format($v['valor_total'], 2, ',', '.') ?></td>
-                  <td data-data="<?= date('d/m/Y', strtotime($v['data_compra'])) ?>"><?= htmlspecialchars(date('d/m/Y', strtotime($v['data_compra']))) ?></td>
-                  <td>
-                    <form method="post" style="display:inline;" action="Venda-api-sale">
-                      <input type="hidden" name="id_venda" value="<?= htmlspecialchars($v['id_compra']) ?>">
-
-                      <button type="submit" class="aprovar_vendedor_btn_aprovar btn_blue base_botao">
-                        <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/caneta_branca_icon.svg" alt="">
-                        GERENCIAR
-                      </button>
-                    </form>
-                  </td>
-                </tr>
-              <?php endforeach; ?>
-            <?php endif; ?>
           </tbody>
         </table>
       </div>

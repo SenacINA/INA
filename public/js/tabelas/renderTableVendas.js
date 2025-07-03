@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <form method="post" style="display:inline;" action="Venda-api-sale">
                 <input type="hidden" name="id_venda" value="${venda.id_compra}">
                 <button type="submit" class="aprovar_vendedor_btn_aprovar btn_blue base_botao">
-                    <img class="base_icon" src="public/image/geral/icons/caneta_branca_icon.svg" alt="">
+                    <img class="base_icon" src="public/image/geral/icons/engrenagem_branco_icon.svg" alt="">
                     GERENCIAR
                 </button>
             </form>
