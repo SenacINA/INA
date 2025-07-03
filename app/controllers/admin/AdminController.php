@@ -3,7 +3,6 @@ require_once __DIR__ . '/../../models/admin/AdminModel.php';
 require_once __DIR__ . '/../../models/admin/GerenciarUsuariosModel.php';
 require_once __DIR__ . '/../../models/geral/GeralModel.php';
 require_once __DIR__ . '/../../models/cliente/ClienteModel.php';
-require_once('./app/models/admin/AprovarVendedorModel.php');
 
 
 class AdminController extends RenderView
@@ -26,20 +25,6 @@ class AdminController extends RenderView
     public function perfil()
     {
         $this->loadView('admin/PerfilAdmin', []);
-    }
-
-    public function aprovarVendedor()
-    {
-        $filtros = [
-            'search' => $_POST['search'] ?? '',
-            'status' => $_POST['status'] ?? '',
-            'mes'    => $_POST['mes']    ?? '',
-            'ano'    => $_POST['ano']    ?? '',
-        ];
-
-        $model = new VendedorModel();
-        $lista = $model->getRequisicoes($filtros);
-        $this->loadView('admin/AprovarVendedor', ['lista' => $lista]);
     }
 
     public function atualizarUsuario()

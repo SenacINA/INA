@@ -65,7 +65,8 @@ CREATE TABLE IF NOT EXISTS vendedor (
     cnpj_vendedor VARCHAR(30) NOT NULL,
     requisitos_completos TINYINT (1) NOT NULL DEFAULT 0,
     documento_entregue TINYINT (1) NOT NULL DEFAULT 0,
-    STATUS ENUM ('Pendente', 'Aprovado', 'Reprovado') NOT NULL DEFAULT 'Pendente',
+    ALTER TABLE vendedor
+    STATUS ENUM('Pendente', 'Aprovado', 'Reprovado', 'Inativado') NOT NULL DEFAULT 'Pendente';
     data_requisicao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id_vendedor),
     UNIQUE KEY cnpj_vendedor (cnpj_vendedor),
