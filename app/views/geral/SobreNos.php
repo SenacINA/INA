@@ -6,49 +6,68 @@
   require_once('./utils/head.php');
 ?>
 <body>
-  <?php
-    include_once("$PATH_COMPONENTS/php/navbar.php");
-  ?>
-    <h1>I.N.A.</h1>
-    <div class="team-description">
-        <p>O Time Inteligência Não Artificial é composto de pessoas incríveis que trabalharam juntas para lhe trazer EaoQuadrado.</p>
-        <p>Conheça cada uma delas nesse carrossel.</p>
+    <?php
+        include_once("$PATH_COMPONENTS/php/navbar.php");
+    ?>
+    <div class="background-sobre_nos">
+
     </div>
-    
-    <div class="carousel-wrapper">
-        <div class="arrow" onclick="prevSlide()">&#9664;</div>
-        
-        <div class="carousel-container">
-            <div class="carousel" id="carousel">
-                <!-- CLONE DA ÚLTIMA IMAGEM (ANTES DA PRIMEIRA) -->
-                <img src="<?=$PATH_PUBLIC?>/image/index/Produto08.jpg" alt="Person 8">
-                <!-- IMAGENS ORIGINAIS -->
-                <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Person 1">
-                <img src="<?=$PATH_PUBLIC?>/image/index/Produto02.jpg" alt="Person 2">
-                <img src="<?=$PATH_PUBLIC?>/image/index/Produto03.jpg" alt="Person 3">
-                <img src="<?=$PATH_PUBLIC?>/image/index/Produto04.jpg" alt="Person 4">
-                <img src="<?=$PATH_PUBLIC?>/image/index/Produto05.jpg" alt="Person 5">
-                <img src="<?=$PATH_PUBLIC?>/image/index/Produto06.jpg" alt="Person 6">
-                <img src="<?=$PATH_PUBLIC?>/image/index/Produto07.jpg" alt="Person 7">
-                <img src="<?=$PATH_PUBLIC?>/image/index/Produto08.jpg" alt="Person 8">
-                <!-- CLONE DA PRIMEIRA IMAGEM (APÓS A ÚLTIMA) -->
-                <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Person 1">
-            </div>
+    <main class="sobre_nos_container">
+        <h1 class="sobre_nos_titulo">I.N.A.</h1>
+        <div class="sobre_nos_descricao">
+            <p>O Time Inteligência Não Artificial é composto de pessoas incríveis que trabalharam juntas para lhe trazer EaoQuadrado.</p>
+            <p>Conheça cada uma delas abaixo.</p>
         </div>
         
-        <div class="arrow" onclick="nextSlide()">&#9654;</div>
-    </div>
-    <div class="footer" id="footer">
-        <h2>Roberto Filho</h2>
-        <p>Fez poha nenhuma<br>Fica dando spoiler de Invencível<br>Não consegue concentrar em uma tarefa por mais de 5 minutos.<br>Não gosta de JojoLand</p>
-    </div>
+        <!-- Grade de Membros -->
+        <div class="sobre_nos_grade">
+        <a href="#sobre-nos-enzo" class="sobre_nos_card">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Enzo">
+            <span>Enzo</span>
+        </a>
+        <a href="#sobre-nos-pessoa2" class="sobre_nos_card">
+            <img src="<?=$PATH_PUBLIC?>/image/index/Produto02.jpg" alt="Person 2">
+            <span>Pessoa 2</span>
+        </a>
+        
+        <a href="#sobre-nos-roberto" class="sobre_nos_card">
+            <img src="<?=$PATH_PUBLIC?>/image/index/Produto08.jpg" alt="Person 8">
+            <span>Roberto Filho</span>
+        </a>
+        </div>
+        
+        <!-- Seções de detalhes -->
+        <section id="sobre-nos-enzo" class="sobre_nos_secao">
+            <img src="<?=$PATH_PUBLIC?>/image/geral/enzo.png" alt="Enzo" class="sobre_nos_foto">
+            <div class="sobre_nos_info">
+                <h2>Enzo</h2>
+                <p>Descrição do Enzo.</p>
+            </div>
+        </section>
 
-    <div class="footer-background"></div>
-    
+        <section id="sobre-nos-pessoa2" class="sobre_nos_secao">
+            <img src="<?=$PATH_PUBLIC?>/image/index/Produto02.jpg" alt="Person 2" class="sobre_nos_foto">
+            <div class="sobre_nos_info">
+                <h2>Pessoa 2</h2>
+                <p>Descrição da Pessoa 2.</p>
+            </div>
+        </section>
+
+        <!-- Adicione mais seções conforme necessário -->
+
+        <section id="sobre-nos-roberto" class="sobre_nos_secao">
+            <img src="<?=$PATH_PUBLIC?>/image/index/Produto08.jpg" alt="Roberto Filho" class="sobre_nos_foto">
+            <div class="sobre_nos_info">
+                <h2>Roberto Filho</h2>
+                <p>Fez poha nenhuma<br>Fica dando spoiler de Invencível<br>Não consegue concentrar em uma tarefa por mais de 5 minutos.<br>Não gosta de JojoLand</p>
+            </div>
+        </section>
+    </main>
+        
     <?php
         include_once("$PATH_COMPONENTS/php/footer.php");
     ?>
     
-<script src='<?=$PATH_PUBLIC?>/js/geral/SobreNos.js'></script>
+<!-- <script src='<?=$PATH_PUBLIC?>/js/geral/SobreNos.js'></script> -->
 </body>
 </html>
