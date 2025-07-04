@@ -195,9 +195,10 @@
 .aprovar_vendedor_estatistica_holder {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 8px;
-  height: 100%;
+  height: 260px;
+
 }
 
 .aprovar_vendedor_estatisticas {

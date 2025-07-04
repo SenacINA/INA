@@ -87,8 +87,9 @@ $routes = [
       // Admin
       '/AdminDashboard'           => 'admin/AdminController@dashboard',
 
-      '/AprovarVendedor'          => 'admin/AprovarVendedorController@index',
-      '/AprovarVendedor-api'      => 'admin/AprovarVendedorController@atualizarStatus',
+      '/AprovarVendedor'                  => 'admin/AprovarVendedorController@index',
+      '/AprovarVendedor-api'              => 'admin/AprovarVendedorController@atualizarStatus',
+      '/EstatisticasVendedores-api'       => 'admin/AprovarVendedorController@mostrarEstatisticas',
 
       '/AtualizarUsuario'         => 'admin/AdminController@atualizarUsuario',
       '/GerenciarUsuarios'        => 'admin/AdminController@gerenciarUsuarios',

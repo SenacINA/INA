@@ -29,16 +29,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function enviarAcao(acao, vendedorId) {
+    fetch("/INA/AprovarVendedor-api", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ acao, vendedor_id: vendedorId }),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        const vendedor = vendedores.find((v) => v.codigo === vendedorId);
+        if (vendedor) {
+          const statusMap = {
+            aprovar: "Aprovado",
+            reprovar: "Reprovado",
+            inativar: "Inativado",
+            ativar: "Pendente",
+          };
+          vendedor.status = statusMap[acao] || vendedor.status;
+        }
+
+        ordenarVendedores(filtroSelect.value);
+        renderizarPagina(paginaAtual);
+      })
+      .catch(() => {
+      });
+  }
+
   function montarLinha(vendedor) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-          <td># ${vendedor.codigo}</td>
-          <td>${vendedor.vendedor}</td>
-          <td>${vendedor.requisitos}</td>
-          <td>${vendedor.declaracao}</td>
-          <td>${vendedor.status}</td>
-          <td class="aprovar_vendedor_coluna_botoes"></td>
-        `;
+      <td># ${vendedor.codigo}</td>
+      <td>${vendedor.vendedor}</td>
+      <td>${vendedor.requisitos}</td>
+      <td>${vendedor.declaracao}</td>
+      <td>${vendedor.status}</td>
+      <td class="aprovar_vendedor_coluna_botoes"></td>
+    `;
 
     const tdGerenciamento = tr.querySelector(
       "td.aprovar_vendedor_coluna_botoes"
@@ -49,10 +75,16 @@ document.addEventListener("DOMContentLoaded", function () {
       form.method = "post";
       form.style.display = "inline";
       form.innerHTML = `
-            <input type="hidden" name="acao" value="${acao}">
-            <input type="hidden" name="vendedor_id" value="${vendedor.codigo}">
-            <button type="submit" class="${classeBtn}">${texto}</button>
-          `;
+        <input type="hidden" name="acao" value="${acao}">
+        <input type="hidden" name="vendedor_id" value="${vendedor.codigo}">
+        <button type="submit" class="${classeBtn}">${texto}</button>
+      `;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        enviarAcao(acao, vendedor.codigo);
+      });
+
       return form;
     }
 
@@ -64,24 +96,18 @@ document.addEventListener("DOMContentLoaded", function () {
         criarFormAcao("reprovar", "RECUSAR", "aprovar_vendedor_btn_recusar")
       );
     } else if (vendedor.status === "Inativado") {
-      const btnAtivar = document.createElement("form");
-      btnAtivar.method = "post";
-      btnAtivar.style.display = "inline";
-      btnAtivar.innerHTML = `
-          <input type="hidden" name="acao" value="ativar">
-          <input type="hidden" name="vendedor_id" value="${vendedor.codigo}">
-          <button type="submit" class="aprovar_vendedor_btn_ativar">ATIVAR</button>
-        `;
-      tdGerenciamento.appendChild(btnAtivar);
+      const formAtivar = criarFormAcao(
+        "ativar",
+        "ATIVAR",
+        "aprovar_vendedor_btn_ativar"
+      );
+      tdGerenciamento.appendChild(formAtivar);
     } else {
-      const formInativar = document.createElement("form");
-      formInativar.method = "post";
-      formInativar.style.display = "inline";
-      formInativar.innerHTML = `
-            <input type="hidden" name="acao" value="inativar">
-            <input type="hidden" name="vendedor_id" value="${vendedor.codigo}">
-            <button type="submit" class="aprovar_vendedor_btn_inativar">INATIVAR</button>
-          `;
+      const formInativar = criarFormAcao(
+        "inativar",
+        "INATIVAR",
+        "aprovar_vendedor_btn_inativar"
+      );
       tdGerenciamento.appendChild(formInativar);
     }
 
@@ -104,13 +130,13 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < linhasFaltantes; i++) {
       const trVazio = document.createElement("tr");
       trVazio.innerHTML = `
-            <td class="linha-vazia">&nbsp;</td>
-            <td class="linha-vazia">&nbsp;</td>
-            <td class="linha-vazia">&nbsp;</td>
-            <td class="linha-vazia">&nbsp;</td>
-            <td class="linha-vazia">&nbsp;</td>
-            <td class="linha-vazia">&nbsp;</td>
-          `;
+        <td class="linha-vazia">&nbsp;</td>
+        <td class="linha-vazia">&nbsp;</td>
+        <td class="linha-vazia">&nbsp;</td>
+        <td class="linha-vazia">&nbsp;</td>
+        <td class="linha-vazia">&nbsp;</td>
+        <td class="linha-vazia">&nbsp;</td>
+      `;
       tbody.appendChild(trVazio);
     }
 

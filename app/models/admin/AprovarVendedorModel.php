@@ -74,32 +74,39 @@ class VendedorModel
       ':id' => $id
     ];
 
-    $rowCount = $this->db->executeQuery($sql, $params);
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->execute($params);
+
+    $rowCount = $stmt->rowCount();
+
     $this->db->disconnect();
 
     return $rowCount > 0;
   }
 
   public function getEstatisticas(): array
-  {
+{
     $this->db->connect();
 
-    $sql = "
-        SELECT 
-            SUM(CASE WHEN status = 'Aprovado' THEN 1 ELSE 0 END) AS aprovados,
-            SUM(CASE WHEN status = 'Reprovado' THEN 1 ELSE 0 END) AS reprovados,
-            SUM(CASE WHEN status = 'Inativado' THEN 1 ELSE 0 END) AS inativados
-        FROM vendedor
-    ";
+    $sql = "SELECT status, COUNT(*) AS total FROM vendedor GROUP BY status";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->execute();
 
-    $result = $this->db->executeQuery($sql);
+    $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $this->db->disconnect();
 
-    if (is_array($result) && count($result) > 0) {
-      return $result[0];
+    $estatisticas = [
+        'Aprovado' => 0,
+        'Reprovado' => 0,
+        'Inativado' => 0
+    ];
+
+    foreach ($resultados as $linha) {
+        $estatisticas[$linha['status']] = (int)$linha['total'];
     }
 
-    return ['aprovados' => 0, 'reprovados' => 0, 'inativados' => 0];
-  }
+    return $estatisticas;
+}
+
 }

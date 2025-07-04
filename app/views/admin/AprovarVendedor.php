@@ -6,10 +6,6 @@ $css = ["/css/admin/AprovarVendedor.css"];
 require_once('./utils/head.php');
 require_once('./app/controllers/admin/AprovarVendedorController.php');
 
-$controller = new AprovarVendedorController();
-$filtros     = $controller->filtros;
-$lista       = $controller->lista;
-$estatisticas = $controller->model->getEstatisticas();
 $e = $estatisticas ?? ['aprovados' => 0, 'reprovados' => 0, 'inativados' => 0];
 
 ?>
@@ -120,17 +116,17 @@ $e = $estatisticas ?? ['aprovados' => 0, 'reprovados' => 0, 'inativados' => 0];
                 <div class="aprovar_vendedor_estatistica_holder">
                   <div class="aprovar_vendedor_card">
                     <div class="aprovar_vendedor_titulo">Vendedores Aprovados</div>
-                    <div class="aprovar_vendedor_estatistica_descricao"><?= htmlspecialchars($e['aprovados']) ?></div>
+                    <div class="aprovar_vendedor_estatistica_descricao"><?= htmlspecialchars($estatisticas['Aprovado'] ?? 0) ?></div>
                   </div>
 
                   <div class="aprovar_vendedor_card">
                     <div class="aprovar_vendedor_titulo">Vendedores Reprovados</div>
-                    <div class="aprovar_vendedor_estatistica_descricao"><?= htmlspecialchars($e['reprovados']) ?></div>
+                    <div class="aprovar_vendedor_estatistica_descricao"><?= htmlspecialchars($estatisticas['Reprovado'] ?? 0) ?></div>
                   </div>
 
                   <div class="aprovar_vendedor_card">
                     <div class="aprovar_vendedor_titulo">Vendedores Inativados</div>
-                    <div class="aprovar_vendedor_estatistica_descricao"><?= htmlspecialchars($e['inativados']) ?></div>
+                    <div class="aprovar_vendedor_estatistica_descricao"><?= htmlspecialchars($estatisticas['Inativado'] ?? 0) ?></div>
                   </div>
                 </div>
               </div>

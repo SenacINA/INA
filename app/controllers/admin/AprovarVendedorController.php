@@ -3,63 +3,79 @@ require_once('./app/models/admin/AprovarVendedorModel.php');
 
 class AprovarVendedorController
 {
-    public VendedorModel $model;
-    public array $filtros;
-    public array $lista;
-    
-    public function __construct()
-    {
-        $this->model = new VendedorModel();
-        $this->processarRequisicao();
-        $this->carregarFiltros();
-        $this->buscarLista();
+  public VendedorModel $model;
+  public array $filtros = [];
+  public array $lista = [];
+
+  public function __construct()
+  {
+    $this->model = new VendedorModel();
+  }
+
+  public function index()
+  {
+    $filtros = [
+      'search' => $_GET['search'] ?? '',
+      'status' => $_GET['status'] ?? '',
+      'mes'    => $_GET['mes'] ?? '',
+      'ano'    => $_GET['ano'] ?? '',
+    ];
+
+    $lista = $this->model->getRequisicoes($filtros);
+    $estatisticas = $this->model->getEstatisticas();
+
+    require_once("./app/views/admin/AprovarVendedor.php");
+  }
+
+
+  public function atualizarStatus()
+  {
+    $input = json_decode(file_get_contents("php://input"), true);
+
+    if (!$input || !isset($input['acao'], $input['vendedor_id'])) {
+      http_response_code(400);
+      echo json_encode(['erro' => 'Dados inválidos']);
+      return;
     }
 
-    private function loadView(string $viewPath, array $data = []): void
-    {
-        extract($data);
-        require_once("./app/views/{$viewPath}.php");
+    $acao = $input['acao'];
+    $id = (int)$input['vendedor_id'];
+
+    $statusMap = [
+      'aprovar' => 'Aprovado',
+      'reprovar' => 'Reprovado',
+      'inativar' => 'Inativado',
+      'ativar' => 'Pendente'
+    ];
+
+    if (!array_key_exists($acao, $statusMap)) {
+      http_response_code(400);
+      echo json_encode(['erro' => 'Ação inválida']);
+      return;
     }
 
-    public function index()
-    {
-        $estatisticas = $this->model->getEstatisticas();
-        $this->loadView('admin/AprovarVendedor', [
-            'lista'        => $this->lista,
-            'estatisticas' => $estatisticas
-        ]);
-    }
+    $sucesso = $this->model->atualizarStatus($id, $statusMap[$acao]);
 
-    private function processarRequisicao(): void
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao'], $_POST['vendedor_id'])) {
-            $acao = $_POST['acao'];
-            $id   = (int)$_POST['vendedor_id'];
-
-            if ($acao === 'aprovar') {
-                $this->model->atualizarStatus($id, 'Aprovado');
-            } elseif ($acao === 'reprovar') {
-                $this->model->atualizarStatus($id, 'Reprovado');
-            } elseif ($acao === 'inativar') {
-                $this->model->atualizarStatus($id, 'Inativado');
-            } elseif ($acao === 'ativar') {
-                $this->model->atualizarStatus($id, 'Pendente');
-            }
-        }
+    if ($sucesso) {
+      echo json_encode([
+        'sucesso' => true,
+        'mensagem' => "Status do vendedor atualizado para '{$statusMap[$acao]}'."
+      ]);
+    } else {
+      http_response_code(500);
+      echo json_encode(['erro' => 'Falha ao atualizar status']);
     }
+  }
 
-    private function carregarFiltros(): void
-    {
-        $this->filtros = [
-            'search' => $_POST['search'] ?? '',
-            'status' => $_POST['status'] ?? '',
-            'mes'    => $_POST['mes']    ?? '',
-            'ano'    => $_POST['ano']    ?? '',
-        ];
-    }
+  public function mostrarEstatisticas()
+  {
+    $estatisticas = $this->model->getEstatisticas();
 
-    private function buscarLista(): void
-    {
-        $this->lista = $this->model->getRequisicoes($this->filtros);
-    }
+    header('Content-Type: application/json');
+    echo json_encode([
+      'aprovados' => $estatisticas['Aprovado'] ?? 0,
+      'reprovados' => $estatisticas['Reprovado'] ?? 0,
+      'inativados' => $estatisticas['Inativado'] ?? 0,
+    ]);
+  }
 }
