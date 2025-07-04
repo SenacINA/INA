@@ -1136,6 +1136,7 @@ input:checked + .toggle_slider::before {
   justify-content: space-between;
   &>img {
     aspect-ratio: 1 / 1;
+    object-fit: contain;
   }
 }
 
