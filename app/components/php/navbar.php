@@ -79,14 +79,6 @@ function generateModalContent($user)
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'GerenciarProdutos\')">
-                      <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
-                          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
-                      </svg>
-                      <span>Gerenciar Produtos</span>
-                  </a>
-              </li>
-              <li>
                   <a href="#" class="menu-item" onclick="pag(\'GerenciarCarrossel\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M10 8v8l5-4-5-4zm9-5H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
@@ -174,6 +166,14 @@ function generateModalContent($user)
                       </svg>
                       <span>Editar Perfil</span>
                   </a>
+              </li>
+              <li>
+                <a href="#" class="menu-item" onclick="pag(\'GerenciarVendas\')">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#3498db">
+                    <path fill="#3498db" fill-rule="evenodd" d="M7 1h4.25v3.75H4V4.5zm13 3.75h-7.25V1H17l3 3.5zM4 6.25V16h5V9h6v7h5V6.25zm9.5 4.25v7H16v1l-4 4l-4-4v-1h2.5v-7z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Gerenciar Vendas</span>
+                </a>
               </li>
               <li>
                   <a href="#" class="menu-item" onclick="pag(\'GerenciarProdutos\')">
