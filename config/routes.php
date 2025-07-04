@@ -6,6 +6,8 @@ $routes = [
       // Cliente
       '/Produto'                   => 'cliente/ProdutoController@index',
       '/Categoria'                 => 'cliente/CategoriaController@index',
+      '/categorias-api'            => 'geral/CardController@filtrarProdutosCategoria',
+      '/subcategorias-api'            => 'geral/CardController@filtrarProdutosSubcategoria',
       '/Login'                     => 'cliente/ClienteController@login',
       '/auth'                      => 'auth/AuthController@loginForm',
       '/Logout'                    => 'auth/AuthController@logout',
@@ -25,7 +27,7 @@ $routes = [
       '/Carrinho-api-update'       => 'cliente/CarrinhoController@atualizar',
       '/Carrinho-api-badge'        => 'cliente/CarrinhoController@exibirBadge',
       '/CarrinhoPagamentos'        => 'cliente/ClienteController@pagamentos',
-      
+
       '/CarrinhoDados'             => 'cliente/CarrinhoDadosController@index',
       '/CarrinhoDados-salvar'      => 'cliente/CarrinhoDadosController@salvarEndereco',
       '/CarrinhoDados-excluir'     => 'cliente/CarrinhoDadosController@excluirEndereco',

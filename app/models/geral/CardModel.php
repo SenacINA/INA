@@ -62,7 +62,7 @@ class CardModel
         produto p
     LEFT JOIN 
         imagem_produto ip 
-        ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 0
+        ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 1
     WHERE 
         p.status_produto != 0
         AND p.subcategoria_produto = :subcategoria;";
@@ -90,7 +90,7 @@ class CardModel
     produto p
   LEFT JOIN 
     imagem_produto ip 
-    ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 0
+    ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 1
   WHERE 
     p.status_produto != 0
     AND p.categoria_produto = :categoria;";
@@ -102,7 +102,7 @@ class CardModel
     return $stmt->fetchAll();
   }
 
-  public function getProdutoInfoPorVendedor($idVendedor)
+  public function getProdutoInfoPorVendedor(int $idVendedor)
   {
     $sql = "SELECT 
         p.id_produto,
@@ -135,7 +135,7 @@ class CardModel
     return $stmt->fetchAll();
   }
 
-  public function getDestaquesPorVendedor($idVendedor)
+  public function getDestaquesPorVendedor(int $idVendedor)
   {
     $sql = "SELECT 
           p.id_produto,
