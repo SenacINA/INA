@@ -224,11 +224,97 @@ INSERT INTO perfil (
     '/image/cliente/perfil_cliente/banner_user.png'
 );
 
+-- Insert cliente id:7 (Vendedor 2)
+
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    7,
+    'Vendedor2',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-01',
+    'vendedor2@email.com',
+    1,
+    1
+);
+
+-- Insert Perfil vendedor 2
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    6,
+    7,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
 -- Inserir categoria
 INSERT INTO categoria (nome_categoria) VALUES ('Geral');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria) 
 VALUES ('Geral', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Geral'));
+
+-- Categoria: Periféricos
+INSERT INTO categoria (nome_categoria)
+VALUES ('Periféricos');
+
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
+VALUES 
+  ('Mouses',     (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Periféricos')),
+  ('Teclados',   (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Periféricos')),
+  ('Headsets',   (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Periféricos'));
+
+-- Categoria: Componentes
+INSERT INTO categoria (nome_categoria)
+VALUES ('Componentes');
+
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
+VALUES
+  ('Placas de Vídeo',     (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Componentes')),
+  ('Placas-Mãe',           (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Componentes')),
+  ('Memórias RAM',         (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Componentes')),
+  ('Fontes de Alimentação',(SELECT id_categoria FROM categoria WHERE nome_categoria = 'Componentes'));
+
+-- Categoria: Acessórios
+INSERT INTO categoria (nome_categoria)
+VALUES ('Acessórios');
+
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
+VALUES
+  ('Mousepads',            (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Acessórios')),
+  ('Cabos e Adaptadores',  (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Acessórios')),
+  ('Suportes e Montagens', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Acessórios'));
+
+-- Categoria: Computadores
+INSERT INTO categoria (nome_categoria)
+VALUES ('Computadores');
+
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
+VALUES
+  ('Desktops',             (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Computadores')),
+  ('Notebooks',            (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Computadores')),
+  ('All-in-One',           (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Computadores'));
+
+-- Categoria: Monitores
+INSERT INTO categoria (nome_categoria)
+VALUES ('Monitores');
+
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
+VALUES
+  ('LED',                  (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Monitores')),
+  ('IPS',                  (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Monitores')),
+  ('Curvos',               (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Monitores'));
+
 
 -- Inserir endereço
 INSERT INTO endereco (
@@ -249,6 +335,27 @@ INSERT INTO endereco (
     'MS',
     'Campo Grande',
     1
+);
+
+-- Inserir endereço para o cliente 7 (Vendedor 2)
+INSERT INTO endereco (
+    id_endereco,
+    rua_endereco,
+    bairro_endereco,
+    numero_endereco,
+    referencia_endereco,
+    uf_endereco,
+    cidade_endereco,
+    id_cliente
+) VALUES (
+    2,
+    '',
+    '',
+    '',
+    '',
+    'SP',
+    'Presidente Prudente',
+    7
 );
 
 -- Inserir perfil
@@ -306,6 +413,7 @@ INSERT INTO produto (
     cod_produto,
     nome_produto,
     preco_produto,
+    marca_produto,
     categoria_produto,
     subcategoria_produto,
     origem_produto,
@@ -323,6 +431,7 @@ INSERT INTO produto (
     1000,
     'Mouse Redragon Cobra M711',
     100,
+    'Redragon',
     1,
     1,
     'Campo Grande',
@@ -348,6 +457,7 @@ INSERT INTO produto (
     cod_produto,
     nome_produto,
     preco_produto,
+    marca_produto,
     categoria_produto,
     subcategoria_produto,
     origem_produto,
@@ -365,6 +475,7 @@ INSERT INTO produto (
     1001,
     'Snoopy',
     1,
+    'Cachorro',
     1,
     1,
     'Campo Grande',
@@ -385,6 +496,7 @@ INSERT INTO produto (
     cod_produto,
     nome_produto,
     preco_produto,
+    marca_produto,
     categoria_produto,
     subcategoria_produto,
     origem_produto,
@@ -402,6 +514,7 @@ INSERT INTO produto (
     1003,
     'SAMSUNG Galaxy Buds 2',
     250,
+    'Samsung',
     1,
     1,
     'São Paulo',
@@ -455,6 +568,7 @@ INSERT INTO produto (
     cod_produto,
     nome_produto,
     preco_produto,
+    marca_produto,
     categoria_produto,
     subcategoria_produto,
     origem_produto,
@@ -472,6 +586,7 @@ INSERT INTO produto (
     1004,
     'Deo Parfum Essencial Natura Masculino 100 ml',
     139,
+    'Natura',
     1,
     1,
     'São Paulo',
@@ -492,6 +607,7 @@ INSERT INTO produto (
     cod_produto,
     nome_produto,
     preco_produto,
+    marca_produto,
     categoria_produto,
     subcategoria_produto,
     origem_produto,
@@ -509,6 +625,7 @@ INSERT INTO produto (
     1005,
     'PlayStation 5 Pro PlayStation 5 Pro Sony 2024',
     6999,
+    'Sony',
     1,
     1,
     'São Paulo',
@@ -544,6 +661,80 @@ INSERT INTO imagem_produto (
     (12, 5, '/upload/produtos/5/imagem_1_1750113375.webp', 1),
     (13, 5, '/upload/produtos/5/imagem_2_1750113375.webp', 2),
     (14, 5, '/upload/produtos/5/imagem_3_1750113375.webp', 3);
+
+-- Insert vendedor 2 
+
+INSERT INTO vendedor (
+    id_vendedor,
+    id_cliente,
+    nome_fantasia,
+    cnpj_vendedor,
+    requisitos_completos,
+    documento_entregue,
+    STATUS,
+    data_requisicao
+) VALUES (
+    2,
+    7,
+    'Vendedor - 2',
+    '12345678911',
+    1,
+    1,
+    'Pendente',
+    '2025-07-01 10:51:43'
+);
+
+-- Inserir produto 1 (id:6) do vendedor 2
+
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    6,
+    2,
+    1000,
+    'Monitor Gamer HERO 23,8'' 144Hz IPS FreeSync 24G2/BK Cor Preto/Vermelho AOC',
+    899,
+    'AOC',
+    6,
+    16,
+    'São Paulo',
+    50,
+    7000,
+    10000,
+    22,
+    52,
+    52,
+    '<p><strong>AOC HERO 27</strong></p><h4>Gameplay liso.</h4><p>Com o monitor HERO 27 seus movimentos serão ainda mais insanos. Com tela de 27", desempenho ultrarrápido e ótimos recursos para todos os tipos de jogos sua experiência será impecável. Conte também com o G-MENU, um software exclusivo da AOC para configurar seu dispositivo em uma única plataforma.</p><p><br class="ProseMirror-trailingBreak"></p><h3><strong>G-SYNC</strong></h3><p>É oficial: após ser testado pela NVIDIA, o monitor HERO 27 é compatível com a tecnologia G-Sync e entrega aos gamers uma experiência lisa, rápida e responsiva em todos os jogos.</p><p><br class="ProseMirror-trailingBreak"></p><h3><strong>TAXA DE ATUALIZAÇÃO DE 144HZ</strong></h3><p>Experimente uma jogabilidade impecável com a taxa de atualização de 144Hz, sem rastros e efeitos fantasmas.</p><p><br class="ProseMirror-trailingBreak"></p><h3><strong><br>1MS DE TEMPO DE RESPOSTA</strong></h3><p>Tenha em sua casa um monitor gamer com tempo de resposta de 1ms e aproveite um desempenho excepcional.</p><p><br class="ProseMirror-trailingBreak"></p><h3><strong><br>BASE ERGONÔMICA</strong></h3><p>Projetado e pensado para os gamers, a base ergonômica garante um controle preciso para o ajuste e adaptação conveniente da altura e ângulo do seu monitor, permitindo que você jogue por ainda mais tempo, sem nenhum desconforto.</p><p><br class="ProseMirror-trailingBreak"></p><h3><strong>DESIGN GAMER COM BORDAS ULTRAFINAS</strong></h3><p>Tenha uma experiência completamente imersiva graças às bordas ultrafinas, que possibilitam uma visão ininterrupta dos seus jogos.</p>',
+    1
+);
+
+-- Imagens do produto 6
+INSERT INTO imagem_produto (
+    id_imagem_produto,
+    id_produto,
+    endereco_imagem_produto,
+    index_imagem_produto
+) VALUES
+    (15, 6, '/upload/produtos/6/imagem_1_1751386027.webp', 1),
+    (16, 6, '/upload/produtos/6/imagem_2_1751386027.webp', 2),
+    (17, 6, '/upload/produtos/6/imagem_3_1751386027.webp', 3),
+    (18, 6, '/upload/produtos/6/imagem_4_1751386027.webp', 4);
 
 -- Avaliações para o produto 1 do vendedor 1 por vários clientes
 
@@ -593,7 +784,7 @@ INSERT INTO imagem_avaliacao (
 INSERT INTO `metodo_pagamento` (`id_metodo_pagamento`, `tipo_pagamento`) VALUES ('1', 'Pix');
 
 -- Insert na tabela compra
-INSERT INTO compra (id_cliente, id_vendedor, data_compra, id_endereço, id_tipo_frete)
+INSERT INTO compra (id_cliente, id_vendedor, data_compra, id_endereco, id_tipo_frete)
 VALUES (3, 1, CURDATE(), 1, 1);  -- Supondo endereço ID 1 e frete ID 1
 
 -- Insert na tabela item_compra
@@ -617,3 +808,29 @@ VALUES (
     TRUE,  -- Pagamento confirmado
     TRUE   -- Entrega confirmada
 );
+
+-- Promoção
+
+INSERT INTO tipo_promocoes (promocao)
+VALUES 
+  ('Reais sobre Total'),
+  ('Porcentagem sobre Total');
+
+
+-- Promoção produto 1 e 3
+INSERT INTO promocao (
+  id_produto,
+  ativo_promocao,
+  tipo_promocao,
+  desconto_promocao,
+  data_inicio_promocao,
+  data_fim_promocao,
+  hora_inicio_promocao,
+  hora_fim_promocao
+) VALUES
+  (1, TRUE, 1, 10,
+   '2025-06-20', '2025-07-10',
+   '00:00:00', '23:59:59'),
+  (3, TRUE, 2, 20,
+   '2025-06-25', '2025-07-05',
+   '00:00:00', '23:59:59');

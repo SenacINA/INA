@@ -4,17 +4,17 @@ require_once __DIR__ . '/../../models/cliente/CarrinhoModel.php';
 
 class CarrinhoController extends RenderView
 {
-  public CarrinhoModel $model;
+    public CarrinhoModel $model;
 
-  public function __construct()
-  {
-    $this->model = new CarrinhoModel();
-  }
+    public function __construct()
+    {
+        $this->model = new CarrinhoModel();
+    }
 
-  public function adicionarItem()
-  {
-    $idProduto = $_POST['produto_id'] ?? null;
-    $quantidade = $_POST['quantidade'] ?? 1;
+    public function adicionarItem()
+    {
+        $idProduto = $_POST['produto_id'] ?? null;
+        $quantidade = $_POST['quantidade'] ?? 1;
 
     if (isset($_SESSION['cliente_id']) && $idProduto) {
       $carrinho = $this->model->adicionarItem((int)$idProduto, (int)$quantidade);
@@ -26,7 +26,8 @@ class CarrinhoController extends RenderView
         exit;
       }
       echo json_encode([
-        'success' => true
+        'success' => true,
+        'message' => 'Produto adicionado ao carrinho'
       ], JSON_UNESCAPED_UNICODE);
       exit;
     } else {
@@ -40,57 +41,77 @@ class CarrinhoController extends RenderView
 
   public function removerItem()
   {
-    $this->model->removerItem($_POST['id_produto']);
-
-    header("Location: " . $_SERVER['HTTP_REFERER']);
-    exit;
+    $carrinho = $this->model->removerItem($_POST['id_produto']);
+    if ($carrinho) {
+      echo json_encode([
+        'success' => true,
+        'message' => 'Item removido do carrinho'
+      ], JSON_UNESCAPED_UNICODE);
+      exit;
+    } else {
+      echo json_encode([
+        'success' => false,
+        'message' => 'Erro ao remover item'
+      ], JSON_UNESCAPED_UNICODE);
+      exit;
+    }
   }
 
   public function limparCarrinho()
   {
-    $idProduto = (int)$_POST['idProduto'];
-    $this->model->limparCarrinho($idProduto);
+    $carrinho = $this->model->limparCarrinho($_SESSION['cliente_id']);
 
-    header("Location: " . $_SERVER['HTTP_REFERER']);
-    exit;
-  }
-
-  public function exibirItens()
-  {
-    if (isset($_SESSION['cliente_id'])) {
-      $itensCarrinho = $this->model->getItensCarrinho();
-      $totalCarrinho = $this->model->calcularTotal();
+    if ($carrinho) {
+      echo json_encode([
+        'success' => true,
+        'message' => 'Carrinho limpo'
+      ], JSON_UNESCAPED_UNICODE);
+      exit;
     } else {
-      $itensCarrinho = [];
-      $totalCarrinho = 0;
+      echo json_encode([
+        'success' => false,
+        'message' => 'Erro ao limpar o carrinho'
+      ], JSON_UNESCAPED_UNICODE);
+      exit;
     }
-    return [
-      'itensCarrinho' => $itensCarrinho,
-      'totalCarrinho' => $totalCarrinho
-    ];
   }
 
-  public function exibirBadge()
-  {
-    $produtos = $this->exibirItens();
-    header('Content-Type: application/json');
+    public function exibirItens()
+    {
+        if (isset($_SESSION['cliente_id'])) {
+            $itensCarrinho = $this->model->getItensCarrinho();
+            $totalCarrinho = $this->model->calcularTotal();
+        } else {
+            $itensCarrinho = [];
+            $totalCarrinho = 0;
+        }
+        return [
+            'itensCarrinho' => $itensCarrinho,
+            'totalCarrinho' => $totalCarrinho
+        ];
+    }
 
-    $quantidade = count($produtos['itensCarrinho']);
+    public function exibirBadge()
+    {
+        $produtos = $this->exibirItens();
+        header('Content-Type: application/json');
 
-    echo json_encode(['quantidade' => $quantidade]);
-  }
+        $quantidade = count($produtos['itensCarrinho']);
 
-  public function atualizar()
-  {
-    $itemId = $_POST['id'];
-    $itemQuantidade = $_POST['quantidade'];
+        echo json_encode(['quantidade' => $quantidade]);
+    }
 
-    $this->model->atualizarQuantidade($itemId, $itemQuantidade);
-  }
+    public function atualizar()
+    {
+        $itemId = $_POST['id'];
+        $itemQuantidade = $_POST['quantidade'];
 
-  public function index()
-  {
-    $dados = $this->exibirItens();
-    $this->loadView('cliente/Carrinho', $dados);
-  }
+        $this->model->atualizarQuantidade($itemId, $itemQuantidade);
+    }
+
+    public function index()
+    {
+        $dados = $this->exibirItens();
+        $this->loadView('cliente/Carrinho', $dados);
+    }
 }

@@ -1,4 +1,7 @@
 <!-- FINALIZADO -->
+<?php
+$imagensExistentes = array_map(fn($i) => ['id' => $i['id'], 'url' => $i['url']], $produto['imagens'] ?? []);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
@@ -24,7 +27,8 @@
         <hr class="editar_produto_linha_titulo">
       </div>
       <div class='editar_produto_container'>
-        <form action="#" class='editar_produto_form_grid'>
+        <form action="AtualizarProduto" class='editar_produto_form_grid' method="POST">
+          <input type="hidden" name="produtoId" value="<?= $produto['id_produto'] ?>">
           <div class='editar_produto_form'>
             <div class='editar_produto_form_title'>
               <div class='editar_produto_line'></div>
@@ -40,37 +44,50 @@
             <div class='editar_produto_form_input'>
               <div class='editar_produto_input'>
                 <label for="nomeProduto">Nome do Produto</label>
-                <input class='base_input' type="text" id='nomeProduto' name='nomeProduto'>
+                <input class='base_input' type="text" id='nomeProduto' value="<?= $produto['nome_produto'] ?>" name='nomeProduto'>
               </div>
               <div class='editar_produto_small_input'>
                 <div class='editar_produto_input'>
                   <label for="valorProduto">Valor</label>
-                  <input class='base_input' type="number" id='valorProduto' name='valorProduto'>
+                  <input class='base_input' type="number" id='valorProduto' value="<?= $produto['preco_produto'] ?>" name='valorProduto'>
                 </div>
                 <div class='editar_produto_input'>
-                  <label for="categoriaProduto">Categoria</label>
-                  <input class='base_input' type="text" id='categoriaProduto' name='categoriaProduto'>
+                  <label for="marcaProduto">Marca</label>
+                  <input class='base_input' type="text" id='marcaProduto' value="<?= $produto['marca_produto'] ?>" name='marcaProduto'>
                 </div>
               </div>
-              <div class='editar_produto_input'>
-                <label for="marcaProduto">Marca</label>
-                <input class='base_input' type="text" id='marcaProduto' name='marcaProduto'>
-              </div>
+              
               <div class='editar_produto_small_input'>
+                
                 <div class='editar_produto_input'>
                   <label for="codigoProduto">Código</label>
-                  <input class='base_input' type="number" id='codigoProduto' name='codigoProduto'>
+                  <input class='base_input' type="number" id='codigoProduto' value="<?= $produto['cod_produto'] ?>" name='codigoProduto'>
                 </div>
                 <div class='editar_produto_input'>
                   <label for="estoqueProduto">Estoque</label>
-                  <input class='base_input' type="number" id='estoqueProduto' name='estoqueProduto'>
+                  <input class='base_input' type="number" id='estoqueProduto' value="<?= $produto['unidade_produto']?>" name='estoqueProduto'>
                 </div>
               </div>
               <div class='editar_produto_small_input'>
                 <div class='editar_produto_input'>
                   <label for="origemProduto">Origem</label>
-                  <input class='base_input' type="text" id='origemProduto' name='origemProduto'>
+                  <input class='base_input' type="text" id='origemProduto' value="<?= $produto['origem_produto']?>" name='origemProduto'>
                 </div>
+              </div>
+
+              <div class="base_input_select">
+                <label for="categoriaProduto">Categoria</label>
+                <select
+                  class="base_input" id="categoriaProduto" name="categoriaProduto" data-selected="<?= $produto['categoria']['id'] ?>" >
+                  <option value="" disabled>Selecione</option>
+                </select>
+              </div>
+
+              <div class="base_input_select">
+                <label for="subCategoriaProduto">Sub-Categoria</label>
+                <select class="base_input" id="subCategoriaProduto" name="subCategoriaProduto" data-selected="<?= $produto['subcategoria']['id'] ?>">
+                  <option value="" disabled selected>Selecione</option>
+                </select>
               </div>
             </div>
           </div>
@@ -89,33 +106,24 @@
             <div class='editar_produto_form_input'>
               <div class='editar_produto_small_input'>
                 <div class='editar_produto_input'>
-                  <label for="pesoLiquidoProduto">Peso Líquido</label>
-                  <input class='base_input' type="number" id='pesoLiquidoProduto' name='pesoProduto'>
+                  <label for="pesoLiquidoProduto">Peso Líquido(g)</label>
+                  <input class='base_input' value="<?= $produto['peso_liquido_produto'] ?>" type="number" id='pesoLiquidoProduto' name='pesoProduto'>
                 </div>
                 <div class='editar_produto_input'>
-                  <label for="pesoBrutoProduto">Peso Bruto</label>
-                  <input class='base_input' type="text" id='pesoBrutoProduto' name='pesoBrutoProduto'>
-                </div>
-                <div class='base_input_select'>
-                  <label for="tipoEmbalagem">Tipo De Embalagem</label>
-                  <select class='base_input' id='tipoEmbalagem' name='tipoEmbalagem'>
-                    <option value="caixa">Caixa</option>
-                    <option value="saco">Saco</option>
-                    <option value="embalagemPlastica">Embalagem Plástica</option>
-                    <option value="outro">Outro</option>
-                  </select>
+                  <label for="pesoBrutoProduto">Peso Bruto(g)</label>
+                  <input class='base_input' type="text" value="<?= $produto['peso_bruto_produto'] ?>" id='pesoBrutoProduto' name='pesoBrutoProduto'>
                 </div>
                 <div class='editar_produto_input'>
-                  <label for="larguraProduto">Largura</label>
-                  <input class='base_input' type="text" id='larguraProduto' name='larguraProduto'>
+                  <label for="larguraProduto">Largura(cm)</label>
+                  <input class='base_input' type="text" value="<?= $produto['largura_produto'] ?>" id='larguraProduto' name='larguraProduto'>
                 </div>
                 <div class='editar_produto_input'>
-                  <label for="alturaProduto">Altura</label>
-                  <input class='base_input' type="text" id='alturaProduto' name='alturaProduto'>
+                  <label for="alturaProduto">Altura(cm)</label>
+                  <input class='base_input' type="text" value="<?= $produto['altura_produto'] ?>" id='alturaProduto' name='alturaProduto'>
                 </div>
                 <div class='editar_produto_input'>
-                  <label for="comprimentoProduto">Comprimento</label>
-                  <input class='base_input' type="text" id='comprimentoProduto' name='comprimentoProduto'>
+                  <label for="comprimentoProduto">Comprimento(cm)</label>
+                  <input class='base_input' type="text" value="<?= $produto['altura_produto'] ?>" id='comprimentoProduto' name='comprimentoProduto'>
                 </div>
               </div>
             </div>
@@ -171,7 +179,11 @@
                   </div>
                 </div>
                 <input type="text" id="descricao" name="descricao" hidden>
-                <div class="editor-content"></div>
+                <div class="editor-content">
+                  
+                    <?= $produto['descricao_produto'] ?>
+                  
+                </div>
               </div>
             </div>
           </div>
@@ -189,32 +201,29 @@
             </div>
             <div class='toggle_container'>
               <label class="toggle">
-                <input type="checkbox" name="toggle-group" id="toggle-promotion" class='base_input'>
+                <input <?= (!empty($promocao) && $promocao['ativo_promocao'] != 0 ) ? 'checked' : '' ?> type="checkbox" name="toggle-group" id="toggle-promotion" class='base_input'>
                 <span class="toggle_slider"></span>
               </label>
               <label for='toggle-promotion'>Ativar Promoção</label>
             </div>
-
             <div class='editar_produto_promocao'>
-              <h4>Tipos de Promoção</h4>
-              <div class='radio_inputs'>
-                <label for="reaisSobreTotal">Reais sobre o Total</label>
-                <input name='tipoPromocaoProduto' id='reaisSobreTotal' type="radio" checked>
-              </div>
-              <div class='radio_inputs'>
-                <label for="reaisSobreFrete">Reais sobre o Frete</label>
-                <input name='tipoPromocaoProduto' id='reaisSobreFrete' type="radio">
-              </div>
-              <div class='radio_inputs'>
-                <label for="porcenSobreProduto">Porcentagem sobre o Total</label>
-                <input name='tipoPromocaoProduto' id='porcenSobreProduto' type="radio">
-              </div>
+                <h4>Tipos de Promoção</h4>
+                <div class='radio_inputs'>
+                    <label for="reaisSobreTotal">Reais sobre o Total</label>
+                    <input value='1' name='tipoPromocaoProduto' id='reaisSobreTotal' type="radio" 
+                          <?= (($promocao['tipo_promocao'] ?? 0) == 1) ? 'checked' : '' ?>>
+                </div>
+                <div class='radio_inputs'>
+                    <label for="porcenSobreProduto">Porcentagem sobre o Total</label>
+                    <input value='2' name='tipoPromocaoProduto' id='porcenSobreProduto' type="radio"
+                          <?= (($promocao['tipo_promocao'] ?? 0) == 2) ? 'checked' : '' ?>>
+                </div>
             </div>
             <div class='editar_produto_small_input'>
               <div class='editar_produto_input'>
                 <label for="produtoDescontPromo">Desconto da Promoção</label>
                 <div class="input_icon_container">
-                  <input class='base_input' type="text" id='produtoDescontPromo' name='produtoDescontPromo'>
+                  <input class='base_input' type="text" id='produtoDescontPromo' value="<?= $promocao['desconto_promocao'] ?? ''?>" name='produtoDescontPromo'>
                   <div class='input_icon'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path
@@ -228,19 +237,19 @@
             <div class='editar_produto_small_input' id='small_duas_colunas'>
               <div class='editar_produto_input'>
                 <label for="promoDataInicio">Data de Início</label>
-                <input class='base_input' type="date" id='promoDataInicio' name='promoDataInicio'>
+                <input class='base_input' value="<?= ($promocao['data_inicio_promocao']) ?? '' ?>" type="date" id='promoDataInicio' name='promoDataInicio'>
               </div>
               <div class='editar_produto_input'>
                 <label for="promoDataFim">Data de Término</label>
-                <input class='base_input' type="date" id='promoDataFim' name='promoDataFim'>
+                <input class='base_input' value="<?= ($promocao['data_fim_promocao']) ?? '' ?>" type="date" id='promoDataFim' name='promoDataFim'>
               </div>
               <div class='editar_produto_input'>
                 <label for="promoHoraInicio">Horário de Início</label>
-                <input class='base_input' type="time" id='promoHoraInicio' name='promoHoraInicio'>
+                <input class='base_input' value="<?= ($promocao['hora_inicio_promocao']) ?? '' ?>" type="time" id='promoHoraInicio' name='promoHoraInicio'>
               </div>
               <div class='editar_produto_input'>
                 <label for="promoHoraFim">Horário de Término</label>
-                <input class='base_input' type="time" id='promoHoraFim' name='promoHoraFim'>
+                <input class='base_input' value="<?= ($promocao['hora_fim_promocao']) ?? '' ?>" type="time" id='promoHoraFim' name='promoHoraFim'>
               </div>
             </div>
           </div>
@@ -259,7 +268,7 @@
               <span id="contador-total">0</span>
               <span id="contador-restante"> / 1</span>
             </div>
-            <button class="base_botao btn_blue">
+            <button class="base_botao btn_blue" type="button">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0004 15.7496C12.1993 15.7496 12.39 15.6706 12.5307 15.5299C12.6713 15.3893 12.7504 15.1985 12.7504 14.9996V4.02658L14.4304 5.98758C14.5598 6.13875 14.744 6.23232 14.9424 6.2477C15.1408 6.26308 15.3372 6.19901 15.4884 6.06958C15.6395 5.94016 15.7331 5.75598 15.7485 5.55756C15.7639 5.35915 15.6998 5.16275 15.5704 5.01158L12.5704 1.51158C12.5 1.42925 12.4125 1.36314 12.3141 1.31782C12.2157 1.27249 12.1087 1.24902 12.0004 1.24902C11.892 1.24902 11.785 1.27249 11.6866 1.31782C11.5882 1.36314 11.5008 1.42925 11.4304 1.51158L8.43036 5.01158C8.36628 5.08643 8.31756 5.17318 8.287 5.26686C8.25644 5.36054 8.24463 5.45932 8.25224 5.55756C8.25986 5.65581 8.28675 5.75159 8.33138 5.83944C8.37601 5.9273 8.43751 6.0055 8.51236 6.06958C8.58722 6.13367 8.67396 6.18238 8.76764 6.21294C8.86132 6.2435 8.9601 6.25531 9.05835 6.2477C9.15659 6.24009 9.25237 6.2132 9.34022 6.16856C9.42808 6.12393 9.50628 6.06243 9.57036 5.98758L11.2504 4.02758V14.9996C11.2504 15.4136 11.5864 15.7496 12.0004 15.7496Z" fill="#F9F9FC" />
                 <path d="M16 9C15.298 9 14.947 9 14.694 9.169C14.5852 9.24179 14.4918 9.33522 14.419 9.444C14.25 9.697 14.25 10.048 14.25 10.75V15C14.25 15.5967 14.0129 16.169 13.591 16.591C13.169 17.0129 12.5967 17.25 12 17.25C11.4033 17.25 10.831 17.0129 10.409 16.591C9.98705 16.169 9.75 15.5967 9.75 15V10.75C9.75 10.048 9.75 9.697 9.581 9.444C9.50821 9.33522 9.41478 9.24179 9.306 9.169C9.053 9 8.702 9 8 9C5.172 9 3.757 9 2.879 9.879C2 10.757 2 12.17 2 14.999V15.999C2 18.829 2 20.242 2.879 21.121C3.757 22 5.172 22 8 22H16C18.828 22 20.243 22 21.121 21.121C21.999 20.242 22 18.828 22 16V15C22 12.171 22 10.757 21.121 9.879C20.243 9 18.828 9 16 9Z" fill="#F9F9FC" />
@@ -281,18 +290,27 @@
             </div>
           </div>
           <div class='editar_produto_form_buttons'>
-            <button class="base_botao btn_red">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M9 0C4.023 0 0 4.023 0 9C0 13.977 4.023 18 9 18C13.977 18 18 13.977 18 9C18 4.023 13.977 0 9 0ZM12.87 12.87C12.7867 12.9534 12.6878 13.0196 12.579 13.0648C12.4701 13.11 12.3534 13.1332 12.2355 13.1332C12.1176 13.1332 12.0009 13.11 11.892 13.0648C11.7832 13.0196 11.6843 12.9534 11.601 12.87L9 10.269L6.399 12.87C6.23072 13.0383 6.00248 13.1328 5.7645 13.1328C5.52652 13.1328 5.29828 13.0383 5.13 12.87C4.96172 12.7017 4.86718 12.4735 4.86718 12.2355C4.86718 12.1177 4.89039 12.001 4.93549 11.8921C4.98058 11.7832 5.04668 11.6843 5.13 11.601L7.731 9L5.13 6.399C4.96172 6.23072 4.86718 6.00248 4.86718 5.7645C4.86718 5.52652 4.96172 5.29828 5.13 5.13C5.29828 4.96172 5.52652 4.86718 5.7645 4.86718C6.00248 4.86718 6.23072 4.96172 6.399 5.13L9 7.731L11.601 5.13C11.6843 5.04668 11.7832 4.98058 11.8921 4.93549C12.001 4.89039 12.1177 4.86718 12.2355 4.86718C12.3533 4.86718 12.47 4.89039 12.5789 4.93549C12.6878 4.98058 12.7867 5.04668 12.87 5.13C12.9533 5.21332 13.0194 5.31224 13.0645 5.42111C13.1096 5.52998 13.1328 5.64666 13.1328 5.7645C13.1328 5.88234 13.1096 5.99902 13.0645 6.10789C13.0194 6.21676 12.9533 6.31568 12.87 6.399L10.269 9L12.87 11.601C13.212 11.943 13.212 12.519 12.87 12.87Z" fill="white" />
-              </svg>
-              INATIVAR PRODUTO
+            <input type="hidden" id="produto-imagens" name="produto_imagens">
+            <input type="hidden" name="imagens_remover" id="imagens-remover" value="">
+            <input type="hidden" name="cod_atual" value="<?= $produto['cod_produto'] ?>">
+            <input type="hidden" name="statusProdutoInput" id="statusProdutoInput" value="<?= $produto['status_produto'] ?>">
+            <button type='button' class="base_botao <?= $produto['status_produto'] ? 'btn_red' : 'btn_sappire' ?>" onclick="alterarStatusProduto(<?= $produto['id_produto'] ?>, <?= $produto['status_produto'] ? '0' : '1' ?>)" id='statusProduto'>
+              <?php if ($produto['status_produto']): ?>
+                  <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_branco_icon.svg">
+              <?php else: ?>
+                <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="">
+              <?php endif; ?>
+              <?= $produto['status_produto'] ? 'INATIVAR PRODUTO' : 'ATIVAR PRODUTO' ?>
             </button>
-            <button class="base_botao btn_outline_red" type='reset'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
-                <path d="M9.5 0C4.523 0 0.5 4.023 0.5 9C0.5 13.977 4.523 18 9.5 18C14.477 18 18.5 13.977 18.5 9C18.5 4.023 14.477 0 9.5 0ZM13.37 12.87C13.2867 12.9534 13.1878 13.0196 13.079 13.0648C12.9701 13.11 12.8534 13.1332 12.7355 13.1332C12.6176 13.1332 12.5009 13.11 12.392 13.0648C12.2832 13.0196 12.1843 12.9534 12.101 12.87L9.5 10.269L6.899 12.87C6.73072 13.0383 6.50248 13.1328 6.2645 13.1328C6.02652 13.1328 5.79828 13.0383 5.63 12.87C5.46172 12.7017 5.36718 12.4735 5.36718 12.2355C5.36718 12.1177 5.39039 12.001 5.43549 11.8921C5.48058 11.7832 5.54668 11.6843 5.63 11.601L8.231 9L5.63 6.399C5.46172 6.23072 5.36718 6.00248 5.36718 5.7645C5.36718 5.52652 5.46172 5.29828 5.63 5.13C5.79828 4.96172 6.02652 4.86718 6.2645 4.86718C6.50248 4.86718 6.73072 4.96172 6.899 5.13L9.5 7.731L12.101 5.13C12.1843 5.04668 12.2832 4.98058 12.3921 4.93549C12.501 4.89039 12.6177 4.86718 12.7355 4.86718C12.8533 4.86718 12.97 4.89039 13.0789 4.93549C13.1878 4.98058 13.2867 5.04668 13.37 5.13C13.4533 5.21332 13.5194 5.31224 13.5645 5.42111C13.6096 5.52998 13.6328 5.64666 13.6328 5.7645C13.6328 5.88234 13.6096 5.99902 13.5645 6.10789C13.5194 6.21676 13.4533 6.31568 13.37 6.399L10.769 9L13.37 11.601C13.712 11.943 13.712 12.519 13.37 12.87Z" fill="#D73232" />
-              </svg>
-              CANCELAR
-            </button>
+            <a class='a_button' href="GerenciarProdutos">
+                <button class="base_botao btn_outline_red" type='button'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                  <path d="M9.5 0C4.523 0 0.5 4.023 0.5 9C0.5 13.977 4.523 18 9.5 18C14.477 18 18.5 13.977 18.5 9C18.5 4.023 14.477 0 9.5 0ZM13.37 12.87C13.2867 12.9534 13.1878 13.0196 13.079 13.0648C12.9701 13.11 12.8534 13.1332 12.7355 13.1332C12.6176 13.1332 12.5009 13.11 12.392 13.0648C12.2832 13.0196 12.1843 12.9534 12.101 12.87L9.5 10.269L6.899 12.87C6.73072 13.0383 6.50248 13.1328 6.2645 13.1328C6.02652 13.1328 5.79828 13.0383 5.63 12.87C5.46172 12.7017 5.36718 12.4735 5.36718 12.2355C5.36718 12.1177 5.39039 12.001 5.43549 11.8921C5.48058 11.7832 5.54668 11.6843 5.63 11.601L8.231 9L5.63 6.399C5.46172 6.23072 5.36718 6.00248 5.36718 5.7645C5.36718 5.52652 5.46172 5.29828 5.63 5.13C5.79828 4.96172 6.02652 4.86718 6.2645 4.86718C6.50248 4.86718 6.73072 4.96172 6.899 5.13L9.5 7.731L12.101 5.13C12.1843 5.04668 12.2832 4.98058 12.3921 4.93549C12.501 4.89039 12.6177 4.86718 12.7355 4.86718C12.8533 4.86718 12.97 4.89039 13.0789 4.93549C13.1878 4.98058 13.2867 5.04668 13.37 5.13C13.4533 5.21332 13.5194 5.31224 13.5645 5.42111C13.6096 5.52998 13.6328 5.64666 13.6328 5.7645C13.6328 5.88234 13.6096 5.99902 13.5645 6.10789C13.5194 6.21676 13.4533 6.31568 13.37 6.399L10.769 9L13.37 11.601C13.712 11.943 13.712 12.519 13.37 12.87Z" fill="#D73232" />
+                </svg>
+                CANCELAR
+              </button>
+            </a>
+            
             <button type='submit ' class="base_botao btn_blue">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3333 9.16667C18.3333 14.2294 14.2294 18.3333 9.16667 18.3333C4.10392 18.3333 0 14.2294 0 9.16667C0 4.10392 4.10392 0 9.16667 0C14.2294 0 18.3333 4.10392 18.3333 9.16667ZM13.5795 6.94925C13.6494 6.85126 13.6994 6.74046 13.7265 6.62316C13.7536 6.50587 13.7574 6.38438 13.7375 6.26564C13.7177 6.1469 13.6747 6.03322 13.6109 5.93111C13.5472 5.82899 13.4639 5.74044 13.3659 5.6705C13.2679 5.60056 13.1571 5.55061 13.0398 5.52349C12.9225 5.49637 12.8011 5.49262 12.6823 5.51245C12.5636 5.53229 12.4499 5.57531 12.3478 5.63908C12.2457 5.70284 12.1571 5.7861 12.0872 5.88408L8.13267 11.4207L6.14808 9.43525C5.9752 9.26827 5.74365 9.17588 5.5033 9.17797C5.26295 9.18005 5.03304 9.27646 4.86308 9.44642C4.69313 9.61637 4.59672 9.84629 4.59463 10.0866C4.59254 10.327 4.68494 10.5585 4.85192 10.7314L7.60192 13.4814C7.69606 13.5754 7.80953 13.6478 7.93445 13.6935C8.05937 13.7393 8.19275 13.7573 8.32533 13.7463C8.4579 13.7353 8.5865 13.6956 8.70218 13.6299C8.81787 13.5642 8.91787 13.4741 8.99525 13.3659L13.5795 6.94925Z" fill="white" />
@@ -307,9 +325,35 @@
   <?php
     include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
+  <script>
+
+    const imagensExistentes = <?= json_encode($imagensExistentes) ?>;
+    document.addEventListener('DOMContentLoaded', () => {
+      renderImagens(imagensExistentes);
+
+      <?php if (!empty($_SESSION['errors'])): ?>
+        gerarToast(<?= json_encode($_SESSION['errors']) ?>, "erro");
+        <?php unset($_SESSION['errors']); ?>
+      <?php endif; ?>
+
+      <?php if (!empty($_SESSION['successMessage'])): ?>
+        gerarToast(<?= json_encode($_SESSION['successMessage']) ?>, "sucesso");
+        <?php unset($_SESSION['successMessage']); ?>
+      <?php endif; ?>
+    });
+
+    document.querySelector('form').addEventListener('submit', function(e) {
+      coletarImagensParaEnvio();
+    });
+  </script>
+
+
   <script src="<?=$PATH_PUBLIC?>/js/vendedor/ImgInput.js"></script>
   <script type="module" src="<?=$PATH_PUBLIC?>/js/vendedor/TextEditor.js"></script>
+  <script type="module" src="<?=$PATH_PUBLIC?>/js/vendedor/selectCats.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/vendedor/PromocaoToggle.js"></script>
+  <script src="<?=$PATH_PUBLIC?>/js/vendedor/alterStatus.js"></script>
+  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
 </body>
 
 </html>

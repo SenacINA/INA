@@ -24,9 +24,12 @@ $routes = [
       '/Carrinho-api-limpar'       => 'cliente/CarrinhoController@limparCarrinho',
       '/Carrinho-api-update'       => 'cliente/CarrinhoController@atualizar',
       '/Carrinho-api-badge'        => 'cliente/CarrinhoController@exibirBadge',
-
-      '/CarrinhoDados'             => 'cliente/ClienteController@dados',
       '/CarrinhoPagamentos'        => 'cliente/ClienteController@pagamentos',
+      
+      '/CarrinhoDados'             => 'cliente/CarrinhoDadosController@index',
+      '/CarrinhoDados-salvar'      => 'cliente/CarrinhoDadosController@salvarEndereco',
+      '/CarrinhoDados-excluir'     => 'cliente/CarrinhoDadosController@excluirEndereco',
+      '/CarrinhoDados-editar'      => 'cliente/CarrinhoDadosController@editEndereco',
 
       // Geral
       '/sobre-nos'                 => 'geral/GeralController@sobreNos',
@@ -55,6 +58,7 @@ $routes = [
       '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
       '/CadastroVendedor'                 => 'vendedor/VendedorController@showFormCadastro',
       '/CadastroVendedorForms'            => 'vendedor/VendedorController@cadastroForm',
+      '/GetCategoriasSubcategorias-api' => 'vendedor/VendedorController@getCategoriasSubcategorias',
 
 
       '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
@@ -66,15 +70,19 @@ $routes = [
       '/PedidosVendedor'          => 'vendedor/VendedorProductController@pedidos',
       '/PedidoConfirmar'          => 'vendedor/VendedorProductController@confirm',
       '/ProdutoRegistrar'         => 'vendedor/VendedorProductController@create',
-      '/ProdutoEditar'            => 'vendedor/VendedorProductController@edit',
+      '/EditarProduto'            => 'vendedor/VendedorProductController@edit',
+      '/AtualizarProduto'            => 'vendedor/ProdutoController@atualizarProduto',
+      '/ProdutoStatus-api'           => 'vendedor/ProdutoController@alterarStatusProduto',
       '/RelatorioVendas'          => 'vendedor/VendedorProductController@report',
       '/ProdutoRegistro'          => 'vendedor/ProdutoController@produto',
       '/GerenciarProdutos'        => 'vendedor/VendedorController@gerenciarProdutos',
-      '/GerenciarProdutos-api'    => 'vendedor/VendedorController@relatorioVendasJson',
+      '/GerenciarProdutos-api'    => 'vendedor/VendedorController@relatorioProdutosJson',
+      '/Search-product-api' => 'vendedor/ProdutoController@searchProductJson',
 
       // Vendedor - Gerenciar Vendas
       '/GerenciarVendas'          => 'vendedor/GerenciarVendasController@index',
-      '/GerenciarVendas-api-show' => 'vendedor/GerenciarVendasController@showItems',
+      '/GerenciarVendas-api'      => 'vendedor/GerenciarVendasController@exibirVendas',
+      '/Venda-api-sale' => 'vendedor/VendaController@exibirVenda',
 
       // Admin
       '/AdminDashboard'           => 'admin/AdminController@dashboard',
