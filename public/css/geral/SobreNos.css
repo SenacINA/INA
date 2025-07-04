@@ -8,38 +8,71 @@
     display: flex;
     flex-direction: column;
     color: var(--branco);
+    align-content: center;
+    align-items: start;
+    justify-content: start;
 }
 
 .about-text {
+    margin-top: 32px;
+    margin-left: 80px;
     z-index: 10;
+    width: 30%;
+    b {
+      color: var(--carolina);
+    }
+    p {
+      font-size: 24px;
+    }
     h1 {
         font-size: 80px;
     }
 }
 
+.text-left {
+  justify-self: center;
+  display: flex;
+}
+
 .background-gif-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
 .background-gif {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .background-gif-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #001025, transparent);
-    pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #001025, transparent);
+  pointer-events: none;
 }
 
+.heros-main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin-top: 32px;
+
+}
 
 main {
     margin: 0;
@@ -50,9 +83,9 @@ main {
     background: var(--sappire);
     position: relative;
     max-width: 250px;
+    width: 250px;
     height: 350px;
     border-radius: 5px;
-    padding: 1rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -66,8 +99,8 @@ main {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: var(--carolina);
-    opacity: 0.5;
+    background-color: black;
+    opacity: 0;
     transition: 0.3s ease;
   }
   
@@ -80,6 +113,7 @@ main {
     position: relative;
     width: max-content;
     font-weight: bold;
+    font-size: 24px;
     transition: all 0.5s ease;
   }
   .cardHeader::after {
@@ -87,7 +121,7 @@ main {
     width: calc(100% + 1rem);
     height: 2.5px;
     transform: translateX(calc(-100% - 1rem));
-    background: aqua;
+    background: var(--carolina);
     bottom: -2px;
     left: 0;
     position: absolute;
@@ -99,8 +133,12 @@ main {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    transform: translateY(95%);
+    transform: translateY(70%);
     transition: all 0.5s ease;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    padding-top: 0;
   }
   
   .button {
@@ -124,3 +162,10 @@ main {
     border-radius: 15px;
   }
   
+
+  .hero-container {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }

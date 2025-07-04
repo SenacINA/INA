@@ -17,27 +17,28 @@
             </div>
             <div class="about-text">
                 <h1>I.N.A.</h1>
-                <p>O Time Inteligência Não Artificial é composto de pessoas incríveis que trabalharam juntas para lhe trazer EaoQuadrado.</p>
-                <p>Conheça cada uma delas nesse carrossel.</p>
+                <p>O time <b>Inteligência Não Artificial</b> é composto de pessoas incríveis que trabalharam juntas para lhe trazer EaoQuadrado.</p>
+                <p>Conheça cada uma deles passando o mouse sobre as fotos.</p>
             </div>
-            <div class="about-text">
-                <img src="<?= $PATH_PUBLIC ?>/image/geral/ina.png">
+            <div class="about-text ">
+                <img class="text-left" src="<?= $PATH_PUBLIC ?>/image/geral/ina.png">
             </div>
         </div>
 
         <div class="heros-main">
             <div class="hero-container">
                 <div class="card">
+                    <img class="hero-image" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/enzo.png" alt="">
+                    
                     <div class="details">
-                        <div class="cardHeader">CSS Hover Animation</div>
+                        <div class="cardHeader">Enzo Da Silva</div>
                         <div class="cardText">
-                        Welcome to this card where i have made use of the "Hover" effect to add
-                        some really cool interactions to it. Enjoy
+                            eu gosto de paçoca
                         </div>
                         <div class="button">Learn More</div>
                     </div>
                 </div>
-
+                
 
             </div>
         </div>
