@@ -5,7 +5,7 @@
     $css = ["/css/cliente/Categoria.css"];
     require_once("./utils/head.php");
     require_once("$PATH_CONTROLLER/cliente/CategoriaController.php");
-    $subcategoriaChecked = $subcategoriaChecked ?? null;
+    $subcategoriaChecked = $subcategoriaId;
     ?>
 
     <body class="gradiente_azul">
@@ -35,7 +35,7 @@
                         <h2 class="font_cinza font_subtitulo">Categorias</h2>
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/seta_filtro.svg" alt="Setinha">
                     </div>
-                    <div class='grid_filtro'>
+                    <form method="POST" action="FiltrarSubcategoria" class='grid_filtro'>
                         <?php
                         $categoriaController = new CategoriaController;
                         $subcategorias = $categoriaController->sendSubcategoria();
@@ -43,13 +43,13 @@
                             $checked = (isset($subcategoriaChecked) && $subcategoriaChecked == $subcategoria['id_subcategoria']) ? 'checked' : '';
                             echo "
                             <div class='filtro_item font_descricao'>
-                                <input type='radio' id='categoria-checkbox' name='subcategoria' {$checked} class='css_checkbox' value='" . $subcategoria['id_subcategoria'] . "'/>
+                                <input type='radio' id='categoria-checkbox' name='subcategoria' {$checked} class='css_checkbox' value='" . $subcategoria['id_subcategoria'] . "' onchange='this.form.submit()'/>
                                 <label class='fit_content' for='subcategoria'>" . $subcategoria['nome_subcategoria'] . "</label>
                             </div>";
                         }
                         ?>
-                    </div>
                 </div>
+            </div>
             </div>
 
             <div class="produtos_container bg_branco">
@@ -57,8 +57,14 @@
                 <div id="destaque_produtos" class="linha_card_produto grid_produtos">
                 </div>
                 <h2 class="font_cinza font_subtitulo">Produtos</h2>
-                <div class="produtos_categoria">
-                    <cardProduto data-id="<?= $categoria ?>" id="produtos_categoria_div"></cardProduto>
+                <div
+                    <?= isset($subcategoriaId)
+                        ? "data-id-subcategoria='{$subcategoriaId}'"
+                        : "data-id='{$categoria}'"
+                    ?>
+                    id="produtos_categoria_div"
+                    class="produtos_categoria">
+
                 </div>
             </div>
         </main>
@@ -68,11 +74,11 @@
         <?php
         include_once("$PATH_COMPONENTS/php/footer.php");
         ?>
-        <!-- <script type="text/javascript" src="../../js/cliente/categoria.js"></script> -->
     </body>
     <script src='<?= $PATH_PUBLIC ?>/js/geral/BtnTopo.js'></script>
     <script src="<?= $PATH_PUBLIC ?>/js/geral/carrossel.js"></script>
-    <script src='<?= $PATH_PUBLIC ?>/js/cliente/Filtros.js'></script>
-    <script src="<?= $PATH_PUBLIC ?>/js/cliente/produtosCategoria.js" type="module"></script>
+    <script src='<?= $PATH_PUBLIC ?>/js/cliente/Filtros.js' type="module"></script>
+    <script src='<?= $PATH_PUBLIC ?>/js/geral/card.js'></script>
+    <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
 
     </html>

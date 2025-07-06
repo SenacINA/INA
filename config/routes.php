@@ -2,12 +2,16 @@
 $routes = [
       '/'                          => 'geral/HomeController@index',
       '/user/{id}'                 => 'cliente/ClienteController@show',
+      '/Home-api'                  => 'geral/HomeController@sendProdutoHome',
 
       // Cliente
       '/Produto'                   => 'cliente/ProdutoController@index',
+      '/Produto/{produto_id}'      => 'cliente/ProdutoController@mostrarProduto',
       '/Categoria'                 => 'cliente/CategoriaController@index',
-      '/categorias-api'            => 'geral/CardController@filtrarProdutosCategoria',
-      '/subcategorias-api'            => 'geral/CardController@filtrarProdutosSubcategoria',
+      '/FiltrarCategoria'          => 'cliente/CategoriaController@filtrarCategoria',
+      '/FiltrarSubcategoria'       => 'cliente/CategoriaController@filtrarSubcategoria',
+      '/Categoria-api'             => 'cliente/CategoriaController@sendProdutosCategorias',
+      '/Subcategoria-api'          => 'cliente/CategoriaController@sendProdutosSubcategorias',
       '/Login'                     => 'cliente/ClienteController@login',
       '/auth'                      => 'auth/AuthController@loginForm',
       '/Logout'                    => 'auth/AuthController@logout',
