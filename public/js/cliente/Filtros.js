@@ -31,6 +31,15 @@ async function getProdutosSubcategoria(subcategoria) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const mensagem = sessionStorage.getItem("toast_mensagem");
+  const tipo = sessionStorage.getItem("toast_tipo");
+
+  if (mensagem && tipo) {
+    gerarToast(mensagem, tipo);
+    sessionStorage.removeItem("toast_mensagem");
+    sessionStorage.removeItem("toast_tipo");
+  }
+
   const dropdownToggle = document.querySelector(".dropdown-toggle");
   const filtros = document.querySelector(".filtros");
   const filterContainers = document.querySelectorAll(".container_filtro");
@@ -77,6 +86,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     produtos = await getProdutosCategoria(idCategoria);
   } else {
     produtos = await getProdutosSubcategoria(idSubcategoria);
+    if (produtos.length === 0) {
+      sessionStorage.setItem("toast_mensagem", "Está subcategoria está vazia");
+      sessionStorage.setItem("toast_tipo", "erro");
+      history.back();
+      return;
+    }
   }
 
   renderProduto(divCategoria, produtos);
