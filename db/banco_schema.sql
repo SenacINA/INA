@@ -173,11 +173,20 @@ CREATE TABLE IF NOT EXISTS imagem_produto (
 );
 
 CREATE TABLE IF NOT EXISTS imagem_carrossel (
-    -- 12
     id_imagem_carrossel INT AUTO_INCREMENT PRIMARY KEY,
-    id_carrossel INT,
-    endereco_carrossel VARCHAR(200) NOT NULL,
-    FOREIGN KEY (id_carrossel) REFERENCES carrossel (id_carrossel)
+    endereco_carrossel VARCHAR(255) NOT NULL,
+    index_exibicao INT DEFAULT 0,
+    ativo BOOLEAN DEFAULT TRUE,
+    data_upload DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS imagem_propagandas (
+    id_imagem_propaganda INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_propaganda ENUM('CARROSSEL', '670x300', '670x125') NOT NULL,
+    endereco_imagem VARCHAR(255) NOT NULL,
+    index_exibicao INT DEFAULT 0,
+    ativo BOOLEAN DEFAULT TRUE,
+    data_upload DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS perfil (

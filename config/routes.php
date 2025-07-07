@@ -93,7 +93,10 @@ $routes = [
 
       '/AtualizarUsuario'                       => 'admin/AdminController@atualizarUsuario',
       '/GerenciarUsuarios'                      => 'admin/AdminController@gerenciarUsuarios',
-      '/GerenciarPropagandas'                   => 'admin/AdminController@gerenciarPropagandas',
+
+      '/GerenciarPropagandas'                   => 'admin/GerenciarPropagandasController@index',
+      '/GerenciarPropagandas-api'               => 'admin/GerenciarPropagandasController@GerenciarPropagandasApi',
+
       '/RelatorioVendedor'                      => 'admin/AdminController@relatorioVendedor',
       '/AdminCarrossel'                         => 'admin/AdminController@adminCarrossel',
       '/searchDesativarUser'                    => 'admin/AdminController@searchDesativarUser',

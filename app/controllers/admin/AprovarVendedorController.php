@@ -27,7 +27,6 @@ class AprovarVendedorController
     require_once("./app/views/admin/AprovarVendedor.php");
   }
 
-
   public function atualizarStatus()
   {
     $input = json_decode(file_get_contents("php://input"), true);

@@ -1,11 +1,3 @@
-.gerenciar_propagandas_body_container {
-  padding: 56px 48px 16px;
-  display: flex;
-  flex-direction: column;
-  
-  gap: 16px;
-}
-
 .gerenciar_propagandas_body_holder {
   border-radius: 10px;
 }
@@ -16,12 +8,16 @@
   max-width: 600px;
 }
 
-.gerenciar_propagandas_firula_holder {
+.gerenciar_propagandas_body_container {
   border-radius: 10px;
   background-color: #eff3f5;
+  min-height: 780px;
+  width: 95%;
+  margin: auto;
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
-  padding: 32px;
+  padding: 16px 32px;
 }
 
 .gerenciar_propagandas_subtitulo_generico {
@@ -70,56 +66,17 @@
 }
 
 .gerenciar_propagandas_quadrado_container {
-  width: 100%;
-  height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 10%;
-}
-
-.gerenciar_propagandas_main_content {
-  padding: 32px;
-}
-
-.gerenciar_propagandas_pesquisar_pedidos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-}
-
-.gerenciar_propagandas_form_cliente {
-  display: flex;
-  flex-direction: column;
-}
-
-.gerenciar_propagandas_input_ano {
-  display: flex;
-  flex-direction: column;
-}
-
-.gerenciar_propagandas_input_status {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  gap: 16px;
 }
 
 .gerenciar_propagandas_linha_sublinhado {
-  margin-top: 16px;
   width: 100%;
-  height: 4px;
+  height: 5px;
   border: 0;
-  background-color: var(--carolina);
+  background-color: #2888b1;
   border-radius: 4px;
-}
-
-.gerenciar_propagandas_forms_pesquisa_pedidos {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 16px;
-  margin: 16px 0 0;
 }
 
 /* Gerenciar Imagens */
@@ -133,20 +90,7 @@
   grid-row: 2;
 }
 
-/* imagens carrossel */
-.propagandas_carrossel_preview {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  margin-top: 8px;
-  margin-bottom: 32px;
-
-  button {
-    grid-column: 1 / 3;
-  }
-}
-
-/* Imagens add */
+.propagandas_carrossel_preview,
 .gerenciar_propagandas_uploads_grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -249,149 +193,4 @@
   margin-top: 8px;
   font-size: 14px;
   color: #666;
-}
-
-
-
-/* Tabela */
-.gerenciar_propagandas_table {
-  display: flex;
-  flex-direction: column;
-}
-
-.gerenciar_propagandas_table_filtro {
-  display: flex;
-  width: fit-content;
-  align-items: center;
-  padding: 0 8px;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-
-  & select {
-    background-color: var(--carolina);
-    border: 0;
-    height: 32px;
-  }
-
-  & select:focus-visible {
-    outline: solid 1px #e0e0e0;
-  }
-}
-
-.gerenciar_propagandas_table_filtro select {
-  color: var(--branco_gelo);
-  text-align: center;
-  font-size: 16px;
-  background-color: var(--sappire);
-  margin-left: 8px;
-  border-radius: 5px;
-  height: 100%;
-}
-
-.gerenciar_propagandas_filtro_titulo {
-  color: #fff;
-}
-
-/**Individual para cada tabela */
-.gerenciar_propagandas_table_col-1,
-.gerenciar_propagandas_table_col-4 {
-  width: 4%;
-}
-
-.gerenciar_propagandas_table_col-3,
-.gerenciar_propagandas_table_col-6 {
-  width: 8%;
-}
-
-.gerenciar_propagandas_table_col-2,
-.gerenciar_propagandas_table_col-5,
-.gerenciar_propagandas_table_col-7 {
-  width: 20%;
-}
-
-@media (max-width: 1024px) {
-  .font_titulo {
-    font-size: 1.5rem;
-  }
-
-  .gerenciar_propagandas_estatistica_holder {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-
-  .gerenciar_propagandas_titulo {
-    font-size: 1rem;
-  }
-
-  .gerenciar_propagandas_estatistica_descricao {
-    font-size: 0.75rem;
-  }
-  .gerenciar_propagandas_quadrado_container {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .gerenciar_propagandas_body_container {
-    padding: 24px 16px 16px;
-    gap: 8px;
-  }
-
-  .gerenciar_propagandas_body_holder {
-    padding: 8px;
-  }
-
-  .gerenciar_propagandas_main_content {
-    padding: 8px;
-  }
-
-  .base_botao {
-    min-width: 128px;
-  }
-
-  .gerenciar_propagandas_linha_sublinhado {
-    display: none;
-  }
-
-  .gerenciar_pedidor_firula_holder {
-    gap: 16px;
-    padding: 0;
-  }
-
-  .gerenciar_propagandas_header_title {
-    justify-content: flex-start;
-  }
-
-  .gerenciar_propagandas_input_ano,
-  .gerenciar_propagandas_input_mes {
-    width: 100%;
-  }
-
-  .gerenciar_propagandas_mes_select,
-  .gerenciar_propagandas_select_status,
-  .gerenciar_propagandas_ano_select {
-    width: 100%;
-  }
-
-  .gerenciar_propagandas_holder_botao {
-    justify-content: center;
-  }
-
-  .gerenciar_propagandas_pesquisar_pedidos {
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-  }
-  .gerenciar_propagandas_flex {
-    display: block;
-    gap: 0px;
-  }
-}
-
-@media (max-width: 768px) {
-  .gerenciar_propagandas_header_title_1 {
-    position: absolute;
-    top: -55px;
-  }
 }
