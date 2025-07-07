@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<base href="/INA/">
 <?php
 $css = ["/css/cliente/Produto.css"];
 require_once("./utils/head.php");
-require_once("$PATH_CONTROLLER/cliente/ProdutoController.php");
-$controller = new ProdutoController;
-$info = $controller->exibirProduto($id);
 ?>
 
 <body>

@@ -2,10 +2,16 @@
 $routes = [
       '/'                          => 'geral/HomeController@index',
       '/user/{id}'                 => 'cliente/ClienteController@show',
+      '/Home-api'                  => 'geral/HomeController@sendProdutoHome',
 
       // Cliente
       '/Produto'                   => 'cliente/ProdutoController@index',
+      '/Produto/{produto_id}'      => 'cliente/ProdutoController@mostrarProduto',
       '/Categoria'                 => 'cliente/CategoriaController@index',
+      '/FiltrarCategoria'          => 'cliente/CategoriaController@filtrarCategoria',
+      '/FiltrarSubcategoria'       => 'cliente/CategoriaController@filtrarSubcategoria',
+      '/Categoria-api'             => 'cliente/CategoriaController@sendProdutosCategorias',
+      '/Subcategoria-api'          => 'cliente/CategoriaController@sendProdutosSubcategorias',
       '/Login'                     => 'cliente/ClienteController@login',
       '/auth'                      => 'auth/AuthController@loginForm',
       '/Logout'                    => 'auth/AuthController@logout',
@@ -13,8 +19,8 @@ $routes = [
       '/api/cliente/register'      => 'cliente/ClienteController@register',
       '/api/cliente/editar-perfil/redes'  => 'cliente/ClienteController@updateSocial',
       '/api/cliente/editarDadosCliente'   => 'cliente/ClienteCOntroller@editarDadosCliente',
-      '/api/avaliar-produto' => 'cliente/ProdutoController@avaliarProduto',
-      '/produto/comentariosJson' => 'cliente/ProdutoController@comentariosJson',
+      '/api/avaliar-produto'              => 'cliente/ProdutoController@avaliarProduto',
+      '/produto/comentariosJson'          => 'cliente/ProdutoController@comentariosJson',
 
       // Cliente - Carrinho
       '/Carrinho'                  => 'cliente/CarrinhoController@index',
@@ -25,7 +31,7 @@ $routes = [
       '/Carrinho-api-update'       => 'cliente/CarrinhoController@atualizar',
       '/Carrinho-api-badge'        => 'cliente/CarrinhoController@exibirBadge',
       '/CarrinhoPagamentos'        => 'cliente/ClienteController@pagamentos',
-      
+
       '/CarrinhoDados'             => 'cliente/CarrinhoDadosController@index',
       '/CarrinhoDados-salvar'      => 'cliente/CarrinhoDadosController@salvarEndereco',
       '/CarrinhoDados-excluir'     => 'cliente/CarrinhoDadosController@excluirEndereco',
@@ -50,20 +56,20 @@ $routes = [
       '/RedefinirSenha-api-salvar' => 'geral/EnviarTokenController@salvarSenha',
 
       // Geral - Perfil
-      '/EditarPerfil' => 'geral/GeralController@editarPerfil',
-      '/Perfil' => 'geral/GeralController@perfil',
-      '/Error-404' => 'geral/GeralController@error',
+      '/EditarPerfil'                     => 'geral/GeralController@editarPerfil',
+      '/Perfil'                           => 'geral/GeralController@perfil',
+      '/Error-404'                        => 'geral/GeralController@error',
 
       // Vendedor - Cadastro e Perfil
       '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
       '/CadastroVendedor'                 => 'vendedor/VendedorController@showFormCadastro',
       '/CadastroVendedorForms'            => 'vendedor/VendedorController@cadastroForm',
-      '/GetCategoriasSubcategorias-api' => 'vendedor/VendedorController@getCategoriasSubcategorias',
+      '/GetCategoriasSubcategorias-api'   => 'vendedor/VendedorController@getCategoriasSubcategorias',
 
 
       '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
-      '/SalvarDestaque-api' => 'vendedor/DestaqueController@salvarDestaque',
-      '/RemoverDestaque-api' => 'vendedor/DestaqueController@removerDestaque',
+      '/SalvarDestaque-api'               => 'vendedor/DestaqueController@salvarDestaque',
+      '/RemoverDestaque-api'              => 'vendedor/DestaqueController@removerDestaque',
 
 
       // Vendedor - Produtos e Pedidos
@@ -82,11 +88,15 @@ $routes = [
       // Vendedor - Gerenciar Vendas
       '/GerenciarVendas'          => 'vendedor/GerenciarVendasController@index',
       '/GerenciarVendas-api'      => 'vendedor/GerenciarVendasController@exibirVendas',
-      '/Venda-api-sale' => 'vendedor/VendaController@exibirVenda',
+      '/Venda-api-sale'            => 'vendedor/VendaController@exibirVenda',
 
       // Admin
       '/AdminDashboard'           => 'admin/AdminController@dashboard',
-      '/AprovarVendedor'          => 'admin/AdminController@aprovarVendedor',
+
+      '/AprovarVendedor'                  => 'admin/AprovarVendedorController@index',
+      '/AprovarVendedor-api'              => 'admin/AprovarVendedorController@atualizarStatus',
+      '/EstatisticasVendedores-api'       => 'admin/AprovarVendedorController@mostrarEstatisticas',
+
       '/AtualizarUsuario'         => 'admin/AdminController@atualizarUsuario',
       '/GerenciarUsuarios'        => 'admin/AdminController@gerenciarUsuarios',
       '/GerenciarCarrossel'       => 'admin/AdminController@gerenciarCarrossel',
@@ -97,7 +107,7 @@ $routes = [
       '/GerenciarVendedor'           => 'admin/AdminController@gerenciarVendedor',
       '/api/admin/pesquisar-cliente' => 'admin/AdminController@searchUser',
       '/api/admin/atualizar-cliente' => 'admin/AdminController@updateUser',
-      '/api/admin/editarDadosAdmin' => 'admin/AdminController@editarDadosAdmin',
+      '/api/admin/editarDadosAdmin'  => 'admin/AdminController@editarDadosAdmin',
 ];
 
 // Join DIRECTOR SEPARETOR
