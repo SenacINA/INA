@@ -46,8 +46,8 @@
             <img src="<?=$PATH_PUBLIC?>/image/vendedor/confirmar_pedido/mouse.svg" alt="">
             <h1>Mouse Logitech G203</h1>
             <div class="confirmar_pedido_produtos_valor">
-              <h2>R$170,91 x 1</h2>
-              <h1>hehe</h1>
+              <h2>R$<?= number_format($total_pago_compra ?? 0, 2, ',', '.') ?> x 1</h2>
+              <h1>R$<?= number_format($total_pago_compra ?? 0, 2, ',', '.') ?></h1>
             </div>
           </div>
           <hr>          
@@ -125,7 +125,7 @@
           <div class="confirmar_pedido_container_3_item">
             <h2>Subtotal</h2>
             <h2>3 itens</h2>
-            <h2>R$1.2225,57</h2>
+            <h2>R$<?= number_format($total_pago_compra ?? 0, 2, ',', '.') ?></h2>
           </div>
 
           <div class="confirmar_pedido_container_3_total">
@@ -165,9 +165,9 @@
           </div>
           <div class="confirmar_pedido_linha_2">
             <h3>CEP:</h3>
-            <h2>69910-890</h2>
+            <h2><?= htmlspecialchars($cep_cliente ?? 'Data não disponível - CEP') ?></h2>
           </div>
-          <h2>Rua Vinte e Três, Tancredo Neves - Rio Branco, AC</h2>
+          <h2><?= htmlspecialchars($rua_endereco ?? 'Data não disponível - Rua') ?> <?= htmlspecialchars($numero_endereco ?? 'Data não disponível - Número da rua') ?>, <?= htmlspecialchars($bairro_endereco ?? 'Data não disponível - Bairro') ?> - <?= htmlspecialchars($cidade_endereco ?? 'Data não disponível - Cidade') ?>, <?= htmlspecialchars($uf_endereco ?? 'Data não disponível - Estado') ?></h2>
         </div>        
       </div>
     </div>
