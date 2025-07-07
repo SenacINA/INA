@@ -11,7 +11,7 @@ class CategoriaController extends RenderView
         $model = new CategoriaModel;
 
         $subcategorias = $model->getSubcategoriaPorCategoria($categoria);
-
+        
         $this->loadView('cliente/Categoria', [
             'categoria' => $categoria,
             'subcategoriaId' => $subcategoria,
@@ -63,10 +63,6 @@ class CategoriaController extends RenderView
         echo json_encode($produtos);
         exit;
     }
-
-    $this->loadView('cliente/Categoria', ['categoria' => $categoria]);
-}
-
 
     public function sendSubcategoria()
     {

@@ -42,14 +42,14 @@ require_once('./utils/head.php')
                     </div>
                     <div id="div_novidades" class="index_body_produtos_content">
                     </div>
-                    <div class="index_body_ver_mais" onclick="pag('Categoria')">
+                    <a href='Categoria?categoria=1&subcategoria=1' class="index_body_ver_mais">
                         <p>Ver Mais</p>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19" />
                             </svg>
                         </button>
-                    </div>
+                    </a>
                 </div>
                 <div class="index_body_produto_container">
                     <div class="index_body_container_title">
@@ -58,14 +58,14 @@ require_once('./utils/head.php')
                     </div>
                     <div class="index_body_produtos_content">
                     </div>
-                    <div class="index_body_ver_mais" onclick="pag('Categoria')">
+                    <a href='Categoria?categoria=1&subcategoria=1' class="index_body_ver_mais">
                         <p>Ver Mais</p>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19" />
                             </svg>
                         </button>
-                    </div>
+                    </a>
                 </div>
                 <img class="index_body_large_ad" src="<?= $PATH_PUBLIC ?>/image/index/BannerRedragon.jpg" alt="">
                 <div class="index_body_produto_container">
@@ -75,14 +75,14 @@ require_once('./utils/head.php')
                     </div>
                     <div class="index_body_produtos_content">
                     </div>
-                    <div class="index_body_ver_mais" onclick="pag('Categoria')">
+                    <a href='Categoria?categoria=1&subcategoria=1' class="index_body_ver_mais">
                         <p>Ver Mais</p>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19" />
                             </svg>
                         </button>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
