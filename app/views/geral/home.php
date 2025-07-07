@@ -51,7 +51,7 @@ require_once('./utils/head.php')
                         $card->gerarProdutoCards(6, $info);
                         ?>
                     </div>
-                    <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
+                    <div class="index_body_ver_mais" onclick="pag('Categoria')">
                         <p>Ver Mais</p>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@ require_once('./utils/head.php')
                     <div class="index_body_produtos_content">
                         <?php $card->gerarProdutoCards(6, $info, 6); ?>
                     </div>
-                    <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
+                    <div class="index_body_ver_mais" onclick="pag('Categoria')">
                         <p>Ver Mais</p>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ require_once('./utils/head.php')
                     <div class="index_body_produtos_content">
                         <?php $card->gerarProdutoCards(6, $info, 12); ?>
                     </div>
-                    <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
+                    <div class="index_body_ver_mais" onclick="pag('Categoria')">
                         <p>Ver Mais</p>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
