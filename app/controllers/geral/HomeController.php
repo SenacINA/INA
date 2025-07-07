@@ -13,4 +13,11 @@ class HomeController extends RenderView {
         echo json_encode($produtos);
         exit;
     }
+
+    public function sendCategoriaHome() {
+        $model = new HomeModel;
+        $categorias = $model->getCategoriasHome();
+        echo json_encode($categorias);
+        exit;
+    }
 }
