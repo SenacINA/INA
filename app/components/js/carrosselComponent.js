@@ -30,7 +30,7 @@ const carrossel = (categorias) => {
   let categoriaArray = [];
 
   categorias.forEach((categoria) => {
-    categoriaArray.push(`<button value="${categoria["id_categoria"]}" name="${categoria["nome_categoria"]}" class="categorias_block">
+    categoriaArray.push(`<button value="${categoria["id_categoria"]}" name="categoria" class="categorias_block">
 <img src="${PATH_PUBLIC}${categoria["endereco_imagem_categoria"]}" alt="">
 <p>${categoria["nome_categoria"]}</p>
 </button>`);
