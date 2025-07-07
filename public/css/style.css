@@ -241,7 +241,7 @@ main{
   align-items: center;
   height: 40px;
   min-width: 192px;
-  font-size: 1.25rem;
+  font-size: 1rem;
   /* 20px */
   font-style: normal;
   font-weight: 500;
@@ -354,7 +354,7 @@ main{
   }
 
   td {
-    height: 100%;
+    height: 56px;
     color: var(--sappire);
     font-size: 1rem;
     font-weight: 500;
@@ -1136,6 +1136,7 @@ input:checked + .toggle_slider::before {
   justify-content: space-between;
   &>img {
     aspect-ratio: 1 / 1;
+    object-fit: contain;
   }
 }
 

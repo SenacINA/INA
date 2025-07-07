@@ -40,16 +40,7 @@ require_once('./utils/head.php')
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/foguinho.svg" alt="">
                         <h2 class="index_body_text_carolina">Novidades</h2>
                     </div>
-                    <div class="index_body_produtos_content">
-                        <?php
-                        include("$PATH_COMPONENTS/php/card_produto.php");
-                        include("$PATH_CONTROLLER/geral/CardController.php");
-                        $card = new cardProduto;
-                        $controller = new CardController;
-
-                        $info = $controller->sendProdutos();
-                        $card->gerarProdutoCards(6, $info);
-                        ?>
+                    <div id="div_novidades" class="index_body_produtos_content">
                     </div>
                     <div class="index_body_ver_mais" onclick="pag('Categoria')">
                         <p>Ver Mais</p>
@@ -66,7 +57,6 @@ require_once('./utils/head.php')
                         <h2 class="index_body_text_carolina">Descontos</h2>
                     </div>
                     <div class="index_body_produtos_content">
-                        <?php $card->gerarProdutoCards(6, $info, 6); ?>
                     </div>
                     <div class="index_body_ver_mais" onclick="pag('Categoria')">
                         <p>Ver Mais</p>
@@ -84,7 +74,6 @@ require_once('./utils/head.php')
                         <h2 class="index_body_text_carolina">Mais Vendidos</h2>
                     </div>
                     <div class="index_body_produtos_content">
-                        <?php $card->gerarProdutoCards(6, $info, 12); ?>
                     </div>
                     <div class="index_body_ver_mais" onclick="pag('Categoria')">
                         <p>Ver Mais</p>
@@ -106,7 +95,8 @@ require_once('./utils/head.php')
     </button>
     <script src='<?= $PATH_PUBLIC ?>/js/geral/carrossel.js' data-isindex="1"></script>
     <script src='<?= $PATH_PUBLIC ?>/js/geral/BtnTopo.js' data-isindex="1"></script>
-    <script type='module' src='<?= $PATH_PUBLIC ?>/js/geral/card.js'></script>
+    <script src='<?= $PATH_PUBLIC ?>/js/geral/card.js'></script>
+    <script type='module' src='<?= $PATH_PUBLIC ?>/js/geral/home.js'></script>
     <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
 </body>
 

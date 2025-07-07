@@ -64,18 +64,18 @@ require_once('./utils/head.php');
                 </div>
               </div>
               <div class="resultado_pesquisa">
-                  <p class="resultado_title"><strong>&nbsp;</strong>&nbsp;</p>
-                  <img class="resultado_img" src="./public/image/geral/image_placeholder.png" alt="">
-                  <div class="resultado_dados">
-                    
-                    <p><strong>Preço:</strong> -</p>
-                    <p><strong>Quantidade:</strong> -</p>
-                    <p><strong>Status:</strong> -</p>
-                  </div>
-                  <button id="editar_search" disabled class='base_botao btn_blue'>
-                    <img class='base_icon' src='public/image/geral/icons/caneta_branca_icon.svg'>
-                    EDITAR
-                  </button>
+                <p class="resultado_title"><strong>&nbsp;</strong>&nbsp;</p>
+                <img class="resultado_img" src="./public/image/geral/image_placeholder.png" alt="">
+                <div class="resultado_dados">
+
+                  <p><strong>Preço:</strong> -</p>
+                  <p><strong>Quantidade:</strong> -</p>
+                  <p><strong>Status:</strong> -</p>
+                </div>
+                <button id="editar_search" disabled class='base_botao btn_blue'>
+                  <img class='base_icon' src='public/image/geral/icons/caneta_branca_icon.svg'>
+                  EDITAR
+                </button>
               </div>
             </div>
           </div>
@@ -124,8 +124,16 @@ require_once('./utils/head.php');
           </table>
         </div>
       </div>
-      <div class='base_navegacao'></div>
-
+      <div class="base_navegacao">
+        <div class="navegacao_produtos">
+          <button id="btnAnterior" class="base_botao btn_blue">
+            <img src="./public/image/geral/icons/seta_filtro_branco.svg" class="base_icon esquerda">
+          </button>
+          <button id="btnProximo" class="base_botao btn_blue">
+            <img src="./public/image/geral/icons/seta_filtro_branco.svg" class="base_icon direita">
+          </button>
+        </div>
+      </div>
     </div>
   </main>
   <?php
@@ -133,21 +141,22 @@ require_once('./utils/head.php');
   ?>
 </body>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      <?php if (!empty($_SESSION['errors'])): ?>
-        gerarToast(<?= json_encode($_SESSION['errors']) ?>, "erro");
-        <?php unset($_SESSION['errors']); ?>
-      <?php endif; ?>
+  document.addEventListener('DOMContentLoaded', () => {
+    <?php if (!empty($_SESSION['errors'])): ?>
+      gerarToast(<?= json_encode($_SESSION['errors']) ?>, "erro");
+      <?php unset($_SESSION['errors']); ?>
+    <?php endif; ?>
 
-      <?php if (!empty($_SESSION['successMessage'])): ?>
-        gerarToast(<?= json_encode($_SESSION['successMessage']) ?>, "sucesso");
-        <?php unset($_SESSION['successMessage']); ?>
-      <?php endif; ?>
-    });
-  </script>
+    <?php if (!empty($_SESSION['successMessage'])): ?>
+      gerarToast(<?= json_encode($_SESSION['successMessage']) ?>, "sucesso");
+      <?php unset($_SESSION['successMessage']); ?>
+    <?php endif; ?>
+  });
+</script>
 <script>
   const idVendedor = <?= $idVendedor ?>;
-</script><script src="<?= $PATH_PUBLIC ?>/js/vendedor/produtoSearch.js"></script>
+</script>
+<script src="<?= $PATH_PUBLIC ?>/js/vendedor/produtoSearch.js"></script>
 <script src="<?= $PATH_PUBLIC ?>/js/tabelas/renderTableProdutos.js"></script>
 <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
 

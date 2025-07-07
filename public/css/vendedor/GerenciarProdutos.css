@@ -208,7 +208,6 @@
     color: #255e7e;
 }
 
-
 .gerenciar_produtos_table {
     display: flex;
     flex-direction: column;
@@ -237,7 +236,6 @@
     color: #fff;
 }
 
-/**Individual para cada tabela */
 .gerenciar_produtos_table_col-1,
 .gerenciar_produtos_table_col-4 {
     width: 4%;

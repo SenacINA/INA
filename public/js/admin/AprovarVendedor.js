@@ -31,14 +31,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (json.success) {
         gerarToast(json.message, "sucesso");
-        setTimeout(() => location.reload(), 800);
+        setTimeout(() => {
+          atualizarEstatisticas(); 
+          location.reload();      
+        }, 800);
       } else {
         gerarToast(json.message, "erro");
         setTimeout(() => location.reload(), 800);
       }
     } catch (err) {
-      console.log(err);
-      gerarToast("Erro de conexão, tente novamente.", "erro");
     }
   }
+
+  function atualizarEstatisticas() {
+    fetch("/INA/EstatisticasVendedores-api")
+      .then((res) => res.json())
+      .then((data) => {
+        document.getElementById("estatistica_aprovados").textContent =
+          data.aprovados || 0;
+        document.getElementById("estatistica_reprovados").textContent =
+          data.reprovados || 0;
+        document.getElementById("estatistica_inativados").textContent =
+          data.inativados || 0;
+      })
+      .catch((err) => {
+      });
+  }
+
+  atualizarEstatisticas();
 });
