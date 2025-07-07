@@ -164,7 +164,7 @@ main {
   
 
 .hero-container {
-  height: fit-content;
+  height: 414px;
   display: grid;
   width: 100%;
   padding: 2rem;
@@ -181,10 +181,25 @@ main {
   };
 
   &:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
     background-color: var(--azul_leve);
-    align-items: end;
+  
     .hero-info {
-      align-items: start;
+      display: flex;
+      align-items: flex-start;
+    }
+  
+    .card,
+    .hero-info {
+      width: 50%;
+      min-height: 100%;
+      box-sizing: border-box;
+    }
+  
+    .hero-text {
+      color: #000;
     }
   }
 }
