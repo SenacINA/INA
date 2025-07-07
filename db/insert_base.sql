@@ -259,14 +259,14 @@ INSERT INTO perfil (
 );
 
 -- Inserir categoria
-INSERT INTO categoria (nome_categoria) VALUES ('Geral');
+INSERT INTO categoria (nome_categoria, endereco_imagem_categoria) VALUES ('Geral', '/image/index/categoriasPerifericos.png');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria) 
 VALUES ('Geral', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Geral'));
 
 -- Categoria: Periféricos
-INSERT INTO categoria (nome_categoria)
-VALUES ('Periféricos');
+INSERT INTO categoria (nome_categoria, endereco_imagem_categoria)
+VALUES ('Periféricos', '/image/index/categoriasPerifericos.png');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
 VALUES 
@@ -275,8 +275,8 @@ VALUES
   ('Headsets',   (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Periféricos'));
 
 -- Categoria: Componentes
-INSERT INTO categoria (nome_categoria)
-VALUES ('Componentes');
+INSERT INTO categoria (nome_categoria, endereco_imagem_categoria)
+VALUES ('Componentes', '/image/index/categoriasHardware.png');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
 VALUES
@@ -286,8 +286,8 @@ VALUES
   ('Fontes de Alimentação',(SELECT id_categoria FROM categoria WHERE nome_categoria = 'Componentes'));
 
 -- Categoria: Acessórios
-INSERT INTO categoria (nome_categoria)
-VALUES ('Acessórios');
+INSERT INTO categoria (nome_categoria, endereco_imagem_categoria)
+VALUES ('Acessórios', '/image/index/categoriasCelulares.png');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
 VALUES
@@ -296,8 +296,8 @@ VALUES
   ('Suportes e Montagens', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Acessórios'));
 
 -- Categoria: Computadores
-INSERT INTO categoria (nome_categoria)
-VALUES ('Computadores');
+INSERT INTO categoria (nome_categoria, endereco_imagem_categoria)
+VALUES ('Computadores', '/image/index/categoriasEscritorio.png');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
 VALUES
@@ -306,8 +306,8 @@ VALUES
   ('All-in-One',           (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Computadores'));
 
 -- Categoria: Monitores
-INSERT INTO categoria (nome_categoria)
-VALUES ('Monitores');
+INSERT INTO categoria (nome_categoria, endereco_imagem_categoria)
+VALUES ('Monitores', '/image/index/categoriasEscritorio.png');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
 VALUES

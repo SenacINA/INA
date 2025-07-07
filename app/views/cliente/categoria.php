@@ -14,11 +14,8 @@
         ?>
 
         <div class="img_fundo largura_com_scroll">
-            <?php
-            include_once("$PATH_COMPONENTS/php/carrossel.php");
-            Carrossel('.');
-            ?>
-
+            <div id="carrosel_container" class="carrossel" data-path='./public' style="background: url('./public/image/index/fundoCarrossel.jpg') center/cover no-repeat">
+            </div>
         </div>
 
         <main class="conteudo_categoria grid_categoria gradiente_azul">
@@ -76,7 +73,7 @@
         ?>
     </body>
     <script src='<?= $PATH_PUBLIC ?>/js/geral/BtnTopo.js'></script>
-    <script src="<?= $PATH_PUBLIC ?>/js/geral/carrossel.js"></script>
+    <script type="module" src="<?= $PATH_PUBLIC ?>/js/geral/carrossel.js"></script>
     <script src='<?= $PATH_PUBLIC ?>/js/cliente/Filtros.js' type="module"></script>
     <script src='<?= $PATH_PUBLIC ?>/js/geral/card.js'></script>
     <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>

@@ -3,6 +3,7 @@ $routes = [
       '/'                          => 'geral/HomeController@index',
       '/user/{id}'                 => 'cliente/ClienteController@show',
       '/Home-api'                  => 'geral/HomeController@sendProdutoHome',
+      '/Carrossel-api'             => 'geral/HomeController@sendCategoriaHome',
 
       // Cliente
       '/Produto'                   => 'cliente/ProdutoController@index',
