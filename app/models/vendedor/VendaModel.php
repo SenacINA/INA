@@ -26,7 +26,12 @@ public function getVendas(int $idVenda)
         end.numero_endereco,
         end.uf_endereco,
         end.cidade_endereco,
-        SUM(ic.preco_pago_compra) AS total_pago_compra
+        SUM(ic.preco_pago_compra) AS total_pago_compra,
+        (
+            SELECT COUNT(*)
+            FROM compra c2
+            WHERE c2.id_cliente = c.id_cliente AND c2.id_vendedor = c.id_vendedor
+        ) AS quantidade_compras_cliente_vendedor
     FROM compra c
     INNER JOIN cliente cli ON cli.id_cliente = c.id_cliente
     INNER JOIN endereco end ON end.id_endereco = c.id_endereco
@@ -44,6 +49,7 @@ public function getVendas(int $idVenda)
         end.uf_endereco,
         end.cidade_endereco
         ";
+
 
 
 

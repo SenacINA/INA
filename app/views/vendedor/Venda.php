@@ -149,7 +149,7 @@
         <div class="confirmar_pedido_container_4_item">
           <h1>CLIENTE</h1>
           <h2><?= htmlspecialchars($nome_cliente ?? 'Data não disponível') ?></h2>
-          <h2>3 pedidos</h2>
+          <h2><?= $vendas[0]['quantidade_compras_cliente_vendedor'] ?? 0 ?> pedidos</h2>
         </div>
 
         <div class="confirmar_pedido_container_4_item">

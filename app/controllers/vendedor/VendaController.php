@@ -32,7 +32,8 @@ class VendaController extends RenderView
                 'numero_endereco' => null,
                 'uf_endereco' => null,
                 'cidade_endereco' => null,
-                'total_pago_compra' => null
+                'total_pago_compra' => null,
+                'quantidade_compras_cliente_vendedor' => null
             ];
         }
 
@@ -48,6 +49,7 @@ class VendaController extends RenderView
         $ufEndereco = null;
         $cidadeEndereco = null;
         $totalPagoCompra = null;
+        $quantidadeComprasClienteVendedor = null;
 
         if (!empty($vendas)) {
             setlocale(LC_TIME, 'pt_BR.utf8', 'pt_BR', 'Portuguese_Brazil.1252');
@@ -63,6 +65,7 @@ class VendaController extends RenderView
             $ufEndereco = $vendas[0]['uf_endereco'] ?? null;
             $cidadeEndereco = $vendas[0]['cidade_endereco'] ?? null;
             $totalPagoCompra = $vendas[0]['total_pago_compra'] ?? null;
+            $quantidadeComprasClienteVendedor = $vendas[0]['quantidade_compras_cliente_vendedor'] ?? null;
         }
 
         return [
@@ -77,7 +80,8 @@ class VendaController extends RenderView
             'numero_endereco' => $numeroEndereco,
             'uf_endereco' => $ufEndereco,
             'cidade_endereco' => $cidadeEndereco,
-            'total_pago_compra' => $totalPagoCompra
+            'total_pago_compra' => $totalPagoCompra,
+            'quantidade_compras_cliente_vendedor' => $quantidadeComprasClienteVendedor
         ];
     }
 
