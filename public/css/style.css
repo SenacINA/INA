@@ -1137,6 +1137,7 @@ input:checked + .toggle_slider::before {
   &>img {
     aspect-ratio: 1 / 1;
     object-fit: contain;
+    background-color: #fff;
   }
 }
 

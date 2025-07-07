@@ -45,7 +45,7 @@ require_once('./utils/head.php')
                     </div>
                     <div id="div_novidades" class="index_body_produtos_content">
                     </div>
-                    <div class="index_body_ver_mais" onclick="pag('cliente/Categoria',0)">
+                    <div class="index_body_ver_mais" onclick="pag('Categoria')">
                         <p>Ver Mais</p>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

@@ -7,7 +7,7 @@ const cardProduto = (produto) => {
         </div>
         <div class='index_body_estrela_valor'>
           <div class='index_body_estrela_produto'>
-            <p class='estrelas-${produto["media_avaliacoes"]}'>★★★★★</p>
+            <p class='estrelas-${Math.ceil(produto["media_avaliacoes"])}'>★★★★★</p>
             <h4>${produto["total_avaliacoes"]}</h4>
           </div>
           <div class='index_body_valor_produto'>
