@@ -12,17 +12,12 @@ require_once('./utils/head.php')
     // echo var_dump($_SERVER['REQUEST_URI']);
     // echo var_dump($_SERVER['DOCUMENT_ROOT']);
     include_once("$PATH_COMPONENTS/php/navbar.php");
-    include_once("$PATH_COMPONENTS/php/parallax.php")
+    include_once("$PATH_COMPONENTS/php/parallax.php");
     ?>
 
     <div class="index_body_main_container">
-
-        <!-- Import Carrossel -->
-        <?php
-        include_once("$PATH_COMPONENTS/php/carrossel.php");
-        Carrossel('./');
-        ?>
-
+        <div id="carrosel_container" class="carrossel" data-path='./public' style="background: url('./public/image/index/fundoCarrossel.jpg') center/cover no-repeat">
+        </div>
         <div class="index_body_bg_container">
             <div class="index_body_content_container">
                 <div class="index_body_ad_box">
@@ -34,7 +29,7 @@ require_once('./utils/head.php')
                         <img src="<?= $PATH_PUBLIC ?>/image/index/BannerGarantia.jpg" alt="">
                     </div>
                 </div>
-                
+
                 <h1>Descobertas do Dia</h1>
                 <div class="index_body_produto_container">
                     <div class="index_body_container_title">
@@ -100,11 +95,12 @@ require_once('./utils/head.php')
     <button id="btnTopo" class="btn-topo" title="Voltar ao topo">
         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/seta_cima.svg" alt="">
     </button>
-    <script src='<?= $PATH_PUBLIC ?>/js/geral/carrossel.js' data-isindex="1"></script>
+    <script type="module" src='<?= $PATH_PUBLIC ?>/js/geral/carrossel.js' data-isindex="1"></script>
     <script src='<?= $PATH_PUBLIC ?>/js/geral/BtnTopo.js' data-isindex="1"></script>
     <script src='<?= $PATH_PUBLIC ?>/js/geral/card.js'></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/geral/home.js'></script>
     <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
+    <script></script>
 </body>
 
 </html>
