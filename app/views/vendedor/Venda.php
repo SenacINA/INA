@@ -72,7 +72,7 @@
               <hr>
             </div>
             <div>
-              <h1>Guilherme Xavier</h1>
+              <h1><?= htmlspecialchars($nome_cliente ?? 'Data não disponível') ?></h1>
               <h2>fez o pedido em</h2>
               <h2><?= htmlspecialchars($data_compra ?? 'Data não disponível') ?></h2>
             </div>
@@ -84,7 +84,7 @@
               <img src="<?=$PATH_PUBLIC?>/image/vendedor/confirmar_pedido/bolinha_itens.svg" alt="">
             </div>
             <div>
-              <h1>Guilherme Xavier</h1>
+              <h1><?= htmlspecialchars($nome_cliente ?? 'Data não disponível') ?></h1>
               <h2>pagamento confirmado em</h2>
               <h2>06/07/2024</h2>
             </div>
@@ -148,7 +148,7 @@
       <div class="confirmar_pedido_container_4">
         <div class="confirmar_pedido_container_4_item">
           <h1>CLIENTE</h1>
-          <h2>Guilherme Xavier</h2>
+          <h2><?= htmlspecialchars($nome_cliente ?? 'Data não disponível') ?></h2>
           <h2>3 pedidos</h2>
         </div>
 
@@ -156,7 +156,7 @@
           <div class="confirmar_pedido_linha">
             <h1>INFORMAÇÕES DE CONTATO</h1>
           </div>
-          <h2>(67) 9 9999-9999</h2>
+          <h2><?= htmlspecialchars($numero_celular_cliente ?? 'Data não disponível') ?></h2>
         </div>
 
         <div class="confirmar_pedido_container_4_item">

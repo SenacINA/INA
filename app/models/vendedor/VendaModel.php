@@ -16,11 +16,15 @@ public function getVendas(int $idVenda)
 {
   $sql = "
     SELECT 
-      c.data_compra,
-      c.id_cliente
+        c.data_compra,
+        c.id_cliente,
+        cli.nome_cliente,
+        cli.numero_celular_cliente
     FROM compra c
+    INNER JOIN cliente cli ON cli.id_cliente = c.id_cliente
     WHERE c.id_compra = :idVenda
   ";
+
 
   $stmt = $this->db->getConnection()->prepare($sql);
   $stmt->bindValue(':idVenda', $idVenda, PDO::PARAM_INT);
