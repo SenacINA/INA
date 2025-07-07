@@ -7,56 +7,73 @@ require_once __DIR__ . '/../../models/vendedor/VendedorModel.php';
 
 class ProdutoController extends RenderView {
     public function index() {
-        $id = $_POST['produto_id'];
-        $clienteId = $_SESSION['cliente_id'] ?? 0;
-        $comprou = false; 
-        $model = new ProdutoClienteModel();
-        $info = $model->searchProduto($id);
-        $dados = [];
+        // $id = $_POST['produto_id'];
+        // $clienteId = $_SESSION['cliente_id'] ?? 0;
+        // $comprou = false; 
+        // $model = new ProdutoClienteModel();
+        // $info = $model->searchProduto($id);
+        // $dados = [];
 
-        if ($clienteId > 0) {
-            
-            $modelCliente = new ClienteModel();
-            $comprou = $model->clientePodeAvaliar($clienteId, $id);
-            $dados = $modelCliente->findById($clienteId);
+        // if ($clienteId > 0) {
+
+        //     $modelCliente = new ClienteModel();
+        //     $comprou = $model->clientePodeAvaliar($clienteId, $id);
+        //     $dados = $modelCliente->findById($clienteId);
+        // }
+
+        // $media = round($model->getMediaAvaliacoes($id));
+
+        // $media = $media > 5 ? 5 : $media;
+
+        // $this->loadView('cliente/Produto', [
+        //     'id' => $id,
+        //     'comprou' => $comprou,
+        //     'cliente' => $dados,
+        //     'media' => $media
+        // ]);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['produto_id'])) {
+            $id = $_POST['produto_id'];
+            header("Location: Produto/$id");
+            exit;
         }
-
-        $media = round($model->getMediaAvaliacoes($id));
-
-        $media = $media > 5 ? 5 : $media;
-
+    }
+    public function mostrarProduto($id) {
+        $model = new ProdutoClienteModel;
+        $modelVendedor = new VendedorModel;
+    
+        $info = $model->searchProduto($id);
+        if (!$info) {
+            $this->loadView('geral/404', []);
+            return;
+        }
+    
+        $clienteId = $_SESSION['cliente_id'] ?? 0;
+        $comprou = $clienteId ? $model->clientePodeAvaliar($clienteId, $id) : false;
+        $clienteDados = $clienteId ? (new ClienteModel())->findById($clienteId) : [];
+    
+        $vendedorAvaliacoes = $modelVendedor->getEstrelasPorVendedor($info['infoProduto']['id_vendedor']);
+    
+        $total = array_sum($vendedorAvaliacoes);
+        $mediaEstrelas = count($vendedorAvaliacoes) > 0
+            ? round($total / count($vendedorAvaliacoes) * 2) / 2
+            : 0;
+    
+        $info['total_avaliacoes'] = count($vendedorAvaliacoes);
+        $info['mediaEstrelasVendedor'] = $mediaEstrelas;
+        $info['distribuicao_avaliacoes'] = $model->getDistribuicaoAvaliacoes($id);
+    
+        $mediaProduto = round($model->getMediaAvaliacoes($id));
+        $mediaProduto = min($mediaProduto, 5);
+    
         $this->loadView('cliente/Produto', [
             'id' => $id,
             'comprou' => $comprou,
-            'cliente' => $dados,
-            'media' => $media
+            'cliente' => $clienteDados,
+            'media' => $mediaProduto,
+            'info' => $info,
         ]);
     }
-    public function exibirProduto($id)
-    {
-        $model = new ProdutoClienteModel;
-        $modelVendedor = new VendedorModel;
-        $info = $model->searchProduto($id);
-
-        $vendedorAvaliacoes = $modelVendedor->getEstrelasPorVendedor($info['infoProduto']['id_vendedor']);
-
-        $total = 0;
-        $info['total_avaliacoes'] = count($vendedorAvaliacoes);
-        foreach ($vendedorAvaliacoes as $avaliacao) {
-          $total += $avaliacao;
-        }
-
-        $info['mediaEstrelasVendedor'] = count($vendedorAvaliacoes) > 0
-          ? round($total / count($vendedorAvaliacoes) * 2) / 2
-          : 0;
-
-
-        // var_dump($info['mediaEstrelasVendedor']);
-        // exit;
-        $info['distribuicao_avaliacoes'] = $model->getDistribuicaoAvaliacoes($id);
-        
-        return $info;
-    }
+    
 
     public function comentarios(array $params): array
     {
