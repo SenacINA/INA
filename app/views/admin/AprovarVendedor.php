@@ -1,34 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-$titulo = "Aprovar Vendedores - E ao Quadrado";
+$titulo = "Aprovar Vendedor - E ao Quadrado";
 $css = ["/css/admin/AprovarVendedor.css"];
 require_once('./utils/head.php');
-require_once('./app/models/admin/AprovarVendedorModel.php');
+require_once('./app/controllers/admin/AprovarVendedorController.php');
 
-// Processa ações de aprovação/reprovação
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao'], $_POST['vendedor_id'])) {
-  $acao = $_POST['acao'];
-  $id   = (int)$_POST['vendedor_id'];
-  $model = new VendedorModel();
+$e = $estatisticas ?? ['aprovados' => 0, 'reprovados' => 0, 'inativados' => 0];
 
-  if ($acao === 'aprovar') {
-    $model->atualizarStatus($id, 'Aprovado');
-  } elseif ($acao === 'reprovar') {
-    $model->atualizarStatus($id, 'Reprovado');
-  }
-}
-
-// Filtros do formulário
-$filtros = [
-  'search' => $_POST['search'] ?? '',
-  'status' => $_POST['status'] ?? '',
-  'mes'    => $_POST['mes']    ?? '',
-  'ano'    => $_POST['ano']    ?? '',
-];
-
-$model = new VendedorModel();
-$lista = $model->getRequisicoes($filtros);
 ?>
 
 <body>
@@ -111,7 +90,6 @@ $lista = $model->getRequisicoes($filtros);
                     </div>
                   </div>
 
-
                   <div class="aprovar_vendedor_container_botao">
                     <div class="aprovar_vendedor_holder_botao">
                       <button type="submit" class="btn_blue base_botao">
@@ -126,7 +104,7 @@ $lista = $model->getRequisicoes($filtros);
                   </div>
                 </form>
               </div>
-              <!-- Estatísticas de Aprovação (fake data) -->
+
               <div class="aprovar_vendedor_estatisticas">
                 <div class="aprovar_vendedor_subtitulo_generico">
                   <div class="aprovar_vendedor_linha_vertical"></div>
@@ -138,76 +116,82 @@ $lista = $model->getRequisicoes($filtros);
                 <div class="aprovar_vendedor_estatistica_holder">
                   <div class="aprovar_vendedor_card">
                     <div class="aprovar_vendedor_titulo">Vendedores Aprovados</div>
-                    <div class="aprovar_vendedor_estatistica_descricao">25</div>
+                    <div class="aprovar_vendedor_estatistica_descricao"><?= htmlspecialchars($estatisticas['Aprovado'] ?? 0) ?></div>
                   </div>
 
                   <div class="aprovar_vendedor_card">
                     <div class="aprovar_vendedor_titulo">Vendedores Reprovados</div>
-                    <div class="aprovar_vendedor_estatistica_descricao">3</div>
+                    <div class="aprovar_vendedor_estatistica_descricao"><?= htmlspecialchars($estatisticas['Reprovado'] ?? 0) ?></div>
                   </div>
 
                   <div class="aprovar_vendedor_card">
                     <div class="aprovar_vendedor_titulo">Vendedores Inativados</div>
-                    <div class="aprovar_vendedor_estatistica_descricao">1</div>
+                    <div class="aprovar_vendedor_estatistica_descricao"><?= htmlspecialchars($estatisticas['Inativado'] ?? 0) ?></div>
                   </div>
                 </div>
               </div>
-              <!-- CONTAINER PRINCIPAL -->
-              <div>
-              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="aprovar_vendedor_titulo_1">
+      <div class="aprovar_vendedor_text_titulo_1">
+        <img class="base_icon" src="<?= $PATH_PUBLIC . '/image/geral/icons/pasta_clock_icon.svg' ?>" alt="" />
+        <h1>GERENCIAR VENDEDOR</h1>
+      </div>
+    </div>
+    <div class="aprovar_vendedor_table_filtro bg_carolina">
+      <p class="aprovar_vendedor_filtro_titulo font_subtitulo">Organizar por:</p>
+      <select id="filtros-gerenciar-vendas" name="ordenar">
+        <option selected value="cod">CÓD.</option>
+        <option value="alfabetica">A-Z</option>
+        <option value="requisitos">REQUISITOS</option>
+        <option value="declaracao">DECLARAÇÃO</option>
+        <option value="status">STATUS</option>
+      </select>
+    </div>
+    <div class="base_tabela">
+      <table>
+        <colgroup>
+          <col class="aprovar_vendedor_table_col-1">
+          <col class="aprovar_vendedor_table_col-2">
+          <col class="aprovar_vendedor_table_col-3">
+          <col class="aprovar_vendedor_table_col-4">
+          <col class="aprovar_vendedor_table_col-5">
+          <col class="aprovar_vendedor_table_col-6">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Cód.</th>
+            <th>Vendedor</th>
+            <th>Requisitos</th>
+            <th>Declaração</th>
+            <th>Status</th>
+            <th>Gerenciamento</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
 
-
-            <!-- Tabela de resultados -->
-            <div class="base_tabela">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Cód.</th>
-                    <th>Vendedor</th>
-                    <th>Requisitos</th>
-                    <th>Declaração</th>
-                    <th>Gerenciar</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php if (empty($lista)): ?>
-                    <tr>
-                      <td colspan="6">Nenhum resultado encontrado</td>
-                    </tr>
-                  <?php else: ?>
-                    <?php foreach ($lista as $v): ?>
-                      <tr>
-                        <td># <?= htmlspecialchars($v['codigo']) ?></td>
-                        <td><?= htmlspecialchars($v['vendedor']) ?></td>
-                        <td><?= htmlspecialchars($v['requisitos']) ?></td>
-                        <td><?= htmlspecialchars($v['declaracao']) ?></td>
-                        <td class="aprovar_vendedor_coluna_botoes">
-                          <?php if ($v['status'] === 'Pendente'): ?>
-                            <form method="post" style="display:inline;">
-                              <input type="hidden" name="acao" value="aprovar">
-                              <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
-                              <button type="submit" class="aprovar_vendedor_btn_aprovar">APROVAR</button>
-                            </form>
-                            <form method="post" style="display:inline;">
-                              <input type="hidden" name="acao" value="reprovar">
-                              <input type="hidden" name="vendedor_id" value="<?= $v['codigo'] ?>">
-                              <button type="submit" class="aprovar_vendedor_btn_recusar">RECUSAR</button>
-                            </form>
-                          <?php else: ?>
-                            <button class="aprovar_vendedor_btn_inativar">INATIVAR</button>
-                          <?php endif; ?>
-                        </td>
-                        <td><?= htmlspecialchars($v['status']) ?></td>
-                      </tr>
-                    <?php endforeach; ?>
-                  <?php endif; ?>
-                </tbody>
-              </table>
-            </div>
+    <div class="base_navegacao">
+      <div class="aprovar_vendedor_navegacao">
+        <button id="btnAnterior" class="base_botao btn_blue">
+          <img src="./public/image/geral/icons/seta_filtro_branco.svg" class="base_icon esquerda">
+        </button>
+        <button id="btnProximo" class="base_botao btn_blue">
+          <img src="./public/image/geral/icons/seta_filtro_branco.svg" class="base_icon direita">
+        </button>
+      </div>
+    </div>
   </main>
 </body>
+<script src="<?= $PATH_PUBLIC ?>/js/tabelas/renderTableAprovarVendedor.js"></script>
+<script>
+  window.vendedores = <?= json_encode($lista) ?>;
+</script>
 
 </html>

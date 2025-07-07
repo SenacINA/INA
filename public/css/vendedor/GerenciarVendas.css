@@ -240,12 +240,12 @@
 /**Individual para cada tabela */
 .gerenciar_vendas_table_col-1,
 .gerenciar_vendas_table_col-4 {
-  width: 4%;
+  width: 40%;
 }
 
 .gerenciar_vendas_table_col-3,
 .gerenciar_vendas_table_col-6 {
-  width: 8%;
+  width: 40%;
 }
 
 .gerenciar_vendas_table_col-2,
