@@ -1,49 +1,76 @@
-document
-  .querySelectorAll('.upload_imagem input[type="file"]')
-  .forEach((input) => {
-    input.addEventListener("change", function () {
-      const file = this.files[0];
-      const container = this.closest(".upload_imagem");
-      const sizeLabel = container.querySelector(".size_img");
+const validacoesImagem = {};
 
-      const existingImg = container.querySelector("img");
-      if (existingImg) existingImg.remove();
+document.querySelectorAll('.upload_imagem input[type="file"]').forEach((input) => {
+  const container = input.closest(".upload_imagem");
+  const sizeSpan = container.querySelector(".size_img");
+  const imgPreview = container.querySelector("img");
 
-      if (!file) {
-        sizeLabel.textContent = "";
-        sizeLabel.style.color = "";
-        ajustarPaddingBodyContainer();
-        return;
+  if (imgPreview && imgPreview.src) {
+    const img = new Image();
+    img.onload = () => {
+      const expectedSize = input.getAttribute("data-size");
+      let [expectedWidth, expectedHeight] = expectedSize
+        .split("x")
+        .map((n) => parseInt(n, 10));
+
+      sizeSpan.textContent = `${img.naturalWidth} x ${img.naturalHeight}`;
+
+      const minWidth = expectedWidth * 0.8;
+      const minHeight = expectedHeight * 0.8;
+
+      if (img.naturalWidth < minWidth || img.naturalHeight < minHeight) {
+        sizeSpan.style.color = "red";
+        validacoesImagem[input.id] = false;
+      } else {
+        sizeSpan.style.color = "green";
+        validacoesImagem[input.id] = true;
+      }
+    };
+    img.src = imgPreview.src;
+  }
+
+  input.addEventListener("change", function () {
+    const file = this.files[0];
+    if (!file) {
+      sizeSpan.textContent = "";
+      sizeSpan.style.color = "";
+      validacoesImagem[this.id] = false;
+      return;
+    }
+
+    const previewImg = container.querySelector("img");
+    if (previewImg) previewImg.remove();
+
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+
+    img.onload = () => {
+      container.appendChild(img);
+
+      const expectedSize = this.getAttribute("data-size");
+      let [expectedWidth, expectedHeight] = expectedSize
+        .split("x")
+        .map((n) => parseInt(n, 10));
+
+      sizeSpan.textContent = `${img.naturalWidth} x ${img.naturalHeight}`;
+
+      const minWidth = expectedWidth * 0.8;
+      const minHeight = expectedHeight * 0.8;
+
+      if (img.naturalWidth < minWidth || img.naturalHeight < minHeight) {
+        sizeSpan.style.color = "red";
+        validacoesImagem[this.id] = false;
+      } else {
+        sizeSpan.style.color = "green";
+        validacoesImagem[this.id] = true;
       }
 
-      const img = new Image();
-      const url = URL.createObjectURL(file);
+      URL.revokeObjectURL(url);
+    };
 
-      img.onload = () => {
-        container.appendChild(img);
-
-        const expectedSize = this.getAttribute("data-size");
-        let [expectedWidth, expectedHeight] = expectedSize
-          .split("x")
-          .map((n) => parseInt(n, 10));
-
-        sizeLabel.textContent = `${img.naturalWidth} x ${img.naturalHeight}`;
-
-        const minWidth = expectedWidth * 0.8;
-        const minHeight = expectedHeight * 0.8;
-
-        if (img.naturalWidth < minWidth || img.naturalHeight < minHeight) {
-          sizeLabel.style.color = "red";
-        } else {
-          sizeLabel.style.color = "green";
-        }
-
-        URL.revokeObjectURL(url);
-      };
-
-      img.src = url;
-    });
+    img.src = url;
   });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const inputs = document.querySelectorAll("input[type='file'][id^='file']");
@@ -61,13 +88,25 @@ document.addEventListener("DOMContentLoaded", () => {
     await enviarImagensPorTipo("propaganda", 5, 8);
   });
 
-  async function enviarImagensPorTipo(tipo, inicio, fim) {
+  async function enviarImagensPorTipo(tipoBase, inicio, fim) {
     for (let i = inicio; i <= fim; i++) {
       const input = document.getElementById(`file${i}`);
       if (!input || input.files.length === 0) continue;
 
+      if (validacoesImagem[input.id] === false) {
+        const label = document.querySelector(`label[for="${input.id}"]`);
+        const nomeImagem = label ? label.textContent.trim() : `Imagem ${input.id}`;
+        gerarToast(`${nomeImagem} é muito pequena.`, "erro");
+        continue;
+      }
+
       const file = input.files[0];
       const index = i < 5 ? i - 1 : i - 5;
+
+      let tipo = tipoBase;
+      if (tipoBase === "propaganda") {
+        tipo = input.getAttribute("data-size");
+      }
 
       const formData = new FormData();
       formData.append("imagem", file);
@@ -86,22 +125,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const resultado = JSON.parse(text);
 
           if (response.ok && resultado.sucesso) {
-            console.log(`Imagem enviada: ${resultado.endereco}`);
-            alert(`Imagem ${tipo} ${index + 1} enviada com sucesso!`);
+            gerarToast('Imagens salvas com sucesso.', 'sucesso');
           } else {
-            console.error("Erro:", resultado.erro || "Erro desconhecido.");
-            alert(
-              "Erro ao enviar imagem: " +
-                (resultado.erro || "Erro desconhecido.")
-            );
+            gerarToast("Erro ao salvar imagem.", "erro");
           }
         } catch (jsonError) {
-          console.error("Resposta não é JSON:", text);
-          alert("Erro inesperado na resposta do servidor.");
+          gerarToast("Resposta inesperada do servidor: " + text, "erro");
         }
       } catch (error) {
-        console.error("Erro de rede:", error);
-        alert("Falha na requisição.");
+        gerarToast("Erro na requisição.", "erro");
       }
     }
   }

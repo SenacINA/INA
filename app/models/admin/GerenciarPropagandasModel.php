@@ -11,10 +11,16 @@ class GerenciarPropagandasModel
         $this->db->connect();
     }
 
-    public function adicionarImagem($tipo, $endereco, $index = 0, $ativo = true)
+    public function inserirOuAtualizarImagemPropaganda(string $tipo, string $endereco, int $index = 0, bool $ativo = true)
     {
+        $tipo = strtoupper($tipo);
+
         $sql = "INSERT INTO imagem_propagandas (tipo_propaganda, endereco_imagem, index_exibicao, ativo) 
-                VALUES (:tipo, :endereco, :index, :ativo)";
+                VALUES (:tipo, :endereco, :index, :ativo)
+                ON DUPLICATE KEY UPDATE 
+                    endereco_imagem = VALUES(endereco_imagem),
+                    ativo = VALUES(ativo)";
+
         $stmt = $this->db->getConnection()->prepare($sql);
         return $stmt->execute([
             ':tipo' => $tipo,
@@ -24,10 +30,14 @@ class GerenciarPropagandasModel
         ]);
     }
 
-    public function adicionarImagemCarrossel($endereco, $index = 0, $ativo = true)
+    public function inserirOuAtualizarImagemCarrossel(string $endereco, int $index = 0, bool $ativo = true)
     {
         $sql = "INSERT INTO imagem_carrossel (endereco_carrossel, index_exibicao, ativo) 
-            VALUES (:endereco, :index, :ativo)";
+                VALUES (:endereco, :index, :ativo)
+                ON DUPLICATE KEY UPDATE 
+                    endereco_carrossel = VALUES(endereco_carrossel),
+                    ativo = VALUES(ativo)";
+
         $stmt = $this->db->getConnection()->prepare($sql);
         return $stmt->execute([
             ':endereco' => $endereco,
@@ -36,11 +46,32 @@ class GerenciarPropagandasModel
         ]);
     }
 
+    public function buscarImagemPropagandaPorTipoEIndex(string $tipo, int $index)
+    {
+        $sql = "SELECT endereco_imagem FROM imagem_propagandas WHERE tipo_propaganda = :tipo AND index_exibicao = :index LIMIT 1";
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->execute([
+            ':tipo' => strtoupper($tipo),
+            ':index' => $index,
+        ]);
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultado ? $resultado['endereco_imagem'] : null;
+    }
+
+    public function buscarImagemCarrosselPorIndex(int $index)
+    {
+        $sql = "SELECT endereco_carrossel FROM imagem_carrossel WHERE index_exibicao = :index LIMIT 1";
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->execute([':index' => $index]);
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultado ? $resultado['endereco_carrossel'] : null;
+    }
+
     public function contarImagensAtivasPorTipo($tipo)
     {
         $sql = "SELECT COUNT(*) as total FROM imagem_propagandas WHERE tipo_propaganda = :tipo AND ativo = 1";
         $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->execute([':tipo' => $tipo]);
+        $stmt->execute([':tipo' => strtoupper($tipo)]);
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
         return (int) $resultado['total'];
     }
@@ -53,10 +84,9 @@ class GerenciarPropagandasModel
         }
         $sql = "SELECT * FROM imagem_propagandas WHERE tipo_propaganda = :tipo LIMIT $limite";
         $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->execute([':tipo' => $tipo]);
+        $stmt->execute([':tipo' => strtoupper($tipo)]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
 
     public function listarImagensCarrossel()
     {
@@ -64,5 +94,49 @@ class GerenciarPropagandasModel
         $stmt = $this->db->getConnection()->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function limparDuplicatas()
+    {
+        try {
+            $db = $this->db->getConnection();
+
+            // Deletar duplicatas em imagem_propagandas
+            $sqlPropagandas = "
+            DELETE ip FROM imagem_propagandas ip
+            INNER JOIN (
+                SELECT tipo_propaganda, index_exibicao, MIN(id_imagem_propaganda) AS menor_id
+                FROM imagem_propagandas
+                GROUP BY tipo_propaganda, index_exibicao
+                HAVING COUNT(*) > 1
+            ) dup ON ip.tipo_propaganda = dup.tipo_propaganda
+                  AND ip.index_exibicao = dup.index_exibicao
+                  AND ip.id_imagem_propaganda <> dup.menor_id;
+        ";
+
+            // Deletar duplicatas em imagem_carrossel
+            $sqlCarrossel = "
+            DELETE ic FROM imagem_carrossel ic
+            INNER JOIN (
+                SELECT index_exibicao, MIN(id_imagem_carrossel) AS menor_id
+                FROM imagem_carrossel
+                GROUP BY index_exibicao
+                HAVING COUNT(*) > 1
+            ) dup ON ic.index_exibicao = dup.index_exibicao
+                  AND ic.id_imagem_carrossel <> dup.menor_id;
+        ";
+
+            $db->beginTransaction();
+            $db->exec($sqlPropagandas);
+            $db->exec($sqlCarrossel);
+            $db->commit();
+
+            return ['sucesso' => true, 'mensagem' => 'Duplicatas removidas com sucesso.'];
+        } catch (PDOException $e) {
+            if ($db->inTransaction()) {
+                $db->rollBack();
+            }
+            return ['erro' => 'Falha ao remover duplicatas: ' . $e->getMessage()];
+        }
     }
 }

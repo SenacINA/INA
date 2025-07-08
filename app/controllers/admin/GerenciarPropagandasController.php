@@ -1,6 +1,8 @@
 <?php
 require_once('./app/models/admin/GerenciarPropagandasModel.php');
 
+
+
 class GerenciarPropagandasController
 {
     private GerenciarPropagandasModel $model;
@@ -13,29 +15,45 @@ class GerenciarPropagandasController
     public function index()
     {
         $carrossel = $this->model->listarImagensCarrossel();
-
         $propagandas_670x300 = $this->model->listarImagensPorTipo('670x300', 2);
         $propagandas_670x125 = $this->model->listarImagensPorTipo('670x125', 2);
 
-        $propagandas = array_merge($propagandas_670x300, $propagandas_670x125);
-
         $dados = [
             'carrossel' => $carrossel,
-            'propagandas' => $propagandas
+            'propagandas_300' => $propagandas_670x300,
+            'propagandas_125' => $propagandas_670x125
         ];
 
         extract($dados);
         require_once("./app/views/admin/GerenciarPropagandas.php");
     }
 
-    public function salvarImagemCarrossel($id_carrossel, $endereco)
+    private function apagarArquivoAntigo(string $caminhoRelativo)
     {
-        return $this->model->adicionarImagemCarrossel($id_carrossel, $endereco);
+        $caminhoAbsoluto = __DIR__ . '/../../../public' . $caminhoRelativo;
+        if (file_exists($caminhoAbsoluto)) {
+            unlink($caminhoAbsoluto);
+        }
     }
 
-    public function salvarImagemPropaganda($tipo, $endereco, $index)
+    public function substituirImagemPropaganda(string $tipo, string $novoEndereco, int $index = 0, bool $ativo = true)
     {
-        return $this->model->adicionarImagem($tipo, $endereco, $index);
+        $imagemAntiga = $this->model->buscarImagemPropagandaPorTipoEIndex($tipo, $index);
+        if ($imagemAntiga) {
+            $this->apagarArquivoAntigo($imagemAntiga);
+        }
+
+        return $this->model->inserirOuAtualizarImagemPropaganda($tipo, $novoEndereco, $index, $ativo);
+    }
+
+    public function substituirImagemCarrossel(string $novoEndereco, int $index = 0, bool $ativo = true)
+    {
+        $imagemAntiga = $this->model->buscarImagemCarrosselPorIndex($index);
+        if ($imagemAntiga) {
+            $this->apagarArquivoAntigo($imagemAntiga);
+        }
+        return $this->model->inserirOuAtualizarImagemCarrossel($novoEndereco, $index, $ativo);
+        
     }
 
     public function uploadImagem()
@@ -46,11 +64,17 @@ class GerenciarPropagandasController
             return;
         }
 
-        $tipo = $_POST['tipo'];
+        $tipo = strtolower($_POST['tipo']);
         $index = isset($_POST['index']) ? (int)$_POST['index'] : 0;
 
-        $uploadDir = __DIR__ . '/../../../public/upload/propagandas/';
+        $tiposValidos = ['670x300', '670x125', 'carrossel'];
+        if (!in_array($tipo, $tiposValidos)) {
+            http_response_code(400);
+            echo json_encode(['erro' => 'Tipo de propaganda inválido.']);
+            return;
+        }
 
+        $uploadDir = __DIR__ . '/../../../public/upload/propagandas/';
         if (!file_exists($uploadDir)) {
             mkdir($uploadDir, 0755, true);
         }
@@ -68,9 +92,9 @@ class GerenciarPropagandasController
         $enderecoImagem = '/INA/public/upload/propagandas/' . $nomeArquivo;
 
         if ($tipo === 'carrossel') {
-            $sucesso = $this->model->adicionarImagemCarrossel($enderecoImagem, $index);
+            $sucesso = $this->substituirImagemCarrossel($enderecoImagem, $index, true);
         } else {
-            $sucesso = $this->model->adicionarImagem($tipo, $enderecoImagem, $index);
+            $sucesso = $this->substituirImagemPropaganda($tipo, $enderecoImagem, $index, true);
         }
 
         if ($sucesso) {
@@ -81,59 +105,15 @@ class GerenciarPropagandasController
         }
     }
 
-    public function salvarImagemBase64Propaganda(string $base64, string $tipo, int $index = 0)
+    public function limparDuplicatasAction()
     {
-        $baseDir = __DIR__ . '/../../../public/upload/propagandas/';
+        $resultado = $this->model->limparDuplicatas();
 
-        if (!is_dir($baseDir)) {
-            if (!mkdir($baseDir, 0755, true)) {
-                error_log("Falha ao criar diretório: " . $baseDir);
-                return false;
-            }
-        }
-
-        if (!is_writable($baseDir)) {
-            error_log("Diretório sem permissão de escrita: " . $baseDir);
-            return false;
-        }
-
-        if (preg_match('/^data:image\/(\w+);base64,/', $base64, $tipoImagem)) {
-            $ext = strtolower($tipoImagem[1]);
-            $dataPart = substr($base64, strpos($base64, ',') + 1);
-            $dadosBinarios = base64_decode($dataPart);
-
-            if ($dadosBinarios === false || strlen($dadosBinarios) === 0) {
-                error_log("Falha ao decodificar base64 ou dados vazios.");
-                return false;
-            }
-
-            $nomeArquivo = 'propaganda_' . $index . '_' . time() . '.' . $ext;
-            $absPath = $baseDir . $nomeArquivo;
-
-            $bytesEscritos = file_put_contents($absPath, $dadosBinarios);
-
-            if ($bytesEscritos === false) {
-                error_log("Falha ao salvar imagem no caminho: " . $absPath);
-                return false;
-            }
-
-            $enderecoRelativo = '/INA/public/upload/propagandas/' . $nomeArquivo;
-
-            if ($tipo === 'carrossel') {
-                $sucesso = $this->model->adicionarImagemCarrossel($enderecoRelativo, $index);
-            } else {
-                $sucesso = $this->model->adicionarImagem($tipo, $enderecoRelativo, $index);
-            }
-
-            if (!$sucesso) {
-                error_log("Falha ao salvar registro da imagem no banco.");
-                return false;
-            }
-
-            return $enderecoRelativo;
+        if (isset($resultado['sucesso'])) {
+            echo json_encode($resultado);
         } else {
-            error_log("Formato da imagem base64 inválido.");
-            return false;
+            http_response_code(500);
+            echo json_encode($resultado);
         }
     }
 

@@ -2,10 +2,17 @@
 $routes = [
       '/'                                       => 'geral/HomeController@index',
       '/user/{id}'                              => 'cliente/ClienteController@show',
+      '/Home-api'                               => 'geral/HomeController@sendProdutoHome',
+      '/Carrossel-api'                          => 'geral/HomeController@sendCategoriaHome',
 
       // Cliente
       '/Produto'                                => 'cliente/ProdutoController@index',
+      '/Produto/{produto_id}'                   => 'cliente/ProdutoController@mostrarProduto',
       '/Categoria'                              => 'cliente/CategoriaController@index',
+      '/FiltrarCategoria'                       => 'cliente/CategoriaController@filtrarCategoria',
+      '/FiltrarSubcategoria'                    => 'cliente/CategoriaController@filtrarSubcategoria',
+      '/Categoria-api'                          => 'cliente/CategoriaController@sendProdutosCategorias',
+      '/Subcategoria-api'                       => 'cliente/CategoriaController@sendProdutosSubcategorias',
       '/Login'                                  => 'cliente/ClienteController@login',
       '/auth'                                   => 'auth/AuthController@loginForm',
       '/Logout'                                 => 'auth/AuthController@logout',
@@ -25,7 +32,7 @@ $routes = [
       '/Carrinho-api-update'                    => 'cliente/CarrinhoController@atualizar',
       '/Carrinho-api-badge'                     => 'cliente/CarrinhoController@exibirBadge',
       '/CarrinhoPagamentos'                     => 'cliente/ClienteController@pagamentos',
-      
+
       '/CarrinhoDados'                          => 'cliente/CarrinhoDadosController@index',
       '/CarrinhoDados-salvar'                   => 'cliente/CarrinhoDadosController@salvarEndereco',
       '/CarrinhoDados-excluir'                  => 'cliente/CarrinhoDadosController@excluirEndereco',

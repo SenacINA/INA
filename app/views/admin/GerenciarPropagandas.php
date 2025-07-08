@@ -5,7 +5,6 @@ $titulo = "Gerenciar Propagandas - E ao Quadrado";
 $css = ["/css/admin/GerenciarPropagandas.css"];
 require_once('./utils/head.php');
 ?>
-<pre><?php var_dump($propagandas); ?></pre>
 
 <body>
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
@@ -22,7 +21,6 @@ require_once('./utils/head.php');
     <div class="gerenciar_propagandas_body_holder">
       <div class="gerenciar_propagandas_quadrado_container">
 
-        <!-- Carrossel -->
         <div class="gerenciar_propagandas_carrossel">
           <div class="gerenciar_propagandas_subtitulo_generico">
             <div class="gerenciar_propagandas_linha_vertical"></div>
@@ -40,10 +38,10 @@ require_once('./utils/head.php');
                 <label class="titulo" for="file<?= $i + 1 ?>">Imagem do carrossel (1400x600):</label>
                 <input type="file" id="file<?= $i + 1 ?>" accept="image/*" data-size="1400x600" />
                 <label for="file<?= $i + 1 ?>" class="btn_upload">Selecionar imagem</label>
-                <label class="size_img"></label>
+                <span class="size_img"></span>
 
                 <?php if ($imgCarrossel): ?>
-                  <img src="<?= htmlspecialchars($imgCarrossel) ?>" alt="Carrossel <?= $i + 1 ?>" style="max-width: 200px; display: block; margin-top: 5px;" />
+                  <img src="<?= htmlspecialchars($imgCarrossel) ?>" alt="Carrossel <?= $i + 1 ?>" />
                 <?php endif; ?>
               </div>
             <?php endfor; ?>
@@ -55,7 +53,6 @@ require_once('./utils/head.php');
           </div>
         </div>
 
-        <!-- Propagandas -->
         <div class="gerenciar_propagandas_uploads">
           <div class="gerenciar_propagandas_subtitulo_generico">
             <div class="gerenciar_propagandas_linha_vertical"></div>
@@ -70,18 +67,23 @@ require_once('./utils/head.php');
               <?php
               $propSizes = ['670x300', '670x300', '670x125', '670x125'];
               for ($j = 0; $j < 4; $j++):
-                $imgPropaganda = $propagandas[$j]['endereco_imagem'] ?? null;
                 $inputId = 5 + $j;
                 $size = $propSizes[$j];
+
+                if ($size === '670x300') {
+                  $imgPropaganda = $propagandas_300[($j < 2 ? $j : 0)]['endereco_imagem'] ?? null;
+                } else {
+                  $imgPropaganda = $propagandas_125[($j - 2)]['endereco_imagem'] ?? null;
+                }
               ?>
                 <div class="upload_imagem">
                   <label class="titulo" for="file<?= $inputId ?>">Propaganda <?= $j + 1 ?> (<?= htmlspecialchars($size) ?>):</label>
                   <input type="file" id="file<?= $inputId ?>" accept="image/*" data-size="<?= htmlspecialchars($size) ?>" />
                   <label for="file<?= $inputId ?>" class="btn_upload">Selecionar imagem</label>
-                  <label class="size_img"></label>
+                  <span class="size_img"></span>
 
                   <?php if ($imgPropaganda): ?>
-                    <img src="<?= htmlspecialchars($imgPropaganda) ?>" alt="Propaganda <?= $j + 1 ?>" style="max-width: 200px; display: block; margin-top: 5px;" />
+                    <img src="<?= htmlspecialchars($imgPropaganda) ?>" alt="Propaganda <?= $j + 1 ?>" />
                   <?php endif; ?>
                 </div>
               <?php endfor; ?>

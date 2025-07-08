@@ -59,19 +59,19 @@ CREATE TABLE IF NOT EXISTS subcategoria (
 );
 
 CREATE TABLE IF NOT EXISTS vendedor (
-    id_vendedor INT (11) NOT NULL AUTO_INCREMENT,
+    id_vendedor INT(11) NOT NULL AUTO_INCREMENT,
     id_cliente INT NOT NULL UNIQUE,
     nome_fantasia VARCHAR(255) NOT NULL,
     cnpj_vendedor VARCHAR(30) NOT NULL,
-    requisitos_completos TINYINT (1) NOT NULL DEFAULT 0,
-    documento_entregue TINYINT (1) NOT NULL DEFAULT 0,
-    STATUS ENUM('Pendente', 'Aprovado', 'Reprovado', 'Inativado') NOT NULL DEFAULT 'Pendente';
+    requisitos_completos TINYINT(1) NOT NULL DEFAULT 0,
+    documento_entregue TINYINT(1) NOT NULL DEFAULT 0,
+    STATUS ENUM('Pendente', 'Aprovado', 'Reprovado', 'Inativado') NOT NULL DEFAULT 'Pendente',
     data_requisicao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id_vendedor),
     UNIQUE KEY cnpj_vendedor (cnpj_vendedor),
     KEY idx_vendedor_status (STATUS),
     KEY idx_vendedor_data (data_requisicao)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE
     IF NOT EXISTS produto (
@@ -177,7 +177,8 @@ CREATE TABLE IF NOT EXISTS imagem_carrossel (
     endereco_carrossel VARCHAR(255) NOT NULL,
     index_exibicao INT DEFAULT 0,
     ativo BOOLEAN DEFAULT TRUE,
-    data_upload DATETIME DEFAULT CURRENT_TIMESTAMP
+    data_upload DATETIME DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE (index_exibicao) 
 );
 
 CREATE TABLE IF NOT EXISTS imagem_propagandas (
@@ -186,7 +187,8 @@ CREATE TABLE IF NOT EXISTS imagem_propagandas (
     endereco_imagem VARCHAR(255) NOT NULL,
     index_exibicao INT DEFAULT 0,
     ativo BOOLEAN DEFAULT TRUE,
-    data_upload DATETIME DEFAULT CURRENT_TIMESTAMP
+    data_upload DATETIME DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE (tipo_propaganda, index_exibicao) 
 );
 
 CREATE TABLE IF NOT EXISTS perfil (
@@ -304,7 +306,7 @@ CREATE TABLE IF NOT EXISTS permissao_admin (
     FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE
 );
 
-CREATE TABLE relatorio_vendedor (
+CREATE TABLE IF NOT EXISTS relatorio_vendedor (
     id INT AUTO_INCREMENT PRIMARY KEY,
     vendedor_id INT NOT NULL,
     produto_id INT NOT NULL,

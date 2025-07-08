@@ -111,7 +111,12 @@
   width: 100%;
 }
 
-.upload_imagem > label:first-child {
+.upload_imagem img {
+  width: min-content;
+  height: 100px;
+}
+
+.upload_imagem>label:first-child {
   font-weight: 600;
   color: var(--sappire);
 }
@@ -154,7 +159,7 @@
 }
 
 .upload_imagem {
-  position: relative; 
+  position: relative;
   margin-bottom: 20px;
   border: 1px solid #ddd;
   padding: 12px;
@@ -163,7 +168,7 @@
 }
 
 .upload_imagem input[type="file"] {
-  display: none; 
+  display: none;
 }
 
 .upload_imagem .btn_upload {
@@ -193,4 +198,5 @@
   margin-top: 8px;
   font-size: 14px;
   color: #666;
+  font-weight: 400;
 }

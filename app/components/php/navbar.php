@@ -176,6 +176,14 @@ function generateModalContent($user)
                   </a>
               </li>
               <li>
+                <a href="#" class="menu-item" onclick="pag(\'GerenciarVendas\')">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#3498db">
+                    <path fill="#3498db" fill-rule="evenodd" d="M7 1h4.25v3.75H4V4.5zm13 3.75h-7.25V1H17l3 3.5zM4 6.25V16h5V9h6v7h5V6.25zm9.5 4.25v7H16v1l-4 4l-4-4v-1h2.5v-7z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Gerenciar Vendas</span>
+                </a>
+              </li>
+              <li>
                   <a href="#" class="menu-item" onclick="pag(\'GerenciarProdutos\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                       <path fill="#3498db" d="M3 4.5A1.5 1.5 0 0 1 4.5 3h15A1.5 1.5 0 0 1 21 4.5V6a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 6zM4 9h16v2.498A6.5 6.5 0 0 0 17.5 11a6.5 6.5 0 0 0-3 .732a.75.75 0 0 0-.75-.732h-3.5a.75.75 0 0 0 0 1.5h3.096a6.49 6.49 0 0 0-2.346 5a6.47 6.47 0 0 0 1.022 3.5H7.75A3.75 3.75 0 0 1 4 17.25zm10.277 4.976a2 2 0 0 1-1.441 2.496l-.584.145a5.7 5.7 0 0 0 .006 1.807l.54.13a2 2 0 0 1 1.45 2.51l-.187.631c.44.386.94.7 1.485.922l.493-.519a2 2 0 0 1 2.899 0l.499.526a5.3 5.3 0 0 0 1.482-.913l-.198-.686a2 2 0 0 1 1.442-2.496l.583-.145a5.7 5.7 0 0 0-.006-1.807l-.54-.13a2 2 0 0 1-1.449-2.51l.186-.631a5.3 5.3 0 0 0-1.484-.922l-.493.518a2 2 0 0 1-2.9 0l-.498-.525c-.544.22-1.044.53-1.483.913zM17.5 19c-.8 0-1.45-.671-1.45-1.5c0-.828.65-1.5 1.45-1.5s1.45.672 1.45 1.5c0 .829-.65 1.5-1.45 1.5"/>
