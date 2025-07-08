@@ -110,18 +110,6 @@ require_once('./utils/head.php');
       </div>
       <hr>
       <?php
-      if (!isset($idVendedor) && isset($_SESSION['cliente_id'])) {
-        $idVendedor = $_SESSION['cliente_id'];
-      }
-
-      include_once("$PATH_COMPONENTS/php/card_produto.php");
-      include_once("$PATH_CONTROLLER/geral/CardController.php");
-
-      $card = new cardProduto;
-      $controller = new CardController;
-
-      $destaques = $controller->sendDestaques($idVendedor);
-
       if (!empty($destaques)) : ?>
         <div class="perfil_vendedor_grid_destaques">
           <div class="perfil_vendedor_about_container_2">
@@ -140,11 +128,7 @@ require_once('./utils/head.php');
           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/produto_icon.svg" alt="Icon Loja" class="base_icon">
           <h1>Produtos:</h1>
         </div>
-        <div class="produtos_itens">
-          <?php
-          $info = $controller->sendProdutos();
-          $card->gerarProdutoCards(count($info), $info);
-          ?>
+        <div data-id="<?= $idVendedor ?>" id="produtos_vendedor" class="produtos_itens">
         </div>
       </div>
     </div>
@@ -168,6 +152,7 @@ require_once('./utils/head.php');
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
+  <script type="module" src="<?= $PATH_PUBLIC ?>/js/vendedor/perfilCardsVendedor.js"></script>
 </body>
 
 </html>

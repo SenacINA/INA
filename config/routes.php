@@ -62,6 +62,7 @@ $routes = [
       '/Error-404'                        => 'geral/GeralController@error',
 
       // Vendedor - Cadastro e Perfil
+      '/ProdutosVendedor'                 => 'vendedor/VendedorController@sendProdutosVendedor',
       '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
       '/CadastroVendedor'                 => 'vendedor/VendedorController@showFormCadastro',
       '/CadastroVendedorForms'            => 'vendedor/VendedorController@cadastroForm',

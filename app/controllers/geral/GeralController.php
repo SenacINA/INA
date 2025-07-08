@@ -12,7 +12,7 @@ class GeralController extends RenderView
       $vendedorModel = new VendedorModel();
       $clienteModel = new ClienteModel();
 
-      $clienteData = $clienteModel->findById($idVendedor);
+      $clienteData = $clienteModel->findByVendedorId($idVendedor);
       $vendedorData = $vendedorModel->dadosVendedor($idVendedor);
       $vendedorAvaliacoes = $vendedorModel->getEstrelasPorVendedor($idVendedor) ?? [];
 
@@ -41,13 +41,27 @@ class GeralController extends RenderView
         $vendedorData['tempo'] = $diferencaDias > 1 ? "{$diferencaDias} dias" : "{$diferencaDias} dia";
       }
 
+      if (empty($clienteData['banner_perfil'])) {
+        $clienteData['banner_perfil'] = '/image/cliente/editar_perfil/mini_banner_perfil_cliente.png';
+      }
+
+      if (empty($clienteData['foto_perfil'])) {
+        $clienteData['foto_perfil'] = '/image/cliente/editar_perfil/perfil_usuario.svg';
+      }
+
+      if (!empty($clienteData['uf']) && !empty($clienteData['cidade'])) {
+        $clienteData['localizacao'] = $clienteData['uf'] . ' - ' . $clienteData['cidade'];
+      } else {
+        $clienteData['localizacao'] = null;
+      }
+
       $vendedorData['quantidadeProdutos'] = $vendedorModel->getQuantidadeProdutos($idVendedor);
 
       $this->loadView('vendedor/PerfilVendedor', [
         'user' => $clienteData,
         'vendedor' => $vendedorData,
         'isCliente' => $isCliente,
-        'idVendedor'=> $idVendedor
+        'idVendedor' => $idVendedor
       ]);
     } else if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
       header('Location: Login');
