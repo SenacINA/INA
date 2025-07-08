@@ -109,26 +109,20 @@ require_once('./utils/head.php');
         </div>
       </div>
       <hr>
-      <?php
-      if (!empty($destaques)) : ?>
-        <div class="perfil_vendedor_grid_destaques">
-          <div class="perfil_vendedor_about_container_2">
-            <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_azul_icon.svg" alt="Icon Loja" class="base_icon">
-            <h1>Destaques:</h1>
-          </div>
-          <div class="destaques_itens">
-            <?php
-            $card->gerarProdutoCards(count($destaques), $destaques);
-            ?>
-          </div>
+      <div class="perfil_vendedor_grid_destaques" id="destaques_container">
+        <div class="perfil_vendedor_about_container_2">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_azul_icon.svg" alt="Icon Loja" class="base_icon">
+          <h1>Destaques:</h1>
         </div>
-      <?php endif; ?>
+        <div data-id="<?= isset($idVendedor) ? $idVendedor : $_SESSION['cliente_id']; ?>" id="destaques_itens" class="destaques_itens">
+        </div>
+      </div>
       <div class="perfil_vendedor_grid_produtos">
         <div class="perfil_vendedor_about_container_2">
           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/produto_icon.svg" alt="Icon Loja" class="base_icon">
           <h1>Produtos:</h1>
         </div>
-        <div data-id="<?= $idVendedor ?>" id="produtos_vendedor" class="produtos_itens">
+        <div data-id="<?= isset($idVendedor) ? $idVendedor : $_SESSION['cliente_id']; ?>" data-cliente="<?= isset($idVendedor) ? "true" : "false" ?>" id="produtos_vendedor" class="produtos_itens">
         </div>
       </div>
     </div>

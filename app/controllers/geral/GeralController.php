@@ -13,7 +13,7 @@ class GeralController extends RenderView
       $clienteModel = new ClienteModel();
 
       $clienteData = $clienteModel->findByVendedorId($idVendedor);
-      $vendedorData = $vendedorModel->dadosVendedor($idVendedor);
+      $vendedorData = $vendedorModel->dadosVendedorCliente($idVendedor);
       $vendedorAvaliacoes = $vendedorModel->getEstrelasPorVendedor($idVendedor) ?? [];
 
       $total = 0;
@@ -163,6 +163,15 @@ class GeralController extends RenderView
         exit;
       }
     }
+  }
+
+  public function sendProdutosVendedor()
+  {
+    $idVendedor = $_POST['id_vendedor'];
+    $model = new VendedorModel;
+    $produtos = $model->getProdutosVendedor($idVendedor);
+    echo json_encode($produtos);
+    exit;
   }
 
   public function perfil($isCliente = false)

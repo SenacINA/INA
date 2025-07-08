@@ -17,25 +17,33 @@ class DestaqueController
 
     public function listarDestaques()
     {
-        $idCliente = $_SESSION['cliente_id'] ?? null;
-        if (!$idCliente) return [];
+        header('Content-Type: application/json');
 
-        $stmt = $this->db->prepare("SELECT id_vendedor FROM vendedor WHERE id_cliente = :id_cliente");
-        $stmt->execute([':id_cliente' => $idCliente]);
-        $idVendedor = $stmt->fetchColumn();
+        if (!isset($_POST['id_vendedor'])) {
+            $idCliente = $_SESSION['cliente_id'] ?? null;
+            if (!$idCliente) {
+                echo json_encode([]);
+                return;
+            }
 
-        if (!$idVendedor) return [];
+            $stmt = $this->db->prepare("SELECT id_vendedor FROM vendedor WHERE id_cliente = :id_cliente");
+            $stmt->execute([':id_cliente' => $idCliente]);
+            $idVendedor = $stmt->fetchColumn();
+        } else {
+            $idVendedor = $_POST['id_vendedor'];
+        }
 
-        return $this->model->getDestaquesPorVendedor($idVendedor);
+        $destaques = $this->model->getDestaquesPorVendedor($idVendedor);
+
+        echo json_encode($destaques);
+        exit;
     }
+
+
 
     public function salvarDestaque()
     {
         header('Content-Type: application/json');
-
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
 
         $id = $_SESSION['cliente_id'] ?? null;
         $idProduto = $_POST['id_produto'] ?? null;
@@ -61,10 +69,6 @@ class DestaqueController
     public function removerDestaque()
     {
         header('Content-Type: application/json');
-
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
 
         $id = $_SESSION['cliente_id'] ?? null;
         $idProduto = $_POST['id_produto'] ?? null;

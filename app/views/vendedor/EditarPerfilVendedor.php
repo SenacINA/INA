@@ -4,7 +4,6 @@
 $titulo = "Editar Perfil - E ao Quadrado";
 $css = ["/css/vendedor/EditarPerfilVendedor.css"];
 require_once('./utils/head.php');
-include("$PATH_COMPONENTS/php/card_produto.php");
 ?>
 
 <body>
@@ -226,18 +225,6 @@ include("$PATH_COMPONENTS/php/card_produto.php");
         <p class="destaques_main_text">Destaques</p>
       </div>
       <div class="destaques_container">
-        <?php
-        $IdVendedor = $_SESSION['cliente_id'];
-
-        include_once("$PATH_COMPONENTS/php/card_produto.php");
-        include_once("$PATH_CONTROLLER/geral/CardController.php");
-
-        $card = new cardProduto;
-        $controller = new CardController;
-
-        $destaques = $controller->sendDestaques($IdVendedor);
-        $card->gerarProdutoCards(count($destaques), $destaques);
-        ?>
         <button class="add">
           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/add_icon.svg" alt="Adicionar">
         </button>
@@ -250,11 +237,7 @@ include("$PATH_COMPONENTS/php/card_produto.php");
         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/loja_icon.svg" class="icon_produtos_vendedor">
         <p class="produtos_main_text">Produtos</p>
       </div>
-      <div class="produtos_container">
-        <?php
-        $info = $controller->sendProdutosNaoDestaques($IdVendedor);
-        $card->gerarProdutoCards(count($info), $info);
-        ?>
+      <div data-id="<?= $_SESSION['cliente_id'] ?>" class="produtos_container">
       </div>
     </div>
 
@@ -318,7 +301,7 @@ include("$PATH_COMPONENTS/php/card_produto.php");
   <script src="<?= $PATH_PUBLIC ?>/js/cliente/EditarPerfilCliente.js"></script>
   <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
   <script src="<?= $PATH_PUBLIC ?>/js/vendedor/ProfileEditVendedor.js"></script>
-  <script src="<?= $PATH_PUBLIC ?>/js/vendedor/DestaquesEditVendedor.js"></script>
+  <script src="<?= $PATH_PUBLIC ?>/js/vendedor/DestaquesEditVendedor.js" type="module"></script>
   <script>
     const textArea = document.getElementById('descricao');
     const charCount = document.getElementById('charCount');

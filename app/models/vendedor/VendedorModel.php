@@ -13,7 +13,7 @@ class VendedorModel
     $this->db->connect();
   }
 
-  public function dadosVendedor(string $id): ?array
+  public function dadosVendedorCliente(string $id): ?array
   {
     $sql = "SELECT 
     v.*,
@@ -27,6 +27,18 @@ class VendedorModel
     LEFT JOIN endereco e
       ON v.id_cliente = e.id_cliente
     WHERE id_vendedor = :id;";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result ?: null;
+  }
+
+  public function dadosVendedor(string $id): ?array
+  {
+    $sql = "
+          SELECT * FROM vendedor WHERE id_cliente = :id;
+        ";
     $stmt = $this->db->getConnection()->prepare($sql);
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
     $stmt->execute();

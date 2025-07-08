@@ -40,7 +40,6 @@ $routes = [
 
       // Geral
       '/sobre-nos'                 => 'geral/GeralController@sobreNos',
-      '/Subcategoria'              => 'geral/CardController@filtrarProdutosSubcategoria',
 
       // Geral - Trocar Email
       '/TrocarEmail'               => 'auth/AuthController@requestEmailReset',
@@ -60,6 +59,7 @@ $routes = [
       '/EditarPerfil'                     => 'geral/GeralController@editarPerfil',
       '/Perfil'                           => 'geral/GeralController@perfil',
       '/Error-404'                        => 'geral/GeralController@error',
+      '/ProdutosVendedorCliente'          => 'geral/GeralController@sendProdutosVendedor',
 
       // Vendedor - Cadastro e Perfil
       '/ProdutosVendedor'                 => 'vendedor/VendedorController@sendProdutosVendedor',
@@ -72,7 +72,7 @@ $routes = [
       '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
       '/SalvarDestaque-api'               => 'vendedor/DestaqueController@salvarDestaque',
       '/RemoverDestaque-api'              => 'vendedor/DestaqueController@removerDestaque',
-
+      '/DestaquesVendedor'                => 'vendedor/DestaqueController@listarDestaques',
 
       // Vendedor - Produtos e Pedidos
       '/PedidosVendedor'          => 'vendedor/VendedorProductController@pedidos',
