@@ -4,8 +4,12 @@ document.querySelectorAll('.upload_imagem input[type="file"]').forEach((input) =
   const container = input.closest(".upload_imagem");
   const sizeSpan = container.querySelector(".size_img");
   const imgPreview = container.querySelector("img");
+  const placeholder = container.querySelector(".placeholder");
 
   if (imgPreview && imgPreview.src) {
+    container.classList.remove("sem-imagem");
+    if (placeholder) placeholder.classList.add("hidden"); // Oculta placeholder
+
     const img = new Image();
     img.onload = () => {
       const expectedSize = input.getAttribute("data-size");
@@ -27,16 +31,30 @@ document.querySelectorAll('.upload_imagem input[type="file"]').forEach((input) =
       }
     };
     img.src = imgPreview.src;
+  } else {
+    sizeSpan.textContent = "0 x 0";
+    sizeSpan.style.color = "";
+    validacoesImagem[input.id] = false;
+    container.classList.add("sem-imagem");
+    if (placeholder) placeholder.classList.remove("hidden");
   }
 
   input.addEventListener("change", function () {
     const file = this.files[0];
     if (!file) {
-      sizeSpan.textContent = "";
-      sizeSpan.style.color = "";
+      sizeSpan.textContent = "0 x 0";
+      sizeSpan.style.color = "red";
       validacoesImagem[this.id] = false;
+
+      const previewImg = container.querySelector("img");
+      if (previewImg) previewImg.remove();
+
+      if (placeholder) placeholder.classList.remove("hidden");
+      container.classList.add("sem-imagem");
       return;
     }
+
+    container.classList.remove("sem-imagem");
 
     const previewImg = container.querySelector("img");
     if (previewImg) previewImg.remove();
@@ -45,6 +63,8 @@ document.querySelectorAll('.upload_imagem input[type="file"]').forEach((input) =
     const url = URL.createObjectURL(file);
 
     img.onload = () => {
+      if (placeholder) placeholder.classList.add("hidden");
+
       container.appendChild(img);
 
       const expectedSize = this.getAttribute("data-size");
@@ -53,17 +73,9 @@ document.querySelectorAll('.upload_imagem input[type="file"]').forEach((input) =
         .map((n) => parseInt(n, 10));
 
       sizeSpan.textContent = `${img.naturalWidth} x ${img.naturalHeight}`;
+      sizeSpan.style.color = (img.naturalWidth < expectedWidth * 0.8 || img.naturalHeight < expectedHeight * 0.8) ? "red" : "green";
 
-      const minWidth = expectedWidth * 0.8;
-      const minHeight = expectedHeight * 0.8;
-
-      if (img.naturalWidth < minWidth || img.naturalHeight < minHeight) {
-        sizeSpan.style.color = "red";
-        validacoesImagem[this.id] = false;
-      } else {
-        sizeSpan.style.color = "green";
-        validacoesImagem[this.id] = true;
-      }
+      validacoesImagem[this.id] = (img.naturalWidth >= expectedWidth * 0.8 && img.naturalHeight >= expectedHeight * 0.8);
 
       URL.revokeObjectURL(url);
     };
@@ -89,14 +101,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   async function enviarImagensPorTipo(tipoBase, inicio, fim) {
+    let teveErro = false;
+    let algumaImagemSelecionada = false;
+
     for (let i = inicio; i <= fim; i++) {
       const input = document.getElementById(`file${i}`);
       if (!input || input.files.length === 0) continue;
+
+      algumaImagemSelecionada = true;
 
       if (validacoesImagem[input.id] === false) {
         const label = document.querySelector(`label[for="${input.id}"]`);
         const nomeImagem = label ? label.textContent.trim() : `Imagem ${input.id}`;
         gerarToast(`${nomeImagem} é muito pequena.`, "erro");
+        teveErro = true;
         continue;
       }
 
@@ -124,17 +142,36 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           const resultado = JSON.parse(text);
 
-          if (response.ok && resultado.sucesso) {
-            gerarToast('Imagens salvas com sucesso.', 'sucesso');
-          } else {
+          if (!(response.ok && resultado.sucesso)) {
             gerarToast("Erro ao salvar imagem.", "erro");
+            teveErro = true;
           }
         } catch (jsonError) {
           gerarToast("Resposta inesperada do servidor: " + text, "erro");
+          teveErro = true;
         }
       } catch (error) {
         gerarToast("Erro na requisição.", "erro");
+        teveErro = true;
+      }
+    }
+
+    if (!algumaImagemSelecionada) {
+      gerarToast("Nenhuma imagem foi selecionada para adicionar.", "aviso");
+      return;
+    }
+
+    if (!teveErro) {
+      gerarToast("Todas as imagens foram salvas com sucesso.", "sucesso");
+
+      for (let i = inicio; i <= fim; i++) {
+        const input = document.getElementById(`file${i}`);
+        if (!input) continue;
+
+        input.value = "";
+        validacoesImagem[input.id] = false
       }
     }
   }
 });
+

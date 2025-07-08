@@ -42,6 +42,8 @@ require_once('./utils/head.php');
 
                 <?php if ($imgCarrossel): ?>
                   <img src="<?= htmlspecialchars($imgCarrossel) ?>" alt="Carrossel <?= $i + 1 ?>" />
+                <?php else: ?>
+                  <div class="placeholder">Nenhuma imagem</div>
                 <?php endif; ?>
               </div>
             <?php endfor; ?>
@@ -84,6 +86,8 @@ require_once('./utils/head.php');
 
                   <?php if ($imgPropaganda): ?>
                     <img src="<?= htmlspecialchars($imgPropaganda) ?>" alt="Propaganda <?= $j + 1 ?>" />
+                  <?php else: ?>
+                    <div class="placeholder">Nenhuma imagem</div>
                   <?php endif; ?>
                 </div>
               <?php endfor; ?>
@@ -95,7 +99,6 @@ require_once('./utils/head.php');
             </div>
           </form>
         </div>
-
       </div>
     </div>
   </main>

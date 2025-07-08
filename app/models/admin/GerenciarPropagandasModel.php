@@ -82,7 +82,7 @@ class GerenciarPropagandasModel
         if ($limite <= 0) {
             $limite = 2;
         }
-        $sql = "SELECT * FROM imagem_propagandas WHERE tipo_propaganda = :tipo LIMIT $limite";
+        $sql = "SELECT endereco_imagem, index_exibicao AS `index` FROM imagem_propagandas WHERE tipo_propaganda = :tipo AND ativo = 1 ORDER BY index_exibicao ASC LIMIT $limite";
         $stmt = $this->db->getConnection()->prepare($sql);
         $stmt->execute([':tipo' => strtoupper($tipo)]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -90,7 +90,7 @@ class GerenciarPropagandasModel
 
     public function listarImagensCarrossel()
     {
-        $sql = "SELECT * FROM imagem_carrossel ORDER BY id_imagem_carrossel ASC LIMIT 4";
+        $sql = "SELECT endereco_carrossel, index_exibicao AS `index` FROM imagem_carrossel WHERE ativo = 1 ORDER BY index_exibicao ASC LIMIT 4";
         $stmt = $this->db->getConnection()->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -101,7 +101,6 @@ class GerenciarPropagandasModel
         try {
             $db = $this->db->getConnection();
 
-            // Deletar duplicatas em imagem_propagandas
             $sqlPropagandas = "
             DELETE ip FROM imagem_propagandas ip
             INNER JOIN (
@@ -114,7 +113,6 @@ class GerenciarPropagandasModel
                   AND ip.id_imagem_propaganda <> dup.menor_id;
         ";
 
-            // Deletar duplicatas em imagem_carrossel
             $sqlCarrossel = "
             DELETE ic FROM imagem_carrossel ic
             INNER JOIN (

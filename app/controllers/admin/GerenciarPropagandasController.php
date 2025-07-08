@@ -15,6 +15,17 @@ class GerenciarPropagandasController
     public function index()
     {
         $carrossel = $this->model->listarImagensCarrossel();
+
+        $carrosselPadronizado = array_fill(0, 4, ['endereco_carrossel' => null]);
+
+        foreach ($carrossel as $item) {
+            if (isset($item['index']) && $item['index'] >= 0 && $item['index'] < 4) {
+                $carrosselPadronizado[$item['index']] = $item;
+            }
+        }
+
+        $carrossel = $carrosselPadronizado;
+
         $propagandas_670x300 = $this->model->listarImagensPorTipo('670x300', 2);
         $propagandas_670x125 = $this->model->listarImagensPorTipo('670x125', 2);
 
@@ -30,7 +41,10 @@ class GerenciarPropagandasController
 
     private function apagarArquivoAntigo(string $caminhoRelativo)
     {
-        $caminhoAbsoluto = __DIR__ . '/../../../public' . $caminhoRelativo;
+        $caminhoRelativoCorrigido = str_replace('/INA/public', '', $caminhoRelativo);
+
+        $caminhoAbsoluto = __DIR__ . '/../../../public' . $caminhoRelativoCorrigido;
+
         if (file_exists($caminhoAbsoluto)) {
             unlink($caminhoAbsoluto);
         }
@@ -39,21 +53,27 @@ class GerenciarPropagandasController
     public function substituirImagemPropaganda(string $tipo, string $novoEndereco, int $index = 0, bool $ativo = true)
     {
         $imagemAntiga = $this->model->buscarImagemPropagandaPorTipoEIndex($tipo, $index);
-        if ($imagemAntiga) {
+
+        $sucesso = $this->model->inserirOuAtualizarImagemPropaganda($tipo, $novoEndereco, $index, $ativo);
+
+        if ($sucesso && $imagemAntiga) {
             $this->apagarArquivoAntigo($imagemAntiga);
         }
 
-        return $this->model->inserirOuAtualizarImagemPropaganda($tipo, $novoEndereco, $index, $ativo);
+        return $sucesso;
     }
 
     public function substituirImagemCarrossel(string $novoEndereco, int $index = 0, bool $ativo = true)
     {
         $imagemAntiga = $this->model->buscarImagemCarrosselPorIndex($index);
-        if ($imagemAntiga) {
+
+        $sucesso = $this->model->inserirOuAtualizarImagemCarrossel($novoEndereco, $index, $ativo);
+
+        if ($sucesso && $imagemAntiga) {
             $this->apagarArquivoAntigo($imagemAntiga);
         }
-        return $this->model->inserirOuAtualizarImagemCarrossel($novoEndereco, $index, $ativo);
-        
+
+        return $sucesso;
     }
 
     public function uploadImagem()
@@ -74,7 +94,12 @@ class GerenciarPropagandasController
             return;
         }
 
-        $uploadDir = __DIR__ . '/../../../public/upload/propagandas/';
+        if ($tipo === 'carrossel') {
+            $uploadDir = __DIR__ . '/../../../public/upload/carrossel/';
+        } else {
+            $uploadDir = __DIR__ . '/../../../public/upload/propagandas/';
+        }
+
         if (!file_exists($uploadDir)) {
             mkdir($uploadDir, 0755, true);
         }
@@ -89,11 +114,11 @@ class GerenciarPropagandasController
             return;
         }
 
-        $enderecoImagem = '/INA/public/upload/propagandas/' . $nomeArquivo;
-
         if ($tipo === 'carrossel') {
+            $enderecoImagem = '/INA/public/upload/carrossel/' . $nomeArquivo;
             $sucesso = $this->substituirImagemCarrossel($enderecoImagem, $index, true);
         } else {
+            $enderecoImagem = '/INA/public/upload/propagandas/' . $nomeArquivo;
             $sucesso = $this->substituirImagemPropaganda($tipo, $enderecoImagem, $index, true);
         }
 
