@@ -73,14 +73,20 @@ require_once('./utils/head.php');
                 $size = $propSizes[$j];
 
                 if ($size === '670x300') {
-                  $imgPropaganda = $propagandas_300[($j < 2 ? $j : 0)]['endereco_imagem'] ?? null;
+                  $imgPropaganda = $propagandas_300[$j]['endereco_imagem'] ?? null;
                 } else {
-                  $imgPropaganda = $propagandas_125[($j - 2)]['endereco_imagem'] ?? null;
+                  $imgPropaganda = $propagandas_125[$j - 2]['endereco_imagem'] ?? null;
                 }
               ?>
                 <div class="upload_imagem">
                   <label class="titulo" for="file<?= $inputId ?>">Propaganda <?= $j + 1 ?> (<?= htmlspecialchars($size) ?>):</label>
-                  <input type="file" id="file<?= $inputId ?>" accept="image/*" data-size="<?= htmlspecialchars($size) ?>" />
+                  <input
+                    type="file"
+                    id="file<?= $inputId ?>"
+                    accept="image/*"
+                    data-size="<?= htmlspecialchars($size) ?>"
+                    data-index="<?= $j ?>"
+                    data-tipo="<?= $size ?>" />
                   <label for="file<?= $inputId ?>" class="btn_upload">Selecionar imagem</label>
                   <span class="size_img"></span>
 
@@ -91,6 +97,7 @@ require_once('./utils/head.php');
                   <?php endif; ?>
                 </div>
               <?php endfor; ?>
+
 
               <button type="button" class="base_botao btn_blue" id="btnEnviarPropagandas">
                 <img src="<?= htmlspecialchars($PATH_PUBLIC) ?>/image/geral/botoes/+_branco_icon.svg" alt="Ícone Mais" />
