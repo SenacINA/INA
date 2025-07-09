@@ -39,8 +39,7 @@ $routes = [
       '/CarrinhoDados-editar'                   => 'cliente/CarrinhoDadosController@editEndereco',
 
       // Geral
-      '/sobre-nos'                              => 'geral/GeralController@sobreNos',
-      '/Subcategoria'                           => 'geral/CardController@filtrarProdutosSubcategoria',
+      '/sobre-nos'                 => 'geral/GeralController@sobreNos',
 
       // Geral - Trocar Email
       '/TrocarEmail'                            => 'auth/AuthController@requestEmailReset',
@@ -57,21 +56,23 @@ $routes = [
       '/RedefinirSenha-api-salvar'              => 'geral/EnviarTokenController@salvarSenha',
 
       // Geral - Perfil
-      '/EditarPerfil'                           => 'geral/GeralController@editarPerfil',
-      '/Perfil'                                 => 'geral/GeralController@perfil',
-      '/Error-404'                              => 'geral/GeralController@error',
+      '/EditarPerfil'                     => 'geral/GeralController@editarPerfil',
+      '/Perfil'                           => 'geral/GeralController@perfil',
+      '/Error-404'                        => 'geral/GeralController@error',
+      '/ProdutosVendedorCliente'          => 'geral/GeralController@sendProdutosVendedor',
 
       // Vendedor - Cadastro e Perfil
-      '/CadastroVendedorInfo'                   => 'vendedor/VendedorController@showInfo',
-      '/CadastroVendedor'                       => 'vendedor/VendedorController@showFormCadastro',
-      '/CadastroVendedorForms'                  => 'vendedor/VendedorController@cadastroForm',
-      '/GetCategoriasSubcategorias-api'         => 'vendedor/VendedorController@getCategoriasSubcategorias',
+      '/ProdutosVendedor'                 => 'vendedor/VendedorController@sendProdutosVendedor',
+      '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
+      '/CadastroVendedor'                 => 'vendedor/VendedorController@showFormCadastro',
+      '/CadastroVendedorForms'            => 'vendedor/VendedorController@cadastroForm',
+      '/GetCategoriasSubcategorias-api'   => 'vendedor/VendedorController@getCategoriasSubcategorias',
 
 
-      '/api/vendedor/editarDadosVendedor'       => 'vendedor/VendedorController@editarDadosVendedor',
-      '/SalvarDestaque-api'                     => 'vendedor/DestaqueController@salvarDestaque',
-      '/RemoverDestaque-api'                    => 'vendedor/DestaqueController@removerDestaque',
-
+      '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
+      '/SalvarDestaque-api'               => 'vendedor/DestaqueController@salvarDestaque',
+      '/RemoverDestaque-api'              => 'vendedor/DestaqueController@removerDestaque',
+      '/DestaquesVendedor'                => 'vendedor/DestaqueController@listarDestaques',
 
       // Vendedor - Produtos e Pedidos
       '/PedidosVendedor'                        => 'vendedor/VendedorProductController@pedidos',
