@@ -1,8 +1,8 @@
-import cardProduto from "/INA/app/components/js/card_produto.js";
+import cards from "/INA/app/components/js/card_produto.js";
 
 function renderProduto(div, produtos) {
   produtos.forEach((produto) => {
-    div.innerHTML += cardProduto(produto);
+    div.innerHTML += cards.cardProduto(produto);
   });
 }
 

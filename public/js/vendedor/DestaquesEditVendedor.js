@@ -1,4 +1,4 @@
-import cardProduto from "/INA/app/components/js/card_produto.js";
+import cards from "/INA/app/components/js/card_produto.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const isEditPage =
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function renderProdutos(container, produtos, adicionarBtnRemover = false) {
     produtos.forEach((produto) => {
-      const cardHTML = cardProduto(produto);
+      const cardHTML = cards.cardProduto(produto);
       const tempDiv = document.createElement("div");
       tempDiv.innerHTML = cardHTML.trim();
       const cardElement = tempDiv.firstElementChild;
