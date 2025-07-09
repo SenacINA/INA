@@ -34,6 +34,7 @@ require_once("./utils/head.php")
         <img src="<?= $PATH_PUBLIC ?>/image/carrinho/whatsapp_user_carrinho_pagamentos.png" alt="">
         <p>Continue com o Pagamento no WhatsApp!</p>
         <button class="botao_whats base_botao">
+          <input type="hidden" value="1" id="idVendedor">
           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/whatsapp_icon.svg" alt="">
           Iniciar conversa
         </button>
@@ -58,6 +59,7 @@ require_once("./utils/head.php")
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
+  <script src="<?= $PATH_PUBLIC ?>/js/cliente/CarrinhoPagamentos.js"></script>
 </body>
 
 </html>

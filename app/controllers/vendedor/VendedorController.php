@@ -311,4 +311,15 @@ class VendedorController extends RenderView
         exit;
     }
 
+    public function getDadosVendedor() {
+        header('Content-Type: application/json; charset=utf-8');
+        $id_vendedor = $_GET['idVendedor'];
+
+        $model = new VendedorModel;
+
+        $dados = $model->getVendedorNum($id_vendedor);
+
+        echo json_encode($dados, JSON_UNESCAPED_UNICODE);
+    }
+
 }

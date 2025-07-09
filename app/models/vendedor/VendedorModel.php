@@ -25,6 +25,21 @@ class VendedorModel
     return $result ?: null;
   }
 
+    public function getVendedorNum(string $id): ?array
+    {
+      $sql = "
+        SELECT ddd_cliente, numero_celular_cliente 
+        FROM cliente 
+        WHERE id_cliente = :id;
+      ";
+      $stmt = $this->db->getConnection()->prepare($sql);
+      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+      $stmt->execute();
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
+      return $result ?: null;
+    }
+
+
    public function getVendedorId(int $clienteId): ?int
     {
         $db = new Database();
