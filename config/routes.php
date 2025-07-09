@@ -105,7 +105,9 @@ $routes = [
       '/GerenciarPropagandas'                   => 'admin/GerenciarPropagandasController@index',
       '/GerenciarPropagandas-api'               => 'admin/GerenciarPropagandasController@GerenciarPropagandasApi',
 
-      '/RelatorioVendedor'                      => 'admin/AdminController@relatorioVendedor',
+      '/RelatorioVendedor'                      => 'admin/RelatorioVendedorController@index',
+      '/RelatorioVendedor-api'                  => 'admin/RelatorioVendedorController@exibirRelatorio',
+
       '/AdminCarrossel'                         => 'admin/AdminController@adminCarrossel',
       '/searchDesativarUser'                    => 'admin/AdminController@searchDesativarUser',
       '/DesativarUser'                          => 'admin/AdminController@desativarUser',

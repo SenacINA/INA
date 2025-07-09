@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-$titulo = "Perfil - E ao Quadrado";
+$titulo = "Relatorio do Vendedor - E ao Quadrado";
 $css = ["/css/admin/RelatorioVendedor.css"];
 require_once('./utils/head.php');
-require_once './app/controllers/admin/RelatorioVendedorController.php';
 
-$controller = new RelatorioVendedorController();
-$dados = $controller->exibirRelatorio();
-$vendas = $dados['vendas'];
-$perfil = $dados['perfil'];
+$vendas = $vendas ?? [];
+$perfil = $perfil ?? null;
+
 ?>
 
 <body>
@@ -58,27 +56,28 @@ $perfil = $dados['perfil'];
             <h1 class="relatorio_vendedor_text">Perfil Do Vendedor</h1>
           </div>
 
-          <?php if ($perfil): ?>
-            <div class="relatorio_vendedor_estatistica_holder">
+          <!-- Substitua este bloco PHP -->
+          <?php if (!empty($perfil)): ?>
+            <div class="relatorio_vendedor_estatistica_holder" id="perfil-vendedor"  style="display: none;">
               <div class="relatorio_vendedor_card">
-                <span class="relatorio_vendedor_titulo2" id="nome"><?= htmlspecialchars($perfil['nome'] ?? '') ?></span>
-                <img src="<?= $PATH_PUBLIC . htmlspecialchars($perfil['foto_perfil'] ?? '') ?>" alt="Foto do perfil" class="relatorio_vendedor_card_img_perfil">
+                <span class="relatorio_vendedor_titulo2" id="nome"><?= htmlspecialchars($perfil['nome']) ?></span>
+                <img src="<?= $PATH_PUBLIC . htmlspecialchars($perfil['foto_perfil'] ?? '/image/default-profile.png') ?>" alt="Foto do perfil" class="relatorio_vendedor_card_img_perfil">
               </div>
 
               <div class="relatorio_vendedor_card_column_2">
                 <div class="relatorio_vendedor_card">
-                  <span class="relatorio_vendedor_titulo">Nome:</span>
-                  <label> <?= htmlspecialchars($perfil['nome'] ?? '') ?> </label>
+                  <span class="relatorio_vendedor_titulo">Nome</span>
+                  <label><?= htmlspecialchars($perfil['nome']) ?></label>
                 </div>
 
                 <div class="relatorio_vendedor_card">
-                  <span class="relatorio_vendedor_titulo">E-mail: </span>
-                  <label> <?= htmlspecialchars($perfil['email'] ?? '') ?> </label>
+                  <span class="relatorio_vendedor_titulo">E-mail</span>
+                  <label><?= htmlspecialchars($perfil['email']) ?></label>
                 </div>
 
                 <div class="relatorio_vendedor_card">
-                  <span class="relatorio_vendedor_titulo">Data de Cadastro: </span>
-                  <label> <?= !empty($perfil['data_cadastro']) ? date('d/m/Y', strtotime($perfil['data_cadastro'])) : '' ?> </label>
+                  <span class="relatorio_vendedor_titulo">Data de Cadastro:</span>
+                  <label><?= !empty($perfil['data_cadastro']) ? date('d/m/Y', strtotime($perfil['data_cadastro'])) : '' ?></label>
                 </div>
               </div>
             </div>
@@ -96,57 +95,60 @@ $perfil = $dados['perfil'];
       </div>
     </div>
 
-    <div class="relatorio_vendedor_table">
-      <div class="relatorio_vendedor_table_filtro bg_carolina">
-        <p class="relatorio_vendedor_filtro_titulo font_subtitulo">Organizar por:</p>
-        <select class="base_input">
-          <option value="" selected disabled style="display: none;"></option>
-          <option value="">ID</option>
-          <option value="">Produto</option>
-          <option value="">Preço Uni.</option>
-          <option value="">Quantidade</option>
-          <option value="">Entregue</option>
-        </select>
-      </div>
+    <div class="relatorio_vendedor_table_filtro bg_carolina">
+      <p class="relatorio_vendedor_filtro_titulo font_subtitulo">Organizar por:</p>
+      <select id="filtros-relatorio-vendas" name="ordenar">
+        <option selected value="id">ID</option>
+        <option value="produto">Produto</option>
+        <option value="preco">Preço Uni.</option>
+        <option value="quantidade">Quantidade</option>
+        <option value="status">Status</option>
+      </select>
+    </div>
 
-      <div class="relatorio_vendedor_table_holder">
-        <table>
-          <colgroup>
-            <col class="relatorio_vendedor_table_col-1">
-            <col class="relatorio_vendedor_table_col-2">
-            <col class="relatorio_vendedor_table_col-3">
-            <col class="relatorio_vendedor_table_col-4">
-            <col class="relatorio_vendedor_table_col-5">
-            <col class="relatorio_vendedor_table_col-6">
-          </colgroup>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Produto</th>
-              <th>Preço Uni.</th>
-              <th>Qtn.</th>
-              <th>Status</th>
-              <th>Cliente</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php if (!empty($vendas)): ?>
-              <?php foreach ($vendas as $v): ?>
-                <tr>
-                  <td><?= $v['id'] ?></td>
-                  <td><?= htmlspecialchars($v['produto']) ?></td>
-                  <td>R$ <?= number_format($v['preco'], 2, ',', '.') ?></td>
-                  <td><?= $v['quantidade'] ?></td>
-                  <td><?= $v['status'] ?></td>
-                  <td><?= htmlspecialchars($v['cliente']) ?></td>
-                </tr>
-              <?php endforeach; ?>
-            <?php endif; ?>
-          </tbody>
-        </table>
+    <div class="base_tabela">
+      <table>
+        <colgroup>
+          <col class="relatorio_vendedor_table_col-1">
+          <col class="relatorio_vendedor_table_col-2">
+          <col class="relatorio_vendedor_table_col-3">
+          <col class="relatorio_vendedor_table_col-4">
+          <col class="relatorio_vendedor_table_col-5">
+          <col class="relatorio_vendedor_table_col-6">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Produto</th>
+            <th>Preço Uni.</th>
+            <th>Quantidade</th>
+            <th>Status</th>
+            <th>Cliente</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="base_navegacao">
+      <div class="relatorio_vendedor_navegacao">
+        <button id="btnAnterior" class="base_botao btn_blue">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/seta_filtro_branco.svg" class="base_icon esquerda">
+        </button>
+        <button id="btnProximo" class="base_botao btn_blue">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/seta_filtro_branco.svg" class="base_icon direita">
+        </button>
       </div>
     </div>
   </main>
+
+  <script>
+    window.vendas = <?= json_encode($vendas) ?>;
+    window.perfil = <?= json_encode($perfil) ?>;
+  </script>
+
+  <script src="<?= $PATH_PUBLIC ?>/js/tabelas/renderTableRelatorioVendedor.js"></script>
 </body>
 
 </html>

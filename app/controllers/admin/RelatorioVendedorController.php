@@ -11,20 +11,41 @@ class RelatorioVendedorController
         $this->model = new RelatorioVendedorModel();
     }
 
-    public function exibirRelatorio(): array
+    public function index()
     {
-        $vendas = [];
-        $perfil = null;
+        $vendedorId = $_POST['vendedor_id'] ?? null;
+        if ($vendedorId) {
+            $dados = $this->obterDadosRelatorio(intval($vendedorId));
+            $vendas = $dados['vendas'];
+            $perfil = $dados['perfil'];
+        } else {
+            $vendas = [];
+            $perfil = null;
+        }
+        require_once("./app/views/admin/RelatorioVendedor.php");
+    }
 
+    public function obterDadosRelatorio($vendedorId)
+    {
+        $vendas = $this->model->buscarPorVendedor($vendedorId);
+        $perfil = $this->model->buscarPerfilVendedor($vendedorId);
+        return ['vendas' => $vendas, 'perfil' => $perfil];
+    }
+
+    public function exibirRelatorio()
+    {
+        header('Content-Type: application/json');
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vendedor_id'])) {
             $vendedorId = intval($_POST['vendedor_id']);
-            $vendas = $this->model->buscarPorVendedor($vendedorId);
-            $perfil = $this->model->buscarPerfilVendedor($vendedorId);
-        }
+            $dados = $this->obterDadosRelatorio($vendedorId);
 
-        return [
-            'vendas' => $vendas,
-            'perfil' => $perfil
-        ];
+            if (!is_array($dados['vendas'])) {
+                $dados['vendas'] = [];
+            }
+
+            echo json_encode(array_merge(['success' => true], $dados));
+        } else {
+            echo json_encode(['success' => false, 'message' => 'ID do vendedor não enviado']);
+        }
     }
 }
