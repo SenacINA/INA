@@ -26,8 +26,23 @@ class GerenciarPropagandasController
 
         $carrossel = $carrosselPadronizado;
 
-        $propagandas_670x300 = $this->model->listarImagensPorTipo('670x300', 2);
-        $propagandas_670x125 = $this->model->listarImagensPorTipo('670x125', 2);
+        $propagandas_670x300_raw = $this->model->listarImagensPorTipo('670x300', 2);
+        $propagandas_670x125_raw = $this->model->listarImagensPorTipo('670x125', 2);
+
+        $propagandas_670x300 = array_fill(0, 2, ['endereco_imagem' => null]);
+        $propagandas_670x125 = array_fill(0, 2, ['endereco_imagem' => null]);
+
+        foreach ($propagandas_670x300_raw as $item) {
+            if (isset($item['index']) && $item['index'] >= 0 && $item['index'] < 2) {
+                $propagandas_670x300[$item['index']] = $item;
+            }
+        }
+
+        foreach ($propagandas_670x125_raw as $item) {
+            if (isset($item['index']) && $item['index'] >= 0 && $item['index'] < 2) {
+                $propagandas_670x125[$item['index']] = $item;
+            }
+        }
 
         $dados = [
             'carrossel' => $carrossel,
