@@ -33,12 +33,8 @@ class VendedorController extends RenderView
     public function sendProdutosVendedor() {
         $idVendedor = $_POST['id_vendedor'];
         $model = new VendedorModel;
-        if (isset($_POST['isCliente'])) {
-            $idVendedorLogado = $model->dadosVendedor($idVendedor);
-            $produtos = $model->getProdutosVendedor((int)$idVendedorLogado['id_vendedor']);
-        } else {
-            $produtos = $model->getProdutosVendedor($idVendedor);
-        }
+        $idVendedorLogado = $model->dadosVendedor($idVendedor);
+        $produtos = $model->getProdutosVendedor((int)$idVendedorLogado['id_vendedor']);
         echo json_encode($produtos);
         exit;
     }

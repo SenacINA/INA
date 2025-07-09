@@ -150,7 +150,7 @@ class VendedorModel
     p.id_produto";
 
     $stmt = $this->db->getConnection()->prepare($sql);
-    $stmt->bindValue(':id_vendedor', $id_vendedor, PDO::PARAM_INT);
+    $stmt->bindValue(':id_vendedor', $id_vendedor);
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

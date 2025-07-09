@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   async function getProdutos(id_vendedor) {
-    if (!id_vendedor) return [];
     const formData = new FormData();
     formData.append("id_vendedor", id_vendedor);
 
@@ -80,6 +79,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const produtos = await getProdutos(idVendedor);
 
+  console.log(produtos)
+
   renderProdutos(produtosContainer, produtos, false);
 
   atualizarBtnAdd();
@@ -87,7 +88,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   produtosContainer.addEventListener("click", (e) => {
     e.stopPropagation();
     const produtoCard = e.target.closest(".index_body_produto_card");
-    if (!produtoCard) return;
 
     const produtoId = produtoCard.dataset.id;
     const destaquesAtuais = contarDestaques();
