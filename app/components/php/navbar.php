@@ -123,14 +123,6 @@ function generateModalContent($user)
                   </a>
               </li>
               <li>
-                  <a onclick="pag(\'RedefinirSenha\')" class="menu-item">
-                      <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
-                          <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
-                      </svg>
-                      <span>Redefinir Senha</span>
-                  </a>
-              </li>
-              <li>
                   <a onclick="pag(\'EditarPerfil\')" class="menu-item">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path fill="#3498db" d="m21.7 13.35l-1 1l-2.05-2.05l1-1a.55.55 0 0 1 .77 0l1.28 1.28c.21.21.21.56 0 .77M12 18.94l6.06-6.06l2.05 2.05L14.06 21H12zM12 14c-4.42 0-8 1.79-8 4v2h6v-1.89l4-4c-.66-.08-1.33-.11-2-.11m0-10a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4"/>
