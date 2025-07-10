@@ -44,7 +44,8 @@
       <div class="confirmar_pedido_itens">
         <?php foreach ($itens_venda as $item): ?>
             <div class="confirmar_pedido_produtos">
-                <img src="<?=$PATH_PUBLIC?>/image/vendedor/confirmar_pedido/mouse.svg" alt="">
+            <img src="<?=$PATH_PUBLIC?><?=$item['imagem_produto_primeira'] ?: 'vendedor/confirmar_pedido/mouse.svg' ?>" alt="<?= htmlspecialchars($item['nome_produto']) ?>">
+
                 <h1><?= htmlspecialchars($item['nome_produto']) ?></h1>
                 <div class="confirmar_pedido_produtos_valor">
                     <h2>R$<?= number_format($item['preco_pago_compra'], 2, ',', '.') ?> x <?= $item['quantidade_compra'] ?></h2>

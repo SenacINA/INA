@@ -67,9 +67,11 @@ public function getItensVenda(int $idVenda)
             p.nome_produto,
             ic.quantidade_compra,
             ic.preco_pago_compra,
-            (ic.preco_pago_compra * ic.quantidade_compra) AS total_item
+            (ic.preco_pago_compra * ic.quantidade_compra) AS total_item,
+            pi.endereco_imagem_produto AS imagem_produto_primeira
         FROM item_compra ic
         INNER JOIN produto p ON p.id_produto = ic.id_produto
+        LEFT JOIN imagem_produto pi ON pi.id_produto = p.id_produto AND pi.index_imagem_produto = 1
         WHERE ic.id_compra = :idVenda
     ";
 
@@ -79,6 +81,7 @@ public function getItensVenda(int $idVenda)
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
 
 public function atualizarStatusEntrega(int $idCompra, int $status): void
 {
