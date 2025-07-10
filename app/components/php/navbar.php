@@ -67,7 +67,7 @@ function generateModalContent($user)
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
                       </svg>
-                      <span>Relatório De Vendas</span>
+                      <span>Relatório do Vendedor</span>
                   </a>
               </li>
               <li>
@@ -79,11 +79,19 @@ function generateModalContent($user)
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'GerenciarCarrossel\')">
+                  <a href="#" class="menu-item" onclick="pag(\'GerenciarProdutos\')">
+                      <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
+                          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                      </svg>
+                      <span>Gerenciar Produtos</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="menu-item" onclick="pag(\'GerenciarPropagandas\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M10 8v8l5-4-5-4zm9-5H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
                       </svg>
-                      <span>Gerenciar Carrossel</span>
+                      <span>Gerenciar Propagandas</span>
                   </a>
               </li>
               <li>

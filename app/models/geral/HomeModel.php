@@ -2,7 +2,8 @@
 
 require_once __DIR__ . '/../connect.php';
 
-class HomeModel {
+class HomeModel
+{
   private Database $db;
 
   public function __construct()
@@ -11,7 +12,8 @@ class HomeModel {
     $this->db->connect();
   }
 
-  public function getProdutoHome() {
+  public function getProdutoHome()
+  {
     $sql = "SELECT 
     p.id_produto,
     p.nome_produto,
@@ -42,6 +44,13 @@ class HomeModel {
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
-}
 
-?>
+  public function getCategoriasHome() {
+    $sql = "SELECT id_categoria, nome_categoria, endereco_imagem_categoria FROM categoria;";
+
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+}

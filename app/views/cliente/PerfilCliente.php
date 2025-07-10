@@ -102,15 +102,7 @@ require_once("./app/models/cliente/PerfilClienteModel.php");
           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/tempo_icon.svg" alt="Icon Loja">
           <h1>Histórico:</h1>
         </div>
-        <div class="historico_itens">
-          <?php
-          include("$PATH_COMPONENTS/php/card_produto.php");
-          include("$PATH_CONTROLLER/geral/CardController.php");
-          $card = new cardProduto;
-          $controller = new CardController;
-
-          $info = $controller->sendProdutos();
-          $card->gerarProdutoCards(6, $info); ?>
+        <div id="historico_cliente" class="historico_itens">
         </div>
         <div class="ver_mais_container">
           <p class="ver_mais_text">Ver Mais</p>
@@ -126,7 +118,9 @@ require_once("./app/models/cliente/PerfilClienteModel.php");
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
-
+  <script type="module" src="<?= $PATH_PUBLIC ?>/js/cliente/perfilCardsCliente.js"></script>
+  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
+  <script src='<?= $PATH_PUBLIC ?>/js/geral/card.js'></script>
 </body>
 
 </html>

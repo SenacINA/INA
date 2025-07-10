@@ -41,11 +41,33 @@ class DestaqueModel
 
     public function getDestaquesPorVendedor($idVendedor)
     {
-        $sql = "SELECT p.*, ip.endereco_imagem_produto 
-            FROM destaques d
-            JOIN produto p ON p.id_produto = d.id_produto
-            LEFT JOIN imagem_produto ip ON ip.id_produto = p.id_produto AND ip.index_imagem_produto = 1
-            WHERE d.id_vendedor = :id_vendedor";
+        $sql = "SELECT 
+            p.id_produto,
+            p.nome_produto,
+            p.preco_produto,
+            p.categoria_produto,
+            p.subcategoria_produto,
+            p.status_produto,
+            ip.id_imagem_produto,
+            ip.endereco_imagem_produto,
+            ip.index_imagem_produto,
+            COALESCE(AVG(a.estrelas_avaliacao), 0) AS media_avaliacoes,
+            COUNT(a.id_avaliacao) AS total_avaliacoes
+        FROM 
+            destaques d
+        LEFT JOIN
+            produto p 
+            ON p.id_produto = d.id_produto
+        LEFT JOIN
+            avaliacao a 
+            ON p.id_produto = a.id_produto AND a.status_avaliacao = TRUE
+        LEFT JOIN 
+            imagem_produto ip 
+            ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 1
+        WHERE 
+            p.status_produto != 0 AND d.id_vendedor = :id_vendedor
+        GROUP BY
+            p.id_produto;";
 
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['id_vendedor' => $idVendedor]);
