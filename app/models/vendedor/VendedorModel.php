@@ -25,19 +25,24 @@ class VendedorModel
     return $result ?: null;
   }
 
-    public function getVendedorNum(string $id): ?array
+    public function getVendedorNum(string $id_vendedor): ?array
     {
       $sql = "
-        SELECT ddd_cliente, numero_celular_cliente 
-        FROM cliente 
-        WHERE id_cliente = :id;
+        SELECT c.ddd_cliente, c.numero_celular_cliente
+        FROM vendedor v
+        JOIN cliente c ON c.id_cliente = v.id_cliente
+        WHERE v.id_vendedor = :id_vendedor
+        LIMIT 1;
       ";
+
       $stmt = $this->db->getConnection()->prepare($sql);
-      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+      $stmt->bindValue(':id_vendedor', $id_vendedor, PDO::PARAM_INT);
       $stmt->execute();
+
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
       return $result ?: null;
     }
+
 
 
    public function getVendedorId(int $clienteId): ?int
