@@ -1,11 +1,27 @@
-import cards from "/INA/app/components/js/card_produto.js";
+import cardProduto from "/INA/app/components/js/card_produto.js";
 
 function renderProduto(div, produtos) {
   let html = "";
   produtos.forEach((produto) => {
-    html += cards.cardProduto(produto);
+    if (produto.desconto_promocao > 0) {
+      if (produto.tipo_promocao == 1) {
+        // reais sobre total
+        produto["flag_promo"] = `- R$${produto.desconto_promocao}`;
+        produto["preco_produto_promo"] = (
+          produto.preco_produto - produto.desconto_promocao
+        );
+      } else if (produto.tipo_promocao == 2) {
+        // porcentagem sobre total
+        produto["flag_promo"] = `${produto.desconto_promocao}% OFF`;
+        produto["preco_produto_promo"] = (
+          produto.preco_produto * (1 - produto.desconto_promocao / 100)
+        );
+      }
+    }
+    
+    html += cardProduto(produto); 
   });
-  div.innerHTML = html;
+  div.innerHTML = html; 
 }
 
 async function getProdutos(id_vendedor, cliente = false) {
