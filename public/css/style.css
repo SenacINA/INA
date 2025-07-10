@@ -1059,6 +1059,7 @@ input:checked + .toggle_slider::before {
 .menu-item {
   display: flex;
   align-items: center;
+  cursor: pointer;
   padding: 1rem;
   color: var(--text-color);
   text-decoration: none;

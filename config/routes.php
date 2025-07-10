@@ -22,7 +22,6 @@ $routes = [
       '/api/cliente/editarDadosCliente'         => 'cliente/ClienteCOntroller@editarDadosCliente',
       '/api/avaliar-produto'                    => 'cliente/ProdutoController@avaliarProduto',
       '/produto/comentariosJson'                => 'cliente/ProdutoController@comentariosJson',
-
       // Cliente - Carrinho
       '/Carrinho'                               => 'cliente/CarrinhoController@index',
       '/Carrinho-api-exibir'                    => 'cliente/CarrinhoController@exibirItens',
@@ -39,7 +38,9 @@ $routes = [
       '/CarrinhoDados-editar'                   => 'cliente/CarrinhoDadosController@editEndereco',
 
       // Geral
-      '/sobre-nos'                 => 'geral/GeralController@sobreNos',
+      '/Pesquisa'                               => 'geral/PesquisaController@index',
+      '/Pesquisa-api'                           => 'geral/PesquisaController@sendPesquisa',
+      '/sobre-nos'                              => 'geral/GeralController@sobreNos',
 
       // Geral - Trocar Email
       '/TrocarEmail'                            => 'auth/AuthController@requestEmailReset',
@@ -105,7 +106,9 @@ $routes = [
       '/GerenciarPropagandas'                   => 'admin/GerenciarPropagandasController@index',
       '/GerenciarPropagandas-api'               => 'admin/GerenciarPropagandasController@GerenciarPropagandasApi',
 
-      '/RelatorioVendedor'                      => 'admin/AdminController@relatorioVendedor',
+      '/RelatorioVendedor'                      => 'admin/RelatorioVendedorController@index',
+      '/RelatorioVendedor-api'                  => 'admin/RelatorioVendedorController@exibirRelatorio',
+
       '/AdminCarrossel'                         => 'admin/AdminController@adminCarrossel',
       '/searchDesativarUser'                    => 'admin/AdminController@searchDesativarUser',
       '/DesativarUser'                          => 'admin/AdminController@desativarUser',
