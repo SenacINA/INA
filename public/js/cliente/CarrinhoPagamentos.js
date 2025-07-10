@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Monta o link do WhatsApp
         const ddd = vendedor.ddd_cliente.toString().padStart(2, '0');
         const numero = vendedor.numero_celular_cliente.toString().padStart(9, '0');
-        const mensagem = encodeURIComponent('Olá! Gostaria de saber mais sobre seu produto {}.');
+        const mensagem = encodeURIComponent('Olá! Gostaria de saber mais sobre seu produto.');
         const link = `https://wa.me/55${ddd}${numero}?text=${mensagem}`;
 
         // Redireciona diretamente para o WhatsApp
