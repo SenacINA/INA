@@ -245,14 +245,14 @@ function generateModalContent($user)
   <div class="base_nav_logo_container" onclick="pag('')">
     <img id="baseNavLogoHeader">
   </div>
-  <div class="base_nav_search_container">
-    <input type="text" id="baseNavSearchInput" placeholder="Pesquisar...">
+  <form action="Pesquisa?pesquisa" class="base_nav_search_container">
+    <input type="text" name="pesquisa" id="baseNavSearchInput" placeholder="Pesquisar...">
     <button type="submit" class="base_nav_square_button_search">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
       </svg>
     </button>
-  </div>
+  </form>
   <div class="base_nav_button_container">
     <button class="base_nav_square_button" onclick="pag('<?= handlePerfil() ?>')">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -266,7 +266,7 @@ function generateModalContent($user)
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="currentColor" d="M17 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2M1 2v2h2l3.6 7.59l-1.36 2.45c-.15.28-.24.61-.24.96a2 2 0 0 0 2 2h12v-2H7.42a.25.25 0 0 1-.25-.25q0-.075.03-.12L8.1 13h7.45c.75 0 1.41-.42 1.75-1.03l3.58-6.47c.07-.16.12-.33.12-.5a1 1 0 0 0-1-1H5.21l-.94-2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2" />
       </svg>
-          <span id="carrinho-badge" class="carrinho_badge"></span>
+      <span id="carrinho-badge" class="carrinho_badge"></span>
     </button>
 
     <button class="base_nav_square_button" id="baseNavSideBar">
