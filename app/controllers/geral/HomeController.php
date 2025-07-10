@@ -8,8 +8,16 @@ class HomeController extends RenderView {
     }
     
     public function sendProdutoHome() {
+        header('Content-Type: application/json; charset=utf-8');
+        
         $model = new HomeModel;
-        $produtos = $model->getProdutoHome();
+
+        $filtro = isset($_GET['filtro']) ? $_GET['filtro'] : null;
+
+        $produtos = [];
+
+        !empty($filtro) ? $produtos = $model->getProdutoHome($filtro) : $produtos = $model->getProdutoHome();
+        
         echo json_encode($produtos);
         exit;
     }

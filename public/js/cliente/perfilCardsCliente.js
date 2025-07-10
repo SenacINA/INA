@@ -8,8 +8,19 @@ function renderProduto(div, produtos) {
   div.innerHTML = html;
 }
 
-async function getProdutos() {
-  const request = await fetch("Home-api?ts=" + Date.now());
+async function getProdutos(filter = null) {
+  var request;
+  switch (filter) {
+    case "mais_vendidos":
+      request = await fetch("Home-api?filtro=mais_vendidos");
+      break;
+    case "promocao":
+      request = await fetch("Home-api?filtro=promocao");
+      break;
+    default:
+      request = await fetch("Home-api?ts=" + Date.now());
+  }
+
   return await request.json();
 }
 

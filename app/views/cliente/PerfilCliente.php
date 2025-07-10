@@ -29,11 +29,7 @@ require_once("./app/models/cliente/PerfilClienteModel.php");
           <div class="perfil_cliente_infos_item3">
             <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/perfil_membros_icon.svg">
             <p>
-              <?php
-              $dataRegistro = $user['data_registro_cliente'];
-              $diasCliente = (strtotime(date('Y-m-d')) - strtotime($dataRegistro)) / 86400;
-              echo "Cliente há: " . round($diasCliente) . " Dias";
-              ?>
+              Cliente há <?=$user['tempo']?>
             </p>
           </div>
           <div class="perfil_cliente_contatos_cliente">
