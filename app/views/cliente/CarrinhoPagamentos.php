@@ -61,6 +61,7 @@ require_once("./utils/head.php")
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
+  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
   <script src="<?= $PATH_PUBLIC ?>/js/cliente/CarrinhoPagamentos.js"></script>
 </body>
 

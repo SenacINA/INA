@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Verifica se os dados estão presentes
         if (!vendedor || !vendedor.ddd_cliente || !vendedor.numero_celular_cliente) {
-          alert('Não foi possível encontrar um vendedor.');
+          gerarToast('Não foi possível encontrar um vendedor', 'erro');
           return;
         }
 
@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = link;
 
       } catch (error) {
-        console.error('Erro ao iniciar conversa no WhatsApp:', error);
-        alert('Erro ao iniciar a conversa. Tente novamente.');
+        gerarToast(`Não foi possível encontrar um vendedor: ${error}`, "erro");
       }
     });
   }
