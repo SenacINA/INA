@@ -30,11 +30,11 @@
       </div>
 
       <div class="confirmar_pedido_botoes_status">
-        <div class="confirmar_pedido_botao_1">
-          <h2>Pagamento Pendente</h2>
+        <div id="botao_topo_pago" class="<?= $status_pagamento_compra ? 'confirmar_pedido_botao_3' : 'confirmar_pedido_botao_1' ?>">
+          <h2><?= $status_pagamento_compra ? 'Pago' : 'Pagamento Pendente' ?></h2>
         </div>
-        <div class="confirmar_pedido_botao_2">
-          <h2>Não processado</h2>
+        <div id="botao_topo_processado" class="<?= $status_entrega_compra ? 'confirmar_pedido_botao_3' : 'confirmar_pedido_botao_2' ?>">
+          <h2><?= $status_entrega_compra ? 'Processado' : 'Não processado' ?></h2>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
             <hr>
         <?php endforeach; ?>
       </div>
-        <div class="confirmar_pedido_botao_confirmar_envio">
+        <div id="botao_confirmar_envio" class="confirmar_pedido_botao_confirmar_envio" onclick="confirmarEnvio()">
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
           <h1>CONFIRMAR ENVIO</h1>
         </div>
@@ -86,8 +86,7 @@
             </div>
             <div>
               <h1><?= htmlspecialchars($nome_cliente ?? 'Data não disponível') ?></h1>
-              <h2>pagamento confirmado em</h2>
-              <h2>06/07/2024</h2>
+              <h2><?= $status_pagamento_compra ? 'pagamento confirmado' : 'pagamento pendente' ?></h2>
             </div>
           </div>
 
@@ -97,25 +96,7 @@
               <img src="<?=$PATH_PUBLIC?>/image/vendedor/confirmar_pedido/bolinha_itens.svg" alt="">
             </div>
             <div>
-              <h1>Aguardando Confirmação</h1>
-              <h2>Iniciado em</h2>
-              <h2>06/07/2024</h2>
-              <h2>às</h2>
-              <h2>11:00.</h2>
-            </div>
-          </div>
-
-          <!-- Aguardando Confirmação -->
-          <div class="confirmar_pedido_container_2_item">
-            <div>
-              <img src="<?=$PATH_PUBLIC?>/image/vendedor/confirmar_pedido/bolinha_itens.svg" alt="">
-            </div>
-            <div>
-              <h1>Aguardando Confirmação</h1>
-              <h2>Iniciado em</h2>
-              <h2>06/07/2024</h2>
-              <h2>às</h2>
-              <h2>11:00.</h2>
+              <h1><?= $status_entrega_compra ? 'Envio Confirmado' : 'Envio não confirmado' ?></h1>
             </div>
           </div>
         </div>
@@ -134,13 +115,17 @@
             <hr>
             <div class="confirmar_pedido_container_3_total_valor">
               <h2>Pago pelo Cliente</h2>
-              <h2>R$0</h2>
+              <h2><?php if ($status_pagamento_compra): ?>
+            R$<?= number_format($total_pago_compra ?? 0, 2, ',', '.') ?>
+        <?php else: ?>
+            R$0,00
+        <?php endif; ?></h2>
             </div>
 
           </div>
         </div>
 
-        <div class="confirmar_pedido_botao_receber_pagamento">
+        <div id="botao_receber_pagamento" class="confirmar_pedido_botao_receber_pagamento" onclick="receberPagamento()">
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/enviar_branco_icon.svg" alt="">
           <h1>RECEBER PAGAMENTO</h1>
         </div>
@@ -178,3 +163,55 @@
   ?>
 </body>
 </html>
+
+<script>
+function confirmarEnvio() {
+    fetch(window.location.href, { // chama a mesma página
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'action=confirmar_envio&id_compra=<?= $id_venda ?>'
+    })
+    .then(response => response.text())
+    .then(data => {
+        if (data === 'OK') {
+            // Muda texto do botão e status visual
+            const botao = document.getElementById('botao_confirmar_envio');
+            botao.querySelector('h1').innerText = 'Processado';
+
+            // Atualiza status visual abaixo da compra
+            document.querySelector('.confirmar_pedido_botao_2 h2').innerText = 'Processado';
+
+            // Atualiza o botão amarelo do topo
+            const botaoTopo = document.getElementById('botao_topo_processado');
+            botaoTopo.className = 'confirmar_pedido_botao_3';
+        }
+    })
+    .catch(error => console.error('Erro:', error));
+}
+
+function receberPagamento() {
+    fetch(window.location.href, { // chama a mesma página
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'action=receber_pagamento&id_compra=<?= $id_venda ?>'
+    })
+    .then(response => response.text())
+    .then(data => {
+        if (data === 'OK') {
+            // Muda texto do botão e status visual
+            const botao = document.getElementById('botao_receber_pagamento');
+            botao.querySelector('h1').innerText = 'Pago';
+
+            // Atualiza status visual abaixo da compra
+            document.querySelector('.confirmar_pedido_botao_1 h2').innerText = 'Pago';
+
+            // Atualiza o botão laranja do topo
+            const botaoTopo = document.getElementById('botao_topo_pago');
+            botaoTopo.className = 'confirmar_pedido_botao_3';
+        }
+    })
+    .catch(error => console.error('Erro:', error));
+}
+
+</script>
+

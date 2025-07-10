@@ -8,14 +8,29 @@ class VendaController extends RenderView
     public ?string $id_venda = null;
 
     public function __construct()
-    {
-        if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
-            header('Location: Login');
-            exit;
-        }
-
-        $this->model = new VendaModel();
+{
+    if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
+        header('Location: Login');
+        exit;
     }
+
+    $this->model = new VendaModel();
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['action'], $_POST['id_compra'])) {
+            $idCompra = (int)$_POST['id_compra'];
+            if ($_POST['action'] === 'confirmar_envio') {
+                $this->model->atualizarStatusEntrega($idCompra, 1);
+                exit('OK');
+            }
+            if ($_POST['action'] === 'receber_pagamento') {
+                $this->model->atualizarStatusPagamento($idCompra, 1);
+                exit('OK');
+            }
+        }
+    }
+}
+
 
     public function pegarDados(): array
     {
@@ -68,6 +83,9 @@ class VendaController extends RenderView
             $cidadeEndereco = $vendas[0]['cidade_endereco'] ?? null;
             $totalPagoCompra = $vendas[0]['total_pago_compra'] ?? null;
             $quantidadeComprasClienteVendedor = $vendas[0]['quantidade_compras_cliente_vendedor'] ?? null;
+            $status_pagamento = $vendas[0]['status_pagamento_compra'] ?? 0;
+            $status_entrega = $vendas[0]['status_entrega_compra'] ?? 0;
+
         }
 
         return [
@@ -85,7 +103,9 @@ class VendaController extends RenderView
             'total_pago_compra' => $totalPagoCompra,
             'quantidade_compras_cliente_vendedor' => $quantidadeComprasClienteVendedor,
             'itens_venda' => $itensVenda,
-            'quantidade_itens_venda' => $quantidadeItensVenda
+            'quantidade_itens_venda' => $quantidadeItensVenda,
+            'status_pagamento_compra' => $status_pagamento,
+            'status_entrega_compra' => $status_entrega
         ];
     }
 
