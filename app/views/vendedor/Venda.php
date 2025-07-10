@@ -41,18 +41,19 @@
 
     <div class="confirmar_pedido_grid_principal">
       <div class="confirmar_pedido_container_1">
-        <div class="confirmar_pedido_itens">
-          <div class="confirmar_pedido_produtos">
-            <img src="<?=$PATH_PUBLIC?>/image/vendedor/confirmar_pedido/mouse.svg" alt="">
-            <h1>Mouse Logitech G203</h1>
-            <div class="confirmar_pedido_produtos_valor">
-              <h2>R$<?= number_format($total_pago_compra ?? 0, 2, ',', '.') ?> x 1</h2>
-              <h1>R$<?= number_format($total_pago_compra ?? 0, 2, ',', '.') ?></h1>
+      <div class="confirmar_pedido_itens">
+        <?php foreach ($itens_venda as $item): ?>
+            <div class="confirmar_pedido_produtos">
+                <img src="<?=$PATH_PUBLIC?>/image/vendedor/confirmar_pedido/mouse.svg" alt="">
+                <h1><?= htmlspecialchars($item['nome_produto']) ?></h1>
+                <div class="confirmar_pedido_produtos_valor">
+                    <h2>R$<?= number_format($item['preco_pago_compra'], 2, ',', '.') ?> x <?= $item['quantidade_compra'] ?></h2>
+                    <h1>R$<?= number_format($item['total_item'], 2, ',', '.') ?></h1>
+                </div>
             </div>
-          </div>
-          <hr>          
-        </div>
-
+            <hr>
+        <?php endforeach; ?>
+      </div>
         <div class="confirmar_pedido_botao_confirmar_envio">
           <img src="<?=$PATH_PUBLIC?>/image/geral/botoes/v_branco_icon.svg" alt="">
           <h1>CONFIRMAR ENVIO</h1>
@@ -124,7 +125,7 @@
         <div class="confirmar_pedido_itens_container_3">
           <div class="confirmar_pedido_container_3_item">
             <h2>Subtotal</h2>
-            <h2>3 itens</h2>
+            <h2><?= $quantidade_itens_venda ?>  itens</h2>
             <h2>R$<?= number_format($total_pago_compra ?? 0, 2, ',', '.') ?></h2>
           </div>
 

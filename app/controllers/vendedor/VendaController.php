@@ -38,6 +38,8 @@ class VendaController extends RenderView
         }
 
         $vendas = $this->model->getVendas((int)$this->id_venda);
+        $itensVenda = $this->model->getItensVenda((int)$this->id_venda);
+        $quantidadeItensVenda = count($itensVenda);
 
         $dataCompra = null;
         $nomeCliente = null;
@@ -81,7 +83,9 @@ class VendaController extends RenderView
             'uf_endereco' => $ufEndereco,
             'cidade_endereco' => $cidadeEndereco,
             'total_pago_compra' => $totalPagoCompra,
-            'quantidade_compras_cliente_vendedor' => $quantidadeComprasClienteVendedor
+            'quantidade_compras_cliente_vendedor' => $quantidadeComprasClienteVendedor,
+            'itens_venda' => $itensVenda,
+            'quantidade_itens_venda' => $quantidadeItensVenda
         ];
     }
 

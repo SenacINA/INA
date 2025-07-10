@@ -26,7 +26,8 @@ public function getVendas(int $idVenda)
         end.numero_endereco,
         end.uf_endereco,
         end.cidade_endereco,
-        SUM(ic.preco_pago_compra) AS total_pago_compra,
+        SUM(ic.preco_pago_compra * ic.quantidade_compra) AS total_pago_compra
+,
         (
             SELECT COUNT(*)
             FROM compra c2
@@ -59,6 +60,29 @@ public function getVendas(int $idVenda)
 
   return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+public function getItensVenda(int $idVenda)
+{
+    $sql = "
+        SELECT 
+            ic.id_item_compra,
+            ic.id_produto,
+            p.nome_produto,
+            ic.quantidade_compra,
+            ic.preco_pago_compra,
+            (ic.preco_pago_compra * ic.quantidade_compra) AS total_item
+        FROM item_compra ic
+        INNER JOIN produto p ON p.id_produto = ic.id_produto
+        WHERE ic.id_compra = :idVenda
+    ";
+
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':idVenda', $idVenda, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
 
 }
