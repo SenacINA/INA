@@ -1,11 +1,29 @@
 const cardProduto = (produto) => {
-  const hasPromo = produto.desconto_promocao && produto.preco_produto_promo;
+  let precoFinal = produto.preco_produto;
+  let flagPromo = "";
+  let hasPromo = false;
+
+  if (produto.desconto_promocao > 0) {
+    hasPromo = true;
+
+    if (produto.tipo_promocao === 1) {
+      // reais sobre total
+      precoFinal = (produto.preco_produto - produto.desconto_promocao).toFixed(2).replace('.', ',');
+      flagPromo = `- R$${produto.desconto_promocao}`;
+    } else if (produto.tipo_promocao === 2) {
+      // porcentagem sobre total
+      precoFinal = (produto.preco_produto * (1 - produto.desconto_promocao / 100)).toFixed(2).replace('.', ',');
+      flagPromo = `${produto.desconto_promocao}% OFF`;
+    }    
+
+  }
+
   return `
     <div class='index_body_produto_card' data-id='${produto.id_produto}' data-nome='${produto.nome_produto}'>
       <div class='index_body_imagem_produto'>
         ${hasPromo ? `
           <div class="promo_container">
-            <div class="promo_flag">${produto.flag_promo}</div>
+            <div class="promo_flag">${flagPromo}</div>
           </div>
         ` : ''}
         <img id='produto' src='./public/${produto.endereco_imagem_produto}' alt='${produto.nome_produto}'>
@@ -20,9 +38,9 @@ const cardProduto = (produto) => {
           <div class='index_body_valor_produto'>
             ${hasPromo ? `
               <p id='indexBodyValorProduto' class='preco_antigo'>R$${produto.preco_produto}</p>
-              <p id='indexBodyValorProduto'>R$ ${produto.preco_produto_promo}</p>
+              <p id='indexBodyValorProduto'>R$${precoFinal}</p>
             ` : `
-              <p id='indexBodyValorProduto'>R$ ${produto.preco_produto}</p>
+              <p id='indexBodyValorProduto'>R$${produto.preco_produto}</p>
             `}
           </div>
         </div>

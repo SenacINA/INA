@@ -1168,10 +1168,14 @@ input:checked + .toggle_slider::before {
 }
 
 .preco_antigo {
-  color: #B12525 !important;
+  color: #989898 !important;
   font-size: 14px !important;
   text-decoration: line-through !important;
-  margin-right: auto;
+  font-weight: 400 !important;
+  position: absolute;
+  top: 0;
+  transform: translateY(-75%);
+
 }
 
 .index_body_imagem_produto {
