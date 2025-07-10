@@ -301,12 +301,20 @@ main {
 }
 
 /* Colunas para LISTA DE VENDEDORES */
-.lista_col_1 { width: 8%; }   
-.lista_col_2 { width: 30%; }  
+.lista_col_1 { width: 5%;}
+
+.td-botoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px; 
+  align-items: center;
+}
+
+.lista_col_2 { width: 25%; }  
 .lista_col_3 { width: 10%; }  
-.lista_col_4 { width: 30%; }  
-.lista_col_5 { width: 15%; }  
-.lista_col_6 { width: auto; } 
+.lista_col_4 { width: 25%; }  
+.lista_col_5 { width: 10%; }  
+.lista_col_6 { width: 10%; } 
 
 /* Colunas para RELATÓRIO DE VENDAS */
 .relatorio_col_1 { width: 8%; }  
