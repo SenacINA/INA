@@ -6,52 +6,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let paginaAtual = 0;
   const itensPorPagina = 10;
-  let modo = 'lista';
+  let modo = "lista";
   let vendas = [];
 
   function inicializarPerfil() {
     if (!perfilHolder) return;
 
-    perfilHolder.querySelector('#nome').textContent = '---';
-    perfilHolder.querySelector('#campo-nome').textContent = '---';
-    perfilHolder.querySelector('#campo-email').textContent = '---';
-    perfilHolder.querySelector('#campo-data').textContent = '---';
+    perfilHolder.querySelector("#nome").textContent = "---";
+    perfilHolder.querySelector("#campo-nome").textContent = "---";
+    perfilHolder.querySelector("#campo-email").textContent = "---";
+    perfilHolder.querySelector("#campo-data").textContent = "---";
 
-    const img = perfilHolder.querySelector('#foto-perfil');
-    img.removeAttribute('src');
-    img.style.display = 'none';
+    const img = perfilHolder.querySelector("#foto-perfil");
+    img.removeAttribute("src");
+    img.style.display = "none";
   }
 
   function atualizarPerfil(perfil) {
     if (!perfilHolder || !perfil) return;
 
-    const nome = perfil.nome || '---';
-    const email = perfil.email || '---';
+    const nome = perfil.nome || "---";
+    const email = perfil.email || "---";
     const dataCadastro = perfil.data_cadastro
-      ? new Date(perfil.data_cadastro).toLocaleDateString('pt-BR')
-      : '---';
+      ? new Date(perfil.data_cadastro).toLocaleDateString("pt-BR")
+      : "---";
     const foto = perfil.foto_perfil;
 
-    perfilHolder.querySelector('#nome').textContent = nome;
-    perfilHolder.querySelector('#campo-nome').textContent = nome;
-    perfilHolder.querySelector('#campo-email').textContent = email;
-    perfilHolder.querySelector('#campo-data').textContent = dataCadastro;
+    perfilHolder.querySelector("#nome").textContent = nome;
+    perfilHolder.querySelector("#campo-nome").textContent = nome;
+    perfilHolder.querySelector("#campo-email").textContent = email;
+    perfilHolder.querySelector("#campo-data").textContent = dataCadastro;
 
-    const img = perfilHolder.querySelector('#foto-perfil');
+    const img = perfilHolder.querySelector("#foto-perfil");
 
     if (foto) {
-      img.src = PATH_PUBLIC + foto;
-      img.style.display = 'block';
-      img.onerror = () => {
-        img.removeAttribute('src');
-        img.style.display = 'none';
+      img.onload = () => {
+        img.style.display = "block";
+        ajustarColunas(modo);
       };
+
+      img.onerror = () => {
+        img.removeAttribute("src");
+        img.style.display = "none";
+        ajustarColunas(modo);
+      };
+
+      img.src = PATH_PUBLIC + foto;
     } else {
-      img.removeAttribute('src');
-      img.style.display = 'none';
+      img.removeAttribute("src");
+      img.style.display = "none";
+      ajustarColunas(modo);
     }
   }
-
 
   const filtrosLista = `
     <option selected value="id_vendedor">ID</option>
@@ -70,42 +76,50 @@ document.addEventListener("DOMContentLoaded", () => {
     <option value="cliente">Cliente</option>
   `;
 
-
   function ajustarColunas(modo) {
     const colgroup = document.querySelector("table colgroup");
     if (!colgroup) return;
 
     const colClassesLista = [
-      'lista_col_1',
-      'lista_col_2',
-      'lista_col_3',
-      'lista_col_4',
-      'lista_col_5',
-      'lista_col_6'
+      "lista_col_1",
+      "lista_col_2",
+      "lista_col_3",
+      "lista_col_4",
+      "lista_col_5",
+      "lista_col_6",
     ];
 
     const colClassesRelatorio = [
-      'relatorio_col_1',
-      'relatorio_col_2',
-      'relatorio_col_3',
-      'relatorio_col_4',
-      'relatorio_col_5',
-      'relatorio_col_6'
+      "relatorio_col_1",
+      "relatorio_col_2",
+      "relatorio_col_3",
+      "relatorio_col_4",
+      "relatorio_col_5",
+      "relatorio_col_6",
     ];
 
-    const classes = modo === 'lista' ? colClassesLista : colClassesRelatorio;
+    const classes = modo === "lista" ? colClassesLista : colClassesRelatorio;
 
-    const cols = colgroup.querySelectorAll('col');
+    const cols = colgroup.querySelectorAll("col");
+
     cols.forEach((col, i) => {
-      col.className = classes[i];
+      const classesAtuais = [...col.classList];
+
+      classesAtuais.forEach((c) => {
+        if (c.startsWith("lista_col_") || c.startsWith("relatorio_col_")) {
+          col.classList.remove(c);
+        }
+      });
+
+      col.classList.add(classes[i]);
     });
   }
 
   function atualizarFiltros() {
-    if (modo === 'lista') {
+    if (modo === "lista") {
       filtroSelect.innerHTML = filtrosLista;
       filtroSelect.value = "id_vendedor";
-    } else if (modo === 'relatorio') {
+    } else if (modo === "relatorio") {
       filtroSelect.innerHTML = filtrosRelatorio;
       filtroSelect.value = "id";
     }
@@ -118,39 +132,39 @@ document.addEventListener("DOMContentLoaded", () => {
     vendas.sort((a, b) => {
       let valA, valB;
 
-      if (modo === 'relatorio') {
+      if (modo === "relatorio") {
         valA = a[campo];
         valB = b[campo];
 
-        if (campo === 'preco') {
+        if (campo === "preco") {
           valA = parseFloat(valA);
           valB = parseFloat(valB);
-        } else if (campo === 'quantidade' || campo === 'id') {
+        } else if (campo === "quantidade" || campo === "id") {
           valA = Number(valA);
           valB = Number(valB);
         } else {
           valA = valA ? valA.toString().toLowerCase() : "";
           valB = valB ? valB.toString().toLowerCase() : "";
         }
-      } else if (modo === 'lista') {
+      } else if (modo === "lista") {
         switch (campo) {
-          case 'id_vendedor':
+          case "id_vendedor":
             valA = Number(a.id_vendedor);
             valB = Number(b.id_vendedor);
             break;
-          case 'nome':
+          case "nome":
             valA = a.nome ? a.nome.toLowerCase() : "";
             valB = b.nome ? b.nome.toLowerCase() : "";
             break;
-          case 'data_cadastro':
+          case "data_cadastro":
             valA = new Date(a.data_cadastro).getTime() || 0;
             valB = new Date(b.data_cadastro).getTime() || 0;
             break;
-          case 'nome_fantasia':
+          case "nome_fantasia":
             valA = a.nome_fantasia ? a.nome_fantasia.toLowerCase() : "";
             valB = b.nome_fantasia ? b.nome_fantasia.toLowerCase() : "";
             break;
-          case 'cnpj_vendedor':
+          case "cnpj_vendedor":
             valA = a.cnpj_vendedor ? a.cnpj_vendedor.toLowerCase() : "";
             valB = b.cnpj_vendedor ? b.cnpj_vendedor.toLowerCase() : "";
             break;
@@ -181,11 +195,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }),
       });
       const data = await response.json();
-      if (!data.success) throw new Error(data.message || "Erro ao carregar vendedores");
 
-      modo = 'lista';
+      if (!data.success)
+        throw new Error(data.message || "Erro ao carregar vendedores");
+
+      modo = "lista";
       ajustarColunas(modo);
-      vendas = data.vendedores;
+
+      vendas = data.vendedores || [];
 
       atualizarCabecalhoTabelaParaLista();
       atualizarFiltros();
@@ -197,15 +214,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       renderizarTabelaPagina(paginaAtual);
 
-      if (perfilHolder) perfilHolder.style.display = 'grid';
+      if (perfilHolder) perfilHolder.style.display = "grid";
       inicializarPerfil();
     } catch (e) {
-      alert("Erro ao carregar vendedores.");
       console.error(e);
     }
   }
 
-  async function buscarRelatorioVendedor(vendedorId) {
+  async function buscarVendedorPorId(vendedorId) {
     try {
       const response = await fetch("/INA/RelatorioVendedor-api", {
         method: "POST",
@@ -214,16 +230,61 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const data = await response.json();
-      console.log('buscarRelatorioVendedor data:', data);
+      if (!data.success || !data.perfil) {
+        throw new Error("Vendedor não encontrado");
+      }
 
+      modo = "lista";
+      vendas = [
+        {
+          id_vendedor: vendedorId,
+          nome: data.perfil.nome || "---",
+          data_cadastro: data.perfil.data_cadastro || "---",
+          nome_fantasia: data.perfil.nome_fantasia || "---",
+          cnpj_vendedor: data.perfil.cnpj_vendedor || "---",
+        },
+      ];
+
+      ajustarColunas(modo);
+      atualizarCabecalhoTabelaParaLista();
+      atualizarFiltros();
+      ordenarVendas();
+
+      paginaAtual = 0;
+      configurarNavegacao(paginaAtual, 1);
+      renderizarTabelaPagina(paginaAtual);
+
+      if (perfilHolder) {
+        perfilHolder.style.display = "grid";
+        atualizarPerfil(data.perfil);
+      }
+    } catch (e) {
+      gerarToast("Vendedor não encontrado!","erro");
+      vendas = [];
+      carregarListaVendedores();
+    }
+  }
+
+  async function buscarRelatorioVendedor(vendedorId) {
+    try {
+      const response = await fetch("/INA/RelatorioVendedor-api", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          listar_vendas: 1,
+          vendedor_id: vendedorId,
+        }),
+      });
+
+      const data = await response.json();
       if (!data.success) {
         inicializarPerfil();
-        gerarToast(data.message || 'Vendedor não encontrado', 'erro');
+        gerarToast(data.message || "Vendedor não encontrado", "erro");
         return false;
       }
 
       if (!data.vendas || data.vendas.length === 0) {
-        modo = 'relatorio';
+        modo = "relatorio";
         ajustarColunas(modo);
         vendas = [];
 
@@ -245,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
       }
 
-      modo = 'relatorio';
+      modo = "relatorio";
       vendas = data.vendas;
 
       atualizarCabecalhoTabelaParaRelatorio();
@@ -272,22 +333,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const vendedorId = form.querySelector('input[name="vendedor_id"]').value.trim();
+    const vendedorId = form
+      .querySelector('input[name="vendedor_id"]')
+      .value.trim();
 
     inicializarPerfil();
 
-    if (!vendedorId || vendedorId === '0') {
+    if (!vendedorId || vendedorId === "0") {
       carregarListaVendedores();
-      return;
+    } else {
+      buscarVendedorPorId(vendedorId);
     }
-
-    buscarRelatorioVendedor(vendedorId)
-      .then(sucesso => {
-        if (!sucesso) carregarListaVendedores();
-      })
-      .catch(() => {
-        carregarListaVendedores();
-      });
   });
 
   function renderizarTabelaPagina(pagina) {
@@ -316,39 +372,90 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    dados.forEach(item => {
+    dados.forEach((item) => {
       const tr = document.createElement("tr");
-      if (modo === 'lista') {
+      if (modo === "lista") {
         tr.innerHTML = `
           <td>${item.id_vendedor}</td>
           <td>${item.nome}</td>
-          <td>${new Date(item.data_cadastro).toLocaleDateString('pt-BR')}</td>
+          <td>${new Date(item.data_cadastro).toLocaleDateString("pt-BR")}</td>
           <td>${item.nome_fantasia}</td>
           <td>${item.cnpj_vendedor}</td>
           <td></td>
         `;
 
-        const btn = document.createElement("button");
-        btn.className = "base_botao btn_blue";
-        btn.type = "button";
+        const cell = tr.querySelector("td:last-child");
 
-        const img = document.createElement("img");
-        img.className = "base_icon";
-        img.src = PATH_PUBLIC + "/image/geral/botoes/v_branco_icon.svg";
-        img.alt = "Ícone Relatório";
+        // Adiciona a classe para aplicar grid no td
+        cell.classList.add("td-botoes");
 
+        // Botão RELATÓRIO
+        const btnRelatorio = document.createElement("button");
+        btnRelatorio.className = "base_botao btn_blue";
+        btnRelatorio.type = "button";
 
-        btn.appendChild(img);
-        btn.appendChild(document.createTextNode(" RELATÓRIO"));
+        const imgRelatorio = document.createElement("img");
+        imgRelatorio.className = "base_icon";
+        imgRelatorio.src =
+          PATH_PUBLIC + "/image/geral/botoes/v_branco_icon.svg";
+        imgRelatorio.alt = "Ícone Vendas";
 
-        btn.addEventListener("click", () => {
-          form.querySelector('input[name="vendedor_id"]').value = item.id_vendedor;
-          form.dispatchEvent(new Event('submit'));
+        btnRelatorio.appendChild(imgRelatorio);
+        btnRelatorio.appendChild(document.createTextNode(" VENDAS"));
+
+        btnRelatorio.addEventListener("click", () => {
+          const idVendedor = item.id_vendedor;
+          if (idVendedor && idVendedor !== "N/A") {
+            buscarRelatorioVendedor(idVendedor);
+          } else {
+            alert("ID do vendedor inválido.");
+          }
         });
 
-        tr.querySelector("td:last-child").appendChild(btn);
+        const btnBuscar = document.querySelector("#btnBuscarVendedor");
+        if (btnBuscar) {
+          btnBuscar.addEventListener("click", () => {
+            const vendedorId = form
+              .querySelector('input[name="vendedor_id"]')
+              .value.trim();
 
-      } else if (modo === 'relatorio') {
+            inicializarPerfil();
+
+            if (!vendedorId || vendedorId === "0") {
+              carregarListaVendedores();
+              return;
+            }
+
+            buscarRelatorioVendedor(vendedorId)
+              .then((sucesso) => {
+                if (!sucesso) carregarListaVendedores();
+              })
+              .catch(() => {
+                carregarListaVendedores();
+              });
+          });
+        }
+
+        // Botão PRODUTOS
+        const btnProdutos = document.createElement("button");
+        btnProdutos.className = "base_botao btn_blue";
+        btnProdutos.type = "button";
+
+        const imgProdutos = document.createElement("img");
+        imgProdutos.className = "base_icon";
+        imgProdutos.src = PATH_PUBLIC + "/image/geral/botoes/v_branco_icon.svg";
+        imgProdutos.alt = "Ícone Produtos";
+
+        btnProdutos.appendChild(imgProdutos);
+        btnProdutos.appendChild(document.createTextNode(" PRODUTOS"));
+
+        btnProdutos.addEventListener("click", () => {
+          window.location.href = `/GerenciarProdutos?vendedor_id=${item.id_vendedor}`;
+        });
+
+        cell.appendChild(btnRelatorio);
+        cell.appendChild(btnProdutos);
+      } else if (modo === "relatorio") {
         tr.innerHTML = `
           <td>${item.id}</td>
           <td>${item.produto}</td>
@@ -374,6 +481,8 @@ document.addEventListener("DOMContentLoaded", () => {
       tbody.appendChild(tr);
     }
   }
+
+  //
 
   function atualizarCabecalhoTabelaParaLista() {
     const thead = document.querySelector("table thead");
@@ -416,9 +525,9 @@ document.addEventListener("DOMContentLoaded", () => {
     btnAnterior.onclick = () => {
       if (paginaAtual > 0) {
         paginaAtual--;
-        if (modo === 'lista') {
+        if (modo === "lista") {
           carregarListaVendedores(paginaAtual);
-        } else if (modo === 'relatorio') {
+        } else if (modo === "relatorio") {
           renderizarTabelaPagina(paginaAtual);
         }
       }
@@ -427,9 +536,9 @@ document.addEventListener("DOMContentLoaded", () => {
     btnProximo.onclick = () => {
       if (paginaAtual < totalPaginas - 1) {
         paginaAtual++;
-        if (modo === 'lista') {
+        if (modo === "lista") {
           carregarListaVendedores(paginaAtual);
-        } else if (modo === 'relatorio') {
+        } else if (modo === "relatorio") {
           renderizarTabelaPagina(paginaAtual);
         }
       }

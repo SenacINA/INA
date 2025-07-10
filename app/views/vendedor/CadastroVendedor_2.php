@@ -97,19 +97,6 @@ require_once($PATH_CONTROLLER . "/vendedor/VendedorController.php");
             <input value="<?= $user['email_cliente'] ?>" type="email" name="email" id="email" class="base_input">
             <h2>O código de confirmação será enviado para esse E-mail. </h2>
           </div>
-          <!-- Categoria de Produtos -->
-          <div>
-            <label for="categoria_produtos">Categoria de Produtos</label> <br>
-            <div class="base_input_select">
-              <select name="categoria_produtos" id="categoria_produtos" class="base_input">
-                <option value="opc1">Opção 1</option>
-                <option value="opc2">Opção 2</option>
-                <option value="opc3">Opção 3</option>
-                <option value="opc4">Opção 4</option>
-                <option value="opc5">Opção 5</option>
-              </select>
-            </div>
-          </div>
 
           <div class="cadastro_vendedor_2_conteudo_telefone">
             <!-- Telefone 1 -->

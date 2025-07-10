@@ -68,7 +68,7 @@ require_once('./utils/head.php');
               </div>
 
               <div class="relatorio_vendedor_card">
-                <span class="relatorio_vendedor_titulo">Data de Cadastro:</span>
+                <span class="relatorio_vendedor_titulo">Data de Cadastro</span>
                 <label id="campo-data"><?= !empty($perfil['data_cadastro']) ? date('d/m/Y', strtotime($perfil['data_cadastro'])) : '' ?></label>
               </div>
             </div>
@@ -98,12 +98,12 @@ require_once('./utils/head.php');
     <div class="base_tabela">
       <table>
         <colgroup>
-          <col class="relatorio_vendedor_table_col-1">
-          <col class="relatorio_vendedor_table_col-2">
-          <col class="relatorio_vendedor_table_col-3">
-          <col class="relatorio_vendedor_table_col-4">
-          <col class="relatorio_vendedor_table_col-5">
-          <col class="relatorio_vendedor_table_col-6">
+          <col class="">
+          <col class="">
+          <col class="">
+          <col class="">
+          <col class="">
+          <col class="">
         </colgroup>
         <thead>
           <tr>

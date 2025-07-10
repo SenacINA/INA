@@ -19,10 +19,10 @@ require_once('./utils/head.php');
           <h1>Redefinir Senha</h1>
         </div>
 
-        <form class="redefinir_senha_1_form" method="POST" action="redefinir-senha-api">
+        <div class="redefinir_senha_1_form">
           <label for="email">E-mail:</label>
           <input class="base_input" type="email" name="email" id="email-senha">
-        </form>
+        </div>
       </div>
 
       <div class="redefinir_senha_1_botoes">
@@ -37,15 +37,6 @@ require_once('./utils/head.php');
       </div>
     </div>
   </main>
-
-  <!-- Pop-Up -->
-  <div class="popup_container" id="popup">
-    <div class="popup">
-      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/check_carolina_icon.svg" width="200px" height="200px">
-      <div class="text_popup">
-      </div>
-    </div>
-  </div>
 
   <script type="module" src="<?= $PATH_PUBLIC ?>/js/admin/ToggleEyeSenha.js"></script>
   <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
