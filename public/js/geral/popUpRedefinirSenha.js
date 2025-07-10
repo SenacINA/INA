@@ -1,6 +1,6 @@
-const btn = document.getElementById('continuar_button_senha');
-const popup = document.getElementById('popup');
-const PATH_PUBLIC = './public';
+const btn = document.getElementById("continuar_button_senha");
+const popup = document.getElementById("popup");
+const PATH_PUBLIC = "./public";
 
 btn.addEventListener("click", async () => {
   const email = document.getElementById("email-senha").value;
@@ -16,39 +16,21 @@ btn.addEventListener("click", async () => {
   try {
     const res = await fetch("RedefinirSenha-api", {
       method: "POST",
-      headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      headers: { "X-Requested-With": "XMLHttpRequest" },
       body: formData,
-      credentials: 'include'
+      credentials: "include",
     });
 
     const data = await res.json();
 
-    if (data.link) {
-    
-      document.querySelector(".text_popup").innerHTML = `
-        ${data.mensagem}
-        <button class="base_botao btn_blue" id="close_btn">
-          <img src="${PATH_PUBLIC}/image/geral/botoes/v_branco_icon.svg" alt="">
-          OK
-        </button>
-      `;
-
-      document.querySelector('.text_popup').addEventListener('click', function(event) {
-        if (event.target && event.target.id === 'close_btn') {
-          popup.style.display = 'none';
-
-          window.location.href = data.link; 
-        }
-      });
-
-      gerarToast(data.mensagem || 'E-mail enviado com sucesso.', 'sucesso');
+    if (data.success) {
+      gerarToast("E-mail verificado com sucesso", "sucesso");
+      setTimeout(() => {
+        window.location.href = "RedefinirSenhaConfirmar";
+      }, 1500);
     } else {
-      document.querySelector(".text_popup").innerText = data.mensagem;
-      gerarToast(data.mensagem || 'Erro ao enviar e-mail.', 'erro');
+      gerarToast("Erro ao verificar e-mail", "erro");
     }
-
-    popup.style.display = 'flex';
-
   } catch (error) {
     console.error(error);
     gerarToast("Erro ao enviar solicitação.", "erro");

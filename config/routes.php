@@ -73,6 +73,7 @@ $routes = [
       '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
       '/SalvarDestaque-api'               => 'vendedor/DestaqueController@salvarDestaque',
       '/RemoverDestaque-api'              => 'vendedor/DestaqueController@removerDestaque',
+      '/getDadosVendedor-api'                   => 'vendedor/VendedorController@getDadosVendedor',
       '/DestaquesVendedor'                => 'vendedor/DestaqueController@listarDestaques',
 
       // Vendedor - Produtos e Pedidos
