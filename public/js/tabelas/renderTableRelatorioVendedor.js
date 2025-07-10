@@ -1,75 +1,447 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".relatorio_vendedor_forms");
-  const perfilHolder = document.getElementById("perfil-vendedor");
-  const nomeEl = document.getElementById("nome");
-  const fotoPerfilEl = document.querySelector(".relatorio_vendedor_card_img_perfil");
-  const campoNome = document.getElementById("campo-nome");
-  const campoEmail = document.getElementById("campo-email");
-  const campoData = document.getElementById("campo-data");
   const tbody = document.querySelector("table tbody");
+  const form = document.querySelector(".relatorio_vendedor_forms");
+  const filtroSelect = document.getElementById("filtros-relatorio-vendas");
+  const perfilHolder = document.getElementById("perfil-vendedor");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  let paginaAtual = 0;
+  const itensPorPagina = 10;
+  let modo = 'lista';
+  let vendas = [];
 
-    const vendedorId = form.querySelector('input[name="vendedor_id"]').value.trim();
+  function inicializarPerfil() {
+    if (!perfilHolder) return;
 
-    if (!vendedorId) {
-      alert("Por favor, insira o ID do vendedor.");
-      return;
+    perfilHolder.querySelector('#nome').textContent = '---';
+    perfilHolder.querySelector('#campo-nome').textContent = '---';
+    perfilHolder.querySelector('#campo-email').textContent = '---';
+    perfilHolder.querySelector('#campo-data').textContent = '---';
+
+    const img = perfilHolder.querySelector('#foto-perfil');
+    img.removeAttribute('src');
+    img.style.display = 'none';
+  }
+
+  function atualizarPerfil(perfil) {
+    if (!perfilHolder || !perfil) return;
+
+    const nome = perfil.nome || '---';
+    const email = perfil.email || '---';
+    const dataCadastro = perfil.data_cadastro
+      ? new Date(perfil.data_cadastro).toLocaleDateString('pt-BR')
+      : '---';
+    const foto = perfil.foto_perfil;
+
+    perfilHolder.querySelector('#nome').textContent = nome;
+    perfilHolder.querySelector('#campo-nome').textContent = nome;
+    perfilHolder.querySelector('#campo-email').textContent = email;
+    perfilHolder.querySelector('#campo-data').textContent = dataCadastro;
+
+    const img = perfilHolder.querySelector('#foto-perfil');
+
+    if (foto) {
+      img.src = PATH_PUBLIC + foto;
+      img.style.display = 'block';
+      img.onerror = () => {
+        img.removeAttribute('src');
+        img.style.display = 'none';
+      };
+    } else {
+      img.removeAttribute('src');
+      img.style.display = 'none';
     }
+  }
 
+
+  const filtrosLista = `
+    <option selected value="id_vendedor">ID</option>
+    <option value="nome">Nome</option>
+    <option value="data_cadastro">Data Cadastro</option>
+    <option value="nome_fantasia">Nome Fantasia</option>
+    <option value="cnpj_vendedor">CNPJ</option>
+  `;
+
+  const filtrosRelatorio = `
+    <option selected value="id">ID</option>
+    <option value="produto">Produto</option>
+    <option value="preco">Preço Uni.</option>
+    <option value="quantidade">Quantidade</option>
+    <option value="status">Status</option>
+    <option value="cliente">Cliente</option>
+  `;
+
+
+  function ajustarColunas(modo) {
+    const colgroup = document.querySelector("table colgroup");
+    if (!colgroup) return;
+
+    const colClassesLista = [
+      'lista_col_1',
+      'lista_col_2',
+      'lista_col_3',
+      'lista_col_4',
+      'lista_col_5',
+      'lista_col_6'
+    ];
+
+    const colClassesRelatorio = [
+      'relatorio_col_1',
+      'relatorio_col_2',
+      'relatorio_col_3',
+      'relatorio_col_4',
+      'relatorio_col_5',
+      'relatorio_col_6'
+    ];
+
+    const classes = modo === 'lista' ? colClassesLista : colClassesRelatorio;
+
+    const cols = colgroup.querySelectorAll('col');
+    cols.forEach((col, i) => {
+      col.className = classes[i];
+    });
+  }
+
+  function atualizarFiltros() {
+    if (modo === 'lista') {
+      filtroSelect.innerHTML = filtrosLista;
+      filtroSelect.value = "id_vendedor";
+    } else if (modo === 'relatorio') {
+      filtroSelect.innerHTML = filtrosRelatorio;
+      filtroSelect.value = "id";
+    }
+  }
+
+  function ordenarVendas() {
+    const campo = filtroSelect.value;
+    if (!vendas || vendas.length === 0) return;
+
+    vendas.sort((a, b) => {
+      let valA, valB;
+
+      if (modo === 'relatorio') {
+        valA = a[campo];
+        valB = b[campo];
+
+        if (campo === 'preco') {
+          valA = parseFloat(valA);
+          valB = parseFloat(valB);
+        } else if (campo === 'quantidade' || campo === 'id') {
+          valA = Number(valA);
+          valB = Number(valB);
+        } else {
+          valA = valA ? valA.toString().toLowerCase() : "";
+          valB = valB ? valB.toString().toLowerCase() : "";
+        }
+      } else if (modo === 'lista') {
+        switch (campo) {
+          case 'id_vendedor':
+            valA = Number(a.id_vendedor);
+            valB = Number(b.id_vendedor);
+            break;
+          case 'nome':
+            valA = a.nome ? a.nome.toLowerCase() : "";
+            valB = b.nome ? b.nome.toLowerCase() : "";
+            break;
+          case 'data_cadastro':
+            valA = new Date(a.data_cadastro).getTime() || 0;
+            valB = new Date(b.data_cadastro).getTime() || 0;
+            break;
+          case 'nome_fantasia':
+            valA = a.nome_fantasia ? a.nome_fantasia.toLowerCase() : "";
+            valB = b.nome_fantasia ? b.nome_fantasia.toLowerCase() : "";
+            break;
+          case 'cnpj_vendedor':
+            valA = a.cnpj_vendedor ? a.cnpj_vendedor.toLowerCase() : "";
+            valB = b.cnpj_vendedor ? b.cnpj_vendedor.toLowerCase() : "";
+            break;
+          default:
+            valA = "";
+            valB = "";
+        }
+      } else {
+        valA = "";
+        valB = "";
+      }
+
+      if (valA < valB) return -1;
+      if (valA > valB) return 1;
+      return 0;
+    });
+  }
+
+  async function carregarListaVendedores(pagina = 0) {
     try {
       const response = await fetch("/INA/RelatorioVendedor-api", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          listar_vendedores: 1,
+          limit: itensPorPagina,
+          offset: pagina * itensPorPagina,
+        }),
+      });
+      const data = await response.json();
+      if (!data.success) throw new Error(data.message || "Erro ao carregar vendedores");
+
+      modo = 'lista';
+      ajustarColunas(modo);
+      vendas = data.vendedores;
+
+      atualizarCabecalhoTabelaParaLista();
+      atualizarFiltros();
+
+      ordenarVendas();
+
+      paginaAtual = pagina;
+      configurarNavegacao(paginaAtual, data.total || vendas.length);
+
+      renderizarTabelaPagina(paginaAtual);
+
+      if (perfilHolder) perfilHolder.style.display = 'grid';
+      inicializarPerfil();
+    } catch (e) {
+      alert("Erro ao carregar vendedores.");
+      console.error(e);
+    }
+  }
+
+  async function buscarRelatorioVendedor(vendedorId) {
+    try {
+      const response = await fetch("/INA/RelatorioVendedor-api", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({ vendedor_id: vendedorId }),
       });
 
-      if (!response.ok) throw new Error("Erro na requisição");
-
       const data = await response.json();
+      console.log('buscarRelatorioVendedor data:', data);
 
-      if (data.error || !data.perfil) {
-        alert(data.error || "Vendedor não encontrado.");
-        if (perfilHolder) perfilHolder.style.display = "none";
-        tbody.innerHTML = "";
-        return;
+      if (!data.success) {
+        inicializarPerfil();
+        gerarToast(data.message || 'Vendedor não encontrado', 'erro');
+        return false;
       }
-      
+
+      if (!data.vendas || data.vendas.length === 0) {
+        modo = 'relatorio';
+        ajustarColunas(modo);
+        vendas = [];
+
+        atualizarCabecalhoTabelaParaRelatorio();
+        atualizarFiltros();
+        ordenarVendas();
+
+        paginaAtual = 0;
+        configurarNavegacao(paginaAtual, 0);
+        renderizarTabelaPagina(paginaAtual);
+
+        if (perfilHolder && data.perfil) {
+          perfilHolder.style.display = "grid";
+          atualizarPerfil(data.perfil);
+        } else if (perfilHolder) {
+          perfilHolder.style.display = "none";
+        }
+
+        return true;
+      }
+
+      modo = 'relatorio';
+      vendas = data.vendas;
+
+      atualizarCabecalhoTabelaParaRelatorio();
+      atualizarFiltros();
+      ordenarVendas();
+
+      paginaAtual = 0;
+      configurarNavegacao(paginaAtual, vendas.length);
+      renderizarTabelaPagina(paginaAtual);
+
       if (perfilHolder) {
-        perfilHolder.style.display = "flex"; 
-
-        nomeEl.textContent = data.perfil.nome;
-        fotoPerfilEl.src =
-          data.perfil.foto_perfil && data.perfil.foto_perfil !== ""
-            ? data.perfil.foto_perfil
-            : "/image/default-profile.png";
-        campoNome.textContent = data.perfil.nome;
-        campoEmail.textContent = data.perfil.email;
-        campoData.textContent = data.perfil.data_cadastro
-          ? new Date(data.perfil.data_cadastro).toLocaleDateString("pt-BR")
-          : "";
+        perfilHolder.style.display = "grid";
+        atualizarPerfil(data.perfil);
       }
 
-      // Atualiza a tabela de vendas
-      tbody.innerHTML = "";
-      data.vendas.forEach((venda) => {
+      return true;
+    } catch (e) {
+      inicializarPerfil();
+      vendas = [];
+      renderizarTabela([]);
+      return false;
+    }
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const vendedorId = form.querySelector('input[name="vendedor_id"]').value.trim();
+
+    inicializarPerfil();
+
+    if (!vendedorId || vendedorId === '0') {
+      carregarListaVendedores();
+      return;
+    }
+
+    buscarRelatorioVendedor(vendedorId)
+      .then(sucesso => {
+        if (!sucesso) carregarListaVendedores();
+      })
+      .catch(() => {
+        carregarListaVendedores();
+      });
+  });
+
+  function renderizarTabelaPagina(pagina) {
+    const inicio = pagina * itensPorPagina;
+    const fim = inicio + itensPorPagina;
+    renderizarTabela(vendas.slice(inicio, fim));
+  }
+
+  function renderizarTabela(dados) {
+    tbody.innerHTML = "";
+    const totalLinhas = 10;
+
+    if (!dados || dados.length === 0) {
+      for (let i = 0; i < totalLinhas; i++) {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-          <td>${venda.id}</td>
-          <td>${venda.produto}</td>
-          <td>R$ ${parseFloat(venda.preco).toFixed(2)}</td>
-          <td>${venda.quantidade}</td>
-          <td>${venda.status}</td>
-          <td>${venda.cliente}</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
         `;
         tbody.appendChild(tr);
-      });
-    } catch (error) {
-      alert("Erro ao buscar dados. Tente novamente.");
-      console.error(error);
+      }
+      return;
     }
+
+    dados.forEach(item => {
+      const tr = document.createElement("tr");
+      if (modo === 'lista') {
+        tr.innerHTML = `
+          <td>${item.id_vendedor}</td>
+          <td>${item.nome}</td>
+          <td>${new Date(item.data_cadastro).toLocaleDateString('pt-BR')}</td>
+          <td>${item.nome_fantasia}</td>
+          <td>${item.cnpj_vendedor}</td>
+          <td></td>
+        `;
+
+        const btn = document.createElement("button");
+        btn.className = "base_botao btn_blue";
+        btn.type = "button";
+
+        const img = document.createElement("img");
+        img.className = "base_icon";
+        img.src = PATH_PUBLIC + "/image/geral/botoes/v_branco_icon.svg";
+        img.alt = "Ícone Relatório";
+
+
+        btn.appendChild(img);
+        btn.appendChild(document.createTextNode(" RELATÓRIO"));
+
+        btn.addEventListener("click", () => {
+          form.querySelector('input[name="vendedor_id"]').value = item.id_vendedor;
+          form.dispatchEvent(new Event('submit'));
+        });
+
+        tr.querySelector("td:last-child").appendChild(btn);
+
+      } else if (modo === 'relatorio') {
+        tr.innerHTML = `
+          <td>${item.id}</td>
+          <td>${item.produto}</td>
+          <td>R$ ${parseFloat(item.preco).toFixed(2)}</td>
+          <td>${item.quantidade}</td>
+          <td>${item.status}</td>
+          <td>${item.cliente}</td>
+        `;
+      }
+      tbody.appendChild(tr);
+    });
+
+    for (let i = dados.length; i < totalLinhas; i++) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  }
+
+  function atualizarCabecalhoTabelaParaLista() {
+    const thead = document.querySelector("table thead");
+    thead.innerHTML = `
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Data Cadastro</th>
+        <th>Nome Fantasia</th>
+        <th>CNPJ</th>
+        <th>Gerenciamento</th>
+      </tr>
+    `;
+  }
+
+  function atualizarCabecalhoTabelaParaRelatorio() {
+    const thead = document.querySelector("table thead");
+    thead.innerHTML = `
+      <tr>
+        <th>ID</th>
+        <th>Produto</th>
+        <th>Preço Uni.</th>
+        <th>Quantidade</th>
+        <th>Status</th>
+        <th>Cliente</th>
+      </tr>
+    `;
+  }
+
+  function configurarNavegacao(pagina, totalItens) {
+    paginaAtual = pagina;
+    const totalPaginas = Math.ceil(totalItens / itensPorPagina);
+
+    const btnAnterior = document.getElementById("btnAnterior");
+    const btnProximo = document.getElementById("btnProximo");
+
+    btnAnterior.disabled = paginaAtual <= 0;
+    btnProximo.disabled = paginaAtual >= totalPaginas - 1;
+
+    btnAnterior.onclick = () => {
+      if (paginaAtual > 0) {
+        paginaAtual--;
+        if (modo === 'lista') {
+          carregarListaVendedores(paginaAtual);
+        } else if (modo === 'relatorio') {
+          renderizarTabelaPagina(paginaAtual);
+        }
+      }
+    };
+
+    btnProximo.onclick = () => {
+      if (paginaAtual < totalPaginas - 1) {
+        paginaAtual++;
+        if (modo === 'lista') {
+          carregarListaVendedores(paginaAtual);
+        } else if (modo === 'relatorio') {
+          renderizarTabelaPagina(paginaAtual);
+        }
+      }
+    };
+  }
+
+  filtroSelect.addEventListener("change", () => {
+    ordenarVendas();
+    paginaAtual = 0;
+    configurarNavegacao(paginaAtual, vendas.length);
+    renderizarTabelaPagina(paginaAtual);
   });
+
+  carregarListaVendedores();
 });

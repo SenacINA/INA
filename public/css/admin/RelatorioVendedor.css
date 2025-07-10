@@ -12,7 +12,7 @@ main {
 
 /* Corpo principal */
 .relatorio_vendedor_body {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-self: center;
   align-self: center;
@@ -72,8 +72,8 @@ main {
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   width: 100%;
+  min-width: 100%;
   height: 260px;
-  max-width: 100%;
   overflow-x: auto;
 
   label {
@@ -86,11 +86,20 @@ main {
   }
 }
 
+.base_icon {
+  padding: 0px;
+}
+
 .relatorio_vendedor_card_img_perfil {
-  width: 130px;
-  height: 130px;
-  margin-top: 25px;
+  width: 140px;
+  height: 140px;
+  margin-top: 30px;
+  object-fit: cover;
   border-radius: 50%;
+  display: block;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .relatorio_vendedor_card_column_2 {
@@ -287,25 +296,26 @@ main {
   border-radius: 10px;
 }
 
-.relatorio_vendedor_table_holder tbody > tr:nth-child(odd) {
+.relatorio_vendedor_table_holder tbody>tr:nth-child(odd) {
   background-color: var(--azul_leve);
 }
 
-.relatorio_vendedor_table_col-1,
-.relatorio_vendedor_table_col-4 {
-  width: 19%;
-}
+/* Colunas para LISTA DE VENDEDORES */
+.lista_col_1 { width: 8%; }   
+.lista_col_2 { width: 30%; }  
+.lista_col_3 { width: 10%; }  
+.lista_col_4 { width: 30%; }  
+.lista_col_5 { width: 15%; }  
+.lista_col_6 { width: auto; } 
 
-.relatorio_vendedor_table_col-3,
-.relatorio_vendedor_table_col-6 {
-  width: 11%;
-}
+/* Colunas para RELATÓRIO DE VENDAS */
+.relatorio_col_1 { width: 8%; }  
+.relatorio_col_2 { width: 30%; } 
+.relatorio_col_3 { width: 10%; }  
+.relatorio_col_4 { width: 5%; }  
+.relatorio_col_5 { width: 10%; }  
+.relatorio_col_6 { width: 30%; } 
 
-.relatorio_vendedor_table_col-2,
-.relatorio_vendedor_table_col-5,
-.relatorio_vendedor_table_col-7 {
-  width: 20%;
-}
 
 .relatorio_vendedor_navegacao {
   display: flex;
@@ -349,21 +359,21 @@ main {
 }
 
 @media (max-width:768px) {
-  .relatorio_vendedor_grid_conteudo{
+  .relatorio_vendedor_grid_conteudo {
     grid-template-columns: 1fr;
     padding: 32px 0px;
     row-gap: 32px;
   }
 
-  .relatorio_vendedor_pesquisar_usuario_item button{
+  .relatorio_vendedor_pesquisar_usuario_item button {
     width: 100%;
   }
 
-  .relatorio_vendedor_titulo{
+  .relatorio_vendedor_titulo {
     height: 50%;
   }
 
-  .relatorio_vendedor_estatistica_holder{
+  .relatorio_vendedor_estatistica_holder {
     grid-template-columns: 1fr;
   }
 }

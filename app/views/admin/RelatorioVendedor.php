@@ -4,10 +4,6 @@
 $titulo = "Relatorio do Vendedor - E ao Quadrado";
 $css = ["/css/admin/RelatorioVendedor.css"];
 require_once('./utils/head.php');
-
-$vendas = $vendas ?? [];
-$perfil = $perfil ?? null;
-
 ?>
 
 <body>
@@ -23,8 +19,6 @@ $perfil = $perfil ?? null;
         </div>
         <hr class="relatorio_vendedor_linha_titulo">
       </div>
-
-      <div class="bg_mobile_1"></div>
 
       <div class="relatorio_vendedor_grid_conteudo">
         <div>
@@ -56,34 +50,29 @@ $perfil = $perfil ?? null;
             <h1 class="relatorio_vendedor_text">Perfil Do Vendedor</h1>
           </div>
 
-          <!-- Substitua este bloco PHP -->
-          <?php if (!empty($perfil)): ?>
-            <div class="relatorio_vendedor_estatistica_holder" id="perfil-vendedor"  style="display: none;">
+          <div class="relatorio_vendedor_estatistica_holder" id="perfil-vendedor">
+            <div class="relatorio_vendedor_card">
+              <span class="relatorio_vendedor_titulo2" id="nome"><?= htmlspecialchars($perfil['nome'] ?? '') ?></span>
+              <img id="foto-perfil" src="" class="relatorio_vendedor_card_img_perfil" style="display: none;">
+            </div>
+
+            <div class="relatorio_vendedor_card_column_2">
               <div class="relatorio_vendedor_card">
-                <span class="relatorio_vendedor_titulo2" id="nome"><?= htmlspecialchars($perfil['nome']) ?></span>
-                <img src="<?= $PATH_PUBLIC . htmlspecialchars($perfil['foto_perfil'] ?? '/image/default-profile.png') ?>" alt="Foto do perfil" class="relatorio_vendedor_card_img_perfil">
+                <span class="relatorio_vendedor_titulo">Nome</span>
+                <label id="campo-nome"><?= htmlspecialchars($perfil['nome'] ?? '') ?></label>
               </div>
 
-              <div class="relatorio_vendedor_card_column_2">
-                <div class="relatorio_vendedor_card">
-                  <span class="relatorio_vendedor_titulo">Nome</span>
-                  <label><?= htmlspecialchars($perfil['nome']) ?></label>
-                </div>
+              <div class="relatorio_vendedor_card">
+                <span class="relatorio_vendedor_titulo">E-mail</span>
+                <label id="campo-email"><?= htmlspecialchars($perfil['email'] ?? '') ?></label>
+              </div>
 
-                <div class="relatorio_vendedor_card">
-                  <span class="relatorio_vendedor_titulo">E-mail</span>
-                  <label><?= htmlspecialchars($perfil['email']) ?></label>
-                </div>
-
-                <div class="relatorio_vendedor_card">
-                  <span class="relatorio_vendedor_titulo">Data de Cadastro:</span>
-                  <label><?= !empty($perfil['data_cadastro']) ? date('d/m/Y', strtotime($perfil['data_cadastro'])) : '' ?></label>
-                </div>
+              <div class="relatorio_vendedor_card">
+                <span class="relatorio_vendedor_titulo">Data de Cadastro:</span>
+                <label id="campo-data"><?= !empty($perfil['data_cadastro']) ? date('d/m/Y', strtotime($perfil['data_cadastro'])) : '' ?></label>
               </div>
             </div>
-          <?php else: ?>
-            <p>Perfil do vendedor não encontrado.</p>
-          <?php endif; ?>
+          </div>
         </div>
       </div>
     </div>
@@ -144,11 +133,11 @@ $perfil = $perfil ?? null;
   </main>
 
   <script>
-    window.vendas = <?= json_encode($vendas) ?>;
-    window.perfil = <?= json_encode($perfil) ?>;
+    const PATH_PUBLIC = "<?= $PATH_PUBLIC ?>";
   </script>
-
+  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
   <script src="<?= $PATH_PUBLIC ?>/js/tabelas/renderTableRelatorioVendedor.js"></script>
+
 </body>
 
 </html>

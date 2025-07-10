@@ -8,58 +8,82 @@ class RelatorioVendedorModel
     public function __construct()
     {
         $this->db = new Database();
+        $this->db->connect();
     }
 
-    // Busca as vendas realizadas por um vendedor
-    public function buscarPorVendedor($vendedor_id)
+    // Busca lista de vendedores (com dados básicos)
+    public function listarVendedores($limit = 10, $offset = 0)
     {
-        $this->db->connect();
-
         $sql = "
             SELECT 
-                ic.id_item_compra AS id,
-                p.nome_produto AS produto,
-                ic.preco_pago_compra AS preco,
-                ic.quantidade_compra AS quantidade,
-                CASE
-                    WHEN ic.status_entrega_compra = 1 THEN 'Entregue'
-                    ELSE 'Pendente'
-                END AS status,
-                c.nome_cliente AS cliente
-            FROM item_compra ic
-            JOIN compra co ON ic.id_compra = co.id_compra
-            JOIN produto p ON ic.id_produto = p.id_produto
-            JOIN cliente c ON co.id_cliente = c.id_cliente
-            WHERE p.id_vendedor = :id_vendedor
-            ORDER BY ic.id_item_compra DESC
+                v.id_vendedor,
+                c.nome_cliente AS nome,
+                c.data_registro_cliente AS data_cadastro,
+                v.nome_fantasia,
+                v.cnpj_vendedor
+            FROM vendedor v
+            JOIN cliente c ON v.id_cliente = c.id_cliente
+            ORDER BY c.data_registro_cliente DESC
+            LIMIT :limit OFFSET :offset
         ";
 
-        $params = [':id_vendedor' => $vendedor_id];
-        $result = $this->db->executeQuery($sql, $params);
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+        $stmt->execute();
 
-        $this->db->disconnect();
-
-        return is_array($result) ? $result : [];
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result ?: [];
     }
 
-    // Busca o perfil de um vendedor, considerando que vendedor está ligado ao cliente
+    // Busca vendas de um vendedor
+    public function buscarPorVendedor($vendedor_id)
+    {
+        
+        $sql = "
+        SELECT 
+            ic.id_item_compra AS id,
+            p.nome_produto AS produto,
+            ic.preco_pago_compra AS preco,
+            ic.quantidade_compra AS quantidade,
+            CASE
+                WHEN ic.status_entrega_compra = 1 THEN 'Entregue'
+                ELSE 'Pendente'
+            END AS status,
+            c.nome_cliente AS cliente
+        FROM item_compra ic
+        JOIN compra co ON ic.id_compra = co.id_compra
+        JOIN produto p ON ic.id_produto = p.id_produto
+        JOIN cliente c ON co.id_cliente = c.id_cliente
+        WHERE p.id_vendedor = :id_vendedor
+        ORDER BY ic.id_item_compra DESC
+    ";
+
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindParam(':id_vendedor', $vendedor_id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result ?: [];
+    }
+
+
+    // Buscar perfil do vendedor (igual ao que você já tem)
     public function buscarPerfilVendedor($vendedor_id)
     {
-        $this->db->connect();
-
-        // 1. Buscar o id_cliente correspondente ao id_vendedor
         $sqlCliente = "SELECT id_cliente FROM vendedor WHERE id_vendedor = :vendedor_id";
-        $params = [':vendedor_id' => $vendedor_id];
-        $resultCliente = $this->db->executeQuery($sqlCliente, $params);
+        $stmt = $this->db->getConnection()->prepare($sqlCliente);
+        $stmt->bindParam(':vendedor_id', $vendedor_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $resultCliente = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (!$resultCliente || !isset($resultCliente[0]['id_cliente'])) {
-            $this->db->disconnect();
-            return null; // Vendedor não encontrado
+        if (!$resultCliente || !isset($resultCliente['id_cliente'])) {
+            error_log("Nenhum cliente associado ao vendedor ID $vendedor_id");
+            return null;
         }
 
-        $id_cliente = $resultCliente[0]['id_cliente'];
+        $id_cliente = $resultCliente['id_cliente'];
 
-        // 2. Buscar os dados de perfil do cliente
         $sqlPerfil = "
             SELECT 
                 c.nome_cliente AS nome,
@@ -75,11 +99,12 @@ class RelatorioVendedorModel
             WHERE c.id_cliente = :id_cliente
         ";
 
-        $paramsPerfil = [':id_cliente' => $id_cliente];
-        $resultPerfil = $this->db->executeQuery($sqlPerfil, $paramsPerfil);
+        $stmt = $this->db->getConnection()->prepare($sqlPerfil);
+        $stmt->bindParam(':id_cliente', $id_cliente, PDO::PARAM_INT);
+        $stmt->execute();
 
-        $this->db->disconnect();
+        $resultPerfil = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return isset($resultPerfil[0]) ? $resultPerfil[0] : null;
+        return $resultPerfil ?: null;
     }
 }
