@@ -24,8 +24,7 @@ class EnviarTokenController
     $_SESSION['redefinir_senha_token'] = $token;
 
     echo json_encode([
-      "mensagem" => "<p>Clique no link abaixo para redefinir sua senha</p>",
-      "link" => "RedefinirSenhaConfirmar"
+      "success" => true
     ]);
   }
 
