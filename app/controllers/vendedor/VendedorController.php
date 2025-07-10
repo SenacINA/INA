@@ -1,12 +1,12 @@
 <?php
 
 require_once __DIR__ . '/../../models/vendedor/CadastroVendedorModel.php';
-require_once __DIR__ .'/../../models/cliente/ClienteModel.php';
+require_once __DIR__ . '/../../models/cliente/ClienteModel.php';
 require_once __DIR__ . '/../../models/vendedor/VendedorModel.php';
 require_once __DIR__ . '/../../models/geral/GeralModel.php';
 
 class VendedorController extends RenderView
-{ 
+{
     private $clienteData;
 
     public function __construct()
@@ -21,13 +21,22 @@ class VendedorController extends RenderView
         $clienteModel = new ClienteModel();
         $this->clienteData  = $clienteModel->findById($clienteId);
         $this->userType = $clienteModel->tipoCliente($_SESSION['cliente_id']);
-        
+
         if ($this->clienteData['uf'] && $this->clienteData['cidade']) {
             $localizacao = $this->clienteData['uf'] . ' - ' . $this->clienteData['cidade'];
             $this->clienteData['localizacao'] = $localizacao;
         } else {
             $this->clienteData['localizacao'] = null;
         }
+    }
+
+    public function sendProdutosVendedor() {
+        $idVendedor = $_POST['id_vendedor'];
+        $model = new VendedorModel;
+        $idVendedorLogado = $model->dadosVendedor($idVendedor);
+        $produtos = $model->getProdutosVendedor((int)$idVendedorLogado['id_vendedor']);
+        echo json_encode($produtos);
+        exit;
     }
 
     public function perfil()
@@ -41,7 +50,7 @@ class VendedorController extends RenderView
     }
 
     public function showFormCadastro()
-    {   
+    {
         if ($this->userType != 'cliente') {
             header("Location: page-not-found");
         } else {
@@ -55,7 +64,7 @@ class VendedorController extends RenderView
             http_response_code(405);
             exit;
         }
-        
+
         $localEmpresa = $_POST['local_da_empresa'] ?? '';
         $cep          = trim($_POST['cep'] ?? '');
         $nome         = trim($_POST['nome_razao_social'] ?? '');
@@ -258,9 +267,9 @@ class VendedorController extends RenderView
         ], JSON_UNESCAPED_UNICODE);
         exit;
     }
-    
+
     public function gerenciarProdutos()
-    {    
+    {
         $idCliente = $_SESSION['cliente_id'];
 
         if (!$idCliente) {

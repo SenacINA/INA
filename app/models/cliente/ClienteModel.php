@@ -21,25 +21,76 @@ class ClienteModel
     return $result ? (int)$result['tipo_conta_cliente'] : null;
   }
 
-  public function tipoCliente(string $id) : string {
-        $sql  = "SELECT tipo_conta_Cliente FROM cliente WHERE id_cliente = :id";
-        $stmt = $this->db->getConnection()->prepare($sql);
-        $stmt->bindValue(':id', $id);
-        $stmt->execute();
-        
-        $tipoConta = $stmt->fetchColumn();
+  public function tipoCliente(string $id): string
+  {
+    $sql  = "SELECT tipo_conta_Cliente FROM cliente WHERE id_cliente = :id";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
 
-        switch ($tipoConta) {
-            case 0:
-                return "admin";
-            case 1:
-                return "vendedor";
-            case 2:
-                return "cliente";
-            default:
-                return "Tipo desconhecido";
-        }
+    $tipoConta = $stmt->fetchColumn();
+
+    switch ($tipoConta) {
+      case 0:
+        return "admin";
+      case 1:
+        return "vendedor";
+      case 2:
+        return "cliente";
+      default:
+        return "Tipo desconhecido";
     }
+  }
+
+  public function findByVendedorId(int $id)
+  {
+    $sql = "SELECT
+    v.id_vendedor,
+    v.nome_fantasia,
+    v.cnpj_vendedor,
+    v.requisitos_completos,
+    v.documento_entregue,
+    v.STATUS AS status_vendedor,
+    v.data_requisicao,
+    
+    c.id_cliente,
+    c.nome_cliente,
+    c.genero_cliente,
+    c.foto_perfil_cliente,
+    c.banner_perfil_cliente,
+    c.tipo_conta_cliente,
+    c.status_conta_cliente,
+    c.data_registro_cliente,
+    c.email_cliente,
+
+    p.foto_perfil,
+    p.banner_perfil,
+    p.descricao_perfil,
+    p.instagram_perfil,
+    p.facebook_perfil,
+    p.linkedin_perfil,
+    p.youtube_perfil,
+    p.tiktok_perfil,
+    p.x_perfil,
+
+    e.uf_endereco AS uf,
+    e.cidade_endereco AS cidade
+
+    FROM vendedor v
+    JOIN cliente c ON v.id_cliente = c.id_cliente
+    LEFT JOIN perfil p ON c.id_cliente = p.id_cliente
+    LEFT JOIN endereco e ON c.id_cliente = e.id_cliente
+
+    WHERE v.id_vendedor = :id
+    LIMIT 1;
+    ";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result ?: null;
+  }
 
   public function findById(string $id): ?array
   {

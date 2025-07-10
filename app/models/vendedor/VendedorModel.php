@@ -13,6 +13,27 @@ class VendedorModel
     $this->db->connect();
   }
 
+  public function dadosVendedorCliente(string $id): ?array
+  {
+    $sql = "SELECT 
+    v.*,
+    p.banner_perfil,
+    p.foto_perfil,
+    e.uf_endereco,
+    e.cidade_endereco
+    FROM vendedor v 
+    LEFT JOIN perfil p
+      ON p.id_cliente = v.id_cliente
+    LEFT JOIN endereco e
+      ON v.id_cliente = e.id_cliente
+    WHERE id_vendedor = :id;";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result ?: null;
+  }
+
   public function dadosVendedor(string $id): ?array
   {
     $sql = "
@@ -45,19 +66,19 @@ class VendedorModel
 
 
 
-   public function getVendedorId(int $clienteId): ?int
-    {
-        $db = new Database();
-        $db->connect();
-        
-        $sql = "SELECT id_vendedor FROM vendedor WHERE id_cliente = :id_cliente";
-        $stmt = $db->getConnection()->prepare($sql);
-        $stmt->bindValue(':id_cliente', $clienteId, PDO::PARAM_INT);
-        $stmt->execute();
-        
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result ? (int)$result['id_vendedor'] : null;
-    }
+  public function getVendedorId(int $clienteId): ?int
+  {
+    $db = new Database();
+    $db->connect();
+
+    $sql = "SELECT id_vendedor FROM vendedor WHERE id_cliente = :id_cliente";
+    $stmt = $db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id_cliente', $clienteId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result ? (int)$result['id_vendedor'] : null;
+  }
 
   public function getEstrelasPorVendedor(string $idVendedor): array
   {
@@ -98,7 +119,8 @@ class VendedorModel
     return $stmt->execute([':nome_fantasia' => $nome_fantasia, ':id_vendedor' => $id_vendedor]);
   }
 
-  public function codJaExiste (int $id_vendedor, int $cod_produto): bool {
+  public function codJaExiste(int $id_vendedor, int $cod_produto): bool
+  {
     $sql = "
       SELECT COUNT(*) FROM produto WHERE id_vendedor = :id_vendedor AND cod_produto = :cod_produto;
     ";
@@ -109,7 +131,8 @@ class VendedorModel
     return (bool) $stmt->fetchColumn();
   }
 
-  public function getLastCod(int $id_vendedor): ?int {
+  public function getLastCod(int $id_vendedor): ?int
+  {
     $sql = "
       SELECT max(cod_produto) FROM produto WHERE id_vendedor = :id_vendedor;
     ";
@@ -118,8 +141,43 @@ class VendedorModel
     $stmt->execute();
     return $stmt->fetchColumn();
   }
-  
-  public function getAllProducts(int $id_vendedor): ?array {
+
+  public function getProdutosVendedor(int $id_vendedor)
+  {
+    $sql = "SELECT 
+    p.id_produto,
+    p.nome_produto,
+    p.preco_produto,
+    p.categoria_produto,
+    p.subcategoria_produto,
+    p.status_produto,
+    ip.id_imagem_produto,
+    ip.endereco_imagem_produto,
+    ip.index_imagem_produto,
+    COALESCE(AVG(a.estrelas_avaliacao), 0) AS media_avaliacoes,
+    COUNT(a.id_avaliacao) AS total_avaliacoes
+  FROM 
+    produto p
+  LEFT JOIN
+    avaliacao a 
+    ON p.id_produto = a.id_produto AND a.status_avaliacao = TRUE
+  LEFT JOIN 
+    imagem_produto ip 
+    ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 1
+  WHERE 
+    p.status_produto != 0 AND p.id_vendedor = :id_vendedor
+  GROUP BY
+    p.id_produto";
+
+    $stmt = $this->db->getConnection()->prepare($sql);
+    $stmt->bindValue(':id_vendedor', $id_vendedor);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function getAllProducts(int $id_vendedor): ?array
+  {
     $sql = "
         SELECT p.*, i.endereco_imagem_produto
         FROM produto p
@@ -141,32 +199,32 @@ class VendedorModel
   {
     $allowed = ['code', 'name', 'qty_asc', 'qty_desc', 'active', 'inactive'];
     if (!in_array($filter, $allowed, true)) {
-        $filter = 'code';
+      $filter = 'code';
     }
 
-    $orderBy = 'p.cod_produto'; 
+    $orderBy = 'p.cod_produto';
     $where   = '';
 
     switch ($filter) {
-        case 'name':
-            $orderBy = 'p.nome_produto';
-            break;
-        case 'qty_asc':
-            $orderBy = 'p.unidade_produto ASC';
-            break;
-        case 'qty_desc':
-            $orderBy = 'p.unidade_produto DESC';
-            break;
-        case 'active':
-            $where   = 'AND p.status_produto = 1';
-            break;
-        case 'inactive':
-            $where   = 'AND p.status_produto = 0';
-            break;
-        case 'code':
-        default:
-            $orderBy = 'p.cod_produto';
-            break;
+      case 'name':
+        $orderBy = 'p.nome_produto';
+        break;
+      case 'qty_asc':
+        $orderBy = 'p.unidade_produto ASC';
+        break;
+      case 'qty_desc':
+        $orderBy = 'p.unidade_produto DESC';
+        break;
+      case 'active':
+        $where   = 'AND p.status_produto = 1';
+        break;
+      case 'inactive':
+        $where   = 'AND p.status_produto = 0';
+        break;
+      case 'code':
+      default:
+        $orderBy = 'p.cod_produto';
+        break;
     }
 
     $sql = "
@@ -189,7 +247,8 @@ class VendedorModel
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function fetchProdutoComImagens(int $id_vendedor, int $id_produto): array {
+  public function fetchProdutoComImagens(int $id_vendedor, int $id_produto): array
+  {
     $sql = "
       SELECT
         p.*, 
@@ -222,7 +281,7 @@ class VendedorModel
     }
 
     $first = $rows[0];
-    
+
     $produto = [
       'id_produto'          => $first['id_produto'],
       'id_vendedor'         => $first['id_vendedor'],
@@ -230,11 +289,11 @@ class VendedorModel
       'nome_produto'        => $first['nome_produto'],
       'preco_produto'       => $first['preco_produto'],
       'marca_produto'       => $first['marca_produto'],
-      'categoria_produto'   => $first['categoria_produto'],    
-      'subcategoria_produto'=> $first['subcategoria_produto'], 
+      'categoria_produto'   => $first['categoria_produto'],
+      'subcategoria_produto' => $first['subcategoria_produto'],
       'origem_produto'      => $first['origem_produto'],
       'unidade_produto'     => $first['unidade_produto'],
-      'peso_liquido_produto'=> $first['peso_liquido_produto'],
+      'peso_liquido_produto' => $first['peso_liquido_produto'],
       'peso_bruto_produto'  => $first['peso_bruto_produto'],
       'largura_produto'     => $first['largura_produto'],
       'altura_produto'      => $first['altura_produto'],
@@ -269,7 +328,8 @@ class VendedorModel
     return $produto;
   }
 
-  public function fetchPromocoes(int $id_produto): array {
+  public function fetchPromocoes(int $id_produto): array
+  {
     $sql = "
       SELECT
         pr.*,
@@ -311,8 +371,8 @@ class VendedorModel
     $stmtSub = $this->db->getConnection()->prepare($sqlSub);
 
     foreach ($cats as &$cat) {
-        $stmtSub->execute([':cid' => $cat['id']]);
-        $cat['subcategorias'] = $stmtSub->fetchAll(PDO::FETCH_ASSOC);
+      $stmtSub->execute([':cid' => $cat['id']]);
+      $cat['subcategorias'] = $stmtSub->fetchAll(PDO::FETCH_ASSOC);
     }
 
     return $cats;
@@ -330,5 +390,4 @@ class VendedorModel
     $stmt->execute();
     return (bool) $stmt->fetchColumn();
   }
-
 }

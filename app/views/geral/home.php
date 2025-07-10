@@ -93,7 +93,6 @@ require_once('./utils/head.php')
     <script src='<?= $PATH_PUBLIC ?>/js/geral/card.js'></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/geral/home.js'></script>
     <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
-    <script></script>
 </body>
 
 </html>

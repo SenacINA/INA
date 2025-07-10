@@ -22,7 +22,6 @@ $routes = [
       '/api/cliente/editarDadosCliente'         => 'cliente/ClienteCOntroller@editarDadosCliente',
       '/api/avaliar-produto'                    => 'cliente/ProdutoController@avaliarProduto',
       '/produto/comentariosJson'                => 'cliente/ProdutoController@comentariosJson',
-
       // Cliente - Carrinho
       '/Carrinho'                               => 'cliente/CarrinhoController@index',
       '/Carrinho-api-exibir'                    => 'cliente/CarrinhoController@exibirItens',
@@ -39,8 +38,9 @@ $routes = [
       '/CarrinhoDados-editar'                   => 'cliente/CarrinhoDadosController@editEndereco',
 
       // Geral
+      '/Pesquisa'                               => 'geral/PesquisaController@index',
+      '/Pesquisa-api'                           => 'geral/PesquisaController@sendPesquisa',
       '/sobre-nos'                              => 'geral/GeralController@sobreNos',
-      '/Subcategoria'                           => 'geral/CardController@filtrarProdutosSubcategoria',
 
       // Geral - Trocar Email
       '/TrocarEmail'                            => 'auth/AuthController@requestEmailReset',
@@ -57,22 +57,24 @@ $routes = [
       '/RedefinirSenha-api-salvar'              => 'geral/EnviarTokenController@salvarSenha',
 
       // Geral - Perfil
-      '/EditarPerfil'                           => 'geral/GeralController@editarPerfil',
-      '/Perfil'                                 => 'geral/GeralController@perfil',
-      '/Error-404'                              => 'geral/GeralController@error',
+      '/EditarPerfil'                     => 'geral/GeralController@editarPerfil',
+      '/Perfil'                           => 'geral/GeralController@perfil',
+      '/Error-404'                        => 'geral/GeralController@error',
+      '/ProdutosVendedorCliente'          => 'geral/GeralController@sendProdutosVendedor',
 
       // Vendedor - Cadastro e Perfil
-      '/CadastroVendedorInfo'                   => 'vendedor/VendedorController@showInfo',
-      '/CadastroVendedor'                       => 'vendedor/VendedorController@showFormCadastro',
-      '/CadastroVendedorForms'                  => 'vendedor/VendedorController@cadastroForm',
-      '/GetCategoriasSubcategorias-api'         => 'vendedor/VendedorController@getCategoriasSubcategorias',
+      '/ProdutosVendedor'                 => 'vendedor/VendedorController@sendProdutosVendedor',
+      '/CadastroVendedorInfo'             => 'vendedor/VendedorController@showInfo',
+      '/CadastroVendedor'                 => 'vendedor/VendedorController@showFormCadastro',
+      '/CadastroVendedorForms'            => 'vendedor/VendedorController@cadastroForm',
+      '/GetCategoriasSubcategorias-api'   => 'vendedor/VendedorController@getCategoriasSubcategorias',
 
 
-      '/api/vendedor/editarDadosVendedor'       => 'vendedor/VendedorController@editarDadosVendedor',
-      '/SalvarDestaque-api'                     => 'vendedor/DestaqueController@salvarDestaque',
-      '/RemoverDestaque-api'                    => 'vendedor/DestaqueController@removerDestaque',
+      '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
+      '/SalvarDestaque-api'               => 'vendedor/DestaqueController@salvarDestaque',
+      '/RemoverDestaque-api'              => 'vendedor/DestaqueController@removerDestaque',
       '/getDadosVendedor-api'                   => 'vendedor/VendedorController@getDadosVendedor',
-
+      '/DestaquesVendedor'                => 'vendedor/DestaqueController@listarDestaques',
 
       // Vendedor - Produtos e Pedidos
       '/PedidosVendedor'                        => 'vendedor/VendedorProductController@pedidos',
@@ -105,7 +107,9 @@ $routes = [
       '/GerenciarPropagandas'                   => 'admin/GerenciarPropagandasController@index',
       '/GerenciarPropagandas-api'               => 'admin/GerenciarPropagandasController@GerenciarPropagandasApi',
 
-      '/RelatorioVendedor'                      => 'admin/AdminController@relatorioVendedor',
+      '/RelatorioVendedor'                      => 'admin/RelatorioVendedorController@index',
+      '/RelatorioVendedor-api'                  => 'admin/RelatorioVendedorController@exibirRelatorio',
+
       '/AdminCarrossel'                         => 'admin/AdminController@adminCarrossel',
       '/searchDesativarUser'                    => 'admin/AdminController@searchDesativarUser',
       '/DesativarUser'                          => 'admin/AdminController@desativarUser',
