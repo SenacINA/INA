@@ -67,7 +67,7 @@ function generateModalContent($user)
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
                       </svg>
-                      <span>Relatório De Vendas</span>
+                      <span>Relatório do Vendedor</span>
                   </a>
               </li>
               <li>
@@ -79,11 +79,19 @@ function generateModalContent($user)
                   </a>
               </li>
               <li>
-                  <a href="#" class="menu-item" onclick="pag(\'GerenciarCarrossel\')">
+                  <a href="#" class="menu-item" onclick="pag(\'GerenciarProdutos\')">
+                      <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
+                          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                      </svg>
+                      <span>Gerenciar Produtos</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="menu-item" onclick="pag(\'GerenciarPropagandas\')">
                       <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
                           <path d="M10 8v8l5-4-5-4zm9-5H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
                       </svg>
-                      <span>Gerenciar Carrossel</span>
+                      <span>Gerenciar Propagandas</span>
                   </a>
               </li>
               <li>
@@ -120,14 +128,6 @@ function generateModalContent($user)
                           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
                       <span>Seu Perfil</span>
-                  </a>
-              </li>
-              <li>
-                  <a onclick="pag(\'RedefinirSenha\')" class="menu-item">
-                      <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#3498db">
-                          <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
-                      </svg>
-                      <span>Redefinir Senha</span>
                   </a>
               </li>
               <li>
@@ -237,14 +237,14 @@ function generateModalContent($user)
   <div class="base_nav_logo_container" onclick="pag('')">
     <img id="baseNavLogoHeader">
   </div>
-  <div class="base_nav_search_container">
-    <input type="text" id="baseNavSearchInput" placeholder="Pesquisar...">
+  <form action="Pesquisa?pesquisa" class="base_nav_search_container">
+    <input type="text" name="pesquisa" id="baseNavSearchInput" placeholder="Pesquisar...">
     <button type="submit" class="base_nav_square_button_search">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
       </svg>
     </button>
-  </div>
+  </form>
   <div class="base_nav_button_container">
     <button class="base_nav_square_button" onclick="pag('<?= handlePerfil() ?>')">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -258,7 +258,7 @@ function generateModalContent($user)
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="currentColor" d="M17 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2M1 2v2h2l3.6 7.59l-1.36 2.45c-.15.28-.24.61-.24.96a2 2 0 0 0 2 2h12v-2H7.42a.25.25 0 0 1-.25-.25q0-.075.03-.12L8.1 13h7.45c.75 0 1.41-.42 1.75-1.03l3.58-6.47c.07-.16.12-.33.12-.5a1 1 0 0 0-1-1H5.21l-.94-2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2" />
       </svg>
-          <span id="carrinho-badge" class="carrinho_badge"></span>
+      <span id="carrinho-badge" class="carrinho_badge"></span>
     </button>
 
     <button class="base_nav_square_button" id="baseNavSideBar">

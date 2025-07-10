@@ -39,7 +39,7 @@ require_once('./utils/head.php');
             <div class="dashboard_body_container_botoes_base_linha_div">
               <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/linha.svg" alt="">
               <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/relatorio_vendas.svg" alt="">
-              <h2>Relatório de Vendas</h2>
+              <h2>Relatório do Vendedor</h2>
             </div>
             <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/seta.svg" alt="">
           </div>
@@ -60,10 +60,10 @@ require_once('./utils/head.php');
       </div>
       <div class="dashboard_body_container_botoes">
         <!-- linha 1 -->
-        <a href="GerenciarCarrossel">
+        <a href="GerenciarPropagandas">
           <div class="dashboard_body_container_botoes_base">
             <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/gerenciar_carrossel.svg" alt="">
-            <h2>Gerenciar Carrossel</h2>
+            <h2>Gerenciar Propagandas</h2>
             <img src="<?= $PATH_PUBLIC ?>/image/admin/dashboard/seta_baixo.svg" alt="">
           </div>
         </a>

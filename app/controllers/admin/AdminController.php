@@ -42,11 +42,6 @@ class AdminController extends RenderView
         $this->loadView('admin/GerenciarProdutos', []);
     }
 
-    public function gerenciarCarrossel()
-    {
-        $this->loadView('admin/GerenciarCarrossel', []);
-    }
-
     public function relatorioVendedor()
     {
         $this->loadView('admin/RelatorioVendedor', []);

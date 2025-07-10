@@ -231,7 +231,7 @@ require_once("./utils/head.php");
                         <input type="file" id="video" name="video" accept="video/*"> -->
                     </div>
                     <button type="submit" class="base_botao btn_blue btn_submit">
-                        <img class="icon_user" src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_branca_icon.svg" alt="">
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/check_branco_icon.svg" alt="">
                         ENVIAR AVALIAÇÃO
                     </button>
                 </div>

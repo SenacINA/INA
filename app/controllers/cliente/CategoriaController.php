@@ -11,7 +11,7 @@ class CategoriaController extends RenderView
         $model = new CategoriaModel;
 
         $subcategorias = $model->getSubcategoriaPorCategoria($categoria);
-
+        
         $this->loadView('cliente/Categoria', [
             'categoria' => $categoria,
             'subcategoriaId' => $subcategoria,
