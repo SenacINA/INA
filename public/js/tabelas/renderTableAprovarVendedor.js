@@ -51,8 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ordenarVendedores(filtroSelect.value);
         renderizarPagina(paginaAtual);
       })
-      .catch(() => {
-      });
+      .catch(() => {});
   }
 
   function montarLinha(vendedor) {
@@ -130,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < linhasFaltantes; i++) {
       const trVazio = document.createElement("tr");
       trVazio.innerHTML = `
+        <td class="linha-vazia">&nbsp;</td>
         <td class="linha-vazia">&nbsp;</td>
         <td class="linha-vazia">&nbsp;</td>
         <td class="linha-vazia">&nbsp;</td>

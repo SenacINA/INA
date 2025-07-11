@@ -39,6 +39,33 @@
   }
 }
 
+#filtro-gerenciar-usuarios {
+  color: var(--branco_gelo);
+  text-align: center;
+  font-size: 16px;
+  background-color: var(--sappire);
+  margin-left: 8px;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.gerenciar_usuario_navegacao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.esquerda {
+  rotate: -90deg;
+}
+
+.direita {
+  rotate: 90deg;
+}
+
 .text_popup {
   display: flex;
   align-items: center;
@@ -233,13 +260,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
-  height: 100%;
+  height: 260px;
 }
 
 .gerenciar_usuario_card_img_perfil {
-  width: 104px;
-  height: 104px;
-  margin-bottom: 16px;
+  width: 140px;
+  height: 140px;
+  margin-top: 30px;
 }
 
 .gerenciar_usuario_card_column_2 {
@@ -272,7 +299,8 @@
 .gerenciar_usuario_titulo {
   display: flex;
   padding: 8px;
-  height: 50%;
+  height: 50px;
+  width: 100%;
   font-size: 16px;
   font-weight: 600;
   text-align: center;
@@ -284,21 +312,8 @@
   overflow: hidden;
 }
 
-.gerenciar_usuario_titulo2 {
-  display: flex;
-  padding: 8px;
-  margin-bottom: 16px;
-  height: 36px;
-  width: 100%;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background-color: var(--carolina);
-  border-radius: 8px 8px 0px 0px;
-  overflow: hidden;
+.btn-status {
+  height: 30px;
 }
 
 .gerenciar_usuario_estatistica_descricao {
@@ -339,20 +354,23 @@
 }
 
 /**Individual para cada tabela */
-.gerenciar_usuario_table_col-1,
-.gerenciar_usuario_table_col-4{
-  width: 4%;
+.gerenciar_usuario_table_col-1{
+  width: 6%;
 }
 
 .gerenciar_usuario_table_col-3,
+.gerenciar_usuario_table_col-4,
 .gerenciar_usuario_table_col-6{
-  width: 8%;
+  width: 15%;
 }
 
 .gerenciar_usuario_table_col-2,
-.gerenciar_usuario_table_col-5,
+.gerenciar_usuario_table_col-5{
+  width: 20%;
+}
+
 .gerenciar_usuario_table_col-7{
-  width: 10%;
+  width: 5%;
 }
 
 .gerenciar_usuario_table_col-7 {
