@@ -159,7 +159,7 @@ class ProdutoController extends RenderView
         }
 
         if (!empty($errors)) {
-            
+
             // $errors[] = "O produto foi cadastrado usando a categoria/subcategoria padrão 'Geral'.";
             $this->loadView('vendedor/RegistroProduto', [
                 'errors' => $errors,
@@ -188,7 +188,7 @@ class ProdutoController extends RenderView
             (string)$descricao,            // Descrição
             1                           // Status do produto (ativo)
         );
-        
+
 
         if (!$produtoId) {
             $errors[] = "Erro ao cadastrar o produto. Tente novamente.";
@@ -293,11 +293,13 @@ class ProdutoController extends RenderView
         return $result ? (int)$result['id_vendedor'] : null;
     }
 
-    public function searchProductJson() {
+    public function searchProductJson()
+    {
         header('Content-Type: application/json; charset=utf-8');
 
         $nome = $_POST['name'] ?? '';
         $cod  = $_POST['code'] ?? '';
+        
 
         $model = new VendedorModel();
 
@@ -407,44 +409,43 @@ class ProdutoController extends RenderView
         if ($promocaoAtiva) {
             $promocaoTipo = $_POST['tipoPromocaoProduto'] ?? null;
             $desconto = $_POST['produtoDescontPromo'] ?? null;
-            
+
             // Validação do tipo de promoção
             if (!in_array($promocaoTipo, [1, 2])) {
                 $errors[] = "Tipo de promoção inválido.";
             }
-            
+
             // Validação do valor do desconto
             if (!is_numeric($desconto) || $desconto <= 0) {
                 $errors[] = "O valor do desconto deve ser um número positivo.";
             }
-            
+
             // Verificação se o desconto não ultrapassa o valor do produto
             if ($promocaoTipo == 2) {
                 $descontoValor = ($valor * $desconto) / 100;
                 if ($descontoValor >= $valor) {
                     $errors[] = "O desconto em porcentagem não pode ser igual ou maior que 100%.";
                 }
-            } 
-            elseif ($promocaoTipo == 1) {
+            } elseif ($promocaoTipo == 1) {
                 if ($desconto >= $valor) {
                     $errors[] = "O desconto em valor fixo não pode ser maior ou igual ao valor do produto.";
                 }
             }
-            
+
             // Validação das datas/horários
             $inicio = $_POST['promoDataInicio'] ?? null;
             $fim = $_POST['promoDataFim'] ?? null;
             $inicio_horario = $_POST['promoHoraInicio'] ?? null;
             $fim_horario = $_POST['promoHoraFim'] ?? null;
-            
+
             if (empty($inicio) || empty($fim) || empty($inicio_horario) || empty($fim_horario)) {
                 $errors[] = "Todos os campos da promoção são obrigatórios quando ativada";
             }
-            
+
             // Validação se data final é maior que inicial
             $dataInicio = DateTime::createFromFormat('Y-m-d H:i', $inicio . ' ' . $inicio_horario);
             $dataFim = DateTime::createFromFormat('Y-m-d H:i', $fim . ' ' . $fim_horario);
-            
+
             if ($dataInicio > $dataFim) {
                 $errors[] = "A data/horário de término da promoção deve ser posterior à data de início.";
             }
@@ -510,7 +511,7 @@ class ProdutoController extends RenderView
                     $fim_horario
                 );
             }
-            
+
             if (!$promocaoSuccess) {
                 $errors[] = "Erro ao salvar promoção.";
             }
@@ -528,7 +529,7 @@ class ProdutoController extends RenderView
         // Verificar quantidade mínima de imagens
         $totalImagensRestantes = count($imagensExistentes) - count($imagensParaRemover);
         $novasImagensBase64 = json_decode($_POST['produto_imagens'] ?? '[]', true) ?: [];
-        
+
         if ($totalImagensRestantes + count($novasImagensBase64) < 1) {
             $errors[] = "O produto deve ter pelo menos uma imagem.";
             $_SESSION['errors'] = $errors;
@@ -566,11 +567,11 @@ class ProdutoController extends RenderView
                 if (preg_match('/^data:image\/webp;base64,/', $base64)) {
                     $dataPart = substr($base64, strpos($base64, ',') + 1);
                     $dadosBinarios = base64_decode($dataPart);
-                    
+
                     if ($dadosBinarios !== false) {
                         $nomeArquivo = 'imagem_' . $ordem . '_' . time() . '.webp';
                         $absPath = $baseDir . $nomeArquivo;
-                        
+
                         if (file_put_contents($absPath, $dadosBinarios)) {
                             $caminhoRelativo = '/upload/produtos/' . $produtoId . '/' . $nomeArquivo;
                             if (!$produtoModel->adicionarImagemProduto($produtoId, $caminhoRelativo, $ordem)) {
@@ -588,13 +589,13 @@ class ProdutoController extends RenderView
                 }
             }
         }
-        
+
         if (!empty($errors)) {
             $_SESSION['errors'] = $errors;
         } else {
             $_SESSION['successMessage'] = "Produto atualizado com sucesso!";
         }
-        
+
         header('Location: GerenciarProdutos');
         exit;
     }
@@ -617,28 +618,30 @@ class ProdutoController extends RenderView
             return;
         }
 
-        $vendedorModel = new VendedorModel();
-        $vendedorId = $vendedorModel->getVendedorId($_SESSION['cliente_id']);
+        if (!$data['admin']) {
+            $vendedorModel = new VendedorModel();
+            $vendedorId = $vendedorModel->getVendedorId($_SESSION['cliente_id']);
 
-        if (!$vendedorId) {
-            echo json_encode([
-                'success' => false,
-                'message' => 'Cliente não possui cadastro de vendedor.'
-            ]);
-            return;
+            if (!$vendedorId) {
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Cliente não possui cadastro de vendedor.'
+                ]);
+                return;
+            }
+            $produtoModel = new ProdutoModel();
+            $produto = $produtoModel->getProdutoById($produtoId);
+            
+            if (!$produto || $produto['id_vendedor'] != $vendedorId) {
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Produto não encontrado ou não pertence ao vendedor.'
+                ]);
+                return;
+            }
         }
-
+        
         $produtoModel = new ProdutoModel();
-        $produto = $produtoModel->getProdutoById($produtoId);
-
-        if (!$produto || $produto['id_vendedor'] != $vendedorId) {
-            echo json_encode([
-                'success' => false,
-                'message' => 'Produto não encontrado ou não pertence ao vendedor.'
-            ]);
-            return;
-        }
-
         $novoStatus = (bool) $novoStatus;
         $success = $produtoModel->ativarInativarProduto($produtoId, $novoStatus);
 
@@ -655,7 +658,4 @@ class ProdutoController extends RenderView
             ]);
         }
     }
-
-
-
 }

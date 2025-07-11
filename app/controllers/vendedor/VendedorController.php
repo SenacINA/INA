@@ -8,6 +8,7 @@ require_once __DIR__ . '/../../models/geral/GeralModel.php';
 class VendedorController extends RenderView
 {
     private $clienteData;
+    private $userType;
 
     public function __construct()
     {
@@ -30,7 +31,8 @@ class VendedorController extends RenderView
         }
     }
 
-    public function sendProdutosVendedor() {
+    public function sendProdutosVendedor()
+    {
         $idVendedor = $_POST['id_vendedor'];
         $model = new VendedorModel;
         $idVendedorLogado = $model->dadosVendedor($idVendedor);
@@ -270,18 +272,24 @@ class VendedorController extends RenderView
 
     public function gerenciarProdutos()
     {
-        $idCliente = $_SESSION['cliente_id'];
+        if (!isset($_GET['vendedor_id']) && !isset($_GET['admin']) && $this->userType == "vendedor") {
+            $idCliente = $_SESSION['cliente_id'];
 
-        if (!$idCliente) {
-            header('Location: Login');
-            exit;
-        };
+            if (!$idCliente) {
+                header('Location: Login');
+                exit;
+            };
 
-        $model = new VendedorModel();
+            $model = new VendedorModel();
 
-        $idVendedor = $model->getVendedorId($idCliente);
+            $idVendedor = $model->getVendedorId($idCliente);
 
-        $this->loadView('vendedor/GerenciarProdutos', ['idVendedor' => $idVendedor]);
+            $this->loadView('vendedor/GerenciarProdutos', ['idVendedor' => $idVendedor]);
+        } else if (!isset($_GET['vendedor_id']) && !isset($_GET['admin']) && $this->userType == "admin") {
+            header("Location: page-not-found");
+        } else {
+            $this->loadView('vendedor/GerenciarProdutos', ['idVendedor' => $_GET['vendedor_id']]);
+        }
     }
 
     public function relatorioProdutosJson()
@@ -320,7 +328,8 @@ class VendedorController extends RenderView
         exit;
     }
 
-    public function getDadosVendedor() {
+    public function getDadosVendedor()
+    {
         header('Content-Type: application/json; charset=utf-8');
         $id_vendedor = $_GET['idVendedor'];
 
@@ -330,5 +339,4 @@ class VendedorController extends RenderView
 
         echo json_encode($dados, JSON_UNESCAPED_UNICODE);
     }
-
 }
