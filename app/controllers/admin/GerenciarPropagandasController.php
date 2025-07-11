@@ -66,30 +66,33 @@ class GerenciarPropagandasController
     }
 
     public function substituirImagemPropaganda(string $tipo, string $novoEndereco, int $index = 0, bool $ativo = true)
-    {
-        $imagemAntiga = $this->model->buscarImagemPropagandaPorTipoEIndex($tipo, $index);
+{
+    $imagemAntiga = $this->model->buscarImagemPropagandaPorTipoEIndex($tipo, $index);
 
-        $sucesso = $this->model->inserirOuAtualizarImagemPropaganda($tipo, $novoEndereco, $index, $ativo);
+    $sucesso = $this->model->inserirOuAtualizarImagemPropaganda($tipo, $novoEndereco, $index, $ativo);
 
-        if ($sucesso && $imagemAntiga) {
-            $this->apagarArquivoAntigo($imagemAntiga);
-        }
+    // Remove this block:
+    // if ($sucesso && $imagemAntiga) {
+    //     $this->apagarArquivoAntigo($imagemAntiga);
+    // }
 
-        return $sucesso;
-    }
+    return $sucesso;
+}
 
-    public function substituirImagemCarrossel(string $novoEndereco, int $index = 0, bool $ativo = true)
-    {
-        $imagemAntiga = $this->model->buscarImagemCarrosselPorIndex($index);
+public function substituirImagemCarrossel(string $novoEndereco, int $index = 0, bool $ativo = true)
+{
+    $imagemAntiga = $this->model->buscarImagemCarrosselPorIndex($index);
 
-        $sucesso = $this->model->inserirOuAtualizarImagemCarrossel($novoEndereco, $index, $ativo);
+    $sucesso = $this->model->inserirOuAtualizarImagemCarrossel($novoEndereco, $index, $ativo);
 
-        if ($sucesso && $imagemAntiga) {
-            $this->apagarArquivoAntigo($imagemAntiga);
-        }
+    // Remove this block:
+    // if ($sucesso && $imagemAntiga) {
+    //     $this->apagarArquivoAntigo($imagemAntiga);
+    // }
 
-        return $sucesso;
-    }
+    return $sucesso;
+}
+
 
     public function uploadImagem()
     {
@@ -120,7 +123,7 @@ class GerenciarPropagandasController
         }
 
         $ext = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
-        $nomeArquivo = uniqid("img_", true) . '.' . $ext;
+        $nomeArquivo = "img_" . $tipo . "_" . $index . "." . $ext;
         $caminhoCompleto = $uploadDir . DIRECTORY_SEPARATOR . $nomeArquivo;
 
         if (!move_uploaded_file($_FILES['imagem']['tmp_name'], $caminhoCompleto)) {
