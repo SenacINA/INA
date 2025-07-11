@@ -21,7 +21,7 @@ $routes = [
       '/api/cliente/editar-perfil/redes'        => 'cliente/ClienteController@updateSocial',
       '/api/cliente/editarDadosCliente'         => 'cliente/ClienteCOntroller@editarDadosCliente',
       '/api/avaliar-produto'                    => 'cliente/ProdutoController@avaliarProduto',
-      '/produto/comentariosJson'                => 'cliente/ProdutoController@comentariosJson',
+      '/api-comentariosJson'                => 'cliente/ProdutoController@comentarios',
       // Cliente - Carrinho
       '/Carrinho'                               => 'cliente/CarrinhoController@index',
       '/Carrinho-api-exibir'                    => 'cliente/CarrinhoController@exibirItens',

@@ -253,46 +253,12 @@ require_once("./utils/head.php");
             </form>
         </div>
     <?php endif; ?>
+    <div id="produto-info" 
+        data-id-vendedor="<?= $info['infoProduto']['id_vendedor'] ?>" 
+        data-id-produto="<?= $id ?>">
+    </div>
 
     <div class="grid_comentarios_usuarios">
-
-        <?php
-        $controller = new ProdutoController();
-        $params = [
-            'idVendedor' => $info['infoProduto']['id_vendedor'],
-            'idProduto'  => $id,
-            'maxRender'  => $_GET['maxRender'] ?? 10,
-            'offset'     => $_GET['offset'] ?? 0
-        ];
-        $comentarios = $controller->comentarios($params);
-
-        require_once __DIR__ . '/../../components/php/avaliacao.php';
-
-        foreach ($comentarios as $comentario) {
-            $dadosComponente = [
-                'nome' => $comentario['nome_cliente'],
-                'estrelas' => $comentario['estrelas_avaliacao'],
-                'qualidade' => $comentario['qualidade'],
-                'parecido' => $comentario['parecido'],
-                'texto' => $comentario['descricao_avaliacao'],
-                'imagens' => $comentario['imagens'],
-                'foto_perfil' => $comentario['foto_perfil_cliente'] ?? null,
-                'data' => $comentario['data_avaliacao']
-            ];
-
-            echo ComentarioAvaliacaoProdutoComponent::render($dadosComponente);
-        }
-
-        if (count($comentarios) > 0) {
-            echo '
-                <div class="btn-ver-mais">
-                    <button class="base_botao btn_blue">Ver mais avaliações</button>
-                </div>
-                ';
-        } else {
-            echo '<div class="sem_avaliacoes">Sem avaliações</div>';
-        }
-        ?>
 
     </div>
 
@@ -303,6 +269,7 @@ require_once("./utils/head.php");
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/avaliacaoImgInput.js'></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/EnviarAvaliacao.js'></script>
+    <script type='module' src='<?= $PATH_PUBLIC ?>/js/geral/renderAvaliacao.js'></script>
     <script src='<?= $PATH_PUBLIC ?>/js/geral/produto.js'></script>
     <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>

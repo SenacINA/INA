@@ -12,7 +12,7 @@ class HomeModel
     $this->db->connect();
   }
 
-    public function getProdutoHome(?string $filtro = null): array
+  public function getProdutoHome(?string $filtro = null): array
   {
       switch ($filtro) {
           case 'mais_vendidos':

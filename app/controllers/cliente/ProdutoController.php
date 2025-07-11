@@ -115,18 +115,61 @@ class ProdutoController extends RenderView {
         ]);
     }
 
-    
+    public function comentarios() {
+        header('Content-Type: application/json; charset=utf-8');
+        
+        try {
+            // Obter parâmetros da query string
+            $params = [
+                'idProduto' => $_GET['idProduto'] ?? 0,
+                'idVendedor' => $_GET['idVendedor'] ?? 0,
+                'maxRender' => $_GET['maxRender'] ?? 10,
+                'offset' => $_GET['offset'] ?? 0
+            ];
 
-    public function comentarios(array $params): array
-    {
-        $idP = (int)  ($params['idProduto']  ?? 0);
-        $lim = (int)  ($params['maxRender']  ?? 10);
-        $ofs = (int)  ($params['offset']     ?? 0);
+            // Validar parâmetros
+            $idP = (int) $params['idProduto'];
+            $idV = (int) $params['idVendedor'];
+            $lim = (int) $params['maxRender'];
+            $ofs = (int) $params['offset'];
+            
+            if ($idP <= 0 || $idV <= 0) {
+                throw new Exception("Parâmetros inválidos", 400);
+            }
 
-        $model = new ProdutoClienteModel();
-        return $model->getComentarios($idP, $lim, $ofs);
+            // Obter dados do modelo
+            $model = new ProdutoClienteModel();
+            $comentarios = $model->getComentarios($idP, $lim, $ofs);
+
+            // Adicionar informações de paginação
+            $totalComentarios = $model->countComentarios($idP);
+            $hasMore = ($ofs + $lim) < $totalComentarios;
+
+            // Montar resposta
+            $response = [
+                'success' => true,
+                'data' => $comentarios,
+                'pagination' => [
+                    'total' => $totalComentarios,
+                    'limit' => $lim,
+                    'offset' => $ofs,
+                    'has_more' => $hasMore
+                ]
+            ];
+
+            echo json_encode($response);
+            
+        } catch (Exception $e) {
+            http_response_code($e->getCode() ?: 500);
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+                'code' => $e->getCode()
+            ]);
+        }
+        exit;
     }
-
+    
     public function avaliarProduto() {
         header('Content-Type: application/json; charset=utf-8');
         

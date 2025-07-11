@@ -859,3 +859,239 @@ INSERT INTO promocao (
   (3, TRUE, 2, 20,
    '2025-06-25', '2025-07-05',
    '00:00:00', '23:59:59');
+
+-- Cliente 8
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    8,
+    'Cliente8',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-05',
+    'cliente8@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    7,
+    8,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Cliente 9
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    9,
+    'Cliente9',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-06',
+    'cliente9@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    8,
+    9,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Cliente 10
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    10,
+    'Cliente10',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-07',
+    'cliente10@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    9,
+    10,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Cliente 11
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    11,
+    'Cliente11',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-08',
+    'cliente11@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    10,
+    11,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Cliente 12
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    12,
+    'Cliente12',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-09',
+    'cliente12@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    11,
+    12,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Cliente 13
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    13,
+    'Cliente13',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-10',
+    'cliente13@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    12,
+    13,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Avaliações para o produto 1 (Mouse Redragon) pelos novos clientes
+INSERT INTO avaliacao (
+    id_avaliacao,
+    status_avaliacao,
+    estrelas_avaliacao,
+    data_avaliacao,
+    descricao_avaliacao,
+    qualidade,
+    parecido,
+    id_produto,
+    id_cliente,
+    id_vendedor
+) VALUES
+    (5, TRUE, 5.0, '2025-07-01',
+     'Melhor mouse que já usei! Precisão incrível para jogos.',
+     'Excelente', TRUE, 1, 8, 1),
+     
+    (6, TRUE, 4.5, '2025-07-02',
+     'Bom custo-benefício, só acho um pouco pesado para meu gosto.',
+     'Muito Boa', TRUE, 1, 9, 1),
+     
+    (7, TRUE, 3.5, '2025-07-03',
+     'Atende às expectativas, mas o software de configuração poderia ser melhor.',
+     'Boa', TRUE, 1, 10, 1),
+     
+    (8, TRUE, 2.0, '2025-07-04',
+     'Botões começaram a falhar após 1 mês de uso. Não recomendo.',
+     'Ruim', FALSE, 1, 11, 1),
+     
+    (9, TRUE, 4.0, '2025-07-05',
+     'Iluminação RGB linda e ergonomia confortável para longas sessões.',
+     'Muito Boa', TRUE, 1, 12, 1),
+     
+    (10, TRUE, 5.0, '2025-07-06',
+     'Superou expectativas! Sensor preciso e construção durável.',
+     'Excelente', TRUE, 1, 13, 1);
+
+-- Imagens para algumas avaliações
+INSERT INTO imagem_avaliacao (
+    id_imagem_avaliacao,
+    endereco_imagem_avaliacao,
+    id_avaliacao
+) VALUES
+    (5, '/upload/avaliacoes/1/5/avaliacao_imagem1.jpg', 5),
+    (6, '/upload/avaliacoes/1/5/avaliacao_imagem2.jpg', 5),
+    (7, '/upload/avaliacoes/1/7/avaliacao_imagem.jpg', 7),
+    (8, '/upload/avaliacoes/1/8/avaliacao_imagem.jpg', 8),
+    (9, '/upload/avaliacoes/1/9/avaliacao_imagem.jpg', 9),
+    (10, '/upload/avaliacoes/1/10/avaliacao_imagem.jpg', 10);

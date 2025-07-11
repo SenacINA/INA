@@ -68,49 +68,6 @@ class ProdutoClienteModel
         ];
     }
 
-    public function getComentarios(int $idProduto, int $limit = 5, int $offset = 0): array
-    {
-        $sql = "
-            SELECT
-                a.id_avaliacao,
-                a.estrelas_avaliacao,
-                a.data_avaliacao,
-                a.descricao_avaliacao,
-                a.qualidade,
-                a.parecido,
-                c.nome_cliente,
-                p.foto_perfil AS foto_perfil_cliente,
-                GROUP_CONCAT(i.endereco_imagem_avaliacao SEPARATOR '||') AS imagens
-            FROM avaliacao a
-            JOIN cliente c ON c.id_cliente = a.id_cliente
-            LEFT JOIN perfil p ON p.id_cliente = a.id_cliente
-            LEFT JOIN imagem_avaliacao i ON i.id_avaliacao = a.id_avaliacao
-            WHERE
-                a.id_produto = :idProduto
-                AND a.status_avaliacao = 1
-            GROUP BY a.id_avaliacao
-            ORDER BY a.data_avaliacao DESC
-            LIMIT :limit OFFSET :offset
-        ";
-
-        $pdo = $this->db->getConnection();
-        $stmt = $pdo->prepare($sql);
-
-        $stmt->bindValue(':idProduto', $idProduto, \PDO::PARAM_INT);
-        $stmt->bindValue(':limit', $limit, \PDO::PARAM_INT);
-        $stmt->bindValue(':offset', $offset, \PDO::PARAM_INT);
-        
-        $stmt->execute();
-
-        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-        foreach ($rows as &$r) {
-            $r['imagens'] = $r['imagens'] ? explode('||', $r['imagens']) : [];
-        }
-
-        return $rows;
-    }
-
     public function getMediaAvaliacoes(int $idProduto): float
     {
         $sql = "
@@ -244,6 +201,68 @@ class ProdutoClienteModel
         
         $stmt = $this->db->getConnection()->prepare($sql);
         $stmt->execute([$avaliacaoId, $caminho]);
+    }
+
+    public function getComentarios(int $idProduto, int $limit = 5, int $offset = 0): array
+    {
+        $sql = "
+            SELECT
+                a.id_avaliacao,
+                a.estrelas_avaliacao,
+                a.data_avaliacao,
+                a.descricao_avaliacao,
+                a.qualidade,
+                a.parecido,
+                c.nome_cliente,
+                COALESCE(p.foto_perfil, c.foto_perfil_cliente) AS foto_perfil_cliente,
+                GROUP_CONCAT(ia.endereco_imagem_avaliacao SEPARATOR '||') AS imagens
+            FROM avaliacao a
+            JOIN cliente c ON c.id_cliente = a.id_cliente
+            LEFT JOIN perfil p ON p.id_cliente = c.id_cliente
+            LEFT JOIN imagem_avaliacao ia ON ia.id_avaliacao = a.id_avaliacao
+            WHERE
+                a.id_produto = :idProduto
+                AND a.status_avaliacao = 1
+            GROUP BY a.id_avaliacao
+            ORDER BY a.data_avaliacao DESC
+            LIMIT :limit OFFSET :offset
+        ";
+
+        $pdo = $this->db->getConnection();
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->bindValue(':idProduto', $idProduto, \PDO::PARAM_INT);
+        $stmt->bindValue(':limit', $limit, \PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $offset, \PDO::PARAM_INT);
+        
+        $stmt->execute();
+
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        foreach ($rows as &$r) {
+            $r['imagens'] = $r['imagens'] ? explode('||', $r['imagens']) : [];
+        }
+
+        return $rows;
+    }
+
+    public function countComentarios(int $idProduto): int
+    {
+        $sql = "
+            SELECT COUNT(DISTINCT a.id_avaliacao) as total
+            FROM avaliacao a
+            WHERE
+                a.id_produto = :idProduto
+                AND a.status_avaliacao = 1
+        ";
+
+        $pdo = $this->db->getConnection();
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':idProduto', $idProduto, \PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return (int) $result['total'];
     }
 
     public function beginTransaction() {
