@@ -233,16 +233,42 @@ body {
         }
     }
 
+    .index_body_big_ad img {
+        width: 670px;
+        height: 300px;
+        object-fit: cover; /* keeps aspect ratio but fills area */
+        display: block;
+    }
+
+    .index_body_big_ad_bottom {
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .index_body_big_ad_bottom img {
+        width: 1370px;
+        height: 500px;
+        object-fit: cover; /* keeps aspect ratio but fills area */
+        display: block;
+    }
+    
+
     .index_body_mid_ad {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        
-        img {
-            width: 100%;
-            height: auto;
-        }
     }
+    
+    .index_body_mid_ad img {
+        width: 670px;
+        height: 125px;
+        object-fit: cover;
+        display: block;
+    }
+    
 
     .index_body_produto_container {
         display: flex;

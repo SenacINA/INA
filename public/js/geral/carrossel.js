@@ -13,10 +13,10 @@ async function renderCarrosel() {
   const PATH_PUBLIC = carrosseldiv.getAttribute("data-path") || ".";
 
   const desktopImages = [
-    `${PATH_PUBLIC}/image/carrossel/banner_carrossel_perifericos.png`,
-    `${PATH_PUBLIC}/image/carrossel/banner_carrossel_escritorio.png`,
-    `${PATH_PUBLIC}/image/carrossel/banner_carrossel_eletronicos.png`,
-    `${PATH_PUBLIC}/image/carrossel/banner_carrossel_eletrodomesticos.png`,
+    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_0.png`,
+    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_1.png`,
+    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_2.png`,
+    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_3.png`,
   ];
 
   const mobileImages = [
