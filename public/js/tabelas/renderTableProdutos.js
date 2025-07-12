@@ -42,28 +42,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
     produtosPagina.forEach((produto) => {
       const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td># ${produto.cod_produto}</td>
-        <td>
-          <span class='nome_produto'>
-            <img class='img_table' src='public/${
-              produto.endereco_imagem_produto
-            }'>
-            <span>${produto.nome_produto}</span>
-          </span>
-        </td>
-        <td>R$ ${produto.preco_produto}</td>
-        <td>${produto.unidade_produto}</td>
-        <td><span>${produto.status_produto ? "Ativo" : "Inativo"}</span></td>
-        <td>
-          <button class='base_botao btn_blue' onclick="window.location.href = 'EditarProduto?id=${
-            produto.id_produto
-          }'">
-            <img class='base_icon' src='public/image/geral/icons/caneta_branca_icon.svg'>
-            EDITAR
-          </button>
-        </td>
-      `;
+      let params = new URLSearchParams(document.location.search);
+      let adminParam = params.get("admin");
+      let isAdmin = parseInt(adminParam);
+
+      if (isAdmin == 1) {
+        tr.innerHTML = `
+          <td># ${produto.cod_produto}</td>
+          <td>
+            <span class='nome_produto'>
+              <img class='img_table' src='public/${
+                produto.endereco_imagem_produto
+              }'>
+              <span>${produto.nome_produto}</span>
+            </span>
+          </td>
+          <td>R$ ${produto.preco_produto}</td>
+          <td>${produto.unidade_produto}</td>
+          <td><span>${produto.status_produto ? "Ativo" : "Inativo"}</span></td>
+          <td>
+            <button data-id=${
+              produto.id_produto
+            } ${!produto.status_produto ? 'disabled' : ''} id='btn_inativar' class='base_botao btn_red'">
+              <img class='base_icon' src="./public/image/geral/botoes/x_branco_icon.svg">
+              INATIVAR
+            </button>
+          </td>
+        `;
+      } else {
+        tr.innerHTML = `
+          <td># ${produto.cod_produto}</td>
+          <td>
+            <span class='nome_produto'>
+              <img class='img_table' src='public/${
+                produto.endereco_imagem_produto
+              }'>
+              <span>${produto.nome_produto}</span>
+            </span>
+          </td>
+          <td>R$ ${produto.preco_produto}</td>
+          <td>${produto.unidade_produto}</td>
+          <td><span>${produto.status_produto ? "Ativo" : "Inativo"}</span></td>
+          <td>
+            <button class='base_botao btn_blue' onclick="window.location.href = 'EditarProduto?id=${
+              produto.id_produto
+            }'">
+              <img class='base_icon' src='public/image/geral/icons/caneta_branca_icon.svg'>
+              EDITAR
+            </button>
+          </td>
+        `;
+      }
       tbody.appendChild(tr);
     });
 
@@ -80,6 +109,14 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
       tbody.appendChild(trVazio);
     }
+
+    const btns = document.querySelectorAll("#btn_inativar");
+
+    btns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        inativarProduto(btn.dataset.id, false);
+      });
+    });
 
     atualizarBotoes();
   }
@@ -120,6 +157,26 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!btnAnterior || !btnProximo) return;
     btnAnterior.disabled = paginaAtual <= 0;
     btnProximo.disabled = paginaAtual >= totalPaginas - 1;
+  }
+
+  async function inativarProduto(id, status) {
+    const resp = await fetch("ProdutoStatus-api", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: id,
+        status: status,
+        admin: true,
+      }),
+    });
+
+    const json = await resp.json();
+    
+    if (json.success) {
+      gerarToast(json.message, "sucesso");
+    } else {
+      gerarToast(json.message, "erro");
+    }
   }
 
   if (filtroSelect) {

@@ -450,7 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnProdutos.appendChild(document.createTextNode(" PRODUTOS"));
 
         btnProdutos.addEventListener("click", () => {
-          window.location.href = `/GerenciarProdutos?vendedor_id=${item.id_vendedor}`;
+          window.location.href = `GerenciarProdutos?vendedor_id=${item.id_vendedor}&admin=1`;
         });
 
         cell.appendChild(btnRelatorio);

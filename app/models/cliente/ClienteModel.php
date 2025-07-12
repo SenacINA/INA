@@ -115,10 +115,10 @@ class ClienteModel
             perfil.tiktok_perfil,
             perfil.x_perfil,
             endereco.uf_endereco as uf,            
-            endereco.cidade_endereco as cidade     
+            endereco.cidade_endereco as cidade
         FROM 
             cliente
-        JOIN perfil 
+        LEFT JOIN perfil 
             ON cliente.id_cliente = perfil.id_cliente
         LEFT JOIN endereco 
             ON cliente.id_cliente = endereco.id_cliente

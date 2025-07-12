@@ -36,11 +36,17 @@ class VendedorProductController extends RenderView {
         };
         $model = new VendedorModel;
 
-        $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
-        $produto = $model->fetchProdutoComImagens($idVendedor, $_GET['id']);
-        $promocoes = $model->fetchPromocoes($_GET['id']) ?? [];
+        if (isset($_GET['admin'])) {
+            $produto = $model->fetchProdutoComImagens($_GET['vendedor_id'], $_GET['id']);
+            $promocoes = $model->fetchPromocoes($_GET['id']) ?? [];
+            $sucesso = $model->produtoDoVendedor($_GET['vendedor_id'], $_GET['id']);
+        } else {
+            $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
+            $produto = $model->fetchProdutoComImagens($idVendedor, $_GET['id']);
+            $promocoes = $model->fetchPromocoes($_GET['id']) ?? [];
+            $sucesso = $model->produtoDoVendedor($idVendedor, $_GET['id']);
+        }
 
-        $sucesso = $model->produtoDoVendedor($idVendedor, $_GET['id']);
         // var_dump($promocoes);
         if (!$sucesso) {
             header("Location: Pagina-nao-encontrada");
