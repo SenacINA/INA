@@ -303,12 +303,17 @@ class ProdutoController extends RenderView
 
         $model = new VendedorModel();
 
-        $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
-
-        if ($idVendedor < 1 || ($nome === '' && $cod === '')) {
-            echo json_encode(['success' => false, 'message' => 'Informe nome ou código.']);
-            exit;
+        if (!isset($_POST['vendedor_id'])) {
+            $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
+    
+            if ($idVendedor < 1 || ($nome === '' && $cod === '')) {
+                echo json_encode(['success' => false, 'message' => 'Informe nome ou código.']);
+                exit;
+            }
+        } else {
+            $idVendedor = $_POST['vendedor_id'];
         }
+
 
         $model = new ProdutoModel();
         $prod = $model->searchProduct($nome, $cod, $idVendedor);
