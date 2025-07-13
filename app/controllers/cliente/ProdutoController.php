@@ -115,6 +115,52 @@ class ProdutoController extends RenderView {
         ]);
     }
 
+    public function comentarioCliente() {
+        header('Content-Type: application/json; charset=utf-8');
+
+        try {
+            // 1) Obter parâmetros da query string
+            $idVendedor = isset($_GET['idVendedor']) ? (int) $_GET['idVendedor'] : 0;
+            $idProduto  = isset($_GET['idProduto'])  ? (int) $_GET['idProduto']  : 0;
+            $idCliente  = isset($_GET['idCliente'])  ? (int) $_GET['idCliente']  : 0;
+
+            // 2) Validar parâmetros
+            if ($idVendedor <= 0 || $idProduto <= 0 || $idCliente <= 0) {
+                throw new Exception("Parâmetros inválidos", 400);
+            }
+
+            // 3) Obter comentário do cliente
+            $model = new ProdutoClienteModel();
+            $comentario = $model->getAvaliacaoCliente($idVendedor, $idProduto, $idCliente);
+
+            if ($comentario === null) {
+                // Se não encontrou avaliação específica do cliente
+                throw new Exception("Comentário do cliente não encontrado", 404);
+            }
+
+            // 4) Montar resposta de sucesso
+            $response = [
+                'success' => true,
+                'data'    => $comentario
+            ];
+            echo json_encode($response);
+
+        } catch (Exception $e) {
+            // Definir código HTTP (ou 500 se não tiver sido passado)
+            http_response_code($e->getCode() ?: 500);
+
+            // Montar resposta de erro
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+                'code'    => $e->getCode()
+            ]);
+        }
+
+        exit;
+    }
+
+
     public function comentarios() {
         header('Content-Type: application/json; charset=utf-8');
         

@@ -255,8 +255,15 @@ require_once("./utils/head.php");
     <?php endif; ?>
     <div id="produto-info" 
         data-id-vendedor="<?= $info['infoProduto']['id_vendedor'] ?>" 
-        data-id-produto="<?= $id ?>">
+        data-id-produto="<?= $id ?>"
+        data-id-cliente="<?= isset($_SESSION['cliente_id']) ? $_SESSION['cliente_id'] : '' ?>">
     </div>
+
+    <div class="comentario-div">
+        <div id="comentario-cliente-container"></div>
+    </div>
+
+    
 
     <div class="grid_comentarios_usuarios">
 

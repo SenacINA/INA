@@ -21,6 +21,25 @@ body {
   width: 100%;
 }
 
+.comentario-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 180px;
+  width: 100%;
+}
+
+#comentario-cliente-container {
+  width: 100%;
+  background-color: #D7E8EA;
+  border-radius: 5px;
+  padding: 24px;
+  .comentario-title {
+    color: var(--sappire);
+    align-self: center;
+    justify-self: center;
+  }
+}
 
 .grid_produto_image {
   grid-column: 1;

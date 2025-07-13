@@ -265,6 +265,46 @@ class ProdutoClienteModel
         return (int) $result['total'];
     }
 
+    public function getAvaliacaoCliente(int $idVendedor, int $idProduto, int $idCliente): ?array
+    {
+        $sql = "SELECT 
+                    c.nome_cliente,
+                    a.estrelas_avaliacao,
+                    a.qualidade,
+                    a.parecido,
+                    a.descricao_avaliacao AS texto,
+                    a.data_avaliacao,
+                    c.foto_perfil_cliente AS foto_perfil,
+                    GROUP_CONCAT(ia.endereco_imagem_avaliacao) AS imagens
+                FROM avaliacao a
+                JOIN cliente c ON a.id_cliente = c.id_cliente
+                LEFT JOIN imagem_avaliacao ia ON a.id_avaliacao = ia.id_avaliacao
+                WHERE a.id_vendedor = :idVendedor 
+                    AND a.id_produto = :idProduto 
+                    AND a.id_cliente = :idCliente
+                GROUP BY a.id_avaliacao
+                LIMIT 1";
+
+        $stmt = $this->db->getConnection()->prepare($sql);
+        $stmt->bindValue(':idVendedor', $idVendedor, PDO::PARAM_INT);
+        $stmt->bindValue(':idProduto', $idProduto, PDO::PARAM_INT);
+        $stmt->bindValue(':idCliente', $idCliente, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if ($result) {
+            // Processar imagens para array
+            $result['imagens'] = $result['imagens'] 
+                ? explode(',', $result['imagens']) 
+                : [];
+                
+            return $result;
+        }
+        
+        return null;
+    }
+
     public function beginTransaction() {
         $this->db->getConnection()->beginTransaction();
     }
