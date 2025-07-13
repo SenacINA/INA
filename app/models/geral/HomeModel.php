@@ -57,7 +57,7 @@ class HomeModel
                   pr.data_inicio_promocao,
                   pr.data_fim_promocao    
               ORDER BY total_vendido DESC
-              LIMIT 20;
+              LIMIT 12;
               ";
               break;
 
@@ -96,11 +96,12 @@ class HomeModel
                   WHERE p.status_produto != 0
                   GROUP BY p.id_produto
                   ORDER BY pr.desconto_promocao DESC
-                  LIMIT 20;
+                  LIMIT 12;
               ";
               break;
 
           default:
+          // Ordenado por ID do produto, que é o mais recente
             $sql = "
                 SELECT 
                     p.id_produto,
@@ -134,7 +135,8 @@ class HomeModel
                 AND CURDATE() BETWEEN pr.data_inicio_promocao AND pr.data_fim_promocao
                 WHERE p.status_produto != 0
                 GROUP BY p.id_produto
-                LIMIT 20;
+                ORDER BY p.id_produto DESC
+                LIMIT 12;
             ";
             break;
 
@@ -153,7 +155,7 @@ class HomeModel
 
 
   public function getCategoriasHome() {
-    $sql = "SELECT id_categoria, nome_categoria, endereco_imagem_categoria FROM categoria;";
+    $sql = "SELECT id_categoria, nome_categoria, endereco_imagem_categoria FROM categoria LIMIT 6;";
 
     $stmt = $this->db->getConnection()->prepare($sql);
     $stmt->execute();

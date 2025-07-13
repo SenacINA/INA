@@ -258,13 +258,11 @@ h3 {
 }
 
 .produto_image {
-  width: auto;
   height: 100%;
-  min-height: 420px;
-  max-width: 420px;
-  padding: 16px;
-  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  width: 100%;
   display: flex;
+  aspect-ratio: 16 / 9;
   justify-content: center;
 }
 
@@ -273,6 +271,7 @@ h3 {
   width: 68px;
   height: 68px;
   aspect-ratio: 1 / 1;
+  border-radius: 5px;
   display: flex;
   background-color: white;
   justify-content: center;
@@ -287,6 +286,7 @@ h3 {
   border-radius: 5px;
   background-color: white;
   border: none;
+  object-fit: cover;
 }
 
 .foward {
@@ -1417,6 +1417,10 @@ textarea {
 
   .div_produto_valor {
     grid-row: 1;
+  }
+
+  .grid_produto {
+    position: relative;
   }
 
   .produto_info_nome {

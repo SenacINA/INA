@@ -15,8 +15,7 @@ const cardProduto = (produto) => {
       precoFinal = (produto.preco_produto * (1 - produto.desconto_promocao / 100)).toFixed(2).replace('.', ',');
       flagPromo = `${produto.desconto_promocao}% OFF`;
     }    
-
-  }
+  } 
 
   return `
     <div class='index_body_produto_card' data-id='${produto.id_produto}' data-nome='${produto.nome_produto}'>
@@ -40,7 +39,7 @@ const cardProduto = (produto) => {
               <p id='indexBodyValorProduto' class='preco_antigo'>R$${produto.preco_produto}</p>
               <p id='indexBodyValorProduto'>R$${precoFinal}</p>
             ` : `
-              <p id='indexBodyValorProduto'>R$${produto.preco_produto}</p>
+              <p id='indexBodyValorProduto'>R$${produto.preco_produto + ',00'}</p>
             `}
           </div>
         </div>
