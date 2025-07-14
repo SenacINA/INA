@@ -34,7 +34,17 @@ class GerenciarUsuariosModel
 
   public function getUsers()
   {
-    $sql = "SELECT `id_cliente`, `nome_cliente`, `data_registro_cliente`, `email_cliente`, `numero_celular_cliente`, `ddd_cliente`, `foto_perfil_cliente`, `tipo_conta_cliente`, `status_conta_cliente`, `cargo` FROM `cliente`;";
+    $sql = "SELECT 
+          id_cliente, nome_cliente, data_registro_cliente, email_cliente,
+          numero_celular_cliente, ddd_cliente, foto_perfil_cliente,
+          tipo_conta_cliente, status_conta_cliente,
+          CASE
+            WHEN tipo_conta_cliente = 0 THEN 'Admin'
+            WHEN tipo_conta_cliente = 1 THEN 'Vendedor'
+            ELSE 'Cliente'
+          END AS cargo
+        FROM cliente";
+
     return $this->db->executeQuery($sql);
   }
 
@@ -50,11 +60,18 @@ class GerenciarUsuariosModel
       return $this->getUsers();
     }
 
-    $sql = "SELECT id_cliente, nome_cliente, email_cliente, data_registro_cliente,
-            numero_celular_cliente, ddd_cliente, foto_perfil_cliente,
-            tipo_conta_cliente, status_conta_cliente, cargo
-            FROM cliente WHERE 1=1
-            ";
+    $sql = "SELECT 
+          id_cliente, nome_cliente, email_cliente, data_registro_cliente,
+          numero_celular_cliente, ddd_cliente, foto_perfil_cliente,
+          tipo_conta_cliente, status_conta_cliente,
+          CASE
+            WHEN tipo_conta_cliente = 0 THEN 'Admin'
+            WHEN tipo_conta_cliente = 1 THEN 'Vendedor'
+            ELSE 'Cliente'
+          END AS cargo
+        FROM cliente
+        WHERE 1=1";
+
 
     $params = [];
     if (!empty($nomeCodigo)) {

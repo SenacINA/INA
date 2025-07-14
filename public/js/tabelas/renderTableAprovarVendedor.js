@@ -1,16 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
   let vendedores = window.vendedores || [];
+  let vendedoresFiltrados = [...vendedores];
   let paginaAtual = 0;
   const linhasPorPagina = 10;
   const filtroSelect = document.getElementById("filtros-gerenciar-vendas");
 
+  const popup = document.getElementById("popup_desativar");
+  const closeBtn = document.getElementById("close_btn_popUp");
+  const confirmarBtn = document.getElementById("confirmar_desativar");
+  const popupTexto = popup.querySelector(".text_popup p");
+
+  let acaoSelecionada = null;
+  let vendedorSelecionado = null;
+
   function ordenarVendedores(tipoOrdenacao) {
     switch (tipoOrdenacao) {
       case "alfabetica":
-        vendedores.sort((a, b) => a.vendedor.localeCompare(b.vendedor));
+        vendedoresFiltrados.sort((a, b) => a.vendedor.localeCompare(b.vendedor));
         break;
       case "cod":
-        vendedores.sort((a, b) => a.codigo - b.codigo);
+        vendedoresFiltrados.sort((a, b) => a.codigo - b.codigo);
         break;
       case "status":
         const ordemStatus = {
@@ -19,9 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
           Reprovado: 3,
           Inativado: 4,
         };
-        vendedores.sort(
-          (a, b) =>
-            (ordemStatus[a.status] || 99) - (ordemStatus[b.status] || 99)
+        vendedoresFiltrados.sort(
+          (a, b) => (ordemStatus[a.status] || 99) - (ordemStatus[b.status] || 99)
         );
         break;
       default:
@@ -48,16 +56,17 @@ document.addEventListener("DOMContentLoaded", function () {
           vendedor.status = statusMap[acao] || vendedor.status;
         }
 
+        atualizarEstatisticas();
         ordenarVendedores(filtroSelect.value);
         renderizarPagina(paginaAtual);
       })
-      .catch(() => {});
+      .catch(() => { });
   }
 
   function montarLinha(vendedor) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td># ${vendedor.codigo}</td>
+      <td>${vendedor.codigo}</td>
       <td>${vendedor.vendedor}</td>
       <td>${vendedor.requisitos}</td>
       <td>${vendedor.declaracao}</td>
@@ -65,49 +74,60 @@ document.addEventListener("DOMContentLoaded", function () {
       <td class="aprovar_vendedor_coluna_botoes"></td>
     `;
 
-    const tdGerenciamento = tr.querySelector(
-      "td.aprovar_vendedor_coluna_botoes"
-    );
+    const tdGerenciamento = tr.querySelector("td.aprovar_vendedor_coluna_botoes");
 
-    function criarFormAcao(acao, texto, classeBtn) {
-      const form = document.createElement("form");
-      form.method = "post";
-      form.style.display = "inline";
-      form.innerHTML = `
-        <input type="hidden" name="acao" value="${acao}">
-        <input type="hidden" name="vendedor_id" value="${vendedor.codigo}">
-        <button type="submit" class="${classeBtn}">${texto}</button>
-      `;
+    function criarBotaoAcao(acao, texto, classeBtn) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = classeBtn;
+      btn.textContent = texto;
 
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        enviarAcao(acao, vendedor.codigo);
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        acaoSelecionada = acao;
+        vendedorSelecionado = vendedor;
+
+        let msg = "";
+        switch (acao) {
+          case "aprovar":
+            msg = "Você deseja aprovar este vendedor?";
+            break;
+          case "reprovar":
+            msg = "Você deseja reprovar este vendedor?";
+            break;
+          case "inativar":
+            msg = "Você deseja inativar este vendedor?";
+            break;
+          case "ativar":
+            msg = "Você deseja ativar este vendedor?";
+            break;
+          default:
+            msg = "Confirma esta ação?";
+        }
+        popupTexto.textContent = msg;
+        popup.style.display = "flex";
       });
 
-      return form;
+      return btn;
     }
 
     if (vendedor.status === "Pendente") {
       tdGerenciamento.appendChild(
-        criarFormAcao("aprovar", "APROVAR", "aprovar_vendedor_btn_aprovar")
+        criarBotaoAcao("aprovar", "APROVAR", "aprovar_vendedor_btn_aprovar")
       );
       tdGerenciamento.appendChild(
-        criarFormAcao("reprovar", "RECUSAR", "aprovar_vendedor_btn_recusar")
+        criarBotaoAcao("reprovar", "RECUSAR", "aprovar_vendedor_btn_recusar")
       );
     } else if (vendedor.status === "Inativado") {
-      const formAtivar = criarFormAcao(
-        "ativar",
-        "ATIVAR",
-        "aprovar_vendedor_btn_ativar"
+      tdGerenciamento.appendChild(
+        criarBotaoAcao("ativar", "ATIVAR", "aprovar_vendedor_btn_ativar")
       );
-      tdGerenciamento.appendChild(formAtivar);
     } else {
-      const formInativar = criarFormAcao(
-        "inativar",
-        "INATIVAR",
-        "aprovar_vendedor_btn_inativar"
+      tdGerenciamento.appendChild(
+        criarBotaoAcao("inativar", "INATIVAR", "aprovar_vendedor_btn_inativar")
       );
-      tdGerenciamento.appendChild(formInativar);
     }
 
     return tr;
@@ -119,17 +139,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const inicio = pagina * linhasPorPagina;
     const fim = inicio + linhasPorPagina;
-    const vendedoresPagina = vendedores.slice(inicio, fim);
+    const paginaVendedores = vendedoresFiltrados.slice(inicio, fim);
 
-    vendedoresPagina.forEach((vendedor) => {
+    paginaVendedores.forEach((vendedor) => {
       tbody.appendChild(montarLinha(vendedor));
     });
 
-    const linhasFaltantes = linhasPorPagina - vendedoresPagina.length;
+    const linhasFaltantes = linhasPorPagina - paginaVendedores.length;
     for (let i = 0; i < linhasFaltantes; i++) {
       const trVazio = document.createElement("tr");
       trVazio.innerHTML = `
-        <td class="linha-vazia">&nbsp;</td>
         <td class="linha-vazia">&nbsp;</td>
         <td class="linha-vazia">&nbsp;</td>
         <td class="linha-vazia">&nbsp;</td>
@@ -163,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     novoBtnProximo.addEventListener("click", () => {
-      const totalPaginas = Math.ceil(vendedores.length / linhasPorPagina);
+      const totalPaginas = Math.ceil(vendedoresFiltrados.length / linhasPorPagina);
       if (paginaAtual < totalPaginas - 1) {
         paginaAtual++;
         renderizarPagina(paginaAtual);
@@ -171,8 +190,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  function atualizarEstatisticas() {
+    const aprovados = vendedores.filter(v => v.status === 'Aprovado').length;
+    const reprovados = vendedores.filter(v => v.status === 'Reprovado').length;
+    const inativados = vendedores.filter(v => v.status === 'Inativado').length;
+
+    document.querySelectorAll('.aprovar_vendedor_card').forEach(card => {
+      const titulo = card.querySelector('.aprovar_vendedor_titulo').textContent.trim();
+
+      if (titulo === 'Vendedores Aprovados') {
+        card.querySelector('.aprovar_vendedor_estatistica_descricao').textContent = aprovados;
+      } else if (titulo === 'Vendedores Reprovados') {
+        card.querySelector('.aprovar_vendedor_estatistica_descricao').textContent = reprovados;
+      } else if (titulo === 'Vendedores Inativados') {
+        card.querySelector('.aprovar_vendedor_estatistica_descricao').textContent = inativados;
+      }
+    });
+  }
+
   function atualizarBotoes() {
-    const totalPaginas = Math.ceil(vendedores.length / linhasPorPagina);
+    const totalPaginas = Math.ceil(vendedoresFiltrados.length / linhasPorPagina);
     const btnAnterior = document.getElementById("btnAnterior");
     const btnProximo = document.getElementById("btnProximo");
 
@@ -182,10 +219,24 @@ document.addEventListener("DOMContentLoaded", function () {
     btnProximo.disabled = paginaAtual >= totalPaginas - 1;
   }
 
-  ordenarVendedores("cod");
-  configurarNavegacao();
-  renderizarPagina(paginaAtual);
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+    acaoSelecionada = null;
+    vendedorSelecionado = null;
+  });
 
+  confirmarBtn.addEventListener("click", () => {
+    if (!acaoSelecionada || !vendedorSelecionado) {
+      popup.style.display = "none";
+      return;
+    }
+    enviarAcao(acaoSelecionada, vendedorSelecionado.codigo);
+    popup.style.display = "none";
+    acaoSelecionada = null;
+    vendedorSelecionado = null;
+  });
+
+  // Filtro de ordenação
   if (filtroSelect) {
     filtroSelect.addEventListener("change", () => {
       ordenarVendedores(filtroSelect.value);
@@ -193,4 +244,40 @@ document.addEventListener("DOMContentLoaded", function () {
       renderizarPagina(paginaAtual);
     });
   }
+
+  // Filtro de busca
+  // Filtro de busca com validação e toast
+  const formBusca = document.querySelector(".aprovar_vendedor_forms_pesquisa_pedidos");
+  const inputBusca = formBusca.querySelector("input[name='search']");
+
+  formBusca.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const termo = inputBusca.value.trim().toLowerCase();
+
+    if (!termo || termo === "0") {
+      vendedoresFiltrados = [...vendedores];
+    } else {
+      vendedoresFiltrados = vendedores.filter(v =>
+        v.vendedor.toLowerCase().includes(termo) ||
+        String(v.codigo) === termo
+      );
+    }
+
+    if (vendedoresFiltrados.length === 0) {
+      gerarToast("Nenhum vendedor encontrado.","aviso");
+      vendedoresFiltrados = [...vendedores];
+      inputBusca.value = "";
+    }
+
+    paginaAtual = 0;
+    ordenarVendedores(filtroSelect.value);
+    renderizarPagina(paginaAtual);
+  });
+
+
+  // Inicialização
+  ordenarVendedores("cod");
+  configurarNavegacao();
+  renderizarPagina(paginaAtual);
 });

@@ -58,6 +58,8 @@ $disativar = $estaAtivo ? '' : 'disabled="disabled"';
             <div class="gerenciar_usuario_estatisticas">
               <div class="gerenciar_usuario_subtitulo_generico">
                 <div class="gerenciar_usuario_linha_vertical"></div>
+                <img class="icon_perfil_usuario" src="<?= $PATH_PUBLIC ?>/image/geral/icons/perfil_icon.svg" alt="">
+
                 <div class="gerenciar_usuario_subtitle_holder">
                   <?php
                   $imgPerfil = $usuarioSelecionado && !empty($usuarioSelecionado['imagem_cliente'])
@@ -69,26 +71,26 @@ $disativar = $estaAtivo ? '' : 'disabled="disabled"';
               </div>
               <div class="gerenciar_usuario_estatistica_holder">
                 <div class="gerenciar_usuario_card">
-                  <span class="gerenciar_usuario_titulo"><?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['nome_cliente']) : '-' ?></span>
+                  <span class="gerenciar_usuario_titulo"><?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['nome_cliente']) : '---' ?></span>
                   <img src="<?= $PATH_PUBLIC ?>/image/admin/perfil_admin/perfil_img.svg" alt="" class="gerenciar_usuario_card_img_perfil">
                 </div>
                 <div class="gerenciar_usuario_card_column_2">
                   <div class="gerenciar_usuario_card">
                     <span class="gerenciar_usuario_titulo">E-Mail</span>
                     <span class="gerenciar_usuario_estatistica_descricao">
-                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['email_cliente']) : '-' ?>
+                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['email_cliente']) : '---' ?>
                     </span>
                   </div>
                   <div class="gerenciar_usuario_card">
                     <span class="gerenciar_usuario_titulo">Data de Cadastro</span>
                     <span class="gerenciar_usuario_estatistica_descricao">
-                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['data_registro_cliente']) : '-' ?>
+                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['data_registro_cliente']) : '---' ?>
                     </span>
                   </div>
                   <div class="gerenciar_usuario_card">
                     <span class="gerenciar_usuario_titulo">Cargo</span>
                     <span class="gerenciar_usuario_estatistica_descricao">
-                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['cargo']) : '-' ?>
+                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['cargo']) : '---' ?>
                     </span>
                   </div>
                 </div>
@@ -184,7 +186,7 @@ $disativar = $estaAtivo ? '' : 'disabled="disabled"';
 
   <div class="popup_container" id="popup_desativar">
     <div class="popup">
-      <button id="close_btn" class="modal_fechar">x</button>
+      <button id="close_btn_popUp" class="modal_fechar">x</button>
       <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/check_carolina_icon.svg" width="200" height="200">
       <div class="text_popup">
         <h1>Confirmação</h1>
@@ -196,7 +198,6 @@ $disativar = $estaAtivo ? '' : 'disabled="disabled"';
       </div>
     </div>
   </div>
-
 </body>
 
 <script>

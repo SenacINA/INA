@@ -25,8 +25,14 @@ class GerenciarUsuariosController
         $usuarios = $this->model->getUsers();
 
         foreach ($usuarios as &$usuario) {
-            $usuario['ddd_cliente'] = $usuario['ddd_cliente'] ?? '-';
-            $usuario['numero_celular_cliente'] = $usuario['numero_celular_cliente'] ?? '-';
+            $usuario['ddd_cliente'] = $usuario['ddd_cliente'] ?? '00'; // Aqui q muda o comentario da tabela, se não gostou é só mudar
+            $usuario['numero_celular_cliente'] = $usuario['numero_celular_cliente'] ?? '';
+
+            $usuario['cargo'] = match ($usuario['tipo_conta_cliente']) {
+                0 => 'Admin',
+                1 => 'Vendedor',
+                default => 'Cliente',
+            };
         }
 
         require_once('./app/views/admin/GerenciarUsuario.php');
@@ -72,7 +78,7 @@ class GerenciarUsuariosController
         $contato = $_POST['contato'] ?? '';
 
         $usuarios = $this->model->searchUserForms($nomeCodigo, $status, $mes, $ano, $contato);
-        $usuarioSelecionado = !empty($usuarios) ? $usuarios[0] : null;
+        $usuarioSelecionado = count($usuarios) === 1 ? $usuarios[0] : null;
 
         require_once('./app/views/admin/GerenciarUsuario.php');
     }

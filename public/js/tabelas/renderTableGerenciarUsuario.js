@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("popup_desativar");
-  const closeBtn = document.getElementById("close_btn");
+  const closeBtn = document.getElementById("close_btn_popUp");
   const confirmarBtn = document.getElementById("confirmar_desativar");
   const tbody = document.querySelector(".gerenciar_usuario_table tbody");
+  const formPesquisa = document.querySelector(".gerenciar_usuario_forms_pesquisa_usuario");
 
   let paginaAtual = 0;
   const linhasPorPagina = 10;
   const vendedoresData = window.vendedores || [];
 
   let usuarioSelecionado = null;
-  let botaoSelecionado = null; // Para guardar o botão clicado
+  let botaoSelecionado = null;
 
   function renderizarPagina(pagina) {
     if (!tbody) return;
@@ -24,35 +25,29 @@ document.addEventListener("DOMContentLoaded", () => {
         vendedor.tipo_conta_cliente == 0
           ? "Admin"
           : vendedor.tipo_conta_cliente == 1
-          ? "Vendedor"
-          : "Cliente";
+            ? "Vendedor"
+            : "Cliente";
 
       const estaAtivo = vendedor.status_conta_cliente == 1;
       const textoBotao = estaAtivo ? "Desativar" : "Ativar";
 
       const tr = document.createElement("tr");
       tr.innerHTML = `
-        <td>${vendedor.id_cliente}</td>
-        <td>${vendedor.nome_cliente}</td>
-        <td>${vendedor.data_registro_cliente}</td>
-        <td data-cargo="${vendedor.tipo_conta_cliente}">${tipoConta}</td>
-        <td>${vendedor.email_cliente}</td>
-        <td>(${vendedor.ddd_cliente}) ${vendedor.numero_celular_cliente}</td>
-        <td data-status="${vendedor.status_conta_cliente}">
-          <button class="base_botao ${
-            estaAtivo ? "btn_red" : "btn_blue"
-          } btn-status" data-id="${vendedor.id_cliente}" data-ativo="${
-            vendedor.status_conta_cliente
-          }">
-            ${textoBotao}
-          </button>
-        </td>
-      `;
+      <td>${vendedor.id_cliente}</td>
+      <td>${vendedor.nome_cliente}</td>
+      <td>${vendedor.data_registro_cliente}</td>
+      <td data-cargo="${vendedor.tipo_conta_cliente}">${tipoConta}</td>
+      <td>${vendedor.email_cliente}</td>
+      <td>(${vendedor.ddd_cliente}) ${vendedor.numero_celular_cliente}</td>
+      <td data-status="${vendedor.status_conta_cliente}">
+        <button class="base_botao ${estaAtivo ? "btn_red" : "btn_blue"} btn-status" data-id="${vendedor.id_cliente}" data-ativo="${vendedor.status_conta_cliente}">
+          ${textoBotao}
+        </button>
+      </td>
+    `;
       tbody.appendChild(tr);
-
-      // Seleciona usuário e atualiza perfil ao clicar na linha (exceto no botão)
       tr.addEventListener("click", (e) => {
-        if (e.target.tagName.toLowerCase() === "button") return; // Ignora click no botão
+        if (e.target.tagName.toLowerCase() === "button") return;
         selecionarUsuario(vendedor, tr);
       });
     });
@@ -61,17 +56,24 @@ document.addEventListener("DOMContentLoaded", () => {
     atualizarBotoes();
     limparSelecao();
 
-    // Adiciona evento para os botões ativar/desativar da tabela
     document.querySelectorAll(".btn-status").forEach((botao) => {
       botao.addEventListener("click", (e) => {
         e.stopPropagation();
 
-        // Guarda usuário e botão selecionado
         const idUsuario = botao.getAttribute("data-id");
         usuarioSelecionado = vendedoresData.find(v => v.id_cliente == idUsuario);
         botaoSelecionado = botao;
 
-        // Mostrar popup de confirmação
+        const estaAtivo = usuarioSelecionado.status_conta_cliente == 1;
+        const textoConfirmacao = estaAtivo
+          ? "Você deseja desativar este Usuário?"
+          : "Você deseja ativar este Usuário?";
+
+        const pTexto = popup.querySelector(".text_popup p");
+        if (pTexto) {
+          pTexto.textContent = textoConfirmacao;
+        }
+
         popup.style.display = "flex";
       });
     });
@@ -146,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (emailEl) emailEl.textContent = "-";
   }
 
-  // Eventos do popup
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       popup.style.display = "none";
@@ -156,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (confirmarBtn) {
     confirmarBtn.addEventListener("click", async () => {
       if (!usuarioSelecionado) {
-        alert("Nenhum usuário selecionado.");
+        gerarToast("Nenhum usuário selecionado.", "aviso");
         popup.style.display = "none";
         return;
       }
@@ -175,16 +176,123 @@ document.addEventListener("DOMContentLoaded", () => {
         const result = await response.json();
 
         if (result.success) {
-          alert(`Usuário ${ativo ? "desativado" : "ativado"} com sucesso.`);
+          gerarToast(`Usuário ${ativo ? "desativado" : "ativado"} com sucesso.`, "sucesso");
           popup.style.display = "none";
-          location.reload();
+
+          usuarioSelecionado.status_conta_cliente = ativo ? 0 : 1;
+
+          if (botaoSelecionado) {
+            botaoSelecionado.textContent = ativo ? "Ativar" : "Desativar";
+            botaoSelecionado.classList.toggle("btn_red", !ativo);
+            botaoSelecionado.classList.toggle("btn_blue", ativo);
+            botaoSelecionado.setAttribute("data-ativo", ativo ? "0" : "1");
+          }
+
         } else {
-          alert(`Erro ao atualizar usuário: ${result.message || "Erro desconhecido"}`);
+          console.log(`Erro ao atualizar usuário: ${result.message || "Erro desconhecido"}`);
         }
       } catch (e) {
         console.error(e);
-        alert("Erro interno ao tentar atualizar o usuário.");
+        gerarToast("Erro interno ao tentar atualizar o usuário.", "erro");
       }
+    });
+  }
+
+  // === Evento do formulário de pesquisa com toast de aviso ===
+  if (formPesquisa) {
+    formPesquisa.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const input = formPesquisa.querySelector("input[name='nomeUsuario']");
+      const termo = input.value.trim().toLowerCase();
+
+      if (termo === "" || termo === "0") {
+        paginaAtual = 0;
+        renderizarPagina(paginaAtual);
+        return;
+      }
+
+      const termoNum = Number(termo);
+      const filtrados = vendedoresData.filter((v) => {
+        if (!isNaN(termoNum)) {
+          return v.id_cliente === termoNum || v.nome_cliente.toLowerCase().includes(termo);
+        }
+        return v.nome_cliente.toLowerCase().includes(termo);
+      });
+
+      if (filtrados.length === 0) {
+        gerarToast("Usuário não encontrado.", "aviso");
+        paginaAtual = 0; 
+        renderizarPagina(paginaAtual);
+        return;
+      }
+
+      renderizarResultadoBusca(filtrados);
+    });
+  }
+
+  function renderizarResultadoBusca(lista) {
+    if (!tbody) return;
+    tbody.innerHTML = "";
+
+    lista.forEach((vendedor) => {
+      const tipoConta =
+        vendedor.tipo_conta_cliente == 0
+          ? "Admin"
+          : vendedor.tipo_conta_cliente == 1
+            ? "Vendedor"
+            : "Cliente";
+
+      const estaAtivo = vendedor.status_conta_cliente == 1;
+      const textoBotao = estaAtivo ? "Desativar" : "Ativar";
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${vendedor.id_cliente}</td>
+        <td>${vendedor.nome_cliente}</td>
+        <td>${vendedor.data_registro_cliente}</td>
+        <td data-cargo="${vendedor.tipo_conta_cliente}">${tipoConta}</td>
+        <td>${vendedor.email_cliente}</td>
+        <td>(${vendedor.ddd_cliente}) ${vendedor.numero_celular_cliente}</td>
+        <td data-status="${vendedor.status_conta_cliente}">
+          <button class="base_botao ${estaAtivo ? "btn_red" : "btn_blue"} btn-status" data-id="${vendedor.id_cliente}" data-ativo="${vendedor.status_conta_cliente}">
+            ${textoBotao}
+          </button>
+        </td>
+      `;
+
+      tbody.appendChild(tr);
+
+      tr.addEventListener("click", (e) => {
+        if (e.target.tagName.toLowerCase() === "button") return;
+        selecionarUsuario(vendedor, tr);
+      });
+    });
+
+    preencherLinhasVazias(tbody, lista.length, linhasPorPagina);
+    limparSelecao();
+    atualizarBotoes();
+
+    document.querySelectorAll(".btn-status").forEach((botao) => {
+      botao.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        const idUsuario = botao.getAttribute("data-id");
+        usuarioSelecionado = vendedoresData.find(v => v.id_cliente == idUsuario);
+        botaoSelecionado = botao;
+
+        const estaAtivo = usuarioSelecionado.status_conta_cliente == 1;
+        const textoConfirmacao = estaAtivo
+          ? "Você deseja desativar este Usuário?"
+          : "Você deseja ativar este Usuário?";
+
+        const pTexto = popup.querySelector(".text_popup p");
+        if (pTexto) {
+          pTexto.textContent = textoConfirmacao;
+        }
+
+        popup.style.display = "flex";
+      });
     });
   }
 
