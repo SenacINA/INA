@@ -10,7 +10,6 @@ $estaAtivo = $usuarioSelecionado && $usuarioSelecionado['status_conta_cliente'] 
 $textoBotao = $estaAtivo ? 'DESATIVAR' : ($usuarioSelecionado ? 'USUÁRIO JÁ DESATIVADO' : 'DESATIVAR');
 $disativar = $estaAtivo ? '' : 'disabled="disabled"';
 ?>
-<script src="<?= $PATH_PUBLIC ?>/js/admin/GerenciarUsuario.js"></script>
 
 <body>
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
