@@ -22,11 +22,11 @@ require_once('./utils/head.php')
             <div class="index_body_content_container">
                 <div class="index_body_ad_box">
                     <div class="index_body_big_ad">
-                        <img src="<?= $PATH_PUBLIC ?>/image/index/BannerCupom25.jpg" alt="">
+                        <img src="<?= $PATH_PUBLIC ?>/upload/propagandas/img_670x300_0.png" alt="">
                     </div>
                     <div class="index_body_mid_ad">
-                        <img src="<?= $PATH_PUBLIC ?>/image/index/BannerCupom10.jpg" alt="">
-                        <img src="<?= $PATH_PUBLIC ?>/image/index/BannerGarantia.jpg" alt="">
+                        <img src="<?= $PATH_PUBLIC ?>/upload/propagandas/img_670x125_0.png" alt="">
+                        <img src="<?= $PATH_PUBLIC ?>/upload/propagandas/img_670x125_1.png" alt="">
                     </div>
                 </div>
                 <h1 class="index_body_text_carolina">Descobertas do Dia</h1>
@@ -62,7 +62,9 @@ require_once('./utils/head.php')
                         </button>
                     </a>
                 </div>
-                <img class="index_body_large_ad" src="<?= $PATH_PUBLIC ?>/image/index/BannerRedragon.jpg" alt="">
+                <div class="index_body_big_ad_bottom">
+                    <img src="<?= $PATH_PUBLIC ?>/upload/propagandas/img_670x300_1.png" alt="">
+                </div>
                 <div class="index_body_produto_container">
                     <div class="index_body_container_title">
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_carolina.svg" alt="">
