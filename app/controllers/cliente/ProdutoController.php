@@ -119,26 +119,21 @@ class ProdutoController extends RenderView {
         header('Content-Type: application/json; charset=utf-8');
 
         try {
-            // 1) Obter parâmetros da query string
             $idVendedor = isset($_GET['idVendedor']) ? (int) $_GET['idVendedor'] : 0;
             $idProduto  = isset($_GET['idProduto'])  ? (int) $_GET['idProduto']  : 0;
             $idCliente  = isset($_GET['idCliente'])  ? (int) $_GET['idCliente']  : 0;
 
-            // 2) Validar parâmetros
             if ($idVendedor <= 0 || $idProduto <= 0 || $idCliente <= 0) {
                 throw new Exception("Parâmetros inválidos", 400);
             }
 
-            // 3) Obter comentário do cliente
             $model = new ProdutoClienteModel();
             $comentario = $model->getAvaliacaoCliente($idVendedor, $idProduto, $idCliente);
 
             if ($comentario === null) {
-                // Se não encontrou avaliação específica do cliente
                 throw new Exception("Comentário do cliente não encontrado", 404);
             }
 
-            // 4) Montar resposta de sucesso
             $response = [
                 'success' => true,
                 'data'    => $comentario
@@ -146,10 +141,8 @@ class ProdutoController extends RenderView {
             echo json_encode($response);
 
         } catch (Exception $e) {
-            // Definir código HTTP (ou 500 se não tiver sido passado)
             http_response_code($e->getCode() ?: 500);
 
-            // Montar resposta de erro
             echo json_encode([
                 'success' => false,
                 'message' => $e->getMessage(),
@@ -168,6 +161,7 @@ class ProdutoController extends RenderView {
             $idV   = (int) ($_GET['idVendedor']  ?? 0);
             $lim   = (int) ($_GET['maxRender']   ?? 10);
             $ofs   = (int) ($_GET['offset']      ?? 0);
+            $idc   = (int) ($_GET['idCliente']   ?? 0);
             
             if ($idP <= 0 || $idV <= 0) {
                 throw new Exception("Parâmetros idProduto e idVendedor são obrigatórios.", 400);
@@ -186,7 +180,7 @@ class ProdutoController extends RenderView {
             }
     
             $model = new ProdutoClienteModel();
-            $comentarios = $model->getComentarios($idP, $lim, $ofs, $filters);
+            $comentarios = $model->getComentarios($idP, $lim, $ofs, $filters, $idc);
     
             $totalComentarios = $model->countComentarios($idP, $filters);
             $hasMore = ($ofs + $lim) < $totalComentarios;
@@ -233,7 +227,6 @@ class ProdutoController extends RenderView {
             }
         }
 
-        // Preparar dados
         $data = [
             'id_cliente' => $clienteId,
             'id_produto' => (int)$_POST['id_produto'],

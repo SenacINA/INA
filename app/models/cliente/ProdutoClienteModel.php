@@ -203,8 +203,31 @@ class ProdutoClienteModel
         $stmt->execute([$avaliacaoId, $caminho]);
     }
 
-    public function getComentarios(int $idProduto, int $limit = 5, int $offset = 0): array
-    {
+    public function getComentarios(
+        int $idProduto,
+        int $limit = 5,
+        int $offset = 0,
+        array $filters = [],
+        int $idCliente = 0
+    ): array {
+        $where   = ['a.id_produto = :idProduto', 'a.status_avaliacao = 1', 'a.id_cliente != :idCliente'];
+        $params  = [':idProduto' => $idProduto, ':idCliente' => $idCliente];
+
+        // filtro de estrelas
+        if (isset($filters['estrelas'])) {
+            $where[] = 'a.estrelas_avaliacao = :estrelas';
+            $params[':estrelas'] = $filters['estrelas'];
+        }
+
+        // filtro "com mídia" — pelo menos 1 imagem
+        if (!empty($filters['com_midia'])) {
+            $where[] = 'EXISTS (
+                SELECT 1
+                  FROM imagem_avaliacao ia2
+                 WHERE ia2.id_avaliacao = a.id_avaliacao
+            )';
+        }
+
         $sql = "
             SELECT
                 a.id_avaliacao,
@@ -220,27 +243,28 @@ class ProdutoClienteModel
             JOIN cliente c ON c.id_cliente = a.id_cliente
             LEFT JOIN perfil p ON p.id_cliente = c.id_cliente
             LEFT JOIN imagem_avaliacao ia ON ia.id_avaliacao = a.id_avaliacao
-            WHERE
-                a.id_produto = :idProduto
-                AND a.status_avaliacao = 1
+            WHERE " . implode(' AND ', $where) . "
             GROUP BY a.id_avaliacao
             ORDER BY a.data_avaliacao DESC
             LIMIT :limit OFFSET :offset
         ";
 
-        $pdo = $this->db->getConnection();
+        $pdo  = $this->db->getConnection();
         $stmt = $pdo->prepare($sql);
 
-        $stmt->bindValue(':idProduto', $idProduto, \PDO::PARAM_INT);
-        $stmt->bindValue(':limit', $limit, \PDO::PARAM_INT);
+        foreach ($params as $key => $val) {
+            $stmt->bindValue($key, $val, \PDO::PARAM_INT);
+        }
+        $stmt->bindValue(':limit',  $limit,  \PDO::PARAM_INT);
         $stmt->bindValue(':offset', $offset, \PDO::PARAM_INT);
-        
-        $stmt->execute();
 
+        $stmt->execute();
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
         foreach ($rows as &$r) {
-            $r['imagens'] = $r['imagens'] ? explode('||', $r['imagens']) : [];
+            $r['imagens'] = $r['imagens']
+                ? explode('||', $r['imagens'])
+                : [];
         }
 
         return $rows;

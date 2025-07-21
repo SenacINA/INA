@@ -1,5 +1,3 @@
-// renderAvaliacao.js
-
 function renderComentarioAvaliacaoProduto(comentario) {
     const nome = comentario.nome || '';
     const estrelas = comentario.estrelas || 0;
@@ -54,37 +52,46 @@ function renderComentarioAvaliacaoProduto(comentario) {
     `;
 }
 
-async function carregarComentarios(idVendedor, idProduto, maxRender = 5, offset = 0, tipoFiltro = null, valorFiltro = null) {
+async function carregarComentarios(
+    idVendedor,
+    idProduto,
+    maxRender = 5,
+    offset = 0,
+    tipoFiltro = null,
+    valorFiltro = null,
+    idCliente = 0
+) {
     const container = document.querySelector('.grid_comentarios_usuarios');
     if (!container) return;
 
     try {
         const url = new URL('/ina/api-comentariosJson', window.location.origin);
         url.searchParams.append('idVendedor', idVendedor);
-        url.searchParams.append('idProduto', idProduto);
-        url.searchParams.append('maxRender', maxRender);
-        url.searchParams.append('offset', offset);
+        url.searchParams.append('idProduto',  idProduto);
+        url.searchParams.append('maxRender',  maxRender);
+        url.searchParams.append('offset',     offset);
 
-        // se houver filtro, adiciona à URL
+        if (idCliente > 0) {
+            url.searchParams.append('idCliente', idCliente);
+        }
         if (tipoFiltro && valorFiltro) {
             url.searchParams.append(tipoFiltro, valorFiltro);
         }
 
-        const response = await fetch(url);
+        const response     = await fetch(url);
         const responseData = await response.json();
 
-        if (!responseData || !responseData.success || !Array.isArray(responseData.data)) {
+        if (!responseData.success || !Array.isArray(responseData.data)) {
             throw new Error("Resposta inválida da API");
         }
 
         const comentarios = responseData.data;
 
-        // no primeiro carregamento (offset=0), limpo tudo
         if (offset === 0) {
             container.innerHTML = '';
         }
 
-        // remove botão antigo de “Ver mais”
+        // remove botão antigo de ver mais
         const btnVerMaisExistente = container.querySelector('.btn-ver-mais');
         if (btnVerMaisExistente) {
             btnVerMaisExistente.remove();
@@ -104,7 +111,7 @@ async function carregarComentarios(idVendedor, idProduto, maxRender = 5, offset 
             container.innerHTML += renderComentarioAvaliacaoProduto(dadosComponente);
         });
 
-        // adiciona “Ver mais avaliações” se houver paginação
+        // botao ver mais
         const hasMore = responseData.pagination?.has_more;
         if (hasMore) {
             const btnContainer = document.createElement('div');
@@ -113,12 +120,19 @@ async function carregarComentarios(idVendedor, idProduto, maxRender = 5, offset 
                 <button class="base_botao btn_blue">Ver mais avaliações</button>
             `;
             btnContainer.querySelector('button').addEventListener('click', () => {
-                carregarComentarios(idVendedor, idProduto, maxRender, offset + maxRender, tipoFiltro, valorFiltro);
+                carregarComentarios(
+                    idVendedor,
+                    idProduto,
+                    maxRender,
+                    offset + maxRender,
+                    tipoFiltro,
+                    valorFiltro,
+                    idCliente
+                );
             });
             container.appendChild(btnContainer);
         }
 
-        // se não vier nada na primeira carga
         if (offset === 0 && comentarios.length === 0) {
             container.innerHTML = '<div class="sem_avaliacoes">Sem avaliações</div>';
         }
@@ -138,13 +152,13 @@ async function carregarComentariosCliente(idVendedor, idProduto, idCliente) {
     try {
         const url = new URL('/ina/api-comentarioClienteJson', window.location.origin);
         url.searchParams.append('idVendedor', idVendedor);
-        url.searchParams.append('idProduto', idProduto);
-        url.searchParams.append('idCliente', idCliente);
+        url.searchParams.append('idProduto',  idProduto);
+        url.searchParams.append('idCliente',  idCliente);
 
-        const response = await fetch(url);
+        const response     = await fetch(url);
         const responseData = await response.json();
 
-        if (!responseData || !responseData.success || !responseData.data) {
+        if (!responseData.success || !responseData.data) {
             throw new Error("Comentário do cliente não encontrado.");
         }
 
@@ -228,22 +242,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const idProduto  = produtoInfo.dataset.idProduto;
     const idCliente  = produtoInfo.dataset.idCliente || '';
 
-    // carrega o comentário do próprio cliente (se existir)
+    // carrega comentário próprio do cliente (se existir)
     if (idCliente > 0) {
         carregarComentariosCliente(idVendedor, idProduto, idCliente);
     }
 
-    // carga inicial sem filtro
-    carregarComentarios(idVendedor, idProduto);
+    // sem filtro
+    carregarComentarios(
+        idVendedor,
+        idProduto,
+        5,
+        0,      
+        null,   
+        null,   
+        idCliente
+    );
 
-    // configura botões de filtro
+    // configuração dos botões de filtro
     const filtros = document.querySelectorAll('.btn-filtrar-avaliacao');
     filtros.forEach(btn => {
         btn.addEventListener('click', () => {
-            const tipo  = btn.dataset.tipo;   // "estrelas" ou "com_midia"
-            const valor = btn.dataset.valor;  // "1".."5" ou "1"
-            // recarrega do zero com filtro
-            carregarComentarios(idVendedor, idProduto, 5, 0, tipo, valor);
+            let tipoFiltro = null;
+            let valorFiltro = null;
+
+            if (btn.classList.contains('selecionado')) {
+                btn.classList.remove('selecionado');
+            } else {
+                const anterior = document.querySelector('.btn-filtrar-avaliacao.selecionado');
+                if (anterior) anterior.classList.remove('selecionado');
+                btn.classList.add('selecionado');
+                tipoFiltro  = btn.dataset.tipo;
+                valorFiltro = btn.dataset.valor;
+            }
+
+            carregarComentarios(
+                idVendedor,
+                idProduto,
+                5,
+                0,
+                tipoFiltro,
+                valorFiltro,
+                idCliente
+            );
         });
     });
 });

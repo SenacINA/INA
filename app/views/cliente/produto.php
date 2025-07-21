@@ -263,11 +263,11 @@ require_once("./utils/head.php");
         data-id-cliente="<?= isset($_SESSION['cliente_id']) ? $_SESSION['cliente_id'] : '' ?>">
     </div>
 
-    <div class="comentario-div">
-        <div id="comentario-cliente-container"></div>
-    </div>
-
-    
+    <?php if(isset($_SESSION['cliente_id'])): ?>
+        <div class="comentario-div">
+            <div id="comentario-cliente-container"></div>
+        </div>
+    <?php endif; ?>
 
     <div class="grid_comentarios_usuarios">
 
