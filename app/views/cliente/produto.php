@@ -160,21 +160,25 @@ require_once("./utils/head.php");
                 <div class="retangulos_avaliacao_produto">
                     <?php
                     $distribuicao = $info['distribuicao_avaliacoes'];
-
                     for ($estrelas = 5; $estrelas >= 1; $estrelas--):
                         $total = $distribuicao['estrelas'][$estrelas];
                         $texto = $estrelas . ' Estrela' . ($estrelas > 1 ? 's' : '');
                     ?>
-                        <button>
-                            <p><?= $texto ?> (<?= number_format($total, 0, ',', '.') ?>)</p>
-                        </button>
+                    <button class="btn-filtrar-avaliacao"
+                            data-tipo="estrelas"
+                            data-valor="<?= $estrelas ?>">
+                        <p><?= $texto ?> (<?= number_format($total, 0, ',', '.') ?>)</p>
+                    </button>
                     <?php endfor; ?>
 
-                    <button>
-                        <p>Com mídia (<?= number_format($distribuicao['com_midia'], 0, ',', '.') ?>)</p>
+                    <button class="btn-filtrar-avaliacao"
+                            data-tipo="com_midia"
+                            data-valor="1">
+                    <p>Com mídia (<?= number_format($distribuicao['com_midia'], 0, ',', '.') ?>)</p>
                     </button>
                 </div>
             </div>
+
         </div>
     </div>
 

@@ -1,3 +1,5 @@
+// renderAvaliacao.js
+
 function renderComentarioAvaliacaoProduto(comentario) {
     const nome = comentario.nome || '';
     const estrelas = comentario.estrelas || 0;
@@ -52,7 +54,7 @@ function renderComentarioAvaliacaoProduto(comentario) {
     `;
 }
 
-async function carregarComentarios(idVendedor, idProduto, maxRender = 5, offset = 0) {
+async function carregarComentarios(idVendedor, idProduto, maxRender = 5, offset = 0, tipoFiltro = null, valorFiltro = null) {
     const container = document.querySelector('.grid_comentarios_usuarios');
     if (!container) return;
 
@@ -63,6 +65,11 @@ async function carregarComentarios(idVendedor, idProduto, maxRender = 5, offset 
         url.searchParams.append('maxRender', maxRender);
         url.searchParams.append('offset', offset);
 
+        // se houver filtro, adiciona à URL
+        if (tipoFiltro && valorFiltro) {
+            url.searchParams.append(tipoFiltro, valorFiltro);
+        }
+
         const response = await fetch(url);
         const responseData = await response.json();
 
@@ -72,11 +79,12 @@ async function carregarComentarios(idVendedor, idProduto, maxRender = 5, offset 
 
         const comentarios = responseData.data;
 
+        // no primeiro carregamento (offset=0), limpo tudo
         if (offset === 0) {
             container.innerHTML = '';
         }
 
-        // Sempre remover botão antigo antes de renderizar novos comentários
+        // remove botão antigo de “Ver mais”
         const btnVerMaisExistente = container.querySelector('.btn-ver-mais');
         if (btnVerMaisExistente) {
             btnVerMaisExistente.remove();
@@ -93,11 +101,10 @@ async function carregarComentarios(idVendedor, idProduto, maxRender = 5, offset 
                 foto_perfil: comentario.foto_perfil_cliente,
                 data: comentario.data_avaliacao
             };
-
             container.innerHTML += renderComentarioAvaliacaoProduto(dadosComponente);
         });
 
-        // Mostrar botão "Ver mais avaliações" sempre no fim se houver mais
+        // adiciona “Ver mais avaliações” se houver paginação
         const hasMore = responseData.pagination?.has_more;
         if (hasMore) {
             const btnContainer = document.createElement('div');
@@ -105,14 +112,13 @@ async function carregarComentarios(idVendedor, idProduto, maxRender = 5, offset 
             btnContainer.innerHTML = `
                 <button class="base_botao btn_blue">Ver mais avaliações</button>
             `;
-
             btnContainer.querySelector('button').addEventListener('click', () => {
-                carregarComentarios(idVendedor, idProduto, maxRender, offset + maxRender);
+                carregarComentarios(idVendedor, idProduto, maxRender, offset + maxRender, tipoFiltro, valorFiltro);
             });
-
             container.appendChild(btnContainer);
         }
 
+        // se não vier nada na primeira carga
         if (offset === 0 && comentarios.length === 0) {
             container.innerHTML = '<div class="sem_avaliacoes">Sem avaliações</div>';
         }
@@ -143,7 +149,6 @@ async function carregarComentariosCliente(idVendedor, idProduto, idCliente) {
         }
 
         const comentario = responseData.data;
-
         const dadosComponente = {
             nome: comentario.nome_cliente,
             estrelas: comentario.estrelas_avaliacao,
@@ -154,7 +159,6 @@ async function carregarComentariosCliente(idVendedor, idProduto, idCliente) {
             foto_perfil: comentario.foto_perfil_cliente,
             data: comentario.data_avaliacao
         };
-
         container.innerHTML = renderComentarioCliente(dadosComponente);
 
     } catch (error) {
@@ -174,13 +178,12 @@ function renderComentarioCliente(comentario) {
     const fotoPerfil = comentario.foto_perfil || '/image/cliente/perfil_cliente/foto_user.png';
 
     const estrelasClasse = `estrelas-${Math.round(estrelas)}`;
-
     const imagensHTML = imagens.map(img =>
         `<div class='image1_user'><img src='./public${img}' alt=''></div>`
     ).join('');
 
     return `
-        <h2 class="comentario-title">Seu comentario</h2>
+        <h2 class="comentario-title">Seu comentário</h2>
         <div class="comentario_usuario">
             <div class="grid_user">
                 <div class='cliente_nome_pic'>
@@ -219,18 +222,28 @@ function renderComentarioCliente(comentario) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const produtoInfo = document.getElementById('produto-info');
-    if (produtoInfo) {
-        const idVendedor = produtoInfo.dataset.idVendedor;
-        const idProduto = produtoInfo.dataset.idProduto;
-        const idCliente = produtoInfo.dataset.idCliente || '';
-        
-        if (idCliente > 0) {
-            carregarComentariosCliente(idVendedor, idProduto, idCliente);
-        };
+    if (!produtoInfo) return;
 
-        carregarComentarios(idVendedor, idProduto);
+    const idVendedor = produtoInfo.dataset.idVendedor;
+    const idProduto  = produtoInfo.dataset.idProduto;
+    const idCliente  = produtoInfo.dataset.idCliente || '';
 
-        
-        
+    // carrega o comentário do próprio cliente (se existir)
+    if (idCliente > 0) {
+        carregarComentariosCliente(idVendedor, idProduto, idCliente);
     }
+
+    // carga inicial sem filtro
+    carregarComentarios(idVendedor, idProduto);
+
+    // configura botões de filtro
+    const filtros = document.querySelectorAll('.btn-filtrar-avaliacao');
+    filtros.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tipo  = btn.dataset.tipo;   // "estrelas" ou "com_midia"
+            const valor = btn.dataset.valor;  // "1".."5" ou "1"
+            // recarrega do zero com filtro
+            carregarComentarios(idVendedor, idProduto, 5, 0, tipo, valor);
+        });
+    });
 });

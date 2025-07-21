@@ -160,61 +160,60 @@ class ProdutoController extends RenderView {
         exit;
     }
 
-
     public function comentarios() {
         header('Content-Type: application/json; charset=utf-8');
         
         try {
-            // Obter parâmetros da query string
-            $params = [
-                'idProduto' => $_GET['idProduto'] ?? 0,
-                'idVendedor' => $_GET['idVendedor'] ?? 0,
-                'maxRender' => $_GET['maxRender'] ?? 10,
-                'offset' => $_GET['offset'] ?? 0
-            ];
-
-            // Validar parâmetros
-            $idP = (int) $params['idProduto'];
-            $idV = (int) $params['idVendedor'];
-            $lim = (int) $params['maxRender'];
-            $ofs = (int) $params['offset'];
+            $idP   = (int) ($_GET['idProduto']   ?? 0);
+            $idV   = (int) ($_GET['idVendedor']  ?? 0);
+            $lim   = (int) ($_GET['maxRender']   ?? 10);
+            $ofs   = (int) ($_GET['offset']      ?? 0);
             
             if ($idP <= 0 || $idV <= 0) {
-                throw new Exception("Parâmetros inválidos", 400);
+                throw new Exception("Parâmetros idProduto e idVendedor são obrigatórios.", 400);
             }
-
-            // Obter dados do modelo
+            
+            $filters = [];
+            if (isset($_GET['estrelas'])) {
+                $est = (int) $_GET['estrelas'];
+                if ($est < 1 || $est > 5) {
+                    throw new Exception("Parâmetro 'estrelas' inválido.", 400);
+                }
+                $filters['estrelas'] = $est;
+            }
+            if (isset($_GET['com_midia'])) {
+                $filters['com_midia'] = true;
+            }
+    
             $model = new ProdutoClienteModel();
-            $comentarios = $model->getComentarios($idP, $lim, $ofs);
-
-            // Adicionar informações de paginação
-            $totalComentarios = $model->countComentarios($idP);
+            $comentarios = $model->getComentarios($idP, $lim, $ofs, $filters);
+    
+            $totalComentarios = $model->countComentarios($idP, $filters);
             $hasMore = ($ofs + $lim) < $totalComentarios;
-
-            // Montar resposta
+    
             $response = [
-                'success' => true,
-                'data' => $comentarios,
+                'success'    => true,
+                'data'       => $comentarios,
                 'pagination' => [
-                    'total' => $totalComentarios,
-                    'limit' => $lim,
-                    'offset' => $ofs,
+                    'total'    => $totalComentarios,
+                    'limit'    => $lim,
+                    'offset'   => $ofs,
                     'has_more' => $hasMore
                 ]
             ];
-
             echo json_encode($response);
-            
+    
         } catch (Exception $e) {
             http_response_code($e->getCode() ?: 500);
             echo json_encode([
                 'success' => false,
                 'message' => $e->getMessage(),
-                'code' => $e->getCode()
+                'code'    => $e->getCode()
             ]);
         }
         exit;
     }
+    
     
     public function avaliarProduto() {
         header('Content-Type: application/json; charset=utf-8');
