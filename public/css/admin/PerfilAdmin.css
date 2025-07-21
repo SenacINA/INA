@@ -31,9 +31,9 @@
   }
 }
 
-.form, .btn_blue {
+/* .form, .btn_blue {
   width: 100%;
-}
+} */
 
 .perfil_admin_titulo {
   position: relative;
@@ -139,7 +139,7 @@
   align-self: center;
   justify-items: center;
   flex-direction: column;
-  row-gap: 10%;
+  row-gap: 16%;
   height: min-content;
 }
 
@@ -309,7 +309,7 @@ input:checked + .toggle_slider::before {
 }
 
 /* botão salvar */
-.perfil_admin_botao_salvar {
+/* .perfil_admin_botao_salvar {
     position: absolute;
     display: flex;
     justify-content: flex-end;
@@ -347,7 +347,7 @@ input:checked + .toggle_slider::before {
   height: 18px;
   cursor: pointer;
   margin-right: 8px;
-}
+} */
 
 /* <<< MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 @media (max-width: 1024px) {
