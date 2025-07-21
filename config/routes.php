@@ -40,7 +40,7 @@ $routes = [
       // Geral
       '/Pesquisa'                               => 'geral/PesquisaController@index',
       '/Pesquisa-api'                           => 'geral/PesquisaController@sendPesquisa',
-      '/sobre-nos'                              => 'geral/GeralController@sobreNos',
+      '/SobreNos'                              => 'geral/GeralController@sobreNos',
 
       // Geral - Trocar Email
       '/TrocarEmail'                            => 'auth/AuthController@requestEmailReset',

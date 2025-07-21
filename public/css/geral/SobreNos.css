@@ -29,6 +29,21 @@
     }
 }
 
+#eliasasa {
+  background-color: #36454F !important;
+  p, h2, li {
+    color: #fff !important;
+  }
+  .eliasasa-list li{
+    list-style: disc;
+    margin-left: 32px;
+  }
+
+  .cardHeader::after {
+    background-color: #36454F !important;
+  }
+}
+
 .text-left {
   justify-self: center;
   display: flex;
@@ -303,3 +318,104 @@ ul {
   background-color: #0088cc;
 }
 
+.example-2 .icon-content a[data-social="discord"] .filled,
+.example-2 .icon-content a[data-social="discord"] ~ .tooltip {
+  background-color: #5865F2;
+}
+
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0077B5;
+}
+
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+  background-color: #333333;
+}
+
+
+@media (max-width: 1200px) {
+  .about-background {
+    align-items: center;
+  }
+
+  .about-text {
+    margin: 0;
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    display: flex !important;
+    flex-direction: column !important; 
+    height: fit-content !important;
+    gap: 16px !important;
+    box-sizing: border-box !important;
+    padding: 24px 16px !important;
+  }
+
+  .hero-info {
+    align-items: center !important;
+    gap: 16px !important;
+  }
+
+  .card {
+    min-width: 250px !important;
+    min-height: 350px !important;
+  }
+
+  #eliasasa .hero-info {
+    width: 100%;
+  }
+
+  #eliasasa {
+    align-items: center !important;
+    gap: 16px !important;
+  }
+
+  #eliasasa {
+    &:nth-child(2n) .card {
+      width: 100% !important;
+      max-width: auto !important;
+      max-height: auto !important;
+      aspect-ratio: 5 / 6 !important;
+    }
+    
+  }
+
+  .heros-main {
+    margin: 0;
+    margin-top:16px;
+    padding: 0 4px;
+  }
+
+}
+
+@media (max-width: 425px) {
+  .text-left {
+    max-width: 100%;
+  }
+
+  .hero-container {
+    padding: 8px;
+  }
+
+  .icon-content {
+    margin: 0;
+  }
+
+  .example-2 {
+    gap: 8px;
+    flex-wrap: wrap !important;
+  }
+
+  .card {
+    min-width: 0 !important;
+    min-height: 0 !important;
+    width: 100%;
+    aspect-ratio: 5 / 6;
+    
+  }
+}
