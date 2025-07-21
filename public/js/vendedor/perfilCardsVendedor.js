@@ -8,6 +8,7 @@ function renderProduto(div, produtos) {
   div.innerHTML = html;
 }
 
+
 async function getProdutos(id_vendedor, cliente = false) {
   const formData = new FormData();
   formData.append("id_vendedor", id_vendedor);

@@ -90,6 +90,24 @@ class GeralController extends RenderView
           $clienteData = $clienteModel->findById($clienteId);
         }
 
+        if ($userType === 'cliente') {
+          $dataCadastro = strtotime($clienteData['data_registro_cliente']);
+          $agora = time();
+          $diferencaDias = floor(($agora - $dataCadastro) / (60 * 60 * 24));
+
+          if ($diferencaDias >= 365) {
+              $anos = floor($diferencaDias / 365);
+              $mesesRestantes = floor(($diferencaDias % 365) / 30);
+              $clienteData['tempo'] = ($anos > 1 ? "{$anos} anos" : "{$anos} ano") .
+                ($mesesRestantes > 0 ? " e " . ($mesesRestantes > 1 ? "{$mesesRestantes} meses" : "{$mesesRestantes} mês") : "");
+          } elseif ($diferencaDias >= 30) {
+              $meses = floor($diferencaDias / 30);
+              $clienteData['tempo'] = $meses > 1 ? "{$meses} meses" : "{$meses} mês";
+          } else {
+              $clienteData['tempo'] = $diferencaDias > 1 ? "{$diferencaDias} dias" : "{$diferencaDias} dia";
+          }
+      }
+
         if (!$clienteData) {
           header('Location: Login');
           exit;

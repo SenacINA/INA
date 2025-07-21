@@ -37,42 +37,84 @@ class ProdutoController extends RenderView {
             exit;
         }
     }
-    public function mostrarProduto($id) {
-        $model = new ProdutoClienteModel;
-        $modelVendedor = new VendedorModel;
     
+    public function mostrarProduto($id)
+    {
+        $model         = new ProdutoClienteModel;
+        $modelVendedor = new VendedorModel;
+
+        // 1) Busca dados do produto (inclui promo se houver)
         $info = $model->searchProduto($id);
         if (!$info) {
             $this->loadView('geral/404', []);
             return;
         }
-    
-        $clienteId = $_SESSION['cliente_id'] ?? 0;
-        $comprou = $clienteId ? $model->clientePodeAvaliar($clienteId, $id) : false;
+
+        // 2) Avaliação do cliente
+        $clienteId    = $_SESSION['cliente_id'] ?? 0;
+        $comprou      = $clienteId ? $model->clientePodeAvaliar($clienteId, $id) : false;
         $clienteDados = $clienteId ? (new ClienteModel())->findById($clienteId) : [];
-    
+
+        // 3) Estatísticas de avaliação do vendedor
         $vendedorAvaliacoes = $modelVendedor->getEstrelasPorVendedor($info['infoProduto']['id_vendedor']);
-    
-        $total = array_sum($vendedorAvaliacoes);
-        $mediaEstrelas = count($vendedorAvaliacoes) > 0
-            ? round($total / count($vendedorAvaliacoes) * 2) / 2
-            : 0;
-    
-        $info['total_avaliacoes'] = count($vendedorAvaliacoes);
+        $total               = array_sum($vendedorAvaliacoes);
+        $mediaEstrelas       = count($vendedorAvaliacoes) > 0
+                            ? round($total / count($vendedorAvaliacoes) * 2) / 2
+                            : 0;
+
+        $info['total_avaliacoes']      = count($vendedorAvaliacoes);
         $info['mediaEstrelasVendedor'] = $mediaEstrelas;
         $info['distribuicao_avaliacoes'] = $model->getDistribuicaoAvaliacoes($id);
-    
-        $mediaProduto = round($model->getMediaAvaliacoes($id));
-        $mediaProduto = min($mediaProduto, 5);
-    
+
+        // 4) Monta $info['promo'] a partir de $info['infoProduto']
+        $p = $info['infoProduto'];
+
+        // Verifica se há promoção ativa
+        if (!empty($p['ativo_promocao'])
+            && isset($p['desconto_promocao'], $p['tipo_promocao'])
+            && $p['desconto_promocao'] > 0
+        ) {
+            $desconto      = (float)$p['desconto_promocao'];
+            $precoOriginal = (float)$p['preco_produto'];
+
+            if ((int)$p['tipo_promocao'] === 1) {
+                // desconto fixo em R$
+                $flag      = '- R$' . number_format($desconto, 2, ',', '.');
+                $precoPromo = $precoOriginal - $desconto;
+            } else {
+                // desconto percentual
+                $flag      = $desconto . '% OFF';
+                $precoPromo = $precoOriginal * (1 - $desconto / 100);
+            }
+
+            $info['promo'] = [
+                'flag_promo'          => $flag,
+                'desconto_promocao'   => $desconto,
+                'tipo_promocao'       => (int)$p['tipo_promocao'],
+                'preco_produto_promo' => round($precoPromo, 2),
+                'data_inicio'         => $p['data_inicio_promocao'] ?? null,
+                'data_fim' => !empty($p['data_fim_promocao']) ? date('d/m/Y', strtotime($p['data_fim_promocao'])) : null,
+                'hora_inicio'         => $p['hora_inicio_promocao'] ?? null,
+                'hora_fim'            => $p['hora_fim_promocao']    ?? null,
+            ];
+        } else {
+            $info['promo'] = null;
+        }
+
+        // 5) Média de avaliações do próprio produto
+        $mediaProduto     = round($model->getMediaAvaliacoes($id));
+        $info['mediaProduto'] = min($mediaProduto, 5);
+
+        // 6) Renderiza a view
         $this->loadView('cliente/Produto', [
-            'id' => $id,
+            'id'      => $id,
             'comprou' => $comprou,
             'cliente' => $clienteDados,
-            'media' => $mediaProduto,
-            'info' => $info,
+            'media'   => $info['mediaProduto'],
+            'info'    => $info,
         ]);
     }
+
     
 
     public function comentarios(array $params): array

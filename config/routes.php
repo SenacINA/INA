@@ -22,7 +22,6 @@ $routes = [
       '/api/cliente/editarDadosCliente'         => 'cliente/ClienteCOntroller@editarDadosCliente',
       '/api/avaliar-produto'                    => 'cliente/ProdutoController@avaliarProduto',
       '/produto/comentariosJson'                => 'cliente/ProdutoController@comentariosJson',
-
       // Cliente - Carrinho
       '/Carrinho'                               => 'cliente/CarrinhoController@index',
       '/Carrinho-api-exibir'                    => 'cliente/CarrinhoController@exibirItens',
@@ -39,7 +38,9 @@ $routes = [
       '/CarrinhoDados-editar'                   => 'cliente/CarrinhoDadosController@editEndereco',
 
       // Geral
-      '/sobre-nos'                 => 'geral/GeralController@sobreNos',
+      '/Pesquisa'                               => 'geral/PesquisaController@index',
+      '/Pesquisa-api'                           => 'geral/PesquisaController@sendPesquisa',
+      '/sobre-nos'                              => 'geral/GeralController@sobreNos',
 
       // Geral - Trocar Email
       '/TrocarEmail'                            => 'auth/AuthController@requestEmailReset',
@@ -72,6 +73,7 @@ $routes = [
       '/api/vendedor/editarDadosVendedor' => 'vendedor/VendedorController@editarDadosVendedor',
       '/SalvarDestaque-api'               => 'vendedor/DestaqueController@salvarDestaque',
       '/RemoverDestaque-api'              => 'vendedor/DestaqueController@removerDestaque',
+      '/getDadosVendedor-api'                   => 'vendedor/VendedorController@getDadosVendedor',
       '/DestaquesVendedor'                => 'vendedor/DestaqueController@listarDestaques',
 
       // Vendedor - Produtos e Pedidos

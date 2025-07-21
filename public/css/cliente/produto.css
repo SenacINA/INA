@@ -590,6 +590,20 @@ h3 {
   padding-left: 8px;
 }
 
+.desconto-produto, .tempo-produto {
+  color: var(--cinza) !important;
+  text-decoration: none !important;
+}
+
+.promo-valor {
+  color: var(--carolina) !important;
+  text-decoration: line-through !important;
+}
+
+.tempo-produto {
+  font-size: 16px !important;
+}
+
 .grid_produto_info_valor {
   display: flex;
   align-items: baseline;
@@ -606,6 +620,7 @@ h3 {
   width: 100%;
   justify-content: space-between;
   padding: 16px;
+  align-items: center;
 }
 
 .produto_bandeira {

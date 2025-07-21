@@ -90,7 +90,22 @@ require_once("./utils/head.php");
                     <div class='div_produto_valor'>
                         <div class="grid_produto_info_valor">
                             <div class="produto_info_valor">
-                                <h1>R$ <?= number_format($info['infoProduto']['preco_produto'], 2, ',', '.') ?></h1>
+                                <h1 <?= !empty($info['promo']['preco_produto_promo']) ? 'class="promo-valor"' : '' ?>>
+                                    R$<?= number_format($info['infoProduto']['preco_produto'], 2, ',', '.') ?>
+                                </h1>
+                                <?php if (!empty($info['promo']['preco_produto_promo']) && $info['promo']['preco_produto_promo'] < $info['infoProduto']['preco_produto']): ?>
+                                    <h1>R$<?= number_format($info['promo']['preco_produto_promo'], 2, ',', '.') ?></h1>
+                                    
+                                    <?php if (!empty($info['promo']['flag_promo'])): ?>
+                                        <h2 class="desconto-produto"><?= $info['promo']['flag_promo'] ?></h2>
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($info['promo']['data_fim']) && !empty($info['promo']['hora_fim'])): ?>
+                                        <h2 class="tempo-produto">
+                                            Fim da promoção: <br> <?= $info['promo']['data_fim'] . ' ' . $info['promo']['hora_fim'] ?>
+                                        </h2>
+                                    <?php endif; ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="produto_info_text2">

@@ -42,7 +42,7 @@ require_once('./utils/head.php');
             <option selected disabled value=''>Menu</option>
             <option value='EditarPerfil'>Editar Perfil</option>
             <option value='GerenciarVendas'>Gerenciar Vendas</option>
-            <option value='GerenciarVendas'>Gerenciar Produtos</option>
+            <option value='GerenciarProdutos'>Gerenciar Produtos</option>
             <option value='RelatorioVendas'>Relatório</option>
             <option value='GerenciarProdutos'>Editar Produtos</option>
             <option value='ProdutoRegistrar'>Registrar Produto</option>

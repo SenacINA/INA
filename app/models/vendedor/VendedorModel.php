@@ -46,6 +46,26 @@ class VendedorModel
     return $result ?: null;
   }
 
+    public function getVendedorNum(string $id_vendedor): ?array
+    {
+      $sql = "
+        SELECT c.ddd_cliente, c.numero_celular_cliente
+        FROM vendedor v
+        JOIN cliente c ON c.id_cliente = v.id_cliente
+        WHERE v.id_vendedor = :id_vendedor
+        LIMIT 1;
+      ";
+
+      $stmt = $this->db->getConnection()->prepare($sql);
+      $stmt->bindValue(':id_vendedor', $id_vendedor, PDO::PARAM_INT);
+      $stmt->execute();
+
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
+      return $result ?: null;
+    }
+
+
+
   public function getVendedorId(int $clienteId): ?int
   {
     $db = new Database();
@@ -135,7 +155,11 @@ class VendedorModel
     ip.endereco_imagem_produto,
     ip.index_imagem_produto,
     COALESCE(AVG(a.estrelas_avaliacao), 0) AS media_avaliacoes,
-    COUNT(a.id_avaliacao) AS total_avaliacoes
+    COUNT(a.id_avaliacao) AS total_avaliacoes,
+    pr.tipo_promocao,
+    pr.desconto_promocao,
+    pr.data_inicio_promocao,
+    pr.data_fim_promocao
   FROM 
     produto p
   LEFT JOIN
@@ -144,6 +168,10 @@ class VendedorModel
   LEFT JOIN 
     imagem_produto ip 
     ON p.id_produto = ip.id_produto AND ip.index_imagem_produto = 1
+  LEFT JOIN promocao pr
+    ON p.id_produto = pr.id_produto
+      AND pr.ativo_promocao = TRUE
+      AND CURDATE() BETWEEN pr.data_inicio_promocao AND pr.data_fim_promocao
   WHERE 
     p.status_produto != 0 AND p.id_vendedor = :id_vendedor
   GROUP BY
