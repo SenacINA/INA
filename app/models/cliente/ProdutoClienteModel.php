@@ -28,8 +28,13 @@ class ProdutoClienteModel
         v.nome_fantasia AS nome_vendedor,
         e.uf_endereco,
         e.cidade_endereco,
-        c.foto_perfil_cliente
-
+        c.foto_perfil_cliente,
+        pr.ativo_promocao,
+        pr.tipo_promocao,
+        pr.desconto_promocao,
+        pr.data_inicio_promocao,
+        pr.data_fim_promocao,
+        pr.hora_fim_promocao
         FROM 
         produto p
         LEFT JOIN 
@@ -40,6 +45,9 @@ class ProdutoClienteModel
         cliente c ON v.id_cliente = c.id_cliente
         LEFT JOIN
         endereco e ON c.id_cliente = e.id_cliente
+        LEFT JOIN promocao pr
+            ON p.id_produto = pr.id_produto
+            AND pr.ativo_promocao = TRUE
         WHERE 
         p.status_produto != 0
         AND p.id_produto = :id;";

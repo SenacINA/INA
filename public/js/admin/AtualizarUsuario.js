@@ -1,17 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-  const form = document.getElementById('formPesquisa');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formPesquisa");
   if (form) {
-    form.addEventListener('submit', async e => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const data = new FormData(form);
 
       try {
-        const resp = await fetch('/INA/api/admin/pesquisar-cliente', {
-          method: 'POST',
-          headers: { 'X-Requested-With': 'XMLHttpRequest' },
-          body: data
+        const resp = await fetch("/INA/api/admin/pesquisar-cliente", {
+          method: "POST",
+          headers: { "X-Requested-With": "XMLHttpRequest" },
+          body: data,
         });
 
         const json = await resp.json();
@@ -21,30 +20,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const preencherCampo = (name, valor) => {
             const campo = document.querySelector(`[name="${name}"]`);
-            if (campo) campo.value = valor ?? '';
+            if (campo) campo.value = valor ?? "";
           };
 
           // Dados pessoais
-          preencherCampo('nomeInput', dados.nome_cliente);
-          preencherCampo('emailInput', dados.email_cliente);
-          preencherCampo('telefoneInput', dados.telefone_cliente);
-          preencherCampo('cpfInput', dados.cpf_cliente);
-          preencherCampo('telefone2Input', dados.telefone2_cliente);
+          preencherCampo("nomeInput", dados.nome_cliente);
+          preencherCampo("emailInput", dados.email_cliente);
+          preencherCampo("telefoneInput", dados.telefone_cliente);
+          preencherCampo("cpfInput", dados.cpf_cliente);
+          preencherCampo("telefone2Input", dados.telefone2_cliente);
 
           // Endereço
-          preencherCampo('cepInput', dados.cep_cliente);
-          preencherCampo('estadoInput', dados.estado);
-          preencherCampo('cidadeInput', dados.cidade);
-          preencherCampo('bairroInput', dados.bairro);
-          preencherCampo('enderecoInput', dados.endereco);
-          preencherCampo('numeroInput', dados.numero);
+          preencherCampo("cepInput", dados.cep_cliente);
+          preencherCampo("estadoInput", dados.estado);
+          preencherCampo("cidadeInput", dados.cidade);
+          preencherCampo("bairroInput", dados.bairro);
+          preencherCampo("enderecoInput", dados.endereco);
+          preencherCampo("numeroInput", dados.numero);
 
           // Permissões
-          const setPermissao = valor => {
+          const setPermissao = (valor) => {
             const permissoes = {
               adminCheckbox: 0,
-              clienteCheckbox: 1,
-              vendedorCheckbox: 2
+              vendedorCheckbox: 1,
+              clienteCheckbox: 2,
             };
 
             for (const [name, code] of Object.entries(permissoes)) {
@@ -53,62 +52,71 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           };
 
-          const statusCheckbox = document.querySelector('[name="statusCheckbox"]');
-          if (statusCheckbox) statusCheckbox.checked = Number(dados.status_conta_cliente) === 1;
+          const statusCheckbox = document.querySelector(
+            '[name="statusCheckbox"]'
+          );
+          if (statusCheckbox)
+            statusCheckbox.checked =
+              Number(
+                "gerenciar_usuarios" in dados ? dados.gerenciar_usuarios : 0
+              ) === 1;
 
           setPermissao(dados.tipo_conta_cliente);
 
           let campoId = document.querySelector('[name="idUsuario"]');
           if (!campoId) {
-            campoId = document.createElement('input');
-            campoId.type = 'hidden';
-            campoId.name = 'idUsuario';
-            document.querySelector('form.corpo_form').appendChild(campoId);
+            campoId = document.createElement("input");
+            campoId.type = "hidden";
+            campoId.name = "idUsuario";
+            document.querySelector("form.corpo_form").appendChild(campoId);
           }
           campoId.value = dados.id_cliente;
 
-          gerarToast(json.message || 'Busca realizada com sucesso.', 'sucesso');
+          gerarToast(json.message || "Busca realizada com sucesso.", "sucesso");
         } else {
-          (json.errors || []).forEach(err => gerarToast(err, 'erro'));
+          (json.errors || []).forEach((err) => gerarToast(err, "erro"));
         }
-
       } catch (err) {
-        gerarToast('Erro de conexão, tente novamente.', 'erro');
+        console.log(err);
+        gerarToast("Erro de conexão, tente novamente.", "erro");
       }
     });
   }
 
-  const formAtualizar = document.querySelector('form.corpo_form');
+  const formAtualizar = document.querySelector("form.corpo_form");
   if (formAtualizar) {
-    formAtualizar.addEventListener('submit', async e => {
+    formAtualizar.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const data = new FormData(formAtualizar);
 
       const idCampo = document.querySelector('[name="idUsuario"]');
       if (!idCampo || !idCampo.value) {
-        gerarToast('Usuário não carregado. Faça a busca primeiro.', 'erro');
+        gerarToast("Usuário não carregado. Faça a busca primeiro.", "erro");
         return;
       }
 
-      data.append('id', idCampo.value);
+      data.append("id", idCampo.value);
 
       try {
-        const resp = await fetch('/INA/api/admin/atualizar-cliente', {
-          method: 'POST',
-          headers: { 'X-Requested-With': 'XMLHttpRequest' },
-          body: data
+        const resp = await fetch("/INA/api/admin/atualizar-cliente", {
+          method: "POST",
+          headers: { "X-Requested-With": "XMLHttpRequest" },
+          body: data,
         });
 
         const json = await resp.json();
 
         if (json.success) {
-          gerarToast(json.message || 'Usuário atualizado com sucesso.', 'sucesso');
+          gerarToast(
+            json.message || "Usuário atualizado com sucesso.",
+            "sucesso"
+          );
         } else {
-          (json.errors || []).forEach(err => gerarToast(err, 'erro'));
+          (json.errors || []).forEach((err) => gerarToast(err, "erro"));
         }
       } catch (err) {
-        gerarToast('Erro de conexão, tente novamente.', 'erro');
+        gerarToast("Erro de conexão, tente novamente.", "erro");
       }
     });
   }

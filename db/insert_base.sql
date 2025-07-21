@@ -787,6 +787,9 @@ INSERT INTO `metodo_pagamento` (`id_metodo_pagamento`, `tipo_pagamento`) VALUES 
 INSERT INTO compra (id_cliente, id_vendedor, data_compra, id_endereco, id_tipo_frete)
 VALUES (3, 1, CURDATE(), 1, 1);  -- Supondo endereço ID 1 e frete ID 1
 
+INSERT INTO compra (id_cliente, id_vendedor, data_compra, id_endereco, id_tipo_frete)
+VALUES (3, 1, CURDATE(), 1, 1);
+
 -- Insert na tabela item_compra
 INSERT INTO item_compra (
     id_compra, 
@@ -801,6 +804,28 @@ INSERT INTO item_compra (
 VALUES (
     1,
     1,  -- ID do produto
+    1,  -- Quantidade
+    (SELECT preco_produto FROM produto WHERE id_produto = 1),  -- Preço atual do produto
+    1,  -- Método pagamento ID 1
+    DATE_ADD(CURDATE(), INTERVAL 7 DAY),  -- Entrega em 7 dias
+    TRUE,  -- Pagamento confirmado
+    TRUE   -- Entrega confirmada
+);
+
+
+INSERT INTO item_compra (
+    id_compra, 
+    id_produto, 
+    quantidade_compra, 
+    preco_pago_compra, 
+    id_metodo_pagamento, 
+    data_limite_entrega_compra, 
+    status_pagamento_compra, 
+    status_entrega_compra
+)
+VALUES (
+    2,
+    3,  -- ID do produto
     1,  -- Quantidade
     (SELECT preco_produto FROM produto WHERE id_produto = 1),  -- Preço atual do produto
     1,  -- Método pagamento ID 1

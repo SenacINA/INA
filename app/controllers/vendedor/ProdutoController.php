@@ -63,7 +63,10 @@ class ProdutoController extends RenderView
 
         // Se houver erros, retorna para a tela de registro com mensagens
         if (!empty($errors)) {
-            $this->loadView('vendedor/RegistroProduto', ['errors' => $errors]);
+            $this->loadView('vendedor/RegistroProduto', [
+                'errors' => $errors,
+                'proxCod' => ($codigo)
+            ]);
             return;
         }
 
@@ -77,14 +80,41 @@ class ProdutoController extends RenderView
         $categoria = isset($_POST['categoriaProduto']) ? (int)$_POST['categoriaProduto'] : 1;
         $subCategoria = isset($_POST['subCategoriaProduto']) ? (int)$_POST['subCategoriaProduto'] : 1;
 
-        // Promoção opcional
-        if (isset($_POST['toggle-group'])) {
-            $promocao = $_POST['tipoPromocaoProduto'] ?? '';
-            $desconto = $_POST['produtoDescontPromo'] ?? '';
-            $inicio = $_POST['promoDataInicio'] ?? '';
-            $fim = $_POST['promoDataFim'] ?? '';
+        $promocaoAtiva = isset($_POST['toggle-group']);
+        if ($promocaoAtiva) {
+            $promocao       = (int)($_POST['tipoPromocaoProduto'] ?? 0);
+            $desconto       = $_POST['produtoDescontPromo'] ?? '';
+            $inicio         = $_POST['promoDataInicio'] ?? '';
+            $fim            = $_POST['promoDataFim'] ?? '';
             $inicio_horario = $_POST['promoHoraInicio'] ?? '';
-            $fim_horario = $_POST['promoHoraFim'] ?? '';
+            $fim_horario    = $_POST['promoHoraFim'] ?? '';
+
+            if (!in_array($promocao, [1, 2])) {
+                $errors[] = "Tipo de promoção inválido.";
+            }
+            if (!is_numeric($desconto) || $desconto <= 0) {
+                $errors[] = "O valor do desconto deve ser um número positivo.";
+            }
+            if ($promocao === 2) {
+                $descontoValor = ($valor * $desconto) / 100;
+                if ($descontoValor >= $valor) {
+                    $errors[] = "O desconto em porcentagem não pode ser igual ou maior que 100%.";
+                }
+            } elseif ($promocao === 1) {
+                if ($desconto >= $valor) {
+                    $errors[] = "O desconto em valor fixo não pode ser maior ou igual ao valor do produto.";
+                }
+            }
+            if (empty($inicio) || empty($fim) || empty($inicio_horario) || empty($fim_horario)) {
+                $errors[] = "Todos os campos de data e horário da promoção são obrigatórios.";
+            }
+            $dataInicio = DateTime::createFromFormat('Y-m-d H:i', $inicio . ' ' . $inicio_horario);
+            $dataFim    = DateTime::createFromFormat('Y-m-d H:i', $fim    . ' ' . $fim_horario);
+            if (!$dataInicio || !$dataFim) {
+                $errors[] = "Formato de data/horário inválido.";
+            } elseif ($dataInicio > $dataFim) {
+                $errors[] = "A data/horário de término deve ser posterior ao início.";
+            }
         }
 
         $vendedorModel = new VendedorModel();
@@ -129,10 +159,11 @@ class ProdutoController extends RenderView
         }
 
         if (!empty($errors)) {
+
             // $errors[] = "O produto foi cadastrado usando a categoria/subcategoria padrão 'Geral'.";
             $this->loadView('vendedor/RegistroProduto', [
                 'errors' => $errors,
-                'proxCod' => $lastCod + 1 
+                'proxCod' => ($codigo + 1)
             ]);
             return;
         }
@@ -157,15 +188,28 @@ class ProdutoController extends RenderView
             (string)$descricao,            // Descrição
             1                           // Status do produto (ativo)
         );
-        if (isset($_POST['toggle-group'])) {
-            echo $promocao;
-            $promocao = $model->createPromocao($produtoId, true, $promocao, $desconto, $inicio, $fim, $inicio_horario, $fim_horario);
-        }
+
 
         if (!$produtoId) {
             $errors[] = "Erro ao cadastrar o produto. Tente novamente.";
             $this->loadView('vendedor/RegistroProduto', ['errors' => $errors]);
             return;
+        }
+
+        if ($promocaoAtiva) {
+            $promoSuccess = $model->createPromocao(
+                $produtoId,
+                true,            // ativo
+                $promocao,       // tipo
+                $desconto,       // valor ou %
+                $inicio,
+                $fim,
+                $inicio_horario,
+                $fim_horario
+            );
+            if (!$promoSuccess) {
+                error_log("Falha ao criar promoção para produto ID {$produtoId}");
+            }
         }
 
         // Processamento das imagens
@@ -249,20 +293,27 @@ class ProdutoController extends RenderView
         return $result ? (int)$result['id_vendedor'] : null;
     }
 
-    public function searchProductJson() {
+    public function searchProductJson()
+    {
         header('Content-Type: application/json; charset=utf-8');
 
         $nome = $_POST['name'] ?? '';
         $cod  = $_POST['code'] ?? '';
+        
 
         $model = new VendedorModel();
 
-        $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
-
-        if ($idVendedor < 1 || ($nome === '' && $cod === '')) {
-            echo json_encode(['success' => false, 'message' => 'Informe nome ou código.']);
-            exit;
+        if (!isset($_POST['vendedor_id'])) {
+            $idVendedor = $model->getVendedorId($_SESSION['cliente_id']);
+    
+            if ($idVendedor < 1 || ($nome === '' && $cod === '')) {
+                echo json_encode(['success' => false, 'message' => 'Informe nome ou código.']);
+                exit;
+            }
+        } else {
+            $idVendedor = $_POST['vendedor_id'];
         }
+
 
         $model = new ProdutoModel();
         $prod = $model->searchProduct($nome, $cod, $idVendedor);
@@ -355,21 +406,53 @@ class ProdutoController extends RenderView
         }
 
         // Verificação da promoção
-        $promocaoAtiva = isset($_POST['toggle-group']) && $_POST['toggle-group'] === 'on';
         $promocaoData = $produtoModel->getPromocaoByProdutoId($produtoId);
 
-        // Validação dos campos da promoção se ativa
+        // Validação da promoção
+        $promocaoAtiva = isset($_POST['toggle-group']) && $_POST['toggle-group'] === 'on';
+
         if ($promocaoAtiva) {
             $promocaoTipo = $_POST['tipoPromocaoProduto'] ?? null;
             $desconto = $_POST['produtoDescontPromo'] ?? null;
+
+            // Validação do tipo de promoção
+            if (!in_array($promocaoTipo, [1, 2])) {
+                $errors[] = "Tipo de promoção inválido.";
+            }
+
+            // Validação do valor do desconto
+            if (!is_numeric($desconto) || $desconto <= 0) {
+                $errors[] = "O valor do desconto deve ser um número positivo.";
+            }
+
+            // Verificação se o desconto não ultrapassa o valor do produto
+            if ($promocaoTipo == 2) {
+                $descontoValor = ($valor * $desconto) / 100;
+                if ($descontoValor >= $valor) {
+                    $errors[] = "O desconto em porcentagem não pode ser igual ou maior que 100%.";
+                }
+            } elseif ($promocaoTipo == 1) {
+                if ($desconto >= $valor) {
+                    $errors[] = "O desconto em valor fixo não pode ser maior ou igual ao valor do produto.";
+                }
+            }
+
+            // Validação das datas/horários
             $inicio = $_POST['promoDataInicio'] ?? null;
             $fim = $_POST['promoDataFim'] ?? null;
             $inicio_horario = $_POST['promoHoraInicio'] ?? null;
             $fim_horario = $_POST['promoHoraFim'] ?? null;
 
-            if (empty($promocaoTipo) || empty($desconto) || empty($inicio) || 
-                empty($fim) || empty($inicio_horario) || empty($fim_horario)) {
+            if (empty($inicio) || empty($fim) || empty($inicio_horario) || empty($fim_horario)) {
                 $errors[] = "Todos os campos da promoção são obrigatórios quando ativada";
+            }
+
+            // Validação se data final é maior que inicial
+            $dataInicio = DateTime::createFromFormat('Y-m-d H:i', $inicio . ' ' . $inicio_horario);
+            $dataFim = DateTime::createFromFormat('Y-m-d H:i', $fim . ' ' . $fim_horario);
+
+            if ($dataInicio > $dataFim) {
+                $errors[] = "A data/horário de término da promoção deve ser posterior à data de início.";
             }
         }
 
@@ -433,7 +516,7 @@ class ProdutoController extends RenderView
                     $fim_horario
                 );
             }
-            
+
             if (!$promocaoSuccess) {
                 $errors[] = "Erro ao salvar promoção.";
             }
@@ -451,7 +534,7 @@ class ProdutoController extends RenderView
         // Verificar quantidade mínima de imagens
         $totalImagensRestantes = count($imagensExistentes) - count($imagensParaRemover);
         $novasImagensBase64 = json_decode($_POST['produto_imagens'] ?? '[]', true) ?: [];
-        
+
         if ($totalImagensRestantes + count($novasImagensBase64) < 1) {
             $errors[] = "O produto deve ter pelo menos uma imagem.";
             $_SESSION['errors'] = $errors;
@@ -489,11 +572,11 @@ class ProdutoController extends RenderView
                 if (preg_match('/^data:image\/webp;base64,/', $base64)) {
                     $dataPart = substr($base64, strpos($base64, ',') + 1);
                     $dadosBinarios = base64_decode($dataPart);
-                    
+
                     if ($dadosBinarios !== false) {
                         $nomeArquivo = 'imagem_' . $ordem . '_' . time() . '.webp';
                         $absPath = $baseDir . $nomeArquivo;
-                        
+
                         if (file_put_contents($absPath, $dadosBinarios)) {
                             $caminhoRelativo = '/upload/produtos/' . $produtoId . '/' . $nomeArquivo;
                             if (!$produtoModel->adicionarImagemProduto($produtoId, $caminhoRelativo, $ordem)) {
@@ -511,13 +594,13 @@ class ProdutoController extends RenderView
                 }
             }
         }
-        
+
         if (!empty($errors)) {
             $_SESSION['errors'] = $errors;
         } else {
             $_SESSION['successMessage'] = "Produto atualizado com sucesso!";
         }
-        
+
         header('Location: GerenciarProdutos');
         exit;
     }
@@ -540,28 +623,30 @@ class ProdutoController extends RenderView
             return;
         }
 
-        $vendedorModel = new VendedorModel();
-        $vendedorId = $vendedorModel->getVendedorId($_SESSION['cliente_id']);
+        if (!$data['admin']) {
+            $vendedorModel = new VendedorModel();
+            $vendedorId = $vendedorModel->getVendedorId($_SESSION['cliente_id']);
 
-        if (!$vendedorId) {
-            echo json_encode([
-                'success' => false,
-                'message' => 'Cliente não possui cadastro de vendedor.'
-            ]);
-            return;
+            if (!$vendedorId) {
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Cliente não possui cadastro de vendedor.'
+                ]);
+                return;
+            }
+            $produtoModel = new ProdutoModel();
+            $produto = $produtoModel->getProdutoById($produtoId);
+            
+            if (!$produto || $produto['id_vendedor'] != $vendedorId) {
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Produto não encontrado ou não pertence ao vendedor.'
+                ]);
+                return;
+            }
         }
-
+        
         $produtoModel = new ProdutoModel();
-        $produto = $produtoModel->getProdutoById($produtoId);
-
-        if (!$produto || $produto['id_vendedor'] != $vendedorId) {
-            echo json_encode([
-                'success' => false,
-                'message' => 'Produto não encontrado ou não pertence ao vendedor.'
-            ]);
-            return;
-        }
-
         $novoStatus = (bool) $novoStatus;
         $success = $produtoModel->ativarInativarProduto($produtoId, $novoStatus);
 
@@ -578,7 +663,4 @@ class ProdutoController extends RenderView
             ]);
         }
     }
-
-
-
 }

@@ -18,7 +18,7 @@ $disativar = $estaAtivo ? '' : 'disabled';
 ?>
 <script src="<?= $PATH_PUBLIC ?>/js/admin/GerenciarUsuario.js"></script>
 <script src="../../../public/js/admin/GerenciarUsuario.js"></script>
-  
+
 <body>
   <!-- Até 768px -->
 
@@ -232,8 +232,8 @@ $disativar = $estaAtivo ? '' : 'disabled';
         <h1>Confirmação</h1>
         <p>Você deseja desativar este Usuário?</p>
         <button class="base_botao btn_blue botao_popup" id="confirmar_desativar">
-        <img src="<?= $PATH_PUBLIC ?>/image\geral\botoes\v_branco_icon.svg">  
-        CONFIRMAR</button>
+          <img src="<?= $PATH_PUBLIC ?>/image\geral\botoes\v_branco_icon.svg">
+          CONFIRMAR</button>
       </div>
     </div>
   </div>

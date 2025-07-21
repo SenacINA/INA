@@ -42,7 +42,7 @@ require_once('./utils/head.php');
             <option selected disabled value=''>Menu</option>
             <option value='EditarPerfil'>Editar Perfil</option>
             <option value='GerenciarVendas'>Gerenciar Vendas</option>
-            <option value='GerenciarVendas'>Gerenciar Produtos</option>
+            <option value='GerenciarProdutos'>Gerenciar Produtos</option>
             <option value='RelatorioVendas'>Relatório</option>
             <option value='GerenciarProdutos'>Editar Produtos</option>
             <option value='ProdutoRegistrar'>Registrar Produto</option>
@@ -109,42 +109,20 @@ require_once('./utils/head.php');
         </div>
       </div>
       <hr>
-      <?php
-      if (!isset($idVendedor) && isset($_SESSION['cliente_id'])) {
-        $idVendedor = $_SESSION['cliente_id'];
-      }
-
-      include_once("$PATH_COMPONENTS/php/card_produto.php");
-      include_once("$PATH_CONTROLLER/geral/CardController.php");
-
-      $card = new cardProduto;
-      $controller = new CardController;
-
-      $destaques = $controller->sendDestaques($idVendedor);
-
-      if (!empty($destaques)) : ?>
-        <div class="perfil_vendedor_grid_destaques">
-          <div class="perfil_vendedor_about_container_2">
-            <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_azul_icon.svg" alt="Icon Loja" class="base_icon">
-            <h1>Destaques:</h1>
-          </div>
-          <div class="destaques_itens">
-            <?php
-            $card->gerarProdutoCards(count($destaques), $destaques);
-            ?>
-          </div>
+      <div class="perfil_vendedor_grid_destaques" id="destaques_container">
+        <div class="perfil_vendedor_about_container_2">
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/estrela_azul_icon.svg" alt="Icon Loja" class="base_icon">
+          <h1>Destaques:</h1>
         </div>
-      <?php endif; ?>
+        <div data-id="<?= isset($idVendedor) ? $idVendedor : $_SESSION['cliente_id']; ?>" id="destaques_itens" class="destaques_itens">
+        </div>
+      </div>
       <div class="perfil_vendedor_grid_produtos">
         <div class="perfil_vendedor_about_container_2">
           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/produto_icon.svg" alt="Icon Loja" class="base_icon">
           <h1>Produtos:</h1>
         </div>
-        <div class="produtos_itens">
-          <?php
-          $info = $controller->sendProdutos();
-          $card->gerarProdutoCards(count($info), $info);
-          ?>
+        <div data-id="<?= isset($idVendedor) ? $idVendedor : $_SESSION['cliente_id']; ?>" data-cliente="<?= isset($idVendedor) ? "true" : "false" ?>" id="produtos_vendedor" class="produtos_itens">
         </div>
       </div>
     </div>
@@ -168,6 +146,7 @@ require_once('./utils/head.php');
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
+  <script type="module" src="<?= $PATH_PUBLIC ?>/js/vendedor/perfilCardsVendedor.js"></script>
 </body>
 
 </html>

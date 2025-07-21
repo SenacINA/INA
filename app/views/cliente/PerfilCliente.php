@@ -29,11 +29,7 @@ require_once("./app/models/cliente/PerfilClienteModel.php");
           <div class="perfil_cliente_infos_item3">
             <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/perfil_membros_icon.svg">
             <p>
-              <?php
-              $dataRegistro = $user['data_registro_cliente'];
-              $diasCliente = (strtotime(date('Y-m-d')) - strtotime($dataRegistro)) / 86400;
-              echo "Cliente há: " . round($diasCliente) . " Dias";
-              ?>
+              Cliente há <?=$user['tempo']?>
             </p>
           </div>
           <div class="perfil_cliente_contatos_cliente">
@@ -87,7 +83,7 @@ require_once("./app/models/cliente/PerfilClienteModel.php");
             <option selected disabled value="">Menu</option>
             <option value="EditarPerfil">Editar Perfil</option>
             <option value="CadastroVendedorInfo">Cadastro de vendedor</option>
-            <option value="RedefinirSenha">Redefinir Senha</option>
+            <!-- <option value="RedefinirSenha">Redefinir Senha</option> -->
             <option value="Logout">Sair</option>
           </select>
         </form>
@@ -102,15 +98,7 @@ require_once("./app/models/cliente/PerfilClienteModel.php");
           <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/tempo_icon.svg" alt="Icon Loja">
           <h1>Histórico:</h1>
         </div>
-        <div class="historico_itens">
-          <?php
-          include("$PATH_COMPONENTS/php/card_produto.php");
-          include("$PATH_CONTROLLER/geral/CardController.php");
-          $card = new cardProduto;
-          $controller = new CardController;
-
-          $info = $controller->sendProdutos();
-          $card->gerarProdutoCards(6, $info); ?>
+        <div id="historico_cliente" class="historico_itens">
         </div>
         <div class="ver_mais_container">
           <p class="ver_mais_text">Ver Mais</p>
@@ -126,7 +114,9 @@ require_once("./app/models/cliente/PerfilClienteModel.php");
   <?php
   include_once("$PATH_COMPONENTS/php/footer.php");
   ?>
-
+  <script type="module" src="<?= $PATH_PUBLIC ?>/js/cliente/perfilCardsCliente.js"></script>
+  <script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
+  <script src='<?= $PATH_PUBLIC ?>/js/geral/card.js'></script>
 </body>
 
 </html>

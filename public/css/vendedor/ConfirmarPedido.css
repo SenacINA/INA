@@ -102,7 +102,7 @@
     color: white;
 }
 
-.confirmar_pedido_botao_1, .confirmar_pedido_botao_2 {
+.confirmar_pedido_botao_1, .confirmar_pedido_botao_2, .confirmar_pedido_botao_3 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,6 +116,10 @@
 
 .confirmar_pedido_botao_2 {
     background: #FFE500;
+}
+
+.confirmar_pedido_botao_3 {
+    background: #1B98E0;
 }
 
 /* start grid_principal */

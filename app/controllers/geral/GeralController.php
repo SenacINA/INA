@@ -12,8 +12,8 @@ class GeralController extends RenderView
       $vendedorModel = new VendedorModel();
       $clienteModel = new ClienteModel();
 
-      $clienteData = $clienteModel->findById($idVendedor);
-      $vendedorData = $vendedorModel->dadosVendedor($idVendedor);
+      $clienteData = $clienteModel->findByVendedorId($idVendedor);
+      $vendedorData = $vendedorModel->dadosVendedorCliente($idVendedor);
       $vendedorAvaliacoes = $vendedorModel->getEstrelasPorVendedor($idVendedor) ?? [];
 
       $total = 0;
@@ -41,13 +41,27 @@ class GeralController extends RenderView
         $vendedorData['tempo'] = $diferencaDias > 1 ? "{$diferencaDias} dias" : "{$diferencaDias} dia";
       }
 
+      if (empty($clienteData['banner_perfil'])) {
+        $clienteData['banner_perfil'] = '/image/cliente/editar_perfil/mini_banner_perfil_cliente.png';
+      }
+
+      if (empty($clienteData['foto_perfil'])) {
+        $clienteData['foto_perfil'] = '/image/cliente/editar_perfil/perfil_usuario.svg';
+      }
+
+      if (!empty($clienteData['uf']) && !empty($clienteData['cidade'])) {
+        $clienteData['localizacao'] = $clienteData['uf'] . ' - ' . $clienteData['cidade'];
+      } else {
+        $clienteData['localizacao'] = null;
+      }
+
       $vendedorData['quantidadeProdutos'] = $vendedorModel->getQuantidadeProdutos($idVendedor);
 
       $this->loadView('vendedor/PerfilVendedor', [
         'user' => $clienteData,
         'vendedor' => $vendedorData,
         'isCliente' => $isCliente,
-        'idVendedor'=> $idVendedor
+        'idVendedor' => $idVendedor
       ]);
     } else if (!isset($_SESSION['user_type']) || !isset($_SESSION['cliente_id'])) {
       header('Location: Login');
@@ -75,6 +89,24 @@ class GeralController extends RenderView
         } else {
           $clienteData = $clienteModel->findById($clienteId);
         }
+
+        if ($userType === 'cliente') {
+          $dataCadastro = strtotime($clienteData['data_registro_cliente']);
+          $agora = time();
+          $diferencaDias = floor(($agora - $dataCadastro) / (60 * 60 * 24));
+
+          if ($diferencaDias >= 365) {
+              $anos = floor($diferencaDias / 365);
+              $mesesRestantes = floor(($diferencaDias % 365) / 30);
+              $clienteData['tempo'] = ($anos > 1 ? "{$anos} anos" : "{$anos} ano") .
+                ($mesesRestantes > 0 ? " e " . ($mesesRestantes > 1 ? "{$mesesRestantes} meses" : "{$mesesRestantes} mês") : "");
+          } elseif ($diferencaDias >= 30) {
+              $meses = floor($diferencaDias / 30);
+              $clienteData['tempo'] = $meses > 1 ? "{$meses} meses" : "{$meses} mês";
+          } else {
+              $clienteData['tempo'] = $diferencaDias > 1 ? "{$diferencaDias} dias" : "{$diferencaDias} dia";
+          }
+      }
 
         if (!$clienteData) {
           header('Location: Login');
@@ -149,6 +181,15 @@ class GeralController extends RenderView
         exit;
       }
     }
+  }
+
+  public function sendProdutosVendedor()
+  {
+    $idVendedor = $_POST['id_vendedor'];
+    $model = new VendedorModel;
+    $produtos = $model->getProdutosVendedor($idVendedor);
+    echo json_encode($produtos);
+    exit;
   }
 
   public function perfil($isCliente = false)

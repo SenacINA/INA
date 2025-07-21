@@ -1,9 +1,11 @@
 import cardProduto from "/INA/app/components/js/card_produto.js";
 
 function renderProduto(div, produtos) {
+  let html = "";
   produtos.forEach((produto) => {
-    div.innerHTML += cardProduto(produto);
+    html += cardProduto(produto);
   });
+  div.innerHTML = html;
 }
 
 async function getProdutosCategoria(categoria) {

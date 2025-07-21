@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       tr.innerHTML = `
         <td data-id_compra="${venda.id_compra}"># ${venda.id_compra}</td>
         <td data-cliente="${venda.cliente}">${venda.cliente}</td>
-        <td data-preco="${venda.valor_total}">R$ ${Number(
+        <td data-preco="${venda.valor_total}"> ${Number(
         venda.valor_total
       ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
         <td data-data="${venda.data_compra}">${venda.data_compra}</td>

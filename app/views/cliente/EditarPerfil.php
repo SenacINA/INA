@@ -54,7 +54,7 @@ $success = $success ?? [];
               <?php
               $dataRegistro = $user['data_registro_cliente'];
               $diasCliente = (strtotime(date('Y-m-d')) - strtotime($dataRegistro)) / 86400;
-              echo "Cliente há: " . round($diasCliente) . " Dias";
+              echo "Cliente há: " . $user['tempo'];
               ?>
             </p>
           </div>
