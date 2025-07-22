@@ -46,11 +46,6 @@
     margin-left: 32px;
   }
 
-  .bueno-list li {
-    list-style: disc;
-    margin-left: 32px;
-  }
-
   .cardHeader::after {
     background-color: #36454F !important;
   }
