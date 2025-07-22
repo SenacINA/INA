@@ -47,7 +47,7 @@ require_once('./utils/head.php');
                         <ul class="eliasasa-list">
                             <li>Fanático de Dark Souls - (Platinei Dark Souls 1,3, Elden Ring)</li>
                         </ul>
-                        <img class="praise_the_sun" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/PraiseSun.png" alt="">
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/PraiseSun.png" alt="">
                     </div>
                     <!-- From Uiverse.io by WAIOKYERE -->
                     <ul class="example-2">
@@ -120,7 +120,8 @@ require_once('./utils/head.php');
                             <li>Gosto de paçoca, POO e MVC</li>
                             <li>Platinei The Binding of Issac</li>
                         </ul>
-                        </p>
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/isaac-drip.gif">
+                    </p>
                     </div>
                     <!-- From Uiverse.io by WAIOKYERE -->
                     <ul class="example-2">

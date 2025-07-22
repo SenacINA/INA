@@ -33,7 +33,8 @@
 }
 
 #eliasasa {
-  background-color: #36454F !important;
+  background-color: #36454f !important;
+  height: fit-content !important;
 
   p,
   h2,
@@ -47,12 +48,11 @@
   }
 
   .cardHeader::after {
-    background-color: #36454F !important;
+    background-color: #36454f !important;
   }
 }
 
 #enzo {
-
   p,
   h2,
   li {
@@ -70,10 +70,9 @@
   }
 
   .cardHeader::after {
-    background-color: #36454F !important;
+    background-color: #36454f !important;
   }
 }
-
 
 #davi {
   background-color: #1a0436 !important;
@@ -100,7 +99,7 @@
 }
 
 #filipe {
-  background-color: #36454F !important;
+  background-color: #36454f !important;
 
   p,
   h2,
@@ -114,10 +113,9 @@
   }
 
   .cardHeader::after {
-    background-color: #36454F !important;
+    background-color: #36454f !important;
   }
 }
-
 
 .text-left {
   justify-self: center;
@@ -146,7 +144,7 @@
 }
 
 .background-gif-wrapper::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -256,7 +254,6 @@ main {
   border-radius: 15px;
 }
 
-
 .hero-container {
   height: 414px;
   display: grid;
@@ -275,8 +272,6 @@ main {
       align-items: end;
     }
   }
-
-  ;
 
   &:nth-child(even) {
     display: flex;
@@ -307,7 +302,6 @@ main {
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 .hero-text {
@@ -395,55 +389,61 @@ ul {
 }
 
 .example-2 .icon-content a[data-social="spotify"] .filled,
-.example-2 .icon-content a[data-social="spotify"]~.tooltip {
+.example-2 .icon-content a[data-social="spotify"] ~ .tooltip {
   background-color: #1db954;
 }
 
 .example-2 .icon-content a[data-social="pinterest"] .filled,
-.example-2 .icon-content a[data-social="pinterest"]~.tooltip {
+.example-2 .icon-content a[data-social="pinterest"] ~ .tooltip {
   background-color: #bd081c;
 }
 
 .example-2 .icon-content a[data-social="dribbble"] .filled,
-.example-2 .icon-content a[data-social="dribbble"]~.tooltip {
+.example-2 .icon-content a[data-social="dribbble"] ~ .tooltip {
   background-color: #ea4c89;
 }
 
 .example-2 .icon-content a[data-social="telegram"] .filled,
-.example-2 .icon-content a[data-social="telegram"]~.tooltip {
+.example-2 .icon-content a[data-social="telegram"] ~ .tooltip {
   background-color: #0088cc;
 }
 
 .example-2 .icon-content a[data-social="discord"] .filled,
-.example-2 .icon-content a[data-social="discord"]~.tooltip {
-  background-color: #5865F2;
+.example-2 .icon-content a[data-social="discord"] ~ .tooltip {
+  background-color: #5865f2;
 }
 
 .example-2 .icon-content a[data-social="linkedin"] .filled,
-.example-2 .icon-content a[data-social="linkedin"]~.tooltip {
-  background-color: #0077B5;
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0077b5;
 }
 
 .example-2 .icon-content a[data-social="github"] .filled,
-.example-2 .icon-content a[data-social="github"]~.tooltip {
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
   background-color: #333333;
 }
 
 .example-2 .icon-content a[data-social="steam"] .filled,
-.example-2 .icon-content a[data-social="steam"]~.tooltip {
+.example-2 .icon-content a[data-social="steam"] ~ .tooltip {
   background-color: #2a475e;
 }
 
 .example-2 .icon-content a[data-social="instagram"] .filled,
-.example-2 .icon-content a[data-social="instagram"]~.tooltip {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
 }
 
-.praise_the_sun {
+.isaac {
   width: 80px;
+  margin: 16px 0;
 }
-
 
 @media (max-width: 1200px) {
   .about-background {
@@ -493,7 +493,6 @@ ul {
       max-height: auto !important;
       aspect-ratio: 5 / 6 !important;
     }
-
   }
 
   .heros-main {
@@ -501,7 +500,6 @@ ul {
     margin-top: 16px;
     padding: 0 4px;
   }
-
 }
 
 @media (max-width: 425px) {
@@ -527,6 +525,5 @@ ul {
     min-height: 0 !important;
     width: 100%;
     aspect-ratio: 5 / 6;
-
   }
 }
