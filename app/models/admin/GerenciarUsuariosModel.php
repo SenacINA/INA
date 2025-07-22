@@ -34,22 +34,45 @@ class GerenciarUsuariosModel
 
   public function getUsers()
   {
-    $sql = "SELECT `id_cliente`, `nome_cliente`, `data_registro_cliente`, `email_cliente`, `numero_celular_cliente`, `ddd_cliente`, `foto_perfil_cliente`, `tipo_conta_cliente`, `status_conta_cliente` FROM `cliente`;";
+    $sql = "SELECT 
+          id_cliente, nome_cliente, data_registro_cliente, email_cliente,
+          numero_celular_cliente, ddd_cliente, foto_perfil_cliente,
+          tipo_conta_cliente, status_conta_cliente,
+          CASE
+            WHEN tipo_conta_cliente = 0 THEN 'Admin'
+            WHEN tipo_conta_cliente = 1 THEN 'Vendedor'
+            ELSE 'Cliente'
+          END AS cargo
+        FROM cliente";
+
     return $this->db->executeQuery($sql);
   }
+
 
   public function searchUserForms($nomeCodigo, $status, $mes, $ano)
   {
     if (
-      (empty($nomeCodigo) || $nomeCodigo === null) &&
+      (empty($nomeCodigo) || trim($nomeCodigo) === '' || $nomeCodigo === '0') &&
       (empty($status) || $status === null) &&
       (empty($mes) || $mes === null) &&
       (empty($ano) || $ano === null)
     ) {
-      return null;
+      return $this->getUsers();
     }
 
-    $sql = "SELECT `id_cliente`, `nome_cliente`, `email_cliente`, `data_registro_cliente`, `foto_perfil_cliente`, `tipo_conta_cliente`, `status_conta_cliente` FROM cliente WHERE 1=1";
+    $sql = "SELECT 
+          id_cliente, nome_cliente, email_cliente, data_registro_cliente,
+          numero_celular_cliente, ddd_cliente, foto_perfil_cliente,
+          tipo_conta_cliente, status_conta_cliente,
+          CASE
+            WHEN tipo_conta_cliente = 0 THEN 'Admin'
+            WHEN tipo_conta_cliente = 1 THEN 'Vendedor'
+            ELSE 'Cliente'
+          END AS cargo
+        FROM cliente
+        WHERE 1=1";
+
+
     $params = [];
     if (!empty($nomeCodigo)) {
       if (ctype_digit($nomeCodigo)) {
@@ -80,11 +103,17 @@ class GerenciarUsuariosModel
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function desativarUser($nome, $email, $cargo) {
-    $sql = "UPDATE cliente SET status_conta_cliente = :status WHERE nome_cliente LIKE :nome AND tipo_conta_cliente = :cargo AND email_cliente = :email";
-    $params = [':status' => 0, ':nome' => $nome, ':cargo' => $cargo, ':email' => $email];
-
+  public function desativarUserById(int $id): bool
+  {
+    $sql = "UPDATE cliente SET status_conta_cliente = 0 WHERE id_cliente = :id";
     $stmt = $this->db->getConnection()->prepare($sql);
-    return $stmt->execute($params);
+    return $stmt->execute([':id' => $id]);
+  }
+
+  public function ativarUserById(int $id): bool
+  {
+    $sql = "UPDATE cliente SET status_conta_cliente = 1 WHERE id_cliente = :id";
+    $stmt = $this->db->getConnection()->prepare($sql);
+    return $stmt->execute([':id' => $id]);
   }
 }

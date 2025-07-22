@@ -5,26 +5,14 @@ $titulo = "Gerenciar Usuários - E ao Quadrado";
 $css = ["/css/admin/GerenciarUsuario.css"];
 require_once('./utils/head.php');
 
-if (!$usuarioSelecionado) {
-  $estaAtivo = false;
-  $textoBotao = 'DESATIVAR';
-} else {
-  $estaAtivo = $usuarioSelecionado['status_conta_cliente'] == 1;
-  $textoBotao = $estaAtivo ? 'DESATIVAR' : 'USUÁRIO JÁ DESATIVADO';
-}
-
-$disativar = $estaAtivo ? '' : 'disabled';
-
+$usuarioSelecionado = $usuarioSelecionado ?? null;
+$estaAtivo = $usuarioSelecionado && $usuarioSelecionado['status_conta_cliente'] == 1;
+$textoBotao = $estaAtivo ? 'DESATIVAR' : ($usuarioSelecionado ? 'USUÁRIO JÁ DESATIVADO' : 'DESATIVAR');
+$disativar = $estaAtivo ? '' : 'disabled="disabled"';
 ?>
-<script src="<?= $PATH_PUBLIC ?>/js/admin/GerenciarUsuario.js"></script>
-<script src="../../../public/js/admin/GerenciarUsuario.js"></script>
 
 <body>
-  <!-- Até 768px -->
-
-  <?php
-  include_once("$PATH_COMPONENTS/php/navbar.php");
-  ?>
+  <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
 
   <main class="gerenciar_usuario_body_container">
     <div class="gerenciar_pedidor_firula_holder">
@@ -44,111 +32,64 @@ $disativar = $estaAtivo ? '' : 'disabled';
                 <div class="gerenciar_usuario_linha_vertical"></div>
                 <div class="gerenciar_usuario_subtitle_holder">
                   <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/perfil_lupa_icon.svg" alt="">
-                  <h2 class="font_subtitulo font_celadon">Pesquisar Usuários</p>
+                  <h2 class="font_subtitulo font_celadon">Pesquisar Usuários</h2>
                 </div>
               </div>
-              <form action="searchDesativarUser" method="post" class="gerenciar_usuario_forms_pesquisa_usuario">
+              <form action="GerenciarUsuarios-search" method="post" class="gerenciar_usuario_forms_pesquisa_usuario">
                 <div class="gerenciar_usuario_form_cliente">
-                  <label class="font_subtitulo font_celadon">Código Do Usuário / Nome Usuário</label>
-                  <input type="text" spellcheck="false" class="base_input" name="nomeUsuario">
+                  <label class="font_subtitulo font_celadon">Código / Nome do Usuário</label>
+                  <input type="text" spellcheck="false" class="base_input" name="nomeUsuario" placeholder="ID ou Nome">
                 </div>
-                <div class="gerenciar_usuario_inputs_esquerda">
-                  <div class="gerenciar_usuario_input_status base_input_select">
-                    <label for="select_cod" class="font_subtitulo font_celadon">Status</label>
-                    <select name="select_cod" class="gerenciar_usuario_select_status base_input">
-                      <option value="" selected disabled style="display: none;">Selecione</option>
-                      <option value="1">Ativo</option>
-                      <option value="0">Inativo</option>
-                    </select>
-                  </div>
-                  <div class="gerenciar_usuario_input_mes base_input_select">
-                    <label for="mes" class="font_subtitulo font_celadon">Mês</label>
-                    <select name="mes" id="mes" class="gerenciar_usuario_mes_select base_input">
-                      <option value="" selected disabled style="display: none;">Selecione</option>
-                      <option value="01">Janeiro</option>
-                      <option value="02">Fevereiro</option>
-                      <option value="03">Março</option>
-                      <option value="04">Abril</option>
-                      <option value="05">Maio</option>
-                      <option value="06">Junho</option>
-                      <option value="07">Julho</option>
-                      <option value="08">Agosto</option>
-                      <option value="09">Setembro</option>
-                      <option value="10">Outubro</option>
-                      <option value="11">Novembro</option>
-                      <option value="12">Dezembro</option>
-                    </select>
-                  </div>
-                  <div class="gerenciar_usuario_input_ano base_input_select">
-                    <label for="ano" class="font_subtitulo font_celadon">Ano</label>
-                    <select name="ano" id="ano" class="gerenciar_usuario_ano_select base_input">
-                      <option value="" selected disabled style="display: none;">Selecione</option>
-                      <option value="2020">2020</option>
-                      <option value="2021">2021</option>
-                      <option value="2022">2022</option>
-                      <option value="2023">2023</option>
-                      <option value="2024">2024</option>
-                      <option value="2025">2025</option>
-                      <option value="2026">2026</option>
-                    </select>
-                  </div>
-                </div>
+
                 <div class="gerenciar_usuario_holder_botao">
                   <button type="reset" class="base_botao btn_red">
-                    <img src="<?= $PATH_PUBLIC ?>/image\geral\botoes\x_branco_icon.svg">
+                    <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_branco_icon.svg">
                     CANCELAR
                   </button>
-
                   <button type="submit" class="base_botao btn_blue">
-                    <img src="<?= $PATH_PUBLIC ?>/image\geral\botoes\v_branco_icon.svg">
+                    <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">
                     CONFIRMAR
                   </button>
                 </div>
               </form>
             </div>
+
             <div class="gerenciar_usuario_estatisticas">
               <div class="gerenciar_usuario_subtitulo_generico">
                 <div class="gerenciar_usuario_linha_vertical"></div>
+                <img class="icon_perfil_usuario" src="<?= $PATH_PUBLIC ?>/image/geral/icons/perfil_icon.svg" alt="">
+
                 <div class="gerenciar_usuario_subtitle_holder">
-                  <img class="gerenciar_usuario_img_user" src="<?= $PATH_PUBLIC ?>/image/geral/icons/perfil_icon.svg" />
+                  <?php
+                  $imgPerfil = $usuarioSelecionado && !empty($usuarioSelecionado['imagem_cliente'])
+                    ? $PATH_UPLOADS . "/usuarios/" . $usuarioSelecionado['imagem_cliente']
+                    : $PATH_PUBLIC . "/image/admin/perfil_admin/perfil_img.svg";
+                  ?>
                   <h2 class="font_subtitulo font_celadon">Perfil de Usuário</h2>
                 </div>
               </div>
               <div class="gerenciar_usuario_estatistica_holder">
                 <div class="gerenciar_usuario_card">
-                  <span class="gerenciar_usuario_titulo2" id="nome_cliente">
-                    <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['nome_cliente']) : '-' ?>
-                  </span>
+                  <span class="gerenciar_usuario_titulo"><?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['nome_cliente']) : '---' ?></span>
                   <img src="<?= $PATH_PUBLIC ?>/image/admin/perfil_admin/perfil_img.svg" alt="" class="gerenciar_usuario_card_img_perfil">
-
-                  <button id="disable_button" class="base_botao btn_red" <?= $disativar ?>>
-                    <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_branco_icon.svg">
-                    <?= $textoBotao ?>
-                  </button>
                 </div>
                 <div class="gerenciar_usuario_card_column_2">
                   <div class="gerenciar_usuario_card">
-                    <span class="gerenciar_usuario_titulo">Data de Cadastro</span>
+                    <span class="gerenciar_usuario_titulo">E-Mail</span>
                     <span class="gerenciar_usuario_estatistica_descricao">
-                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['data_registro_cliente']) : '-' ?>
+                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['email_cliente']) : '---' ?>
                     </span>
                   </div>
                   <div class="gerenciar_usuario_card">
-                    <span class="gerenciar_usuario_titulo">E-Mail</span>
-                    <span class="gerenciar_usuario_estatistica_descricao" id="email_cliente">
-                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['email_cliente']) : '-' ?>
+                    <span class="gerenciar_usuario_titulo">Data de Cadastro</span>
+                    <span class="gerenciar_usuario_estatistica_descricao">
+                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['data_registro_cliente']) : '---' ?>
                     </span>
                   </div>
                   <div class="gerenciar_usuario_card">
                     <span class="gerenciar_usuario_titulo">Cargo</span>
-                    <span class="gerenciar_usuario_estatistica_descricao" id="cargo_cliente">
-                      <?php
-                      if ($usuarioSelecionado) {
-                        echo ($usuarioSelecionado['tipo_conta_cliente'] == 0) ? 'Admin' : (($usuarioSelecionado['tipo_conta_cliente'] == 1) ? 'Vendedor' : 'Cliente');
-                      } else {
-                        echo '-';
-                      }
-                      ?>
+                    <span class="gerenciar_usuario_estatistica_descricao">
+                      <?= $usuarioSelecionado ? htmlspecialchars($usuarioSelecionado['cargo']) : '---' ?>
                     </span>
                   </div>
                 </div>
@@ -158,21 +99,25 @@ $disativar = $estaAtivo ? '' : 'disabled';
         </div>
       </div>
     </div>
+
     <div class="gerenciar_usuario_header_title">
       <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/pasta_clock_icon.svg" />
       <h1 class="gerenciar_usuario_text_header font_titulo">HISTÓRICO DE PEDIDOS</h1>
     </div>
+
     <div class="gerenciar_usuario_table">
       <div class="gerenciar_usuario_table_filtro bg_carolina">
-        <p class="gerenciar_usuario_filtro_titulo font_subtitulo">Organizar por:</p>
-        <select>
-          <option value="" selected disable style="display: none;"></option>
-          <option value="">Opa1</option>
-          <option value="">Opa2</option>
-          <option value="">Opa3</option>
-          <option value="">Opa4</option>
+        <p class="gerenciar_usuario_filtro_titulo font_subtitulo">Ordenar por:</p>
+        <select id="filtro-gerenciar-usuarios" class="base_input">
+          <option value="" selected disabled hidden>Selecione</option>
+          <option value="id_cliente">ID</option>
+          <option value="nome_cliente">Nome</option>
+          <option value="data_registro_cliente">Data Cadastro</option>
+          <option value="tipo_conta_cliente">Cargo</option>
+          <option value="status_conta_cliente">Status</option>
         </select>
       </div>
+
       <div class="base_tabela">
         <table>
           <colgroup>
@@ -192,52 +137,73 @@ $disativar = $estaAtivo ? '' : 'disabled';
               <th>Cargo</th>
               <th>E-Mail</th>
               <th>Contato</th>
-              <th>Status</th>
+              <th>Gerenciamento</th>
             </tr>
+          </thead>
           <tbody>
             <?php
-            $controller = new AdminController();
-            $info = $controller->showUsers();
-            foreach ($info as $chave) {
-              if ($chave['id_cliente'] != $_SESSION['cliente_id']) {
-                $tipoConta = ($chave['tipo_conta_cliente'] == 0) ? 'Admin' : (($chave['tipo_conta_cliente'] == 1) ? 'Vendedor' : 'Cliente');
-                $statusConta = ($chave['status_conta_cliente'] == 0) ? 'Inativo' : 'Ativo';
-                echo <<<HTML
-                      <tr>
-                        <td># {$chave['id_cliente']}</td>
-                        <td><span>{$chave['nome_cliente']}</span></td>
-                        <td>{$chave['data_registro_cliente']}</td>
-                        <td>{$tipoConta}</td>
-                        <td><span>{$chave['email_cliente']}</span></td>
-                        <td>({$chave['ddd_cliente']}) {$chave['numero_celular_cliente']}</td>
-                        <td><span>{$statusConta}</span></td>
-                      </tr>
-                    HTML;
-              }
-            }
+            foreach ($usuarios as $chave):
+              if ($chave['id_cliente'] == $_SESSION['cliente_id']) continue;
+              $tipoConta = $chave['tipo_conta_cliente'] == 0 ? 'Admin' : ($chave['tipo_conta_cliente'] == 1 ? 'Vendedor' : 'Cliente');
+              $statusConta = $chave['status_conta_cliente'] == 0 ? 'Inativo' : 'Ativo';
             ?>
+              <tr>
+                <td><?= $chave['id_cliente'] ?></td>
+                <td><?= htmlspecialchars($chave['nome_cliente']) ?></td>
+                <td><?= htmlspecialchars($chave['data_registro_cliente']) ?></td>
+                <td><?= $tipoConta ?></td>
+                <td><?= htmlspecialchars($chave['email_cliente']) ?></td>
+                <td>(<?= htmlspecialchars($chave['ddd_cliente']) ?>) <?= htmlspecialchars($chave['numero_celular_cliente']) ?></td>
+                <?php
+                $estaAtivo = $chave['status_conta_cliente'] == 1;
+                $textoBotao = $estaAtivo ? 'Desativar' : 'Ativar';
+                $classeBotao = $estaAtivo ? 'btn_red' : 'btn_blue';
+                ?>
+                <td data-status="<?= $chave['status_conta_cliente'] ?>">
+                  <button class="base_botao <?= $classeBotao ?> btn-status" data-id="<?= $chave['id_cliente'] ?>" data-ativo="<?= $chave['status_conta_cliente'] ?>">
+                    <?= $textoBotao ?>
+                  </button>
+                </td>
+              </tr>
+            <?php endforeach; ?>
           </tbody>
-          </thead>
         </table>
+      </div>
+
+      <div class="base_navegacao">
+        <div class="gerenciar_usuario_navegacao">
+          <button id="btnAnterior" class="base_botao btn_blue">
+            <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/seta_filtro_branco.svg" class="base_icon esquerda">
+          </button>
+          <button id="btnProximo" class="base_botao btn_blue">
+            <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/seta_filtro_branco.svg" class="base_icon direita">
+          </button>
+        </div>
       </div>
     </div>
   </main>
 
-  <!-- Pop-Up de Confirmação -->
   <div class="popup_container" id="popup_desativar">
     <div class="popup">
-      <button id="close_btn" class="modal_fechar">x</button>
-      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/check_carolina_icon.svg" width="200px" height="200px">
+      <button id="close_btn_popUp" class="modal_fechar">x</button>
+      <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/check_carolina_icon.svg" width="200" height="200">
       <div class="text_popup">
         <h1>Confirmação</h1>
         <p>Você deseja desativar este Usuário?</p>
         <button class="base_botao btn_blue botao_popup" id="confirmar_desativar">
-          <img src="<?= $PATH_PUBLIC ?>/image\geral\botoes\v_branco_icon.svg">
-          CONFIRMAR</button>
+          <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">
+          CONFIRMAR
+        </button>
       </div>
     </div>
   </div>
-
 </body>
+
+<script>
+  window.vendedores = <?= json_encode($usuarios ?? []) ?>;
+</script>
+
+<script src="<?= $PATH_PUBLIC ?>/js/tabelas/renderTableGerenciarUsuario.js"></script>
+<script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
 
 </html>

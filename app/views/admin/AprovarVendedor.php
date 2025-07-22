@@ -34,10 +34,10 @@ $e = $estatisticas ?? ['aprovados' => 0, 'reprovados' => 0, 'inativados' => 0];
                   </div>
                 </div>
                 <form action="" method="post" class="aprovar_vendedor_forms_pesquisa_pedidos">
-                  <label class="font_subtitulo font_celadon">Código / Nome Vendedor</label>
+                  <label class="font_subtitulo font_celadon">Código / Nome do Vendedor</label>
                   <input type="text" name="search" class="base_input"
-                    placeholder="Código / Nome" value="<?= htmlspecialchars($filtros['search']) ?>">
-                  <div class="aprovar_vendedor_filtro">
+                    placeholder="ID ou Nome" value="<?= htmlspecialchars($filtros['search']) ?>">
+                  <!-- <div class="aprovar_vendedor_filtro">
                     <div class="aprovar_vendedor_container_status base_input_select">
                       <label class="font_subtitulo font_celadon">Status</label>
                       <select name="status" class="aprovar_vendedor_select_status base_input">
@@ -88,17 +88,17 @@ $e = $estatisticas ?? ['aprovados' => 0, 'reprovados' => 0, 'inativados' => 0];
                         <?php endfor; ?>
                       </select>
                     </div>
-                  </div>
+                  </div> -->
 
                   <div class="aprovar_vendedor_container_botao">
                     <div class="aprovar_vendedor_holder_botao">
+                      <button type="submit" name="btnPesquisar" class="btn_red base_botao">
+                        <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/x_branco_icon.svg" alt="">
+                        CANCELAR
+                      </button>
                       <button type="submit" class="btn_blue base_botao">
                         <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg" alt="">
                         PESQUISAR
-                      </button>
-                      <button type="submit" name="btnPesquisar" class="btn_red base_botao">
-                        <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/cesta_lixo_branca_icon.svg" alt="">
-                        LIMPAR
                       </button>
                     </div>
                   </div>
@@ -145,11 +145,11 @@ $e = $estatisticas ?? ['aprovados' => 0, 'reprovados' => 0, 'inativados' => 0];
     <div class="aprovar_vendedor_table_filtro bg_carolina">
       <p class="aprovar_vendedor_filtro_titulo font_subtitulo">Organizar por:</p>
       <select id="filtros-gerenciar-vendas" name="ordenar">
-        <option selected value="cod">CÓD.</option>
+        <option selected value="cod">Cód.</option>
         <option value="alfabetica">A-Z</option>
-        <option value="requisitos">REQUISITOS</option>
-        <option value="declaracao">DECLARAÇÃO</option>
-        <option value="status">STATUS</option>
+        <option value="requisitos">Requisitos</option>
+        <option value="declaracao">Declaração</option>
+        <option value="status">Status</option>
       </select>
     </div>
     <div class="base_tabela">
@@ -187,9 +187,26 @@ $e = $estatisticas ?? ['aprovados' => 0, 'reprovados' => 0, 'inativados' => 0];
         </button>
       </div>
     </div>
+
+    <div class="popup_container" id="popup_desativar">
+      <div class="popup">
+        <button id="close_btn_popUp" class="modal_fechar">x</button>
+        <img src="<?= $PATH_PUBLIC ?>/image/geral/icons/check_carolina_icon.svg" width="200" height="200">
+        <div class="text_popup">
+          <h1>Confirmação</h1>
+          <p>Você deseja desativar este Usuário?</p>
+          <button class="base_botao btn_blue botao_popup" id="confirmar_desativar">
+            <img src="<?= $PATH_PUBLIC ?>/image/geral/botoes/v_branco_icon.svg">
+            CONFIRMAR
+          </button>
+        </div>
+      </div>
+    </div>
+
   </main>
 </body>
 <script src="<?= $PATH_PUBLIC ?>/js/tabelas/renderTableAprovarVendedor.js"></script>
+<script type="module" src="<?= $PATH_COMPONENTS ?>/js/Toast.js"></script>
 <script>
   window.vendedores = <?= json_encode($lista) ?>;
 </script>
