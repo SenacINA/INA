@@ -160,21 +160,25 @@ require_once("./utils/head.php");
                 <div class="retangulos_avaliacao_produto">
                     <?php
                     $distribuicao = $info['distribuicao_avaliacoes'];
-
                     for ($estrelas = 5; $estrelas >= 1; $estrelas--):
                         $total = $distribuicao['estrelas'][$estrelas];
                         $texto = $estrelas . ' Estrela' . ($estrelas > 1 ? 's' : '');
                     ?>
-                        <button>
-                            <p><?= $texto ?> (<?= number_format($total, 0, ',', '.') ?>)</p>
-                        </button>
+                    <button class="btn-filtrar-avaliacao"
+                            data-tipo="estrelas"
+                            data-valor="<?= $estrelas ?>">
+                        <p><?= $texto ?> (<?= number_format($total, 0, ',', '.') ?>)</p>
+                    </button>
                     <?php endfor; ?>
 
-                    <button>
-                        <p>Com mídia (<?= number_format($distribuicao['com_midia'], 0, ',', '.') ?>)</p>
+                    <button class="btn-filtrar-avaliacao"
+                            data-tipo="com_midia"
+                            data-valor="1">
+                    <p>Com mídia (<?= number_format($distribuicao['com_midia'], 0, ',', '.') ?>)</p>
                     </button>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -253,46 +257,19 @@ require_once("./utils/head.php");
             </form>
         </div>
     <?php endif; ?>
+    <div id="produto-info" 
+        data-id-vendedor="<?= $info['infoProduto']['id_vendedor'] ?>" 
+        data-id-produto="<?= $id ?>"
+        data-id-cliente="<?= isset($_SESSION['cliente_id']) ? $_SESSION['cliente_id'] : '' ?>">
+    </div>
+
+    <?php if(isset($_SESSION['cliente_id'])): ?>
+        <div class="comentario-div">
+            <div id="comentario-cliente-container"></div>
+        </div>
+    <?php endif; ?>
 
     <div class="grid_comentarios_usuarios">
-
-        <?php
-        $controller = new ProdutoController();
-        $params = [
-            'idVendedor' => $info['infoProduto']['id_vendedor'],
-            'idProduto'  => $id,
-            'maxRender'  => $_GET['maxRender'] ?? 10,
-            'offset'     => $_GET['offset'] ?? 0
-        ];
-        $comentarios = $controller->comentarios($params);
-
-        require_once __DIR__ . '/../../components/php/avaliacao.php';
-
-        foreach ($comentarios as $comentario) {
-            $dadosComponente = [
-                'nome' => $comentario['nome_cliente'],
-                'estrelas' => $comentario['estrelas_avaliacao'],
-                'qualidade' => $comentario['qualidade'],
-                'parecido' => $comentario['parecido'],
-                'texto' => $comentario['descricao_avaliacao'],
-                'imagens' => $comentario['imagens'],
-                'foto_perfil' => $comentario['foto_perfil_cliente'] ?? null,
-                'data' => $comentario['data_avaliacao']
-            ];
-
-            echo ComentarioAvaliacaoProdutoComponent::render($dadosComponente);
-        }
-
-        if (count($comentarios) > 0) {
-            echo '
-                <div class="btn-ver-mais">
-                    <button class="base_botao btn_blue">Ver mais avaliações</button>
-                </div>
-                ';
-        } else {
-            echo '<div class="sem_avaliacoes">Sem avaliações</div>';
-        }
-        ?>
 
     </div>
 
@@ -303,6 +280,7 @@ require_once("./utils/head.php");
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/avaliacaoImgInput.js'></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/EnviarAvaliacao.js'></script>
+    <script type='module' src='<?= $PATH_PUBLIC ?>/js/geral/renderAvaliacao.js'></script>
     <script src='<?= $PATH_PUBLIC ?>/js/geral/produto.js'></script>
     <script type="module" src="<?= $PATH_COMPONENTS ?>/js/toast.js"></script>
     <script type='module' src='<?= $PATH_PUBLIC ?>/js/cliente/ProdutoCarrossel.js'></script>

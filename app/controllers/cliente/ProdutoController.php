@@ -115,18 +115,100 @@ class ProdutoController extends RenderView {
         ]);
     }
 
-    
+    public function comentarioCliente() {
+        header('Content-Type: application/json; charset=utf-8');
 
-    public function comentarios(array $params): array
-    {
-        $idP = (int)  ($params['idProduto']  ?? 0);
-        $lim = (int)  ($params['maxRender']  ?? 10);
-        $ofs = (int)  ($params['offset']     ?? 0);
+        try {
+            $idVendedor = isset($_GET['idVendedor']) ? (int) $_GET['idVendedor'] : 0;
+            $idProduto  = isset($_GET['idProduto'])  ? (int) $_GET['idProduto']  : 0;
+            $idCliente  = isset($_GET['idCliente'])  ? (int) $_GET['idCliente']  : 0;
 
-        $model = new ProdutoClienteModel();
-        return $model->getComentarios($idP, $lim, $ofs);
+            if ($idVendedor <= 0 || $idProduto <= 0 || $idCliente <= 0) {
+                throw new Exception("Parâmetros inválidos", 400);
+            }
+
+            $model = new ProdutoClienteModel();
+            $comentario = $model->getAvaliacaoCliente($idVendedor, $idProduto, $idCliente);
+
+            if ($comentario === null) {
+                throw new Exception("Comentário do cliente não encontrado", 404);
+            }
+
+            $response = [
+                'success' => true,
+                'data'    => $comentario
+            ];
+            echo json_encode($response);
+
+        } catch (Exception $e) {
+            http_response_code($e->getCode() ?: 500);
+
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+                'code'    => $e->getCode()
+            ]);
+        }
+
+        exit;
     }
 
+    public function comentarios() {
+        header('Content-Type: application/json; charset=utf-8');
+        
+        try {
+            $idP   = (int) ($_GET['idProduto']   ?? 0);
+            $idV   = (int) ($_GET['idVendedor']  ?? 0);
+            $lim   = (int) ($_GET['maxRender']   ?? 10);
+            $ofs   = (int) ($_GET['offset']      ?? 0);
+            $idc   = (int) ($_GET['idCliente']   ?? 0);
+            
+            if ($idP <= 0 || $idV <= 0) {
+                throw new Exception("Parâmetros idProduto e idVendedor são obrigatórios.", 400);
+            }
+            
+            $filters = [];
+            if (isset($_GET['estrelas'])) {
+                $est = (int) $_GET['estrelas'];
+                if ($est < 1 || $est > 5) {
+                    throw new Exception("Parâmetro 'estrelas' inválido.", 400);
+                }
+                $filters['estrelas'] = $est;
+            }
+            if (isset($_GET['com_midia'])) {
+                $filters['com_midia'] = true;
+            }
+    
+            $model = new ProdutoClienteModel();
+            $comentarios = $model->getComentarios($idP, $lim, $ofs, $filters, $idc);
+    
+            $totalComentarios = $model->countComentarios($idP, $filters);
+            $hasMore = ($ofs + $lim) < $totalComentarios;
+    
+            $response = [
+                'success'    => true,
+                'data'       => $comentarios,
+                'pagination' => [
+                    'total'    => $totalComentarios,
+                    'limit'    => $lim,
+                    'offset'   => $ofs,
+                    'has_more' => $hasMore
+                ]
+            ];
+            echo json_encode($response);
+    
+        } catch (Exception $e) {
+            http_response_code($e->getCode() ?: 500);
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+                'code'    => $e->getCode()
+            ]);
+        }
+        exit;
+    }
+    
+    
     public function avaliarProduto() {
         header('Content-Type: application/json; charset=utf-8');
         
@@ -145,7 +227,6 @@ class ProdutoController extends RenderView {
             }
         }
 
-        // Preparar dados
         $data = [
             'id_cliente' => $clienteId,
             'id_produto' => (int)$_POST['id_produto'],
