@@ -251,7 +251,7 @@ body {
     .index_body_big_ad_bottom img {
         width: 1370px;
         height: 500px;
-        object-fit: cover; /* keeps aspect ratio but fills area */
+        object-fit: none; /* keeps aspect ratio but fills area */
         display: block;
     }
     
