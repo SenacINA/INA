@@ -188,7 +188,7 @@ require_once('./utils/head.php');
                     <div class="details">
                         <div class="cardHeader">Davi Bueno</div>
                         <div class="cardText">
-                            Não no meu turno.
+                            No meu turno, não.
                         </div>
 
 
@@ -198,7 +198,7 @@ require_once('./utils/head.php');
                     <div class="hero-text">
                         <h2>bueno</h2>
                         <p>
-                            Me chamo Davi, tenho 18 anos (2025), cursando Desenvolvimento de Sistemas no SENACHUB ACADEMY. Gosto de estudar sobre programação e psicologia, e sempre que tenho a oportunidade estou trabalhando em um projeto pessoal.
+                            Me chamo Davi, tenho 18 anos (em 2025) e estou cursando Desenvolvimento de Sistemas no SENACHUB ACADEMY. Tenho grande interesse por programação e psicologia, e sempre que posso, me dedico a projetos pessoais. Atualmente, estou focado em me tornar um desenvolvedor full-stack, ao mesmo tempo em que aprofundo meus estudos em psicanálise.
                             <br>
                             <br>
                             Algumas coisas sobre mim:
@@ -247,6 +247,19 @@ require_once('./utils/head.php');
                                 </svg>
                             </a>
                             <div class="tooltip">Linkedin</div>
+                        </li>
+                        <li class="icon-content">
+                            <a
+                                href="https://www.instagram.com/bueno.l1fe?igsh=Nmc3NGNqOGcwNWFw"
+                                aria-label="Instagram"
+                                data-social="instagram">
+                                <div class="filled"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                                    <path fill="currentColor" d="M7.5 5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5" />
+                                    <path fill="currentColor" fill-rule="evenodd" d="M4.5 0A4.5 4.5 0 0 0 0 4.5v6A4.5 4.5 0 0 0 4.5 15h6a4.5 4.5 0 0 0 4.5-4.5v-6A4.5 4.5 0 0 0 10.5 0zM4 7.5a3.5 3.5 0 1 1 7 0a3.5 3.5 0 0 1-7 0M11 4h1V3h-1z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <div class="tooltip">Instragram</div>
                         </li>
                     </ul>
                 </div>
