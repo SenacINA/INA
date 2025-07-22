@@ -196,14 +196,14 @@ require_once('./utils/head.php');
                 </div>
                 <div class="hero-info">
                     <div class="hero-text">
-                        <h2>bueno</h2>
+                        <h2>Avatar#OO7</h2>
                         <p>
                             Me chamo Davi, tenho 18 anos (em 2025) e estou cursando Desenvolvimento de Sistemas no SENACHUB ACADEMY. Tenho grande interesse por programação e psicologia, e sempre que posso, me dedico a projetos pessoais. Atualmente, estou focado em me tornar um desenvolvedor full-stack, ao mesmo tempo em que aprofundo meus estudos em psicanálise.
                             <br>
                             <br>
                             Algumas coisas sobre mim:
                         <ul class="bueno-list">
-                            <li>200h de sage</li>
+                            <li>200h de deadlock</li>
                             <li>Mono sentinela</li>
                             <li>Plat 2 - Peak</li>
                         </ul>
