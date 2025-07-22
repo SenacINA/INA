@@ -51,6 +51,29 @@
   }
 }
 
+#enzo {
+
+  p,
+  h2,
+  li {
+    color: #fff !important;
+  }
+
+  .eliasasa-list li {
+    list-style: disc;
+    margin-left: 32px;
+  }
+
+  .bueno-list li {
+    list-style: disc;
+    margin-left: 32px;
+  }
+
+  .cardHeader::after {
+    background-color: #36454F !important;
+  }
+}
+
 
 #davi {
   background-color: #1a0436 !important;
@@ -406,10 +429,19 @@ ul {
   background-color: #333333;
 }
 
+.example-2 .icon-content a[data-social="steam"] .filled,
+.example-2 .icon-content a[data-social="steam"]~.tooltip {
+  background-color: #2a475e;
+}
+
 .example-2 .icon-content a[data-social="instagram"] .filled,
 .example-2 .icon-content a[data-social="instagram"]~.tooltip {
   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 
+}
+
+.praise_the_sun {
+  width: 80px;
 }
 
 
