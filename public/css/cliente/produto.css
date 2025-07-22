@@ -21,6 +21,32 @@ body {
   width: 100%;
 }
 
+.comentario-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 180px;
+  width: 100%;
+}
+
+.selecionado {
+  background-color: var(--sappire) !important;
+  p {
+    color: var(--branco_gelo) !important;
+  }
+}
+
+#comentario-cliente-container {
+  width: 100%;
+  background-color: #D7E8EA;
+  border-radius: 5px;
+  padding: 24px;
+  .comentario-title {
+    color: var(--sappire);
+    align-self: center;
+    justify-self: center;
+  }
+}
 
 .grid_produto_image {
   grid-column: 1;
@@ -258,13 +284,11 @@ h3 {
 }
 
 .produto_image {
-  width: auto;
   height: 100%;
-  min-height: 420px;
-  max-width: 420px;
-  padding: 16px;
-  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  width: 100%;
   display: flex;
+  aspect-ratio: 16 / 9;
   justify-content: center;
 }
 
@@ -273,6 +297,7 @@ h3 {
   width: 68px;
   height: 68px;
   aspect-ratio: 1 / 1;
+  border-radius: 5px;
   display: flex;
   background-color: white;
   justify-content: center;
@@ -287,6 +312,7 @@ h3 {
   border-radius: 5px;
   background-color: white;
   border: none;
+  object-fit: cover;
 }
 
 .foward {
@@ -1260,13 +1286,15 @@ textarea {
 }
 
 .image1_user {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1 !important;
   display: flex;
   height: 150px;
   flex-direction: column;
-  width: fit-content;
   position: relative;
   background-color: white;
+  img {
+    height: 100%;
+  }
 }
 
 .div_video {
@@ -1337,6 +1365,11 @@ textarea {
 @media (max-width: 1200px) {
   .bullet-list, .ordered-list {
     margin-left: 32px;
+  }
+
+  .comentario-div {
+    padding: 16px;
+    padding-top: 32px;
   }
 
   .grid_produto,
@@ -1417,6 +1450,10 @@ textarea {
 
   .div_produto_valor {
     grid-row: 1;
+  }
+
+  .grid_produto {
+    position: relative;
   }
 
   .produto_info_nome {
@@ -1606,9 +1643,6 @@ textarea {
   .grid_images_user {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  & > .image1_user > img {
-    max-height: 100px;
-  }
 }
 }
 

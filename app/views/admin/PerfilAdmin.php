@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-  $titulo = "Perfil - E ao Quadrado";
-  $css = ["/css/admin/PerfilAdmin.css"];
-  require_once('./utils/head.php');
+$titulo = "Perfil - E ao Quadrado";
+$css = ["/css/admin/PerfilAdmin.css"];
+require_once('./utils/head.php');
 ?>
+
 <body>
   <?php include_once("$PATH_COMPONENTS/php/navbar.php"); ?>
 
@@ -12,7 +13,7 @@
     <div class="perfil_admin_body">
       <div class="perfil_admin_titulo">
         <div class="perfil_admin_text_titulo">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/perfil_icon.svg" alt="">
+          <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/perfil_icon.svg" alt="">
           <h1>PERFIL ADMIN</h1>
         </div>
         <hr class="perfil_admin_linha_titulo">
@@ -21,13 +22,13 @@
       <div class="perfil_admin_grid_conteudo">
         <div class="perfil_admin_text_1">
           <hr class="perfil_admin_vertical">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/lista_icon.svg" alt="">
+          <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/lista_icon.svg" alt="">
           <h1 class="perfil_admin_text">Seu Perfil</h1>
         </div>
 
         <div class="perfil_admin_text_2">
           <hr class="perfil_admin_vertical">
-          <img class="base_icon" src="<?=$PATH_PUBLIC?>/image/geral/icons/engrenagem_icon.svg" alt="">
+          <img class="base_icon" src="<?= $PATH_PUBLIC ?>/image/geral/icons/engrenagem_icon.svg" alt="">
           <h1 class="perfil_admin_text">Permissões</h1>
         </div>
 
@@ -51,15 +52,15 @@
         <form action="" method="post" class="perfil_admin_forms">
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_1">
             <label>Nome</label>
-            <input type="text" class="base_input" id='nomeAdmin' value="<?=$user['nome_cliente']?>">
+            <input type="text" class="base_input" id='nomeAdmin' value="<?= $user['nome_cliente'] ?>">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_2">
             <label>E-mail</label>
-            <input type="text" id="emailAdmin" class="base_input" value="<?=$user['email_cliente'] ?? 'Não informado'?>">
+            <input type="text" id="emailAdmin" class="base_input" value="<?= $user['email_cliente'] ?? 'Não informado' ?>">
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_3">
             <label>CPF</label>
-            <input type="text" class="base_input" value="<?= $user['cpf_cliente'] ?? 'Não informado'?>" readonly disabled>
+            <input type="text" class="base_input" value="<?= $user['cpf_cliente'] ?? 'Não informado' ?>" readonly disabled>
           </div>
           <div class="perfil_admin_forms_item" id="perfil_admin_forms_item_4">
             <label>Telefone</label>
@@ -137,4 +138,5 @@
   <script type="module" src="<?=$PATH_COMPONENTS?>/js/Toast.js"></script>
   <script src="<?=$PATH_PUBLIC?>/js/admin/UpdateProfile.js"></script>
 </body>
+
 </html>

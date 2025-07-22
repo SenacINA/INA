@@ -83,7 +83,7 @@ hr {
 .perfil_vendedor_infos_container {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, max-content);
   align-items: center;
   justify-content: center;
   justify-items: center;
@@ -98,6 +98,7 @@ hr {
     font-weight: 600;
     line-height: 100%;
   }
+
   .base_icon {
     height: 24px;
   }
@@ -204,7 +205,7 @@ hr {
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
-    line-height:100%;
+    line-height: 100%;
   }
 }
 
@@ -221,6 +222,7 @@ hr {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
+
   p {
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -231,7 +233,7 @@ hr {
 
 .perfil_vendedor_about_container_2 {
   display: flex;
-  width:100%;
+  width: 100%;
   justify-self: center;
 
   margin-top: 32px;
@@ -264,7 +266,6 @@ hr {
   gap: 32px;
   align-self: center;
 
-
   hr {
     width: 5px;
     height: 100px;
@@ -285,6 +286,7 @@ hr {
   flex-direction: row;
   gap: 4px;
   align-items: flex-end;
+
   img {
     height: 24px;
   }
@@ -298,7 +300,7 @@ hr {
 .destaques_itens,
 .produtos_itens {
   margin-top: 1%;
-  
+
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   max-width: 1600px;
@@ -330,6 +332,7 @@ hr {
   .ver_mais_container {
     top: 50px;
   }
+
   .destaques_itens,
   .produtos_itens {
     grid-template-columns: repeat(4, 1fr);
@@ -341,122 +344,78 @@ hr {
   .destaques_itens,
   .produtos_itens {
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 16px;
+    gap: 16px;
   }
-  .perfil_vendedor_grid_produtos {
-    margin-top: 10%;
-    margin-bottom: 10%;
-  }
-  .perfil_vendedor_btn_menu select {
-    width: 150px;
-  }
-  .perfil_vendedor_infos_container p {
-    font-size: 16px;
-  }
-  .perfil_vendedor_pfp h1 {
-    font-size: 28px;
-  }
-  .perfil_vendedor_pfp img {
-    width: 180px;
-    height: 180px;
-  }
-  .perfil_vendedor_content_pfp {
-    top: -80px;
-  }
-  .about_container h1 {
-    font-size: 26px;
-  }
-  .about_container {
-    width: 85%;
-  }
-  .about_container p {
-    font-size: 18px;
-  }
-  .item_contatos_vendedor {
-    display: grid;
-    grid-template-columns: min-content max-content;
-    column-gap: 5%;
-  }
-  .perfil_vendedor_about_container_2 h1 {
-    font-size: 28px;
-  }
-  .perfil_vendedor_about_container_2 {
-    margin-left: 5%;
+
+  .perfil_vendedor_btn_menu {
+    width: 200px;
   }
 }
 
 @media (max-width: 425px) {
   .destaques_itens,
   .produtos_itens {
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: 2%;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 16px;
   }
-  .perfil_vendedor_grid_produtos {
-    margin-top: 20%;
-    margin-bottom: 20%;
+
+  .index_body_produto_card {
+    width: 200px;
   }
-  .perfil_vendedor_infos_item3 {
-    grid-row: 2;
-    grid-column: 2;
+
+  .produtos_itens {
+    overflow-y: scroll;
+    max-height: 700px;
   }
-  .perfil_vendedor_infos_item1 {
+
+  .perfil_vendedor_btn_menu {
+    justify-self: center;
+    position: absolute;
+    top: 520px;
+    margin: 0;
+
+    .base_input_select {
+      justify-self: center;
+      margin: auto;
+    }
+  }
+
+  .perfil_vendedor_infos_container {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil_vendedor_infos_item1,
+  .perfil_vendedor_infos_item2,
+  .perfil_vendedor_infos_item3,
+  .perfil_vendedor_infos_item4 {
     grid-column: 1;
+    grid-row: auto;
+    justify-content: start;
   }
-  .perfil_vendedor_about_container_2 {
-    margin-left: 2%;
-  }
-  .perfil_vendedor_pfp h1 {
-    font-size: 22px;
-  }
-  .about_container p {
-    font-size: 16px;
-  }
-  .contatos_vendedor a {
-    font-size: 16px;
-  }
-  .perfil_vendedor_about_container_2 h1 {
-    font-size: 26px;
-  }
-  .perfil_vendedor_btn_menu select {
-    width: 100px;
-  }
-  hr {
-    margin-top: 10%;
-    margin-bottom: 10%;
-  }
-  .about_container {
-    width: 90%;
+
+  .perfil_vendedor_pfp {
+    margin-top: 50px;
+
+    .pfp_img {
+      width: 200px;
+      height: 200px;
+    }
   }
 }
 
-@media (max-width: 375px) {
-  .destaques_itens,
-  .produtos_itens {
-    margin-top: 10%;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    row-gap: 30px;
+@media (max-width: 425px) {
+  .perfil_vendedor_pfp {
+    margin-top: 80px;
+    width: max-content;
+
+    .pfp_img {
+      width: 150px;
+      height: 150px;
+    }
   }
-  .perfil_vendedor_pfp img {
-    width: 100px;
-    height: 100px;
-  }
-  .perfil_vendedor_content_pfp {
-    top: -50px;
-  }
-  .perfil_vendedor_infos_container p {
-    font-size: 13px;
-  }
-  .about_container h1 {
-    font-size: 22px;
-  }
-  .about_container p {
-    font-size: 14px;
-  }
-  .contatos_vendedor a {
-    font-size: 14px;
-  }
-  .perfil_vendedor_about_container_2 h1 {
-    font-size: 22px;
+
+  .perfil_vendedor_btn_menu {
+    top: 500px;
   }
 }

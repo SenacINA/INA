@@ -21,12 +21,12 @@ INSERT INTO cliente (
     '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
     '2025-06-16',
     'vendedor@email.com',
-    '',
+    '12345678910',
     '',
     '79033337',
     '178272851',
-    '',
-    '',
+    '999999999',
+    '5567',
     '',
     '',
     1,
@@ -57,12 +57,12 @@ INSERT INTO cliente (
     '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
     '2025-06-16',
     'adm@email.com',
-    '',
+    '12345678911',
     '',
     '79033337',
     '178272851',
-    '',
-    '',
+    '999998888',
+    '67',
     '',
     '',
     0,
@@ -96,6 +96,8 @@ INSERT INTO cliente (
     data_registro_cliente,
     email_cliente,
     tipo_conta_cliente,
+    numero_celular_cliente,
+    ddd_cliente,
     status_conta_cliente
 ) VALUES (
     3,
@@ -104,6 +106,8 @@ INSERT INTO cliente (
     '2025-06-16',
     'cliente@email.com',
     2,
+    '40028922',
+    '11',
     1
 );
 
@@ -130,6 +134,8 @@ INSERT INTO cliente (
     data_registro_cliente,
     email_cliente,
     tipo_conta_cliente,
+    numero_celular_cliente,
+    ddd_cliente,
     status_conta_cliente
 ) VALUES (
     4,
@@ -138,6 +144,8 @@ INSERT INTO cliente (
     '2025-06-16',
     'cliente4@email.com',
     2,
+    '911111111',
+    '11',
     1
 );
 
@@ -164,6 +172,8 @@ INSERT INTO cliente (
     data_registro_cliente,
     email_cliente,
     tipo_conta_cliente,
+    numero_celular_cliente,
+    ddd_cliente,
     status_conta_cliente
 ) VALUES (
     5,
@@ -172,6 +182,8 @@ INSERT INTO cliente (
     '2025-06-16',
     'cliente5@email.com',
     2,
+    '922222222',
+    '11',
     1
 );
 
@@ -199,6 +211,8 @@ INSERT INTO cliente (
     data_registro_cliente,
     email_cliente,
     tipo_conta_cliente,
+    numero_celular_cliente,
+    ddd_cliente,
     status_conta_cliente
 ) VALUES (
     6,
@@ -207,6 +221,8 @@ INSERT INTO cliente (
     '2025-06-16',
     'cliente6@email.com',
     2,
+    '933333333',
+    '11',
     1
 );
 
@@ -233,6 +249,8 @@ INSERT INTO cliente (
     data_registro_cliente,
     email_cliente,
     tipo_conta_cliente,
+    numero_celular_cliente,
+    ddd_cliente,
     status_conta_cliente
 ) VALUES (
     7,
@@ -241,6 +259,8 @@ INSERT INTO cliente (
     '2025-07-01',
     'vendedor2@email.com',
     1,
+    '900000000',
+    '12',
     1
 );
 
@@ -259,7 +279,7 @@ INSERT INTO perfil (
 );
 
 -- Inserir categoria
-INSERT INTO categoria (nome_categoria, endereco_imagem_categoria) VALUES ('Geral', '/image/index/categoriasPerifericos.png');
+INSERT INTO categoria (nome_categoria, endereco_imagem_categoria) VALUES ('Geral', '/image/index/categoriasGeral.png');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria) 
 VALUES ('Geral', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Geral'));
@@ -287,7 +307,7 @@ VALUES
 
 -- Categoria: Acessórios
 INSERT INTO categoria (nome_categoria, endereco_imagem_categoria)
-VALUES ('Acessórios', '/image/index/categoriasCelulares.png');
+VALUES ('Acessórios', '/image/index/categoriasAcessorios.png');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
 VALUES
@@ -297,7 +317,7 @@ VALUES
 
 -- Categoria: Computadores
 INSERT INTO categoria (nome_categoria, endereco_imagem_categoria)
-VALUES ('Computadores', '/image/index/categoriasEscritorio.png');
+VALUES ('Computadores', '/image/index/categoriasComputadores.png');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
 VALUES
@@ -307,7 +327,7 @@ VALUES
 
 -- Categoria: Monitores
 INSERT INTO categoria (nome_categoria, endereco_imagem_categoria)
-VALUES ('Monitores', '/image/index/categoriasEscritorio.png');
+VALUES ('Monitores', '/image/index/categoriasMonitores.png');
 
 INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria)
 VALUES
@@ -854,8 +874,850 @@ INSERT INTO promocao (
   hora_fim_promocao
 ) VALUES
   (1, TRUE, 1, 10,
-   '2025-06-20', '2025-07-10',
+   '2025-06-20', '2026-07-10',
    '00:00:00', '23:59:59'),
   (3, TRUE, 2, 20,
-   '2025-06-25', '2025-07-05',
+   '2025-06-25', '2026-07-05',
    '00:00:00', '23:59:59');
+
+-- Cliente 8
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    8,
+    'Cliente8',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-05',
+    'cliente8@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    7,
+    8,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Cliente 9
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    9,
+    'Cliente9',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-06',
+    'cliente9@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    8,
+    9,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Cliente 10
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    10,
+    'Cliente10',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-07',
+    'cliente10@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    9,
+    10,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Cliente 11
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    11,
+    'Cliente11',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-08',
+    'cliente11@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    10,
+    11,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Cliente 12
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    12,
+    'Cliente12',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-09',
+    'cliente12@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    11,
+    12,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Cliente 13
+INSERT INTO cliente (
+    id_cliente,
+    nome_cliente,
+    senha_cliente,
+    data_registro_cliente,
+    email_cliente,
+    tipo_conta_cliente,
+    status_conta_cliente
+) VALUES (
+    13,
+    'Cliente13',
+    '$2y$10$30Srnx7UEWCHlsf4uI6m8OGSSUPeg8wZjre3o97oYRLl9VpEpeS12',
+    '2025-07-10',
+    'cliente13@email.com',
+    2,
+    1
+);
+
+INSERT INTO perfil (
+    id_perfil,
+    id_cliente,
+    foto_perfil,
+    banner_perfil
+) VALUES (
+    12,
+    13,
+    '/image/cliente/perfil_cliente/foto_user.png',
+    '/image/cliente/perfil_cliente/banner_user.png'
+);
+
+-- Avaliações para o produto 1 (Mouse Redragon) pelos novos clientes
+INSERT INTO avaliacao (
+    id_avaliacao,
+    status_avaliacao,
+    estrelas_avaliacao,
+    data_avaliacao,
+    descricao_avaliacao,
+    qualidade,
+    parecido,
+    id_produto,
+    id_cliente,
+    id_vendedor
+) VALUES
+    (5, TRUE, 5.0, '2025-07-01',
+     'Melhor mouse que já usei! Precisão incrível para jogos.',
+     'Excelente', TRUE, 1, 8, 1),
+     
+    (6, TRUE, 4.5, '2025-07-02',
+     'Bom custo-benefício, só acho um pouco pesado para meu gosto.',
+     'Muito Boa', TRUE, 1, 9, 1),
+     
+    (7, TRUE, 3.5, '2025-07-03',
+     'Atende às expectativas, mas o software de configuração poderia ser melhor.',
+     'Boa', TRUE, 1, 10, 1),
+     
+    (8, TRUE, 2.0, '2025-07-04',
+     'Botões começaram a falhar após 1 mês de uso. Não recomendo.',
+     'Ruim', FALSE, 1, 11, 1),
+     
+    (9, TRUE, 4.0, '2025-07-05',
+     'Iluminação RGB linda e ergonomia confortável para longas sessões.',
+     'Muito Boa', TRUE, 1, 12, 1),
+     
+    (10, TRUE, 5.0, '2025-07-06',
+     'Superou expectativas! Sensor preciso e construção durável.',
+     'Excelente', TRUE, 1, 13, 1);
+
+-- Imagens para algumas avaliações
+INSERT INTO imagem_avaliacao (
+    id_imagem_avaliacao,
+    endereco_imagem_avaliacao,
+    id_avaliacao
+) VALUES
+    (5, '/upload/avaliacoes/1/5/avaliacao_imagem1.jpg', 5),
+    (6, '/upload/avaliacoes/1/5/avaliacao_imagem2.jpg', 5),
+    (7, '/upload/avaliacoes/1/7/avaliacao_imagem.jpg', 7),
+    (8, '/upload/avaliacoes/1/8/avaliacao_imagem.jpg', 8),
+    (9, '/upload/avaliacoes/1/9/avaliacao_imagem.jpg', 9),
+    (10, '/upload/avaliacoes/1/10/avaliacao_imagem.jpg', 10);
+
+-- Avaliação do produto 2
+INSERT INTO avaliacao (
+    id_avaliacao,
+    status_avaliacao,
+    estrelas_avaliacao,
+    data_avaliacao,
+    descricao_avaliacao,
+    qualidade,
+    parecido,
+    id_produto,
+    id_cliente,
+    id_vendedor
+) VALUES (
+    11,  -- Próximo ID disponível
+    TRUE,
+    5.0,  -- Nota máxima
+    '2025-07-12',  -- Data atual
+    'Produto excelente! Snoopy chegou rápido e em perfeito estado. Superou todas as expectativas!',
+    'Excelente',
+    TRUE,
+    2,   -- ID do produto Snoopy
+    4,   -- ID do cliente 4 (diferente do 3)
+    1    -- ID do vendedor (Vendedor1)
+);
+
+-- Compra do produto 2 pelo cliente 3 (sem avaliação)
+-- Primeiro cria a compra
+INSERT INTO compra (id_cliente, id_vendedor, data_compra, id_endereco, id_tipo_frete)
+VALUES (3, 1, CURDATE(), 1, 1);  -- ID da compra será gerado automaticamente
+
+-- Insere o item da compra (sem avaliação)
+INSERT INTO item_compra (
+    id_compra, 
+    id_produto, 
+    quantidade_compra, 
+    preco_pago_compra, 
+    id_metodo_pagamento, 
+    data_limite_entrega_compra, 
+    status_pagamento_compra, 
+    status_entrega_compra
+)
+VALUES (
+    LAST_INSERT_ID(),  -- ID da compra recém-criada
+    2,  -- ID do produto Snoopy
+    1,  -- Quantidade
+    (SELECT preco_produto FROM produto WHERE id_produto = 2),  -- Preço atual
+    1,  -- Método pagamento Pix
+    DATE_ADD(CURDATE(), INTERVAL 7 DAY),  -- Entrega em 7 dias
+    TRUE,  -- Pagamento confirmado
+    TRUE   -- Entrega confirmada
+);
+
+-- Inserir novas categorias
+INSERT INTO categoria (nome_categoria, endereco_imagem_categoria) VALUES
+('Eletrônicos', '/image/index/categoriasEletronicos.png'),
+('Livros', '/image/index/categoriasLivros.png'),
+('Moda', '/image/index/categoriasModa.png'),
+('Casa e Jardim', '/image/index/categoriasCasa.png'),
+('Esportes', '/image/index/categoriasEsportes.png');
+
+-- Inserir subcategorias para Eletrônicos
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria) VALUES
+('Smartphones', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Eletrônicos')),
+('Tablets', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Eletrônicos')),
+('Smartwatches', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Eletrônicos'));
+
+-- Inserir subcategorias para Livros
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria) VALUES
+('Ficção', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Livros')),
+('Não Ficção', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Livros')),
+('Educacional', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Livros'));
+
+-- Inserir subcategorias para Moda
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria) VALUES
+('Roupas Masculinas', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Moda')),
+('Roupas Femininas', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Moda')),
+('Acessórios', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Moda'));
+
+-- Inserir subcategorias para Casa e Jardim
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria) VALUES
+('Móveis', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Casa e Jardim')),
+('Decoração', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Casa e Jardim')),
+('Jardim', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Casa e Jardim'));
+
+-- Inserir subcategorias para Esportes
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria) VALUES
+('Fitness', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Esportes')),
+('Corrida', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Esportes')),
+('Ciclismo', (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Esportes'));
+
+-- Inserir subcategoria para Eletrônicos
+-- Exemplo: Smart TVs
+INSERT INTO subcategoria (nome_subcategoria, categoria_subcategoria) 
+VALUES (
+    'Smart TVs',
+    (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Eletrônicos')
+);
+
+-- Inserir novos produtos
+-- Produto 7: Smartphone
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    7,
+    1,
+    2001,
+    'Smartphone Samsung Galaxy S24',
+    3999,
+    'Samsung',
+    (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Eletrônicos'),
+    (SELECT id_subcategoria FROM subcategoria WHERE nome_subcategoria = 'Smartphones'),
+    'São Paulo',
+    15,
+    168,
+    200,
+    7,
+    15,
+    1,
+    '<p>Smartphone premium com câmera de 108MP e tela Dynamic AMOLED 2X</p>',
+    1
+);
+
+INSERT INTO imagem_produto VALUES
+(NULL, 7, '/upload/produtos/7/imagem_1_1750113375.webp', 1),
+(NULL, 7, '/upload/produtos/7/imagem_2_1750113375.webp', 2);
+
+-- Produto 8: Livro
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    8,
+    1,
+    2002,
+    'Box O Senhor dos Anéis',
+    199,
+    'HarperCollins',
+    (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Livros'),
+    (SELECT id_subcategoria FROM subcategoria WHERE nome_subcategoria = 'Ficção'),
+    'São Paulo',
+    30,
+    500,
+    600,
+    15,
+    23,
+    10,
+    '<p>Edição especial da trilogia completa de O Senhor dos Anéis</p>',
+    1
+);
+
+INSERT INTO imagem_produto VALUES
+(NULL, 8, '/upload/produtos/8/imagem_1_1750113375.webp', 1);
+
+-- Produto 9: Camiseta
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    9,
+    1,
+    2003,
+    'Camiseta Nike Dry Fit',
+    129,
+    'Nike',
+    (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Moda'),
+    (SELECT id_subcategoria FROM subcategoria WHERE nome_subcategoria = 'Roupas Masculinas'),
+    'São Paulo',
+    50,
+    150,
+    200,
+    20,
+    30,
+    1,
+    '<p>Camiseta esportiva com tecnologia de absorção de suor</p>',
+    1
+);
+
+INSERT INTO imagem_produto VALUES
+(NULL, 9, '/upload/produtos/9/imagem_1_1750113375.webp', 1),
+(NULL, 9, '/upload/produtos/9/imagem_2_1750113375.webp', 2);
+
+-- Produto 10: Sofá
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    10,
+    1,
+    2004,
+    'Sofá 3 Lugares Retrátil',
+    2499,
+    'Tok&Stok',
+    (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Casa e Jardim'),
+    (SELECT id_subcategoria FROM subcategoria WHERE nome_subcategoria = 'Móveis'),
+    'São Paulo',
+    5,
+    35000,
+    40000,
+    90,
+    85,
+    210,
+    '<p>Sofá premium com assentos retráteis e reclináveis</p>',
+    1
+);
+
+INSERT INTO imagem_produto VALUES
+(NULL, 10, '/upload/produtos/10/imagem_1_1750113375.webp', 1),
+(NULL, 10, '/upload/produtos/10/imagem_2_1750113375.webp', 2);
+
+-- Produto 11: Bicicleta
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    11,
+    1,
+    2005,
+    'Bicicleta Mountain Bike',
+    1599,
+    'Caloi',
+    (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Esportes'),
+    (SELECT id_subcategoria FROM subcategoria WHERE nome_subcategoria = 'Ciclismo'),
+    'São Paulo',
+    8,
+    15000,
+    18000,
+    60,
+    100,
+    170,
+    '<p>Bicicleta aro 29 com 21 velocidades e suspensão dianteira</p>',
+    1
+);
+
+INSERT INTO imagem_produto VALUES
+(NULL, 11, '/upload/produtos/11/imagem_1_1750113375.webp', 1),
+(NULL, 11, '/upload/produtos/11/imagem_2_1750113375.webp', 2),
+(NULL, 11, '/upload/produtos/11/imagem_3_1750113375.webp', 3);
+
+-- Promoções para os novos produtos
+INSERT INTO promocao (
+  id_produto,
+  ativo_promocao,
+  tipo_promocao,
+  desconto_promocao,
+  data_inicio_promocao,
+  data_fim_promocao,
+  hora_inicio_promocao,
+  hora_fim_promocao
+) VALUES
+  (7, TRUE, 2, 15, '2025-07-10', '2026-01-15', '00:00:00', '23:59:59'),  -- Smartphone
+  (10, TRUE, 1, 300, '2025-07-10', '2026-02-28', '00:00:00', '23:59:59'), -- Sofá
+  (11, TRUE, 2, 20, '2025-07-01', '2025-12-31', '00:00:00', '23:59:59');  -- Bicicleta
+
+  -- Novo produto: Smart TV
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    12,
+    1,
+    2006,
+    'Smart TV LG 55" 4K UHD',
+    2899,
+    'LG',
+    (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Eletrônicos'),
+    (SELECT id_subcategoria FROM subcategoria WHERE nome_subcategoria = 'Smart TVs'),
+    'São Paulo',
+    20,
+    12000,
+    15000,
+    123,
+    72,
+    8,
+    '<p>Smart TV LG 55" 4K UHD com processador α7 Gen5, AI Sound Pro e webOS 23</p>',
+    1
+);
+
+-- Imagens do produto
+INSERT INTO imagem_produto VALUES
+(NULL, 12, '/upload/produtos/12/imagem_1_1750113375.webp', 1),
+(NULL, 12, '/upload/produtos/12/imagem_2_1750113375.webp', 2),
+(NULL, 12, '/upload/produtos/12/imagem_3_1750113375.webp', 3);
+
+-- Promoção para o produto (começa hoje e termina em dezembro)
+INSERT INTO promocao (
+  id_produto,
+  ativo_promocao,
+  tipo_promocao,
+  desconto_promocao,
+  data_inicio_promocao,
+  data_fim_promocao,
+  hora_inicio_promocao,
+  hora_fim_promocao
+) VALUES (
+  12, 
+  TRUE, 
+  1,  -- Reais sobre Total
+  400, -- Desconto de R$ 400
+  '2025-07-12', -- Começa hoje
+  '2025-12-31', -- Termina em dezembro
+  '00:00:00', 
+  '23:59:59'
+);
+
+-- Produto 13: Teclado Mecânico Gamer (Vendedor 2)
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    13,
+    2,
+    3001,
+    'Teclado Mecânico Gamer Redragon Kumara',
+    299,
+    'Redragon',
+    (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Periféricos'),
+    (SELECT id_subcategoria FROM subcategoria WHERE nome_subcategoria = 'Teclados'),
+    'São Paulo',
+    25,
+    800,
+    1000,
+    45,
+    5,
+    15,
+    '<p>Teclado mecânico com switches Outemu Blue, retroiluminação RGB e construção em ABS</p>',
+    1
+);
+
+-- Imagens do produto 13
+INSERT INTO imagem_produto VALUES
+(NULL, 13, '/upload/produtos/13/imagem_1_1750113375.webp', 1),
+(NULL, 13, '/upload/produtos/13/imagem_2_1750113375.webp', 2),
+(NULL, 13, '/upload/produtos/13/imagem_3_1750113375.webp', 3);
+
+-- Produto 14: Headset Gamer (Vendedor 2) - EM PROMOÇÃO
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    14,
+    2,
+    3002,
+    'Headset Gamer HyperX Cloud Stinger',
+    349,
+    'HyperX',
+    (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Periféricos'),
+    (SELECT id_subcategoria FROM subcategoria WHERE nome_subcategoria = 'Headsets'),
+    'São Paulo',
+    20,
+    500,
+    700,
+    20,
+    20,
+    20,
+    '<p>Headset com som surround virtual, microfone com cancelamento de ruído e conforto premium</p>',
+    1
+);
+
+-- Imagens do produto 14
+INSERT INTO imagem_produto VALUES
+(NULL, 14, '/upload/produtos/14/imagem_1_1750113375.webp', 1),
+(NULL, 14, '/upload/produtos/14/imagem_2_1750113375.webp', 2);
+
+-- Promoção para o produto 14 (Headset)
+INSERT INTO promocao (
+  id_produto,
+  ativo_promocao,
+  tipo_promocao,
+  desconto_promocao,
+  data_inicio_promocao,
+  data_fim_promocao,
+  hora_inicio_promocao,
+  hora_fim_promocao
+) VALUES (
+  14, 
+  TRUE, 
+  1,  -- Reais sobre Total
+  50, -- Desconto de R$ 50
+  '2025-07-12', -- Começa hoje
+  '2025-12-31', -- Termina em dezembro
+  '00:00:00', 
+  '23:59:59'
+);
+
+-- Produto 15: Mousepad Grande (Vendedor 2) - COM 2 AVALIAÇÕES
+INSERT INTO produto (
+    id_produto,
+    id_vendedor,
+    cod_produto,
+    nome_produto,
+    preco_produto,
+    marca_produto,
+    categoria_produto,
+    subcategoria_produto,
+    origem_produto,
+    unidade_produto,
+    peso_liquido_produto,
+    peso_bruto_produto,
+    largura_produto,
+    altura_produto,
+    comprimento_produto,
+    descricao_produto,
+    status_produto
+) VALUES (
+    15,
+    2,
+    3003,
+    'Mousepad Speed Grande 90x40cm',
+    89,
+    'Havit',
+    (SELECT id_categoria FROM categoria WHERE nome_categoria = 'Acessórios'),
+    (SELECT id_subcategoria FROM subcategoria WHERE nome_subcategoria = 'Mousepads'),
+    'São Paulo',
+    30,
+    300,
+    400,
+    40,
+    1,
+    90,
+    '<p>Mousepad de tecido speed com base antiderrapante para performance em jogos</p>',
+    1
+);
+
+-- Imagens do produto 15
+INSERT INTO imagem_produto VALUES
+(NULL, 15, '/upload/produtos/15/imagem_1_1750113375.webp', 1),
+(NULL, 15, '/upload/produtos/15/imagem_2_1750113375.webp', 2);
+
+-- Avaliações para o produto 15 (Mousepad)
+-- Primeira avaliação
+INSERT INTO avaliacao (
+    id_avaliacao,
+    status_avaliacao,
+    estrelas_avaliacao,
+    data_avaliacao,
+    descricao_avaliacao,
+    qualidade,
+    parecido,
+    id_produto,
+    id_cliente,
+    id_vendedor
+) VALUES (
+    12,  -- Próximo ID
+    TRUE,
+    4.5,
+    '2025-07-10',
+    'Ótimo mousepad, superou minhas expectativas!',
+    'Muito Boa',
+    TRUE,
+    15,
+    3,  -- Cliente 3
+    2   -- Vendedor 2
+);
+
+-- Segunda avaliação
+INSERT INTO avaliacao (
+    id_avaliacao,
+    status_avaliacao,
+    estrelas_avaliacao,
+    data_avaliacao,
+    descricao_avaliacao,
+    qualidade,
+    parecido,
+    id_produto,
+    id_cliente,
+    id_vendedor
+) VALUES (
+    13,  -- Próximo ID
+    TRUE,
+    5.0,
+    '2025-07-11',
+    'Perfeito para meu setup! Entrega rápida e produto de qualidade.',
+    'Excelente',
+    TRUE,
+    15,
+    4,  -- Cliente 4
+    2   -- Vendedor 2
+);
+
+-- Imagens para as avaliações do produto 15
+INSERT INTO imagem_avaliacao VALUES
+(NULL, '/upload/avaliacoes/15/12/avaliacao_imagem.jpg', 12),
+(NULL, '/upload/avaliacoes/15/13/avaliacao_imagem1.jpg', 13),
+(NULL, '/upload/avaliacoes/15/13/avaliacao_imagem2.jpg', 13);
