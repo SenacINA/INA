@@ -22,7 +22,7 @@ require_once('./utils/head.php');
         <hr class="registro_produto_linha_titulo">
       </div>
       <div class='registro_produto_container'>
-        <form action="ProdutoRegistro" method="post" class='registro_produto_form_grid'>
+        <form action="ProdutoRegistro" id='form-produto' method="post" class='registro_produto_form_grid'>
           <div class='registro_produto_form'>
             <div class='registro_produto_form_title'>
               <div class='registro_produto_line'></div>
@@ -262,8 +262,8 @@ require_once('./utils/head.php');
             </div>
           </div>
           
-        <input type="hidden" id="produto-imagens" name="produto_imagens">
-        <input type="hidden" name="imagens_remover" id="imagens-remover" value="">
+          <input type="hidden" id="produto_imagens" name="produto_imagens"/>
+          <input type="hidden" id="imagens_remover"  name="imagens_remover"/>
 
           <div class='registro_produto_form_buttons'>
             <button class="base_botao btn_outline_red" type='reset'>

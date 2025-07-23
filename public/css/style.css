@@ -1583,6 +1583,10 @@ input:checked + .toggle_slider::before {
     .categorias_nav{
       gap: 16px;
     }
+
+    .notification-container {
+      max-width: 256px !important;
+    }
 }
 
 @media (max-width: 320px) {
@@ -1655,7 +1659,7 @@ input:checked + .toggle_slider::before {
   bottom: 16px;
   right: 16px;
   z-index: 1000;
-  max-width: 256px;
+  max-width: 384px;
   width: 100%;
 
   --content-color: var(--branco_gelo);
@@ -1669,6 +1673,7 @@ input:checked + .toggle_slider::before {
   list-style-type: none;
   font-family: Jost;
   color: var(--content-color);
+  font-size: 24px;
 }
 
 /* Notification Item */
@@ -1688,7 +1693,7 @@ input:checked + .toggle_slider::before {
   box-shadow: rgba(111, 111, 111, 0.2) 0px 8px 24px;
   background-color: var(--background-color);
   transition: all 250ms ease;
-  max-width: 256px;
+  max-width: 100%;
 }
 
 .notification-item svg {

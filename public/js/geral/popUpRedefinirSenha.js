@@ -29,7 +29,7 @@ btn.addEventListener("click", async () => {
         window.location.href = "RedefinirSenhaConfirmar";
       }, 1500);
     } else {
-      gerarToast("Erro ao verificar e-mail", "erro");
+      gerarToast(data['error'], "erro");
     }
   } catch (error) {
     console.error(error);

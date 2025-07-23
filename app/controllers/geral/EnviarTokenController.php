@@ -16,6 +16,22 @@ class EnviarTokenController
     $email = $_POST['email'] ?? '';
     $cliente = $this->model->buscarClientePorEmail($email);
 
+    if (empty($cliente)) {
+      echo json_encode([
+        "success" => false,
+        'error' => 'E-mail não encontrado.'
+      ]);
+      return;
+    }
+
+    if ($cliente['id_cliente'] != $_SESSION['cliente_id']) {
+      echo json_encode([
+        "success" => false,
+        'error' => 'E‑mail não vinculado a esta conta.'
+      ]);
+      return;
+    }
+
     $token = bin2hex(random_bytes(32));
     $expira = date('Y-m-d H:i:s', strtotime('+1 hour'));
 

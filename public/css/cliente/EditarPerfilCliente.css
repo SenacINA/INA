@@ -44,6 +44,7 @@ body {
 
 .text_popup {
   display: flex;
+  flex-direction: row !important;
   column-gap: 2%;
 }
 

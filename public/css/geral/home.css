@@ -226,16 +226,22 @@ body {
     }
 
     .index_body_big_ad {
+        background-color: var(--sappire);
+        max-height: 274px;
+        height: 100%;
+        width: 100%;
+        max-width: 624px;
         img {
             width: 100%;
             height: auto;
             object-fit: cover;
+            max-height: 274px;
+            height: 100%;
         }
     }
 
     .index_body_big_ad img {
-        width: 670px;
-        height: 300px;
+        width: 100%;
         object-fit: cover; /* keeps aspect ratio but fills area */
         display: block;
     }
@@ -249,8 +255,7 @@ body {
     }
 
     .index_body_big_ad_bottom img {
-        width: 1370px;
-        height: 500px;
+        width: 100%;
         object-fit: none; /* keeps aspect ratio but fills area */
         display: block;
     }
@@ -263,8 +268,7 @@ body {
     }
     
     .index_body_mid_ad img {
-        width: 670px;
-        height: 125px;
+        width: 100%;
         object-fit: cover;
         display: block;
     }

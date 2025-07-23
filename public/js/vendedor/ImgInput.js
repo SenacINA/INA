@@ -152,13 +152,14 @@ function coletarImagensParaEnvio() {
     }
   });
   
-  document.getElementById('produto-imagens').value = JSON.stringify(imagensBase64);
-  document.getElementById('imagens-remover').value = JSON.stringify(imagensRemovidas);
+  document.getElementById('produto_imagens').value = JSON.stringify(imagensBase64);
+  document.getElementById('imagens_remover').value = JSON.stringify(imagensRemovidas);
+
 }
 
-document.querySelector('form').addEventListener('submit', function(e) {
-  coletarDadosParaEnvio();
-});
+form = document.getElementById('form-produto');
+
+form.addEventListener('submit', e => coletarImagensParaEnvio());
 
 document.addEventListener('DOMContentLoaded', () => {
   
