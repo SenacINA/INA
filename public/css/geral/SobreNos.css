@@ -550,6 +550,12 @@ ul {
   margin: 16px 0;
 }
 
+.cypher {
+  width: 180px;
+  position: relative;
+  left: 160px;
+}
+
 @media (max-width: 1200px) {
   .about-background {
     align-items: center;
