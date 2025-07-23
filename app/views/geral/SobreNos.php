@@ -194,6 +194,7 @@ require_once('./utils/head.php');
                             <li>Mono sentinela</li>
                             <li>Plat 2 - Peak</li>
                         </ul>
+                        <img class="cypher" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/cypher.gif">
                         </p>
                     </div>
                     <!-- From Uiverse.io by WAIOKYERE -->
