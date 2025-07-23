@@ -1,34 +1,58 @@
-let currentIndex = 0;
+let currentIndex = 1; // Começa na primeira imagem real (não no clone)
 const carousel = document.getElementById("carousel");
 const images = document.querySelectorAll(".carousel img");
 const footer = document.getElementById("footer");
 const totalImages = images.length;
 
 const descriptions = [
-    { name: "Enzo Guenka Lopez", text: "Trabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manrabalhou dia e noite para idk manou dia e noite para idk man." },
-    { name: "Pessoa 2", text: "Descrição da pessoa 2 aqui." },
-    { name: "Pessoa 3", text: "Descrição da pessoa 3 aqui." },
-    { name: "Pessoa 4", text: "Descrição da pessoa 4 aqui." },
-    { name: "Pessoa 5", text: "Descrição da pessoa 5 aqui." },
-    { name: "Pessoa 6", text: "Descrição da pessoa 6 aqui." },
-    { name: "Pessoa 7", text: "Descrição da pessoa 7 aqui." },
-    { name: "Pessoa 8", text: "Descrição da pessoa 8 aqui." }
+    { name: "Enzo Guenka Lopez", text: "Trabalhou dia e noite..." },
+    // ... (mantenha suas descrições originais)
 ];
 
+// Função para mapear índice do carrossel para índice de descrição
+function getDescriptionIndex(carouselIndex) {
+    const realIndex = carouselIndex - 1;
+    return (realIndex + descriptions.length) % descriptions.length;
+}
+
 function updateCarousel() {
+    // Deslocamento considerando clones nas extremidades
     carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-    footer.innerHTML = `<h2>${descriptions[currentIndex].name}</h2><p>${descriptions[currentIndex].text}</p>`;
+    
+    // Atualiza footer com descrição correspondente
+    const descIndex = getDescriptionIndex(currentIndex);
+    footer.innerHTML = `<h2>${descriptions[descIndex].name}</h2><p>${descriptions[descIndex].text}</p>`;
 }
 
 function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalImages;
+    currentIndex++;
+    carousel.style.transition = "transform 0.5s ease";
     updateCarousel();
+
+    // Pula silenciosamente para o clone "real" quando chegar no final
+    if (currentIndex === totalImages - 1) {
+        setTimeout(() => {
+            carousel.style.transition = "none";
+            currentIndex = 1;
+            updateCarousel();
+        }, 500);
+    }
 }
 
 function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    currentIndex--;
+    carousel.style.transition = "transform 0.5s ease";
     updateCarousel();
+
+    // Pula silenciosamente para o clone "real" quando chegar no início
+    if (currentIndex === 0) {
+        setTimeout(() => {
+            carousel.style.transition = "none";
+            currentIndex = totalImages - 2;
+            updateCarousel();
+        }, 500);
+    }
 }
 
-// Initialize the carousel
+// Inicialização
 updateCarousel();

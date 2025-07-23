@@ -1188,6 +1188,7 @@ input:checked + .toggle_slider::before {
     aspect-ratio: 1 / 1;
     background-color: #fff;
     object-fit: contain;
+    background-color: #fff;
   }
 }
 
