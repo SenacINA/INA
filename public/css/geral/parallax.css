@@ -42,6 +42,19 @@
 
 }
 
+.parallax_img_logo {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: logo 1.5s ease-out 1.5s 1 forwards;
+  
+  /* Responsividade inteligente */
+  width: auto;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+}
+
 /* Animações */
 @keyframes slide {
     0% { background-position: left; }
@@ -77,4 +90,28 @@
         background-size: cover;
         height: 60vh; 
     }
+}
+
+/* Ajustes para telas médias */
+@media (max-width: 768px) {
+  .parallax_img_logo {
+    max-width: 80vw;
+    max-height: 50vh;
+  }
+}
+
+/* Ajustes específicos para 375px */
+@media (max-width: 375px) {
+  .parallax_img_logo {
+    max-width: 85vw;
+    max-height: 45vh;
+  }
+}
+
+/* Ajustes específicos para 320px */
+@media (max-width: 320px) {
+  .parallax_img_logo {
+    max-width: 90vw;
+    max-height: 40vh;
+  }
 }
