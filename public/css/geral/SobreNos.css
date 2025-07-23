@@ -32,27 +32,8 @@
   }
 }
 
-#eliasasa {
-  background-color: #36454f !important;
-  height: fit-content !important;
-
-  p,
-  h2,
-  li {
-    color: #fff !important;
-  }
-
-  .eliasasa-list li {
-    list-style: disc;
-    margin-left: 32px;
-  }
-
-  .cardHeader::after {
-    background-color: #36454f !important;
-  }
-}
-
 #enzo {
+
   p,
   h2,
   li {
@@ -65,6 +46,26 @@
   }
 
   .bueno-list li {
+    list-style: disc;
+    margin-left: 32px;
+  }
+
+  .cardHeader::after {
+    background-color: #36454f !important;
+  }
+}
+
+#eliasasa {
+  background-color: #36454f !important;
+  height: fit-content !important;
+
+  p,
+  h2,
+  li {
+    color: #fff !important;
+  }
+
+  .eliasasa-list li {
     list-style: disc;
     margin-left: 32px;
   }
@@ -99,7 +100,7 @@
 }
 
 #filipe {
-  background-color: #36454f !important;
+  background-color: #805301 !important;
 
   p,
   h2,
@@ -108,6 +109,87 @@
   }
 
   .filipe-list li {
+    list-style: disc;
+    margin-left: 32px;
+  }
+
+  .cardHeader::after {
+    background-color: #36454f !important;
+  }
+}
+
+#ana {
+  background-color: #616161 !important;
+
+  p,
+  h2,
+  li {
+    color: #fff !important;
+  }
+
+  .ana-list li {
+    list-style: disc;
+    margin-left: 32px;
+  }
+
+  .cardHeader::after {
+    background-color: #36454f !important;
+  }
+
+  .pinguin {
+    width: 120px;
+    position: relative;
+  }
+}
+
+#cadu {
+  background-color: #4b2366 !important;
+
+  p,
+  h2,
+  li {
+    color: #fff !important;
+  }
+
+  .cadu-list li {
+    list-style: disc;
+    margin-left: 32px;
+  }
+
+  .cardHeader::after {
+    background-color: #36454f !important;
+  }
+}
+
+#luis_f {
+  background-color: #000000 !important;
+
+  p,
+  h2,
+  li {
+    color: #fff !important;
+  }
+
+  .luis_f-list li {
+    list-style: disc;
+    margin-left: 32px;
+  }
+
+  .cardHeader::after {
+    background-color: #36454f !important;
+  }
+}
+
+#cunha {
+  background-color: #0d4353 !important;
+
+  p,
+  h2,
+  li {
+    color: #fff !important;
+  }
+
+  .cunha-list li {
     list-style: disc;
     margin-left: 32px;
   }
@@ -255,7 +337,7 @@ main {
 }
 
 .hero-container {
-  height: 414px;
+  height: auto;
   display: grid;
   width: 100%;
   padding: 2rem;
@@ -264,42 +346,55 @@ main {
   justify-content: space-between;
   margin: 1rem 0;
   border-radius: 10px;
+}
 
-  &:nth-child(odd) {
-    background-color: var(--sappire);
+.hero-container:nth-child(odd) {
+  background-color: var(--sappire);
+}
 
-    .hero-info {
-      align-items: end;
-    }
-  }
+.hero-container:nth-child(odd) .hero-info {
+  align-items: end;
+}
 
-  &:nth-child(even) {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: flex-start;
-    background-color: var(--azul_leve);
+.hero-container:nth-child(even) {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  background-color: var(--azul_leve);
+}
 
-    .hero-info {
-      display: flex;
-      align-items: flex-start;
-    }
+.hero-container:nth-child(even) .hero-info {
+  display: flex;
+  width: 100%;
+  height: 100%;
 
-    .card,
-    .hero-info {
-      width: 50%;
-      min-height: 100%;
-      box-sizing: border-box;
-    }
+  justify-content: space-between;
+  border-radius: 10px;
+}
 
-    .hero-text {
-      color: #000;
-    }
-  }
+.hero-container:nth-child(even) .card {
+  background: var(--sappire);
+  position: relative;
+  width: 250px;
+  height: 350px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 7.5px;
+  transition: 0.5s ease;
+  color: white;
+  align-self: center;
+}
+
+.hero-container:nth-child(even) .hero-text {
+  color: #000;
 }
 
 .hero-info {
   display: flex;
-  height: 100%;
+  height: 100% !important;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -307,6 +402,7 @@ main {
 .hero-text {
   color: #fff;
 }
+
 
 /* From Uiverse.io by WAIOKYERE */
 ul {
@@ -317,6 +413,17 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.example-2_left {
+  display: flex;
+  justify-content: start;
+  margin-top: 8%;
+}
+
+.example-2_left_2 {
+  display: flex;
+  justify-content: start;
 }
 
 .example-2 .icon-content {
@@ -389,55 +496,53 @@ ul {
 }
 
 .example-2 .icon-content a[data-social="spotify"] .filled,
-.example-2 .icon-content a[data-social="spotify"] ~ .tooltip {
+.example-2 .icon-content a[data-social="spotify"]~.tooltip {
   background-color: #1db954;
 }
 
 .example-2 .icon-content a[data-social="pinterest"] .filled,
-.example-2 .icon-content a[data-social="pinterest"] ~ .tooltip {
+.example-2 .icon-content a[data-social="pinterest"]~.tooltip {
   background-color: #bd081c;
 }
 
 .example-2 .icon-content a[data-social="dribbble"] .filled,
-.example-2 .icon-content a[data-social="dribbble"] ~ .tooltip {
+.example-2 .icon-content a[data-social="dribbble"]~.tooltip {
   background-color: #ea4c89;
 }
 
 .example-2 .icon-content a[data-social="telegram"] .filled,
-.example-2 .icon-content a[data-social="telegram"] ~ .tooltip {
+.example-2 .icon-content a[data-social="telegram"]~.tooltip {
   background-color: #0088cc;
 }
 
 .example-2 .icon-content a[data-social="discord"] .filled,
-.example-2 .icon-content a[data-social="discord"] ~ .tooltip {
+.example-2 .icon-content a[data-social="discord"]~.tooltip {
   background-color: #5865f2;
 }
 
 .example-2 .icon-content a[data-social="linkedin"] .filled,
-.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+.example-2 .icon-content a[data-social="linkedin"]~.tooltip {
   background-color: #0077b5;
 }
 
 .example-2 .icon-content a[data-social="github"] .filled,
-.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+.example-2 .icon-content a[data-social="github"]~.tooltip {
   background-color: #333333;
 }
 
 .example-2 .icon-content a[data-social="steam"] .filled,
-.example-2 .icon-content a[data-social="steam"] ~ .tooltip {
+.example-2 .icon-content a[data-social="steam"]~.tooltip {
   background-color: #2a475e;
 }
 
 .example-2 .icon-content a[data-social="instagram"] .filled,
-.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
-  background: linear-gradient(
-    45deg,
-    #f09433,
-    #e6683c,
-    #dc2743,
-    #cc2366,
-    #bc1888
-  );
+.example-2 .icon-content a[data-social="instagram"]~.tooltip {
+  background: linear-gradient(45deg,
+      #f09433,
+      #e6683c,
+      #dc2743,
+      #cc2366,
+      #bc1888);
 }
 
 .isaac {
@@ -454,6 +559,10 @@ ul {
     margin: 0;
     width: 100%;
     padding: 16px;
+  }
+
+  .text-left {
+    width: 200px;
   }
 }
 
@@ -507,6 +616,11 @@ ul {
     max-width: 100%;
   }
 
+  .about-text img {
+    width: 100px;
+    height: auto;
+  }
+
   .hero-container {
     padding: 8px;
   }
@@ -525,5 +639,12 @@ ul {
     min-height: 0 !important;
     width: 100%;
     aspect-ratio: 5 / 6;
+  }
+}
+
+@media (max-width: 375px) {
+  .about-text img {
+    width: 80px;
+    height: auto;
   }
 }
