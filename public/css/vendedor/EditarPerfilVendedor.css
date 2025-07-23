@@ -33,6 +33,7 @@
 }
 
 .text_popup {
+  flex-direction: row !important;
   display: flex;
   column-gap: 2%;
 }

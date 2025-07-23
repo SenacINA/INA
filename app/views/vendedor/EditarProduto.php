@@ -27,7 +27,7 @@ $imagensExistentes = array_map(fn($i) => ['id' => $i['id'], 'url' => $i['url']],
         <hr class="editar_produto_linha_titulo">
       </div>
       <div class='editar_produto_container'>
-        <form action="AtualizarProduto" class='editar_produto_form_grid' method="POST">
+        <form action="AtualizarProduto" class='editar_produto_form_grid' id='form-produto' method="POST">
           <input type="hidden" name="produtoId" value="<?= $produto['id_produto'] ?>">
           <div class='editar_produto_form'>
             <div class='editar_produto_form_title'>
@@ -290,8 +290,8 @@ $imagensExistentes = array_map(fn($i) => ['id' => $i['id'], 'url' => $i['url']],
             </div>
           </div>
           <div class='editar_produto_form_buttons'>
-            <input type="hidden" id="produto-imagens" name="produto_imagens">
-            <input type="hidden" name="imagens_remover" id="imagens-remover" value="">
+            <input type="hidden" id="produto_imagens" name="produto_imagens"/>
+            <input type="hidden" id="imagens_remover"  name="imagens_remover"/>
             <input type="hidden" name="cod_atual" value="<?= $produto['cod_produto'] ?>">
             <input type="hidden" name="statusProdutoInput" id="statusProdutoInput" value="<?= $produto['status_produto'] ?>">
             <button type='button' class="base_botao <?= $produto['status_produto'] ? 'btn_red' : 'btn_sappire' ?>" onclick="alterarStatusProduto(<?= $produto['id_produto'] ?>, <?= $produto['status_produto'] ? '0' : '1' ?>)" id='statusProduto'>
