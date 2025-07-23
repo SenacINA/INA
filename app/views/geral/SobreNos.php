@@ -422,7 +422,7 @@ require_once('./utils/head.php');
                     <div class="hero-text">
                         <h2>Cadu</h2>
                         <p>
-                            Me chamo Ana, tenho 17 anos (em 2025) e estou cursando Desenvolvimento de Sistemas no SENACHUB ACADEMY. Tenho grande interesse por programação, com afinidade pela área de Front-End. Onde, pretendo me especializar em UI/UX Desing. Além disso, sou artista (tanto digital quanto manual), apaixonada pelo conceito da arte ser contemplada e acessível a todos.
+                            Me chamo Carlos Eduardo, tenho 19 anos (em 2025) e estou cursando Desenvolvimento de Sistemas no SENACHUB ACADEMY. Tenho grande interesse pela área de programação e procuro me especializar em Desenvolvimento Web e Banco de Dados
                             <br>
                             <br>
                             Algumas coisas sobre mim:
@@ -590,7 +590,7 @@ require_once('./utils/head.php');
                     <div class="hero-text">
                         <h2>Luís Cunha</h2>
                         <p>
-                          Eu sou Luís Cunha, atualmente estudo no Senac Hub Academy e também da Ufms. Sou desenvolvedor fullstack, gosto de Rick and Morty, sou aspirante a modder de Minecraft, usuário número um do Operador ternário, ouvinte de Kpop, hater de Margin e viciado em flexbox
+                            Eu sou Luís Cunha, atualmente estudo no Senac Hub Academy e também da Ufms. Sou desenvolvedor fullstack, gosto de Rick and Morty, sou aspirante a modder de Minecraft, usuário número um do Operador ternário, ouvinte de Kpop, hater de Margin e viciado em flexbox
                             <br>
                             <br>
                             Algumas coisas sobre mim:
