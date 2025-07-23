@@ -503,6 +503,16 @@ require_once('./utils/head.php');
                             <li>Marrom bombom</li>
                             <li>O Melhor garoto de programa do senac</li>
                         </ul>
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/literalmenteeu.gif">
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/literalmenteeu.gif">
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/literalmenteeu.gif">
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/literalmenteeu.gif">
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/literalmenteeu.gif">
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/literalmenteeu.gif">
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/literalmenteeu.gif">
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/literalmenteeu.gif">
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/literalmenteeu.gif">
+                        <img class="isaac" src="<?= $PATH_PUBLIC ?>/image/sobre_nos/literalmenteeu.gif">
                         </p>
                     </div>
                     <!-- From Uiverse.io by WAIOKYERE -->
