@@ -85,9 +85,9 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 ### 5.2. Arquivo de Ambiente
 
 1. Na raiz do projeto, copie e renomeie:  
-   ```bash
+```bash
    cp config.env.ex config.env
-```
+ ```
 
 2. Abra `config.env` e ajuste as credenciais do banco:
 
