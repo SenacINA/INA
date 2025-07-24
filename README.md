@@ -156,10 +156,6 @@ Para mais informações detalhadas sobre o projeto, arquitetura, regras de negó
 
 ```
 
-Lá você encontrará arquivos úteis para entender melhor o funcionamento interno da aplicação e o processo de desenvolvimento realizado pela equipe.
-Se preferir, pode colocar isso como subtópico da seção “Sobre Nós” — mas separar como seção própria (como acima) dá mais destaque e profissionalismo.
-
-
 ## 7. Sobre Nós
 
 Este projeto foi desenvolvido com dedicação pelos integrantes do Grupo **I.N.A. – Inteligência Não Artificial**, como parte do Projeto Integrador da turma 139 (Matutino) do **Senac Hub Academy – 2025**.
