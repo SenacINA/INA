@@ -42,37 +42,35 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 
 ---
 
+```markdown
 ## 4. Estrutura de Pastas (resumo)
 
-```
-
-/
-├─ app/
-│  ├─ components/
-│  ├─ controllers/
-│  ├─ models/
-│  └─ views/
-├─ config/
-│  ├─ routes.php
-│  └─ config.env.ex
-├─ core/
-│  └─ Core.php
-├─ db/
-│  ├─ banco\_schema.sql
-│  └─ insert\_base.sql
-├─ docs/
-├─ public/
-│  ├─ css/
-│  ├─ image/
-│  ├─ js/
-│  └─ upload/
-├─ utils/
-├─ index.php
-├─ .htaccess
-├─ .gitignore
+```text
+/  
+├─ app/  
+│  ├─ components/  
+│  ├─ controllers/  
+│  ├─ models/  
+│  └─ views/  
+├─ config/  
+│  ├─ routes.php  
+│  └─ config.env.ex  
+├─ core/  
+│  └─ Core.php  
+├─ db/  
+│  ├─ banco_schema.sql  
+│  └─ insert_base.sql  
+├─ docs/  
+├─ public/  
+│  ├─ css/  
+│  ├─ image/  
+│  ├─ js/  
+│  └─ upload/  
+├─ utils/  
+├─ index.php  
+├─ .htaccess  
+├─ .gitignore  
 └─ upload.zip
-
-```
 
 ---
 
