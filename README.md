@@ -1,5 +1,5 @@
-```markdown
 # Projeto I.N.A – E-commerce EaoQuadrado
+
 
 O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **I.N.A.** (Inteligência Não Artificial), consiste em um e‑commerce chamado **EaoQuadrado**, totalmente desenvolvido “na unha” em **PHP**, **JavaScript**, **HTML** e **CSS**.
 
@@ -42,7 +42,6 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 
 ---
 
-```markdown
 ## 4. Estrutura de Pastas (resumo)
 
 ```text
