@@ -72,6 +72,8 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 ├─ .gitignore  
 └─ upload.zip
 
+```
+
 ---
 
 ## 5. 🛠️ Configuração do Projeto (XAMPP)
