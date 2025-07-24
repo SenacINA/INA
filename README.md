@@ -51,7 +51,7 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 │  └─ views/  
 ├─ config/  
 │  ├─ routes.php  
-│  └─ config.env.ex  
+│  └─ database.php
 ├─ core/  
 │  └─ Core.php  
 ├─ db/  
@@ -64,11 +64,11 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 │  ├─ js/  
 │  └─ upload/  
 ├─ utils/  
-├─ index.php  
+├─ index.php
+├─ config.env.ex  
 ├─ .htaccess  
 ├─ .gitignore  
 └─ upload.zip
-
 ```
 
 ---
