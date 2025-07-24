@@ -6,11 +6,11 @@ const cardProduto = (produto) => {
   if (produto.desconto_promocao > 0) {
     hasPromo = true;
 
-    if (produto.tipo_promocao === 1) {
+    if (produto.tipo_promocao == 1) {
       // reais sobre total
       precoFinal = (produto.preco_produto - produto.desconto_promocao).toFixed(2).replace('.', ',');
       flagPromo = `- R$${produto.desconto_promocao}`;
-    } else if (produto.tipo_promocao === 2) {
+    } else if (produto.tipo_promocao == 2) {
       // porcentagem sobre total
       precoFinal = (produto.preco_produto * (1 - produto.desconto_promocao / 100)).toFixed(2).replace('.', ',');
       flagPromo = `${produto.desconto_promocao}% OFF`;
