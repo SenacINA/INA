@@ -19,18 +19,16 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 
 - **Back‑end:** PHP 8.x, MVC personalizado  
 - **Front‑end:** HTML5, CSS3, JavaScript (Vanilla)  
-- **Banco de Dados:** MySQL (migrations e seeds em `db/`)  
-- **Servidor Web:** Apache/Nginx (mod_rewrite para `public/`)  
-- **Dependências:** *(se aplicável, ex.: Composer packages)*  
+- **Banco de Dados:** MySQL 
 
 ---
 
 ## 3. Visão Geral da Arquitetura
 
 1. **Front Controller**  
-   - `public/index.php`  
+   - `index.php`  
 2. **Core**  
-   - Bootstrapping & autoload + `Router` → direciona requisição  
+   - Autoload + `Router` → direciona requisição  
 3. **Controller**  
    - `app/controllers/...` → lógica de rota e coordenação de Models/Views  
 4. **Model**  
