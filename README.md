@@ -1,5 +1,5 @@
-```markdown
 # Projeto I.N.A – E-commerce EaoQuadrado
+
 
 O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **I.N.A.** (Inteligência Não Artificial), consiste em um e‑commerce chamado **EaoQuadrado**, totalmente desenvolvido “na unha” em **PHP**, **JavaScript**, **HTML** e **CSS**.
 
@@ -44,35 +44,34 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 
 ## 4. Estrutura de Pastas (resumo)
 
-```
-
-/
-├─ app/
-│  ├─ components/
-│  ├─ controllers/
-│  ├─ models/
-│  └─ views/
-├─ config/
-│  ├─ routes.php
-│  └─ config.env.ex
-├─ core/
-│  └─ Core.php
-├─ db/
-│  ├─ banco\_schema.sql
-│  └─ insert\_base.sql
-├─ docs/
-├─ public/
-│  ├─ css/
-│  ├─ image/
-│  ├─ js/
-│  └─ upload/
-├─ utils/
-├─ index.php
-├─ .htaccess
-├─ .gitignore
+```text
+/  
+├─ app/  
+│  ├─ components/  
+│  ├─ controllers/  
+│  ├─ models/  
+│  └─ views/  
+├─ config/  
+│  ├─ routes.php  
+│  └─ config.env.ex  
+├─ core/  
+│  └─ Core.php  
+├─ db/  
+│  ├─ banco_schema.sql  
+│  └─ insert_base.sql  
+├─ docs/  
+├─ public/  
+│  ├─ css/  
+│  ├─ image/  
+│  ├─ js/  
+│  └─ upload/  
+├─ utils/  
+├─ index.php  
+├─ .htaccess  
+├─ .gitignore  
 └─ upload.zip
 
-````
+```
 
 ---
 
@@ -86,9 +85,9 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 ### 5.2. Arquivo de Ambiente
 
 1. Na raiz do projeto, copie e renomeie:  
-   ```bash
+```bash
    cp config.env.ex config.env
-````
+ ```
 
 2. Abra `config.env` e ajuste as credenciais do banco:
 
@@ -147,7 +146,17 @@ Se tudo estiver correto, a página inicial do **EaoQuadrado** será exibida.
 
 ---
 
-## 6. Sobre Nós
+## 6. Documentação
+
+Para mais informações detalhadas sobre o projeto, arquitetura, regras de negócio, diagramas e decisões de implementação, consulte a documentação disponível na pasta:
+
+```
+
+/docs/
+
+```
+
+## 7. Sobre Nós
 
 Este projeto foi desenvolvido com dedicação pelos integrantes do Grupo **I.N.A. – Inteligência Não Artificial**, como parte do Projeto Integrador da turma 139 (Matutino) do **Senac Hub Academy – 2025**.
 
