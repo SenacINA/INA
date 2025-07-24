@@ -13,10 +13,10 @@ async function renderCarrosel() {
   const PATH_PUBLIC = carrosseldiv.getAttribute("data-path") || ".";
 
   const desktopImages = [
-    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_0.jpeg`,
-    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_1.jpeg`,
-    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_2.jpeg`,
-    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_3.jpeg`,
+    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_0.webp`,
+    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_1.webp`,
+    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_2.webp`,
+    `${PATH_PUBLIC}/upload/carrossel/img_carrossel_3.webp`,
   ];
 
   const mobileImages = [
