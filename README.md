@@ -15,7 +15,13 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 
 ---
 
-## 2. Tecnologias Utilizadas
+## 2. Figma do Projeto
+
+- https://www.figma.com/design/My1OAkdszeSbwVMRo2x4Ji/Projeto-Integrador---EAoQuadrado-NEW?node-id=601-10&t=sgKnYBstAIOermvS-1
+
+---
+
+## 3. Tecnologias Utilizadas
 
 - **Back‑end:** PHP 8.x, MVC personalizado  
 - **Front‑end:** HTML5, CSS3, JavaScript (Vanilla)  
@@ -23,7 +29,7 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 
 ---
 
-## 3. Visão Geral da Arquitetura
+## 4. Visão Geral da Arquitetura
 
 1. **Front Controller**  
    - `index.php`  
@@ -40,7 +46,7 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 
 ---
 
-## 4. Estrutura de Pastas (resumo)
+## 5. Estrutura de Pastas (resumo)
 
 ```text
 /  
@@ -73,14 +79,14 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 
 ---
 
-## 5. 🛠️ Configuração do Projeto (XAMPP)
+## 6. 🛠️ Configuração do Projeto (XAMPP)
 
-### 5.1. Pré‑requisitos
+### 6.1. Pré‑requisitos
 
 - XAMPP instalado (Apache 2.x, PHP 8.x, MySQL 8.x)  
 - Extensões PHP habilitadas: `pdo_mysql`, `mbstring`, `gd`  
 
-### 5.2. Arquivo de Ambiente
+### 6.2. Arquivo de Ambiente
 
 1. Na raiz do projeto, copie e renomeie:  
 ```bash
@@ -97,7 +103,7 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
    DB_CHARSET=utf8mb4
    ```
 
-### 5.3. Extrair Assets de Upload
+### 6.3. Extrair Assets de Upload
 
 * Localize `upload.zip` na raiz do projeto.
 * Extraia **dentro** de `public/`, garantindo que o conteúdo fique em:
@@ -108,7 +114,7 @@ O Projeto Integrador 2025 – Sala 139 (Matutino) do Senac Hub Academy, Grupo **
 
   *Evite estruturas duplicadas como `public/upload/upload/...`.*
 
-### 5.4. Importar Esquema e Dados Iniciais
+### 6.4. Importar Esquema e Dados Iniciais
 
 #### Via phpMyAdmin
 
@@ -127,12 +133,12 @@ mysql -u SEU_USUARIO -p e2_database < db/banco_schema.sql
 mysql -u SEU_USUARIO -p e2_database < db/insert_base.sql
 ```
 
-### 5.5. Deploy no htdocs
+### 6.5. Deploy no htdocs
 
 1. Copie toda a pasta do projeto para `C:\xampp\htdocs\INA\`.
 2. No **XAMPP Control Panel**, inicie **Apache** e **MySQL**.
 
-### 5.6. Acessando a Aplicação
+### 6.6. Acessando a Aplicação
 
 Abra seu navegador e visite:
 
@@ -144,7 +150,7 @@ Se tudo estiver correto, a página inicial do **EaoQuadrado** será exibida.
 
 ---
 
-## 6. Documentação
+## 7. Documentação
 
 Para mais informações detalhadas sobre o projeto, arquitetura, regras de negócio, diagramas e decisões de implementação, consulte a documentação disponível na pasta:
 
@@ -154,11 +160,6 @@ Para mais informações detalhadas sobre o projeto, arquitetura, regras de negó
 
 ```
 
-## 7. Sobre Nós
+## 8. Sobre Nós
 
 Este projeto foi desenvolvido com dedicação pelos integrantes do Grupo **I.N.A. – Inteligência Não Artificial**, como parte do Projeto Integrador da turma 139 (Matutino) do **Senac Hub Academy – 2025**.
-
-Você pode conhecer mais sobre cada membro da equipe acessando a página **“Sobre Nós”**, disponível em:
-
-- Caminho direto: `INA/SobreNos`
-- Ou pelo rodapé do site, clicando no link **“Sobre nós”**
